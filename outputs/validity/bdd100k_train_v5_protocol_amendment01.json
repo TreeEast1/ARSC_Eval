@@ -1,0 +1,121 @@
+{
+  "amendment_id": "BDD100K_TRAIN_V5_METADATA_AMENDMENT_01",
+  "created_at": "2026-07-31T03:56:38+08:00",
+  "status": "FROZEN_BEFORE_TRAIN_ONLY_RERUN",
+  "preregistration": {
+    "git_commit": "1611eb4d45066cb5ae642d8b2a3d101e3771cc6a",
+    "protocol_path": "outputs/validity/bdd100k_train_v5_metadata_protocol.json",
+    "protocol_sha256": "F9B8843FB16F4DD6C61C883DB4F82347FAC009062EF78C99CFFA1ED66B8C7DB9",
+    "mirror_revision": "d82c5188d392714ba8091d68014f7b9838ceadf2"
+  },
+  "independent_review": {
+    "path": "outputs/research_review_memo_round6_amendment01.md",
+    "sha256": "DCAEA3CDB6B07A254855DF7A539E1E8EB9FA5838D160C8B11103CF60CEBAE9C1",
+    "verdict": "GO train-only transport filter; metadata gate restart CONDITIONAL GO"
+  },
+  "failure_boundary": {
+    "failed_gate_log": {
+      "path": "outputs/validity/tmux_bdd100k_train_v5_gate.log",
+      "bytes": 475,
+      "sha256": "E86353B27A2E722983157BDCACBD28DB13624899BBE3E197A7124784065F038E"
+    },
+    "exception": "RuntimeError: non-train row found in train annotation result",
+    "stopped_before": [
+      "loading BDD-OIA test/train/validation manifests in the analyzer",
+      "filename or clip-group intersection",
+      "image SHA256 calculation",
+      "official traffic-light state matching",
+      "candidate or state counts",
+      "candidate manifest or metadata gate output"
+    ],
+    "candidate_manifest_existed_at_freeze": false,
+    "metadata_gate_output_existed_at_freeze": false,
+    "candidate_or_state_counts_computed": false
+  },
+  "split_only_inspection": {
+    "transport_rows": 2012,
+    "original_train_rows": 1744,
+    "original_val_rows": 268,
+    "other_or_missing_split_rows": 0,
+    "allowed_interpretation": "The Dataset Viewer transport table named train contains rows whose retained original BDD split field is train or val. The frozen semantic population remains original BDD100K Detection 2020 train only."
+  },
+  "archived_attempt01": {
+    "combined_metadata_artifact": {
+      "path": "data/external/bdd100k/bdd100k_enriched_annotations_for_bdd_oia_combined_attempt01.json",
+      "bytes": 11593262,
+      "sha256": "045945848E9BACFA063F758D940598F9080945D72952F63499FA1F1964F44481",
+      "repository_policy": "local data artifact; path is gitignored"
+    },
+    "metadata_log": {
+      "path": "outputs/validity/tmux_bdd100k_train_v5_metadata.log",
+      "bytes": 4102,
+      "sha256": "5225D8FE16F633776A9AAD10BBF723FF78C7C35EA01E79FA6BAA2BA5B44E4C8D"
+    }
+  },
+  "code_change": {
+    "original_downloader": {
+      "path": "scripts/download_bdd100k_enriched_annotations.py",
+      "bytes": 9951,
+      "sha256": "3F1D0059412C0A50FE1952EC370C5771B43DBA1A63749723A0089E0D216FBE2E"
+    },
+    "amended_downloader": {
+      "path": "scripts/download_bdd100k_enriched_annotations.py",
+      "bytes": 15591,
+      "sha256": "E3B477AE63CCB3B57BB51C49C13BF6753C0A35335E01AE0C1420C21F2B06C40D"
+    },
+    "exact_diff": {
+      "path": "outputs/validity/bdd100k_train_v5_amendment01_downloader.diff",
+      "bytes": 12336,
+      "sha256": "AF056ED67FB8C6E713555ACD7D206BEE050698A1EC9C6B48FD67E779DE895089"
+    },
+    "authorized_scope": [
+      "retain only response rows whose original split casefolds to train",
+      "record completed query IDs independently from retained train rows",
+      "record original-val exclusions, unknown-split exclusions, and API no-row IDs separately",
+      "validate train-only retained rows and disjoint query-outcome partitions on every checkpoint write and resume"
+    ],
+    "analyzer_unchanged": {
+      "path": "scripts/analyze_bdd100k_train_v5_gate.py",
+      "bytes": 17489,
+      "sha256": "68EA66B7B24043AE38AB0682528B30D87E4F285EF5A506FC909F2C538283D095"
+    }
+  },
+  "verification": {
+    "focused_tests": {
+      "path": "outputs/validity/bdd100k_train_v5_amendment01_tests.log",
+      "bytes": 202,
+      "sha256": "BE3579070601E124F5B109A5BC96F115AED292C492EE01634B6BA244651EBFB8",
+      "result": "9 passed"
+    },
+    "compileall": "PASS",
+    "tested_properties": [
+      "train rows retained while val and unknown rows are excluded",
+      "image bytes and embeddings never retained",
+      "API no-row IDs distinguished from original-val exclusions",
+      "completion depends on queried IDs rather than retained row IDs",
+      "interrupted and complete checkpoint partitions remain disjoint and exhaustive"
+    ]
+  },
+  "frozen_analysis": {
+    "analyzer_changed": false,
+    "eligibility_changed": false,
+    "filename_clip_or_hash_exclusions_changed": false,
+    "population_thresholds_changed": false,
+    "thresholds": {
+      "minimum_total": 200,
+      "minimum_red": 50,
+      "minimum_green": 50,
+      "minimum_independent_clip_groups": 30
+    }
+  },
+  "conditional_restart_policy": {
+    "metadata_download_reruns_allowed": 1,
+    "metadata_gate_reruns_allowed_after_provenance_checks": 1,
+    "include_original_val_rows": false,
+    "masks_allowed": false,
+    "model_outputs_allowed": false,
+    "training_allowed": false,
+    "if_any_precondition_fails": "STOP_CEG"
+  },
+  "train_only_rerun_result": null
+}

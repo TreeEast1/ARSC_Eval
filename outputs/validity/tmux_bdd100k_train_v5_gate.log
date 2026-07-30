@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\analyze_bdd100k_train_v5_gate.py", line 512, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\analyze_bdd100k_train_v5_gate.py", line 251, in main
+    raise RuntimeError("non-train row found in train annotation result")
+RuntimeError: non-train row found in train annotation result
+EXIT_CODE=1

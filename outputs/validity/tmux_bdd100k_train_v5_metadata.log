@@ -1,0 +1,63 @@
+{"batch": 1, "total_batches": 56, "queried": 40, "matched": 40}
+{"batch": 2, "total_batches": 56, "queried": 80, "matched": 80}
+{"batch": 3, "total_batches": 56, "queried": 120, "matched": 120}
+{"batch": 4, "total_batches": 56, "queried": 160, "matched": 160}
+{"batch": 5, "total_batches": 56, "queried": 200, "matched": 200}
+{"batch": 6, "total_batches": 56, "queried": 240, "matched": 240}
+{"batch": 7, "total_batches": 56, "queried": 280, "matched": 280}
+{"batch": 8, "total_batches": 56, "queried": 320, "matched": 320}
+{"batch": 9, "total_batches": 56, "queried": 360, "matched": 360}
+{"batch": 10, "total_batches": 56, "queried": 400, "matched": 400}
+{"batch": 11, "total_batches": 56, "queried": 440, "matched": 440}
+{"batch": 12, "total_batches": 56, "queried": 480, "matched": 480}
+{"batch": 13, "total_batches": 56, "queried": 520, "matched": 520}
+{"batch": 14, "total_batches": 56, "queried": 560, "matched": 560}
+{"batch": 15, "total_batches": 56, "queried": 600, "matched": 600}
+{"batch": 16, "total_batches": 56, "queried": 640, "matched": 640}
+{"batch": 17, "total_batches": 56, "queried": 680, "matched": 680}
+{"batch": 18, "total_batches": 56, "queried": 720, "matched": 720}
+{"batch": 19, "total_batches": 56, "queried": 760, "matched": 760}
+{"batch": 20, "total_batches": 56, "queried": 800, "matched": 800}
+{"batch": 21, "total_batches": 56, "queried": 840, "matched": 840}
+{"batch": 22, "total_batches": 56, "queried": 880, "matched": 880}
+{"batch": 23, "total_batches": 56, "queried": 920, "matched": 920}
+{"batch": 24, "total_batches": 56, "queried": 960, "matched": 960}
+{"batch": 25, "total_batches": 56, "queried": 1000, "matched": 1000}
+{"batch": 26, "total_batches": 56, "queried": 1040, "matched": 1040}
+{"batch": 27, "total_batches": 56, "queried": 1080, "matched": 1080}
+{"batch": 28, "total_batches": 56, "queried": 1120, "matched": 1120}
+{"batch": 29, "total_batches": 56, "queried": 1160, "matched": 1160}
+{"batch": 30, "total_batches": 56, "queried": 1200, "matched": 1200}
+{"batch": 31, "total_batches": 56, "queried": 1240, "matched": 1240}
+{"batch": 32, "total_batches": 56, "queried": 1280, "matched": 1280}
+{"batch": 33, "total_batches": 56, "queried": 1320, "matched": 1320}
+{"batch": 34, "total_batches": 56, "queried": 1360, "matched": 1360}
+{"batch": 35, "total_batches": 56, "queried": 1400, "matched": 1400}
+{"batch": 36, "total_batches": 56, "queried": 1440, "matched": 1440}
+{"batch": 37, "total_batches": 56, "queried": 1480, "matched": 1480}
+{"batch": 38, "total_batches": 56, "queried": 1520, "matched": 1520}
+{"batch": 39, "total_batches": 56, "queried": 1560, "matched": 1560}
+{"batch": 40, "total_batches": 56, "queried": 1600, "matched": 1600}
+{"batch": 41, "total_batches": 56, "queried": 1640, "matched": 1640}
+{"batch": 42, "total_batches": 56, "queried": 1680, "matched": 1680}
+{"batch": 43, "total_batches": 56, "queried": 1720, "matched": 1720}
+{"batch": 44, "total_batches": 56, "queried": 1760, "matched": 1760}
+{"batch": 45, "total_batches": 56, "queried": 1800, "matched": 1800}
+{"batch": 46, "total_batches": 56, "queried": 1840, "matched": 1840}
+{"batch": 47, "total_batches": 56, "queried": 1880, "matched": 1880}
+{"batch": 48, "total_batches": 56, "queried": 1920, "matched": 1920}
+{"batch": 49, "total_batches": 56, "queried": 1960, "matched": 1960}
+{"batch": 50, "total_batches": 56, "queried": 2000, "matched": 2000}
+{"batch": 51, "total_batches": 56, "queried": 2040, "matched": 2006}
+{"batch": 52, "total_batches": 56, "queried": 2080, "matched": 2006}
+{"batch": 53, "total_batches": 56, "queried": 2120, "matched": 2006}
+{"batch": 54, "total_batches": 56, "queried": 2160, "matched": 2006}
+{"batch": 55, "total_batches": 56, "queried": 2200, "matched": 2006}
+{"batch": 56, "total_batches": 56, "queried": 2233, "matched": 2012}
+{
+  "requested_keyframe_ids": 2233,
+  "matched_rows": 2012,
+  "unmatched": 221,
+  "output": "D:\\All_Project\\cjl\\ARSC_space\\BDD-OIA_space\\data\\external\\bdd100k\\bdd100k_enriched_annotations_for_bdd_oia.json",
+  "complete": true
+}

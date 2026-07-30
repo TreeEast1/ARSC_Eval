@@ -117,7 +117,7 @@ def resolve_dataset_revision(timeout: float) -> str:
 
 def fetch_batch(
     image_ids: list[str], timeout: float, retries: int
-) -> list[dict]:
+) -> dict:
     url = filter_url(image_ids)
     last_error: Exception | None = None
     for attempt in range(retries):
@@ -129,11 +129,10 @@ def fetch_batch(
                 payload = json.load(response)
             if payload.get("num_rows_total", 0) > 100:
                 raise RuntimeError("filter returned more than 100 rows")
-            rows = []
+            raw_rows = []
             for item in payload.get("rows", []):
-                row = item["row"]
-                rows.append({field: row[field] for field in KEEP_FIELDS})
-            return rows
+                raw_rows.append(item["row"])
+            return partition_response_rows(image_ids, raw_rows)
         except Exception as error:  # network/API errors are transient
             last_error = error
             if attempt + 1 < retries:
@@ -141,13 +140,87 @@ def fetch_batch(
     raise RuntimeError(f"failed to fetch batch after {retries} attempts") from last_error
 
 
+def partition_response_rows(
+    requested_ids: list[str], raw_rows: list[dict]
+) -> dict:
+    requested = set(requested_ids)
+    returned_ids: set[str] = set()
+    retained_rows = []
+    excluded_original_val_ids = []
+    excluded_unknown_split_ids = []
+    for raw_row in raw_rows:
+        image_id = str(raw_row["image_id"])
+        if image_id not in requested:
+            raise RuntimeError(
+                f"filter returned an unrequested image ID: {image_id}"
+            )
+        if image_id in returned_ids:
+            raise RuntimeError(
+                f"filter returned a duplicate image ID: {image_id}"
+            )
+        returned_ids.add(image_id)
+        original_split = str(raw_row.get("split", "")).casefold()
+        if original_split == "train":
+            retained_rows.append(
+                {field: raw_row[field] for field in KEEP_FIELDS}
+            )
+        elif original_split == "val":
+            excluded_original_val_ids.append(image_id)
+        else:
+            excluded_unknown_split_ids.append(image_id)
+    return {
+        "retained_rows": retained_rows,
+        "excluded_original_val_ids": sorted(
+            excluded_original_val_ids
+        ),
+        "excluded_unknown_split_ids": sorted(
+            excluded_unknown_split_ids
+        ),
+        "api_no_row_ids": sorted(requested.difference(returned_ids)),
+    }
+
+
+def checkpoint_complete(payload: dict, requested_ids: list[str]) -> bool:
+    completed = set(payload.get("completed_query_ids", []))
+    return bool(payload.get("complete")) and completed == set(requested_ids)
+
+
 def write_checkpoint(
     output_path: Path,
     requested_ids: list[str],
     rows_by_id: dict[str, dict],
+    completed_query_ids: set[str],
+    excluded_original_val_ids: set[str],
+    excluded_unknown_split_ids: set[str],
+    api_no_row_ids: set[str],
     completed_batches: int,
     resolved_revision: str,
+    complete: bool = False,
+    post_download_revision: str | None = None,
 ) -> None:
+    if any(
+        str(row.get("split", "")).casefold() != "train"
+        for row in rows_by_id.values()
+    ):
+        raise RuntimeError("checkpoint contains a non-train retained row")
+    partitions = [
+        set(rows_by_id),
+        excluded_original_val_ids,
+        excluded_unknown_split_ids,
+        api_no_row_ids,
+    ]
+    for index, left in enumerate(partitions):
+        for right in partitions[index + 1 :]:
+            if left.intersection(right):
+                raise RuntimeError("query outcome partitions overlap")
+    partitioned_ids = set().union(*partitions)
+    if partitioned_ids != completed_query_ids:
+        raise RuntimeError(
+            "query outcome partitions do not cover completed IDs"
+        )
+    if not completed_query_ids.issubset(set(requested_ids)):
+        raise RuntimeError("completed IDs are not a subset of requested IDs")
+
     output_path.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "source": {
@@ -167,6 +240,7 @@ def write_checkpoint(
                 "lance-format/BDD100K-enriched"
             ),
             "resolved_repository_revision": resolved_revision,
+            "post_download_repository_revision": post_download_revision,
             "access_note": (
                 "The public mirror is used only as a metadata transport for "
                 "BDD100K object annotations; no image bytes or embeddings are "
@@ -174,9 +248,31 @@ def write_checkpoint(
             ),
         },
         "requested_keyframe_ids": len(requested_ids),
+        "completed_query_id_count": len(completed_query_ids),
+        "completed_query_ids": sorted(completed_query_ids),
         "matched_rows": len(rows_by_id),
+        "retained_original_train_rows": len(rows_by_id),
+        "excluded_original_val_count": len(
+            excluded_original_val_ids
+        ),
+        "excluded_original_val_ids": sorted(
+            excluded_original_val_ids
+        ),
+        "excluded_unknown_split_count": len(
+            excluded_unknown_split_ids
+        ),
+        "excluded_unknown_split_ids": sorted(
+            excluded_unknown_split_ids
+        ),
+        "api_no_row_count": len(api_no_row_ids),
+        "api_no_row_ids": sorted(api_no_row_ids),
+        "unmatched_keyframe_ids": sorted(api_no_row_ids),
+        "unmatched_keyframe_ids_definition": (
+            "Requested IDs for which the API returned no row; deliberately "
+            "excluded original-val or unknown-split rows are not included."
+        ),
         "completed_batches": completed_batches,
-        "complete": False,
+        "complete": complete,
         "rows": [rows_by_id[key] for key in sorted(rows_by_id)],
     }
     temporary = output_path.with_suffix(output_path.suffix + ".tmp")
@@ -204,6 +300,10 @@ def main() -> int:
             f"observed {resolved_revision}"
         )
     rows_by_id: dict[str, dict] = {}
+    completed_query_ids: set[str] = set()
+    excluded_original_val_ids: set[str] = set()
+    excluded_unknown_split_ids: set[str] = set()
+    api_no_row_ids: set[str] = set()
     completed_batches = 0
     if output_path.exists():
         existing = json.loads(output_path.read_text(encoding="utf-8"))
@@ -215,10 +315,31 @@ def main() -> int:
                 "existing checkpoint was produced from a different or "
                 "unrecorded dataset revision"
             )
+        if existing.get("rows") and "completed_query_ids" not in existing:
+            raise RuntimeError(
+                "legacy combined-split checkpoint must be archived before "
+                "the train-only amendment rerun"
+            )
         rows_by_id = {
-            row["image_id"]: row for row in existing.get("rows", [])
+            row["image_id"]: row
+            for row in existing.get("rows", [])
+            if str(row.get("split", "")).casefold() == "train"
         }
-        if existing.get("complete") and set(rows_by_id) == set(requested_ids):
+        if len(rows_by_id) != len(existing.get("rows", [])):
+            raise RuntimeError(
+                "resume checkpoint contains a non-train retained row"
+            )
+        completed_query_ids = set(
+            existing.get("completed_query_ids", [])
+        )
+        excluded_original_val_ids = set(
+            existing.get("excluded_original_val_ids", [])
+        )
+        excluded_unknown_split_ids = set(
+            existing.get("excluded_unknown_split_ids", [])
+        )
+        api_no_row_ids = set(existing.get("api_no_row_ids", []))
+        if checkpoint_complete(existing, requested_ids):
             print(json.dumps(existing, indent=2, ensure_ascii=False))
             return 0
 
@@ -227,17 +348,34 @@ def main() -> int:
     ) // args.batch_size
     for start in range(0, len(requested_ids), args.batch_size):
         batch = requested_ids[start : start + args.batch_size]
-        if all(image_id in rows_by_id for image_id in batch):
+        pending = [
+            image_id
+            for image_id in batch
+            if image_id not in completed_query_ids
+        ]
+        if not pending:
             completed_batches += 1
             continue
-        rows = fetch_batch(batch, args.timeout, args.retries)
-        for row in rows:
+        result = fetch_batch(pending, args.timeout, args.retries)
+        for row in result["retained_rows"]:
             rows_by_id[row["image_id"]] = row
+        excluded_original_val_ids.update(
+            result["excluded_original_val_ids"]
+        )
+        excluded_unknown_split_ids.update(
+            result["excluded_unknown_split_ids"]
+        )
+        api_no_row_ids.update(result["api_no_row_ids"])
+        completed_query_ids.update(pending)
         completed_batches += 1
         write_checkpoint(
             output_path,
             requested_ids,
             rows_by_id,
+            completed_query_ids,
+            excluded_original_val_ids,
+            excluded_unknown_split_ids,
+            api_no_row_ids,
             completed_batches,
             resolved_revision,
         )
@@ -247,7 +385,11 @@ def main() -> int:
                     "batch": completed_batches,
                     "total_batches": total_batches,
                     "queried": min(start + len(batch), len(requested_ids)),
-                    "matched": len(rows_by_id),
+                    "retained_train": len(rows_by_id),
+                    "excluded_original_val": len(
+                        excluded_original_val_ids
+                    ),
+                    "api_no_row": len(api_no_row_ids),
                 }
             ),
             flush=True,
@@ -259,24 +401,34 @@ def main() -> int:
             "dataset mirror revision changed during download: "
             f"{resolved_revision} -> {final_revision}"
         )
-    payload = json.loads(output_path.read_text(encoding="utf-8"))
-    payload["complete"] = True
-    payload["completed_batches"] = total_batches
-    payload["source"]["post_download_repository_revision"] = final_revision
-    payload["unmatched_keyframe_ids"] = sorted(
-        set(requested_ids).difference(rows_by_id)
+    if completed_query_ids != set(requested_ids):
+        raise RuntimeError("not all requested IDs were queried")
+    write_checkpoint(
+        output_path,
+        requested_ids,
+        rows_by_id,
+        completed_query_ids,
+        excluded_original_val_ids,
+        excluded_unknown_split_ids,
+        api_no_row_ids,
+        total_batches,
+        resolved_revision,
+        complete=True,
+        post_download_revision=final_revision,
     )
-    temporary = output_path.with_suffix(output_path.suffix + ".tmp")
-    temporary.write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8"
-    )
-    temporary.replace(output_path)
     print(
         json.dumps(
             {
                 "requested_keyframe_ids": len(requested_ids),
-                "matched_rows": len(rows_by_id),
-                "unmatched": len(payload["unmatched_keyframe_ids"]),
+                "completed_query_ids": len(completed_query_ids),
+                "retained_original_train_rows": len(rows_by_id),
+                "excluded_original_val": len(
+                    excluded_original_val_ids
+                ),
+                "excluded_unknown_split": len(
+                    excluded_unknown_split_ids
+                ),
+                "api_no_row": len(api_no_row_ids),
                 "output": str(output_path),
                 "complete": True,
             },
