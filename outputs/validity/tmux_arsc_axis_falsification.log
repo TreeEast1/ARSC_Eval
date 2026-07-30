@@ -1,0 +1,161 @@
+{"bootstrap_completed": 100, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 200, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 300, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 400, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 500, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 600, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 700, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 800, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 900, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 1000, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 1100, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 1200, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 1300, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 1400, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 1500, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 1600, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 1700, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 1800, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 1900, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{"bootstrap_completed": 2000, "bootstrap_total": 2000, "shared_image_draw_per_replicate": 1}
+{
+  "status": "COMPLETED_ONE_SHOT",
+  "decisions": {
+    "exact_preflight": {
+      "passed": true,
+      "checks": {
+        "passed": 83,
+        "total": 83,
+        "failed_names": []
+      }
+    },
+    "A_R_C1_direction_gates": {
+      "A::original_minus_combined::Action-Only": true,
+      "A::original_minus_combined::Joint Action-Rationale": true,
+      "R::original_minus_combined::Joint Action-Rationale": true,
+      "C1_action::wrong_minus_correct::Action-Only": true,
+      "C1_action::wrong_minus_correct::Joint Action-Rationale": true,
+      "C1_rationale::correct_minus_wrong::Joint Action-Rationale": true
+    },
+    "S_measurement_ordering_gate": {
+      "passed": true,
+      "per_seed_model": {
+        "43": {
+          "Action-Only": {
+            "aurc": {
+              "oracle": 0.17105245837758723,
+              "original": 0.3734892826339159,
+              "random": 0.5269693951493615,
+              "adversarial": 0.862892099835648
+            },
+            "passed": true
+          },
+          "Joint Action-Rationale": {
+            "aurc": {
+              "oracle": 0.16081685710593674,
+              "original": 0.3580176254209994,
+              "random": 0.5244423708631925,
+              "adversarial": 0.853637012945775
+            },
+            "passed": true
+          }
+        },
+        "44": {
+          "Action-Only": {
+            "aurc": {
+              "oracle": 0.1713789416335716,
+              "original": 0.39995108947180996,
+              "random": 0.5353179582599528,
+              "adversarial": 0.863175208264736
+            },
+            "passed": true
+          },
+          "Joint Action-Rationale": {
+            "aurc": {
+              "oracle": 0.16829366751457592,
+              "original": 0.3918369113040415,
+              "random": 0.5279560261423244,
+              "adversarial": 0.8604708186099075
+            },
+            "passed": true
+          }
+        },
+        "45": {
+          "Action-Only": {
+            "aurc": {
+              "oracle": 0.17400543498224386,
+              "original": 0.38513361225255244,
+              "random": 0.5306879589634954,
+              "adversarial": 0.8654268907913565
+            },
+            "passed": true
+          },
+          "Joint Action-Rationale": {
+            "aurc": {
+              "oracle": 0.16508519126783855,
+              "original": 0.39148755494536613,
+              "random": 0.5236128260560824,
+              "adversarial": 0.857588022027484
+            },
+            "passed": true
+          }
+        },
+        "46": {
+          "Action-Only": {
+            "aurc": {
+              "oracle": 0.16540424072095564,
+              "original": 0.38590374051112847,
+              "random": 0.51575701624024,
+              "adversarial": 0.8578779751702433
+            },
+            "passed": true
+          },
+          "Joint Action-Rationale": {
+            "aurc": {
+              "oracle": 0.1413987719589191,
+              "original": 0.3408557621801786,
+              "random": 0.48679927403198964,
+              "adversarial": 0.8337963908723482
+            },
+            "passed": true
+          }
+        },
+        "47": {
+          "Action-Only": {
+            "aurc": {
+              "oracle": 0.16444828678803686,
+              "original": 0.39964274154775264,
+              "random": 0.5237441508064543,
+              "adversarial": 0.8570069962951535
+            },
+            "passed": true
+          },
+          "Joint Action-Rationale": {
+            "aurc": {
+              "oracle": 0.16942611057626542,
+              "original": 0.3789384007301017,
+              "random": 0.5310216169066891,
+              "adversarial": 0.861471042510446
+            },
+            "passed": true
+          }
+        }
+      },
+      "synthetic_ECE_role": "numeric diagnostic only; no directional claim"
+    },
+    "frozen_model_confidence_informativeness": {
+      "Action-Only": {
+        "contrast": "S_confidence::random_minus_original::Action-Only",
+        "passed": true
+      },
+      "Joint Action-Rationale": {
+        "contrast": "S_confidence::random_minus_original::Joint Action-Rationale",
+        "passed": true
+      }
+    },
+    "full_suite_measurement_pass": true,
+    "full_empirical_battery_pass": true
+  },
+  "result": "outputs/validity/arsc_axis_falsification_results.json"
+}
+EXIT_CODE=0
