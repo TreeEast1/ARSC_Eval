@@ -1,0 +1,5060 @@
+{
+  "study": "BDD-OIA Round 8 graded association response",
+  "status": "COMPLETED_ONE_SHOT",
+  "scope": {
+    "training": false,
+    "inference": false,
+    "new_data": false,
+    "masks": false,
+    "threshold_selection": false,
+    "dataset": "BDD-OIA frozen test population"
+  },
+  "provenance": {
+    "protocol": {
+      "path": "outputs/validity/round8_graded_response_protocol.json",
+      "sha256": "B96AC789BA12DD0FE65AF2138C54248C2154C1E1489D911571422EDE94B65357"
+    },
+    "amendment": {
+      "path": "outputs/validity/round8_graded_response_protocol_amendment01.json",
+      "sha256": "D15E6F93FFEF686172F3887BAB609E6DA724ECE975BB125485A717688A020C8A"
+    },
+    "independent_GO_review": {
+      "path": "outputs/research_review_memo_round8_amendment01.md",
+      "sha256": "CBF47293F5D983772C305B53E7C1DACD056D1609C7BA4F0A3B284BFAEEC9B66A"
+    },
+    "preflight": {
+      "path": "outputs/validity/round8_graded_response_preflight.json",
+      "sha256": "595D9E0A68124ADE294B90AD3891365C569AEE367CD576AC9C97F2D647CFBA0F",
+      "status": "PASS"
+    },
+    "run_manifest": {
+      "path": "outputs/validity/round8_graded_response_run_manifest.json",
+      "sha256": "85DC92712634C56B856409E3A58105205ABCCA504238A8B74EA3EC1F1F334ACD"
+    },
+    "primitives": {
+      "path": "outputs/validity/round8_graded_response_primitives.npz",
+      "sha256": "6E51FB8842C6A6510364415C9D2D19C2307363024C34C8C7DE00DB57DCC7160C",
+      "bytes": 654847,
+      "array_count": 87,
+      "contains_pixels_or_model_weights": false,
+      "sufficient_for": "independent reproduction of all point curves, raw seed bottlenecks, and the exact association-component bootstrap"
+    }
+  },
+  "frozen_parameters": {
+    "seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "q_values": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "threshold": 0.5,
+    "sample_count": 4557,
+    "bootstrap": {
+      "unit": "association component",
+      "components": 1625,
+      "replicates": 2000,
+      "seed": 20260803,
+      "confidence_level": 0.95,
+      "interval": "percentile pointwise by axis",
+      "shared_draw": "one component multiset expanded to complete images and used by every selected seed/q/model/axis/perturbation",
+      "statistic_order": "within selected seed take minimum adjacent step, then average five selected seed bottlenecks"
+    }
+  },
+  "point_estimates_by_seed": {
+    "43": {
+      "A": {
+        "action_only": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.6688743764074188,
+            "micro_f1": 0.7060679959833597,
+            "per_class_f1": {
+              "Forward": 0.8052702964541756,
+              "Stop": 0.7457627118644068,
+              "Left": 0.5471698113207547,
+              "Right": 0.5772946859903382
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2677,
+              "Stop": 1968,
+              "Left": 1001,
+              "Right": 1145
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.5931437437591229,
+            "micro_f1": 0.6339119208148042,
+            "per_class_f1": {
+              "Forward": 0.7479170703352064,
+              "Stop": 0.6681405060181773,
+              "Left": 0.4573225516621743,
+              "Right": 0.499194847020934
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2677,
+              "Stop": 1968,
+              "Left": 1001,
+              "Right": 1145
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.5209176014447477,
+            "micro_f1": 0.5640510687132406,
+            "per_class_f1": {
+              "Forward": 0.687463669831428,
+              "Stop": 0.5954310980103169,
+              "Left": 0.37646001796945194,
+              "Right": 0.4243156199677939
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2677,
+              "Stop": 1968,
+              "Left": 1001,
+              "Right": 1145
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.45197895255808906,
+            "micro_f1": 0.4956247310285468,
+            "per_class_f1": {
+              "Forward": 0.6270102693276497,
+              "Stop": 0.5178088921640874,
+              "Left": 0.31446540880503143,
+              "Right": 0.34863123993558776
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2677,
+              "Stop": 1968,
+              "Left": 1001,
+              "Right": 1145
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.37670304845462343,
+            "micro_f1": 0.42117343279299957,
+            "per_class_f1": {
+              "Forward": 0.5595814764580508,
+              "Stop": 0.43723900761483664,
+              "Left": 0.24348607367475292,
+              "Right": 0.2665056360708535
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2677,
+              "Stop": 1968,
+              "Left": 1001,
+              "Right": 1145
+            }
+          }
+        ],
+        "joint": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.6891555466668658,
+            "micro_f1": 0.7202317857395237,
+            "per_class_f1": {
+              "Forward": 0.8076699593259733,
+              "Stop": 0.7603833865814696,
+              "Left": 0.5779697624190064,
+              "Right": 0.6105990783410138
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2679,
+              "Stop": 1966,
+              "Left": 1090,
+              "Right": 1265
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.6102042063857764,
+            "micro_f1": 0.645184085930323,
+            "per_class_f1": {
+              "Forward": 0.7487894634902189,
+              "Stop": 0.6812484639960679,
+              "Left": 0.48466522678185747,
+              "Right": 0.5261136712749616
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2679,
+              "Stop": 1966,
+              "Left": 1090,
+              "Right": 1265
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.5334327069071639,
+            "micro_f1": 0.5704190516571267,
+            "per_class_f1": {
+              "Forward": 0.684873135773775,
+              "Stop": 0.5991644138608995,
+              "Left": 0.39654427645788337,
+              "Right": 0.45314900153609833
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2679,
+              "Stop": 1966,
+              "Left": 1090,
+              "Right": 1265
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.46201383774471877,
+            "micro_f1": 0.4998940004239983,
+            "per_class_f1": {
+              "Forward": 0.6232810381561108,
+              "Stop": 0.5205210125337921,
+              "Left": 0.33174946004319655,
+              "Right": 0.3725038402457757
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2679,
+              "Stop": 1966,
+              "Left": 1090,
+              "Right": 1265
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.38120045775799294,
+            "micro_f1": 0.4221609780227546,
+            "per_class_f1": {
+              "Forward": 0.5616889405384466,
+              "Stop": 0.43597935610715166,
+              "Left": 0.25140388768898486,
+              "Right": 0.27572964669738864
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2679,
+              "Stop": 1966,
+              "Left": 1090,
+              "Right": 1265
+            }
+          }
+        ]
+      },
+      "R": {
+        "joint": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.28431101754148225,
+            "micro_f1": 0.5202539960586818,
+            "per_class_f1": {
+              "green_light": 0.6458961474036851,
+              "follow": 0.5051792828685259,
+              "road_clear": 0.39372138652714195,
+              "red_light": 0.6126418152350082,
+              "traffic_sign": 0.48123620309050774,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.7474120082815735,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.022598870056497175,
+              "left_solid_line": 0.0,
+              "right_lane": 0.5469387755102041,
+              "right_green_light": 0.38537699923838536,
+              "right_follow": 0.4225865209471767,
+              "no_right_lane": 0.6171320397539044,
+              "right_obstacle": 0.2721217887725975,
+              "right_solid_line": 0.3176895306859206
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1411,
+              "follow": 588,
+              "road_clear": 588,
+              "red_light": 768,
+              "traffic_sign": 151,
+              "car": 0,
+              "person": 0,
+              "rider": 895,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 2,
+              "left_solid_line": 0,
+              "right_lane": 610,
+              "right_green_light": 416,
+              "right_follow": 385,
+              "no_right_lane": 931,
+              "right_obstacle": 225,
+              "right_solid_line": 151
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.2337308058224806,
+            "micro_f1": 0.4324501861178016,
+            "per_class_f1": {
+              "green_light": 0.56214405360134,
+              "follow": 0.3952191235059761,
+              "road_clear": 0.31916285153695223,
+              "red_light": 0.4916261480280929,
+              "traffic_sign": 0.39293598233995586,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.6211180124223602,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.022598870056497175,
+              "left_solid_line": 0.0,
+              "right_lane": 0.43673469387755104,
+              "right_green_light": 0.33206397562833206,
+              "right_follow": 0.3424408014571949,
+              "no_right_lane": 0.5309985802177,
+              "right_obstacle": 0.2302568981921979,
+              "right_solid_line": 0.23104693140794225
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1411,
+              "follow": 588,
+              "road_clear": 588,
+              "red_light": 768,
+              "traffic_sign": 151,
+              "car": 0,
+              "person": 0,
+              "rider": 895,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 2,
+              "left_solid_line": 0,
+              "right_lane": 610,
+              "right_green_light": 416,
+              "right_follow": 385,
+              "no_right_lane": 931,
+              "right_obstacle": 225,
+              "right_solid_line": 151
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.1862898567783289,
+            "micro_f1": 0.349901467046201,
+            "per_class_f1": {
+              "green_light": 0.4824120603015075,
+              "follow": 0.30916334661354583,
+              "road_clear": 0.262916939175932,
+              "red_light": 0.38465694219340896,
+              "traffic_sign": 0.282560706401766,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.4834368530020704,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.011299435028248588,
+              "left_solid_line": 0.0,
+              "right_lane": 0.3414965986394558,
+              "right_green_light": 0.26808834729626807,
+              "right_follow": 0.2641165755919854,
+              "no_right_lane": 0.44391859914813064,
+              "right_obstacle": 0.19029495718363462,
+              "right_solid_line": 0.18772563176895307
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1411,
+              "follow": 588,
+              "road_clear": 588,
+              "red_light": 768,
+              "traffic_sign": 151,
+              "car": 0,
+              "person": 0,
+              "rider": 895,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 2,
+              "left_solid_line": 0,
+              "right_lane": 610,
+              "right_green_light": 416,
+              "right_follow": 385,
+              "no_right_lane": 931,
+              "right_obstacle": 225,
+              "right_solid_line": 151
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.1332681552690953,
+            "micro_f1": 0.2608933654477775,
+            "per_class_f1": {
+              "green_light": 0.40067001675041874,
+              "follow": 0.20876494023904382,
+              "road_clear": 0.2132112491824722,
+              "red_light": 0.26904376012965964,
+              "traffic_sign": 0.1456953642384106,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.35714285714285715,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.23129251700680273,
+              "right_green_light": 0.2025894897182026,
+              "right_follow": 0.1894353369763206,
+              "no_right_lane": 0.3331755797444392,
+              "right_obstacle": 0.14652711703139867,
+              "right_solid_line": 0.10108303249097472
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1411,
+              "follow": 588,
+              "road_clear": 588,
+              "red_light": 768,
+              "traffic_sign": 151,
+              "car": 0,
+              "person": 0,
+              "rider": 895,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 2,
+              "left_solid_line": 0,
+              "right_lane": 610,
+              "right_green_light": 416,
+              "right_follow": 385,
+              "no_right_lane": 931,
+              "right_obstacle": 225,
+              "right_solid_line": 151
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.08278321017741201,
+            "micro_f1": 0.1744033282242172,
+            "per_class_f1": {
+              "green_light": 0.32026800670016753,
+              "follow": 0.12749003984063745,
+              "road_clear": 0.15173315892740352,
+              "red_light": 0.1836844948676391,
+              "traffic_sign": 0.026490066225165563,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.2111801242236025,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.145578231292517,
+              "right_green_light": 0.12642802741812642,
+              "right_follow": 0.10200364298724955,
+              "no_right_lane": 0.2252721249408424,
+              "right_obstacle": 0.08943862987630828,
+              "right_solid_line": 0.02888086642599278
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1411,
+              "follow": 588,
+              "road_clear": 588,
+              "red_light": 768,
+              "traffic_sign": 151,
+              "car": 0,
+              "person": 0,
+              "rider": 895,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 2,
+              "left_solid_line": 0,
+              "right_lane": 610,
+              "right_green_light": 416,
+              "right_follow": 385,
+              "no_right_lane": 931,
+              "right_obstacle": 225,
+              "right_solid_line": 151
+            }
+          }
+        ]
+      },
+      "S": {
+        "action_only": [
+          {
+            "q": 0.0,
+            "tie_averaged_aurc": 0.3734811551677466,
+            "canonical_stable_aurc": 0.3734892826339159,
+            "unsafe_acceptance_rate_90": 0.49658703071672355,
+            "correctness_auroc": 0.6808949572611617,
+            "ece": 0.3282950660194483,
+            "exact_set_error_rate": 0.5244678516567918,
+            "highest_confidence_decile_error_rate": 0.210989010989011,
+            "lowest_confidence_decile_error_rate": 0.7758241758241758
+          },
+          {
+            "q": 0.25,
+            "tie_averaged_aurc": 0.4066366234079939,
+            "canonical_stable_aurc": 0.4066455434696294,
+            "unsafe_acceptance_rate_90": 0.5034129692832765,
+            "correctness_auroc": 0.6405564255000358,
+            "ece": 0.32829506601944813,
+            "exact_set_error_rate": 0.5244678516567918,
+            "highest_confidence_decile_error_rate": 0.2835164835164835,
+            "lowest_confidence_decile_error_rate": 0.7142857142857143
+          },
+          {
+            "q": 0.5,
+            "tie_averaged_aurc": 0.44996462719861974,
+            "canonical_stable_aurc": 0.44996295361669125,
+            "unsafe_acceptance_rate_90": 0.5141394441735738,
+            "correctness_auroc": 0.5858512916261998,
+            "ece": 0.3282950660194482,
+            "exact_set_error_rate": 0.5244678516567918,
+            "highest_confidence_decile_error_rate": 0.37362637362637363,
+            "lowest_confidence_decile_error_rate": 0.6175824175824176
+          },
+          {
+            "q": 0.75,
+            "tie_averaged_aurc": 0.48342878895465086,
+            "canonical_stable_aurc": 0.4834437961672914,
+            "unsafe_acceptance_rate_90": 0.5187713310580204,
+            "correctness_auroc": 0.5439680988891957,
+            "ece": 0.32829506601944813,
+            "exact_set_error_rate": 0.5244678516567918,
+            "highest_confidence_decile_error_rate": 0.42417582417582417,
+            "lowest_confidence_decile_error_rate": 0.5758241758241758
+          },
+          {
+            "q": 1.0,
+            "tie_averaged_aurc": 0.5305233536763667,
+            "canonical_stable_aurc": 0.5305487694831245,
+            "unsafe_acceptance_rate_90": 0.5246221355436372,
+            "correctness_auroc": 0.4937915248313906,
+            "ece": 0.3282950660194482,
+            "exact_set_error_rate": 0.5244678516567918,
+            "highest_confidence_decile_error_rate": 0.5296703296703297,
+            "lowest_confidence_decile_error_rate": 0.5230769230769231
+          }
+        ],
+        "joint": [
+          {
+            "q": 0.0,
+            "tie_averaged_aurc": 0.35800653605736,
+            "canonical_stable_aurc": 0.3580176254209994,
+            "unsafe_acceptance_rate_90": 0.48147245246221354,
+            "correctness_auroc": 0.6920750096448349,
+            "ece": 0.3285913191828831,
+            "exact_set_error_rate": 0.5104235242484091,
+            "highest_confidence_decile_error_rate": 0.2153846153846154,
+            "lowest_confidence_decile_error_rate": 0.7714285714285715
+          },
+          {
+            "q": 0.25,
+            "tie_averaged_aurc": 0.39711773300533176,
+            "canonical_stable_aurc": 0.3971247149266865,
+            "unsafe_acceptance_rate_90": 0.48732325694783035,
+            "correctness_auroc": 0.6425977770437896,
+            "ece": 0.3285913191828831,
+            "exact_set_error_rate": 0.5104235242484091,
+            "highest_confidence_decile_error_rate": 0.3032967032967033,
+            "lowest_confidence_decile_error_rate": 0.7186813186813187
+          },
+          {
+            "q": 0.5,
+            "tie_averaged_aurc": 0.43518573653983733,
+            "canonical_stable_aurc": 0.43518761245830084,
+            "unsafe_acceptance_rate_90": 0.49634324719648953,
+            "correctness_auroc": 0.5913010333173646,
+            "ece": 0.32859131918288303,
+            "exact_set_error_rate": 0.5104235242484091,
+            "highest_confidence_decile_error_rate": 0.3648351648351648,
+            "lowest_confidence_decile_error_rate": 0.6373626373626373
+          },
+          {
+            "q": 0.75,
+            "tie_averaged_aurc": 0.4730212558267147,
+            "canonical_stable_aurc": 0.4730139072500274,
+            "unsafe_acceptance_rate_90": 0.5039005363237445,
+            "correctness_auroc": 0.5414259633176383,
+            "ece": 0.328591319182883,
+            "exact_set_error_rate": 0.5104235242484091,
+            "highest_confidence_decile_error_rate": 0.44835164835164837,
+            "lowest_confidence_decile_error_rate": 0.5692307692307692
+          },
+          {
+            "q": 1.0,
+            "tie_averaged_aurc": 0.5129295456257723,
+            "canonical_stable_aurc": 0.5129418320666302,
+            "unsafe_acceptance_rate_90": 0.5099951243295954,
+            "correctness_auroc": 0.4902914763554125,
+            "ece": 0.3294531793048959,
+            "exact_set_error_rate": 0.5104235242484091,
+            "highest_confidence_decile_error_rate": 0.5142857142857142,
+            "lowest_confidence_decile_error_rate": 0.5142857142857142
+          }
+        ]
+      },
+      "C1": {
+        "action": {
+          "action_only": [
+            {
+              "q": 0.0,
+              "brightness": 0.09940750493745885,
+              "blur": 0.11367127496159754,
+              "noise": 0.12793504498573624,
+              "mean_three": 0.11367127496159753
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.2701338599956111,
+              "blur": 0.28351985955672593,
+              "noise": 0.2920781215712091,
+              "mean_three": 0.2819106137078487
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.4402018872064955,
+              "blur": 0.4467851656791749,
+              "noise": 0.4498573622997586,
+              "mean_three": 0.44561480506180967
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.6164143076585473,
+              "blur": 0.618608733816107,
+              "noise": 0.6166337502743032,
+              "mean_three": 0.6172189305829859
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.7840684660961159,
+              "blur": 0.7867017774851877,
+              "noise": 0.7781435154707044,
+              "mean_three": 0.7829712530173359
+            }
+          ],
+          "joint": [
+            {
+              "q": 0.0,
+              "brightness": 0.10226025894228659,
+              "blur": 0.130348913759052,
+              "noise": 0.12354619267061663,
+              "mean_three": 0.11871845512398506
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.2769365810840465,
+              "blur": 0.29734474434935265,
+              "noise": 0.29054202326091727,
+              "mean_three": 0.28827444956477216
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.4520517884573184,
+              "blur": 0.46390168970814133,
+              "noise": 0.4586350669299978,
+              "mean_three": 0.4581961816984858
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.6265086679833224,
+              "blur": 0.630678077682686,
+              "noise": 0.6269475532148343,
+              "mean_three": 0.6280447662936143
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.8053543998244459,
+              "blur": 0.8025016458196181,
+              "noise": 0.8000877770463024,
+              "mean_three": 0.8026479408967888
+            }
+          ]
+        },
+        "rationale": {
+          "joint": [
+            {
+              "q": 0.0,
+              "brightness": 0.9264976958525344,
+              "blur": 0.902966132689635,
+              "noise": 0.9030100212127862,
+              "mean_three": 0.9108246165849851
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.7252891940186212,
+              "blur": 0.7070373156943269,
+              "noise": 0.708201929005089,
+              "mean_three": 0.7135094795726791
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.5252270186108238,
+              "blur": 0.5153359039468322,
+              "noise": 0.5131540173673156,
+              "mean_three": 0.5179056466416573
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.3278457004921784,
+              "blur": 0.3220492805417098,
+              "noise": 0.31883758111539545,
+              "mean_three": 0.3229108540497612
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.12584511531186976,
+              "blur": 0.12552378862451277,
+              "noise": 0.12388476127778301,
+              "mean_three": 0.12508455507138852
+            }
+          ]
+        }
+      },
+      "primary_curves": {
+        "A": [
+          [
+            0.6688743764074188,
+            0.5931437437591229,
+            0.5209176014447477,
+            0.45197895255808906,
+            0.37670304845462343
+          ],
+          [
+            0.6891555466668658,
+            0.6102042063857764,
+            0.5334327069071639,
+            0.46201383774471877,
+            0.38120045775799294
+          ]
+        ],
+        "R": [
+          [
+            0.28431101754148225,
+            0.2337308058224806,
+            0.1862898567783289,
+            0.1332681552690953,
+            0.08278321017741201
+          ]
+        ],
+        "S": [
+          [
+            0.3734811551677466,
+            0.4066366234079939,
+            0.44996462719861974,
+            0.48342878895465086,
+            0.5305233536763667
+          ],
+          [
+            0.35800653605736,
+            0.39711773300533176,
+            0.43518573653983733,
+            0.4730212558267147,
+            0.5129295456257723
+          ]
+        ],
+        "C1": [
+          [
+            0.11367127496159753,
+            0.2819106137078487,
+            0.44561480506180967,
+            0.6172189305829859,
+            0.7829712530173359
+          ],
+          [
+            0.11871845512398506,
+            0.28827444956477216,
+            0.4581961816984858,
+            0.6280447662936143,
+            0.8026479408967888
+          ],
+          [
+            0.9108246165849851,
+            0.7135094795726791,
+            0.5179056466416573,
+            0.3229108540497612,
+            0.12508455507138852
+          ]
+        ]
+      },
+      "axis_bottlenecks": {
+        "A": 0.06893864888665868,
+        "R": 0.04744094904415169,
+        "S": 0.03315546824024729,
+        "C1": 0.16370419135396097
+      }
+    },
+    "44": {
+      "A": {
+        "action_only": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.6683865626209756,
+            "micro_f1": 0.7072691552062869,
+            "per_class_f1": {
+              "Forward": 0.7993012422360248,
+              "Stop": 0.7506715506715507,
+              "Left": 0.5547584887613582,
+              "Right": 0.5688149688149688
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2668,
+              "Stop": 1992,
+              "Left": 866,
+              "Right": 1066
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.58931114334337,
+            "micro_f1": 0.6334861383977297,
+            "per_class_f1": {
+              "Forward": 0.7426242236024845,
+              "Stop": 0.674969474969475,
+              "Left": 0.4581539933046389,
+              "Right": 0.4814968814968815
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2668,
+              "Stop": 1992,
+              "Left": 866,
+              "Right": 1066
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.5159060061087772,
+            "micro_f1": 0.5633413374081351,
+            "per_class_f1": {
+              "Forward": 0.6867236024844721,
+              "Stop": 0.5978021978021978,
+              "Left": 0.3749402199904352,
+              "Right": 0.4041580041580042
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2668,
+              "Stop": 1992,
+              "Left": 866,
+              "Right": 1066
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.4494267964733391,
+            "micro_f1": 0.49683475223750273,
+            "per_class_f1": {
+              "Forward": 0.6261645962732919,
+              "Stop": 0.5221001221001221,
+              "Left": 0.3118125298900048,
+              "Right": 0.33762993762993765
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2668,
+              "Stop": 1992,
+              "Left": 866,
+              "Right": 1066
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.3684628004346441,
+            "micro_f1": 0.4188314050789493,
+            "per_class_f1": {
+              "Forward": 0.5625,
+              "Stop": 0.43614163614163615,
+              "Left": 0.2257293161166906,
+              "Right": 0.2494802494802495
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2668,
+              "Stop": 1992,
+              "Left": 866,
+              "Right": 1066
+            }
+          }
+        ],
+        "joint": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.6938817136532921,
+            "micro_f1": 0.7224265981814396,
+            "per_class_f1": {
+              "Forward": 0.8147451570434455,
+              "Stop": 0.7556803676282869,
+              "Left": 0.6065773447015834,
+              "Right": 0.5985239852398524
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2833,
+              "Stop": 1814,
+              "Left": 1238,
+              "Right": 1371
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.6150477018761439,
+            "micro_f1": 0.6482959672381481,
+            "per_class_f1": {
+              "Forward": 0.7598269700959187,
+              "Stop": 0.6760275721215215,
+              "Left": 0.5018270401948843,
+              "Right": 0.522509225092251
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2833,
+              "Stop": 1814,
+              "Left": 1238,
+              "Right": 1371
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.5418951498839214,
+            "micro_f1": 0.5770805858263344,
+            "per_class_f1": {
+              "Forward": 0.7015234154598458,
+              "Stop": 0.5917794230278274,
+              "Left": 0.4181892001624036,
+              "Right": 0.45608856088560884
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2833,
+              "Stop": 1814,
+              "Left": 1238,
+              "Right": 1371
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.4696961975514012,
+            "micro_f1": 0.5060040258207815,
+            "per_class_f1": {
+              "Forward": 0.6398344931352267,
+              "Stop": 0.5105948429920858,
+              "Left": 0.34754364596021114,
+              "Right": 0.3808118081180812
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2833,
+              "Stop": 1814,
+              "Left": 1238,
+              "Right": 1371
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.38779155217122896,
+            "micro_f1": 0.42645936003331714,
+            "per_class_f1": {
+              "Forward": 0.5751363550874553,
+              "Stop": 0.41817717641051827,
+              "Left": 0.2582216808769793,
+              "Right": 0.2996309963099631
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2833,
+              "Stop": 1814,
+              "Left": 1238,
+              "Right": 1371
+            }
+          }
+        ]
+      },
+      "R": {
+        "joint": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.2769215576808766,
+            "micro_f1": 0.5154480483782298,
+            "per_class_f1": {
+              "green_light": 0.6703431372549019,
+              "follow": 0.4576744186046512,
+              "road_clear": 0.44126416219439474,
+              "red_light": 0.6110812264658418,
+              "traffic_sign": 0.45248868778280543,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.7510504201680672,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.03296703296703297,
+              "left_solid_line": 0.0,
+              "right_lane": 0.5136531365313654,
+              "right_green_light": 0.4027047332832457,
+              "right_follow": 0.39848914069877245,
+              "no_right_lane": 0.5672544080604534,
+              "right_obstacle": 0.2556818181818182,
+              "right_solid_line": 0.2607003891050584
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1690,
+              "follow": 408,
+              "road_clear": 736,
+              "red_light": 776,
+              "traffic_sign": 140,
+              "car": 0,
+              "person": 0,
+              "rider": 867,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 7,
+              "left_solid_line": 0,
+              "right_lane": 495,
+              "right_green_light": 434,
+              "right_follow": 346,
+              "no_right_lane": 803,
+              "right_obstacle": 230,
+              "right_solid_line": 111
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.22565639915589042,
+            "micro_f1": 0.4272677295217152,
+            "per_class_f1": {
+              "green_light": 0.5919117647058824,
+              "follow": 0.3590697674418605,
+              "road_clear": 0.3530113297555158,
+              "red_light": 0.4959655728886498,
+              "traffic_sign": 0.3574660633484163,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.6176470588235294,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.03296703296703297,
+              "left_solid_line": 0.0,
+              "right_lane": 0.3955719557195572,
+              "right_green_light": 0.3335837716003005,
+              "right_follow": 0.31728045325779036,
+              "no_right_lane": 0.4836272040302267,
+              "right_obstacle": 0.2178030303030303,
+              "right_solid_line": 0.1828793774319066
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1690,
+              "follow": 408,
+              "road_clear": 736,
+              "red_light": 776,
+              "traffic_sign": 140,
+              "car": 0,
+              "person": 0,
+              "rider": 867,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 7,
+              "left_solid_line": 0,
+              "right_lane": 495,
+              "right_green_light": 434,
+              "right_follow": 346,
+              "no_right_lane": 803,
+              "right_obstacle": 230,
+              "right_solid_line": 111
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.1798730291315318,
+            "micro_f1": 0.348653106102254,
+            "per_class_f1": {
+              "green_light": 0.5214460784313726,
+              "follow": 0.27906976744186046,
+              "road_clear": 0.28622540250447226,
+              "red_light": 0.392684238838085,
+              "traffic_sign": 0.25339366515837103,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.48214285714285715,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.01098901098901099,
+              "left_solid_line": 0.0,
+              "right_lane": 0.30996309963099633,
+              "right_green_light": 0.2644628099173554,
+              "right_follow": 0.254957507082153,
+              "no_right_lane": 0.4,
+              "right_obstacle": 0.17803030303030304,
+              "right_solid_line": 0.14396887159533073
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1690,
+              "follow": 408,
+              "road_clear": 736,
+              "red_light": 776,
+              "traffic_sign": 140,
+              "car": 0,
+              "person": 0,
+              "rider": 867,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 7,
+              "left_solid_line": 0,
+              "right_lane": 495,
+              "right_green_light": 434,
+              "right_follow": 346,
+              "no_right_lane": 803,
+              "right_obstacle": 230,
+              "right_solid_line": 111
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.130813803112409,
+            "micro_f1": 0.26421110500274875,
+            "per_class_f1": {
+              "green_light": 0.4387254901960784,
+              "follow": 0.18604651162790697,
+              "road_clear": 0.23255813953488372,
+              "red_light": 0.27756858526089295,
+              "traffic_sign": 0.13574660633484162,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.34978991596638653,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.2051660516605166,
+              "right_green_light": 0.19834710743801653,
+              "right_follow": 0.18508026440037773,
+              "no_right_lane": 0.30831234256926954,
+              "right_obstacle": 0.13636363636363635,
+              "right_solid_line": 0.0933852140077821
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1690,
+              "follow": 408,
+              "road_clear": 736,
+              "red_light": 776,
+              "traffic_sign": 140,
+              "car": 0,
+              "person": 0,
+              "rider": 867,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 7,
+              "left_solid_line": 0,
+              "right_lane": 495,
+              "right_green_light": 434,
+              "right_follow": 346,
+              "no_right_lane": 803,
+              "right_obstacle": 230,
+              "right_solid_line": 111
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.08126601139048154,
+            "micro_f1": 0.17757009345794392,
+            "per_class_f1": {
+              "green_light": 0.34558823529411764,
+              "follow": 0.11348837209302326,
+              "road_clear": 0.16219439475253428,
+              "red_light": 0.18612157073695534,
+              "traffic_sign": 0.01809954751131222,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.1953781512605042,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.12250922509225093,
+              "right_green_light": 0.13974455296769348,
+              "right_follow": 0.10387157695939565,
+              "no_right_lane": 0.20554156171284635,
+              "right_obstacle": 0.09848484848484848,
+              "right_solid_line": 0.01556420233463035
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1690,
+              "follow": 408,
+              "road_clear": 736,
+              "red_light": 776,
+              "traffic_sign": 140,
+              "car": 0,
+              "person": 0,
+              "rider": 867,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 7,
+              "left_solid_line": 0,
+              "right_lane": 495,
+              "right_green_light": 434,
+              "right_follow": 346,
+              "no_right_lane": 803,
+              "right_obstacle": 230,
+              "right_solid_line": 111
+            }
+          }
+        ]
+      },
+      "S": {
+        "action_only": [
+          {
+            "q": 0.0,
+            "tie_averaged_aurc": 0.3999276701855053,
+            "canonical_stable_aurc": 0.39995108947180996,
+            "unsafe_acceptance_rate_90": 0.4900048756704047,
+            "correctness_auroc": 0.6701972317270037,
+            "ece": 0.3280800593920099,
+            "exact_set_error_rate": 0.5249067368883037,
+            "highest_confidence_decile_error_rate": 0.3120879120879121,
+            "lowest_confidence_decile_error_rate": 0.8395604395604396
+          },
+          {
+            "q": 0.25,
+            "tie_averaged_aurc": 0.4237377552360827,
+            "canonical_stable_aurc": 0.4237487592439895,
+            "unsafe_acceptance_rate_90": 0.49658703071672355,
+            "correctness_auroc": 0.6342860535889454,
+            "ece": 0.32808005939200985,
+            "exact_set_error_rate": 0.5249067368883037,
+            "highest_confidence_decile_error_rate": 0.3362637362637363,
+            "lowest_confidence_decile_error_rate": 0.7802197802197802
+          },
+          {
+            "q": 0.5,
+            "tie_averaged_aurc": 0.45522665303151405,
+            "canonical_stable_aurc": 0.4552241755523302,
+            "unsafe_acceptance_rate_90": 0.5068259385665529,
+            "correctness_auroc": 0.5892608734272053,
+            "ece": 0.3280800593920099,
+            "exact_set_error_rate": 0.5249067368883037,
+            "highest_confidence_decile_error_rate": 0.3802197802197802,
+            "lowest_confidence_decile_error_rate": 0.6879120879120879
+          },
+          {
+            "q": 0.75,
+            "tie_averaged_aurc": 0.4895777611437433,
+            "canonical_stable_aurc": 0.4895759769368815,
+            "unsafe_acceptance_rate_90": 0.5158459288152121,
+            "correctness_auroc": 0.5403457058555462,
+            "ece": 0.3281592609733322,
+            "exact_set_error_rate": 0.5249067368883037,
+            "highest_confidence_decile_error_rate": 0.42637362637362636,
+            "lowest_confidence_decile_error_rate": 0.6065934065934065
+          },
+          {
+            "q": 1.0,
+            "tie_averaged_aurc": 0.5254554431607065,
+            "canonical_stable_aurc": 0.5254471413340511,
+            "unsafe_acceptance_rate_90": 0.5246221355436372,
+            "correctness_auroc": 0.495878776058764,
+            "ece": 0.3294759166678681,
+            "exact_set_error_rate": 0.5249067368883037,
+            "highest_confidence_decile_error_rate": 0.5076923076923077,
+            "lowest_confidence_decile_error_rate": 0.5274725274725275
+          }
+        ],
+        "joint": [
+          {
+            "q": 0.0,
+            "tie_averaged_aurc": 0.39182521865478337,
+            "canonical_stable_aurc": 0.3918369113040415,
+            "unsafe_acceptance_rate_90": 0.4907362262311068,
+            "correctness_auroc": 0.6663743441556337,
+            "ece": 0.3470004931737897,
+            "exact_set_error_rate": 0.5207373271889401,
+            "highest_confidence_decile_error_rate": 0.27472527472527475,
+            "lowest_confidence_decile_error_rate": 0.7912087912087912
+          },
+          {
+            "q": 0.25,
+            "tie_averaged_aurc": 0.424044286390973,
+            "canonical_stable_aurc": 0.4240561228065771,
+            "unsafe_acceptance_rate_90": 0.49731838127742567,
+            "correctness_auroc": 0.623223971912341,
+            "ece": 0.34700049317378967,
+            "exact_set_error_rate": 0.5207373271889401,
+            "highest_confidence_decile_error_rate": 0.34065934065934067,
+            "lowest_confidence_decile_error_rate": 0.7318681318681318
+          },
+          {
+            "q": 0.5,
+            "tie_averaged_aurc": 0.46169818260991824,
+            "canonical_stable_aurc": 0.46171222924718275,
+            "unsafe_acceptance_rate_90": 0.5053632374451487,
+            "correctness_auroc": 0.5749568944891321,
+            "ece": 0.34700049317378967,
+            "exact_set_error_rate": 0.5207373271889401,
+            "highest_confidence_decile_error_rate": 0.421978021978022,
+            "lowest_confidence_decile_error_rate": 0.6593406593406593
+          },
+          {
+            "q": 0.75,
+            "tie_averaged_aurc": 0.497633659437547,
+            "canonical_stable_aurc": 0.49765035912583255,
+            "unsafe_acceptance_rate_90": 0.5129205265724037,
+            "correctness_auroc": 0.5346631788635581,
+            "ece": 0.34700049317378967,
+            "exact_set_error_rate": 0.5207373271889401,
+            "highest_confidence_decile_error_rate": 0.5032967032967033,
+            "lowest_confidence_decile_error_rate": 0.5912087912087912
+          },
+          {
+            "q": 1.0,
+            "tie_averaged_aurc": 0.5321351475051426,
+            "canonical_stable_aurc": 0.5321488883901846,
+            "unsafe_acceptance_rate_90": 0.5212091662603608,
+            "correctness_auroc": 0.48849407019444946,
+            "ece": 0.34749254692716347,
+            "exact_set_error_rate": 0.5207373271889401,
+            "highest_confidence_decile_error_rate": 0.5692307692307692,
+            "lowest_confidence_decile_error_rate": 0.5164835164835165
+          }
+        ]
+      },
+      "C1": {
+        "action": {
+          "action_only": [
+            {
+              "q": 0.0,
+              "brightness": 0.09765196401141102,
+              "blur": 0.12705727452271232,
+              "noise": 0.13078779899056397,
+              "mean_three": 0.1184990125082291
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.2677199912222954,
+              "blur": 0.28988369541364933,
+              "noise": 0.2920781215712091,
+              "mean_three": 0.2832272694023846
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.44437129690585914,
+              "blur": 0.45622119815668205,
+              "noise": 0.4557823129251701,
+              "mean_three": 0.4521249359959038
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.619705946894887,
+              "blur": 0.6190476190476191,
+              "noise": 0.620583717357911,
+              "mean_three": 0.6197790944334723
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.793723941189379,
+              "blur": 0.783410138248848,
+              "noise": 0.7858240070221637,
+              "mean_three": 0.787652695486797
+            }
+          ],
+          "joint": [
+            {
+              "q": 0.0,
+              "brightness": 0.10445468509984639,
+              "blur": 0.130568356374808,
+              "noise": 0.10862409479921001,
+              "mean_three": 0.11454904542462145
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.27518104015799866,
+              "blur": 0.2951503181917928,
+              "noise": 0.2793504498573623,
+              "mean_three": 0.2832272694023846
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.4577572964669739,
+              "blur": 0.4696071977177968,
+              "noise": 0.46148782093482554,
+              "mean_three": 0.46295077170653204
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.6344086021505376,
+              "blur": 0.6366030283080975,
+              "noise": 0.63045863506693,
+              "mean_three": 0.6338234218418551
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.8136932192231732,
+              "blur": 0.8130348913759052,
+              "noise": 0.8114987930656133,
+              "mean_three": 0.8127423012215639
+            }
+          ]
+        },
+        "rationale": {
+          "joint": [
+            {
+              "q": 0.0,
+              "brightness": 0.9244934532952965,
+              "blur": 0.9024943310657597,
+              "noise": 0.9122851291054057,
+              "mean_three": 0.9130909711554874
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.7250995329007179,
+              "blur": 0.704383627490935,
+              "noise": 0.7149079908461079,
+              "mean_three": 0.7147970504125869
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.5286545032759649,
+              "blur": 0.5128577698360449,
+              "noise": 0.5211730775259413,
+              "mean_three": 0.5208951168793171
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.333299371976133,
+              "blur": 0.32237060722906674,
+              "noise": 0.3294021756167905,
+              "mean_three": 0.3283573849406634
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.13344566705330366,
+              "blur": 0.12842356604700253,
+              "noise": 0.13376176891647595,
+              "mean_three": 0.1318770006722607
+            }
+          ]
+        }
+      },
+      "primary_curves": {
+        "A": [
+          [
+            0.6683865626209756,
+            0.58931114334337,
+            0.5159060061087772,
+            0.4494267964733391,
+            0.3684628004346441
+          ],
+          [
+            0.6938817136532921,
+            0.6150477018761439,
+            0.5418951498839214,
+            0.4696961975514012,
+            0.38779155217122896
+          ]
+        ],
+        "R": [
+          [
+            0.2769215576808766,
+            0.22565639915589042,
+            0.1798730291315318,
+            0.130813803112409,
+            0.08126601139048154
+          ]
+        ],
+        "S": [
+          [
+            0.3999276701855053,
+            0.4237377552360827,
+            0.45522665303151405,
+            0.4895777611437433,
+            0.5254554431607065
+          ],
+          [
+            0.39182521865478337,
+            0.424044286390973,
+            0.46169818260991824,
+            0.497633659437547,
+            0.5321351475051426
+          ]
+        ],
+        "C1": [
+          [
+            0.1184990125082291,
+            0.2832272694023846,
+            0.4521249359959038,
+            0.6197790944334723,
+            0.787652695486797
+          ],
+          [
+            0.11454904542462145,
+            0.2832272694023846,
+            0.46295077170653204,
+            0.6338234218418551,
+            0.8127423012215639
+          ],
+          [
+            0.9130909711554874,
+            0.7147970504125869,
+            0.5208951168793171,
+            0.3283573849406634,
+            0.1318770006722607
+          ]
+        ]
+      },
+      "axis_bottlenecks": {
+        "A": 0.06647920963543813,
+        "R": 0.045783370024358616,
+        "S": 0.023810085050577412,
+        "C1": 0.1647282568941555
+      }
+    },
+    "45": {
+      "A": {
+        "action_only": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.6679932568471639,
+            "micro_f1": 0.7055188272492096,
+            "per_class_f1": {
+              "Forward": 0.7988991547080794,
+              "Stop": 0.753713464302827,
+              "Left": 0.5454545454545454,
+              "Right": 0.573905862923204
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2603,
+              "Stop": 2071,
+              "Left": 1008,
+              "Right": 1083
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.5919768539127281,
+            "micro_f1": 0.6325093417648749,
+            "per_class_f1": {
+              "Forward": 0.7387458226852762,
+              "Stop": 0.6765692381408721,
+              "Left": 0.4612628750559785,
+              "Right": 0.4913294797687861
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2603,
+              "Stop": 2071,
+              "Left": 1008,
+              "Right": 1083
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.5208334987248164,
+            "micro_f1": 0.5636677206093705,
+            "per_class_f1": {
+              "Forward": 0.6789856496953017,
+              "Stop": 0.6046957355055103,
+              "Left": 0.37438423645320196,
+              "Right": 0.42526837324525185
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2603,
+              "Stop": 2071,
+              "Left": 1008,
+              "Right": 1083
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.45455349799851963,
+            "micro_f1": 0.4987065248634665,
+            "per_class_f1": {
+              "Forward": 0.6227639080007863,
+              "Stop": 0.5333013895543843,
+              "Left": 0.3054187192118227,
+              "Right": 0.35672997522708505
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2603,
+              "Stop": 2071,
+              "Left": 1008,
+              "Right": 1083
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.37815419870826616,
+            "micro_f1": 0.4233975280252946,
+            "per_class_f1": {
+              "Forward": 0.5571063495183802,
+              "Stop": 0.44992812649736463,
+              "Left": 0.2355575459023735,
+              "Right": 0.2700247729149463
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2603,
+              "Stop": 2071,
+              "Left": 1008,
+              "Right": 1083
+            }
+          }
+        ],
+        "joint": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.6835912836700506,
+            "micro_f1": 0.7143562610229277,
+            "per_class_f1": {
+              "Forward": 0.8128124421403444,
+              "Stop": 0.7286405158516926,
+              "Left": 0.5786163522012578,
+              "Right": 0.6142958244869073
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2917,
+              "Stop": 1619,
+              "Left": 1001,
+              "Right": 1487
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.6053547145880254,
+            "micro_f1": 0.6418342151675485,
+            "per_class_f1": {
+              "Forward": 0.7591186817256064,
+              "Stop": 0.6528747984954326,
+              "Left": 0.4743935309973046,
+              "Right": 0.535031847133758
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2917,
+              "Stop": 1619,
+              "Left": 1001,
+              "Right": 1487
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.5323811122440046,
+            "micro_f1": 0.5718518518518518,
+            "per_class_f1": {
+              "Forward": 0.7039437141270135,
+              "Stop": 0.569586243954863,
+              "Left": 0.3917340521114106,
+              "Right": 0.46426043878273177
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2917,
+              "Stop": 1619,
+              "Left": 1001,
+              "Right": 1487
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.4620215674709379,
+            "micro_f1": 0.5028571428571429,
+            "per_class_f1": {
+              "Forward": 0.6469172375486021,
+              "Stop": 0.4862976894142934,
+              "Left": 0.3270440251572327,
+              "Right": 0.3878273177636235
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2917,
+              "Stop": 1619,
+              "Left": 1001,
+              "Right": 1487
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.3810794860680038,
+            "micro_f1": 0.42440917107583775,
+            "per_class_f1": {
+              "Forward": 0.5824847250509165,
+              "Stop": 0.3944116066630844,
+              "Left": 0.2416891284815813,
+              "Right": 0.3057324840764331
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2917,
+              "Stop": 1619,
+              "Left": 1001,
+              "Right": 1487
+            }
+          }
+        ]
+      },
+      "R": {
+        "joint": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.2568375984960144,
+            "micro_f1": 0.4791702481233167,
+            "per_class_f1": {
+              "green_light": 0.6553637484586929,
+              "follow": 0.4597902097902098,
+              "road_clear": 0.4024390243902439,
+              "red_light": 0.5447941888619855,
+              "traffic_sign": 0.40097799511002447,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.7046979865771812,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.4434108527131783,
+              "right_green_light": 0.37025561580170413,
+              "right_follow": 0.374,
+              "no_right_lane": 0.48881239242685026,
+              "right_obstacle": 0.29953488372093023,
+              "right_solid_line": 0.24951267056530213
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1670,
+              "follow": 477,
+              "road_clear": 699,
+              "red_light": 569,
+              "traffic_sign": 107,
+              "car": 0,
+              "person": 0,
+              "rider": 751,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 0,
+              "left_solid_line": 0,
+              "right_lane": 430,
+              "right_green_light": 394,
+              "right_follow": 287,
+              "no_right_lane": 561,
+              "right_obstacle": 249,
+              "right_solid_line": 110
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.20950896893569718,
+            "micro_f1": 0.3974557331958054,
+            "per_class_f1": {
+              "green_light": 0.5832305795314426,
+              "follow": 0.3548951048951049,
+              "road_clear": 0.33170731707317075,
+              "red_light": 0.42857142857142855,
+              "traffic_sign": 0.3276283618581907,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.5805369127516778,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.351937984496124,
+              "right_green_light": 0.30364058869093724,
+              "right_follow": 0.292,
+              "no_right_lane": 0.41078600114744696,
+              "right_obstacle": 0.24372093023255814,
+              "right_solid_line": 0.19103313840155944
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1670,
+              "follow": 477,
+              "road_clear": 699,
+              "red_light": 569,
+              "traffic_sign": 107,
+              "car": 0,
+              "person": 0,
+              "rider": 751,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 0,
+              "left_solid_line": 0,
+              "right_lane": 430,
+              "right_green_light": 394,
+              "right_follow": 287,
+              "no_right_lane": 561,
+              "right_obstacle": 249,
+              "right_solid_line": 110
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.16512388638360279,
+            "micro_f1": 0.3215861555211736,
+            "per_class_f1": {
+              "green_light": 0.5092478421701603,
+              "follow": 0.28146853146853146,
+              "road_clear": 0.2658536585365854,
+              "red_light": 0.3353510895883777,
+              "traffic_sign": 0.23471882640586797,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.4519015659955257,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.28217054263565894,
+              "right_green_light": 0.2292796281951975,
+              "right_follow": 0.216,
+              "no_right_lane": 0.33964429145152036,
+              "right_obstacle": 0.1972093023255814,
+              "right_solid_line": 0.12475633528265107
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1670,
+              "follow": 477,
+              "road_clear": 699,
+              "red_light": 569,
+              "traffic_sign": 107,
+              "car": 0,
+              "person": 0,
+              "rider": 751,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 0,
+              "left_solid_line": 0,
+              "right_lane": 430,
+              "right_green_light": 394,
+              "right_follow": 287,
+              "no_right_lane": 561,
+              "right_obstacle": 249,
+              "right_solid_line": 110
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.12098177054989029,
+            "micro_f1": 0.24491433155693085,
+            "per_class_f1": {
+              "green_light": 0.43033292231812575,
+              "follow": 0.20279720279720279,
+              "road_clear": 0.20853658536585365,
+              "red_light": 0.2360774818401937,
+              "traffic_sign": 0.12224938875305623,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.3333333333333333,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.19069767441860466,
+              "right_green_light": 0.1735089078233927,
+              "right_follow": 0.154,
+              "no_right_lane": 0.25243832472748134,
+              "right_obstacle": 0.1469767441860465,
+              "right_solid_line": 0.08966861598440545
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1670,
+              "follow": 477,
+              "road_clear": 699,
+              "red_light": 569,
+              "traffic_sign": 107,
+              "car": 0,
+              "person": 0,
+              "rider": 751,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 0,
+              "left_solid_line": 0,
+              "right_lane": 430,
+              "right_green_light": 394,
+              "right_follow": 287,
+              "no_right_lane": 561,
+              "right_obstacle": 249,
+              "right_solid_line": 110
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.07454340004720525,
+            "micro_f1": 0.16491891582144289,
+            "per_class_f1": {
+              "green_light": 0.34833538840937117,
+              "follow": 0.1258741258741259,
+              "road_clear": 0.1475609756097561,
+              "red_light": 0.14527845036319612,
+              "traffic_sign": 0.019559902200488997,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.1912751677852349,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.11782945736434108,
+              "right_green_light": 0.11463981409759876,
+              "right_follow": 0.082,
+              "no_right_lane": 0.16408491107286288,
+              "right_obstacle": 0.08558139534883721,
+              "right_solid_line": 0.023391812865497075
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1670,
+              "follow": 477,
+              "road_clear": 699,
+              "red_light": 569,
+              "traffic_sign": 107,
+              "car": 0,
+              "person": 0,
+              "rider": 751,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 0,
+              "left_solid_line": 0,
+              "right_lane": 430,
+              "right_green_light": 394,
+              "right_follow": 287,
+              "no_right_lane": 561,
+              "right_obstacle": 249,
+              "right_solid_line": 110
+            }
+          }
+        ]
+      },
+      "S": {
+        "action_only": [
+          {
+            "q": 0.0,
+            "tie_averaged_aurc": 0.38510776352390635,
+            "canonical_stable_aurc": 0.38513361225255244,
+            "unsafe_acceptance_rate_90": 0.4985372988785958,
+            "correctness_auroc": 0.6758905478712961,
+            "ece": 0.318841116651822,
+            "exact_set_error_rate": 0.5284178187403994,
+            "highest_confidence_decile_error_rate": 0.22637362637362637,
+            "lowest_confidence_decile_error_rate": 0.7978021978021979
+          },
+          {
+            "q": 0.25,
+            "tie_averaged_aurc": 0.41923831253709454,
+            "canonical_stable_aurc": 0.4192605563074754,
+            "unsafe_acceptance_rate_90": 0.5041443198439786,
+            "correctness_auroc": 0.6334406291112764,
+            "ece": 0.318841116651822,
+            "exact_set_error_rate": 0.5284178187403994,
+            "highest_confidence_decile_error_rate": 0.2967032967032967,
+            "lowest_confidence_decile_error_rate": 0.7472527472527473
+          },
+          {
+            "q": 0.5,
+            "tie_averaged_aurc": 0.46164557286332253,
+            "canonical_stable_aurc": 0.46166531870052224,
+            "unsafe_acceptance_rate_90": 0.5121891760117017,
+            "correctness_auroc": 0.5865879246933983,
+            "ece": 0.3188411166518221,
+            "exact_set_error_rate": 0.5284178187403994,
+            "highest_confidence_decile_error_rate": 0.4,
+            "lowest_confidence_decile_error_rate": 0.6747252747252748
+          },
+          {
+            "q": 0.75,
+            "tie_averaged_aurc": 0.49637339288414073,
+            "canonical_stable_aurc": 0.49642081467964366,
+            "unsafe_acceptance_rate_90": 0.5199902486591906,
+            "correctness_auroc": 0.5447069176886723,
+            "ece": 0.318841116651822,
+            "exact_set_error_rate": 0.5284178187403994,
+            "highest_confidence_decile_error_rate": 0.46813186813186813,
+            "lowest_confidence_decile_error_rate": 0.6043956043956044
+          },
+          {
+            "q": 1.0,
+            "tie_averaged_aurc": 0.534098307840059,
+            "canonical_stable_aurc": 0.534113423682544,
+            "unsafe_acceptance_rate_90": 0.5275475377864456,
+            "correctness_auroc": 0.49344408432261627,
+            "ece": 0.31884111665182197,
+            "exact_set_error_rate": 0.5284178187403994,
+            "highest_confidence_decile_error_rate": 0.5428571428571428,
+            "lowest_confidence_decile_error_rate": 0.5362637362637362
+          }
+        ],
+        "joint": [
+          {
+            "q": 0.0,
+            "tie_averaged_aurc": 0.3914506409586584,
+            "canonical_stable_aurc": 0.39148755494536613,
+            "unsafe_acceptance_rate_90": 0.48829839102876643,
+            "correctness_auroc": 0.6580834174699172,
+            "ece": 0.3326254916523207,
+            "exact_set_error_rate": 0.5163484748738205,
+            "highest_confidence_decile_error_rate": 0.2813186813186813,
+            "lowest_confidence_decile_error_rate": 0.7692307692307693
+          },
+          {
+            "q": 0.25,
+            "tie_averaged_aurc": 0.4196121921939939,
+            "canonical_stable_aurc": 0.4196467160068349,
+            "unsafe_acceptance_rate_90": 0.49585568015602144,
+            "correctness_auroc": 0.6210200632007793,
+            "ece": 0.3326254916523207,
+            "exact_set_error_rate": 0.5163484748738205,
+            "highest_confidence_decile_error_rate": 0.33186813186813185,
+            "lowest_confidence_decile_error_rate": 0.701098901098901
+          },
+          {
+            "q": 0.5,
+            "tie_averaged_aurc": 0.4546144605313197,
+            "canonical_stable_aurc": 0.4546446053515222,
+            "unsafe_acceptance_rate_90": 0.5068259385665529,
+            "correctness_auroc": 0.5768603119314032,
+            "ece": 0.3326254916523208,
+            "exact_set_error_rate": 0.5163484748738205,
+            "highest_confidence_decile_error_rate": 0.4,
+            "lowest_confidence_decile_error_rate": 0.6021978021978022
+          },
+          {
+            "q": 0.75,
+            "tie_averaged_aurc": 0.4906806831331743,
+            "canonical_stable_aurc": 0.49070284318917945,
+            "unsafe_acceptance_rate_90": 0.5119453924914675,
+            "correctness_auroc": 0.5351002851516734,
+            "ece": 0.33263801167427415,
+            "exact_set_error_rate": 0.5163484748738205,
+            "highest_confidence_decile_error_rate": 0.47692307692307695,
+            "lowest_confidence_decile_error_rate": 0.5560439560439561
+          },
+          {
+            "q": 1.0,
+            "tie_averaged_aurc": 0.5258358469657349,
+            "canonical_stable_aurc": 0.5258183633462319,
+            "unsafe_acceptance_rate_90": 0.5192588980984886,
+            "correctness_auroc": 0.4902785608671943,
+            "ece": 0.33351578213729804,
+            "exact_set_error_rate": 0.5163484748738205,
+            "highest_confidence_decile_error_rate": 0.5494505494505495,
+            "lowest_confidence_decile_error_rate": 0.4901098901098901
+          }
+        ]
+      },
+      "C1": {
+        "action": {
+          "action_only": [
+            {
+              "q": 0.0,
+              "brightness": 0.10730743910467412,
+              "blur": 0.13276278253236778,
+              "noise": 0.13846829054202325,
+              "mean_three": 0.1261795040596884
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.2813254333991661,
+              "blur": 0.2991002852754005,
+              "noise": 0.30063638358569233,
+              "mean_three": 0.29368736742008633
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.4524906736888304,
+              "blur": 0.467193328944481,
+              "noise": 0.46236559139784944,
+              "mean_three": 0.46068319801038693
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.619705946894887,
+              "blur": 0.6267281105990783,
+              "noise": 0.6221198156682027,
+              "mean_three": 0.6228512910540561
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.7882378757954794,
+              "blur": 0.793065613342111,
+              "noise": 0.7847267939433838,
+              "mean_three": 0.7886767610269915
+            }
+          ],
+          "joint": [
+            {
+              "q": 0.0,
+              "brightness": 0.07746324336186088,
+              "blur": 0.11718235681369323,
+              "noise": 0.10138248847926268,
+              "mean_three": 0.09867602955160559
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.25960061443932414,
+              "blur": 0.2903225806451613,
+              "noise": 0.27781435154707046,
+              "mean_three": 0.27591251554385193
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.4333991661180601,
+              "blur": 0.44941847706824667,
+              "noise": 0.4421768707482993,
+              "mean_three": 0.44166483797820205
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.6177309633530832,
+              "blur": 0.6227781435154707,
+              "noise": 0.6155365371955234,
+              "mean_three": 0.6186818813546924
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.7965766951942067,
+              "blur": 0.793723941189379,
+              "noise": 0.7921878428790872,
+              "mean_three": 0.7941628264208909
+            }
+          ]
+        },
+        "rationale": {
+          "joint": [
+            {
+              "q": 0.0,
+              "brightness": 0.9328907907248921,
+              "blur": 0.8945614805061809,
+              "noise": 0.9163082437275986,
+              "mean_three": 0.9145868383195572
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.7344634628044767,
+              "blur": 0.7035622851291053,
+              "noise": 0.7215638943749543,
+              "mean_three": 0.7198632141028455
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.5360909955380001,
+              "blur": 0.5121059176358715,
+              "noise": 0.5251883549118572,
+              "mean_three": 0.5244617560285763
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.3334101382488479,
+              "blur": 0.32187111403701263,
+              "noise": 0.3292663301879892,
+              "mean_three": 0.32818252749128324
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.13313949235608222,
+              "blur": 0.12880184331797234,
+              "noise": 0.13161436617657815,
+              "mean_three": 0.1311852339502109
+            }
+          ]
+        }
+      },
+      "primary_curves": {
+        "A": [
+          [
+            0.6679932568471639,
+            0.5919768539127281,
+            0.5208334987248164,
+            0.45455349799851963,
+            0.37815419870826616
+          ],
+          [
+            0.6835912836700506,
+            0.6053547145880254,
+            0.5323811122440046,
+            0.4620215674709379,
+            0.3810794860680038
+          ]
+        ],
+        "R": [
+          [
+            0.2568375984960144,
+            0.20950896893569718,
+            0.16512388638360279,
+            0.12098177054989029,
+            0.07454340004720525
+          ]
+        ],
+        "S": [
+          [
+            0.38510776352390635,
+            0.41923831253709454,
+            0.46164557286332253,
+            0.49637339288414073,
+            0.534098307840059
+          ],
+          [
+            0.3914506409586584,
+            0.4196121921939939,
+            0.4546144605313197,
+            0.4906806831331743,
+            0.5258358469657349
+          ]
+        ],
+        "C1": [
+          [
+            0.1261795040596884,
+            0.29368736742008633,
+            0.46068319801038693,
+            0.6228512910540561,
+            0.7886767610269915
+          ],
+          [
+            0.09867602955160559,
+            0.27591251554385193,
+            0.44166483797820205,
+            0.6186818813546924,
+            0.7941628264208909
+          ],
+          [
+            0.9145868383195572,
+            0.7198632141028455,
+            0.5244617560285763,
+            0.32818252749128324,
+            0.1311852339502109
+          ]
+        ]
+      },
+      "axis_bottlenecks": {
+        "A": 0.0662800007262968,
+        "R": 0.0441421158337125,
+        "S": 0.028161551235335536,
+        "C1": 0.1621680930436692
+      }
+    },
+    "46": {
+      "A": {
+        "action_only": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.6836639955213245,
+            "micro_f1": 0.7130398086932058,
+            "per_class_f1": {
+              "Forward": 0.8010154266744777,
+              "Stop": 0.7534246575342466,
+              "Left": 0.5829991980753809,
+              "Right": 0.5972166998011929
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2637,
+              "Stop": 1985,
+              "Left": 1269,
+              "Right": 1176
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.6061628955421774,
+            "micro_f1": 0.6386270924180616,
+            "per_class_f1": {
+              "Forward": 0.7416520210896309,
+              "Stop": 0.673679060665362,
+              "Left": 0.4971932638331997,
+              "Right": 0.512127236580517
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2637,
+              "Stop": 1985,
+              "Left": 1269,
+              "Right": 1176
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.5308596429028704,
+            "micro_f1": 0.566043044028696,
+            "per_class_f1": {
+              "Forward": 0.6811169693419254,
+              "Stop": 0.5983365949119374,
+              "Left": 0.41058540497193263,
+              "Right": 0.43339960238568587
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2637,
+              "Stop": 1985,
+              "Left": 1269,
+              "Right": 1176
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.4595255937161953,
+            "micro_f1": 0.49585033056688704,
+            "per_class_f1": {
+              "Forward": 0.6190197227104082,
+              "Stop": 0.5220156555772995,
+              "Left": 0.3392141138732959,
+              "Right": 0.35785288270377735
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2637,
+              "Stop": 1985,
+              "Left": 1269,
+              "Right": 1176
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.37878667115216913,
+            "micro_f1": 0.41665494443662965,
+            "per_class_f1": {
+              "Forward": 0.5514547939855498,
+              "Stop": 0.4334637964774951,
+              "Left": 0.26303127506014434,
+              "Right": 0.2671968190854871
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2637,
+              "Stop": 1985,
+              "Left": 1269,
+              "Right": 1176
+            }
+          }
+        ],
+        "joint": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.6824921978165104,
+            "micro_f1": 0.7217043941411452,
+            "per_class_f1": {
+              "Forward": 0.8140527950310559,
+              "Stop": 0.7587952417109592,
+              "Left": 0.546692607003891,
+              "Right": 0.6104281475201356
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2668,
+              "Stop": 1848,
+              "Left": 831,
+              "Right": 1020
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.596747093086458,
+            "micro_f1": 0.6415150170143512,
+            "per_class_f1": {
+              "Forward": 0.7519409937888198,
+              "Stop": 0.6752720830169577,
+              "Left": 0.44260700389105057,
+              "Right": 0.5171682916490038
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2668,
+              "Stop": 1848,
+              "Left": 831,
+              "Right": 1020
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.5194840093607589,
+            "micro_f1": 0.5670957242195591,
+            "per_class_f1": {
+              "Forward": 0.6906055900621118,
+              "Stop": 0.592255125284738,
+              "Left": 0.3550583657587549,
+              "Right": 0.4400169563374311
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2668,
+              "Stop": 1848,
+              "Left": 831,
+              "Right": 1020
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.44189718473418765,
+            "micro_f1": 0.492084627903536,
+            "per_class_f1": {
+              "Forward": 0.6277173913043478,
+              "Stop": 0.5112629713996456,
+              "Left": 0.2801556420233463,
+              "Right": 0.34845273420941075
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2668,
+              "Stop": 1848,
+              "Left": 831,
+              "Right": 1020
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.3623051332162115,
+            "micro_f1": 0.41485426838289685,
+            "per_class_f1": {
+              "Forward": 0.5632763975155279,
+              "Stop": 0.42622120982029865,
+              "Left": 0.20622568093385213,
+              "Right": 0.2534972445951674
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2668,
+              "Stop": 1848,
+              "Left": 831,
+              "Right": 1020
+            }
+          }
+        ]
+      },
+      "R": {
+        "joint": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.24582372499885144,
+            "micro_f1": 0.4736375981578792,
+            "per_class_f1": {
+              "green_light": 0.6333109469442579,
+              "follow": 0.4578096947935368,
+              "road_clear": 0.2946357085668535,
+              "red_light": 0.6072210065645515,
+              "traffic_sign": 0.4339622641509434,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.7137210615471485,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.42165709598031176,
+              "right_green_light": 0.3278955954323002,
+              "right_follow": 0.27729257641921395,
+              "no_right_lane": 0.5993330157217722,
+              "right_obstacle": 0.1643835616438356,
+              "right_solid_line": 0.23107569721115537
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1404,
+              "follow": 447,
+              "road_clear": 308,
+              "red_light": 745,
+              "traffic_sign": 122,
+              "car": 0,
+              "person": 0,
+              "rider": 734,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 0,
+              "left_solid_line": 0,
+              "right_lane": 359,
+              "right_green_light": 329,
+              "right_follow": 203,
+              "no_right_lane": 917,
+              "right_obstacle": 123,
+              "right_solid_line": 99
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.2006170991850127,
+            "micro_f1": 0.39274960146424986,
+            "per_class_f1": {
+              "green_light": 0.5513767629281396,
+              "follow": 0.3608617594254937,
+              "road_clear": 0.2465972778222578,
+              "red_light": 0.49015317286652077,
+              "traffic_sign": 0.33962264150943394,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.5894974590626765,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.32977850697292865,
+              "right_green_light": 0.2740619902120718,
+              "right_follow": 0.2183406113537118,
+              "no_right_lane": 0.5088137208194379,
+              "right_obstacle": 0.1285563751317176,
+              "right_solid_line": 0.1752988047808765
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1404,
+              "follow": 447,
+              "road_clear": 308,
+              "red_light": 745,
+              "traffic_sign": 122,
+              "car": 0,
+              "person": 0,
+              "rider": 734,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 0,
+              "left_solid_line": 0,
+              "right_lane": 359,
+              "right_green_light": 329,
+              "right_follow": 203,
+              "no_right_lane": 917,
+              "right_obstacle": 123,
+              "right_solid_line": 99
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.15841481272186791,
+            "micro_f1": 0.3164669067721556,
+            "per_class_f1": {
+              "green_light": 0.4694425789120215,
+              "follow": 0.289048473967684,
+              "road_clear": 0.188951160928743,
+              "red_light": 0.38840262582056895,
+              "traffic_sign": 0.23113207547169812,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.45962732919254656,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.24938474159146842,
+              "right_green_light": 0.2234910277324633,
+              "right_follow": 0.18340611353711792,
+              "no_right_lane": 0.4144830871843735,
+              "right_obstacle": 0.11380400421496312,
+              "right_solid_line": 0.11553784860557768
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1404,
+              "follow": 447,
+              "road_clear": 308,
+              "red_light": 745,
+              "traffic_sign": 122,
+              "car": 0,
+              "person": 0,
+              "rider": 734,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 0,
+              "left_solid_line": 0,
+              "right_lane": 359,
+              "right_green_light": 329,
+              "right_follow": 203,
+              "no_right_lane": 917,
+              "right_obstacle": 123,
+              "right_solid_line": 99
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.1147547373424411,
+            "micro_f1": 0.23746826474582275,
+            "per_class_f1": {
+              "green_light": 0.39019476158495636,
+              "follow": 0.19210053859964094,
+              "road_clear": 0.14411529223378702,
+              "red_light": 0.27680525164113784,
+              "traffic_sign": 0.12264150943396226,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.334274421230943,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.16078753076292043,
+              "right_green_light": 0.16639477977161501,
+              "right_follow": 0.13537117903930132,
+              "no_right_lane": 0.31919961886612674,
+              "right_obstacle": 0.08429926238145416,
+              "right_solid_line": 0.08366533864541832
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1404,
+              "follow": 447,
+              "road_clear": 308,
+              "red_light": 745,
+              "traffic_sign": 122,
+              "car": 0,
+              "person": 0,
+              "rider": 734,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 0,
+              "left_solid_line": 0,
+              "right_lane": 359,
+              "right_green_light": 329,
+              "right_follow": 203,
+              "no_right_lane": 917,
+              "right_obstacle": 123,
+              "right_solid_line": 99
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.07008410768888923,
+            "micro_f1": 0.15799728405266575,
+            "per_class_f1": {
+              "green_light": 0.30960376091336467,
+              "follow": 0.12208258527827648,
+              "road_clear": 0.08967173738991192,
+              "red_light": 0.18161925601750548,
+              "traffic_sign": 0.018867924528301886,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.18294748729531338,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.08039376538146022,
+              "right_green_light": 0.11419249592169657,
+              "right_follow": 0.07205240174672489,
+              "no_right_lane": 0.22772748928060982,
+              "right_obstacle": 0.05268703898840885,
+              "right_solid_line": 0.0199203187250996
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1404,
+              "follow": 447,
+              "road_clear": 308,
+              "red_light": 745,
+              "traffic_sign": 122,
+              "car": 0,
+              "person": 0,
+              "rider": 734,
+              "other_obstacle": 0,
+              "left_lane": 0,
+              "left_green_light": 0,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 0,
+              "left_solid_line": 0,
+              "right_lane": 359,
+              "right_green_light": 329,
+              "right_follow": 203,
+              "no_right_lane": 917,
+              "right_obstacle": 123,
+              "right_solid_line": 99
+            }
+          }
+        ]
+      },
+      "S": {
+        "action_only": [
+          {
+            "q": 0.0,
+            "tie_averaged_aurc": 0.38588694271168733,
+            "canonical_stable_aurc": 0.38590374051112847,
+            "unsafe_acceptance_rate_90": 0.48659190638712824,
+            "correctness_auroc": 0.6703146724363684,
+            "ece": 0.32320952659117813,
+            "exact_set_error_rate": 0.5167873601053324,
+            "highest_confidence_decile_error_rate": 0.25274725274725274,
+            "lowest_confidence_decile_error_rate": 0.789010989010989
+          },
+          {
+            "q": 0.25,
+            "tie_averaged_aurc": 0.4077608530381104,
+            "canonical_stable_aurc": 0.4077720599286748,
+            "unsafe_acceptance_rate_90": 0.49390541199414917,
+            "correctness_auroc": 0.637371256780653,
+            "ece": 0.32320952659117813,
+            "exact_set_error_rate": 0.5167873601053324,
+            "highest_confidence_decile_error_rate": 0.27692307692307694,
+            "lowest_confidence_decile_error_rate": 0.7230769230769231
+          },
+          {
+            "q": 0.5,
+            "tie_averaged_aurc": 0.4468844775526537,
+            "canonical_stable_aurc": 0.44687863032913505,
+            "unsafe_acceptance_rate_90": 0.5017064846416383,
+            "correctness_auroc": 0.589790115529021,
+            "ece": 0.3232095265911781,
+            "exact_set_error_rate": 0.5167873601053324,
+            "highest_confidence_decile_error_rate": 0.3516483516483517,
+            "lowest_confidence_decile_error_rate": 0.6527472527472528
+          },
+          {
+            "q": 0.75,
+            "tie_averaged_aurc": 0.47885997742354497,
+            "canonical_stable_aurc": 0.47885031908610853,
+            "unsafe_acceptance_rate_90": 0.5104826913700634,
+            "correctness_auroc": 0.5440355322607705,
+            "ece": 0.3232095265911781,
+            "exact_set_error_rate": 0.5167873601053324,
+            "highest_confidence_decile_error_rate": 0.42417582417582417,
+            "lowest_confidence_decile_error_rate": 0.5736263736263736
+          },
+          {
+            "q": 1.0,
+            "tie_averaged_aurc": 0.5207106380546349,
+            "canonical_stable_aurc": 0.5206992728129283,
+            "unsafe_acceptance_rate_90": 0.5187713310580204,
+            "correctness_auroc": 0.49248010397804737,
+            "ece": 0.3252321024619126,
+            "exact_set_error_rate": 0.5167873601053324,
+            "highest_confidence_decile_error_rate": 0.5010989010989011,
+            "lowest_confidence_decile_error_rate": 0.4989010989010989
+          }
+        ],
+        "joint": [
+          {
+            "q": 0.0,
+            "tie_averaged_aurc": 0.3408574634717821,
+            "canonical_stable_aurc": 0.3408557621801786,
+            "unsafe_acceptance_rate_90": 0.4500243783520234,
+            "correctness_auroc": 0.6744021122794566,
+            "ece": 0.2843486672811002,
+            "exact_set_error_rate": 0.48211542681588765,
+            "highest_confidence_decile_error_rate": 0.2,
+            "lowest_confidence_decile_error_rate": 0.7714285714285715
+          },
+          {
+            "q": 0.25,
+            "tie_averaged_aurc": 0.37765209796878707,
+            "canonical_stable_aurc": 0.37763731651727594,
+            "unsafe_acceptance_rate_90": 0.45855680156021456,
+            "correctness_auroc": 0.6248222730533933,
+            "ece": 0.2843486672811002,
+            "exact_set_error_rate": 0.48211542681588765,
+            "highest_confidence_decile_error_rate": 0.2725274725274725,
+            "lowest_confidence_decile_error_rate": 0.6945054945054945
+          },
+          {
+            "q": 0.5,
+            "tie_averaged_aurc": 0.417726196282222,
+            "canonical_stable_aurc": 0.4177149453699432,
+            "unsafe_acceptance_rate_90": 0.4687957094100439,
+            "correctness_auroc": 0.5746893876858273,
+            "ece": 0.2843486672811002,
+            "exact_set_error_rate": 0.48211542681588765,
+            "highest_confidence_decile_error_rate": 0.35384615384615387,
+            "lowest_confidence_decile_error_rate": 0.6021978021978022
+          },
+          {
+            "q": 0.75,
+            "tie_averaged_aurc": 0.44810537214675533,
+            "canonical_stable_aurc": 0.4481027055011438,
+            "unsafe_acceptance_rate_90": 0.47489029741589467,
+            "correctness_auroc": 0.5392069694421515,
+            "ece": 0.28434866728110025,
+            "exact_set_error_rate": 0.48211542681588765,
+            "highest_confidence_decile_error_rate": 0.4175824175824176,
+            "lowest_confidence_decile_error_rate": 0.5472527472527473
+          },
+          {
+            "q": 1.0,
+            "tie_averaged_aurc": 0.4904664623999554,
+            "canonical_stable_aurc": 0.49049561853463963,
+            "unsafe_acceptance_rate_90": 0.48293515358361777,
+            "correctness_auroc": 0.48837841278168226,
+            "ece": 0.28707526400057937,
+            "exact_set_error_rate": 0.48211542681588765,
+            "highest_confidence_decile_error_rate": 0.4967032967032967,
+            "lowest_confidence_decile_error_rate": 0.4747252747252747
+          }
+        ]
+      },
+      "C1": {
+        "action": {
+          "action_only": [
+            {
+              "q": 0.0,
+              "brightness": 0.09589642308536318,
+              "blur": 0.12332675005486066,
+              "noise": 0.1152073732718894,
+              "mean_three": 0.11147684880403774
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.26925608953258723,
+              "blur": 0.2901031380294053,
+              "noise": 0.2833004169409699,
+              "mean_three": 0.2808865481676541
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.44283519859556725,
+              "blur": 0.45622119815668205,
+              "noise": 0.4489795918367347,
+              "mean_three": 0.4493453295296614
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.6258503401360545,
+              "blur": 0.6251920122887865,
+              "noise": 0.6221198156682027,
+              "mean_three": 0.6243873893643479
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.8020627605881062,
+              "blur": 0.8003072196620584,
+              "noise": 0.7992100065832785,
+              "mean_three": 0.8005266622778143
+            }
+          ],
+          "joint": [
+            {
+              "q": 0.0,
+              "brightness": 0.05069124423963134,
+              "blur": 0.08009655475093264,
+              "noise": 0.06824665350010972,
+              "mean_three": 0.06634481749689124
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.22953697608075488,
+              "blur": 0.25170068027210885,
+              "noise": 0.24028966425279788,
+              "mean_three": 0.24050910686855387
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.40662716699583057,
+              "blur": 0.4204520517884573,
+              "noise": 0.4118937897739741,
+              "mean_three": 0.412991002852754
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.586350669299978,
+              "blur": 0.5900811937678297,
+              "noise": 0.5867895545314901,
+              "mean_three": 0.5877404725330994
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.7601492209787141,
+              "blur": 0.7551020408163265,
+              "noise": 0.7577353522053983,
+              "mean_three": 0.757662204666813
+            }
+          ]
+        },
+        "rationale": {
+          "joint": [
+            {
+              "q": 0.0,
+              "brightness": 0.9453514739229026,
+              "blur": 0.9232170287469827,
+              "noise": 0.9396423085363177,
+              "mean_three": 0.9360702704020678
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.7424365445102771,
+              "blur": 0.7276351400775364,
+              "noise": 0.7389803233121205,
+              "mean_three": 0.736350669299978
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.5378026479408967,
+              "blur": 0.5272072269768122,
+              "noise": 0.5392912003511082,
+              "mean_three": 0.5347670250896056
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.3368371004315705,
+              "blur": 0.3308243727598566,
+              "noise": 0.33930582985882524,
+              "mean_three": 0.3356557676834175
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.1377880184331797,
+              "blur": 0.13713334796284105,
+              "noise": 0.1393314314973301,
+              "mean_three": 0.13808426596445025
+            }
+          ]
+        }
+      },
+      "primary_curves": {
+        "A": [
+          [
+            0.6836639955213245,
+            0.6061628955421774,
+            0.5308596429028704,
+            0.4595255937161953,
+            0.37878667115216913
+          ],
+          [
+            0.6824921978165104,
+            0.596747093086458,
+            0.5194840093607589,
+            0.44189718473418765,
+            0.3623051332162115
+          ]
+        ],
+        "R": [
+          [
+            0.24582372499885144,
+            0.2006170991850127,
+            0.15841481272186791,
+            0.1147547373424411,
+            0.07008410768888923
+          ]
+        ],
+        "S": [
+          [
+            0.38588694271168733,
+            0.4077608530381104,
+            0.4468844775526537,
+            0.47885997742354497,
+            0.5207106380546349
+          ],
+          [
+            0.3408574634717821,
+            0.37765209796878707,
+            0.417726196282222,
+            0.44810537214675533,
+            0.4904664623999554
+          ]
+        ],
+        "C1": [
+          [
+            0.11147684880403774,
+            0.2808865481676541,
+            0.4493453295296614,
+            0.6243873893643479,
+            0.8005266622778143
+          ],
+          [
+            0.06634481749689124,
+            0.24050910686855387,
+            0.412991002852754,
+            0.5877404725330994,
+            0.757662204666813
+          ],
+          [
+            0.9360702704020678,
+            0.736350669299978,
+            0.5347670250896056,
+            0.3356557676834175,
+            0.13808426596445025
+          ]
+        ]
+      },
+      "axis_bottlenecks": {
+        "A": 0.07133404918667507,
+        "R": 0.04220228646314478,
+        "S": 0.02187391032642305,
+        "C1": 0.16845878136200726
+      }
+    },
+    "47": {
+      "A": {
+        "action_only": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.6813323662454802,
+            "micro_f1": 0.716514487022791,
+            "per_class_f1": {
+              "Forward": 0.8062645011600929,
+              "Stop": 0.7599113518837725,
+              "Left": 0.5800981704596162,
+              "Right": 0.5790554414784395
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2688,
+              "Stop": 1958,
+              "Left": 1016,
+              "Right": 1096
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.598879572584317,
+            "micro_f1": 0.6400172550147386,
+            "per_class_f1": {
+              "Forward": 0.7474864655839134,
+              "Stop": 0.686037921694164,
+              "Left": 0.47657295850066933,
+              "Right": 0.4854209445585216
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2688,
+              "Stop": 1958,
+              "Left": 1016,
+              "Right": 1096
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.525606415742281,
+            "micro_f1": 0.5688403192177727,
+            "per_class_f1": {
+              "Forward": 0.688708430007734,
+              "Stop": 0.6042846589509973,
+              "Left": 0.38643462739848283,
+              "Right": 0.42299794661190965
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2688,
+              "Stop": 1958,
+              "Left": 1016,
+              "Right": 1096
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.45528436813471573,
+            "micro_f1": 0.49881371773671723,
+            "per_class_f1": {
+              "Forward": 0.6252900232018561,
+              "Stop": 0.525486333415415,
+              "Left": 0.321285140562249,
+              "Right": 0.3490759753593429
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2688,
+              "Stop": 1958,
+              "Left": 1016,
+              "Right": 1096
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.3737253690551175,
+            "micro_f1": 0.4211661514127543,
+            "per_class_f1": {
+              "Forward": 0.5645784996133024,
+              "Stop": 0.4412706229992613,
+              "Left": 0.23114680946006247,
+              "Right": 0.25790554414784395
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2688,
+              "Stop": 1958,
+              "Left": 1016,
+              "Right": 1096
+            }
+          }
+        ],
+        "joint": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.678809184870399,
+            "micro_f1": 0.7151962914674779,
+            "per_class_f1": {
+              "Forward": 0.8016032064128257,
+              "Stop": 0.7651677373304783,
+              "Left": 0.5474964904071128,
+              "Right": 0.6009693053311793
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2506,
+              "Stop": 2100,
+              "Left": 912,
+              "Right": 1137
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.5985057998966349,
+            "micro_f1": 0.6385629436476894,
+            "per_class_f1": {
+              "Forward": 0.7362725450901804,
+              "Stop": 0.6899833452295979,
+              "Left": 0.4548432381843706,
+              "Right": 0.5129240710823909
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2506,
+              "Stop": 2100,
+              "Left": 912,
+              "Right": 1137
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.5236643950246629,
+            "micro_f1": 0.5658409387222947,
+            "per_class_f1": {
+              "Forward": 0.6729458917835671,
+              "Stop": 0.6138472519628837,
+              "Left": 0.37248479176415533,
+              "Right": 0.43537964458804523
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2506,
+              "Stop": 2100,
+              "Left": 912,
+              "Right": 1137
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.4508268624521315,
+            "micro_f1": 0.4944227147616978,
+            "per_class_f1": {
+              "Forward": 0.6096192384769539,
+              "Stop": 0.5386628598620034,
+              "Left": 0.300421151146467,
+              "Right": 0.3546042003231018
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2506,
+              "Stop": 2100,
+              "Left": 912,
+              "Right": 1137
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.37032627663882034,
+            "micro_f1": 0.41605099232217874,
+            "per_class_f1": {
+              "Forward": 0.5410821643286573,
+              "Stop": 0.45776826076611943,
+              "Left": 0.21993448759943846,
+              "Right": 0.26252019386106623
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "Forward": 2484,
+              "Stop": 2103,
+              "Left": 1225,
+              "Right": 1339
+            },
+            "predicted_positive_count": {
+              "Forward": 2506,
+              "Stop": 2100,
+              "Left": 912,
+              "Right": 1137
+            }
+          }
+        ]
+      },
+      "R": {
+        "joint": [
+          {
+            "q": 0.0,
+            "macro_f1": 0.30405073603883065,
+            "micro_f1": 0.5267993874425727,
+            "per_class_f1": {
+              "green_light": 0.6064420584968531,
+              "follow": 0.5104,
+              "road_clear": 0.4098798397863818,
+              "red_light": 0.6303696303696303,
+              "traffic_sign": 0.425629290617849,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.7541157727031333,
+              "other_obstacle": 0.043478260869565216,
+              "left_lane": 0.0,
+              "left_green_light": 0.027972027972027972,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.13658536585365855,
+              "left_solid_line": 0.0,
+              "right_lane": 0.527363184079602,
+              "right_green_light": 0.4474053295932679,
+              "right_follow": 0.4816396242527754,
+              "no_right_lane": 0.5890547263681593,
+              "right_obstacle": 0.39068994181213634,
+              "right_solid_line": 0.40404040404040403
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1127,
+              "follow": 583,
+              "road_clear": 557,
+              "red_light": 919,
+              "traffic_sign": 135,
+              "car": 0,
+              "person": 0,
+              "rider": 846,
+              "other_obstacle": 3,
+              "left_lane": 0,
+              "left_green_light": 7,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 30,
+              "left_solid_line": 0,
+              "right_lane": 547,
+              "right_green_light": 529,
+              "right_follow": 458,
+              "no_right_lane": 828,
+              "right_obstacle": 377,
+              "right_solid_line": 191
+            }
+          },
+          {
+            "q": 0.25,
+            "macro_f1": 0.24993781533794723,
+            "micro_f1": 0.43404069131481077,
+            "per_class_f1": {
+              "green_light": 0.5190670122176971,
+              "follow": 0.4,
+              "road_clear": 0.33377837116154874,
+              "red_light": 0.5104895104895105,
+              "traffic_sign": 0.3524027459954233,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.6149761019649496,
+              "other_obstacle": 0.043478260869565216,
+              "left_lane": 0.0,
+              "left_green_light": 0.027972027972027972,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.11707317073170732,
+              "left_solid_line": 0.0,
+              "right_lane": 0.4093816631130064,
+              "right_green_light": 0.3800841514726508,
+              "right_follow": 0.39111870196413323,
+              "no_right_lane": 0.5014925373134328,
+              "right_obstacle": 0.32751454696591853,
+              "right_solid_line": 0.31986531986531985
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1127,
+              "follow": 583,
+              "road_clear": 557,
+              "red_light": 919,
+              "traffic_sign": 135,
+              "car": 0,
+              "person": 0,
+              "rider": 846,
+              "other_obstacle": 3,
+              "left_lane": 0,
+              "left_green_light": 7,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 30,
+              "left_solid_line": 0,
+              "right_lane": 547,
+              "right_green_light": 529,
+              "right_follow": 458,
+              "no_right_lane": 828,
+              "right_obstacle": 377,
+              "right_solid_line": 191
+            }
+          },
+          {
+            "q": 0.5,
+            "macro_f1": 0.1974246230105619,
+            "micro_f1": 0.35101728287026907,
+            "per_class_f1": {
+              "green_light": 0.4457608293224732,
+              "follow": 0.3184,
+              "road_clear": 0.27102803738317754,
+              "red_light": 0.41058941058941056,
+              "traffic_sign": 0.2562929061784897,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.4843335103558152,
+              "other_obstacle": 0.021739130434782608,
+              "left_lane": 0.0,
+              "left_green_light": 0.013986013986013986,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.06829268292682927,
+              "left_solid_line": 0.0,
+              "right_lane": 0.3326226012793177,
+              "right_green_light": 0.29873772791023845,
+              "right_follow": 0.30913748932536295,
+              "no_right_lane": 0.41492537313432837,
+              "right_obstacle": 0.26101413133832085,
+              "right_solid_line": 0.23905723905723905
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1127,
+              "follow": 583,
+              "road_clear": 557,
+              "red_light": 919,
+              "traffic_sign": 135,
+              "car": 0,
+              "person": 0,
+              "rider": 846,
+              "other_obstacle": 3,
+              "left_lane": 0,
+              "left_green_light": 7,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 30,
+              "left_solid_line": 0,
+              "right_lane": 547,
+              "right_green_light": 529,
+              "right_follow": 458,
+              "no_right_lane": 828,
+              "right_obstacle": 377,
+              "right_solid_line": 191
+            }
+          },
+          {
+            "q": 0.75,
+            "macro_f1": 0.14183022403269763,
+            "micro_f1": 0.2617589148982717,
+            "per_class_f1": {
+              "green_light": 0.36504998148833767,
+              "follow": 0.2192,
+              "road_clear": 0.21228304405874499,
+              "red_light": 0.3006993006993007,
+              "traffic_sign": 0.12814645308924486,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.35156664896441847,
+              "other_obstacle": 0.021739130434782608,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.03902439024390244,
+              "left_solid_line": 0.0,
+              "right_lane": 0.2260127931769723,
+              "right_green_light": 0.23281907433380084,
+              "right_follow": 0.22032450896669514,
+              "no_right_lane": 0.3174129353233831,
+              "right_obstacle": 0.20947630922693267,
+              "right_solid_line": 0.13468013468013468
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1127,
+              "follow": 583,
+              "road_clear": 557,
+              "red_light": 919,
+              "traffic_sign": 135,
+              "car": 0,
+              "person": 0,
+              "rider": 846,
+              "other_obstacle": 3,
+              "left_lane": 0,
+              "left_green_light": 7,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 30,
+              "left_solid_line": 0,
+              "right_lane": 547,
+              "right_green_light": 529,
+              "right_follow": 458,
+              "no_right_lane": 828,
+              "right_obstacle": 377,
+              "right_solid_line": 191
+            }
+          },
+          {
+            "q": 1.0,
+            "macro_f1": 0.08500959169915295,
+            "micro_f1": 0.17009407131918616,
+            "per_class_f1": {
+              "green_light": 0.27841540170307294,
+              "follow": 0.1376,
+              "road_clear": 0.14018691588785046,
+              "red_light": 0.2097902097902098,
+              "traffic_sign": 0.02745995423340961,
+              "car": 0.0,
+              "person": 0.0,
+              "rider": 0.201805629314923,
+              "other_obstacle": 0.0,
+              "left_lane": 0.0,
+              "left_green_light": 0.0,
+              "left_follow": 0.0,
+              "no_left_lane": 0.0,
+              "left_obstacle": 0.0,
+              "left_solid_line": 0.0,
+              "right_lane": 0.14072494669509594,
+              "right_green_light": 0.1640953716690042,
+              "right_follow": 0.11955593509820667,
+              "no_right_lane": 0.208955223880597,
+              "right_obstacle": 0.12967581047381546,
+              "right_solid_line": 0.026936026936026935
+            },
+            "threshold": 0.5,
+            "target_positive_count": {
+              "green_light": 1574,
+              "follow": 667,
+              "road_clear": 941,
+              "red_light": 1083,
+              "traffic_sign": 302,
+              "car": 39,
+              "person": 34,
+              "rider": 1037,
+              "other_obstacle": 89,
+              "left_lane": 29,
+              "left_green_light": 136,
+              "left_follow": 68,
+              "no_left_lane": 23,
+              "left_obstacle": 175,
+              "left_solid_line": 69,
+              "right_lane": 860,
+              "right_green_light": 897,
+              "right_follow": 713,
+              "no_right_lane": 1182,
+              "right_obstacle": 826,
+              "right_solid_line": 403
+            },
+            "predicted_positive_count": {
+              "green_light": 1127,
+              "follow": 583,
+              "road_clear": 557,
+              "red_light": 919,
+              "traffic_sign": 135,
+              "car": 0,
+              "person": 0,
+              "rider": 846,
+              "other_obstacle": 3,
+              "left_lane": 0,
+              "left_green_light": 7,
+              "left_follow": 0,
+              "no_left_lane": 0,
+              "left_obstacle": 30,
+              "left_solid_line": 0,
+              "right_lane": 547,
+              "right_green_light": 529,
+              "right_follow": 458,
+              "no_right_lane": 828,
+              "right_obstacle": 377,
+              "right_solid_line": 191
+            }
+          }
+        ]
+      },
+      "S": {
+        "action_only": [
+          {
+            "q": 0.0,
+            "tie_averaged_aurc": 0.3996210966427614,
+            "canonical_stable_aurc": 0.39964274154775264,
+            "unsafe_acceptance_rate_90": 0.48293515358361777,
+            "correctness_auroc": 0.6699373114368742,
+            "ece": 0.32161031577789595,
+            "exact_set_error_rate": 0.5154707044107966,
+            "highest_confidence_decile_error_rate": 0.34725274725274724,
+            "lowest_confidence_decile_error_rate": 0.8087912087912088
+          },
+          {
+            "q": 0.25,
+            "tie_averaged_aurc": 0.4347423330387514,
+            "canonical_stable_aurc": 0.4347674310276428,
+            "unsafe_acceptance_rate_90": 0.492442710872745,
+            "correctness_auroc": 0.6191980205884712,
+            "ece": 0.3216103157778959,
+            "exact_set_error_rate": 0.5154707044107966,
+            "highest_confidence_decile_error_rate": 0.3978021978021978,
+            "lowest_confidence_decile_error_rate": 0.7230769230769231
+          },
+          {
+            "q": 0.5,
+            "tie_averaged_aurc": 0.4624198516108523,
+            "canonical_stable_aurc": 0.4624534314831696,
+            "unsafe_acceptance_rate_90": 0.49951243295953196,
+            "correctness_auroc": 0.5774455557714969,
+            "ece": 0.3216103157778959,
+            "exact_set_error_rate": 0.5154707044107966,
+            "highest_confidence_decile_error_rate": 0.42637362637362636,
+            "lowest_confidence_decile_error_rate": 0.6593406593406593
+          },
+          {
+            "q": 0.75,
+            "tie_averaged_aurc": 0.4923305753525674,
+            "canonical_stable_aurc": 0.4923538113998203,
+            "unsafe_acceptance_rate_90": 0.5053632374451487,
+            "correctness_auroc": 0.5412139609207742,
+            "ece": 0.3216103157778959,
+            "exact_set_error_rate": 0.5154707044107966,
+            "highest_confidence_decile_error_rate": 0.4857142857142857,
+            "lowest_confidence_decile_error_rate": 0.6065934065934065
+          },
+          {
+            "q": 1.0,
+            "tie_averaged_aurc": 0.524515474493009,
+            "canonical_stable_aurc": 0.5245384220284898,
+            "unsafe_acceptance_rate_90": 0.5131643100926377,
+            "correctness_auroc": 0.4948854662175085,
+            "ece": 0.3216103157778959,
+            "exact_set_error_rate": 0.5154707044107966,
+            "highest_confidence_decile_error_rate": 0.5406593406593406,
+            "lowest_confidence_decile_error_rate": 0.5362637362637362
+          }
+        ],
+        "joint": [
+          {
+            "q": 0.0,
+            "tie_averaged_aurc": 0.37892488363019594,
+            "canonical_stable_aurc": 0.3789384007301017,
+            "unsafe_acceptance_rate_90": 0.4887859580692345,
+            "correctness_auroc": 0.6851859393274995,
+            "ece": 0.32974071614036227,
+            "exact_set_error_rate": 0.522273425499232,
+            "highest_confidence_decile_error_rate": 0.24835164835164836,
+            "lowest_confidence_decile_error_rate": 0.8241758241758241
+          },
+          {
+            "q": 0.25,
+            "tie_averaged_aurc": 0.41288603400126517,
+            "canonical_stable_aurc": 0.41290794511102624,
+            "unsafe_acceptance_rate_90": 0.4953681131155534,
+            "correctness_auroc": 0.6428841633116269,
+            "ece": 0.3297407161403623,
+            "exact_set_error_rate": 0.522273425499232,
+            "highest_confidence_decile_error_rate": 0.3098901098901099,
+            "lowest_confidence_decile_error_rate": 0.7648351648351648
+          },
+          {
+            "q": 0.5,
+            "tie_averaged_aurc": 0.44850766609903253,
+            "canonical_stable_aurc": 0.4485385963977821,
+            "unsafe_acceptance_rate_90": 0.5070697220867869,
+            "correctness_auroc": 0.5935045722469052,
+            "ece": 0.32979212583890005,
+            "exact_set_error_rate": 0.522273425499232,
+            "highest_confidence_decile_error_rate": 0.378021978021978,
+            "lowest_confidence_decile_error_rate": 0.6593406593406593
+          },
+          {
+            "q": 0.75,
+            "tie_averaged_aurc": 0.48023358448077563,
+            "canonical_stable_aurc": 0.4802607135167202,
+            "unsafe_acceptance_rate_90": 0.5131643100926377,
+            "correctness_auroc": 0.5514437607840564,
+            "ece": 0.3301914404253677,
+            "exact_set_error_rate": 0.522273425499232,
+            "highest_confidence_decile_error_rate": 0.43736263736263736,
+            "lowest_confidence_decile_error_rate": 0.6043956043956044
+          },
+          {
+            "q": 1.0,
+            "tie_averaged_aurc": 0.5157315496903776,
+            "canonical_stable_aurc": 0.5157582959440795,
+            "unsafe_acceptance_rate_90": 0.522428083861531,
+            "correctness_auroc": 0.5048110884225072,
+            "ece": 0.33238586658292746,
+            "exact_set_error_rate": 0.522273425499232,
+            "highest_confidence_decile_error_rate": 0.5054945054945055,
+            "lowest_confidence_decile_error_rate": 0.5208791208791209
+          }
+        ]
+      },
+      "C1": {
+        "action": {
+          "action_only": [
+            {
+              "q": 0.0,
+              "brightness": 0.10533245556287031,
+              "blur": 0.13759052007899933,
+              "noise": 0.12574061882817644,
+              "mean_three": 0.1228878648233487
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.28000877770463023,
+              "blur": 0.30129471143296027,
+              "noise": 0.29383366249725695,
+              "mean_three": 0.2917123838782825
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.44941847706824667,
+              "blur": 0.4647794601711652,
+              "noise": 0.45709896861970595,
+              "mean_three": 0.45709896861970595
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.6251920122887865,
+              "blur": 0.6344086021505376,
+              "noise": 0.6289225367566381,
+              "mean_three": 0.6295077170653207
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.8011849901250823,
+              "blur": 0.8022822032038622,
+              "noise": 0.7967961378099627,
+              "mean_three": 0.8000877770463024
+            }
+          ],
+          "joint": [
+            {
+              "q": 0.0,
+              "brightness": 0.10291858678955453,
+              "blur": 0.130348913759052,
+              "noise": 0.10840465218345402,
+              "mean_three": 0.11389071757735351
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.2804476629361422,
+              "blur": 0.2980030721966206,
+              "noise": 0.28198376124643404,
+              "mean_three": 0.2868114987930656
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.4520517884573184,
+              "blur": 0.4652183454026772,
+              "noise": 0.4520517884573184,
+              "mean_three": 0.45644064077243796
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.6326530612244898,
+              "blur": 0.6352863726135616,
+              "noise": 0.6284836515251262,
+              "mean_three": 0.6321410284543926
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.80403774412991,
+              "blur": 0.8005266622778143,
+              "noise": 0.8005266622778143,
+              "mean_three": 0.8016970228951795
+            }
+          ]
+        },
+        "rationale": {
+          "joint": [
+            {
+              "q": 0.0,
+              "brightness": 0.9209092239046157,
+              "blur": 0.884551239850779,
+              "noise": 0.9108697242337797,
+              "mean_three": 0.9054433959963913
+            },
+            {
+              "q": 0.25,
+              "brightness": 0.7156718601419062,
+              "blur": 0.6888836640647042,
+              "noise": 0.7099188062321703,
+              "mean_three": 0.7048247768129269
+            },
+            {
+              "q": 0.5,
+              "brightness": 0.5164002006332487,
+              "blur": 0.49480547979560485,
+              "noise": 0.5098247593968462,
+              "mean_three": 0.5070101466085667
+            },
+            {
+              "q": 0.75,
+              "brightness": 0.31662748048528166,
+              "blur": 0.30232191186766566,
+              "noise": 0.3133489033094036,
+              "mean_three": 0.31076609855411697
+            },
+            {
+              "q": 1.0,
+              "brightness": 0.11353699698005162,
+              "blur": 0.10677293959058277,
+              "noise": 0.11103012633624877,
+              "mean_three": 0.11044668763562772
+            }
+          ]
+        }
+      },
+      "primary_curves": {
+        "A": [
+          [
+            0.6813323662454802,
+            0.598879572584317,
+            0.525606415742281,
+            0.45528436813471573,
+            0.3737253690551175
+          ],
+          [
+            0.678809184870399,
+            0.5985057998966349,
+            0.5236643950246629,
+            0.4508268624521315,
+            0.37032627663882034
+          ]
+        ],
+        "R": [
+          [
+            0.30405073603883065,
+            0.24993781533794723,
+            0.1974246230105619,
+            0.14183022403269763,
+            0.08500959169915295
+          ]
+        ],
+        "S": [
+          [
+            0.3996210966427614,
+            0.4347423330387514,
+            0.4624198516108523,
+            0.4923305753525674,
+            0.524515474493009
+          ],
+          [
+            0.37892488363019594,
+            0.41288603400126517,
+            0.44850766609903253,
+            0.48023358448077563,
+            0.5157315496903776
+          ]
+        ],
+        "C1": [
+          [
+            0.1228878648233487,
+            0.2917123838782825,
+            0.45709896861970595,
+            0.6295077170653207,
+            0.8000877770463024
+          ],
+          [
+            0.11389071757735351,
+            0.2868114987930656,
+            0.45644064077243796,
+            0.6321410284543926,
+            0.8016970228951795
+          ],
+          [
+            0.9054433959963913,
+            0.7048247768129269,
+            0.5070101466085667,
+            0.31076609855411697,
+            0.11044668763562772
+          ]
+        ]
+      },
+      "axis_bottlenecks": {
+        "A": 0.07032204760756522,
+        "R": 0.05251319232738533,
+        "S": 0.02767751857210088,
+        "C1": 0.16538658474142343
+      }
+    }
+  },
+  "mean_component_curves": {
+    "A": {
+      "Action-Only Macro-F1": {
+        "q": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "mean": [
+          0.6740501115284726,
+          0.5958948418283431,
+          0.5228246329846985,
+          0.4541538417761718,
+          0.375166417560964
+        ],
+        "sd": [
+          0.007762208256881623,
+          0.006719482874266664,
+          0.005651736071309553,
+          0.003787104245150083,
+          0.004225204436611579
+        ],
+        "expected_direction": "decreasing"
+      },
+      "Joint Action-Rationale Macro-F1": {
+        "q": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "mean": [
+          0.6855859853354236,
+          0.6051719031666077,
+          0.5301714746841023,
+          0.4572911299906754,
+          0.37654058117045147
+        ],
+        "sd": [
+          0.005937934340147165,
+          0.00771853699785891,
+          0.008796685379756372,
+          0.0109239074263809,
+          0.010126277884916598
+        ],
+        "expected_direction": "decreasing"
+      }
+    },
+    "R": {
+      "Joint Action-Rationale 21-label Macro-F1": {
+        "q": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "mean": [
+          0.27358892695121106,
+          0.22389021768740563,
+          0.17742524160517864,
+          0.12832973806130665,
+          0.0787372642006282
+        ],
+        "sd": [
+          0.02294289057402136,
+          0.019537734487865003,
+          0.015789775720026964,
+          0.010619497825062708,
+          0.006216348357356001
+        ],
+        "expected_direction": "decreasing"
+      }
+    },
+    "S": {
+      "Action-Only tie-averaged AURC": {
+        "q": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "mean": [
+          0.3888049256463214,
+          0.4184231754516066,
+          0.4552282364513925,
+          0.48811409915172943,
+          0.5270606434449552
+        ],
+        "sd": [
+          0.011154669145188168,
+          0.01170290604330716,
+          0.006896111814983706,
+          0.006995137803150341,
+          0.005265363322896941
+        ],
+        "expected_direction": "increasing"
+      },
+      "Joint Action-Rationale tie-averaged AURC": {
+        "q": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "mean": [
+          0.37221294855455594,
+          0.4062624687120702,
+          0.443546448412466,
+          0.4779349110049934,
+          0.5154197104373965
+        ],
+        "sd": [
+          0.022275371045143568,
+          0.018976691488270574,
+          0.017415416666405323,
+          0.01916849428363487,
+          0.015944156364241846
+        ],
+        "expected_direction": "increasing"
+      }
+    },
+    "C1": {
+      "Action-Only mean-three action flip": {
+        "q": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "mean": [
+          0.1185429010313803,
+          0.2862848365152512,
+          0.45297344744349355,
+          0.6227488845000366,
+          0.7919830297710482
+        ],
+        "sd": [
+          0.006141257546530371,
+          0.005955665224751841,
+          0.006010262218779739,
+          0.004684470255599631,
+          0.00789898590146938
+        ],
+        "expected_direction": "increasing"
+      },
+      "Joint Action-Rationale mean-three action flip": {
+        "q": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "mean": [
+          0.10243581303489138,
+          0.2749469680345257,
+          0.4464486870016824,
+          0.6200863140955307,
+          0.7937824592202471
+        ],
+        "sd": [
+          0.021562499861861942,
+          0.019835894285874046,
+          0.020325251606703933,
+          0.019010438754816446,
+          0.02124576522773865
+        ],
+        "expected_direction": "increasing"
+      },
+      "Joint Action-Rationale mean-three rationale Jaccard": {
+        "q": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "mean": [
+          0.9160032184916979,
+          0.7178690380402032,
+          0.5210079382495446,
+          0.3251745265438485,
+          0.1273355486587876
+        ],
+        "sd": [
+          0.011742036221982222,
+          0.01166343689883595,
+          0.010084845569334146,
+          0.009243404180759153,
+          0.010503337395095576
+        ],
+        "expected_direction": "decreasing"
+      }
+    }
+  },
+  "bootstrap_summary": {
+    "A": {
+      "mean_across_seeds": 0.06867079120852679,
+      "sd_across_seeds": 0.0022588850906306245,
+      "raw_by_seed": {
+        "43": 0.06893864888665868,
+        "44": 0.06647920963543813,
+        "45": 0.0662800007262968,
+        "46": 0.07133404918667507,
+        "47": 0.07032204760756522
+      },
+      "positive_seed_count": 5,
+      "association_component_bootstrap_ci": [
+        0.05967394960953711,
+        0.07280607804313423
+      ],
+      "subgates": {
+        "positive_five_seed_mean": true,
+        "at_least_four_positive_seeds": true,
+        "pointwise_ci_lower_positive": true,
+        "mean_component_curves_no_reversal": true
+      },
+      "passed": true
+    },
+    "R": {
+      "mean_across_seeds": 0.04641638273855058,
+      "sd_across_seeds": 0.003922767701070252,
+      "raw_by_seed": {
+        "43": 0.04744094904415169,
+        "44": 0.045783370024358616,
+        "45": 0.0441421158337125,
+        "46": 0.04220228646314478,
+        "47": 0.05251319232738533
+      },
+      "positive_seed_count": 5,
+      "association_component_bootstrap_ci": [
+        0.04057136812522538,
+        0.049523294784802115
+      ],
+      "subgates": {
+        "positive_five_seed_mean": true,
+        "at_least_four_positive_seeds": true,
+        "pointwise_ci_lower_positive": true,
+        "mean_component_curves_no_reversal": true
+      },
+      "passed": true
+    },
+    "S": {
+      "mean_across_seeds": 0.026935706684936833,
+      "sd_across_seeds": 0.004362616947396283,
+      "raw_by_seed": {
+        "43": 0.03315546824024729,
+        "44": 0.023810085050577412,
+        "45": 0.028161551235335536,
+        "46": 0.02187391032642305,
+        "47": 0.02767751857210088
+      },
+      "positive_seed_count": 5,
+      "association_component_bootstrap_ci": [
+        0.01837029762604111,
+        0.0300905967069704
+      ],
+      "subgates": {
+        "positive_five_seed_mean": true,
+        "at_least_four_positive_seeds": true,
+        "pointwise_ci_lower_positive": true,
+        "mean_component_curves_no_reversal": true
+      },
+      "passed": true
+    },
+    "C1": {
+      "mean_across_seeds": 0.16488918147904325,
+      "sd_across_seeds": 0.002335801464250192,
+      "raw_by_seed": {
+        "43": 0.16370419135396097,
+        "44": 0.1647282568941555,
+        "45": 0.1621680930436692,
+        "46": 0.16845878136200726,
+        "47": 0.16538658474142343
+      },
+      "positive_seed_count": 5,
+      "association_component_bootstrap_ci": [
+        0.15000245993197536,
+        0.16515225515222937
+      ],
+      "subgates": {
+        "positive_five_seed_mean": true,
+        "at_least_four_positive_seeds": true,
+        "pointwise_ci_lower_positive": true,
+        "mean_component_curves_no_reversal": true
+      },
+      "passed": true
+    },
+    "_bootstrap_diagnostics": {
+      "replicate_image_count_min": 4347,
+      "replicate_image_count_max": 4858,
+      "replicate_image_count_mean": 4555.03,
+      "one_shared_component_draw_per_replicate": true,
+      "components_drawn_per_replicate": 1625,
+      "inference_unit": "association component"
+    }
+  },
+  "decisions": {
+    "exact_preflight_passed": true,
+    "axis_gates": {
+      "A": true,
+      "R": true,
+      "S": true,
+      "C1": true
+    },
+    "full_Round8_measurement_pass": true
+  },
+  "claim_boundary": {
+    "if_passed_supports": "In five frozen BDD-OIA training seeds, under one outcome-blind nested association map and association-component-cluster conditional inference, A/R Macro-F1, S tie-averaged AURC, and C1 mean-three correspondence metrics satisfy the preregistered strict adjacent-step monotonic response gates.",
+    "does_not_support": [
+      "construct, ontology, grounding, faithfulness, causal, or real-safety validity",
+      "visual perturbation severity",
+      "monotonicity of A/R Micro-F1 or every R class",
+      "monotonicity of every C1 perturbation or S diagnostic",
+      "other maps, salts, thresholds, models, training protocols, datasets, or real driving",
+      "simultaneous 95 percent familywise coverage"
+    ],
+    "diagnostic_only": "A/R Micro-F1 and per-class; S stable AURC, UAR@90, AUROC, ECE, and deciles; individual C1 perturbations"
+  },
+  "failure_policy": "Preserve every result. Do not change q, map, salt, metric, bootstrap, bottleneck, threshold, seed, component, or gate."
+}

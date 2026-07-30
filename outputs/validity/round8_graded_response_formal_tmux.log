@@ -1,0 +1,32 @@
+{"bootstrap_completed": 100, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4629}
+{"bootstrap_completed": 200, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4577}
+{"bootstrap_completed": 300, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4574}
+{"bootstrap_completed": 400, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4540}
+{"bootstrap_completed": 500, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4564}
+{"bootstrap_completed": 600, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4522}
+{"bootstrap_completed": 700, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4528}
+{"bootstrap_completed": 800, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4540}
+{"bootstrap_completed": 900, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4624}
+{"bootstrap_completed": 1000, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4650}
+{"bootstrap_completed": 1100, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4658}
+{"bootstrap_completed": 1200, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4643}
+{"bootstrap_completed": 1300, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4503}
+{"bootstrap_completed": 1400, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4598}
+{"bootstrap_completed": 1500, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4448}
+{"bootstrap_completed": 1600, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4607}
+{"bootstrap_completed": 1700, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4643}
+{"bootstrap_completed": 1800, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4466}
+{"bootstrap_completed": 1900, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4576}
+{"bootstrap_completed": 2000, "bootstrap_total": 2000, "shared_component_draws": 1625, "shared_images": 4459}
+{
+  "status": "COMPLETED_ONE_SHOT",
+  "axis_gates": {
+    "A": true,
+    "R": true,
+    "S": true,
+    "C1": true
+  },
+  "full_Round8_measurement_pass": true,
+  "result": "outputs/validity/round8_graded_response_results.json",
+  "result_sha256": "4CD0FCD16ED4A3BAE1D378FD10B3A44705F2433FDF3C3E15A26FBCE303AF6FD3"
+}
