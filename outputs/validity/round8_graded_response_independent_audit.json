@@ -1,0 +1,587 @@
+{
+  "study": "Round 8 independent graded-response reproduction",
+  "status": "PASS",
+  "independence": {
+    "imports_arsc_eval_source": false,
+    "formal_analysis_script_imported": false,
+    "different_computation_path": {
+      "A_R": "component-aggregated TP/FP/FN counts",
+      "S": "confidence-group sufficient statistics with exact harmonic tie expectation",
+      "C1": "component-aggregated per-image flip/Jaccard events"
+    },
+    "bootstrap_draws_recreated_from_seed": true
+  },
+  "checks": [
+    {
+      "name": "all_frozen_artifact_hashes",
+      "passed": true,
+      "detail": {
+        "artifact_count": 17,
+        "failed": []
+      }
+    },
+    {
+      "name": "primitive_and_component_invariants",
+      "passed": true,
+      "detail": {
+        "array_count": 87,
+        "sample_count": 4557,
+        "source_map_shape": [
+          5,
+          4557
+        ],
+        "all_source_maps_bijections": true,
+        "packed_offsets_valid": true,
+        "packed_images_bijection": true,
+        "component_ids_reconstructed": true,
+        "all_maps_component_closed": true,
+        "component_count": 1625,
+        "component_size_min": 2,
+        "component_size_max": 14,
+        "exact_set_error_mismatches": {},
+        "result_parameters_match": true
+      }
+    },
+    {
+      "name": "published_csv_structure",
+      "passed": true,
+      "detail": {
+        "point_row_count": 1575,
+        "point_expected_row_count": 1575,
+        "bootstrap_row_count": 4,
+        "bootstrap_axes": [
+          "A",
+          "R",
+          "S",
+          "C1"
+        ]
+      }
+    },
+    {
+      "name": "independent_tie_formula_synthetic",
+      "passed": true,
+      "detail": {
+        "observed": 0.5555555555555556,
+        "brute_force_expected": 0.5555555555555556
+      }
+    },
+    {
+      "name": "independent_point_curve_detail_and_bottleneck_reproduction",
+      "passed": true,
+      "detail": {
+        "tolerance": 5e-13,
+        "maximum_primary_curve_abs_difference": 1.8762769116165146e-14,
+        "maximum_full_point_detail_abs_difference": 1.8762769116165146e-14,
+        "maximum_raw_bottleneck_abs_difference": 9.325873406851315e-15,
+        "maximum_mean_curve_or_sd_abs_difference": 5.374173328576148e-15,
+        "mean_curves_no_reversal": {
+          "A": true,
+          "R": true,
+          "S": true,
+          "C1": true
+        }
+      }
+    },
+    {
+      "name": "independent_exact_rng_cluster_bootstrap_reproduction",
+      "passed": true,
+      "detail": {
+        "tolerance": 5e-13,
+        "maximum_summary_abs_difference": 2.411265631607762e-15,
+        "image_count_absolute_differences": {
+          "min": 0,
+          "max": 0,
+          "mean": 0.0
+        },
+        "all_ci_lower_bounds_positive": true
+      }
+    },
+    {
+      "name": "independent_gate_decisions",
+      "passed": true,
+      "detail": {
+        "independent_axis_gates": {
+          "A": true,
+          "R": true,
+          "S": true,
+          "C1": true
+        },
+        "formal_axis_gates": {
+          "A": true,
+          "R": true,
+          "S": true,
+          "C1": true
+        },
+        "independent_full_pass": true,
+        "formal_full_pass": true
+      }
+    }
+  ],
+  "summary": {
+    "passed": 7,
+    "total": 7,
+    "failed": []
+  },
+  "frozen_artifact_hashes": {
+    "outputs/validity/round8_graded_response_results.json": {
+      "expected": "4CD0FCD16ED4A3BAE1D378FD10B3A44705F2433FDF3C3E15A26FBCE303AF6FD3",
+      "observed": "4CD0FCD16ED4A3BAE1D378FD10B3A44705F2433FDF3C3E15A26FBCE303AF6FD3",
+      "passed": true
+    },
+    "outputs/validity/round8_graded_response_point_estimates.csv": {
+      "expected": "CDCBE0BAA0DD949B9F18F2545C76C4BC98328B3F48D301D018CF09D1B2AB7620",
+      "observed": "CDCBE0BAA0DD949B9F18F2545C76C4BC98328B3F48D301D018CF09D1B2AB7620",
+      "passed": true
+    },
+    "outputs/validity/round8_graded_response_bootstrap.csv": {
+      "expected": "A4042CEBB040CBC744BAF3D2BF6081CEC76AABA64C1F0962C0C15465A3276C41",
+      "observed": "A4042CEBB040CBC744BAF3D2BF6081CEC76AABA64C1F0962C0C15465A3276C41",
+      "passed": true
+    },
+    "outputs/validity/round8_graded_response_primitives.npz": {
+      "expected": "6E51FB8842C6A6510364415C9D2D19C2307363024C34C8C7DE00DB57DCC7160C",
+      "observed": "6E51FB8842C6A6510364415C9D2D19C2307363024C34C8C7DE00DB57DCC7160C",
+      "passed": true
+    },
+    "outputs/validity/round8_graded_response_formal_tmux.log": {
+      "expected": "B09902A81C392F4FDBDEEF44A56DF93DEF15636480A6CCFB959785D9F2816351",
+      "observed": "B09902A81C392F4FDBDEEF44A56DF93DEF15636480A6CCFB959785D9F2816351",
+      "passed": true
+    },
+    "outputs/validity/round8_graded_response_protocol.json": {
+      "expected": "B96AC789BA12DD0FE65AF2138C54248C2154C1E1489D911571422EDE94B65357",
+      "observed": "B96AC789BA12DD0FE65AF2138C54248C2154C1E1489D911571422EDE94B65357",
+      "passed": true
+    },
+    "outputs/validity/round8_graded_response_protocol_amendment01.json": {
+      "expected": "D15E6F93FFEF686172F3887BAB609E6DA724ECE975BB125485A717688A020C8A",
+      "observed": "D15E6F93FFEF686172F3887BAB609E6DA724ECE975BB125485A717688A020C8A",
+      "passed": true
+    },
+    "outputs/research_review_memo_round8_preregister.md": {
+      "expected": "83C13D1112ABAF9CBA6504E26BBB0BDBBDD99C5D7A45DB27A840D0A695B65BF2",
+      "observed": "83C13D1112ABAF9CBA6504E26BBB0BDBBDD99C5D7A45DB27A840D0A695B65BF2",
+      "passed": true
+    },
+    "outputs/research_review_memo_round8_amendment01.md": {
+      "expected": "CBF47293F5D983772C305B53E7C1DACD056D1609C7BA4F0A3B284BFAEEC9B66A",
+      "observed": "CBF47293F5D983772C305B53E7C1DACD056D1609C7BA4F0A3B284BFAEEC9B66A",
+      "passed": true
+    },
+    "outputs/research_review_memo_round8_attempt01_failure.md": {
+      "expected": "9E051D174D3DC4117C6F4F9005EE03791CF297E0E5495E0C38953D6BA3ED54B8",
+      "observed": "9E051D174D3DC4117C6F4F9005EE03791CF297E0E5495E0C38953D6BA3ED54B8",
+      "passed": true
+    },
+    "outputs/validity/round8_graded_association_maps.npz": {
+      "expected": "8685E1A4605B5D6355A432BC6CA03CF61930BAB23D41D899478A5C1D8FC47ED1",
+      "observed": "8685E1A4605B5D6355A432BC6CA03CF61930BAB23D41D899478A5C1D8FC47ED1",
+      "passed": true
+    },
+    "outputs/validity/round8_graded_association_map_manifest.json": {
+      "expected": "73B89C3438262BA272E0E90EDC2A6F9408B196CCBD4A30D9FA6FFFA798C273DC",
+      "observed": "73B89C3438262BA272E0E90EDC2A6F9408B196CCBD4A30D9FA6FFFA798C273DC",
+      "passed": true
+    },
+    "outputs/validity/round8_association_components.npz": {
+      "expected": "F1DF45A526EEBE02C2CDA6EA2FB1FE8B034A3FDD3B1582B3598B602916CDD0E8",
+      "observed": "F1DF45A526EEBE02C2CDA6EA2FB1FE8B034A3FDD3B1582B3598B602916CDD0E8",
+      "passed": true
+    },
+    "outputs/validity/round8_association_component_manifest.json": {
+      "expected": "7E5EA6AB9E83A0CCE03FDBBBAC274AB01D1B7773CA43833348C77ED71127653F",
+      "observed": "7E5EA6AB9E83A0CCE03FDBBBAC274AB01D1B7773CA43833348C77ED71127653F",
+      "passed": true
+    },
+    "outputs/validity/round8_graded_response_preflight.json": {
+      "expected": "595D9E0A68124ADE294B90AD3891365C569AEE367CD576AC9C97F2D647CFBA0F",
+      "observed": "595D9E0A68124ADE294B90AD3891365C569AEE367CD576AC9C97F2D647CFBA0F",
+      "passed": true
+    },
+    "outputs/validity/round8_graded_response_run_manifest.json": {
+      "expected": "85DC92712634C56B856409E3A58105205ABCCA504238A8B74EA3EC1F1F334ACD",
+      "observed": "85DC92712634C56B856409E3A58105205ABCCA504238A8B74EA3EC1F1F334ACD",
+      "passed": true
+    },
+    "outputs/validity/round8_graded_response_formal_attempt01_failed.log": {
+      "expected": "E3D3D58FF47663F7031AA85963D3AA81702BA4CA21F35C60DA77DEEA10E95296",
+      "observed": "E3D3D58FF47663F7031AA85963D3AA81702BA4CA21F35C60DA77DEEA10E95296",
+      "passed": true
+    }
+  },
+  "primitive_invariants": {
+    "array_count": 87,
+    "sample_count": 4557,
+    "source_map_shape": [
+      5,
+      4557
+    ],
+    "all_source_maps_bijections": true,
+    "packed_offsets_valid": true,
+    "packed_images_bijection": true,
+    "component_ids_reconstructed": true,
+    "all_maps_component_closed": true,
+    "component_count": 1625,
+    "component_size_min": 2,
+    "component_size_max": 14,
+    "exact_set_error_mismatches": {},
+    "result_parameters_match": true
+  },
+  "csv_structure": {
+    "point_row_count": 1575,
+    "point_expected_row_count": 1575,
+    "bootstrap_row_count": 4,
+    "bootstrap_axes": [
+      "A",
+      "R",
+      "S",
+      "C1"
+    ]
+  },
+  "point_reproduction": {
+    "maximum_primary_curve_abs_difference": 1.8762769116165146e-14,
+    "maximum_full_point_detail_abs_difference": 1.8762769116165146e-14,
+    "maximum_raw_bottleneck_abs_difference": 9.325873406851315e-15,
+    "maximum_mean_curve_or_sd_abs_difference": 5.374173328576148e-15,
+    "primary_curve_differences_by_seed": {
+      "43": {
+        "A": 0.0,
+        "R": 0.0,
+        "S": 1.0547118733938987e-14,
+        "C1": 1.1102230246251565e-16
+      },
+      "44": {
+        "A": 0.0,
+        "R": 0.0,
+        "S": 7.882583474838611e-15,
+        "C1": 1.1102230246251565e-16
+      },
+      "45": {
+        "A": 0.0,
+        "R": 0.0,
+        "S": 1.8762769116165146e-14,
+        "C1": 1.1102230246251565e-16
+      },
+      "46": {
+        "A": 0.0,
+        "R": 0.0,
+        "S": 1.865174681370263e-14,
+        "C1": 2.220446049250313e-16
+      },
+      "47": {
+        "A": 0.0,
+        "R": 0.0,
+        "S": 1.4988010832439613e-14,
+        "C1": 2.220446049250313e-16
+      }
+    },
+    "full_point_detail_differences_by_seed": {
+      "43": 1.0547118733938987e-14,
+      "44": 7.882583474838611e-15,
+      "45": 1.8762769116165146e-14,
+      "46": 1.865174681370263e-14,
+      "47": 1.4988010832439613e-14
+    },
+    "mean_curve_differences": {
+      "A": {
+        "Action-Only Macro-F1": {
+          "mean_max_abs_difference": 0.0,
+          "sd_max_abs_difference": 0.0
+        },
+        "Joint Action-Rationale Macro-F1": {
+          "mean_max_abs_difference": 0.0,
+          "sd_max_abs_difference": 0.0
+        }
+      },
+      "R": {
+        "Joint Action-Rationale 21-label Macro-F1": {
+          "mean_max_abs_difference": 0.0,
+          "sd_max_abs_difference": 0.0
+        }
+      },
+      "S": {
+        "Action-Only tie-averaged AURC": {
+          "mean_max_abs_difference": 4.274358644806853e-15,
+          "sd_max_abs_difference": 5.374173328576148e-15
+        },
+        "Joint Action-Rationale tie-averaged AURC": {
+          "mean_max_abs_difference": 4.773959005888173e-15,
+          "sd_max_abs_difference": 4.236194728335363e-15
+        }
+      },
+      "C1": {
+        "Action-Only mean-three action flip": {
+          "mean_max_abs_difference": 0.0,
+          "sd_max_abs_difference": 0.0
+        },
+        "Joint Action-Rationale mean-three action flip": {
+          "mean_max_abs_difference": 0.0,
+          "sd_max_abs_difference": 0.0
+        },
+        "Joint Action-Rationale mean-three rationale Jaccard": {
+          "mean_max_abs_difference": 1.1102230246251565e-16,
+          "sd_max_abs_difference": 1.1449174941446927e-16
+        }
+      }
+    },
+    "mean_curves_no_reversal": {
+      "A": true,
+      "R": true,
+      "S": true,
+      "C1": true
+    },
+    "raw_bottlenecks": {
+      "43": {
+        "A": 0.06893864888665868,
+        "R": 0.04744094904415169,
+        "S": 0.03315546824024207,
+        "C1": 0.16370419135396097
+      },
+      "44": {
+        "A": 0.06647920963543813,
+        "R": 0.045783370024358616,
+        "S": 0.023810085050586738,
+        "C1": 0.1647282568941555
+      },
+      "45": {
+        "A": 0.0662800007262968,
+        "R": 0.0441421158337125,
+        "S": 0.028161551235336146,
+        "C1": 0.1621680930436692
+      },
+      "46": {
+        "A": 0.07133404918667507,
+        "R": 0.04220228646314478,
+        "S": 0.021873910326429713,
+        "C1": 0.16845878136200726
+      },
+      "47": {
+        "A": 0.07032204760756522,
+        "R": 0.05251319232738533,
+        "S": 0.027677518572096882,
+        "C1": 0.16538658474142343
+      }
+    }
+  },
+  "bootstrap_reproduction": {
+    "replicates": 2000,
+    "rng_seed": 20260803,
+    "statistic_order": "per selected seed: minimum expected-direction adjacent step; then mean over five selected seed positions",
+    "shared_cluster_draw": true,
+    "seed_draw_stream_sha256": "5FDE45441FD1FAAE22BC0C96CFBF5FD903531446DAFE06A470B3D3D72499E435",
+    "component_draw_stream_sha256": "DB8A7C94D60D05F1BF98F56594D1BACEA58171F703FF6E2E8348231C95B67AA8",
+    "first_draw": {
+      "replicate": 0,
+      "selected_seed_positions": [
+        3,
+        3,
+        2,
+        2,
+        0
+      ],
+      "selected_seed_values": [
+        46,
+        46,
+        45,
+        45,
+        43
+      ],
+      "selected_component_sha256": "4DE0E8C3652AE95399A3EC835E0AB40084BB69702FD1E72650088AF0496F8491",
+      "expanded_image_count": 4581
+    },
+    "last_draw": {
+      "replicate": 1999,
+      "selected_seed_positions": [
+        0,
+        3,
+        2,
+        3,
+        2
+      ],
+      "selected_seed_values": [
+        43,
+        46,
+        45,
+        46,
+        45
+      ],
+      "selected_component_sha256": "11E1E8C5284A37825508E8C1CCDA5DF61D9ED90F31A6B62A18345A9049771DB7",
+      "expanded_image_count": 4459
+    },
+    "comparisons": {
+      "A": {
+        "observed": {
+          "mean_across_seeds": 0.06867079120852679,
+          "sd_across_seeds": 0.0022588850906306245,
+          "positive_seed_count": 5,
+          "association_component_bootstrap_ci": [
+            0.05967394960953711,
+            0.07280607804313423
+          ],
+          "ci_lower_positive": true
+        },
+        "expected": {
+          "mean_across_seeds": 0.06867079120852679,
+          "sd_across_seeds": 0.0022588850906306245,
+          "positive_seed_count": 5,
+          "association_component_bootstrap_ci": [
+            0.05967394960953711,
+            0.07280607804313423
+          ]
+        },
+        "absolute_differences": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci": 0.0
+        },
+        "draw_sha256": "B194AA81D1709D61032C76777DF33A78D1C0E340BC57D213CB41FBA8D80AD001"
+      },
+      "R": {
+        "observed": {
+          "mean_across_seeds": 0.04641638273855058,
+          "sd_across_seeds": 0.003922767701070252,
+          "positive_seed_count": 5,
+          "association_component_bootstrap_ci": [
+            0.04057136812522538,
+            0.049523294784802115
+          ],
+          "ci_lower_positive": true
+        },
+        "expected": {
+          "mean_across_seeds": 0.04641638273855058,
+          "sd_across_seeds": 0.003922767701070252,
+          "positive_seed_count": 5,
+          "association_component_bootstrap_ci": [
+            0.04057136812522538,
+            0.049523294784802115
+          ]
+        },
+        "absolute_differences": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci": 0.0
+        },
+        "draw_sha256": "679C92B7E4D704A9607A80BB6B0B0F042AFFD7F2958F0344A26AD94DF9424CC3"
+      },
+      "S": {
+        "observed": {
+          "mean_across_seeds": 0.026935706684936833,
+          "sd_across_seeds": 0.004362616947396283,
+          "positive_seed_count": 5,
+          "association_component_bootstrap_ci": [
+            0.018370297626038697,
+            0.03009059670697011
+          ],
+          "ci_lower_positive": true
+        },
+        "expected": {
+          "mean_across_seeds": 0.026935706684936833,
+          "sd_across_seeds": 0.004362616947396283,
+          "positive_seed_count": 5,
+          "association_component_bootstrap_ci": [
+            0.01837029762604111,
+            0.0300905967069704
+          ]
+        },
+        "absolute_differences": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci": 2.411265631607762e-15
+        },
+        "draw_sha256": "50483ACDC70A0C87103D3EAE0E6212202E0AFC5B26D3FE6CEBB0967D0D518238"
+      },
+      "C1": {
+        "observed": {
+          "mean_across_seeds": 0.16488918147904325,
+          "sd_across_seeds": 0.002335801464250192,
+          "positive_seed_count": 5,
+          "association_component_bootstrap_ci": [
+            0.15000245993197536,
+            0.16515225515222937
+          ],
+          "ci_lower_positive": true
+        },
+        "expected": {
+          "mean_across_seeds": 0.16488918147904325,
+          "sd_across_seeds": 0.002335801464250192,
+          "positive_seed_count": 5,
+          "association_component_bootstrap_ci": [
+            0.15000245993197536,
+            0.16515225515222937
+          ]
+        },
+        "absolute_differences": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "ci": 0.0
+        },
+        "draw_sha256": "881CBE066F8C60D8CA53F08933A99F92BABE5B8CE0B27D936B96E09BCD8CF758"
+      }
+    },
+    "maximum_summary_abs_difference": 2.411265631607762e-15,
+    "image_count": {
+      "min": 4347,
+      "max": 4858,
+      "mean": 4555.03,
+      "array_sha256": "5F238AD54CBD782161A3B748D3254F9D14C6B2FE592107D4A55634C9255D07E2",
+      "absolute_differences": {
+        "min": 0,
+        "max": 0,
+        "mean": 0.0
+      }
+    }
+  },
+  "bootstrap_draw_artifact": {
+    "path": "outputs/validity/round8_graded_response_independent_bootstrap_draws.npz",
+    "sha256": "BF5AB79EC55B1AA0FCFCAF7B7AC5EB9A6DA52EF37916374B7BD526847002190D",
+    "bytes": 62944,
+    "arrays": {
+      "A": {
+        "shape": [
+          2000
+        ],
+        "dtype": "float64",
+        "array_sha256": "B194AA81D1709D61032C76777DF33A78D1C0E340BC57D213CB41FBA8D80AD001"
+      },
+      "R": {
+        "shape": [
+          2000
+        ],
+        "dtype": "float64",
+        "array_sha256": "679C92B7E4D704A9607A80BB6B0B0F042AFFD7F2958F0344A26AD94DF9424CC3"
+      },
+      "S": {
+        "shape": [
+          2000
+        ],
+        "dtype": "float64",
+        "array_sha256": "50483ACDC70A0C87103D3EAE0E6212202E0AFC5B26D3FE6CEBB0967D0D518238"
+      },
+      "C1": {
+        "shape": [
+          2000
+        ],
+        "dtype": "float64",
+        "array_sha256": "881CBE066F8C60D8CA53F08933A99F92BABE5B8CE0B27D936B96E09BCD8CF758"
+      },
+      "_image_counts": {
+        "shape": [
+          2000
+        ],
+        "dtype": "int64",
+        "array_sha256": "5F238AD54CBD782161A3B748D3254F9D14C6B2FE592107D4A55634C9255D07E2"
+      }
+    }
+  },
+  "independent_decisions": {
+    "axis_gates": {
+      "A": true,
+      "R": true,
+      "S": true,
+      "C1": true
+    },
+    "full_Round8_measurement_pass": true,
+    "matches_formal_result": true
+  },
+  "claim_boundary": "PASS verifies computational reproduction of the frozen BDD-OIA Round 8 estimands and gates. It does not add construct, external, causal, grounding, or real-safety validity."
+}
