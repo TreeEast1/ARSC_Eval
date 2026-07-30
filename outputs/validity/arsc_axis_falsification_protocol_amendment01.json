@@ -1,0 +1,216 @@
+{
+  "amendment_id": "ARSC_AXIS_FALSIFICATION_V1_AMENDMENT01",
+  "status": "FROZEN_BEFORE_INTERVENTION_OUTCOMES",
+  "frozen_at": "2026-07-31T04:31:00+08:00",
+  "parent_protocol": {
+    "path": "outputs/validity/arsc_axis_falsification_protocol.json",
+    "sha256": "21504FD66E984E211C3E8C51AF013C7C30F8D6E14CFCE01A832FD53711482442",
+    "immutable": true
+  },
+  "independent_prerun_review": {
+    "path": "outputs/research_review_memo_round7_preregister.md",
+    "sha256": "BDE9B4387F5B2015B29387B96E7033B0E43E1940098B807CA811C30CD1486A9D",
+    "verdict": "GO_WITH_AMENDMENT",
+    "intervention_outcomes_seen": false
+  },
+  "scope": {
+    "only_authorized_changes": [
+      "crossed seed by shared-image bootstrap",
+      "separate S measurement-ordering and model-confidence decisions",
+      "exclude synthetic-ordering ECE from directional claims",
+      "expanded exact invariant audit",
+      "explicit A/R/C1 interpretation boundaries and complete intermediate-control reporting"
+    ],
+    "unchanged": [
+      "all cache and calibration inputs",
+      "training seeds 43,44,45,46,47",
+      "threshold 0.5",
+      "target row offset 2281",
+      "action class source map [1,2,3,0]",
+      "rationale class source map [7,8,...,20,0,1,...,6]",
+      "C1 wrong-pair offset 997",
+      "random ordering seed 20260801",
+      "all intervention definitions and point-estimate contrasts",
+      "positive mean plus at least four of five positive seeds plus CI lower greater than zero rule",
+      "bootstrap replicates 2000, seed 20260802, percentile 95 percent interval",
+      "all prohibited claims"
+    ]
+  },
+  "crossed_bootstrap": {
+    "reason": "The same canonical 4557 test images and targets are crossed with all five training seeds; images are not nested within seed.",
+    "algorithm_per_replicate": [
+      "sample five training-seed indices with replacement",
+      "sample one common multiset of 4557 canonical image indices with replacement",
+      "apply that same image multiset to every selected seed",
+      "preserve model, target-control, confidence-ordering, correct/wrong-pairing, and perturbation relations",
+      "when a seed is selected repeatedly, reuse its frozen outputs with the same common image multiset"
+    ],
+    "replicates": 2000,
+    "seed": 20260802,
+    "confidence_level": 0.95,
+    "interval": "percentile"
+  },
+  "S_decisions": {
+    "measurement_ordering_gate": {
+      "inputs": [
+        "all prediction and exact-set-error invariants",
+        "oracle AURC is extremal minimum",
+        "adversarial AURC is extremal maximum",
+        "adversarial minus oracle AURC is strictly positive"
+      ],
+      "interpretation": "AURC responds correctly to a known ordering intervention."
+    },
+    "frozen_model_confidence_informativeness": {
+      "contrast": "frozen_random_AURC - original_AURC",
+      "models_reported_separately": true,
+      "decision_rule": "positive five-seed mean, at least four of five positive seeds, and crossed-bootstrap 95 percent CI lower bound greater than zero",
+      "interpretation": "The frozen maximum-action-probability ranking is more informative than this one preregistered random reference.",
+      "not_a_measurement_validity_requirement": true,
+      "single_random_reference_not_a_random_distribution": true
+    },
+    "ECE_boundary": {
+      "original_calibrated_ECE": "retain its existing bounded descriptive interpretation",
+      "synthetic_ordering_ECE": "numeric diagnostic only",
+      "synthetic_ordering_ECE_directional_claim_prohibited": true
+    },
+    "decision_names": [
+      "full_suite_measurement_pass",
+      "full_empirical_battery_pass"
+    ],
+    "full_suite_measurement_pass_excludes": [
+      "original versus random model-confidence contrasts"
+    ],
+    "full_empirical_battery_pass_requires": [
+      "full_suite_measurement_pass",
+      "both frozen-model confidence-informativeness contrasts"
+    ]
+  },
+  "expanded_exact_audit": {
+    "must_complete_before_bootstrap_or_directional_outcomes": true,
+    "checks": [
+      "all protocol, amendment, cache, calibration, Round 5 reference, filename-order, and target hashes match",
+      "five seeds have bitwise-identical filename and target arrays",
+      "filenames are unique; targets are binary and finite; all required logits are finite",
+      "row, action-class, rationale-class, and wrong-pair maps are complete valid bijections",
+      "row, action-class, rationale-class, and wrong-pair fixed-point counts are zero",
+      "row-only controls preserve every original per-class positive count",
+      "A controls do not mutate logits, probabilities, original targets, or R/S/C1 inputs",
+      "R controls do not mutate logits, probabilities, original targets, or A/S/C1 inputs",
+      "all 21 rationale classes have positive target support, so the existing zero-denominator F1=0 convention is not activated by the perfect control",
+      "perfect A and R macro-F1 and micro-F1 equal exactly 1",
+      "all S synthetic scores are finite and unique and reproduce their declared descending orders",
+      "oracle max-error score is below oracle min-correct score and adversarial max-correct score is below adversarial min-error score",
+      "all four S controls have bitwise-identical predictions and exact-set-error vectors and exactly identical A macro/micro F1",
+      "correct C1 pairs use identical clean and perturbed filename order",
+      "wrong C1 map is shared across all seeds, models, and perturbations",
+      "wrong C1 pairs have zero same-filename and zero same-clip-group pairs",
+      "identity action flip equals zero for every image and model",
+      "identity rationale Jaccard equals one for every image",
+      "pairing controls alter indices only and do not mutate logits or probabilities",
+      "clean A/R/S arrays and point estimates are exactly unchanged by R, S, and C1 controls",
+      "original A/R/S/C1 per-seed point estimates exactly reproduce the frozen Round 5 artifacts"
+    ],
+    "failure_action": "STOP before bootstrap and scientific interpretation; preserve diagnostics and request independent rereview without changing any frozen intervention."
+  },
+  "input_only_precheck": {
+    "intervention_outcomes_seen": false,
+    "wrong_pair_map": {
+      "offset": 997,
+      "bijection": true,
+      "fixed_points": 0,
+      "same_filename_pairs": 0,
+      "same_clip_group_pairs": 0,
+      "clip_group_definition": "remove only terminal _1 or _3 from filename stem"
+    },
+    "target_support": {
+      "action_positive_counts": [
+        2484,
+        2103,
+        1225,
+        1339
+      ],
+      "rationale_positive_counts": [
+        1574,
+        667,
+        941,
+        1083,
+        302,
+        39,
+        34,
+        1037,
+        89,
+        29,
+        136,
+        68,
+        23,
+        175,
+        69,
+        860,
+        897,
+        713,
+        1182,
+        826,
+        403
+      ],
+      "all_classes_have_positive_support": true,
+      "targets_binary": true
+    }
+  },
+  "round5_exact_reproduction_references": {
+    "aggregate": {
+      "path": "outputs/validity/rq1_multiseed_summary.json",
+      "sha256": "ECA8D453E9DB67CB933CAF2217DAFC62BD054709734C857AF8A5BE9665680000"
+    },
+    "per_seed": {
+      "43": {
+        "path": "outputs/validity/rq1_seed_43/rq1_metrics.json",
+        "sha256": "F0A79177B73C66412455FAFF13B570EC09B619F0EA948EE1C55B940719121738"
+      },
+      "44": {
+        "path": "outputs/validity/rq1_seed_44/rq1_metrics.json",
+        "sha256": "685B314AC339CC9439E72EA33948C62BCE7AD95E06DEF2C43ED846A693CE2FD7"
+      },
+      "45": {
+        "path": "outputs/validity/rq1_seed_45/rq1_metrics.json",
+        "sha256": "7A85E4CD5BF98988048AC48F37E5BDB6C1303701DA42036339302E65AF68199C"
+      },
+      "46": {
+        "path": "outputs/validity/rq1_seed_46/rq1_metrics.json",
+        "sha256": "D7FFEDF3ACCA49CFBA0D99FD7C9B6F7549215AD710CFC2E1D68D5ABF67297860"
+      },
+      "47": {
+        "path": "outputs/validity/rq1_seed_47/rq1_metrics.json",
+        "sha256": "49008E9D4BA03B59D2DD4631EFD4F862DB0F8C3E85BAD6217028D41D28355A16"
+      }
+    }
+  },
+  "reporting_requirements": {
+    "A": [
+      "perfect, original, row-only, class-only, and combined Macro/Micro-F1",
+      "per-class F1 and target/predicted positive counts",
+      "all five raw primary contrasts"
+    ],
+    "R": [
+      "perfect, original, row-only, class-only, and combined Macro/Micro-F1",
+      "per-class F1 and target/predicted positive counts",
+      "all five raw primary contrasts",
+      "zero-support convention and observed support"
+    ],
+    "S": [
+      "oracle, original, one frozen random reference, and adversarial AURC/UAR90/correctness AUROC",
+      "synthetic ECE diagnostics labeled non-directional",
+      "measurement-ordering and model-confidence decisions separately"
+    ],
+    "C1": [
+      "identity, correct, and wrong values for every perturbation",
+      "mean-three action and rationale contrasts",
+      "all five raw primary contrasts"
+    ]
+  },
+  "claim_boundaries": {
+    "A_and_R": "Only sensitivity to severe frozen association destruction; no ontology, correctness, grounding, or faithfulness validity.",
+    "S": "Ordering behavior and, separately, informativeness relative to one fixed random reference; no safety guarantee.",
+    "C1": "Sensitivity to correct versus destroyed sample correspondence; wrong pairing is not perturbation severity.",
+    "all_axes": "BDD-OIA internal evidence under the frozen five-seed training protocol only; no CEG, causal, architecture, dataset, or real-world external validity."
+  }
+}
