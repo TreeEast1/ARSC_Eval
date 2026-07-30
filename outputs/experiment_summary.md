@@ -156,6 +156,13 @@ binding、contamination、artifact 门槛，并发现两个实际渲染 patch sh
   mismatch；
 - BDD100K 官方 validation labels 只得到 53 个未见 state-matched 候选，低于
   v5 预注册 population gate。
+- BDD100K-train v5 一次性元数据交集在 hash 前只得到 87 个 proposal：
+  red 50、green 37、87 groups。冻结 analyzer 的 image root 少了一层
+  `/data`，所以 hash independence 未有效完成，机器记录保持
+  `STOP_CEG_INDEPENDENCE`；但 hash 只能删减、不能增加这 87 个候选，
+  因此 total 87 < 200 且 green 37 < 50 已确定不可能通过 population gate。
+  独立 reviewer 追加 `STOP_CEG_POPULATION_NO_V6`，禁止修 root 重跑、v6、
+  mask 生成或读取这 87 个 proposal 的 logits。
 
 这些结果不是“没有实验”，而是 measurement validity gate 正常阻止无效
 CEG 进入论文结论。
@@ -218,7 +225,7 @@ closure 而停止。失败时没有保存/查看 seed43 test cache 或指标。�
 
 全部主结果、原始 seed 值、审核与负结果索引见 `outputs/README.md`。
 
-## 9. 独立审阅裁决与唯一下一步
+## 9. Round 5–6 独立审阅裁决
 
 Round 5 独立审阅裁决为 **PASS with bounded claims**：
 
@@ -227,7 +234,7 @@ Round 5 独立审阅裁决为 **PASS with bounded claims**：
 - RQ2-CEG：UNANSWERED；
 - A/R/S/C1 已形成 BDD-OIA 内五种子重复性证据，但不形成因果、真实世界或跨数据集外部效度。
 
-审阅者只批准一个后续方向：把固定版本的 BDD100K train 官方
+Round 5 只批准一个后续方向：把固定版本的 BDD100K train 官方
 traffic-light state boxes 与冻结的 BDD-OIA evaluation manifest 做元数据交集，
 尝试建立一次性、完全未见的 v5 候选池。第一阶段不得生成 mask、读取五种子
 logits 或训练模型。
@@ -238,3 +245,34 @@ generation/audit、同 scene 近邻帧均零重叠。任一条件不足即正式
 主线，不降低门槛、不改做 v6。只有元数据 gate 通过后，才允许执行冻结的
 一次性生成、模型输出盲审和最终五种子确认性 CEG。完整门控见
 `outputs/research_review_memo_round5_multiseed.md`。
+
+Round 6 已执行该一次性交集。train-only transport 完整查询 2,233 个
+keyframe ID，其中保留 original-train 1,744，排除 original-val 268，
+API-no-row 221；前后镜像 revision 一致。冻结 gate 的 pre-hash proposal
+上界为 87（red 50、green 37），已经不可能通过 200/50/50/30。虽然错误
+image root 使 hash independence 未完成，但修复只能维持或删减 87，不能补足
+total 与 green 缺口。因此：
+
+- 机器裁决保持 `STOP_CEG_INDEPENDENCE`；
+- 独立科学裁决为 `STOP_CEG_POPULATION_NO_V6`；
+- CEG 主线正式关闭，RQ2-CEG 保持“未回答”；
+- RQ2-light、A/R/S/C1 五种子内部结论不受该负结果推翻。
+
+## 10. 唯一批准的下一实验
+
+下一步只在 seeds 43–47 冻结 prediction caches 上做 ARSC 轴选择性干预
+falsification suite，不引入新数据、训练、mask 或重新推理：
+
+1. A：破坏 action target row/class relation，perfect control 必须为 1，
+   破坏后 Macro-F1 应下降；
+2. R：破坏 rationale target row/ontology relation，perfect control 必须为 1，
+   破坏后 Macro-F1 应下降；
+3. S：固定 thresholded action predictions，只把 confidence ordering 改为
+   oracle/original/random/adversarial；A 必须逐样本完全不变，AURC 应按方向响应；
+4. C1：固定 clean/perturbed predictions，比 identity、正确 filename pairing
+   与冻结错误 pairing；identity 必须 flip=0/Jaccard=1，错误 pairing应更不一致，
+   clean A/R/S 必须完全不变。
+
+该实验只检验 measurement sensitivity 与轴间区分性，不恢复 CEG，也不证明
+causal faithfulness 或外部效度。完整边界见
+`outputs/research_review_memo_round6_final.md`。

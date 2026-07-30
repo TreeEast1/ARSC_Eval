@@ -180,6 +180,12 @@ original required pilot outputs present.
   mismatches. Confirmatory CEG was therefore not computed.
 - The official BDD100K validation labels yielded only 53 unseen state-matched
   candidates, below the preregistered v5 population gate.
+- The final one-shot BDD100K-train v5 metadata intersection produced a
+  pre-hash upper bound of 87 state-matched proposals (red 50, green 37). The
+  frozen run also used an incorrect image root, so hash independence was not
+  established. Because the pre-hash upper bound already fails the frozen
+  total ≥200 and green ≥50 gates, independent review formally closed the CEG
+  mainline without a rerun or v6.
 - VLA4CoDrive was technically readable, but its frozen repository revision
   exposed only nine canonical scenes and at most 2,160 Action/Language paired
   windows. Independent review required stopping external training.
@@ -190,19 +196,14 @@ validity.
 
 ## Reviewer-bounded next step
 
-The independent Round 5 review permits one remaining CEG attempt: intersect the
-official BDD100K train traffic-light state boxes with the frozen BDD-OIA
-evaluation manifest to construct a completely unseen v5 candidate pool. The
-first stage is metadata-only: no masks, model logits, or training may be used.
-
-The preregistered population gate requires at least 200 new state-matched
-candidates, including at least 50 red, 50 green, and 30 independent video or
-scene groups, with no overlap with model training/validation or any v2–v4
-generation/audit population. Failure of any requirement formally stops the CEG
-mainline; the thresholds may not be lowered and a v6 search may not be started.
-Only if this gate passes may the frozen one-shot generation and
-model-output-blind audit proceed. The complete decision sequence is recorded in
-`outputs/research_review_memo_round5_multiseed.md`.
+CEG is closed and remains unanswered; RQ2-light must not be relabeled as CEG or
+causal faithfulness. The only approved next experiment is an offline ARSC-axis
+selective-intervention falsification suite on the frozen seed 43–47 prediction
+caches. It will test whether A and R respond to target/ontology destruction, S
+responds to confidence ordering while A stays exactly fixed, and C1 responds
+to clean/perturbed pairing while clean A/R/S stay exactly fixed. It introduces
+no new data, training, masks, inference, or CEG analysis. The full boundary is
+recorded in `outputs/research_review_memo_round6_final.md`.
 
 ## Publishing policy
 

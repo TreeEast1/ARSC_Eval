@@ -1,0 +1,67 @@
+{"batch": 1, "total_batches": 56, "queried": 40, "retained_train": 40, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 2, "total_batches": 56, "queried": 80, "retained_train": 80, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 3, "total_batches": 56, "queried": 120, "retained_train": 120, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 4, "total_batches": 56, "queried": 160, "retained_train": 160, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 5, "total_batches": 56, "queried": 200, "retained_train": 200, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 6, "total_batches": 56, "queried": 240, "retained_train": 240, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 7, "total_batches": 56, "queried": 280, "retained_train": 280, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 8, "total_batches": 56, "queried": 320, "retained_train": 320, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 9, "total_batches": 56, "queried": 360, "retained_train": 360, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 10, "total_batches": 56, "queried": 400, "retained_train": 400, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 11, "total_batches": 56, "queried": 440, "retained_train": 440, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 12, "total_batches": 56, "queried": 480, "retained_train": 480, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 13, "total_batches": 56, "queried": 520, "retained_train": 520, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 14, "total_batches": 56, "queried": 560, "retained_train": 560, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 15, "total_batches": 56, "queried": 600, "retained_train": 600, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 16, "total_batches": 56, "queried": 640, "retained_train": 640, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 17, "total_batches": 56, "queried": 680, "retained_train": 680, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 18, "total_batches": 56, "queried": 720, "retained_train": 720, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 19, "total_batches": 56, "queried": 760, "retained_train": 760, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 20, "total_batches": 56, "queried": 800, "retained_train": 800, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 21, "total_batches": 56, "queried": 840, "retained_train": 840, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 22, "total_batches": 56, "queried": 880, "retained_train": 880, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 23, "total_batches": 56, "queried": 920, "retained_train": 920, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 24, "total_batches": 56, "queried": 960, "retained_train": 960, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 25, "total_batches": 56, "queried": 1000, "retained_train": 1000, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 26, "total_batches": 56, "queried": 1040, "retained_train": 1040, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 27, "total_batches": 56, "queried": 1080, "retained_train": 1080, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 28, "total_batches": 56, "queried": 1120, "retained_train": 1120, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 29, "total_batches": 56, "queried": 1160, "retained_train": 1160, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 30, "total_batches": 56, "queried": 1200, "retained_train": 1200, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 31, "total_batches": 56, "queried": 1240, "retained_train": 1240, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 32, "total_batches": 56, "queried": 1280, "retained_train": 1280, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 33, "total_batches": 56, "queried": 1320, "retained_train": 1320, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 34, "total_batches": 56, "queried": 1360, "retained_train": 1360, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 35, "total_batches": 56, "queried": 1400, "retained_train": 1400, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 36, "total_batches": 56, "queried": 1440, "retained_train": 1440, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 37, "total_batches": 56, "queried": 1480, "retained_train": 1480, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 38, "total_batches": 56, "queried": 1520, "retained_train": 1520, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 39, "total_batches": 56, "queried": 1560, "retained_train": 1560, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 40, "total_batches": 56, "queried": 1600, "retained_train": 1600, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 41, "total_batches": 56, "queried": 1640, "retained_train": 1640, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 42, "total_batches": 56, "queried": 1680, "retained_train": 1680, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 43, "total_batches": 56, "queried": 1720, "retained_train": 1720, "excluded_original_val": 0, "api_no_row": 0}
+{"batch": 44, "total_batches": 56, "queried": 1760, "retained_train": 1738, "excluded_original_val": 22, "api_no_row": 0}
+{"batch": 45, "total_batches": 56, "queried": 1800, "retained_train": 1738, "excluded_original_val": 62, "api_no_row": 0}
+{"batch": 46, "total_batches": 56, "queried": 1840, "retained_train": 1738, "excluded_original_val": 102, "api_no_row": 0}
+{"batch": 47, "total_batches": 56, "queried": 1880, "retained_train": 1738, "excluded_original_val": 142, "api_no_row": 0}
+{"batch": 48, "total_batches": 56, "queried": 1920, "retained_train": 1738, "excluded_original_val": 182, "api_no_row": 0}
+{"batch": 49, "total_batches": 56, "queried": 1960, "retained_train": 1738, "excluded_original_val": 222, "api_no_row": 0}
+{"batch": 50, "total_batches": 56, "queried": 2000, "retained_train": 1738, "excluded_original_val": 262, "api_no_row": 0}
+{"batch": 51, "total_batches": 56, "queried": 2040, "retained_train": 1738, "excluded_original_val": 268, "api_no_row": 34}
+{"batch": 52, "total_batches": 56, "queried": 2080, "retained_train": 1738, "excluded_original_val": 268, "api_no_row": 74}
+{"batch": 53, "total_batches": 56, "queried": 2120, "retained_train": 1738, "excluded_original_val": 268, "api_no_row": 114}
+{"batch": 54, "total_batches": 56, "queried": 2160, "retained_train": 1738, "excluded_original_val": 268, "api_no_row": 154}
+{"batch": 55, "total_batches": 56, "queried": 2200, "retained_train": 1738, "excluded_original_val": 268, "api_no_row": 194}
+{"batch": 56, "total_batches": 56, "queried": 2233, "retained_train": 1744, "excluded_original_val": 268, "api_no_row": 221}
+{
+  "requested_keyframe_ids": 2233,
+  "completed_query_ids": 2233,
+  "retained_original_train_rows": 1744,
+  "excluded_original_val": 268,
+  "excluded_unknown_split": 0,
+  "api_no_row": 221,
+  "output": "D:\\All_Project\\cjl\\ARSC_space\\BDD-OIA_space\\data\\external\\bdd100k\\bdd100k_enriched_annotations_for_bdd_oia.json",
+  "complete": true
+}
+EXIT_CODE=0

@@ -31,7 +31,7 @@ Primary decisions:
 |---|---|
 | Action comparability | PASS: Joint−Action macro-F1 = 0.011536, hierarchical 95% CI [0.001590, 0.021807], inside ±0.03 |
 | RQ2-light perturbation subbranch | SUPPORTED: Action−Joint flip = 0.016107, 4/5 seeds positive |
-| RQ2 CEG subbranch | UNANSWERED: v4 mask measurement gate failed |
+| RQ2 CEG subbranch | UNANSWERED and closed: v2–v5 measurement/population gates failed |
 
 ## Metric falsification and C1 measurement validity
 
@@ -104,11 +104,38 @@ not convert a low-quality localization proxy into an ARSC success claim.
 - `validity/bdd100k_validation_label_overlap.json`: only 53 unseen
   state-matched validation candidates, below the preregistered v5 mask gate.
 
+## Final BDD100K-train v5 CEG stopping record
+
+- `validity/bdd100k_train_v5_metadata_protocol.json`: frozen one-shot
+  metadata-only 200/50/50/30 gate.
+- `research_review_memo_round6_amendment01.md` and
+  `validity/bdd100k_train_v5_protocol_amendment01.json`: independent
+  authorization and exact provenance for filtering the transport table to
+  original BDD train rows.
+- `validity/bdd100k_train_v5_amendment01_pre_gate_check.json`: all five
+  conditional restart checks before the only formal gate run.
+- `validity/bdd100k_train_v5_metadata_gate.json` and
+  `bdd100k_train_v5_candidates.jsonl`: frozen machine result and metadata-only
+  proposal manifest.
+- `validity/tmux_bdd100k_train_v5_metadata_amendment01.log` and
+  `tmux_bdd100k_train_v5_gate_amendment01.log`: successful train-only
+  transport and gate logs.
+- `research_review_memo_round6_final.md`: final scientific STOP ruling.
+
+The frozen machine decision is `STOP_CEG_INDEPENDENCE` because the analyzer
+used `data/raw/lastframe` instead of the actual
+`data/raw/lastframe/data` image root, leaving hash independence unevaluated.
+The pre-hash proposal upper bound was nevertheless only 87 samples (red 50,
+green 37, 87 groups), so no root correction could meet total ≥200 or green
+≥50. Independent review therefore also issued
+`STOP_CEG_POPULATION_NO_V6`. The pool was not rerun, no masks were generated,
+and no proposal logits were read.
+
 ## Engineering provenance
 
 - `validity/tmux_rq1_multiseed_attempt01_failed.log`: preserved serialization
   failure before seed-43 test effects/cache were saved.
-- `validation_tests.log`: final test run (`29 passed`).
+- `validation_tests.log`: final saved test run.
 - `validation_compileall.log`: final bytecode compilation check.
 - `validation_verify_outputs.log`: required-output and README command verifier.
 - `environment_snapshot.json`: Python, CUDA, GPU, and package versions.
