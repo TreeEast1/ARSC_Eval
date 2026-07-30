@@ -94,10 +94,14 @@
       }
     },
     {
-      "name": "independent_amendment_review_explicit_GO",
+      "name": "independent_reviews_and_attempt01_binding",
       "passed": true,
       "detail": {
-        "sha256": "CBF47293F5D983772C305B53E7C1DACD056D1609C7BA4F0A3B284BFAEEC9B66A"
+        "amendment_GO_memo_sha256": "CBF47293F5D983772C305B53E7C1DACD056D1609C7BA4F0A3B284BFAEEC9B66A",
+        "attempt01_failed_log_expected_sha256": "E3D3D58FF47663F7031AA85963D3AA81702BA4CA21F35C60DA77DEEA10E95296",
+        "attempt01_failed_log_observed_sha256": "E3D3D58FF47663F7031AA85963D3AA81702BA4CA21F35C60DA77DEEA10E95296",
+        "attempt01_GO_RERUN_memo_expected_sha256": "9E051D174D3DC4117C6F4F9005EE03791CF297E0E5495E0C38953D6BA3ED54B8",
+        "attempt01_GO_RERUN_memo_observed_sha256": "9E051D174D3DC4117C6F4F9005EE03791CF297E0E5495E0C38953D6BA3ED54B8"
       }
     },
     {
@@ -867,8 +871,12 @@
           "tests/test_graded_association.py",
           "-q"
         ],
-        "stdout": "...............                                                          [100%]\n15 passed in 0.13s",
-        "stderr": ""
+        "suite_sha256": {
+          "tests/test_graded_response.py": "6C63F4C9C41E2CCD67BE3EB1C1D96C5FB7439F48656BB75682BC14822FDB9EE0",
+          "tests/test_association_components.py": "918ABF1D6BC8EBB54F3872474AD484729E7F374DFDD4DA04C4F3F85ECFADF214",
+          "tests/test_graded_association.py": "AB067CEF3384191C1DF80ACA18E3FAF201D43B7B72DE3911B541D2508C0942DA"
+        },
+        "deterministic_summary": "PASS"
       }
     }
   ],

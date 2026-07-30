@@ -1,0 +1,44 @@
+{
+  "study": "Round 8 attempt02 deterministic preflight stability audit",
+  "status": "PASS",
+  "authorized_by": {
+    "path": "outputs/research_review_memo_round8_attempt01_failure.md",
+    "sha256": "9E051D174D3DC4117C6F4F9005EE03791CF297E0E5495E0C38953D6BA3ED54B8",
+    "verdict": "GO_RERUN"
+  },
+  "implementation_commit": "4a644ca9040eebc06bfaaa250f698131b736d655",
+  "implementation_sha256": {
+    "scripts/analyze_round8_graded_response.py": "89025037BF4D531AFEC0907B627D26714FEA6EA5E2752A57A4589CAC503B5C36",
+    "src/arsc_eval/graded_response.py": "CD011DE953E4C46210C85367E7582E9F315E4A3BAB7CB8975F240055CC4441DF",
+    "tests/test_graded_response.py": "6C63F4C9C41E2CCD67BE3EB1C1D96C5FB7439F48656BB75682BC14822FDB9EE0"
+  },
+  "run_1": {
+    "status": "PASS",
+    "checks_passed": 86,
+    "checks_total": 86,
+    "preflight_sha256": "595D9E0A68124ADE294B90AD3891365C569AEE367CD576AC9C97F2D647CFBA0F",
+    "run_manifest_sha256": "85DC92712634C56B856409E3A58105205ABCCA504238A8B74EA3EC1F1F334ACD",
+    "log_path": "outputs/validity/round8_graded_response_preflight_attempt02_run1.log",
+    "log_sha256": "19CA3341A58940683926D116660CD874139DD3542C21AF31AA96BC4B8FF078D2"
+  },
+  "run_2": {
+    "status": "PASS",
+    "checks_passed": 86,
+    "checks_total": 86,
+    "preflight_sha256": "595D9E0A68124ADE294B90AD3891365C569AEE367CD576AC9C97F2D647CFBA0F",
+    "run_manifest_sha256": "85DC92712634C56B856409E3A58105205ABCCA504238A8B74EA3EC1F1F334ACD",
+    "log_path": "outputs/validity/round8_graded_response_preflight_attempt02_run2.log",
+    "log_sha256": "19CA3341A58940683926D116660CD874139DD3542C21AF31AA96BC4B8FF078D2"
+  },
+  "exact_checks": {
+    "preflight_json_byte_identical": true,
+    "run_manifest_json_byte_identical": true,
+    "console_logs_byte_identical": true,
+    "q_greater_than_zero_metric_outcomes_computed": false,
+    "real_data_tie_averaged_primary_computed": false,
+    "attempt01_result_artifacts_absent": true,
+    "attempt01_failure_log_preserved": true,
+    "attempt01_review_bound_in_new_manifest": true
+  },
+  "formal_attempt02_authorized": true
+}

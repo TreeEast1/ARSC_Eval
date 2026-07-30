@@ -16,18 +16,30 @@
     "outputs/validity/arsc_axis_falsification_artifact_index.json": "1A3B27102F3497A987E344B04BB723B3992383DF7943C7C006290D9BC2EF8C74",
     "outputs/validity/arsc_axis_falsification_primitives.npz": "D832D136D482377EF013853CC8772A792EEC6EADE20FED627082BF72D2F4E2B7"
   },
+  "failed_attempt01": {
+    "failed_log": {
+      "path": "outputs/validity/round8_graded_response_formal_attempt01_failed.log",
+      "sha256": "E3D3D58FF47663F7031AA85963D3AA81702BA4CA21F35C60DA77DEEA10E95296"
+    },
+    "independent_GO_RERUN_review": {
+      "path": "outputs/research_review_memo_round8_attempt01_failure.md",
+      "sha256": "9E051D174D3DC4117C6F4F9005EE03791CF297E0E5495E0C38953D6BA3ED54B8"
+    },
+    "formal_result_artifacts_written": false,
+    "authorized_correction": "canonical Round 7 C1 reduction order plus deterministic synthetic-test audit detail"
+  },
   "implementation": {
-    "scripts/analyze_round8_graded_response.py": "68AD821605D807F3A00ABBDBC386B6208FC1EFED9DB2691F99318494C247CE23",
-    "src/arsc_eval/graded_response.py": "598CA3FC8EFEA920310E60F1B91149C2F98CCCAE7649B0466E91340492DC8A71",
+    "scripts/analyze_round8_graded_response.py": "89025037BF4D531AFEC0907B627D26714FEA6EA5E2752A57A4589CAC503B5C36",
+    "src/arsc_eval/graded_response.py": "CD011DE953E4C46210C85367E7582E9F315E4A3BAB7CB8975F240055CC4441DF",
     "src/arsc_eval/association_components.py": "F8AA90F0756032ADCB283D111E5B29F03C9D93D96ABDA383E8F9E737B57CE6B5",
-    "tests/test_graded_response.py": "AE5A79AA16E0E41D3ED437A9B37307CF7E2DB6A8FDEA8575BD53E363FD54D4C8",
+    "tests/test_graded_response.py": "6C63F4C9C41E2CCD67BE3EB1C1D96C5FB7439F48656BB75682BC14822FDB9EE0",
     "tests/test_association_components.py": "918ABF1D6BC8EBB54F3872474AD484729E7F374DFDD4DA04C4F3F85ECFADF214",
     "tests/test_graded_association.py": "AB067CEF3384191C1DF80ACA18E3FAF201D43B7B72DE3911B541D2508C0942DA"
   },
-  "implementation_last_commit": "e0ab35121baa4bf1bbb5cc9b88e24f1e510c8f8d",
+  "implementation_last_commit": "4a644ca9040eebc06bfaaa250f698131b736d655",
   "preflight": {
     "path": "outputs/validity/round8_graded_response_preflight.json",
-    "sha256": "C706717B1C4C44FEEE95848CDAFB63E17C7D1A4D30F0E42741CD9878B46A01EE",
+    "sha256": "595D9E0A68124ADE294B90AD3891365C569AEE367CD576AC9C97F2D647CFBA0F",
     "status": "PASS"
   },
   "inputs": {
