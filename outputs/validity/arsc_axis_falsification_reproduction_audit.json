@@ -1,0 +1,169 @@
+{
+  "study": "Independent primitive-level reproduction of Round 7",
+  "status": "PASS",
+  "formal_outputs_modified": false,
+  "original_logit_caches_read": false,
+  "model_inference": false,
+  "bootstrap": {
+    "method": "independent seed resample plus exactly one shared image multiset per replicate",
+    "replicates": 2000,
+    "seed": 20260802
+  },
+  "checks": [
+    {
+      "name": "sha256::arsc_axis_falsification_results.json",
+      "passed": true,
+      "expected": "E0A1802EC426989B2F46FE5DED8F554A0CCAA63CFA5D1011A5F46808A56775EA",
+      "observed": "E0A1802EC426989B2F46FE5DED8F554A0CCAA63CFA5D1011A5F46808A56775EA"
+    },
+    {
+      "name": "sha256::arsc_axis_falsification_point_estimates.csv",
+      "passed": true,
+      "expected": "E105F0D46980F2C3BF405D25D24D0A9B107B5085D0C73A840035A1D1C101DEAD",
+      "observed": "E105F0D46980F2C3BF405D25D24D0A9B107B5085D0C73A840035A1D1C101DEAD"
+    },
+    {
+      "name": "sha256::arsc_axis_falsification_bootstrap.csv",
+      "passed": true,
+      "expected": "06E56093815ABC28A7A6572E7D0E62475B23AB6A3ACF232171E93ACE180E84D0",
+      "observed": "06E56093815ABC28A7A6572E7D0E62475B23AB6A3ACF232171E93ACE180E84D0"
+    },
+    {
+      "name": "sha256::arsc_axis_falsification_primitives.npz",
+      "passed": true,
+      "expected": "D832D136D482377EF013853CC8772A792EEC6EADE20FED627082BF72D2F4E2B7",
+      "observed": "D832D136D482377EF013853CC8772A792EEC6EADE20FED627082BF72D2F4E2B7"
+    },
+    {
+      "name": "sha256::tmux_arsc_axis_falsification.log",
+      "passed": true,
+      "expected": "5B2A9D551927F0E40B10A7224707D93F12AD6EC43EDB6618A446BFF09526D4A9",
+      "observed": "5B2A9D551927F0E40B10A7224707D93F12AD6EC43EDB6618A446BFF09526D4A9"
+    },
+    {
+      "name": "all_raw_seed_contrasts_exact",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "crossed_bootstrap_summary_exact",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "point_csv_row_count",
+      "passed": true,
+      "detail": 485
+    },
+    {
+      "name": "bootstrap_csv_row_count",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "formal_log_completed_2000",
+      "passed": true,
+      "detail": {
+        "progress_markers": 20,
+        "exit_code_0": true
+      }
+    }
+  ],
+  "summary": {
+    "passed": 10,
+    "total": 10,
+    "failed": []
+  },
+  "reproduced_bootstrap_summary": {
+    "A::original_minus_combined::Action-Only": {
+      "mean_across_seeds": 0.31296231486835413,
+      "sd_across_seeds": 0.006297777837509251,
+      "positive_seed_count": 5,
+      "crossed_bootstrap_ci": [
+        0.29990074990070187,
+        0.3262911358598795
+      ]
+    },
+    "A::original_minus_combined::Joint Action-Rationale": {
+      "mean_across_seeds": 0.3200325458871885,
+      "sd_across_seeds": 0.010048034047154515,
+      "positive_seed_count": 5,
+      "crossed_bootstrap_ci": [
+        0.30587116113844126,
+        0.33533729890716507
+      ]
+    },
+    "R::original_minus_combined::Joint Action-Rationale": {
+      "mean_across_seeds": 0.23038905658334716,
+      "sd_across_seeds": 0.021235101826769975,
+      "positive_seed_count": 5,
+      "crossed_bootstrap_ci": [
+        0.2134732896391,
+        0.2476984103881042
+      ]
+    },
+    "S_confidence::random_minus_original::Action-Only": {
+      "mean_across_seeds": 0.1376712026004689,
+      "sd_across_seeds": 0.0118599622679537,
+      "positive_seed_count": 5,
+      "crossed_bootstrap_ci": [
+        0.11913664608796,
+        0.1563199201745502
+      ]
+    },
+    "S_confidence::random_minus_original::Joint Action-Rationale": {
+      "mean_across_seeds": 0.14653917188391813,
+      "sd_across_seeds": 0.013627778598037299,
+      "positive_seed_count": 5,
+      "crossed_bootstrap_ci": [
+        0.1286281856297293,
+        0.16579863928841845
+      ]
+    },
+    "C1_action::wrong_minus_correct::Action-Only": {
+      "mean_across_seeds": 0.6697388632872504,
+      "sd_across_seeds": 0.00987193717430817,
+      "positive_seed_count": 5,
+      "crossed_bootstrap_ci": [
+        0.6572448979591837,
+        0.6822350230414745
+      ]
+    },
+    "C1_action::wrong_minus_correct::Joint Action-Rationale": {
+      "mean_across_seeds": 0.6887133347962842,
+      "sd_across_seeds": 0.009407723308281329,
+      "positive_seed_count": 5,
+      "crossed_bootstrap_ci": [
+        0.6757918221051862,
+        0.7005643332601859
+      ]
+    },
+    "C1_rationale::correct_minus_wrong::Joint Action-Rationale": {
+      "mean_across_seeds": 0.7825384982462007,
+      "sd_across_seeds": 0.009655149178201958,
+      "positive_seed_count": 5,
+      "crossed_bootstrap_ci": [
+        0.7719736120254553,
+        0.792558343870062
+      ]
+    },
+    "S_measurement::adversarial_minus_oracle::Action-Only": {
+      "mean_across_seeds": 0.6920179615709484,
+      "sd_across_seeds": 0.0004839687696508033,
+      "positive_seed_count": 5,
+      "crossed_bootstrap_ci": [
+        0.6905218162557945,
+        0.6928246520026822
+      ]
+    },
+    "S_measurement::adversarial_minus_oracle::Joint Action-Rationale": {
+      "mean_across_seeds": 0.692388537708485,
+      "sd_across_seeds": 0.00030091062190269264,
+      "positive_seed_count": 5,
+      "crossed_bootstrap_ci": [
+        0.6913246638264305,
+        0.6928709426990158
+      ]
+    }
+  }
+}
