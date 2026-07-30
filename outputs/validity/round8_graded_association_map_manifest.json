@@ -1,0 +1,162 @@
+{
+  "study": "Round 8 outcome-blind graded association maps",
+  "status": "FROZEN_BEFORE_METRIC_RESPONSE_OUTCOMES",
+  "construction_inputs": {
+    "cache_path": "outputs/validity/rq1_seed_43/prediction_cache/rq1_lossless.npz",
+    "cache_sha256": "0794249465A4EFEDB5177E8B74CC76C4537B4044411EE17E7BACBC66FA6E47A3",
+    "archive_keys_read": [
+      "test_file_names"
+    ],
+    "filename_array_sha256": "9D9D4E74272AB3A71390B4204CE56F1831350A29EED009111EF1AD5A29026DF6",
+    "targets_read": false,
+    "logits_or_probabilities_read": false,
+    "prior_metric_results_read": false
+  },
+  "construction": {
+    "salt": "ARSC_ROUND8_GRADED_ASSOCIATION_V1",
+    "depends_only_on": [
+      "canonical filename strings",
+      "clip groups derived by removing terminal _1 or _3",
+      "fixed salt",
+      "frozen severity grid"
+    ],
+    "sample_count": 4557,
+    "severity_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "cycle_diagnostics": {
+      "salt": "ARSC_ROUND8_GRADED_ASSOCIATION_V1",
+      "pair_count": 2277,
+      "triplet": [
+        591,
+        2315,
+        1920
+      ],
+      "right_half_rotation": 0,
+      "all_cycle_members_unique": true,
+      "all_cycle_edges_cross_clip": true
+    },
+    "pair_cycles": 2277,
+    "final_triplet_cycle": [
+      591,
+      2315,
+      1920
+    ],
+    "all_cycles_activated_only_at_q1": true
+  },
+  "clip_population": {
+    "clip_groups": 3904,
+    "size_histogram": {
+      "1": 3291,
+      "2": 573,
+      "3": 40
+    },
+    "images_in_non_singleton_groups": 1266,
+    "maximum_group_size": 3,
+    "clip_group_ids_sha256": "CBCF3E385E0FEBB22B364047BBB219CD959913F89C89663D523F6829F17DE92B"
+  },
+  "map_audit": {
+    "all_passed": true,
+    "by_severity": {
+      "q_000": {
+        "nominal_q": 0.0,
+        "source_array_key": "q_000_source_indices",
+        "source_array_sha256": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "active_images": 0,
+        "active_fraction": 0.0,
+        "fixed_points": 4557,
+        "bijection": true,
+        "active_same_filename_pairs": 0,
+        "active_same_clip_pairs": 0,
+        "nested_superset": true
+      },
+      "q_025": {
+        "nominal_q": 0.25,
+        "source_array_key": "q_025_source_indices",
+        "source_array_sha256": "03C88BA66A9F11075C7562994B4B3837E8AACB6474D2DD4B563D673E3BFE2F9B",
+        "active_images": 1140,
+        "active_fraction": 0.250164581961817,
+        "fixed_points": 3417,
+        "bijection": true,
+        "active_same_filename_pairs": 0,
+        "active_same_clip_pairs": 0,
+        "nested_superset": true
+      },
+      "q_050": {
+        "nominal_q": 0.5,
+        "source_array_key": "q_050_source_indices",
+        "source_array_sha256": "A14CE26622F4306EA718037858CBE8C1DD8018168F157A6E5615D68883E2119F",
+        "active_images": 2278,
+        "active_fraction": 0.499890278692122,
+        "fixed_points": 2279,
+        "bijection": true,
+        "active_same_filename_pairs": 0,
+        "active_same_clip_pairs": 0,
+        "nested_superset": true
+      },
+      "q_075": {
+        "nominal_q": 0.75,
+        "source_array_key": "q_075_source_indices",
+        "source_array_sha256": "3D89FFDAB4AE0FD5121D498F72AB071881620D89118CBED7A4426EEB1B657A00",
+        "active_images": 3418,
+        "active_fraction": 0.750054860653939,
+        "fixed_points": 1139,
+        "bijection": true,
+        "active_same_filename_pairs": 0,
+        "active_same_clip_pairs": 0,
+        "nested_superset": true
+      },
+      "q_100": {
+        "nominal_q": 1.0,
+        "source_array_key": "q_100_source_indices",
+        "source_array_sha256": "CEF0D9B1E82DCECC6B4D31C1664DD868E7B64FA6F065244A6539D27C1CE2D446",
+        "active_images": 4557,
+        "active_fraction": 1.0,
+        "fixed_points": 0,
+        "bijection": true,
+        "active_same_filename_pairs": 0,
+        "active_same_clip_pairs": 0,
+        "nested_superset": true
+      }
+    },
+    "prevalence_preservation_reason": "Every q-specific source array is a global bijection and identity outside a nested union of complete cycles."
+  },
+  "artifact": {
+    "path": "outputs/validity/round8_graded_association_maps.npz",
+    "sha256": "8685E1A4605B5D6355A432BC6CA03CF61930BAB23D41D899478A5C1D8FC47ED1",
+    "bytes": 186158,
+    "array_keys": [
+      "clip_group_ids",
+      "clip_group_names",
+      "file_names",
+      "final_triplet_cycle",
+      "pair_cycles_in_activation_order",
+      "q_000_source_indices",
+      "q_025_source_indices",
+      "q_050_source_indices",
+      "q_075_source_indices",
+      "q_100_source_indices"
+    ],
+    "contains_targets": false,
+    "contains_logits_probabilities_or_metric_outcomes": false
+  },
+  "implementation": {
+    "builder": {
+      "path": "scripts/build_round8_association_maps.py",
+      "sha256": "8B2FAF309ADAC66E9963B96BC0762A16D55E161F76DE7A3E7E97DBA5B6177E3D"
+    },
+    "core": {
+      "path": "src/arsc_eval/graded_association.py",
+      "sha256": "529C0AB3364CA48AEFDD6FC91C7B1390D57110CFA221437B3F7FED4D709DD443"
+    },
+    "synthetic_tests": {
+      "path": "tests/test_graded_association.py",
+      "sha256": "AB067CEF3384191C1DF80ACA18E3FAF201D43B7B72DE3911B541D2508C0942DA"
+    }
+  },
+  "failure_policy": "Any later hash or invariant mismatch stops Round 8; do not change the salt, cycle order, grid, or maps."
+}
