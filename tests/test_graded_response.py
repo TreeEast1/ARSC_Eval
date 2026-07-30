@@ -172,6 +172,61 @@ class GradedResponseTests(unittest.TestCase):
         self.assertEqual(set(axis_bottlenecks(curves)), {"A", "R", "S", "C1"})
         self.assertEqual(set(mean_curve_checks([curves])), {"A", "R", "S", "C1"})
 
+    def test_c1_mean_three_uses_round7_scalar_reduction_exactly(self):
+        patterns = np.array(
+            [
+                [0, 0, 1, 1],
+                [0, 0, 0, 1],
+                [1, 0, 1, 0],
+            ],
+            dtype=bool,
+        )
+        expected = float(
+            np.mean([float(row.mean()) for row in patterns])
+        )
+        old_reduction = float(np.mean(patterns, axis=0).mean())
+        self.assertNotEqual(expected, old_reduction)
+
+        clean_action = np.zeros((4, 1), dtype=bool)
+        clean_rationale = np.ones((4, 1), dtype=bool)
+        source_maps = np.tile(np.arange(4), (5, 1))
+        prepared = {
+            "action_targets": clean_action,
+            "rationale_targets": clean_rationale,
+            "action_predictions": {
+                "action_only": clean_action,
+                "joint": clean_action,
+            },
+            "rationale_predictions": clean_rationale,
+            "exact_set_errors": {
+                "action_only": np.zeros(4),
+                "joint": np.zeros(4),
+            },
+            "confidence": {
+                "action_only": np.array([0.9, 0.8, 0.7, 0.6]),
+                "joint": np.array([0.9, 0.8, 0.7, 0.6]),
+            },
+            "action_perturbed_predictions": {
+                perturbation: {
+                    "action_only": patterns[index, :, None],
+                    "joint": patterns[index, :, None],
+                }
+                for index, perturbation in enumerate(
+                    ("brightness", "blur", "noise")
+                )
+            },
+            "rationale_perturbed_predictions": {
+                perturbation: patterns[index, :, None]
+                for index, perturbation in enumerate(
+                    ("brightness", "blur", "noise")
+                )
+            },
+        }
+        curves = graded_axis_curves(prepared, source_maps)
+        for model_index in (0, 1):
+            self.assertEqual(curves["C1"][model_index, 0], expected)
+        self.assertEqual(curves["C1"][2, 0], expected)
+
 
 if __name__ == "__main__":
     unittest.main()

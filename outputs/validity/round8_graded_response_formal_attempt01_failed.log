@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\analyze_round8_graded_response.py", line 1647, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\analyze_round8_graded_response.py", line 1500, in main
+    outcomes, curves_by_seed, point_rows = point_outcomes(
+                                           ^^^^^^^^^^^^^^^
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\analyze_round8_graded_response.py", line 1243, in point_outcomes
+    raise RuntimeError(
+RuntimeError: C1 action point/curve implementation mismatch

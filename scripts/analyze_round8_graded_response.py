@@ -155,6 +155,17 @@ ROUND7_PRIMITIVES_PATH = (
     / "validity"
     / "arsc_axis_falsification_primitives.npz"
 )
+ATTEMPT01_FAILURE_PATH = (
+    PROJECT_ROOT
+    / "outputs"
+    / "validity"
+    / "round8_graded_response_formal_attempt01_failed.log"
+)
+ATTEMPT01_REVIEW_PATH = (
+    PROJECT_ROOT
+    / "outputs"
+    / "research_review_memo_round8_attempt01_failure.md"
+)
 PREFLIGHT_PATH = (
     PROJECT_ROOT
     / "outputs"
@@ -508,13 +519,16 @@ def c1_point_detail(
 
 
 def run_synthetic_tests() -> dict[str, Any]:
+    suite_paths = [
+        PROJECT_ROOT / "tests" / "test_graded_response.py",
+        PROJECT_ROOT / "tests" / "test_association_components.py",
+        PROJECT_ROOT / "tests" / "test_graded_association.py",
+    ]
     command = [
         sys.executable,
         "-m",
         "pytest",
-        "tests/test_graded_response.py",
-        "tests/test_association_components.py",
-        "tests/test_graded_association.py",
+        *[relative(path) for path in suite_paths],
         "-q",
     ]
     environment = os.environ.copy()
@@ -530,13 +544,21 @@ def run_synthetic_tests() -> dict[str, Any]:
         text=True,
         check=False,
     )
-    return {
+    result = {
         "passed": completed.returncode == 0,
         "returncode": completed.returncode,
         "command": command,
-        "stdout": completed.stdout.strip(),
-        "stderr": completed.stderr.strip(),
+        "suite_sha256": {
+            relative(path): sha256_file(path) for path in suite_paths
+        },
+        "deterministic_summary": (
+            "PASS" if completed.returncode == 0 else "FAIL"
+        ),
     }
+    if completed.returncode != 0:
+        result["failure_stdout"] = completed.stdout.strip()
+        result["failure_stderr"] = completed.stderr.strip()
+    return result
 
 
 def git_last_commit(paths: list[Path]) -> str | None:
@@ -574,13 +596,42 @@ def run_preflight() -> tuple[
         )
 
     amendment_review = AMENDMENT_REVIEW_PATH.read_text(encoding="utf-8")
+    attempt01_review = ATTEMPT01_REVIEW_PATH.read_text(encoding="utf-8")
+    governance_detail = {
+        "amendment_GO_memo_sha256": sha256_file(
+            AMENDMENT_REVIEW_PATH
+        ),
+        "attempt01_failed_log_expected_sha256": (
+            "E3D3D58FF47663F7031AA85963D3AA81702BA4CA21F35C60DA77DEEA10E95296"
+        ),
+        "attempt01_failed_log_observed_sha256": sha256_file(
+            ATTEMPT01_FAILURE_PATH
+        ),
+        "attempt01_GO_RERUN_memo_expected_sha256": (
+            "9E051D174D3DC4117C6F4F9005EE03791CF297E0E5495E0C38953D6BA3ED54B8"
+        ),
+        "attempt01_GO_RERUN_memo_observed_sha256": sha256_file(
+            ATTEMPT01_REVIEW_PATH
+        ),
+    }
     append_check(
         checks,
-        "independent_amendment_review_explicit_GO",
+        "independent_reviews_and_attempt01_binding",
         "\n**GO**" in amendment_review
         and "没有读取、运行或推导任何 q-response metric outcome"
-        in amendment_review,
-        {"sha256": sha256_file(AMENDMENT_REVIEW_PATH)},
+        in amendment_review
+        and "\n**GO_RERUN**" in attempt01_review
+        and governance_detail[
+            "attempt01_failed_log_expected_sha256"
+        ]
+        == governance_detail["attempt01_failed_log_observed_sha256"]
+        and governance_detail[
+            "attempt01_GO_RERUN_memo_expected_sha256"
+        ]
+        == governance_detail[
+            "attempt01_GO_RERUN_memo_observed_sha256"
+        ],
+        governance_detail,
     )
 
     file_names, maps, components = load_maps_and_components()
@@ -1011,6 +1062,21 @@ def run_preflight() -> tuple[
         "real_data_tie_averaged_primary_computed": False,
         "frozen_artifacts": {
             relative(path): sha256_file(path) for path in FROZEN_HASHES
+        },
+        "failed_attempt01": {
+            "failed_log": {
+                "path": relative(ATTEMPT01_FAILURE_PATH),
+                "sha256": sha256_file(ATTEMPT01_FAILURE_PATH),
+            },
+            "independent_GO_RERUN_review": {
+                "path": relative(ATTEMPT01_REVIEW_PATH),
+                "sha256": sha256_file(ATTEMPT01_REVIEW_PATH),
+            },
+            "formal_result_artifacts_written": False,
+            "authorized_correction": (
+                "canonical Round 7 C1 reduction order plus deterministic "
+                "synthetic-test audit detail"
+            ),
         },
         "implementation": {
             relative(path): sha256_file(path)

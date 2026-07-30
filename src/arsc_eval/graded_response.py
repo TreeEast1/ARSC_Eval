@@ -310,13 +310,15 @@ def graded_axis_curves(
                         f"{perturbation}/{model} action arrays do not align"
                     )
                 per_perturbation.append(
-                    action_flip_samples(
-                        clean[selected],
-                        values[source[selected]],
-                        0.5,
+                    float(
+                        action_flip_samples(
+                            clean[selected],
+                            values[source[selected]],
+                            0.5,
+                        ).mean()
                     )
                 )
-            by_q.append(float(np.mean(per_perturbation, axis=0).mean()))
+            by_q.append(float(np.mean(per_perturbation)))
         action_c1_curves.append(by_q)
 
     rationale_clean = rationale_predictions
@@ -331,15 +333,15 @@ def graded_axis_curves(
                     f"{perturbation} rationale arrays do not align"
                 )
             per_perturbation.append(
-                rationale_jaccard_samples(
-                    rationale_clean[selected],
-                    values[source[selected]],
-                    0.5,
+                float(
+                    rationale_jaccard_samples(
+                        rationale_clean[selected],
+                        values[source[selected]],
+                        0.5,
+                    ).mean()
                 )
             )
-        rationale_c1_curve.append(
-            float(np.mean(per_perturbation, axis=0).mean())
-        )
+        rationale_c1_curve.append(float(np.mean(per_perturbation)))
 
     return {
         "A": np.asarray(action_curves, dtype=np.float64),
