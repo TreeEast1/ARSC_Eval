@@ -1,0 +1,128 @@
+{
+  "study": "Round 8 immutable pre-outcome implementation/input manifest",
+  "status": "PRE_OUTCOME_PREFLIGHT_PASSED",
+  "q_greater_than_zero_metric_outcomes_computed": false,
+  "real_data_tie_averaged_primary_computed": false,
+  "frozen_artifacts": {
+    "outputs/validity/round8_graded_response_protocol.json": "B96AC789BA12DD0FE65AF2138C54248C2154C1E1489D911571422EDE94B65357",
+    "outputs/validity/round8_graded_response_protocol_amendment01.json": "D15E6F93FFEF686172F3887BAB609E6DA724ECE975BB125485A717688A020C8A",
+    "outputs/research_review_memo_round8_preregister.md": "83C13D1112ABAF9CBA6504E26BBB0BDBBDD99C5D7A45DB27A840D0A695B65BF2",
+    "outputs/research_review_memo_round8_amendment01.md": "CBF47293F5D983772C305B53E7C1DACD056D1609C7BA4F0A3B284BFAEEC9B66A",
+    "outputs/validity/round8_graded_association_maps.npz": "8685E1A4605B5D6355A432BC6CA03CF61930BAB23D41D899478A5C1D8FC47ED1",
+    "outputs/validity/round8_graded_association_map_manifest.json": "73B89C3438262BA272E0E90EDC2A6F9408B196CCBD4A30D9FA6FFFA798C273DC",
+    "outputs/validity/round8_association_components.npz": "F1DF45A526EEBE02C2CDA6EA2FB1FE8B034A3FDD3B1582B3598B602916CDD0E8",
+    "outputs/validity/round8_association_component_manifest.json": "7E5EA6AB9E83A0CCE03FDBBBAC274AB01D1B7773CA43833348C77ED71127653F",
+    "outputs/validity/arsc_axis_falsification_results.json": "E0A1802EC426989B2F46FE5DED8F554A0CCAA63CFA5D1011A5F46808A56775EA",
+    "outputs/validity/arsc_axis_falsification_artifact_index.json": "1A3B27102F3497A987E344B04BB723B3992383DF7943C7C006290D9BC2EF8C74",
+    "outputs/validity/arsc_axis_falsification_primitives.npz": "D832D136D482377EF013853CC8772A792EEC6EADE20FED627082BF72D2F4E2B7"
+  },
+  "implementation": {
+    "scripts/analyze_round8_graded_response.py": "68AD821605D807F3A00ABBDBC386B6208FC1EFED9DB2691F99318494C247CE23",
+    "src/arsc_eval/graded_response.py": "598CA3FC8EFEA920310E60F1B91149C2F98CCCAE7649B0466E91340492DC8A71",
+    "src/arsc_eval/association_components.py": "F8AA90F0756032ADCB283D111E5B29F03C9D93D96ABDA383E8F9E737B57CE6B5",
+    "tests/test_graded_response.py": "AE5A79AA16E0E41D3ED437A9B37307CF7E2DB6A8FDEA8575BD53E363FD54D4C8",
+    "tests/test_association_components.py": "918ABF1D6BC8EBB54F3872474AD484729E7F374DFDD4DA04C4F3F85ECFADF214",
+    "tests/test_graded_association.py": "AB067CEF3384191C1DF80ACA18E3FAF201D43B7B72DE3911B541D2508C0942DA"
+  },
+  "implementation_last_commit": "e0ab35121baa4bf1bbb5cc9b88e24f1e510c8f8d",
+  "preflight": {
+    "path": "outputs/validity/round8_graded_response_preflight.json",
+    "sha256": "C706717B1C4C44FEEE95848CDAFB63E17C7D1A4D30F0E42741CD9878B46A01EE",
+    "status": "PASS"
+  },
+  "inputs": {
+    "43": {
+      "cache": {
+        "path": "outputs/validity/rq1_seed_43/prediction_cache/rq1_lossless.npz",
+        "sha256": "0794249465A4EFEDB5177E8B74CC76C4537B4044411EE17E7BACBC66FA6E47A3"
+      },
+      "action_only": {
+        "path": "outputs/validity/rq1_seed_43/calibration_action_only.json",
+        "sha256": "42BED1E43902103AB37864FFA7F48CDD2516C59205FE810AB461511095AA7AD0"
+      },
+      "joint": {
+        "path": "outputs/validity/rq1_seed_43/calibration_joint.json",
+        "sha256": "A8A9AD227BAB110778E3D49F8BA78BAB21500FD3ECAEE7280763C6AF25CC137F"
+      }
+    },
+    "44": {
+      "cache": {
+        "path": "outputs/validity/rq1_seed_44/prediction_cache/rq1_lossless.npz",
+        "sha256": "BA2D0E2061158358BE5D5B3D68AAFDA7FF57E7C571C0C679502A9CC9C6ADB465"
+      },
+      "action_only": {
+        "path": "outputs/validity/rq1_seed_44/calibration_action_only.json",
+        "sha256": "F670A6EE78230DE9856DA3BFEDA16DF59C8C02E2962F4518C651DA5560D6C6CF"
+      },
+      "joint": {
+        "path": "outputs/validity/rq1_seed_44/calibration_joint.json",
+        "sha256": "89B07811122FE266C79541AD00AA1BEFFCE6E466CCB8B7D2E34D8B5E73A8B19B"
+      }
+    },
+    "45": {
+      "cache": {
+        "path": "outputs/validity/rq1_seed_45/prediction_cache/rq1_lossless.npz",
+        "sha256": "A7C179876FC3C57F06D3D7A9FE8EDFA286B6667C1B125933F8E350F657AD1187"
+      },
+      "action_only": {
+        "path": "outputs/validity/rq1_seed_45/calibration_action_only.json",
+        "sha256": "E8E01FE05656BDCB188700875609E1FFDF16B5C62FB99658F89B0CB983DD913F"
+      },
+      "joint": {
+        "path": "outputs/validity/rq1_seed_45/calibration_joint.json",
+        "sha256": "817A007E33AF09AE1DBBF1C3B45216D427C116A15E2DC4A172E5DE8C897857FB"
+      }
+    },
+    "46": {
+      "cache": {
+        "path": "outputs/validity/rq1_seed_46/prediction_cache/rq1_lossless.npz",
+        "sha256": "1EA70BC6F3D59D9B07D28369982D271FA3951E97FFFE1870A3E7C7530054EAD0"
+      },
+      "action_only": {
+        "path": "outputs/validity/rq1_seed_46/calibration_action_only.json",
+        "sha256": "D7C8C90570D357EA144642F4628538D6D2B1B61F018302AFB248FD82507698BE"
+      },
+      "joint": {
+        "path": "outputs/validity/rq1_seed_46/calibration_joint.json",
+        "sha256": "F9935A65A0B187373FC16742207720D54C41C46071A1498393985ABB18E5E29A"
+      }
+    },
+    "47": {
+      "cache": {
+        "path": "outputs/validity/rq1_seed_47/prediction_cache/rq1_lossless.npz",
+        "sha256": "7DDE8E4ACDFA06004ADE4AF33C679EC2A53E9F689B214A2ED36EDF91598AF743"
+      },
+      "action_only": {
+        "path": "outputs/validity/rq1_seed_47/calibration_action_only.json",
+        "sha256": "E9FCAF432BC857AB3A4CEF69403975D6B22D86DD52A2540E65B96C9C1F9B07EB"
+      },
+      "joint": {
+        "path": "outputs/validity/rq1_seed_47/calibration_joint.json",
+        "sha256": "06E05CA5334EBF74DCBE72829133A31707CFA94FADDA0FE6BE38F249E3A86101"
+      }
+    }
+  },
+  "frozen_parameters": {
+    "seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "q_values": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "sample_count": 4557,
+    "threshold": 0.5,
+    "bootstrap_unit": "association component",
+    "association_components": 1625,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260803,
+    "bottleneck_order": "minimum adjacent expected-direction step within each selected seed, then mean across five selected seeds"
+  }
+}

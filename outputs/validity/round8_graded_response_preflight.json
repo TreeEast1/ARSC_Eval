@@ -1,0 +1,994 @@
+{
+  "study": "Round 8 graded response pre-outcome exact audit",
+  "status": "PASS",
+  "q_greater_than_zero_metric_outcomes_computed": false,
+  "real_data_tie_averaged_primary_computed": false,
+  "q0_bridge_scope": "Round 7 A/R/correct-pair C1 point estimates, S primitives, and canonical-stable S diagnostics only",
+  "checks": [
+    {
+      "name": "frozen_hash::outputs/validity/round8_graded_response_protocol.json",
+      "passed": true,
+      "detail": {
+        "expected": "B96AC789BA12DD0FE65AF2138C54248C2154C1E1489D911571422EDE94B65357",
+        "observed": "B96AC789BA12DD0FE65AF2138C54248C2154C1E1489D911571422EDE94B65357"
+      }
+    },
+    {
+      "name": "frozen_hash::outputs/validity/round8_graded_response_protocol_amendment01.json",
+      "passed": true,
+      "detail": {
+        "expected": "D15E6F93FFEF686172F3887BAB609E6DA724ECE975BB125485A717688A020C8A",
+        "observed": "D15E6F93FFEF686172F3887BAB609E6DA724ECE975BB125485A717688A020C8A"
+      }
+    },
+    {
+      "name": "frozen_hash::outputs/research_review_memo_round8_preregister.md",
+      "passed": true,
+      "detail": {
+        "expected": "83C13D1112ABAF9CBA6504E26BBB0BDBBDD99C5D7A45DB27A840D0A695B65BF2",
+        "observed": "83C13D1112ABAF9CBA6504E26BBB0BDBBDD99C5D7A45DB27A840D0A695B65BF2"
+      }
+    },
+    {
+      "name": "frozen_hash::outputs/research_review_memo_round8_amendment01.md",
+      "passed": true,
+      "detail": {
+        "expected": "CBF47293F5D983772C305B53E7C1DACD056D1609C7BA4F0A3B284BFAEEC9B66A",
+        "observed": "CBF47293F5D983772C305B53E7C1DACD056D1609C7BA4F0A3B284BFAEEC9B66A"
+      }
+    },
+    {
+      "name": "frozen_hash::outputs/validity/round8_graded_association_maps.npz",
+      "passed": true,
+      "detail": {
+        "expected": "8685E1A4605B5D6355A432BC6CA03CF61930BAB23D41D899478A5C1D8FC47ED1",
+        "observed": "8685E1A4605B5D6355A432BC6CA03CF61930BAB23D41D899478A5C1D8FC47ED1"
+      }
+    },
+    {
+      "name": "frozen_hash::outputs/validity/round8_graded_association_map_manifest.json",
+      "passed": true,
+      "detail": {
+        "expected": "73B89C3438262BA272E0E90EDC2A6F9408B196CCBD4A30D9FA6FFFA798C273DC",
+        "observed": "73B89C3438262BA272E0E90EDC2A6F9408B196CCBD4A30D9FA6FFFA798C273DC"
+      }
+    },
+    {
+      "name": "frozen_hash::outputs/validity/round8_association_components.npz",
+      "passed": true,
+      "detail": {
+        "expected": "F1DF45A526EEBE02C2CDA6EA2FB1FE8B034A3FDD3B1582B3598B602916CDD0E8",
+        "observed": "F1DF45A526EEBE02C2CDA6EA2FB1FE8B034A3FDD3B1582B3598B602916CDD0E8"
+      }
+    },
+    {
+      "name": "frozen_hash::outputs/validity/round8_association_component_manifest.json",
+      "passed": true,
+      "detail": {
+        "expected": "7E5EA6AB9E83A0CCE03FDBBBAC274AB01D1B7773CA43833348C77ED71127653F",
+        "observed": "7E5EA6AB9E83A0CCE03FDBBBAC274AB01D1B7773CA43833348C77ED71127653F"
+      }
+    },
+    {
+      "name": "frozen_hash::outputs/validity/arsc_axis_falsification_results.json",
+      "passed": true,
+      "detail": {
+        "expected": "E0A1802EC426989B2F46FE5DED8F554A0CCAA63CFA5D1011A5F46808A56775EA",
+        "observed": "E0A1802EC426989B2F46FE5DED8F554A0CCAA63CFA5D1011A5F46808A56775EA"
+      }
+    },
+    {
+      "name": "frozen_hash::outputs/validity/arsc_axis_falsification_artifact_index.json",
+      "passed": true,
+      "detail": {
+        "expected": "1A3B27102F3497A987E344B04BB723B3992383DF7943C7C006290D9BC2EF8C74",
+        "observed": "1A3B27102F3497A987E344B04BB723B3992383DF7943C7C006290D9BC2EF8C74"
+      }
+    },
+    {
+      "name": "frozen_hash::outputs/validity/arsc_axis_falsification_primitives.npz",
+      "passed": true,
+      "detail": {
+        "expected": "D832D136D482377EF013853CC8772A792EEC6EADE20FED627082BF72D2F4E2B7",
+        "observed": "D832D136D482377EF013853CC8772A792EEC6EADE20FED627082BF72D2F4E2B7"
+      }
+    },
+    {
+      "name": "independent_amendment_review_explicit_GO",
+      "passed": true,
+      "detail": {
+        "sha256": "CBF47293F5D983772C305B53E7C1DACD056D1609C7BA4F0A3B284BFAEEC9B66A"
+      }
+    },
+    {
+      "name": "source_hash::q_000_source_indices",
+      "passed": true,
+      "detail": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F"
+    },
+    {
+      "name": "source_hash::q_025_source_indices",
+      "passed": true,
+      "detail": "03C88BA66A9F11075C7562994B4B3837E8AACB6474D2DD4B563D673E3BFE2F9B"
+    },
+    {
+      "name": "source_hash::q_050_source_indices",
+      "passed": true,
+      "detail": "A14CE26622F4306EA718037858CBE8C1DD8018168F157A6E5615D68883E2119F"
+    },
+    {
+      "name": "source_hash::q_075_source_indices",
+      "passed": true,
+      "detail": "3D89FFDAB4AE0FD5121D498F72AB071881620D89118CBED7A4426EEB1B657A00"
+    },
+    {
+      "name": "source_hash::q_100_source_indices",
+      "passed": true,
+      "detail": "CEF0D9B1E82DCECC6B4D31C1664DD868E7B64FA6F065244A6539D27C1CE2D446"
+    },
+    {
+      "name": "graded_map_exact_invariants",
+      "passed": true,
+      "detail": {
+        "all_passed": true,
+        "active_images": [
+          0,
+          1140,
+          2278,
+          3418,
+          4557
+        ]
+      }
+    },
+    {
+      "name": "association_component_exact_invariants",
+      "passed": true,
+      "detail": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1191,
+          "3": 291,
+          "4": 101,
+          "5": 22,
+          "6": 7,
+          "7": 11,
+          "8": 2
+        },
+        "image_count_histogram": {
+          "2": 1191,
+          "4": 291,
+          "6": 101,
+          "8": 22,
+          "10": 7,
+          "12": 11,
+          "13": 1,
+          "14": 1
+        },
+        "maximum_clips_per_component": 8,
+        "maximum_images_per_component": 14,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000_source_indices": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025_source_indices": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050_source_indices": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075_source_indices": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100_source_indices": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      }
+    },
+    {
+      "name": "component_array_hashes",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "common_array_hash::test_file_names",
+      "passed": true,
+      "detail": "9D9D4E74272AB3A71390B4204CE56F1831350A29EED009111EF1AD5A29026DF6"
+    },
+    {
+      "name": "common_array_hash::test_action_targets",
+      "passed": true,
+      "detail": "C28063DE57B7E4CAF8B1A19C074BB5F1DF05C4984377856EDF2522387CEB7A39"
+    },
+    {
+      "name": "common_array_hash::test_rationale_targets",
+      "passed": true,
+      "detail": "F787A947EC2ECA728166DC83B621402EDE27CAF7DDB1E7C3D3BBDD36B2BED469"
+    },
+    {
+      "name": "map_filename_order_equals_cache",
+      "passed": true,
+      "detail": {
+        "samples": 4557
+      }
+    },
+    {
+      "name": "seed_43_cache_hash",
+      "passed": true,
+      "detail": "0794249465A4EFEDB5177E8B74CC76C4537B4044411EE17E7BACBC66FA6E47A3"
+    },
+    {
+      "name": "seed_43_action_only_calibration_hash",
+      "passed": true,
+      "detail": "42BED1E43902103AB37864FFA7F48CDD2516C59205FE810AB461511095AA7AD0"
+    },
+    {
+      "name": "seed_43_joint_calibration_hash",
+      "passed": true,
+      "detail": "A8A9AD227BAB110778E3D49F8BA78BAB21500FD3ECAEE7280763C6AF25CC137F"
+    },
+    {
+      "name": "seed_43_common_arrays_equal",
+      "passed": true,
+      "detail": {
+        "file_names": true,
+        "action_targets": true,
+        "rationale_targets": true
+      }
+    },
+    {
+      "name": "seed_43_action_only_S_primitive_invariants",
+      "passed": true,
+      "detail": {
+        "finite": true,
+        "confidence_range": true,
+        "binary_errors": true,
+        "has_correct_and_error": true
+      }
+    },
+    {
+      "name": "seed_43_joint_S_primitive_invariants",
+      "passed": true,
+      "detail": {
+        "finite": true,
+        "confidence_range": true,
+        "binary_errors": true,
+        "has_correct_and_error": true
+      }
+    },
+    {
+      "name": "seed_43_raw_calibrated_predictions_equal",
+      "passed": true,
+      "detail": {
+        "action_only": true,
+        "joint": true
+      }
+    },
+    {
+      "name": "seed_43_q_multisets_preserved",
+      "passed": true,
+      "detail": {
+        "target_prevalence": {
+          "0.0": {
+            "action": true,
+            "rationale": true
+          },
+          "0.25": {
+            "action": true,
+            "rationale": true
+          },
+          "0.5": {
+            "action": true,
+            "rationale": true
+          },
+          "0.75": {
+            "action": true,
+            "rationale": true
+          },
+          "1.0": {
+            "action": true,
+            "rationale": true
+          }
+        },
+        "confidence": {
+          "0.0": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.25": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.5": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.75": {
+            "action_only": true,
+            "joint": true
+          },
+          "1.0": {
+            "action_only": true,
+            "joint": true
+          }
+        }
+      }
+    },
+    {
+      "name": "seed_43_q0_A_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_43_q0_R_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_43_q0_C1_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_43_q0_S_stable_and_primitives_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_44_cache_hash",
+      "passed": true,
+      "detail": "BA2D0E2061158358BE5D5B3D68AAFDA7FF57E7C571C0C679502A9CC9C6ADB465"
+    },
+    {
+      "name": "seed_44_action_only_calibration_hash",
+      "passed": true,
+      "detail": "F670A6EE78230DE9856DA3BFEDA16DF59C8C02E2962F4518C651DA5560D6C6CF"
+    },
+    {
+      "name": "seed_44_joint_calibration_hash",
+      "passed": true,
+      "detail": "89B07811122FE266C79541AD00AA1BEFFCE6E466CCB8B7D2E34D8B5E73A8B19B"
+    },
+    {
+      "name": "seed_44_common_arrays_equal",
+      "passed": true,
+      "detail": {
+        "file_names": true,
+        "action_targets": true,
+        "rationale_targets": true
+      }
+    },
+    {
+      "name": "seed_44_action_only_S_primitive_invariants",
+      "passed": true,
+      "detail": {
+        "finite": true,
+        "confidence_range": true,
+        "binary_errors": true,
+        "has_correct_and_error": true
+      }
+    },
+    {
+      "name": "seed_44_joint_S_primitive_invariants",
+      "passed": true,
+      "detail": {
+        "finite": true,
+        "confidence_range": true,
+        "binary_errors": true,
+        "has_correct_and_error": true
+      }
+    },
+    {
+      "name": "seed_44_raw_calibrated_predictions_equal",
+      "passed": true,
+      "detail": {
+        "action_only": true,
+        "joint": true
+      }
+    },
+    {
+      "name": "seed_44_q_multisets_preserved",
+      "passed": true,
+      "detail": {
+        "target_prevalence": {
+          "0.0": {
+            "action": true,
+            "rationale": true
+          },
+          "0.25": {
+            "action": true,
+            "rationale": true
+          },
+          "0.5": {
+            "action": true,
+            "rationale": true
+          },
+          "0.75": {
+            "action": true,
+            "rationale": true
+          },
+          "1.0": {
+            "action": true,
+            "rationale": true
+          }
+        },
+        "confidence": {
+          "0.0": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.25": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.5": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.75": {
+            "action_only": true,
+            "joint": true
+          },
+          "1.0": {
+            "action_only": true,
+            "joint": true
+          }
+        }
+      }
+    },
+    {
+      "name": "seed_44_q0_A_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_44_q0_R_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_44_q0_C1_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_44_q0_S_stable_and_primitives_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_45_cache_hash",
+      "passed": true,
+      "detail": "A7C179876FC3C57F06D3D7A9FE8EDFA286B6667C1B125933F8E350F657AD1187"
+    },
+    {
+      "name": "seed_45_action_only_calibration_hash",
+      "passed": true,
+      "detail": "E8E01FE05656BDCB188700875609E1FFDF16B5C62FB99658F89B0CB983DD913F"
+    },
+    {
+      "name": "seed_45_joint_calibration_hash",
+      "passed": true,
+      "detail": "817A007E33AF09AE1DBBF1C3B45216D427C116A15E2DC4A172E5DE8C897857FB"
+    },
+    {
+      "name": "seed_45_common_arrays_equal",
+      "passed": true,
+      "detail": {
+        "file_names": true,
+        "action_targets": true,
+        "rationale_targets": true
+      }
+    },
+    {
+      "name": "seed_45_action_only_S_primitive_invariants",
+      "passed": true,
+      "detail": {
+        "finite": true,
+        "confidence_range": true,
+        "binary_errors": true,
+        "has_correct_and_error": true
+      }
+    },
+    {
+      "name": "seed_45_joint_S_primitive_invariants",
+      "passed": true,
+      "detail": {
+        "finite": true,
+        "confidence_range": true,
+        "binary_errors": true,
+        "has_correct_and_error": true
+      }
+    },
+    {
+      "name": "seed_45_raw_calibrated_predictions_equal",
+      "passed": true,
+      "detail": {
+        "action_only": true,
+        "joint": true
+      }
+    },
+    {
+      "name": "seed_45_q_multisets_preserved",
+      "passed": true,
+      "detail": {
+        "target_prevalence": {
+          "0.0": {
+            "action": true,
+            "rationale": true
+          },
+          "0.25": {
+            "action": true,
+            "rationale": true
+          },
+          "0.5": {
+            "action": true,
+            "rationale": true
+          },
+          "0.75": {
+            "action": true,
+            "rationale": true
+          },
+          "1.0": {
+            "action": true,
+            "rationale": true
+          }
+        },
+        "confidence": {
+          "0.0": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.25": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.5": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.75": {
+            "action_only": true,
+            "joint": true
+          },
+          "1.0": {
+            "action_only": true,
+            "joint": true
+          }
+        }
+      }
+    },
+    {
+      "name": "seed_45_q0_A_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_45_q0_R_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_45_q0_C1_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_45_q0_S_stable_and_primitives_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_46_cache_hash",
+      "passed": true,
+      "detail": "1EA70BC6F3D59D9B07D28369982D271FA3951E97FFFE1870A3E7C7530054EAD0"
+    },
+    {
+      "name": "seed_46_action_only_calibration_hash",
+      "passed": true,
+      "detail": "D7C8C90570D357EA144642F4628538D6D2B1B61F018302AFB248FD82507698BE"
+    },
+    {
+      "name": "seed_46_joint_calibration_hash",
+      "passed": true,
+      "detail": "F9935A65A0B187373FC16742207720D54C41C46071A1498393985ABB18E5E29A"
+    },
+    {
+      "name": "seed_46_common_arrays_equal",
+      "passed": true,
+      "detail": {
+        "file_names": true,
+        "action_targets": true,
+        "rationale_targets": true
+      }
+    },
+    {
+      "name": "seed_46_action_only_S_primitive_invariants",
+      "passed": true,
+      "detail": {
+        "finite": true,
+        "confidence_range": true,
+        "binary_errors": true,
+        "has_correct_and_error": true
+      }
+    },
+    {
+      "name": "seed_46_joint_S_primitive_invariants",
+      "passed": true,
+      "detail": {
+        "finite": true,
+        "confidence_range": true,
+        "binary_errors": true,
+        "has_correct_and_error": true
+      }
+    },
+    {
+      "name": "seed_46_raw_calibrated_predictions_equal",
+      "passed": true,
+      "detail": {
+        "action_only": true,
+        "joint": true
+      }
+    },
+    {
+      "name": "seed_46_q_multisets_preserved",
+      "passed": true,
+      "detail": {
+        "target_prevalence": {
+          "0.0": {
+            "action": true,
+            "rationale": true
+          },
+          "0.25": {
+            "action": true,
+            "rationale": true
+          },
+          "0.5": {
+            "action": true,
+            "rationale": true
+          },
+          "0.75": {
+            "action": true,
+            "rationale": true
+          },
+          "1.0": {
+            "action": true,
+            "rationale": true
+          }
+        },
+        "confidence": {
+          "0.0": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.25": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.5": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.75": {
+            "action_only": true,
+            "joint": true
+          },
+          "1.0": {
+            "action_only": true,
+            "joint": true
+          }
+        }
+      }
+    },
+    {
+      "name": "seed_46_q0_A_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_46_q0_R_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_46_q0_C1_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_46_q0_S_stable_and_primitives_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_47_cache_hash",
+      "passed": true,
+      "detail": "7DDE8E4ACDFA06004ADE4AF33C679EC2A53E9F689B214A2ED36EDF91598AF743"
+    },
+    {
+      "name": "seed_47_action_only_calibration_hash",
+      "passed": true,
+      "detail": "E9FCAF432BC857AB3A4CEF69403975D6B22D86DD52A2540E65B96C9C1F9B07EB"
+    },
+    {
+      "name": "seed_47_joint_calibration_hash",
+      "passed": true,
+      "detail": "06E05CA5334EBF74DCBE72829133A31707CFA94FADDA0FE6BE38F249E3A86101"
+    },
+    {
+      "name": "seed_47_common_arrays_equal",
+      "passed": true,
+      "detail": {
+        "file_names": true,
+        "action_targets": true,
+        "rationale_targets": true
+      }
+    },
+    {
+      "name": "seed_47_action_only_S_primitive_invariants",
+      "passed": true,
+      "detail": {
+        "finite": true,
+        "confidence_range": true,
+        "binary_errors": true,
+        "has_correct_and_error": true
+      }
+    },
+    {
+      "name": "seed_47_joint_S_primitive_invariants",
+      "passed": true,
+      "detail": {
+        "finite": true,
+        "confidence_range": true,
+        "binary_errors": true,
+        "has_correct_and_error": true
+      }
+    },
+    {
+      "name": "seed_47_raw_calibrated_predictions_equal",
+      "passed": true,
+      "detail": {
+        "action_only": true,
+        "joint": true
+      }
+    },
+    {
+      "name": "seed_47_q_multisets_preserved",
+      "passed": true,
+      "detail": {
+        "target_prevalence": {
+          "0.0": {
+            "action": true,
+            "rationale": true
+          },
+          "0.25": {
+            "action": true,
+            "rationale": true
+          },
+          "0.5": {
+            "action": true,
+            "rationale": true
+          },
+          "0.75": {
+            "action": true,
+            "rationale": true
+          },
+          "1.0": {
+            "action": true,
+            "rationale": true
+          }
+        },
+        "confidence": {
+          "0.0": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.25": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.5": {
+            "action_only": true,
+            "joint": true
+          },
+          "0.75": {
+            "action_only": true,
+            "joint": true
+          },
+          "1.0": {
+            "action_only": true,
+            "joint": true
+          }
+        }
+      }
+    },
+    {
+      "name": "seed_47_q0_A_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_47_q0_R_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_47_q0_C1_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "seed_47_q0_S_stable_and_primitives_exact_round7",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "no_cache_array_mutation",
+      "passed": true,
+      "detail": {
+        "43": [],
+        "44": [],
+        "45": [],
+        "46": [],
+        "47": []
+      }
+    },
+    {
+      "name": "frozen_synthetic_tests",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "returncode": 0,
+        "command": [
+          "D:\\anaconda3\\envs\\Nuclear_Transformer\\python.exe",
+          "-m",
+          "pytest",
+          "tests/test_graded_response.py",
+          "tests/test_association_components.py",
+          "tests/test_graded_association.py",
+          "-q"
+        ],
+        "stdout": "...............                                                          [100%]\n15 passed in 0.13s",
+        "stderr": ""
+      }
+    }
+  ],
+  "summary": {
+    "passed": 86,
+    "total": 86,
+    "failed_names": []
+  },
+  "map_audit": {
+    "sample_count": 4557,
+    "clip_group_count": 3904,
+    "by_severity": {
+      "0.0": {
+        "bijection": true,
+        "active_images": 0,
+        "active_fraction": 0.0,
+        "fixed_points": 4557,
+        "active_same_filename_pairs": 0,
+        "active_same_clip_pairs": 0,
+        "nested_superset": true
+      },
+      "0.25": {
+        "bijection": true,
+        "active_images": 1140,
+        "active_fraction": 0.250164581961817,
+        "fixed_points": 3417,
+        "active_same_filename_pairs": 0,
+        "active_same_clip_pairs": 0,
+        "nested_superset": true
+      },
+      "0.5": {
+        "bijection": true,
+        "active_images": 2278,
+        "active_fraction": 0.499890278692122,
+        "fixed_points": 2279,
+        "active_same_filename_pairs": 0,
+        "active_same_clip_pairs": 0,
+        "nested_superset": true
+      },
+      "0.75": {
+        "bijection": true,
+        "active_images": 3418,
+        "active_fraction": 0.750054860653939,
+        "fixed_points": 1139,
+        "active_same_filename_pairs": 0,
+        "active_same_clip_pairs": 0,
+        "nested_superset": true
+      },
+      "1.0": {
+        "bijection": true,
+        "active_images": 4557,
+        "active_fraction": 1.0,
+        "fixed_points": 0,
+        "active_same_filename_pairs": 0,
+        "active_same_clip_pairs": 0,
+        "nested_superset": true
+      }
+    },
+    "all_passed": true
+  },
+  "component_audit": {
+    "component_count": 1625,
+    "clip_count": 3904,
+    "image_count": 4557,
+    "clip_count_histogram": {
+      "2": 1191,
+      "3": 291,
+      "4": 101,
+      "5": 22,
+      "6": 7,
+      "7": 11,
+      "8": 2
+    },
+    "image_count_histogram": {
+      "2": 1191,
+      "4": 291,
+      "6": 101,
+      "8": 22,
+      "10": 7,
+      "12": 11,
+      "13": 1,
+      "14": 1
+    },
+    "maximum_clips_per_component": 8,
+    "maximum_images_per_component": 14,
+    "minimum_clips_per_component": 2,
+    "minimum_images_per_component": 2,
+    "maps": {
+      "q_000_source_indices": {
+        "global_bijection": true,
+        "source_closure": true,
+        "restricted_bijection": true,
+        "passed": true
+      },
+      "q_025_source_indices": {
+        "global_bijection": true,
+        "source_closure": true,
+        "restricted_bijection": true,
+        "passed": true
+      },
+      "q_050_source_indices": {
+        "global_bijection": true,
+        "source_closure": true,
+        "restricted_bijection": true,
+        "passed": true
+      },
+      "q_075_source_indices": {
+        "global_bijection": true,
+        "source_closure": true,
+        "restricted_bijection": true,
+        "passed": true
+      },
+      "q_100_source_indices": {
+        "global_bijection": true,
+        "source_closure": true,
+        "restricted_bijection": true,
+        "passed": true
+      }
+    },
+    "all_maps_passed": true
+  },
+  "claim_boundary": "A PASS authorizes exactly one frozen Round 8 outcome run; it is not an empirical graded-response result."
+}
