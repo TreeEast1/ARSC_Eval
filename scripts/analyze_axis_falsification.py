@@ -932,7 +932,7 @@ def run_preflight() -> tuple[dict[str, Any], dict[int, dict[str, Any]]]:
     audit = {
         "study": "ARSC axis falsification pre-analysis exact audit",
         "status": "PASS" if all(row["passed"] for row in checks) else "STOP",
-        "intervention_direction_outcomes_computed": false,
+        "intervention_direction_outcomes_computed": False,
         "protocol_sha256": PROTOCOL_SHA256,
         "amendment_sha256": AMENDMENT_SHA256,
         "amendment_review_sha256": AMENDMENT_REVIEW_SHA256,
@@ -970,7 +970,7 @@ def run_preflight() -> tuple[dict[str, Any], dict[int, dict[str, Any]]]:
             if audit["status"] == "PASS"
             else "STOP"
         ),
-        "intervention_direction_outcomes_computed": false,
+        "intervention_direction_outcomes_computed": False,
         "frozen_artifacts": {
             relative(path): sha256_file(path)
             for path, _, _ in frozen_artifacts
