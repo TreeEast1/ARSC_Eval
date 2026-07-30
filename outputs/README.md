@@ -49,6 +49,42 @@ Primary decisions:
   `rq1_amendment01_worker_check.json`: pixel-equivalence and real Windows
   `num_workers=8` checks for the serialization amendment.
 
+## Round 7 frozen-cache ARSC-axis falsification
+
+- `validity/arsc_axis_falsification_protocol.json`: immutable original
+  preregistration.
+- `research_review_memo_round7_preregister.md`,
+  `validity/arsc_axis_falsification_protocol_amendment01.json`, and
+  `research_review_memo_round7_amendment01.md`: result-blind review, the only
+  authorized crossed-bootstrap amendment, and final GO.
+- `validity/arsc_axis_falsification_preflight.json` and
+  `arsc_axis_falsification_run_manifest.json`: 83/83 exact checks and frozen
+  code/input hashes before intervention outcomes.
+- `validity/arsc_axis_falsification_results.json`,
+  `arsc_axis_falsification_point_estimates.csv`, and
+  `arsc_axis_falsification_bootstrap.csv`: complete five-seed controls and
+  2,000 seed-by-shared-image crossed-bootstrap results.
+- `validity/arsc_axis_falsification_primitives.npz`: compact lossless binary,
+  confidence, mapping, and per-image C1 primitives.
+- `validity/tmux_arsc_axis_falsification.log`: formal one-shot run with
+  `EXIT_CODE=0`.
+- `scripts/verify_axis_falsification_outputs.py`,
+  `validity/arsc_axis_falsification_reproduction_audit.json`, and its log:
+  primitive-only reconstruction; all ten checks passed and the maximum
+  difference from every raw/aggregate/bootstrap result was 0.
+- `research_review_memo_round7_final.md`: post-result independent scientific
+  review.
+- `validity/arsc_axis_falsification_artifact_index.json`: top-level SHA256
+  binding for the complete evidence chain.
+
+Formal protocol/gates passed, but the independent scientific verdict is
+**PARTIAL**. All ten contrasts were positive in 5/5 seeds with pointwise 95%
+intervals above zero. The result supports internal sensitivity to severe
+association or correspondence destruction. It does not establish severity
+monotonicity, construct/causal/external validity, calibration, or safety. Six
+rationale classes remained at F1=0 in both original and destroyed conditions;
+the formal intervals also use images rather than video clips as clusters.
+
 Visual audit contact sheets remain local under each `pages/` directory. They
 are intentionally excluded from the public Git repository because they
 contain redistributed dataset pixels. The manifests, decisions, summaries,

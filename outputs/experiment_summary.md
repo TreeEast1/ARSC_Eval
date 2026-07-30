@@ -258,10 +258,10 @@ total 与 green 缺口。因此：
 - CEG 主线正式关闭，RQ2-CEG 保持“未回答”；
 - RQ2-light、A/R/S/C1 五种子内部结论不受该负结果推翻。
 
-## 10. 唯一批准的下一实验
+## 10. Round 7 冻结缓存轴选择性干预
 
-下一步只在 seeds 43–47 冻结 prediction caches 上做 ARSC 轴选择性干预
-falsification suite，不引入新数据、训练、mask 或重新推理：
+Round 7 已按结果前协议和唯一 Amendment01 完成，不引入新数据、训练、mask
+或重新推理：
 
 1. A：破坏 action target row/class relation，perfect control 必须为 1，
    破坏后 Macro-F1 应下降；
@@ -273,6 +273,48 @@ falsification suite，不引入新数据、训练、mask 或重新推理：
    与冻结错误 pairing；identity 必须 flip=0/Jaccard=1，错误 pairing应更不一致，
    clean A/R/S 必须完全不变。
 
-该实验只检验 measurement sensitivity 与轴间区分性，不恢复 CEG，也不证明
-causal faithfulness 或外部效度。完整边界见
-`outputs/research_review_memo_round6_final.md`。
+结果前 exact audit 为 83/83 PASS，逐 seed 精确复现 Round 5。所有十个正式
+方向对比均为 5/5 seeds 同方向，seed × shared-image crossed bootstrap 的
+pointwise 95% CI 下界均大于 0：
+
+| 对比 | 五-seed 均值 | 95% CI |
+|---|---:|---:|
+| A original−combined，Action-Only | 0.312962 | [0.299901, 0.326291] |
+| A original−combined，Joint | 0.320033 | [0.305871, 0.335337] |
+| R original−combined，Joint | 0.230389 | [0.213473, 0.247698] |
+| S random−original AURC，Action-Only | 0.137671 | [0.119137, 0.156320] |
+| S random−original AURC，Joint | 0.146539 | [0.128628, 0.165799] |
+| C1 action wrong−correct，Action-Only | 0.669739 | [0.657245, 0.682235] |
+| C1 action wrong−correct，Joint | 0.688713 | [0.675792, 0.700564] |
+| C1 rationale correct−wrong，Joint | 0.782538 | [0.771974, 0.792558] |
+| S adversarial−oracle AURC，Action-Only | 0.692018 | [0.690522, 0.692825] |
+| S adversarial−oracle AURC，Joint | 0.692389 | [0.691325, 0.692871] |
+
+独立 primitive-only verifier 对全部 raw seed 值、mean/SD 与 2,000 次
+crossed-bootstrap CI 的最大绝对复现误差为 0。机器决策：
+
+- `full_suite_measurement_pass = true`；
+- `full_empirical_battery_pass = true`。
+
+但独立科学总评保持 **PARTIAL**。A/R/C1 检验的是极端 association 或
+sample correspondence 破坏，不是连续 severity；R 有 6 个类在 original
+与 destroyed 下都保持 F1=0；S 的 original-vs-random 只相对于一份冻结
+random reference，synthetic ECE 仅是数值诊断；C1 的巨大 wrong-pair 差异
+不能解释为 brightness/blur/noise robustness。该实验不恢复 CEG，也不证明
+construct validity、causal faithfulness、安全性或外部效度。
+
+## 11. Round 8 唯一批准方向
+
+下一轮仍不得换数据集或重训。只允许在同一 seeds 43–47 冻结 caches 上做
+`q={0,0.25,0.50,0.75,1.00}` 的分级关联破坏响应曲线：
+
+1. A/R：只对预冻结 q 比例样本做 prevalence-preserving row derangement；
+2. S：只对 q 比例样本破坏 confidence-to-sample association，主分析只用
+   AURC，不对 synthetic ECE 作方向解释；
+3. C1：q 比例样本使用冻结 wrong pairing，其余保持 correct pairing；
+4. bootstrap 每轮抽 training seeds，并只抽一份 shared clip multiset，
+   入选 clip 的全部帧用于所有 seeds/conditions；
+5. 每个轴只允许一个预注册单调趋势统计量和一个 gate，保留 R 全 21 类覆盖。
+
+Round 8 通过后才允许把同一协议迁移第二数据集。完整结果边界、clip clustering
+缺口与唯一下一步见 `outputs/research_review_memo_round7_final.md`。

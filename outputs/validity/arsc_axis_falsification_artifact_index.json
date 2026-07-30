@@ -1,0 +1,126 @@
+{
+  "study": "BDD-OIA five-seed frozen-cache ARSC-axis falsification",
+  "round": 7,
+  "formal_execution": "COMPLETED_ONE_SHOT",
+  "formal_protocol_gates": "PASS",
+  "independent_scientific_verdict": "PARTIAL",
+  "decisions": {
+    "exact_preflight": "83/83 PASS",
+    "full_suite_measurement_pass": true,
+    "full_empirical_battery_pass": true,
+    "independent_primitive_reproduction": "10/10 PASS; maximum absolute difference 0.0",
+    "claim": "BDD-OIA-internal sensitivity and extreme discriminant-control evidence only"
+  },
+  "artifacts": [
+    {
+      "role": "original_preregistration",
+      "path": "outputs/validity/arsc_axis_falsification_protocol.json",
+      "sha256": "21504FD66E984E211C3E8C51AF013C7C30F8D6E14CFCE01A832FD53711482442"
+    },
+    {
+      "role": "preoutcome_independent_review",
+      "path": "outputs/research_review_memo_round7_preregister.md",
+      "sha256": "BDE9B4387F5B2015B29387B96E7033B0E43E1940098B807CA811C30CD1486A9D"
+    },
+    {
+      "role": "authorized_amendment",
+      "path": "outputs/validity/arsc_axis_falsification_protocol_amendment01.json",
+      "sha256": "BD089BED634FC7D50D391AE17FFEEC54EB1D3ADBA91035EB553D8C5D7E0CE91F"
+    },
+    {
+      "role": "amendment_independent_GO",
+      "path": "outputs/research_review_memo_round7_amendment01.md",
+      "sha256": "6A6734719C779A603B3926F7A93B469A7EC44A6FC61779598DEA345E3E7EEA71"
+    },
+    {
+      "role": "frozen_core_implementation",
+      "path": "src/arsc_eval/axis_falsification.py",
+      "sha256": "FCA31021DD91D604227706178B1F589F0212DF79D4E7169AE44085CCDFEB1863"
+    },
+    {
+      "role": "frozen_analysis_implementation",
+      "path": "scripts/analyze_axis_falsification.py",
+      "sha256": "A6DEE2370E5AF5483C47C3F8271E786FF82D8A4A72659CC55DE4BB2301E1B4AF"
+    },
+    {
+      "role": "frozen_synthetic_tests",
+      "path": "tests/test_axis_falsification.py",
+      "sha256": "5072BA30B5FF960C26CAE1BAC105CD4061196DC94FB9710294E31675763AF0DC"
+    },
+    {
+      "role": "preserved_preflight_engineering_failure",
+      "path": "outputs/validity/arsc_axis_falsification_preflight_attempt01_failed.log",
+      "sha256": "012848253F4B5725D5611A2FFC63B51BCCC4AE373A228D5F5F45B8567329E165"
+    },
+    {
+      "role": "successful_preflight_log",
+      "path": "outputs/validity/arsc_axis_falsification_preflight_attempt02.log",
+      "sha256": "2D1F4777E2ECE742706FC91635A223548634062342CAB4187A9F6AAECFB172F9"
+    },
+    {
+      "role": "exact_preflight_audit",
+      "path": "outputs/validity/arsc_axis_falsification_preflight.json",
+      "sha256": "0D91D38BA88F488F1B58F50F63BFF593C21B1B8892854FB71AFB94930F7D1D77"
+    },
+    {
+      "role": "immutable_preoutcome_run_manifest",
+      "path": "outputs/validity/arsc_axis_falsification_run_manifest.json",
+      "sha256": "90FDBD19AEFA2D43BEE22B2E341CFB714D992A5BE77234BB5A1020B6F4BF26EC"
+    },
+    {
+      "role": "formal_machine_readable_results",
+      "path": "outputs/validity/arsc_axis_falsification_results.json",
+      "sha256": "E0A1802EC426989B2F46FE5DED8F554A0CCAA63CFA5D1011A5F46808A56775EA"
+    },
+    {
+      "role": "formal_point_estimates",
+      "path": "outputs/validity/arsc_axis_falsification_point_estimates.csv",
+      "sha256": "E105F0D46980F2C3BF405D25D24D0A9B107B5085D0C73A840035A1D1C101DEAD"
+    },
+    {
+      "role": "formal_crossed_bootstrap_summary",
+      "path": "outputs/validity/arsc_axis_falsification_bootstrap.csv",
+      "sha256": "06E56093815ABC28A7A6572E7D0E62475B23AB6A3ACF232171E93ACE180E84D0"
+    },
+    {
+      "role": "lossless_compact_verification_primitives",
+      "path": "outputs/validity/arsc_axis_falsification_primitives.npz",
+      "sha256": "D832D136D482377EF013853CC8772A792EEC6EADE20FED627082BF72D2F4E2B7"
+    },
+    {
+      "role": "formal_tmux_run_log",
+      "path": "outputs/validity/tmux_arsc_axis_falsification.log",
+      "sha256": "5B2A9D551927F0E40B10A7224707D93F12AD6EC43EDB6618A446BFF09526D4A9"
+    },
+    {
+      "role": "postresult_independent_verifier",
+      "path": "scripts/verify_axis_falsification_outputs.py",
+      "sha256": "E1FABD938E3540338C025A59E8EA8D7F3AE0FA84A98AADE0AF57FC0051827C45"
+    },
+    {
+      "role": "postresult_primitive_reproduction_audit",
+      "path": "outputs/validity/arsc_axis_falsification_reproduction_audit.json",
+      "sha256": "5DFE02085A1DF05F2E29ED4A69F10177F6B4EA6403054FFDDFCC8BF78E11EB41"
+    },
+    {
+      "role": "postresult_reproduction_log",
+      "path": "outputs/validity/arsc_axis_falsification_reproduction_audit.log",
+      "sha256": "6563D95FE5BE8BAB95BDC2E1B1247AD005FB914950CBE1CC5D283D6B2004CA3E"
+    },
+    {
+      "role": "postresult_independent_scientific_review",
+      "path": "outputs/research_review_memo_round7_final.md",
+      "sha256": "36F0BB6AF4C61ECC6ADD83DF3B0302FD8352C18EB91981B35B854D9BD5AFC9A1"
+    }
+  ],
+  "bounded_limitations": [
+    "extreme association destruction does not establish construct validity or severity monotonicity",
+    "six rationale classes have original and destroyed F1 equal to zero across all five seeds",
+    "the single frozen random confidence ordering is not a random-order distribution",
+    "synthetic confidence ECE is diagnostic only",
+    "wrong pairing measures destroyed sample correspondence, not perturbation severity",
+    "the formal intervals cluster by image rather than clip and are pointwise rather than simultaneous",
+    "five training seeds do not establish architecture, dataset, or real-world external validity"
+  ],
+  "reviewer_frozen_next_experiment": "Round 8 graded association-destruction response curves on the same caches with seed by shared-clip crossed bootstrap; no second-dataset migration before this gate."
+}

@@ -168,7 +168,7 @@ python -m compileall -q scripts src tests
 python scripts/verify_outputs.py --config configs/experiment.yaml
 ```
 
-The final saved checks report 29 passing tests, successful compilation, and all
+The final saved checks report 41 passing tests, successful compilation, and all
 original required pilot outputs present.
 
 ## Measurement and external-data stopping results
@@ -194,16 +194,41 @@ These are informative negative results: they prevent weak evidence
 localization or pseudoreplicated external data from being relabeled as metric
 validity.
 
+## Frozen-cache metric falsification result
+
+The independently preregistered Round 7 suite reused only the frozen seed
+43–47 caches. All 83 exact invariants passed, including exact reproduction of
+the Round 5 A/R/S/C1 values. All ten directional controls were positive in
+5/5 seeds and had crossed-bootstrap pointwise 95% intervals above zero:
+
+- A original−destroyed Macro-F1: 0.312962 (Action-Only) and 0.320033
+  (Joint);
+- R original−destroyed Macro-F1: 0.230389;
+- S frozen-random−original AURC: 0.137671 and 0.146539, while the separate
+  oracle/adversarial ordering gate also passed;
+- C1 wrong−correct action flip: 0.669739 and 0.688713; correct−wrong rationale
+  Jaccard: 0.782538.
+
+An independent primitive-only reconstruction reproduced every raw value and
+all 2,000 crossed-bootstrap intervals with maximum absolute difference 0.
+The formal protocol therefore passed, while the independent scientific
+verdict remains **PARTIAL**: these are strong BDD-OIA-internal extreme-control
+results, not general construct, causal, severity, safety, or external validity.
+Six rationale classes remained at F1=0 under both original and destroyed
+conditions, and the formal intervals do not cluster neighboring frames by
+video clip. The complete hash chain is in
+`outputs/validity/arsc_axis_falsification_artifact_index.json`.
+
 ## Reviewer-bounded next step
 
-CEG is closed and remains unanswered; RQ2-light must not be relabeled as CEG or
-causal faithfulness. The only approved next experiment is an offline ARSC-axis
-selective-intervention falsification suite on the frozen seed 43–47 prediction
-caches. It will test whether A and R respond to target/ontology destruction, S
-responds to confidence ordering while A stays exactly fixed, and C1 responds
-to clean/perturbed pairing while clean A/R/S stay exactly fixed. It introduces
-no new data, training, masks, inference, or CEG analysis. The full boundary is
-recorded in `outputs/research_review_memo_round6_final.md`.
+CEG remains closed and unanswered. The only approved Round 8 experiment is a
+graded association-destruction response curve at
+`q={0,0.25,0.50,0.75,1.00}` on the same frozen caches, using a
+seed-by-shared-clip crossed bootstrap. It may not add data, training, inference,
+masks, thresholds, alternate mappings, or post-result tuning. A second-dataset
+replication is deferred until this monotonic-response and clip-cluster gate is
+resolved. The boundary is recorded in
+`outputs/research_review_memo_round7_final.md`.
 
 ## Publishing policy
 
