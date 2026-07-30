@@ -1,0 +1,177 @@
+{
+  "study": "Round 8 outcome-blind association components",
+  "status": "FROZEN_BEFORE_METRIC_RESPONSE_OUTCOMES",
+  "derivation": {
+    "nodes": "3904 clip groups",
+    "edges": "undirected clip(i)--clip(q1_source_map[i]) for every image i",
+    "connected_components": 1625,
+    "depends_only_on": [
+      "frozen clip_group_ids",
+      "frozen q=1 source-index map"
+    ],
+    "targets_read": false,
+    "logits_probabilities_predictions_confidences_read": false,
+    "metric_outcomes_read": false
+  },
+  "frozen_inputs": {
+    "map_artifact": {
+      "path": "outputs/validity/round8_graded_association_maps.npz",
+      "sha256": "8685E1A4605B5D6355A432BC6CA03CF61930BAB23D41D899478A5C1D8FC47ED1",
+      "archive_keys_read": [
+        "clip_group_ids",
+        "q_000_source_indices",
+        "q_025_source_indices",
+        "q_050_source_indices",
+        "q_075_source_indices",
+        "q_100_source_indices"
+      ]
+    },
+    "map_manifest": {
+      "path": "outputs/validity/round8_graded_association_map_manifest.json",
+      "sha256": "73B89C3438262BA272E0E90EDC2A6F9408B196CCBD4A30D9FA6FFFA798C273DC"
+    },
+    "clip_group_ids_sha256": "CBCF3E385E0FEBB22B364047BBB219CD959913F89C89663D523F6829F17DE92B",
+    "source_map_sha256": {
+      "q_000_source_indices": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+      "q_025_source_indices": "03C88BA66A9F11075C7562994B4B3837E8AACB6474D2DD4B563D673E3BFE2F9B",
+      "q_050_source_indices": "A14CE26622F4306EA718037858CBE8C1DD8018168F157A6E5615D68883E2119F",
+      "q_075_source_indices": "3D89FFDAB4AE0FD5121D498F72AB071881620D89118CBED7A4426EEB1B657A00",
+      "q_100_source_indices": "CEF0D9B1E82DCECC6B4D31C1664DD868E7B64FA6F065244A6539D27C1CE2D446"
+    }
+  },
+  "exact_audit": {
+    "component_count": 1625,
+    "clip_count": 3904,
+    "image_count": 4557,
+    "clip_count_histogram": {
+      "2": 1191,
+      "3": 291,
+      "4": 101,
+      "5": 22,
+      "6": 7,
+      "7": 11,
+      "8": 2
+    },
+    "image_count_histogram": {
+      "2": 1191,
+      "4": 291,
+      "6": 101,
+      "8": 22,
+      "10": 7,
+      "12": 11,
+      "13": 1,
+      "14": 1
+    },
+    "maximum_clips_per_component": 8,
+    "maximum_images_per_component": 14,
+    "minimum_clips_per_component": 2,
+    "minimum_images_per_component": 2,
+    "maps": {
+      "q_000_source_indices": {
+        "global_bijection": true,
+        "source_closure": true,
+        "restricted_bijection": true,
+        "passed": true
+      },
+      "q_025_source_indices": {
+        "global_bijection": true,
+        "source_closure": true,
+        "restricted_bijection": true,
+        "passed": true
+      },
+      "q_050_source_indices": {
+        "global_bijection": true,
+        "source_closure": true,
+        "restricted_bijection": true,
+        "passed": true
+      },
+      "q_075_source_indices": {
+        "global_bijection": true,
+        "source_closure": true,
+        "restricted_bijection": true,
+        "passed": true
+      },
+      "q_100_source_indices": {
+        "global_bijection": true,
+        "source_closure": true,
+        "restricted_bijection": true,
+        "passed": true
+      }
+    },
+    "all_maps_passed": true
+  },
+  "arrays": {
+    "component_id_by_clip": {
+      "shape": [
+        3904
+      ],
+      "dtype": "int64",
+      "sha256": "E13EE2A56377987440C52C8C451F5FAAEC2CBF6B4C28E399A9C5695F62FE863D"
+    },
+    "component_id_by_image": {
+      "shape": [
+        4557
+      ],
+      "dtype": "int64",
+      "sha256": "1C80AD5943023507FC9C60345173E9C0B730238523ADB16A811007943FB458D9"
+    },
+    "component_clip_offsets": {
+      "shape": [
+        1626
+      ],
+      "dtype": "int64",
+      "sha256": "CD3E05B29FB2CCD00967CF50BDC36620305876C90C40642B1005DD5D40140A7F"
+    },
+    "component_clip_ids": {
+      "shape": [
+        3904
+      ],
+      "dtype": "int64",
+      "sha256": "326F9B97E4D245A2DC949FEFD26A9C7E0885D42541F1916B398D50E0F2B4AE0F"
+    },
+    "component_image_offsets": {
+      "shape": [
+        1626
+      ],
+      "dtype": "int64",
+      "sha256": "5A93058B4F5310392145928EE4266A70324A7C6650772CE1778D466F2B746A7E"
+    },
+    "component_image_indices": {
+      "shape": [
+        4557
+      ],
+      "dtype": "int64",
+      "sha256": "681D4AF24B2B7B28C070DB2C546B4288A3848E8E7F65ABA39B064A8CBB796C21"
+    }
+  },
+  "artifact": {
+    "path": "outputs/validity/round8_association_components.npz",
+    "sha256": "F1DF45A526EEBE02C2CDA6EA2FB1FE8B034A3FDD3B1582B3598B602916CDD0E8",
+    "bytes": 44250,
+    "contains_only_integer_partition_indices": true,
+    "contains_targets_logits_probabilities_predictions_confidences": false
+  },
+  "bootstrap_contract": {
+    "unit": "association component",
+    "component_count": 1625,
+    "one_shared_component_multiset_per_replicate": true,
+    "component_draws_per_replicate": 1625,
+    "complete_membership_when_selected": true,
+    "repeated_selection_retains_full_membership_and_multiplicity": true
+  },
+  "implementation": {
+    "builder": {
+      "path": "scripts/build_round8_association_components.py",
+      "sha256": "D674C5A1A2B46F8025ED7BAF1D9735BA19273C2A0B132ED22C1D3D27D915DE63"
+    },
+    "core": {
+      "path": "src/arsc_eval/association_components.py",
+      "sha256": "F8AA90F0756032ADCB283D111E5B29F03C9D93D96ABDA383E8F9E737B57CE6B5"
+    },
+    "synthetic_tests": {
+      "path": "tests/test_association_components.py",
+      "sha256": "918ABF1D6BC8EBB54F3872474AD484729E7F374DFDD4DA04C4F3F85ECFADF214"
+    }
+  },
+  "failure_policy": "Any hash, partition, closure, restricted-bijection, or bootstrap contract mismatch stops Round 8 before q-response outcomes."
+}
