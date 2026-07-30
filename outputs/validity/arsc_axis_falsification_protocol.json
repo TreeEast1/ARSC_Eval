@@ -1,0 +1,332 @@
+{
+  "protocol_id": "ARSC_AXIS_FALSIFICATION_V1",
+  "status": "FROZEN_BEFORE_INTERVENTION_OUTCOMES",
+  "frozen_at": "2026-07-31T04:27:25+08:00",
+  "scientific_scope": {
+    "question": "Do the frozen A, R, S, and C1 measurements respond to interventions with known direction while measurements outside the intervention remain invariant?",
+    "allowed_claim": "BDD-OIA internal measurement sensitivity and discriminant behavior on five frozen training seeds",
+    "prohibited_claims": [
+      "causal faithfulness",
+      "causal evidence gap recovery",
+      "external validity",
+      "real-world safety",
+      "new-model generalization"
+    ],
+    "no_new_data": true,
+    "no_training": true,
+    "no_inference": true,
+    "no_masks": true,
+    "no_threshold_selection": true,
+    "no_post_result_control_selection": true
+  },
+  "frozen_inputs": {
+    "training_seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "archival_seed_42_excluded": true,
+    "sample_count_per_seed": 4557,
+    "unique_file_names_per_seed": 4557,
+    "threshold": 0.5,
+    "cache_schema": {
+      "action_logits": {
+        "keys": [
+          "test_clean_action_logits",
+          "test_clean_joint_action_logits",
+          "test_brightness_action_logits",
+          "test_brightness_joint_action_logits",
+          "test_blur_action_logits",
+          "test_blur_joint_action_logits",
+          "test_noise_action_logits",
+          "test_noise_joint_action_logits"
+        ],
+        "shape": [
+          4557,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "rationale_logits": {
+        "keys": [
+          "test_clean_joint_rationale_logits",
+          "test_brightness_joint_rationale_logits",
+          "test_blur_joint_rationale_logits",
+          "test_noise_joint_rationale_logits"
+        ],
+        "shape": [
+          4557,
+          21
+        ],
+        "dtype": "float32"
+      },
+      "file_names": {
+        "key": "test_file_names",
+        "shape": [
+          4557
+        ],
+        "dtype": "<U23"
+      },
+      "action_targets": {
+        "key": "test_action_targets",
+        "shape": [
+          4557,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "rationale_targets": {
+        "key": "test_rationale_targets",
+        "shape": [
+          4557,
+          21
+        ],
+        "dtype": "float32"
+      }
+    },
+    "common_array_hashes": {
+      "test_file_names_raw_array_bytes_sha256": "9D9D4E74272AB3A71390B4204CE56F1831350A29EED009111EF1AD5A29026DF6",
+      "test_action_targets_raw_array_bytes_sha256": "C28063DE57B7E4CAF8B1A19C074BB5F1DF05C4984377856EDF2522387CEB7A39",
+      "test_rationale_targets_raw_array_bytes_sha256": "F787A947EC2ECA728166DC83B621402EDE27CAF7DDB1E7C3D3BBDD36B2BED469",
+      "identical_across_all_five_seeds": true
+    },
+    "cache_files": {
+      "43": {
+        "path": "outputs/validity/rq1_seed_43/prediction_cache/rq1_lossless.npz",
+        "sha256": "0794249465A4EFEDB5177E8B74CC76C4537B4044411EE17E7BACBC66FA6E47A3"
+      },
+      "44": {
+        "path": "outputs/validity/rq1_seed_44/prediction_cache/rq1_lossless.npz",
+        "sha256": "BA2D0E2061158358BE5D5B3D68AAFDA7FF57E7C571C0C679502A9CC9C6ADB465"
+      },
+      "45": {
+        "path": "outputs/validity/rq1_seed_45/prediction_cache/rq1_lossless.npz",
+        "sha256": "A7C179876FC3C57F06D3D7A9FE8EDFA286B6667C1B125933F8E350F657AD1187"
+      },
+      "46": {
+        "path": "outputs/validity/rq1_seed_46/prediction_cache/rq1_lossless.npz",
+        "sha256": "1EA70BC6F3D59D9B07D28369982D271FA3951E97FFFE1870A3E7C7530054EAD0"
+      },
+      "47": {
+        "path": "outputs/validity/rq1_seed_47/prediction_cache/rq1_lossless.npz",
+        "sha256": "7DDE8E4ACDFA06004ADE4AF33C679EC2A53E9F689B214A2ED36EDF91598AF743"
+      }
+    },
+    "calibration_files": {
+      "43": {
+        "action_only": {
+          "path": "outputs/validity/rq1_seed_43/calibration_action_only.json",
+          "sha256": "42BED1E43902103AB37864FFA7F48CDD2516C59205FE810AB461511095AA7AD0",
+          "temperature": 2.58642840385437
+        },
+        "joint": {
+          "path": "outputs/validity/rq1_seed_43/calibration_joint.json",
+          "sha256": "A8A9AD227BAB110778E3D49F8BA78BAB21500FD3ECAEE7280763C6AF25CC137F",
+          "temperature": 2.5693113803863525
+        }
+      },
+      "44": {
+        "action_only": {
+          "path": "outputs/validity/rq1_seed_44/calibration_action_only.json",
+          "sha256": "F670A6EE78230DE9856DA3BFEDA16DF59C8C02E2962F4518C651DA5560D6C6CF",
+          "temperature": 2.906062126159668
+        },
+        "joint": {
+          "path": "outputs/validity/rq1_seed_44/calibration_joint.json",
+          "sha256": "89B07811122FE266C79541AD00AA1BEFFCE6E466CCB8B7D2E34D8B5E73A8B19B",
+          "temperature": 2.317605972290039
+        }
+      },
+      "45": {
+        "action_only": {
+          "path": "outputs/validity/rq1_seed_45/calibration_action_only.json",
+          "sha256": "E8E01FE05656BDCB188700875609E1FFDF16B5C62FB99658F89B0CB983DD913F",
+          "temperature": 2.8795323371887207
+        },
+        "joint": {
+          "path": "outputs/validity/rq1_seed_45/calibration_joint.json",
+          "sha256": "817A007E33AF09AE1DBBF1C3B45216D427C116A15E2DC4A172E5DE8C897857FB",
+          "temperature": 2.026177167892456
+        }
+      },
+      "46": {
+        "action_only": {
+          "path": "outputs/validity/rq1_seed_46/calibration_action_only.json",
+          "sha256": "D7C8C90570D357EA144642F4628538D6D2B1B61F018302AFB248FD82507698BE",
+          "temperature": 2.5061240196228027
+        },
+        "joint": {
+          "path": "outputs/validity/rq1_seed_46/calibration_joint.json",
+          "sha256": "F9935A65A0B187373FC16742207720D54C41C46071A1498393985ABB18E5E29A",
+          "temperature": 1.2398866415023804
+        }
+      },
+      "47": {
+        "action_only": {
+          "path": "outputs/validity/rq1_seed_47/calibration_action_only.json",
+          "sha256": "E9FCAF432BC857AB3A4CEF69403975D6B22D86DD52A2540E65B96C9C1F9B07EB",
+          "temperature": 2.9120659828186035
+        },
+        "joint": {
+          "path": "outputs/validity/rq1_seed_47/calibration_joint.json",
+          "sha256": "06E05CA5334EBF74DCBE72829133A31707CFA94FADDA0FE6BE38F249E3A86101",
+          "temperature": 2.8457589149475098
+        }
+      }
+    }
+  },
+  "frozen_interventions": {
+    "common_target_row_map": {
+      "definition": "source_index_for_output_i = (i + 2281) mod 4557",
+      "offset": 2281,
+      "fixed_points": 0,
+      "used_for": [
+        "A row destruction",
+        "R row destruction"
+      ]
+    },
+    "A": {
+      "models": [
+        "Action-Only",
+        "Joint Action-Rationale"
+      ],
+      "metric": "four-class multilabel macro-F1 at threshold 0.5",
+      "controls": {
+        "perfect": "targets used as both binary target and probability; must return macro-F1=1 and micro-F1=1",
+        "original": "frozen clean raw action probabilities against original action targets",
+        "row_destroyed": "frozen probabilities against targets under common_target_row_map",
+        "class_destroyed": "frozen probabilities against original-row targets with source columns [1,2,3,0]",
+        "row_and_class_destroyed": "frozen probabilities against row-destroyed targets with source columns [1,2,3,0]"
+      },
+      "primary_contrast": "original_macro_f1 - row_and_class_destroyed_macro_f1"
+    },
+    "R": {
+      "model": "Joint Action-Rationale",
+      "metric": "21-class multilabel macro-F1 at threshold 0.5",
+      "controls": {
+        "perfect": "targets used as both binary target and probability; must return macro-F1=1 and micro-F1=1",
+        "original": "frozen clean raw rationale probabilities against original rationale targets",
+        "row_destroyed": "frozen probabilities against targets under common_target_row_map",
+        "class_destroyed": "frozen probabilities against original-row targets with source columns [7,8,...,20,0,1,...,6]",
+        "row_and_class_destroyed": "frozen probabilities against row-destroyed targets with the same seven-column cyclic ontology map"
+      },
+      "primary_contrast": "original_macro_f1 - row_and_class_destroyed_macro_f1",
+      "required_invariants": [
+        "all action probabilities and predictions are unchanged",
+        "A and S point estimates are exactly unchanged",
+        "all clean/perturbed pairings are unchanged"
+      ]
+    },
+    "S": {
+      "models": [
+        "Action-Only",
+        "Joint Action-Rationale"
+      ],
+      "prediction_source": "clean action logits divided by the frozen per-seed calibration temperature, then sigmoid",
+      "predictions": "calibrated probabilities thresholded at 0.5; identical to raw-logit sign decisions",
+      "error": "any mismatch in the four-label action set",
+      "primary_metric": "AURC",
+      "secondary_metrics": [
+        "unsafe_acceptance_rate_90",
+        "ECE",
+        "correctness_AUROC"
+      ],
+      "random_order": {
+        "generator": "numpy.random.default_rng",
+        "seed": 20260801,
+        "definition": "one global permutation of canonical sample indices; unique scores in [0,1] assigned so descending score reproduces that permutation",
+        "shared_across_training_seeds_and_models": true
+      },
+      "orderings": {
+        "oracle": "all exact-set-correct samples ranked before all errors; random_order score is the within-stratum tiebreak",
+        "original": "maximum frozen calibrated action probability",
+        "random": "frozen random_order score",
+        "adversarial": "all errors ranked before all exact-set-correct samples; random_order score is the within-stratum tiebreak"
+      },
+      "primary_empirical_contrast": "random_AURC - original_AURC",
+      "implementation_contrast": "adversarial_AURC - oracle_AURC",
+      "required_invariants": [
+        "thresholded action predictions are bitwise identical across all four orderings",
+        "per-image exact-set errors are bitwise identical across all four orderings",
+        "A macro-F1 and micro-F1 are exactly identical across all four orderings",
+        "R and C1 inputs and point estimates are exactly unchanged"
+      ]
+    },
+    "C1": {
+      "models_for_action_flip": [
+        "Action-Only",
+        "Joint Action-Rationale"
+      ],
+      "model_for_rationale_jaccard": "Joint Action-Rationale",
+      "perturbations": [
+        "brightness",
+        "blur",
+        "noise"
+      ],
+      "pairing_map": {
+        "correct": "perturbed source index i is paired with clean index i",
+        "identity": "clean source index i is paired with clean index i",
+        "wrong": "perturbed source index for clean i = (i + 997) mod 4557",
+        "wrong_offset": 997,
+        "wrong_fixed_points": 0,
+        "shared_across_seeds_models_and_perturbations": true
+      },
+      "metrics": {
+        "action": "per-image any-label flip rate at threshold 0.5, then mean across the three perturbations",
+        "rationale": "per-image set Jaccard with empty/empty defined as 1, then mean across the three perturbations"
+      },
+      "primary_action_contrast": "wrong_pairing_mean_three_flip - correct_pairing_mean_three_flip",
+      "primary_rationale_contrast": "correct_pairing_mean_three_jaccard - wrong_pairing_mean_three_jaccard",
+      "required_invariants": [
+        "identity action flip is exactly 0",
+        "identity rationale Jaccard is exactly 1",
+        "clean A, R, and S arrays and point estimates are exactly unchanged under pairing changes"
+      ]
+    }
+  },
+  "frozen_inference": {
+    "point_estimates": "report every seed separately and the arithmetic mean and sample SD across seeds",
+    "bootstrap": {
+      "method": "hierarchical paired bootstrap: resample five training seeds with replacement, then resample 4557 canonical image indices with replacement within every selected seed; preserve model, target-intervention, confidence-ordering, and perturbation-pairing relations",
+      "replicates": 2000,
+      "seed": 20260802,
+      "confidence_level": 0.95,
+      "interval": "percentile"
+    },
+    "primary_contrasts": [
+      "A original minus row_and_class_destroyed for Action-Only",
+      "A original minus row_and_class_destroyed for Joint",
+      "R original minus row_and_class_destroyed for Joint",
+      "S random minus original AURC for Action-Only",
+      "S random minus original AURC for Joint",
+      "C1 wrong minus correct action mean-three flip for Action-Only",
+      "C1 wrong minus correct action mean-three flip for Joint",
+      "C1 correct minus wrong rationale mean-three Jaccard for Joint"
+    ],
+    "no_multiplicity_claim": "The eight directional contrasts are a fixed falsification battery, not eight selected discovery tests. Raw intervals and seed values must all be reported; no individual contrast is relabeled as a standalone confirmatory discovery."
+  },
+  "decision_rules": {
+    "input_gate": "All cache, calibration, array-order, and target hashes must match exactly before analysis.",
+    "implementation_stop": "Any failure of perfect A/R, identity C1, S prediction/error invariance, or clean A/R/S invariance is an implementation STOP; no scientific result may be interpreted.",
+    "axis_direction_gate": "For each primary contrast, the five-seed mean must be positive, at least four of five seed contrasts must be positive, and the hierarchical 95% percentile interval lower bound must be greater than zero.",
+    "S_extremal_gate": "For every seed and model with both correct and incorrect samples, oracle AURC must be no greater than every other ordering and adversarial AURC no less than every other ordering; adversarial minus oracle must be strictly positive.",
+    "full_suite_pass": "All exact gates, the S extremal gate, and all eight axis-direction gates pass.",
+    "partial_result_policy": {
+      "A_or_R_direction_failure": "The corresponding axis fails the frozen sensitivity falsification; do not change the permutation or threshold.",
+      "S_original_vs_random_failure": "S implementation sensitivity may still pass oracle/adversarial controls, but frozen model confidence informativeness is not supported.",
+      "C1_direction_failure": "C1 pairing discriminant behavior is not supported; do not select a different wrong-pairing map.",
+      "any_failure": "Preserve and report the failure; no tuning, replacement permutation, threshold change, or silent rerun."
+    }
+  },
+  "required_artifacts": [
+    "an immutable pre-run manifest containing protocol/code/input hashes",
+    "per-seed per-control point estimates",
+    "per-image lossless intervention primitives sufficient for offline verification",
+    "hierarchical bootstrap summaries for every primary contrast",
+    "machine-readable exact-invariant audit",
+    "independent reviewer memo",
+    "updated README and experiment summary"
+  ]
+}
