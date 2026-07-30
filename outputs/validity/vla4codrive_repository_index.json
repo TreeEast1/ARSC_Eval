@@ -1,0 +1,615 @@
+{
+  "phase": "repository_metadata_audit_only",
+  "training_authorized": false,
+  "huggingface": {
+    "dataset": "sayedpedramhaeri/VLA4CoDrive",
+    "api": "https://huggingface.co/api/datasets/sayedpedramhaeri/VLA4CoDrive",
+    "revision": "872d0898a5663b1028584d80de94d7a284f0d196",
+    "private": false,
+    "gated": false,
+    "used_storage_bytes": 117246701986,
+    "license": "apache-2.0",
+    "paths": 99715,
+    "root_counts": {
+      ".gitattributes": 1,
+      "Action": 2184,
+      "LICENSE.txt": 1,
+      "Language": 2184,
+      "Metadata": 69822,
+      "README.md": 1,
+      "Vision": 25522
+    },
+    "window_jsons": 4320,
+    "window_jsons_by_modality": {
+      "Action": 2160,
+      "Language": 2160
+    },
+    "weathers": [
+      "clearNight",
+      "clearNoon",
+      "glareDay",
+      "hardFogNoon",
+      "hardRainNight",
+      "hardRainNoon",
+      "softRainNight",
+      "softRainNoon"
+    ],
+    "filename_weathers": [
+      "clearNight",
+      "clearNoon",
+      "customWeather",
+      "glareDay",
+      "hardRainNight",
+      "hardRainNoon",
+      "softRainNight",
+      "softRainNoon"
+    ],
+    "weather_filename_mismatch_count": 540,
+    "weather_filename_mismatch_examples": [
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 1,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 2,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 3,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 4,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 5,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 6,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 7,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 8,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 9,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 10,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 1,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 2,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 3,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 4,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 5,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 6,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 7,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 8,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 9,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 10,
+        "canonical_scene_key": "town10hd::scene002"
+      }
+    ],
+    "vehicles": [
+      "Vehicle_1",
+      "Vehicle_2",
+      "Vehicle_3"
+    ],
+    "towns": [
+      "Town10HD"
+    ],
+    "canonical_scene_keys": [
+      "town10hd::scene001",
+      "town10hd::scene002",
+      "town10hd::scene003",
+      "town10hd::scene004",
+      "town10hd::scene005",
+      "town10hd::scene006",
+      "town10hd::scene007",
+      "town10hd::scene008",
+      "town10hd::scene009"
+    ],
+    "canonical_scene_count": 9,
+    "canonical_scenes_by_town": {
+      "Town10HD": 9
+    },
+    "window_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "github": {
+    "commit": "d8d6b290b7acfe1ae89b75f2d72fc8f94deeef61",
+    "origin": "https://github.com/SayedPedramHaeri/VLA4CoDrive.git",
+    "paths": 211042,
+    "root_counts": {
+      "Action": 2160,
+      "LICENSE": 1,
+      "Language": 2184,
+      "README.md": 1,
+      "Vision": 206690,
+      "Win": 6
+    },
+    "window_jsons": 4320,
+    "window_jsons_by_modality": {
+      "Action": 2160,
+      "Language": 2160
+    },
+    "weathers": [
+      "clearNight",
+      "clearNoon",
+      "glareDay",
+      "hardFogNoon",
+      "hardRainNight",
+      "hardRainNoon",
+      "softRainNight",
+      "softRainNoon"
+    ],
+    "filename_weathers": [
+      "clearNight",
+      "clearNoon",
+      "customWeather",
+      "glareDay",
+      "hardRainNight",
+      "hardRainNoon",
+      "softRainNight",
+      "softRainNoon"
+    ],
+    "weather_filename_mismatch_count": 540,
+    "weather_filename_mismatch_examples": [
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 1,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 2,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 3,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 4,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 5,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 6,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 7,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 8,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 9,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 1,
+        "window": 10,
+        "canonical_scene_key": "town10hd::scene001"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 1,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 2,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 3,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 4,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 5,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 6,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 7,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 8,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 9,
+        "canonical_scene_key": "town10hd::scene002"
+      },
+      {
+        "modality": "Action",
+        "weather": "hardFogNoon",
+        "filename_weather": "customWeather",
+        "weather_matches_filename": false,
+        "vehicle": "Vehicle_1",
+        "town": "Town10HD",
+        "scene": 2,
+        "window": 10,
+        "canonical_scene_key": "town10hd::scene002"
+      }
+    ],
+    "vehicles": [
+      "Vehicle_1",
+      "Vehicle_2",
+      "Vehicle_3"
+    ],
+    "towns": [
+      "Town10HD"
+    ],
+    "canonical_scene_keys": [
+      "town10hd::scene001",
+      "town10hd::scene002",
+      "town10hd::scene003",
+      "town10hd::scene004",
+      "town10hd::scene005",
+      "town10hd::scene006",
+      "town10hd::scene007",
+      "town10hd::scene008",
+      "town10hd::scene009"
+    ],
+    "canonical_scene_count": 9,
+    "canonical_scenes_by_town": {
+      "Town10HD": 9
+    },
+    "window_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "window_path_comparison": {
+    "shared": 4320,
+    "hf_only": 0,
+    "github_only": 0,
+    "identical": true
+  },
+  "pre_registered_hard_gate": {
+    "minimum_two_towns": false,
+    "minimum_150_canonical_scenes": false,
+    "weather_filename_mismatch_count_zero": false,
+    "passed": false
+  },
+  "decision": "STOP_EXTERNAL_TRAINING"
+}

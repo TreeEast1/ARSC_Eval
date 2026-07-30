@@ -1,0 +1,39 @@
+{
+  "output_json": "outputs\\validity\\internal_validity_v2_bootstrap.json",
+  "output_csv": "outputs\\validity\\internal_validity_v2_bootstrap.csv",
+  "cache": "outputs\\validity\\prediction_cache\\internal_validity_v2.npz",
+  "cache_status": "generated",
+  "causal_evidence_gap": {
+    "cohort": "critical_masks",
+    "condition": "rationale_bound_all",
+    "metric": "causal_evidence_gap",
+    "preferred_direction": "context_dependent",
+    "samples": 760,
+    "model_estimates": [
+      {
+        "model": "Action-Only",
+        "estimate": 0.004651719518524452,
+        "ci_lower": -0.003904918574776178,
+        "ci_upper": 0.01370025406916798
+      },
+      {
+        "model": "Joint Action-Rationale",
+        "estimate": -0.00031404393178954034,
+        "ci_lower": -0.008074465422226387,
+        "ci_upper": 0.007380088685773137
+      }
+    ],
+    "paired_contrasts": [
+      {
+        "model": "Joint Action-Rationale",
+        "reference_model": "Action-Only",
+        "direction": "Joint Action-Rationale - Action-Only",
+        "estimate": -0.0049657634503139925,
+        "ci_lower": -0.012561115873905612,
+        "ci_upper": 0.0030019991540986687,
+        "bootstrap_probability_gt_zero": 0.1045,
+        "bootstrap_probability_lt_zero": 0.8955
+      }
+    ]
+  }
+}

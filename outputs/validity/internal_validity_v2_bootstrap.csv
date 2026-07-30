@@ -1,0 +1,109 @@
+Cohort,Condition,Metric,Preferred_Direction,Samples,Comparison_Type,Model,Reference_Model,Contrast_Direction,Estimate,CI_Lower,CI_Upper,Bootstrap_Probability_GT_Zero,Bootstrap_Probability_LT_Zero
+clean,official_test,action_macro_f1,higher,4557,model_estimate,Action-Only,,,0.6760957628448777,0.6650781459838575,0.6864467960963117,,
+clean,official_test,action_macro_f1,higher,4557,model_estimate,Joint Action-Rationale,,,0.6865757074165373,0.6755973402345764,0.6970707451048485,,
+clean,official_test,action_macro_f1,higher,4557,model_estimate,Joint-Calibrated,,,0.6865757074165373,0.6755973402345764,0.6970707451048485,,
+clean,official_test,action_macro_f1,higher,4557,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,0.010479944571659572,0.001245183616618221,0.01965719847616531,0.988,0.012
+clean,official_test,action_macro_f1,higher,4557,paired_contrast,Joint-Calibrated,Action-Only,Joint-Calibrated - Action-Only,0.010479944571659572,0.001245183616618221,0.01965719847616531,0.988,0.012
+clean,official_test,action_macro_f1,higher,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,0.0,0.0,0.0,0.0,0.0
+clean,official_test,aurc,lower,4557,model_estimate,Action-Only,,,0.4000262648084986,0.38086434004012226,0.4196619589507718,,
+clean,official_test,aurc,lower,4557,model_estimate,Joint Action-Rationale,,,0.3896950874006301,0.37123086743264944,0.40898961307451204,,
+clean,official_test,aurc,lower,4557,model_estimate,Joint-Calibrated,,,0.3896950874006301,0.37123086743264944,0.40898961307451204,,
+clean,official_test,aurc,lower,4557,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.010331177407868541,-0.027954879035027864,0.007568216812050539,0.1355,0.8645
+clean,official_test,aurc,lower,4557,paired_contrast,Joint-Calibrated,Action-Only,Joint-Calibrated - Action-Only,-0.010331177407868541,-0.027954879035027864,0.007568216812050539,0.1355,0.8645
+clean,official_test,aurc,lower,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,0.0,0.0,0.0,0.0,0.0
+clean,official_test,ece,lower,4557,model_estimate,Action-Only,,,0.4775508859470871,0.4631587498943886,0.49139423909226115,,
+clean,official_test,ece,lower,4557,model_estimate,Joint Action-Rationale,,,0.4616886293938175,0.44859346721464255,0.47606302584845595,,
+clean,official_test,ece,lower,4557,model_estimate,Joint-Calibrated,,,0.3377588928563727,0.32483901068692356,0.3519093273701527,,
+clean,official_test,ece,lower,4557,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.015862256553269616,-0.028956562275856173,-0.0024949750698795878,0.01,0.99
+clean,official_test,ece,lower,4557,paired_contrast,Joint-Calibrated,Action-Only,Joint-Calibrated - Action-Only,-0.13979199309071438,-0.15289095254362636,-0.1262573634430262,0.0,1.0
+clean,official_test,ece,lower,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,-0.12392973653744477,-0.12579819702287073,-0.1220358701969728,0.0,1.0
+clean,official_test,rationale_macro_f1,higher,4557,model_estimate,Joint Action-Rationale,,,0.3009910922159824,0.2937221517204915,0.30826877632274213,,
+clean,official_test,rationale_macro_f1,higher,4557,model_estimate,Joint-Calibrated,,,0.3009910922159824,0.2937221517204915,0.30826877632274213,,
+clean,official_test,rationale_macro_f1,higher,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,0.0,0.0,0.0,0.0,0.0
+clean,official_test,unsafe_acceptance_rate_90,lower,4557,model_estimate,Action-Only,,,0.5026816187225743,0.48732325694783035,0.5182837640175524,,
+clean,official_test,unsafe_acceptance_rate_90,lower,4557,model_estimate,Joint Action-Rationale,,,0.4824475865431497,0.46805826426133595,0.49829960994636757,,
+clean,official_test,unsafe_acceptance_rate_90,lower,4557,model_estimate,Joint-Calibrated,,,0.4824475865431497,0.46805826426133595,0.49829960994636757,,
+clean,official_test,unsafe_acceptance_rate_90,lower,4557,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.020234032179424655,-0.03340443686006829,-0.005607020965382736,0.002,0.998
+clean,official_test,unsafe_acceptance_rate_90,lower,4557,paired_contrast,Joint-Calibrated,Action-Only,Joint-Calibrated - Action-Only,-0.020234032179424655,-0.03340443686006829,-0.005607020965382736,0.002,0.998
+clean,official_test,unsafe_acceptance_rate_90,lower,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,0.0,0.0,0.0,0.0,0.0
+consistency,blur,action_flip_rate,lower,4557,model_estimate,Action-Only,,,0.13956550362080317,0.12969058591178406,0.14922097871406628,,
+consistency,blur,action_flip_rate,lower,4557,model_estimate,Joint Action-Rationale,,,0.1465876673249945,0.13649330700021944,0.15646807109940747,,
+consistency,blur,action_flip_rate,lower,4557,model_estimate,Joint-Calibrated,,,0.1465876673249945,0.13649330700021944,0.15646807109940747,,
+consistency,blur,action_flip_rate,lower,4557,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,0.007022163704191342,-0.006802721088435382,0.020408163265306117,0.838,0.154
+consistency,blur,action_flip_rate,lower,4557,paired_contrast,Joint-Calibrated,Action-Only,Joint-Calibrated - Action-Only,0.007022163704191342,-0.006802721088435382,0.020408163265306117,0.838,0.154
+consistency,blur,action_flip_rate,lower,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,0.0,0.0,0.0,0.0,0.0
+consistency,blur,rationale_jaccard,higher,4557,model_estimate,Joint Action-Rationale,,,0.8854655840830956,0.8782812157120913,0.8924269438958378,,
+consistency,blur,rationale_jaccard,higher,4557,model_estimate,Joint-Calibrated,,,0.8854655840830956,0.8782812157120913,0.8924269438958378,,
+consistency,blur,rationale_jaccard,higher,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,0.0,0.0,0.0,0.0,0.0
+consistency,brightness,action_flip_rate,lower,4557,model_estimate,Action-Only,,,0.10686855387316217,0.09852973447443493,0.11564625850340136,,
+consistency,brightness,action_flip_rate,lower,4557,model_estimate,Joint Action-Rationale,,,0.10533245556287031,0.09611037963572527,0.11389071757735353,,
+consistency,brightness,action_flip_rate,lower,4557,model_estimate,Joint-Calibrated,,,0.10533245556287031,0.09611037963572527,0.11389071757735353,,
+consistency,brightness,action_flip_rate,lower,4557,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.0015360983102918613,-0.014263770024138686,0.01053873162168091,0.394,0.5905
+consistency,brightness,action_flip_rate,lower,4557,paired_contrast,Joint-Calibrated,Action-Only,Joint-Calibrated - Action-Only,-0.0015360983102918613,-0.014263770024138686,0.01053873162168091,0.394,0.5905
+consistency,brightness,action_flip_rate,lower,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,0.0,0.0,0.0,0.0,0.0
+consistency,brightness,rationale_jaccard,higher,4557,model_estimate,Joint Action-Rationale,,,0.9156645453880478,0.9096039060785605,0.9217334137956259,,
+consistency,brightness,rationale_jaccard,higher,4557,model_estimate,Joint-Calibrated,,,0.9156645453880478,0.9096039060785605,0.9217334137956259,,
+consistency,brightness,rationale_jaccard,higher,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,0.0,0.0,0.0,0.0,0.0
+consistency,mean_three,action_flip_rate,lower,4557,model_estimate,Action-Only,,,0.126545241752615,0.11952307804842366,0.13378684807256236,,
+consistency,mean_three,action_flip_rate,lower,4557,model_estimate,Joint Action-Rationale,,,0.1239850779021286,0.11674347158218126,0.1311553653719552,,
+consistency,mean_three,action_flip_rate,lower,4557,model_estimate,Joint-Calibrated,,,0.1239850779021286,0.11674347158218126,0.1311553653719552,,
+consistency,mean_three,action_flip_rate,lower,4557,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.0025601638504864077,-0.01214432009362887,0.007316582546997265,0.294,0.7025
+consistency,mean_three,action_flip_rate,lower,4557,paired_contrast,Joint-Calibrated,Action-Only,Joint-Calibrated - Action-Only,-0.0025601638504864077,-0.01214432009362887,0.007316582546997265,0.294,0.7025
+consistency,mean_three,action_flip_rate,lower,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,0.0,0.0,0.0,0.0,0.0
+consistency,mean_three,rationale_jaccard,higher,4557,model_estimate,Joint Action-Rationale,,,0.9025089605734767,0.89748613244581,0.9075139285104722,,
+consistency,mean_three,rationale_jaccard,higher,4557,model_estimate,Joint-Calibrated,,,0.9025089605734767,0.89748613244581,0.9075139285104722,,
+consistency,mean_three,rationale_jaccard,higher,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,0.0,0.0,0.0,0.0,0.0
+consistency,noise,action_flip_rate,lower,4557,model_estimate,Action-Only,,,0.13320166776387973,0.12354619267061663,0.14307658547289884,,
+consistency,noise,action_flip_rate,lower,4557,model_estimate,Joint Action-Rationale,,,0.12003511081852096,0.11059907834101383,0.1294711432960281,,
+consistency,noise,action_flip_rate,lower,4557,model_estimate,Joint-Calibrated,,,0.12003511081852096,0.11059907834101383,0.1294711432960281,,
+consistency,noise,action_flip_rate,lower,4557,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.013166556945358773,-0.026771999122229537,-0.0002194426157559874,0.0235,0.9755
+consistency,noise,action_flip_rate,lower,4557,paired_contrast,Joint-Calibrated,Action-Only,Joint-Calibrated - Action-Only,-0.013166556945358773,-0.026771999122229537,-0.0002194426157559874,0.0235,0.9755
+consistency,noise,action_flip_rate,lower,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,0.0,0.0,0.0,0.0,0.0
+consistency,noise,rationale_jaccard,higher,4557,model_estimate,Joint Action-Rationale,,,0.906396752249287,0.8997468180820715,0.9131447041182064,,
+consistency,noise,rationale_jaccard,higher,4557,model_estimate,Joint-Calibrated,,,0.906396752249287,0.8997468180820715,0.9131447041182064,,
+consistency,noise,rationale_jaccard,higher,4557,paired_contrast,Joint-Calibrated,Joint Action-Rationale,Joint-Calibrated - Joint Action-Rationale,0.0,0.0,0.0,0.0,0.0
+critical_masks,rationale_bound_all,causal_evidence_gap,context_dependent,760,model_estimate,Action-Only,,,0.004651719518524452,-0.003904918574776178,0.01370025406916798,,
+critical_masks,rationale_bound_all,causal_evidence_gap,context_dependent,760,model_estimate,Joint Action-Rationale,,,-0.00031404393178954034,-0.008074465422226387,0.007380088685773137,,
+critical_masks,rationale_bound_all,causal_evidence_gap,context_dependent,760,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.0049657634503139925,-0.012561115873905612,0.0030019991540986687,0.1045,0.8955
+critical_masks,rationale_bound_all,mean_delta_critical,context_dependent,760,model_estimate,Action-Only,,,0.004715365042921097,-0.004416989820951209,0.014228604398948592,,
+critical_masks,rationale_bound_all,mean_delta_critical,context_dependent,760,model_estimate,Joint Action-Rationale,,,0.0037927999300987844,-0.004723606095841012,0.012783776372171334,,
+critical_masks,rationale_bound_all,mean_delta_critical,context_dependent,760,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.0009225651128223129,-0.008635700466811395,0.0066069711871900045,0.4135,0.5865
+critical_masks,rationale_bound_all,mean_delta_noncritical,context_dependent,760,model_estimate,Action-Only,,,6.364552439664624e-05,-0.0030849395313790997,0.003330346068191624,,
+critical_masks,rationale_bound_all,mean_delta_noncritical,context_dependent,760,model_estimate,Joint Action-Rationale,,,0.004106843861888325,-0.0005240024018002699,0.009117787161439227,,
+critical_masks,rationale_bound_all,mean_delta_noncritical,context_dependent,760,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,0.004043198337491679,-0.0009597946795677833,0.00906428251858447,0.937,0.063
+critical_masks,rationale_bound_class_bicycle,causal_evidence_gap,context_dependent,26,model_estimate,Action-Only,,,0.0441477859875663,-0.011335747040416714,0.11206847449937159,,
+critical_masks,rationale_bound_class_bicycle,causal_evidence_gap,context_dependent,26,model_estimate,Joint Action-Rationale,,,-0.020078380285270078,-0.0569770476899377,0.009733056628018643,,
+critical_masks,rationale_bound_class_bicycle,causal_evidence_gap,context_dependent,26,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.06422616627283638,-0.13641053574885398,-0.008412992169310912,0.0135,0.9865
+critical_masks,rationale_bound_class_bicycle,mean_delta_critical,context_dependent,26,model_estimate,Action-Only,,,0.06180198181371926,0.003859633531535732,0.1397814398777061,,
+critical_masks,rationale_bound_class_bicycle,mean_delta_critical,context_dependent,26,model_estimate,Joint Action-Rationale,,,0.03568331708659231,0.00735840117441422,0.08234081185626482,,
+critical_masks,rationale_bound_class_bicycle,mean_delta_critical,context_dependent,26,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.02611866472712695,-0.06927506881429422,0.008458467585180231,0.0875,0.9125
+critical_masks,rationale_bound_class_bicycle,mean_delta_noncritical,context_dependent,26,model_estimate,Action-Only,,,0.017654195826152956,-0.0010617530144159315,0.04108361040879007,,
+critical_masks,rationale_bound_class_bicycle,mean_delta_noncritical,context_dependent,26,model_estimate,Joint Action-Rationale,,,0.05576169737186238,0.009562627655076329,0.11794466104717159,,
+critical_masks,rationale_bound_class_bicycle,mean_delta_noncritical,context_dependent,26,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,0.038107501545709424,-0.0042658576300920355,0.09039277243601568,0.956,0.044
+critical_masks,rationale_bound_class_car,causal_evidence_gap,context_dependent,30,model_estimate,Action-Only,,,-0.039175775189948386,-0.08252497134787616,-0.007310981711704216,,
+critical_masks,rationale_bound_class_car,causal_evidence_gap,context_dependent,30,model_estimate,Joint Action-Rationale,,,-0.04153239177927453,-0.08509860754678181,-0.009582799074072758,,
+critical_masks,rationale_bound_class_car,causal_evidence_gap,context_dependent,30,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.0023566165893261423,-0.05733390080259577,0.04949374950645415,0.4635,0.5365
+critical_masks,rationale_bound_class_car,mean_delta_critical,context_dependent,30,model_estimate,Action-Only,,,-0.025596434077813954,-0.06498520417282266,-0.0015336952463335682,,
+critical_masks,rationale_bound_class_car,mean_delta_critical,context_dependent,30,model_estimate,Joint Action-Rationale,,,-0.029381007632301823,-0.07428299180283954,-0.0035461839561512247,,
+critical_masks,rationale_bound_class_car,mean_delta_critical,context_dependent,30,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.0037845735544878682,-0.05731297399385438,0.045066950912985314,0.4345,0.5655
+critical_masks,rationale_bound_class_car,mean_delta_noncritical,context_dependent,30,model_estimate,Action-Only,,,0.013579341112134442,-0.0017091483161588152,0.03266221130305106,,
+critical_masks,rationale_bound_class_car,mean_delta_noncritical,context_dependent,30,model_estimate,Joint Action-Rationale,,,0.012151384146972706,-0.010961072376607366,0.03839954643261294,,
+critical_masks,rationale_bound_class_car,mean_delta_noncritical,context_dependent,30,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.0014279569651617363,-0.027569312270905595,0.030801425722341583,0.438,0.562
+critical_masks,rationale_bound_class_person,causal_evidence_gap,context_dependent,26,model_estimate,Action-Only,,,0.030057210929563302,-0.03801475913057254,0.12187574464828636,,
+critical_masks,rationale_bound_class_person,causal_evidence_gap,context_dependent,26,model_estimate,Joint Action-Rationale,,,0.03614570365745681,-0.002558192888814114,0.10018188992193651,,
+critical_masks,rationale_bound_class_person,causal_evidence_gap,context_dependent,26,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,0.00608849272789351,-0.028694175144121398,0.04864212940850341,0.6125,0.3875
+critical_masks,rationale_bound_class_person,mean_delta_critical,context_dependent,26,model_estimate,Action-Only,,,0.030480993778563063,-0.029531958906421824,0.11669531151058998,,
+critical_masks,rationale_bound_class_person,mean_delta_critical,context_dependent,26,model_estimate,Joint Action-Rationale,,,0.0391812401102911,-0.008666966735458059,0.11508055062074499,,
+critical_masks,rationale_bound_class_person,mean_delta_critical,context_dependent,26,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,0.00870024633172804,-0.019040065155168012,0.04454975573541067,0.6975,0.3025
+critical_masks,rationale_bound_class_person,mean_delta_noncritical,context_dependent,26,model_estimate,Action-Only,,,0.0004237828489997605,-0.00879516147791507,0.011969474744293232,,
+critical_masks,rationale_bound_class_person,mean_delta_noncritical,context_dependent,26,model_estimate,Joint Action-Rationale,,,0.0030355364528342876,-0.012692725592778457,0.021505187354909187,,
+critical_masks,rationale_bound_class_person,mean_delta_noncritical,context_dependent,26,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,0.002611753603834527,-0.014363378674669526,0.021990761428161525,0.5845,0.4155
+critical_masks,rationale_bound_class_traffic light,causal_evidence_gap,context_dependent,662,model_estimate,Action-Only,,,0.0029334705267581355,-0.006047104731225633,0.012413957600200856,,
+critical_masks,rationale_bound_class_traffic light,causal_evidence_gap,context_dependent,662,model_estimate,Joint Action-Rationale,,,-0.0003877633276220156,-0.008244547042714025,0.007286745722768502,,
+critical_masks,rationale_bound_class_traffic light,causal_evidence_gap,context_dependent,662,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,-0.003321233854380151,-0.011323912213726974,0.004154024820556635,0.191,0.809
+critical_masks,rationale_bound_class_traffic light,mean_delta_critical,context_dependent,662,model_estimate,Action-Only,,,0.001459517224138102,-0.008222506220958197,0.011329889537060172,,
+critical_masks,rationale_bound_class_traffic light,mean_delta_critical,context_dependent,662,model_estimate,Joint Action-Rationale,,,0.0017027343455744562,-0.00746249341761544,0.010992160998955195,,
+critical_masks,rationale_bound_class_traffic light,mean_delta_critical,context_dependent,662,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,0.00024321712143635424,-0.00824810186856154,0.008184008942184745,0.532,0.468
+critical_masks,rationale_bound_class_traffic light,mean_delta_noncritical,context_dependent,662,model_estimate,Action-Only,,,-0.0014739533026200357,-0.0050241730288563685,0.002001498362636609,,
+critical_masks,rationale_bound_class_traffic light,mean_delta_noncritical,context_dependent,662,model_estimate,Joint Action-Rationale,,,0.002090497673196471,-0.0018092973214134658,0.0067440197450315915,,
+critical_masks,rationale_bound_class_traffic light,mean_delta_noncritical,context_dependent,662,paired_contrast,Joint Action-Rationale,Action-Only,Joint Action-Rationale - Action-Only,0.003564450975816507,-0.0011900475472248816,0.008886556095781024,0.9225,0.0775

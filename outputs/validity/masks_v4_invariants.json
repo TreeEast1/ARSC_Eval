@@ -1,0 +1,87 @@
+{
+  "manifest": "data\\processed\\masks_v4\\manifest_confirmatory.jsonl",
+  "pairs": 113,
+  "state_counts": {
+    "red": 46,
+    "green": 67
+  },
+  "rationale_counts": {
+    "red_light": 46,
+    "green_light": 67
+  },
+  "excluded_prior_audit_names": 210,
+  "prior_audit_overlap_names": [],
+  "maximum_allowed_offset": 0.35,
+  "maximum_observed_offset": 0.19218749999999998,
+  "failures": {
+    "rendered_patch_shape_mismatch": 2,
+    "duplicate_file_name": 0,
+    "prior_audit_overlap": 0
+  },
+  "rendered_patch_shape_mismatches": [
+    {
+      "file_name": "b279bc06-3c8aeb90_1.jpg",
+      "critical_box_xyxy": [
+        1250,
+        232,
+        1280,
+        325
+      ],
+      "noncritical_box_xyxy": [
+        1200,
+        232,
+        1230,
+        325
+      ],
+      "critical_patch_shape": [
+        94,
+        30,
+        3
+      ],
+      "noncritical_patch_shape": [
+        94,
+        31,
+        3
+      ]
+    },
+    {
+      "file_name": "661a6487-c5df650e_3.jpg",
+      "critical_box_xyxy": [
+        1248,
+        107,
+        1280,
+        185
+      ],
+      "noncritical_box_xyxy": [
+        1200,
+        107,
+        1232,
+        185
+      ],
+      "critical_patch_shape": [
+        79,
+        32,
+        3
+      ],
+      "noncritical_patch_shape": [
+        79,
+        33,
+        3
+      ]
+    }
+  ],
+  "all_invariants_passed": false,
+  "sha256": {
+    "data\\processed\\masks_v4\\manifest_confirmatory.jsonl": "45aaae7b6bb8a71fd49dbe5e10451067f2d978d331b58056138561092432b5bf",
+    "scripts\\generate_masks_v4.py": "b70387c523abbfd9e61a42595fc8491c12ccf9cf27b0f318b8e670ff469fd721",
+    "yolo11n.pt": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+    "outputs\\validity\\mask_audit_v2\\sample_manifest.jsonl": "04d7861e89bd68e9851dd2b50a8d0f6517d9a926a97e483f531070280e30f436",
+    "outputs\\validity\\mask_audit_v3\\sample_manifest.jsonl": "888be9f9845deb1f5aa6e8e1da44cef8ccffeecb9f18628a89e295f2fa76cd7d"
+  },
+  "environment": {
+    "opencv": "4.11.0",
+    "numpy": "1.26.4",
+    "pillow": "10.4.0",
+    "python": "3.11.13 | packaged by Anaconda, Inc. | (main, Jun  5 2025, 13:03:15) [MSC v.1929 64 bit (AMD64)]"
+  }
+}

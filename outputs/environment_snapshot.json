@@ -1,0 +1,33 @@
+{
+  "captured_at": "2026-07-31T02:52:20.9528459+08:00",
+  "operating_system": "Windows with WSL2 tmux orchestration",
+  "python": {
+    "executable": "D:\\anaconda3\\envs\\Nuclear_Transformer\\python.exe",
+    "version": "3.11.13"
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 5090",
+    "driver_version": "581.29",
+    "memory_total_mib": 32607,
+    "cuda_reported_by_torch": "13.0"
+  },
+  "packages": {
+    "torch": "2.10.0.dev20251012+cu130",
+    "torchvision": "0.25.0.dev20251012+cu130",
+    "opencv": "4.11.0",
+    "numpy": "1.26.4",
+    "pillow": "10.4.0",
+    "pyyaml": "6.0.3",
+    "ultralytics": "8.4.45",
+    "pytest": "9.1.1"
+  },
+  "validation": {
+    "pytest": "29 passed in 16.12s",
+    "compileall": "PASS",
+    "logs": [
+      "outputs/validation_tests.log",
+      "outputs/validation_compileall.log",
+      "outputs/validation_verify_outputs.log"
+    ]
+  }
+}

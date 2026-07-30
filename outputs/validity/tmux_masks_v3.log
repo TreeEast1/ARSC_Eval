@@ -1,0 +1,313 @@
+{"processed": 16, "eligible": 3798, "valid_masks": 2}
+{"processed": 32, "eligible": 3798, "valid_masks": 5}
+{"processed": 48, "eligible": 3798, "valid_masks": 5}
+{"processed": 64, "eligible": 3798, "valid_masks": 8}
+{"processed": 80, "eligible": 3798, "valid_masks": 9}
+{"processed": 96, "eligible": 3798, "valid_masks": 12}
+{"processed": 112, "eligible": 3798, "valid_masks": 15}
+{"processed": 128, "eligible": 3798, "valid_masks": 15}
+{"processed": 144, "eligible": 3798, "valid_masks": 18}
+{"processed": 160, "eligible": 3798, "valid_masks": 18}
+{"processed": 176, "eligible": 3798, "valid_masks": 18}
+{"processed": 192, "eligible": 3798, "valid_masks": 22}
+{"processed": 208, "eligible": 3798, "valid_masks": 23}
+{"processed": 224, "eligible": 3798, "valid_masks": 27}
+{"processed": 240, "eligible": 3798, "valid_masks": 28}
+{"processed": 256, "eligible": 3798, "valid_masks": 28}
+{"processed": 272, "eligible": 3798, "valid_masks": 29}
+{"processed": 288, "eligible": 3798, "valid_masks": 31}
+{"processed": 304, "eligible": 3798, "valid_masks": 31}
+{"processed": 320, "eligible": 3798, "valid_masks": 33}
+{"processed": 336, "eligible": 3798, "valid_masks": 38}
+{"processed": 352, "eligible": 3798, "valid_masks": 40}
+{"processed": 368, "eligible": 3798, "valid_masks": 40}
+{"processed": 384, "eligible": 3798, "valid_masks": 42}
+{"processed": 400, "eligible": 3798, "valid_masks": 44}
+{"processed": 416, "eligible": 3798, "valid_masks": 46}
+{"processed": 432, "eligible": 3798, "valid_masks": 48}
+{"processed": 448, "eligible": 3798, "valid_masks": 50}
+{"processed": 464, "eligible": 3798, "valid_masks": 52}
+{"processed": 480, "eligible": 3798, "valid_masks": 56}
+{"processed": 496, "eligible": 3798, "valid_masks": 58}
+{"processed": 512, "eligible": 3798, "valid_masks": 59}
+{"processed": 528, "eligible": 3798, "valid_masks": 61}
+{"processed": 544, "eligible": 3798, "valid_masks": 63}
+{"processed": 560, "eligible": 3798, "valid_masks": 65}
+{"processed": 576, "eligible": 3798, "valid_masks": 69}
+{"processed": 592, "eligible": 3798, "valid_masks": 72}
+{"processed": 608, "eligible": 3798, "valid_masks": 75}
+{"processed": 624, "eligible": 3798, "valid_masks": 77}
+{"processed": 640, "eligible": 3798, "valid_masks": 79}
+{"processed": 656, "eligible": 3798, "valid_masks": 79}
+{"processed": 672, "eligible": 3798, "valid_masks": 82}
+{"processed": 688, "eligible": 3798, "valid_masks": 82}
+{"processed": 704, "eligible": 3798, "valid_masks": 83}
+{"processed": 720, "eligible": 3798, "valid_masks": 85}
+{"processed": 736, "eligible": 3798, "valid_masks": 88}
+{"processed": 752, "eligible": 3798, "valid_masks": 91}
+{"processed": 768, "eligible": 3798, "valid_masks": 94}
+{"processed": 784, "eligible": 3798, "valid_masks": 95}
+{"processed": 800, "eligible": 3798, "valid_masks": 97}
+{"processed": 816, "eligible": 3798, "valid_masks": 98}
+{"processed": 832, "eligible": 3798, "valid_masks": 99}
+{"processed": 848, "eligible": 3798, "valid_masks": 99}
+{"processed": 864, "eligible": 3798, "valid_masks": 102}
+{"processed": 880, "eligible": 3798, "valid_masks": 105}
+{"processed": 896, "eligible": 3798, "valid_masks": 105}
+{"processed": 912, "eligible": 3798, "valid_masks": 106}
+{"processed": 928, "eligible": 3798, "valid_masks": 106}
+{"processed": 944, "eligible": 3798, "valid_masks": 108}
+{"processed": 960, "eligible": 3798, "valid_masks": 108}
+{"processed": 976, "eligible": 3798, "valid_masks": 109}
+{"processed": 992, "eligible": 3798, "valid_masks": 109}
+{"processed": 1008, "eligible": 3798, "valid_masks": 112}
+{"processed": 1024, "eligible": 3798, "valid_masks": 113}
+{"processed": 1040, "eligible": 3798, "valid_masks": 114}
+{"processed": 1056, "eligible": 3798, "valid_masks": 117}
+{"processed": 1072, "eligible": 3798, "valid_masks": 118}
+{"processed": 1088, "eligible": 3798, "valid_masks": 119}
+{"processed": 1104, "eligible": 3798, "valid_masks": 121}
+{"processed": 1120, "eligible": 3798, "valid_masks": 121}
+{"processed": 1136, "eligible": 3798, "valid_masks": 123}
+{"processed": 1152, "eligible": 3798, "valid_masks": 124}
+{"processed": 1168, "eligible": 3798, "valid_masks": 125}
+{"processed": 1184, "eligible": 3798, "valid_masks": 126}
+{"processed": 1200, "eligible": 3798, "valid_masks": 129}
+{"processed": 1216, "eligible": 3798, "valid_masks": 132}
+{"processed": 1232, "eligible": 3798, "valid_masks": 133}
+{"processed": 1248, "eligible": 3798, "valid_masks": 134}
+{"processed": 1264, "eligible": 3798, "valid_masks": 135}
+{"processed": 1280, "eligible": 3798, "valid_masks": 138}
+{"processed": 1296, "eligible": 3798, "valid_masks": 141}
+{"processed": 1312, "eligible": 3798, "valid_masks": 143}
+{"processed": 1328, "eligible": 3798, "valid_masks": 145}
+{"processed": 1344, "eligible": 3798, "valid_masks": 147}
+{"processed": 1360, "eligible": 3798, "valid_masks": 148}
+{"processed": 1376, "eligible": 3798, "valid_masks": 151}
+{"processed": 1392, "eligible": 3798, "valid_masks": 152}
+{"processed": 1408, "eligible": 3798, "valid_masks": 155}
+{"processed": 1424, "eligible": 3798, "valid_masks": 156}
+{"processed": 1440, "eligible": 3798, "valid_masks": 159}
+{"processed": 1456, "eligible": 3798, "valid_masks": 161}
+{"processed": 1472, "eligible": 3798, "valid_masks": 162}
+{"processed": 1488, "eligible": 3798, "valid_masks": 163}
+{"processed": 1504, "eligible": 3798, "valid_masks": 166}
+{"processed": 1520, "eligible": 3798, "valid_masks": 168}
+{"processed": 1536, "eligible": 3798, "valid_masks": 170}
+{"processed": 1552, "eligible": 3798, "valid_masks": 171}
+{"processed": 1568, "eligible": 3798, "valid_masks": 172}
+{"processed": 1584, "eligible": 3798, "valid_masks": 172}
+{"processed": 1600, "eligible": 3798, "valid_masks": 174}
+{"processed": 1616, "eligible": 3798, "valid_masks": 177}
+{"processed": 1632, "eligible": 3798, "valid_masks": 179}
+{"processed": 1648, "eligible": 3798, "valid_masks": 181}
+{"processed": 1664, "eligible": 3798, "valid_masks": 183}
+{"processed": 1680, "eligible": 3798, "valid_masks": 184}
+{"processed": 1696, "eligible": 3798, "valid_masks": 187}
+{"processed": 1712, "eligible": 3798, "valid_masks": 191}
+{"processed": 1728, "eligible": 3798, "valid_masks": 193}
+{"processed": 1744, "eligible": 3798, "valid_masks": 196}
+{"processed": 1760, "eligible": 3798, "valid_masks": 196}
+{"processed": 1776, "eligible": 3798, "valid_masks": 197}
+{"processed": 1792, "eligible": 3798, "valid_masks": 198}
+{"processed": 1808, "eligible": 3798, "valid_masks": 202}
+{"processed": 1824, "eligible": 3798, "valid_masks": 203}
+{"processed": 1840, "eligible": 3798, "valid_masks": 207}
+{"processed": 1856, "eligible": 3798, "valid_masks": 212}
+{"processed": 1872, "eligible": 3798, "valid_masks": 216}
+{"processed": 1888, "eligible": 3798, "valid_masks": 218}
+{"processed": 1904, "eligible": 3798, "valid_masks": 222}
+{"processed": 1920, "eligible": 3798, "valid_masks": 224}
+{"processed": 1936, "eligible": 3798, "valid_masks": 225}
+{"processed": 1952, "eligible": 3798, "valid_masks": 229}
+{"processed": 1968, "eligible": 3798, "valid_masks": 231}
+{"processed": 1984, "eligible": 3798, "valid_masks": 231}
+{"processed": 2000, "eligible": 3798, "valid_masks": 231}
+{"processed": 2016, "eligible": 3798, "valid_masks": 231}
+{"processed": 2032, "eligible": 3798, "valid_masks": 233}
+{"processed": 2048, "eligible": 3798, "valid_masks": 234}
+{"processed": 2064, "eligible": 3798, "valid_masks": 234}
+{"processed": 2080, "eligible": 3798, "valid_masks": 234}
+{"processed": 2096, "eligible": 3798, "valid_masks": 234}
+{"processed": 2112, "eligible": 3798, "valid_masks": 235}
+{"processed": 2128, "eligible": 3798, "valid_masks": 236}
+{"processed": 2144, "eligible": 3798, "valid_masks": 239}
+{"processed": 2160, "eligible": 3798, "valid_masks": 240}
+{"processed": 2176, "eligible": 3798, "valid_masks": 241}
+{"processed": 2192, "eligible": 3798, "valid_masks": 243}
+{"processed": 2208, "eligible": 3798, "valid_masks": 245}
+{"processed": 2224, "eligible": 3798, "valid_masks": 249}
+{"processed": 2240, "eligible": 3798, "valid_masks": 249}
+{"processed": 2256, "eligible": 3798, "valid_masks": 249}
+{"processed": 2272, "eligible": 3798, "valid_masks": 250}
+{"processed": 2288, "eligible": 3798, "valid_masks": 251}
+{"processed": 2304, "eligible": 3798, "valid_masks": 252}
+{"processed": 2320, "eligible": 3798, "valid_masks": 254}
+{"processed": 2336, "eligible": 3798, "valid_masks": 254}
+{"processed": 2352, "eligible": 3798, "valid_masks": 256}
+{"processed": 2368, "eligible": 3798, "valid_masks": 256}
+{"processed": 2384, "eligible": 3798, "valid_masks": 259}
+{"processed": 2400, "eligible": 3798, "valid_masks": 263}
+{"processed": 2416, "eligible": 3798, "valid_masks": 264}
+{"processed": 2432, "eligible": 3798, "valid_masks": 266}
+{"processed": 2448, "eligible": 3798, "valid_masks": 268}
+{"processed": 2464, "eligible": 3798, "valid_masks": 268}
+{"processed": 2480, "eligible": 3798, "valid_masks": 269}
+{"processed": 2496, "eligible": 3798, "valid_masks": 271}
+{"processed": 2512, "eligible": 3798, "valid_masks": 272}
+{"processed": 2528, "eligible": 3798, "valid_masks": 273}
+{"processed": 2544, "eligible": 3798, "valid_masks": 273}
+{"processed": 2560, "eligible": 3798, "valid_masks": 273}
+{"processed": 2576, "eligible": 3798, "valid_masks": 274}
+{"processed": 2592, "eligible": 3798, "valid_masks": 277}
+{"processed": 2608, "eligible": 3798, "valid_masks": 279}
+{"processed": 2624, "eligible": 3798, "valid_masks": 280}
+{"processed": 2640, "eligible": 3798, "valid_masks": 280}
+{"processed": 2656, "eligible": 3798, "valid_masks": 282}
+{"processed": 2672, "eligible": 3798, "valid_masks": 283}
+{"processed": 2688, "eligible": 3798, "valid_masks": 283}
+{"processed": 2704, "eligible": 3798, "valid_masks": 285}
+{"processed": 2720, "eligible": 3798, "valid_masks": 289}
+{"processed": 2736, "eligible": 3798, "valid_masks": 291}
+{"processed": 2752, "eligible": 3798, "valid_masks": 292}
+{"processed": 2768, "eligible": 3798, "valid_masks": 293}
+{"processed": 2784, "eligible": 3798, "valid_masks": 293}
+{"processed": 2800, "eligible": 3798, "valid_masks": 294}
+{"processed": 2816, "eligible": 3798, "valid_masks": 295}
+{"processed": 2832, "eligible": 3798, "valid_masks": 295}
+{"processed": 2848, "eligible": 3798, "valid_masks": 296}
+{"processed": 2864, "eligible": 3798, "valid_masks": 298}
+{"processed": 2880, "eligible": 3798, "valid_masks": 300}
+{"processed": 2896, "eligible": 3798, "valid_masks": 301}
+{"processed": 2912, "eligible": 3798, "valid_masks": 301}
+{"processed": 2928, "eligible": 3798, "valid_masks": 303}
+{"processed": 2944, "eligible": 3798, "valid_masks": 305}
+{"processed": 2960, "eligible": 3798, "valid_masks": 307}
+{"processed": 2976, "eligible": 3798, "valid_masks": 308}
+{"processed": 2992, "eligible": 3798, "valid_masks": 308}
+{"processed": 3008, "eligible": 3798, "valid_masks": 311}
+{"processed": 3024, "eligible": 3798, "valid_masks": 312}
+{"processed": 3040, "eligible": 3798, "valid_masks": 312}
+{"processed": 3056, "eligible": 3798, "valid_masks": 313}
+{"processed": 3072, "eligible": 3798, "valid_masks": 317}
+{"processed": 3088, "eligible": 3798, "valid_masks": 319}
+{"processed": 3104, "eligible": 3798, "valid_masks": 319}
+{"processed": 3120, "eligible": 3798, "valid_masks": 321}
+{"processed": 3136, "eligible": 3798, "valid_masks": 322}
+{"processed": 3152, "eligible": 3798, "valid_masks": 322}
+{"processed": 3168, "eligible": 3798, "valid_masks": 322}
+{"processed": 3184, "eligible": 3798, "valid_masks": 322}
+{"processed": 3200, "eligible": 3798, "valid_masks": 322}
+{"processed": 3216, "eligible": 3798, "valid_masks": 323}
+{"processed": 3232, "eligible": 3798, "valid_masks": 323}
+{"processed": 3248, "eligible": 3798, "valid_masks": 323}
+{"processed": 3264, "eligible": 3798, "valid_masks": 323}
+{"processed": 3280, "eligible": 3798, "valid_masks": 325}
+{"processed": 3296, "eligible": 3798, "valid_masks": 328}
+{"processed": 3312, "eligible": 3798, "valid_masks": 329}
+{"processed": 3328, "eligible": 3798, "valid_masks": 331}
+{"processed": 3344, "eligible": 3798, "valid_masks": 331}
+{"processed": 3360, "eligible": 3798, "valid_masks": 332}
+{"processed": 3376, "eligible": 3798, "valid_masks": 333}
+{"processed": 3392, "eligible": 3798, "valid_masks": 335}
+{"processed": 3408, "eligible": 3798, "valid_masks": 335}
+{"processed": 3424, "eligible": 3798, "valid_masks": 335}
+{"processed": 3440, "eligible": 3798, "valid_masks": 337}
+{"processed": 3456, "eligible": 3798, "valid_masks": 338}
+{"processed": 3472, "eligible": 3798, "valid_masks": 340}
+{"processed": 3488, "eligible": 3798, "valid_masks": 341}
+{"processed": 3504, "eligible": 3798, "valid_masks": 342}
+{"processed": 3520, "eligible": 3798, "valid_masks": 346}
+{"processed": 3536, "eligible": 3798, "valid_masks": 347}
+{"processed": 3552, "eligible": 3798, "valid_masks": 348}
+{"processed": 3568, "eligible": 3798, "valid_masks": 350}
+{"processed": 3584, "eligible": 3798, "valid_masks": 351}
+{"processed": 3600, "eligible": 3798, "valid_masks": 353}
+{"processed": 3616, "eligible": 3798, "valid_masks": 354}
+{"processed": 3632, "eligible": 3798, "valid_masks": 355}
+{"processed": 3648, "eligible": 3798, "valid_masks": 355}
+{"processed": 3664, "eligible": 3798, "valid_masks": 356}
+{"processed": 3680, "eligible": 3798, "valid_masks": 357}
+{"processed": 3696, "eligible": 3798, "valid_masks": 357}
+{"processed": 3712, "eligible": 3798, "valid_masks": 357}
+{"processed": 3728, "eligible": 3798, "valid_masks": 357}
+{"processed": 3744, "eligible": 3798, "valid_masks": 358}
+{"processed": 3760, "eligible": 3798, "valid_masks": 358}
+{"processed": 3776, "eligible": 3798, "valid_masks": 359}
+{"processed": 3792, "eligible": 3798, "valid_masks": 361}
+{"processed": 3798, "eligible": 3798, "valid_masks": 362}
+{
+  "version": "v3_high_precision_binding",
+  "detector": "yolo11n.pt",
+  "confidence_threshold": 0.35,
+  "image_format": "lossless PNG for both masked variants",
+  "eligible_by_rationale": 3798,
+  "valid_mask_pairs": 362,
+  "pilot_minimum_target_samples": 500,
+  "pilot_minimum_met": false,
+  "skipped": {
+    "no_high_precision_binding": 3432,
+    "no_spatially_matched_control": 4
+  },
+  "detected_class_counts": {
+    "traffic light": 313,
+    "car": 18,
+    "bicycle": 12,
+    "person": 12,
+    "motorcycle": 6,
+    "stop sign": 1
+  },
+  "localized_rationale_counts": {
+    "green_light": 187,
+    "red_light": 126,
+    "car": 18,
+    "rider": 18,
+    "person": 12,
+    "traffic_sign": 1
+  },
+  "selection_policy_counts": {
+    "hsv_light_state_match": 313,
+    "ego_road_corridor": 48,
+    "explicit_stop_sign_class": 1
+  },
+  "manifest": "data\\processed\\masks_v3\\manifest.jsonl",
+  "pre_registered_binding_policy": {
+    "traffic_lights": "fixed HSV red/green state match; directional green-light rationales excluded",
+    "road_objects": "fixed perspective-aware ego-road corridor and relevance score",
+    "traffic_sign": "explicit COCO stop-sign class only",
+    "one_rationale_action_binding_per_image": true
+  },
+  "control_policy": {
+    "area": "exact width and height match",
+    "position": "nearest candidate with 4x vertical displacement penalty",
+    "maximum_normalized_center_offset": 0.35,
+    "object_exclusion": "zero intersection with every detector box above threshold"
+  },
+  "spatial_diagnostics": {
+    "center_offset_norm": {
+      "minimum": 0.010156250000000033,
+      "median": 0.02656249999999999,
+      "p95": 0.13027343749999998,
+      "maximum": 0.34921875
+    },
+    "x_center_offset_norm": {
+      "minimum": 0.010156250000000033,
+      "median": 0.02656249999999996,
+      "p95": 0.12218749999999987,
+      "maximum": 0.34921875
+    },
+    "y_center_offset_norm": {
+      "minimum": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "maximum": 0.19999999999999996
+    },
+    "area_ratio": {
+      "minimum": 1.0,
+      "median": 1.0,
+      "p95": 1.0,
+      "maximum": 1.0
+    }
+  },
+  "audit_status": "pending independent stratified manual audit"
+}

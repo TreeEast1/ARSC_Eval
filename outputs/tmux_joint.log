@@ -1,0 +1,5 @@
+{"model": "joint", "epoch": 1, "train_total_loss": 0.8813804358611872, "validation_action_macro_f1": 0.5880549450601201, "validation_rationale_macro_f1": 0.16111868635188684, "duration_seconds": 64.9175963010639}
+{"model": "joint", "epoch": 2, "train_total_loss": 0.6156713608896246, "validation_action_macro_f1": 0.6735845359694339, "validation_rationale_macro_f1": 0.2227943120538487, "duration_seconds": 27.765968600288033}
+{"model": "joint", "epoch": 3, "train_total_loss": 0.41219351237098806, "validation_action_macro_f1": 0.6495245628058317, "validation_rationale_macro_f1": 0.26848419912932175, "duration_seconds": 26.97165980003774}
+{"model": "joint", "epoch": 4, "train_total_loss": 0.2861008715627348, "validation_action_macro_f1": 0.6348407417229558, "validation_rationale_macro_f1": 0.3010678343445785, "duration_seconds": 26.87463429942727}
+{"model": "joint", "epoch": 5, "train_total_loss": 0.2176871664849046, "validation_action_macro_f1": 0.6833400516379384, "validation_rationale_macro_f1": 0.30027897220818683, "duration_seconds": 26.954673999920487}

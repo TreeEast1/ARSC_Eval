@@ -1,0 +1,37 @@
+{
+  "main_results": [
+    {
+      "Model": "Action-Only",
+      "Action_Macro_F1": 0.6760957628448777,
+      "Rationale_Macro_F1": "N/A",
+      "Causal_Evidence_Gap": "N/A",
+      "AURC": 0.4000262648084986,
+      "Unsafe_Acceptance_Rate_90": 0.5026816187225743,
+      "ECE": 0.47755085645026485,
+      "Action_Flip_Rate": 0.12654524175261503,
+      "Rationale_Jaccard": "N/A"
+    },
+    {
+      "Model": "Joint Action-Rationale",
+      "Action_Macro_F1": 0.6865757074165373,
+      "Rationale_Macro_F1": 0.3009910922159824,
+      "Causal_Evidence_Gap": 0.0044611219357935635,
+      "AURC": 0.3896950874006301,
+      "Unsafe_Acceptance_Rate_90": 0.4824475865431497,
+      "ECE": 0.46168863024527446,
+      "Action_Flip_Rate": 0.1239850779021286,
+      "Rationale_Jaccard": 0.9025089605734767
+    },
+    {
+      "Model": "Joint-Calibrated",
+      "Action_Macro_F1": 0.6865757074165373,
+      "Rationale_Macro_F1": 0.3009910922159824,
+      "Causal_Evidence_Gap": 0.007684622718869841,
+      "AURC": 0.3896950874006301,
+      "Unsafe_Acceptance_Rate_90": 0.4824475865431497,
+      "ECE": 0.3377588786313951,
+      "Action_Flip_Rate": 0.1239850779021286,
+      "Rationale_Jaccard": 0.9025089605734767
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+Audit_ID,File_Name,Detected_Class,Localized_Rationales,Critical_Binding_Correct,Control_Free_Of_Critical_Evidence,Semantic_Label_Unchanged,Notes
+1,44191a9e-454dc2bf.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+2,56c474f3-d09d502f_3.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+3,5e2e9f89-cd9650ba.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+4,67e241db-4a0c070c.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+5,69435b06-9de9a69b.jpg,bicycle,rider,yes,no,yes,control contains an undetected potentially critical object
+6,7226d097-71847f47_3.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+7,a46dc481-7f006598.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+8,a78e4dfb-7fbf3297.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+9,bb110f9d-f9e57c74_3.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+10,c639e1c0-2eb71da1.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+11,1aff9849-fdbfb366_3.jpg,car,car,yes,yes,yes,manual audit pass
+12,37f8f5a8-4a3d4467.jpg,car,car,yes,yes,yes,manual audit pass
+13,6a11fee0-80fa7f04_1.jpg,car,car,yes,yes,yes,manual audit pass
+14,95a12ab0-821a55de_1.jpg,car,car,yes,yes,yes,manual audit pass
+15,a114f8b0-8bab2a05_3.jpg,car,car,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+16,a3c8157a-1db05ae3_1.jpg,car,car,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+17,a5cb00c3-5ef8e9c4.jpg,car,car,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+18,aba98642-736b011e_3.jpg,car,car,yes,yes,yes,manual audit pass
+19,c5bc3aa9-0d55c4f9_1.jpg,car,car,yes,no,yes,control contains an undetected potentially critical object
+20,c9df3b7e-0bf4fa31.jpg,car,car,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+21,106b9c49-dbb81f14.jpg,motorcycle,rider,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+22,506b3495-bc614894_1.jpg,motorcycle,rider,yes,yes,yes,manual audit pass
+23,5488ff78-d6d75d2c.jpg,motorcycle,rider,yes,yes,yes,manual audit pass
+24,6efc4740-beca3205.jpg,motorcycle,rider,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+25,80c014a7-7f7e37d8.jpg,motorcycle,rider,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+26,95e707c8-40776bee.jpg,motorcycle,rider,yes,yes,yes,manual audit pass
+27,a114f8b0-8bab2a05.jpg,motorcycle,rider,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+28,a8e89101-c21fa9b7.jpg,motorcycle,rider,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+29,c4a6774c-753a089b.jpg,motorcycle,rider,yes,yes,yes,manual audit pass
+30,c5a0ad25-ce65688e.jpg,motorcycle,rider,yes,yes,yes,manual audit pass
+31,304ed94c-add778ce_1.jpg,person,person,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+32,325e4d94-1c6ff24c_3.jpg,person,person,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+33,4f49ac2c-8bebd881_3.jpg,person,person,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+34,5133384e-8ae96e68_1.jpg,person,person,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+35,724b5120-c84b599b_3.jpg,person,person,no,no,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection); control contains an undetected potentially critical object
+36,73971c8a-246a0543_1.jpg,person,person,yes,yes,yes,manual audit pass
+37,7a536ea9-cc1535d0_1.jpg,person,person,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+38,7c0920af-223860db_3.jpg,person,person,yes,yes,yes,manual audit pass
+39,8e0572f0-419d79f3_1.jpg,person,person,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+40,c5ca1272-df2c0491_1.jpg,person,person,no,yes,yes,class is visible but the selected instance is not credibly action-inducing (or is a false detection)
+41,0540f550-72c78702.jpg,stop sign,traffic_sign,yes,yes,yes,manual audit pass
+42,04089f1c-d41e13f0_3.jpg,traffic light,green_light;left_green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+43,076399f2-3cc0e470_3.jpg,traffic light,red_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+44,130ed705-fab408b0_1.jpg,traffic light,right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+45,14306a74-dbad8809.jpg,traffic light,left_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+46,147745bb-99af0e39_1.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+47,1650cf99-18dd6d83_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+48,165fd452-cf58c843_3.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+49,1d8a534a-eb837a5d_1.jpg,traffic light,left_green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+50,1f864b3f-09719332_3.jpg,traffic light,red_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+51,2245f7ec-d49b0b0f.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+52,2670eb88-251feff1_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+53,31f03d27-ca186114_3.jpg,traffic light,green_light,yes,no,yes,control contains an undetected potentially critical object
+54,31fe96d1-51fa9b67.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+55,321e83d7-c332dec7.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+56,395bc4b6-282259f1_3.jpg,traffic light,green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+57,3d38ec06-5a60fdbf_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+58,3d868b32-c74676fe_1.jpg,traffic light,green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+59,445b69a9-b72f02bc.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+60,4510f933-8d77eacb_1.jpg,traffic light,green_light;left_green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+61,4c36656f-5df3b106_3.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+62,50e18e8b-d8de558b.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+63,51f62722-31376f51_3.jpg,traffic light,right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+64,599ec505-088dc7e4_1.jpg,traffic light,green_light;left_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+65,5b162329-42ceb0ac_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+66,60ff4adb-91f6f4a4.jpg,traffic light,green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+67,6217306a-ffb6fdaf_1.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+68,62fcbe0d-1018c738_1.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+69,648d81d8-b8cda858_1.jpg,traffic light,green_light;red_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+70,64d86ed5-c0009235.jpg,traffic light,red_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+71,678b7e0b-fcafbf82_3.jpg,traffic light,red_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+72,6a06ce90-1be927a6_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+73,6a06ce90-c84c7bc8.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+74,6c170040-b6375820.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+75,6c72d53e-84cb0256_1.jpg,traffic light,left_green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+76,74442067-2bb64766.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+77,78eb3c4b-67ed6b61_3.jpg,traffic light,green_light;left_green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+78,7d574ecb-97d22a3c.jpg,traffic light,red_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+79,7e21a4d0-e68131ab_3.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+80,8801e74c-7b580891.jpg,traffic light,right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+81,896deb61-57653ca9.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+82,90c02206-8629b893.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+83,92c5f54d-ec0eef76.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+84,971d3930-27c20fc5_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+85,981aff04-ddf44f92.jpg,traffic light,red_light,no,no,yes,generic detector box does not reliably match the annotated light state/direction; control contains an undetected potentially critical object
+86,984f4974-32b09e42_1.jpg,traffic light,green_light;left_green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+87,9aab765c-1713e6eb_3.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+88,9afabf0c-0c8752b8_1.jpg,traffic light,red_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+89,9b778671-716e449f_3.jpg,traffic light,green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+90,9e11d34b-146df6bc_3.jpg,traffic light,green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+91,9f6b1eb9-5f531304.jpg,traffic light,right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+92,a1140112-2e79103d_3.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+93,a32e85d1-3f06cd9d_1.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+94,a349aaee-b92a025f.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+95,a4f7d172-6d1973fe_3.jpg,traffic light,left_green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+96,a5b6017f-3ad94015_1.jpg,traffic light,green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+97,abedcf51-396c2747_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+98,b12f681c-1b7750eb_1.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+99,b4a23106-f7270c1c_1.jpg,traffic light,green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+100,b750dfba-288937b9.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+101,befa588e-80b3c62a_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+102,c1e404d7-4a3eedc5.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+103,c4353b9c-f8f56adc_3.jpg,traffic light,right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+104,c4b8340c-51d3f82b_1.jpg,traffic light,red_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+105,c695fbd3-0a91a52f_1.jpg,traffic light,red_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+106,c6bb9629-1727269a_3.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+107,eb6b86ee-a20b3aab.jpg,traffic light,red_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction
+108,f3894e02-d92a0682.jpg,traffic light,green_light;right_green_light,no,yes,yes,generic detector box does not reliably match the annotated light state/direction

@@ -1,0 +1,114 @@
+Audit_ID,File_Name,Detected_Class,Localized_Rationales,Critical_Binding_Correct,Control_Free_Of_Critical_Evidence,Semantic_Label_Unchanged,Notes
+1,01a42c06-6c608165_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+2,01b4e4b9-e21fe0a3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+3,027b216c-bfae3d6d_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+4,072f9d2d-ebc9b075_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+5,073873be-32a8b6b8_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+6,07398e6d-7b0dc522_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+7,0d9d0baa-4466d391.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+8,0db59ab7-6c52a4dd.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+9,0e4acdbb-2403b10e_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+10,0ff8c597-f1144a0f_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+11,104cdad2-5c21871a_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+12,1481f91e-87571020_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+13,1481f91e-87571020_3.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+14,156c2189-98a8400a_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+15,15905cba-a6317cf8_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+16,15905cba-a6317cf8_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+17,1608cfe7-113afa74_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+18,1650cf99-18dd6d83_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+19,167f11ee-0e320693_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+20,19906a63-c30a0848.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+21,1b4c521b-6132391c.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+22,1d5d5507-4d202189.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+23,1e82c7e7-d2744df9_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+24,1f13b7b2-4c1b6a58.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+25,1f864b3f-44e20190.jpg,traffic light,red_light,no,yes,yes,"state/binding failure: amber or wrong signal head, illuminated sign false detection, or unidentifiable red blob"
+26,20c37f6a-36f84788.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+27,29b6a36b-89b15565_1.jpg,traffic light,red_light,no,yes,yes,"state/binding failure: amber or wrong signal head, illuminated sign false detection, or unidentifiable red blob"
+28,2b03324c-3e7a69e0_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+29,2c919e7c-afd0b234.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+30,2d6b9723-eccc952b_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+31,2e598e8d-21a7e13f_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+32,2fc9ad1e-439351d7.jpg,traffic light,red_light,no,yes,yes,"state/binding failure: amber or wrong signal head, illuminated sign false detection, or unidentifiable red blob"
+33,2fd60f5d-44559e40_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+34,32654172-8c1f23e8.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+35,3682f59f-54361188.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+36,37748d46-9b6ac435_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+37,38221483-6398bc14.jpg,traffic light,red_light,no,yes,yes,"state/binding failure: amber or wrong signal head, illuminated sign false detection, or unidentifiable red blob"
+38,3870ae33-25a15dba.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+39,3b630e54-d48ddc50.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+40,3d7caf85-b229e6b0_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+41,3ecfa629-5cf421fe.jpg,traffic light,red_light,no,yes,yes,"state/binding failure: amber or wrong signal head, illuminated sign false detection, or unidentifiable red blob"
+42,3eda591c-c6e599bf_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+43,4af36dc3-bc007ba0.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+44,4b788c3d-2c555465_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+45,50e18e8b-633e4bb2.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+46,50e18e8b-d8de558b_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+47,5267fe63-2067e703.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+48,5503a6e2-c7437838_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+49,551e5e34-b7bfc47e_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+50,556733f6-f66b27a2_1.jpg,traffic light,green_light,yes,no,yes,control contains another signal head or road sign
+51,5806788d-61464a6e_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+52,587da58e-f42c6d85.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+53,58e79413-681ae601_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+54,5a85ad81-bf19cb9b.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+55,5e1f98f2-816e983d_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+56,5f6dc55e-9b63d67b.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+57,616e8b43-0e06aaf7_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+58,6179e5ee-a244db47.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+59,637a00bd-4afc3599_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+60,6495e3bb-8c73598b_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+61,64fdb05b-ed6d85c4_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+62,661a6487-c5df650e_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+63,67eb0a3c-4c0a9fc5.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+64,6b671085-0f60a06e_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+65,6f94bb5c-1121b79d.jpg,traffic light,green_light,yes,no,yes,control contains another signal head or road sign
+66,6fc4c5c1-930ea43a_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+67,725eae63-8ae94241.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+68,73cde9d7-49ad549d.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+69,73daf1b8-3946402b_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+70,74888aea-21e414d6_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+71,7492d846-768698d5_3.jpg,traffic light,green_light,yes,no,yes,control contains another signal head or road sign
+72,77799ad2-1bf0c229.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+73,795378f0-82bd73a7.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+74,7dc2914d-37a6d146.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+75,8252b2c1-e6b0ab5a.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+76,82f2f690-17feb2d9.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+77,8639db95-28462a6d_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+78,8656a6c2-aa8bb546_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+79,88ecd5ef-e96c88a9_1.jpg,traffic light,red_light,yes,no,yes,control contains another signal head or road sign
+80,893b4eb1-53d72dfa_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+81,8b46b3b8-3c4e270c_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+82,8c013f1f-1c98683a.jpg,traffic light,red_light,no,yes,yes,"state/binding failure: amber or wrong signal head, illuminated sign false detection, or unidentifiable red blob"
+83,8c094885-9111df3c.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+84,8c1ddd91-8969757e.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+85,8cb14fde-4dd7fd73_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+86,8e0bea8d-61e3c83e_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+87,8ec859b6-c38ebb93_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+88,8f3e48fb-d7de0192_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+89,9237ddec-e9f14124.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+90,98f9dde3-3dbe76fa_1.jpg,traffic light,red_light,no,yes,yes,"state/binding failure: amber or wrong signal head, illuminated sign false detection, or unidentifiable red blob"
+91,997d5906-b6d33e03_3.jpg,traffic light,red_light,yes,no,yes,control contains another signal head or road sign
+92,a1babb9f-5baef01e_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+93,a284eb0e-92126a2a_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+94,a4c784d2-cea0e878.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+95,a4c784d2-cea0e878_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+96,a5017975-7a9a00f5.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+97,a963a132-ce28d108.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+98,a97dec22-4b6a16c2.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+99,ab951f42-8457aabe_3.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+100,ac8199d3-701e3244_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+101,ad3bc971-8453ceeb_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+102,b279bc06-3c8aeb90_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+103,b645271a-42c7ec52_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+104,b68e35b5-a135e64a_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+105,b6d82c09-e7005951.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+106,b8d6eb5f-c1f21fe4_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+107,b93f2cee-48325ee0.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+108,bcea7303-fc913f70.jpg,traffic light,green_light,yes,no,yes,control contains another signal head or road sign
+109,bd1b8b79-16ecdafa_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+110,bdcff5f0-83dbf6d8.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+111,c62664f1-e2a87cef_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+112,c992d89e-45d612c4.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+113,fde2db45-c6987ec2_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass

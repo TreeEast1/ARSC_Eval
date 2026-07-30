@@ -1,0 +1,1230 @@
+{
+  "analysis": "BDD-OIA internal-validity extension with direct Action-Only versus Joint CEG and paired sample bootstrap",
+  "does_not_modify_primary_outputs": true,
+  "prediction_cache": {
+    "path": "outputs\\validity\\prediction_cache\\internal_validity_v2.npz",
+    "status": "generated",
+    "schema_version": 1,
+    "test_samples": 4557,
+    "mask_samples": 760,
+    "source_fingerprints": {
+      "config": {
+        "path": "configs\\experiment.yaml",
+        "bytes": 805,
+        "sha256": "056bc1b6ba55d895ea49820557a46c6a7d9c8f0cb3938c9418a6dab229299fb6"
+      },
+      "action_checkpoint": {
+        "path": "checkpoints\\action_only_best_action.pt",
+        "bytes": 282667209,
+        "sha256": "4d8a1a4561398708ecad15130de48bafc2f7971757fe3c6315f027c239022de6"
+      },
+      "joint_checkpoint": {
+        "path": "checkpoints\\joint_best_action.pt",
+        "bytes": 283181715,
+        "sha256": "ded546bd2e099b888814e78f16e8436e69da4826443558c3acadbe370ec06e66"
+      },
+      "model_code": {
+        "path": "src\\arsc_eval\\models.py",
+        "bytes": 2151,
+        "sha256": "86128e34fe8f95c879891117b8b5c585ee133a40c95ecf72568c149faf3140ab"
+      },
+      "data_code": {
+        "path": "src\\arsc_eval\\data.py",
+        "bytes": 2721,
+        "sha256": "6f7d985f606686566db7fea1db62997286b7d4974af1ecb077d150560758e6a3"
+      },
+      "test_manifest": {
+        "path": "data\\processed\\test.jsonl",
+        "bytes": 533260,
+        "sha256": "89364a265fe4c2edca5125d34c4c25d47c96afb46a5c4a8fe86b649785539004"
+      },
+      "mask_manifest": {
+        "path": "data\\processed\\masks_v2\\manifest.jsonl",
+        "bytes": 650361,
+        "sha256": "022e744ac01daca8229818f69caccf7ce2132204bd37bab21dabcd4ea7a11ab2"
+      },
+      "brightness_manifest": {
+        "path": "data\\processed\\perturbations\\brightness.jsonl",
+        "bytes": 925253,
+        "sha256": "32031efef31a662d85a99fd0ac80f8c9ed8971937ddf01148846783e01f4d326"
+      },
+      "blur_manifest": {
+        "path": "data\\processed\\perturbations\\blur.jsonl",
+        "bytes": 897911,
+        "sha256": "4ef18762f90d820f57d074bd8aaef0a646e5e73c002068b2e9d95e895655e7af"
+      },
+      "noise_manifest": {
+        "path": "data\\processed\\perturbations\\noise.jsonl",
+        "bytes": 902468,
+        "sha256": "8013c3ed21ac0632fab60e3a868e893179e4785033917a3e70309c9fa82a1818"
+      }
+    },
+    "calibration": {
+      "path": "outputs\\calibration.json",
+      "bytes": 359,
+      "sha256": "fb0c44b1215fbb70f257b67f309f252f8becc35af02b3b513d7f1314533cdcc2"
+    }
+  },
+  "bootstrap": {
+    "method": "paired nonparametric percentile bootstrap",
+    "unit": "official test example; the three perturbations remain clustered within example for mean-three metrics",
+    "replicates": 2000,
+    "seed": 20260730,
+    "confidence_level": 0.95,
+    "same_resample_indices_across_models": true,
+    "multiple_comparison_correction": null
+  },
+  "metric_definitions": {
+    "causal_evidence_gap": "mean[(p_clean_positive - p_critical_positive) - (p_clean_positive - p_noncritical_positive)]; equivalently mean[p_noncritical_positive - p_critical_positive]",
+    "positive_action_probability": "pilot masks: mean probability over all positive ground-truth actions",
+    "rationale_bound_action_probability": "v2 masks: mean probability assigned to the annotated binary state of action dimensions associated with the localized rationale",
+    "action_error": "any mismatch in the thresholded four-label action set",
+    "confidence": "maximum of the four action probabilities",
+    "threshold": 0.5,
+    "temperature": 2.8457775115966797,
+    "mask_target_policy": "rationale_bound_ground_truth_action_state"
+  },
+  "families": [
+    {
+      "cohort": "clean",
+      "condition": "official_test",
+      "metric": "action_macro_f1",
+      "preferred_direction": "higher",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.6760957628448777,
+          "ci_lower": 0.6650781459838575,
+          "ci_upper": 0.6864467960963117
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.6865757074165373,
+          "ci_lower": 0.6755973402345764,
+          "ci_upper": 0.6970707451048485
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.6865757074165373,
+          "ci_lower": 0.6755973402345764,
+          "ci_upper": 0.6970707451048485
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": 0.010479944571659572,
+          "ci_lower": 0.001245183616618221,
+          "ci_upper": 0.01965719847616531,
+          "bootstrap_probability_gt_zero": 0.988,
+          "bootstrap_probability_lt_zero": 0.012
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Action-Only",
+          "direction": "Joint-Calibrated - Action-Only",
+          "estimate": 0.010479944571659572,
+          "ci_lower": 0.001245183616618221,
+          "ci_upper": 0.01965719847616531,
+          "bootstrap_probability_gt_zero": 0.988,
+          "bootstrap_probability_lt_zero": 0.012
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 0.0
+        }
+      ]
+    },
+    {
+      "cohort": "clean",
+      "condition": "official_test",
+      "metric": "aurc",
+      "preferred_direction": "lower",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.4000262648084986,
+          "ci_lower": 0.38086434004012226,
+          "ci_upper": 0.4196619589507718
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.3896950874006301,
+          "ci_lower": 0.37123086743264944,
+          "ci_upper": 0.40898961307451204
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.3896950874006301,
+          "ci_lower": 0.37123086743264944,
+          "ci_upper": 0.40898961307451204
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.010331177407868541,
+          "ci_lower": -0.027954879035027864,
+          "ci_upper": 0.007568216812050539,
+          "bootstrap_probability_gt_zero": 0.1355,
+          "bootstrap_probability_lt_zero": 0.8645
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Action-Only",
+          "direction": "Joint-Calibrated - Action-Only",
+          "estimate": -0.010331177407868541,
+          "ci_lower": -0.027954879035027864,
+          "ci_upper": 0.007568216812050539,
+          "bootstrap_probability_gt_zero": 0.1355,
+          "bootstrap_probability_lt_zero": 0.8645
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 0.0
+        }
+      ]
+    },
+    {
+      "cohort": "clean",
+      "condition": "official_test",
+      "metric": "ece",
+      "preferred_direction": "lower",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.4775508859470871,
+          "ci_lower": 0.4631587498943886,
+          "ci_upper": 0.49139423909226115
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.4616886293938175,
+          "ci_lower": 0.44859346721464255,
+          "ci_upper": 0.47606302584845595
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.3377588928563727,
+          "ci_lower": 0.32483901068692356,
+          "ci_upper": 0.3519093273701527
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.015862256553269616,
+          "ci_lower": -0.028956562275856173,
+          "ci_upper": -0.0024949750698795878,
+          "bootstrap_probability_gt_zero": 0.01,
+          "bootstrap_probability_lt_zero": 0.99
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Action-Only",
+          "direction": "Joint-Calibrated - Action-Only",
+          "estimate": -0.13979199309071438,
+          "ci_lower": -0.15289095254362636,
+          "ci_upper": -0.1262573634430262,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 1.0
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": -0.12392973653744477,
+          "ci_lower": -0.12579819702287073,
+          "ci_upper": -0.1220358701969728,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 1.0
+        }
+      ]
+    },
+    {
+      "cohort": "clean",
+      "condition": "official_test",
+      "metric": "rationale_macro_f1",
+      "preferred_direction": "higher",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.3009910922159824,
+          "ci_lower": 0.2937221517204915,
+          "ci_upper": 0.30826877632274213
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.3009910922159824,
+          "ci_lower": 0.2937221517204915,
+          "ci_upper": 0.30826877632274213
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 0.0
+        }
+      ]
+    },
+    {
+      "cohort": "clean",
+      "condition": "official_test",
+      "metric": "unsafe_acceptance_rate_90",
+      "preferred_direction": "lower",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.5026816187225743,
+          "ci_lower": 0.48732325694783035,
+          "ci_upper": 0.5182837640175524
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.4824475865431497,
+          "ci_lower": 0.46805826426133595,
+          "ci_upper": 0.49829960994636757
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.4824475865431497,
+          "ci_lower": 0.46805826426133595,
+          "ci_upper": 0.49829960994636757
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.020234032179424655,
+          "ci_lower": -0.03340443686006829,
+          "ci_upper": -0.005607020965382736,
+          "bootstrap_probability_gt_zero": 0.002,
+          "bootstrap_probability_lt_zero": 0.998
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Action-Only",
+          "direction": "Joint-Calibrated - Action-Only",
+          "estimate": -0.020234032179424655,
+          "ci_lower": -0.03340443686006829,
+          "ci_upper": -0.005607020965382736,
+          "bootstrap_probability_gt_zero": 0.002,
+          "bootstrap_probability_lt_zero": 0.998
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 0.0
+        }
+      ]
+    },
+    {
+      "cohort": "consistency",
+      "condition": "blur",
+      "metric": "action_flip_rate",
+      "preferred_direction": "lower",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.13956550362080317,
+          "ci_lower": 0.12969058591178406,
+          "ci_upper": 0.14922097871406628
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.1465876673249945,
+          "ci_lower": 0.13649330700021944,
+          "ci_upper": 0.15646807109940747
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.1465876673249945,
+          "ci_lower": 0.13649330700021944,
+          "ci_upper": 0.15646807109940747
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": 0.007022163704191342,
+          "ci_lower": -0.006802721088435382,
+          "ci_upper": 0.020408163265306117,
+          "bootstrap_probability_gt_zero": 0.838,
+          "bootstrap_probability_lt_zero": 0.154
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Action-Only",
+          "direction": "Joint-Calibrated - Action-Only",
+          "estimate": 0.007022163704191342,
+          "ci_lower": -0.006802721088435382,
+          "ci_upper": 0.020408163265306117,
+          "bootstrap_probability_gt_zero": 0.838,
+          "bootstrap_probability_lt_zero": 0.154
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 0.0
+        }
+      ]
+    },
+    {
+      "cohort": "consistency",
+      "condition": "blur",
+      "metric": "rationale_jaccard",
+      "preferred_direction": "higher",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.8854655840830956,
+          "ci_lower": 0.8782812157120913,
+          "ci_upper": 0.8924269438958378
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.8854655840830956,
+          "ci_lower": 0.8782812157120913,
+          "ci_upper": 0.8924269438958378
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 0.0
+        }
+      ]
+    },
+    {
+      "cohort": "consistency",
+      "condition": "brightness",
+      "metric": "action_flip_rate",
+      "preferred_direction": "lower",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.10686855387316217,
+          "ci_lower": 0.09852973447443493,
+          "ci_upper": 0.11564625850340136
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.10533245556287031,
+          "ci_lower": 0.09611037963572527,
+          "ci_upper": 0.11389071757735353
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.10533245556287031,
+          "ci_lower": 0.09611037963572527,
+          "ci_upper": 0.11389071757735353
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.0015360983102918613,
+          "ci_lower": -0.014263770024138686,
+          "ci_upper": 0.01053873162168091,
+          "bootstrap_probability_gt_zero": 0.394,
+          "bootstrap_probability_lt_zero": 0.5905
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Action-Only",
+          "direction": "Joint-Calibrated - Action-Only",
+          "estimate": -0.0015360983102918613,
+          "ci_lower": -0.014263770024138686,
+          "ci_upper": 0.01053873162168091,
+          "bootstrap_probability_gt_zero": 0.394,
+          "bootstrap_probability_lt_zero": 0.5905
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 0.0
+        }
+      ]
+    },
+    {
+      "cohort": "consistency",
+      "condition": "brightness",
+      "metric": "rationale_jaccard",
+      "preferred_direction": "higher",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.9156645453880478,
+          "ci_lower": 0.9096039060785605,
+          "ci_upper": 0.9217334137956259
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.9156645453880478,
+          "ci_lower": 0.9096039060785605,
+          "ci_upper": 0.9217334137956259
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 0.0
+        }
+      ]
+    },
+    {
+      "cohort": "consistency",
+      "condition": "mean_three",
+      "metric": "action_flip_rate",
+      "preferred_direction": "lower",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.126545241752615,
+          "ci_lower": 0.11952307804842366,
+          "ci_upper": 0.13378684807256236
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.1239850779021286,
+          "ci_lower": 0.11674347158218126,
+          "ci_upper": 0.1311553653719552
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.1239850779021286,
+          "ci_lower": 0.11674347158218126,
+          "ci_upper": 0.1311553653719552
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.0025601638504864077,
+          "ci_lower": -0.01214432009362887,
+          "ci_upper": 0.007316582546997265,
+          "bootstrap_probability_gt_zero": 0.294,
+          "bootstrap_probability_lt_zero": 0.7025
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Action-Only",
+          "direction": "Joint-Calibrated - Action-Only",
+          "estimate": -0.0025601638504864077,
+          "ci_lower": -0.01214432009362887,
+          "ci_upper": 0.007316582546997265,
+          "bootstrap_probability_gt_zero": 0.294,
+          "bootstrap_probability_lt_zero": 0.7025
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 0.0
+        }
+      ]
+    },
+    {
+      "cohort": "consistency",
+      "condition": "mean_three",
+      "metric": "rationale_jaccard",
+      "preferred_direction": "higher",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.9025089605734767,
+          "ci_lower": 0.89748613244581,
+          "ci_upper": 0.9075139285104722
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.9025089605734767,
+          "ci_lower": 0.89748613244581,
+          "ci_upper": 0.9075139285104722
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 0.0
+        }
+      ]
+    },
+    {
+      "cohort": "consistency",
+      "condition": "noise",
+      "metric": "action_flip_rate",
+      "preferred_direction": "lower",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.13320166776387973,
+          "ci_lower": 0.12354619267061663,
+          "ci_upper": 0.14307658547289884
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.12003511081852096,
+          "ci_lower": 0.11059907834101383,
+          "ci_upper": 0.1294711432960281
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.12003511081852096,
+          "ci_lower": 0.11059907834101383,
+          "ci_upper": 0.1294711432960281
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.013166556945358773,
+          "ci_lower": -0.026771999122229537,
+          "ci_upper": -0.0002194426157559874,
+          "bootstrap_probability_gt_zero": 0.0235,
+          "bootstrap_probability_lt_zero": 0.9755
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Action-Only",
+          "direction": "Joint-Calibrated - Action-Only",
+          "estimate": -0.013166556945358773,
+          "ci_lower": -0.026771999122229537,
+          "ci_upper": -0.0002194426157559874,
+          "bootstrap_probability_gt_zero": 0.0235,
+          "bootstrap_probability_lt_zero": 0.9755
+        },
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 0.0
+        }
+      ]
+    },
+    {
+      "cohort": "consistency",
+      "condition": "noise",
+      "metric": "rationale_jaccard",
+      "preferred_direction": "higher",
+      "samples": 4557,
+      "model_estimates": [
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.906396752249287,
+          "ci_lower": 0.8997468180820715,
+          "ci_upper": 0.9131447041182064
+        },
+        {
+          "model": "Joint-Calibrated",
+          "estimate": 0.906396752249287,
+          "ci_lower": 0.8997468180820715,
+          "ci_upper": 0.9131447041182064
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint-Calibrated",
+          "reference_model": "Joint Action-Rationale",
+          "direction": "Joint-Calibrated - Joint Action-Rationale",
+          "estimate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "bootstrap_probability_gt_zero": 0.0,
+          "bootstrap_probability_lt_zero": 0.0
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_all",
+      "metric": "causal_evidence_gap",
+      "preferred_direction": "context_dependent",
+      "samples": 760,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.004651719518524452,
+          "ci_lower": -0.003904918574776178,
+          "ci_upper": 0.01370025406916798
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": -0.00031404393178954034,
+          "ci_lower": -0.008074465422226387,
+          "ci_upper": 0.007380088685773137
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.0049657634503139925,
+          "ci_lower": -0.012561115873905612,
+          "ci_upper": 0.0030019991540986687,
+          "bootstrap_probability_gt_zero": 0.1045,
+          "bootstrap_probability_lt_zero": 0.8955
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_all",
+      "metric": "mean_delta_critical",
+      "preferred_direction": "context_dependent",
+      "samples": 760,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.004715365042921097,
+          "ci_lower": -0.004416989820951209,
+          "ci_upper": 0.014228604398948592
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.0037927999300987844,
+          "ci_lower": -0.004723606095841012,
+          "ci_upper": 0.012783776372171334
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.0009225651128223129,
+          "ci_lower": -0.008635700466811395,
+          "ci_upper": 0.0066069711871900045,
+          "bootstrap_probability_gt_zero": 0.4135,
+          "bootstrap_probability_lt_zero": 0.5865
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_all",
+      "metric": "mean_delta_noncritical",
+      "preferred_direction": "context_dependent",
+      "samples": 760,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 6.364552439664624e-05,
+          "ci_lower": -0.0030849395313790997,
+          "ci_upper": 0.003330346068191624
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.004106843861888325,
+          "ci_lower": -0.0005240024018002699,
+          "ci_upper": 0.009117787161439227
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": 0.004043198337491679,
+          "ci_lower": -0.0009597946795677833,
+          "ci_upper": 0.00906428251858447,
+          "bootstrap_probability_gt_zero": 0.937,
+          "bootstrap_probability_lt_zero": 0.063
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_class_bicycle",
+      "metric": "causal_evidence_gap",
+      "preferred_direction": "context_dependent",
+      "samples": 26,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.0441477859875663,
+          "ci_lower": -0.011335747040416714,
+          "ci_upper": 0.11206847449937159
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": -0.020078380285270078,
+          "ci_lower": -0.0569770476899377,
+          "ci_upper": 0.009733056628018643
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.06422616627283638,
+          "ci_lower": -0.13641053574885398,
+          "ci_upper": -0.008412992169310912,
+          "bootstrap_probability_gt_zero": 0.0135,
+          "bootstrap_probability_lt_zero": 0.9865
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_class_bicycle",
+      "metric": "mean_delta_critical",
+      "preferred_direction": "context_dependent",
+      "samples": 26,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.06180198181371926,
+          "ci_lower": 0.003859633531535732,
+          "ci_upper": 0.1397814398777061
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.03568331708659231,
+          "ci_lower": 0.00735840117441422,
+          "ci_upper": 0.08234081185626482
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.02611866472712695,
+          "ci_lower": -0.06927506881429422,
+          "ci_upper": 0.008458467585180231,
+          "bootstrap_probability_gt_zero": 0.0875,
+          "bootstrap_probability_lt_zero": 0.9125
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_class_bicycle",
+      "metric": "mean_delta_noncritical",
+      "preferred_direction": "context_dependent",
+      "samples": 26,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.017654195826152956,
+          "ci_lower": -0.0010617530144159315,
+          "ci_upper": 0.04108361040879007
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.05576169737186238,
+          "ci_lower": 0.009562627655076329,
+          "ci_upper": 0.11794466104717159
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": 0.038107501545709424,
+          "ci_lower": -0.0042658576300920355,
+          "ci_upper": 0.09039277243601568,
+          "bootstrap_probability_gt_zero": 0.956,
+          "bootstrap_probability_lt_zero": 0.044
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_class_car",
+      "metric": "causal_evidence_gap",
+      "preferred_direction": "context_dependent",
+      "samples": 30,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": -0.039175775189948386,
+          "ci_lower": -0.08252497134787616,
+          "ci_upper": -0.007310981711704216
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": -0.04153239177927453,
+          "ci_lower": -0.08509860754678181,
+          "ci_upper": -0.009582799074072758
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.0023566165893261423,
+          "ci_lower": -0.05733390080259577,
+          "ci_upper": 0.04949374950645415,
+          "bootstrap_probability_gt_zero": 0.4635,
+          "bootstrap_probability_lt_zero": 0.5365
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_class_car",
+      "metric": "mean_delta_critical",
+      "preferred_direction": "context_dependent",
+      "samples": 30,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": -0.025596434077813954,
+          "ci_lower": -0.06498520417282266,
+          "ci_upper": -0.0015336952463335682
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": -0.029381007632301823,
+          "ci_lower": -0.07428299180283954,
+          "ci_upper": -0.0035461839561512247
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.0037845735544878682,
+          "ci_lower": -0.05731297399385438,
+          "ci_upper": 0.045066950912985314,
+          "bootstrap_probability_gt_zero": 0.4345,
+          "bootstrap_probability_lt_zero": 0.5655
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_class_car",
+      "metric": "mean_delta_noncritical",
+      "preferred_direction": "context_dependent",
+      "samples": 30,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.013579341112134442,
+          "ci_lower": -0.0017091483161588152,
+          "ci_upper": 0.03266221130305106
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.012151384146972706,
+          "ci_lower": -0.010961072376607366,
+          "ci_upper": 0.03839954643261294
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.0014279569651617363,
+          "ci_lower": -0.027569312270905595,
+          "ci_upper": 0.030801425722341583,
+          "bootstrap_probability_gt_zero": 0.438,
+          "bootstrap_probability_lt_zero": 0.562
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_class_person",
+      "metric": "causal_evidence_gap",
+      "preferred_direction": "context_dependent",
+      "samples": 26,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.030057210929563302,
+          "ci_lower": -0.03801475913057254,
+          "ci_upper": 0.12187574464828636
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.03614570365745681,
+          "ci_lower": -0.002558192888814114,
+          "ci_upper": 0.10018188992193651
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": 0.00608849272789351,
+          "ci_lower": -0.028694175144121398,
+          "ci_upper": 0.04864212940850341,
+          "bootstrap_probability_gt_zero": 0.6125,
+          "bootstrap_probability_lt_zero": 0.3875
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_class_person",
+      "metric": "mean_delta_critical",
+      "preferred_direction": "context_dependent",
+      "samples": 26,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.030480993778563063,
+          "ci_lower": -0.029531958906421824,
+          "ci_upper": 0.11669531151058998
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.0391812401102911,
+          "ci_lower": -0.008666966735458059,
+          "ci_upper": 0.11508055062074499
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": 0.00870024633172804,
+          "ci_lower": -0.019040065155168012,
+          "ci_upper": 0.04454975573541067,
+          "bootstrap_probability_gt_zero": 0.6975,
+          "bootstrap_probability_lt_zero": 0.3025
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_class_person",
+      "metric": "mean_delta_noncritical",
+      "preferred_direction": "context_dependent",
+      "samples": 26,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.0004237828489997605,
+          "ci_lower": -0.00879516147791507,
+          "ci_upper": 0.011969474744293232
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.0030355364528342876,
+          "ci_lower": -0.012692725592778457,
+          "ci_upper": 0.021505187354909187
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": 0.002611753603834527,
+          "ci_lower": -0.014363378674669526,
+          "ci_upper": 0.021990761428161525,
+          "bootstrap_probability_gt_zero": 0.5845,
+          "bootstrap_probability_lt_zero": 0.4155
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_class_traffic light",
+      "metric": "causal_evidence_gap",
+      "preferred_direction": "context_dependent",
+      "samples": 662,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.0029334705267581355,
+          "ci_lower": -0.006047104731225633,
+          "ci_upper": 0.012413957600200856
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": -0.0003877633276220156,
+          "ci_lower": -0.008244547042714025,
+          "ci_upper": 0.007286745722768502
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": -0.003321233854380151,
+          "ci_lower": -0.011323912213726974,
+          "ci_upper": 0.004154024820556635,
+          "bootstrap_probability_gt_zero": 0.191,
+          "bootstrap_probability_lt_zero": 0.809
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_class_traffic light",
+      "metric": "mean_delta_critical",
+      "preferred_direction": "context_dependent",
+      "samples": 662,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": 0.001459517224138102,
+          "ci_lower": -0.008222506220958197,
+          "ci_upper": 0.011329889537060172
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.0017027343455744562,
+          "ci_lower": -0.00746249341761544,
+          "ci_upper": 0.010992160998955195
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": 0.00024321712143635424,
+          "ci_lower": -0.00824810186856154,
+          "ci_upper": 0.008184008942184745,
+          "bootstrap_probability_gt_zero": 0.532,
+          "bootstrap_probability_lt_zero": 0.468
+        }
+      ]
+    },
+    {
+      "cohort": "critical_masks",
+      "condition": "rationale_bound_class_traffic light",
+      "metric": "mean_delta_noncritical",
+      "preferred_direction": "context_dependent",
+      "samples": 662,
+      "model_estimates": [
+        {
+          "model": "Action-Only",
+          "estimate": -0.0014739533026200357,
+          "ci_lower": -0.0050241730288563685,
+          "ci_upper": 0.002001498362636609
+        },
+        {
+          "model": "Joint Action-Rationale",
+          "estimate": 0.002090497673196471,
+          "ci_lower": -0.0018092973214134658,
+          "ci_upper": 0.0067440197450315915
+        }
+      ],
+      "paired_contrasts": [
+        {
+          "model": "Joint Action-Rationale",
+          "reference_model": "Action-Only",
+          "direction": "Joint Action-Rationale - Action-Only",
+          "estimate": 0.003564450975816507,
+          "ci_lower": -0.0011900475472248816,
+          "ci_upper": 0.008886556095781024,
+          "bootstrap_probability_gt_zero": 0.9225,
+          "bootstrap_probability_lt_zero": 0.0775
+        }
+      ]
+    }
+  ],
+  "methodological_caveats": [
+    "The detector-conditioned mask subset is non-random; its CEG interval does not generalize to test examples without a matching COCO detection.",
+    "CEG is a controlled occlusion sensitivity contrast, not a causal identification result. A larger value can also arise from mask artifacts or model fragility.",
+    "The clean term cancels algebraically in the current CEG. Clean predictions are retained to report and audit the two component probability drops.",
+    "Joint-Calibrated is the same Joint checkpoint with scalar action temperature scaling, not an independently trained model; rationale metrics are therefore identical.",
+    "Percentile intervals quantify sampling uncertainty for this single trained seed only; they do not include training-seed or detector uncertainty and are not multiplicity-adjusted.",
+    "Maximum positive-label probability is preserved as the primary confidence definition for comparability, although it does not represent confidence in negative labels for a multilabel prediction.",
+    "Cache provenance hashes checkpoints, manifests, config, and model/data code, but not every generated image byte."
+  ]
+}

@@ -1,0 +1,38 @@
+Cloning into '/mnt/d/All_Project/cjl/ARSC_space/BDD-OIA_space/data/external/VLA4CoDrive_probe_repo'...
+fatal: unable to access 'https://github.com/SayedPedramHaeri/VLA4CoDrive.git/': Could not resolve host: github.com
+Cloning into 'D:\All_Project\cjl\ARSC_space\BDD-OIA_space\data\external\VLA4CoDrive_probe_repo'...
+From https://github.com/SayedPedramHaeri/VLA4CoDrive
+ * branch            main       -> FETCH_HEAD
+error: RPC failed; curl 56 schannel: server closed abruptly (missing close_notify)
+error: 6971 bytes of body are still expected
+fetch-pack: unexpected disconnect while reading sideband packet
+fatal: early EOF
+fatal: index-pack failed
+fatal: could not fetch e78a61cbcdc8b1dc275db5554dce9ac2c42b1a6f from promisor remote
+git failed with exit code 128: git -C D:\All_Project\cjl\ARSC_space\BDD-OIA_space\data\external\VLA4CoDrive_probe_repo 
+checkout --detach d8d6b290b7acfe1ae89b75f2d72fc8f94deeef61
+所在位置 D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\download_vla4codrive_probe.ps1:17 字符: 9
++         throw "git failed with exit code $LASTEXITCODE`: git $Argumen ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (git failed with...72fc8f94deeef61:String) [], RuntimeException
+    + FullyQualifiedErrorId : git failed with exit code 128: git -C D:\All_Project\cjl\ARSC_space\BDD-OIA_space\data\e 
+   xternal\VLA4CoDrive_probe_repo checkout --detach d8d6b290b7acfe1ae89b75f2d72fc8f94deeef61
+ 
+Invoke-GitWithRetry : 无法处理对参数“Attempts”的参数转换。无法将值“fetch”转换为类型“System.Int32”。错误:“输入字符串的格式
+不正确。”
+所在位置 D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\download_vla4codrive_probe.ps1:61 字符: 36
++ Invoke-GitWithRetry -C $targetPath fetch `
++                                    ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-GitWithRetry]，ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,Invoke-GitWithRetry
+ 
+From https://github.com/SayedPedramHaeri/VLA4CoDrive
+ * branch            main       -> FETCH_HEAD
+HEAD is now at d8d6b29 Update README.md
+{
+    "repository":  "https://github.com/SayedPedramHaeri/VLA4CoDrive.git",
+    "commit":  "d8d6b290b7acfe1ae89b75f2d72fc8f94deeef61",
+    "files":  33,
+    "bytes":  39202636,
+    "target":  "D:\\All_Project\\cjl\\ARSC_space\\BDD-OIA_space\\data\\external\\VLA4CoDrive_probe_repo"
+}

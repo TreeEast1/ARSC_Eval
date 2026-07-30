@@ -1,0 +1,25 @@
+{
+  "split": "official test (valid four-action samples)",
+  "samples_per_perturbation": 4557,
+  "perturbations": {
+    "brightness": {
+      "manifest": "data\\processed\\perturbations\\brightness.jsonl",
+      "count": 4557
+    },
+    "blur": {
+      "manifest": "data\\processed\\perturbations\\blur.jsonl",
+      "count": 4557
+    },
+    "noise": {
+      "manifest": "data\\processed\\perturbations\\noise.jsonl",
+      "count": 4557
+    }
+  },
+  "parameters": {
+    "brightness_factor": 1.1,
+    "gaussian_blur_radius": 1.0,
+    "gaussian_noise_std_255": 5.0,
+    "noise_seed": 42,
+    "jpeg_quality": 95
+  }
+}

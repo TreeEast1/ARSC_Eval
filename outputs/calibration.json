@@ -1,0 +1,10 @@
+{
+  "method": "scalar temperature scaling",
+  "checkpoint": "checkpoints\\joint_best_action.pt",
+  "split": "official validation (valid four-action samples)",
+  "validation_samples": 2258,
+  "temperature": 2.8457775115966797,
+  "bce_before": 0.6899787783622742,
+  "bce_after": 0.46226057410240173,
+  "optimized_outputs": "four action logits only"
+}

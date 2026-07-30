@@ -1,0 +1,417 @@
+{"stage":"paired_design_preflight","time":"2026-07-31T01:23:43.0383910+08:00","seed":43,"event":"stage_started"}
+{
+  "seed": 43,
+  "common_parameter_tensors": 320,
+  "common_initialization_exact_match": true,
+  "mismatched_common_keys": [],
+  "unexpected_action_only_keys": [],
+  "joint_only_keys": [
+    "rationale_head.bias",
+    "rationale_head.weight"
+  ],
+  "expected_joint_only_keys": [
+    "rationale_head.bias",
+    "rationale_head.weight"
+  ],
+  "checked_training_order_samples": 96,
+  "training_order_exact_match_after_global_rng_consumption": true,
+  "first_training_file_names": [
+    "50b4db09-9f60c8be.jpg",
+    "93685993-beb564e6_1.jpg",
+    "87154a3d-2619a56f_1.jpg",
+    "60324a7c-70bceb45.jpg",
+    "9c70dfb5-abc3ff03.jpg",
+    "566b970a-87a31fb1_1.jpg",
+    "71ed43c7-9257c4ee_1.jpg",
+    "c264943c-5e493c9f.jpg",
+    "a0d5b01f-2acb48c2_3.jpg",
+    "c4b3ce3d-ef12b7eb.jpg"
+  ],
+  "gate_passed": true
+}
+{"stage":"paired_design_preflight","time":"2026-07-31T01:23:48.7556887+08:00","duration_seconds":5.7108148,"seed":43,"event":"stage_completed"}
+{"stage":"paired_design_preflight","time":"2026-07-31T01:23:48.7586877+08:00","seed":44,"event":"stage_started"}
+{
+  "seed": 44,
+  "common_parameter_tensors": 320,
+  "common_initialization_exact_match": true,
+  "mismatched_common_keys": [],
+  "unexpected_action_only_keys": [],
+  "joint_only_keys": [
+    "rationale_head.bias",
+    "rationale_head.weight"
+  ],
+  "expected_joint_only_keys": [
+    "rationale_head.bias",
+    "rationale_head.weight"
+  ],
+  "checked_training_order_samples": 96,
+  "training_order_exact_match_after_global_rng_consumption": true,
+  "first_training_file_names": [
+    "21d61f0e-b18a5b16_1.jpg",
+    "8cb281a4-b7ad4e5f.jpg",
+    "3b0461c6-1edc5ee9_1.jpg",
+    "11d03216-6317db9e_1.jpg",
+    "3842e612-85b8cd30_3.jpg",
+    "37939584-c7f58210.jpg",
+    "8e0572f0-27bf8022_3.jpg",
+    "db76adbc-dd5d487f.jpg",
+    "72785640-54227308_1.jpg",
+    "9498af06-91111910_3.jpg"
+  ],
+  "gate_passed": true
+}
+{"stage":"paired_design_preflight","time":"2026-07-31T01:23:54.3627942+08:00","duration_seconds":5.6041064999999994,"seed":44,"event":"stage_completed"}
+{"stage":"paired_design_preflight","time":"2026-07-31T01:23:54.3637937+08:00","seed":45,"event":"stage_started"}
+{
+  "seed": 45,
+  "common_parameter_tensors": 320,
+  "common_initialization_exact_match": true,
+  "mismatched_common_keys": [],
+  "unexpected_action_only_keys": [],
+  "joint_only_keys": [
+    "rationale_head.bias",
+    "rationale_head.weight"
+  ],
+  "expected_joint_only_keys": [
+    "rationale_head.bias",
+    "rationale_head.weight"
+  ],
+  "checked_training_order_samples": 96,
+  "training_order_exact_match_after_global_rng_consumption": true,
+  "first_training_file_names": [
+    "7a4fe9fb-6cb36302.jpg",
+    "5b7f03ae-966bdae6_1.jpg",
+    "9760d7ce-8c65c87f.jpg",
+    "b87a03a9-1ddfba47.jpg",
+    "ca0b4ef4-3917ead1_1.jpg",
+    "2cf85406-e67512c2.jpg",
+    "353ef67a-89bf1cc5_1.jpg",
+    "69bf175c-62b67fbe_1.jpg",
+    "b6770025-c81ef5ed.jpg",
+    "55ec61de-4a7541fd_3.jpg"
+  ],
+  "gate_passed": true
+}
+{"stage":"paired_design_preflight","time":"2026-07-31T01:24:00.2511679+08:00","duration_seconds":5.8873742,"seed":45,"event":"stage_completed"}
+{"stage":"paired_design_preflight","time":"2026-07-31T01:24:00.2521681+08:00","seed":46,"event":"stage_started"}
+{
+  "seed": 46,
+  "common_parameter_tensors": 320,
+  "common_initialization_exact_match": true,
+  "mismatched_common_keys": [],
+  "unexpected_action_only_keys": [],
+  "joint_only_keys": [
+    "rationale_head.bias",
+    "rationale_head.weight"
+  ],
+  "expected_joint_only_keys": [
+    "rationale_head.bias",
+    "rationale_head.weight"
+  ],
+  "checked_training_order_samples": 96,
+  "training_order_exact_match_after_global_rng_consumption": true,
+  "first_training_file_names": [
+    "390ed13d-b87774e6_1.jpg",
+    "0e92c97a-d9998c6e_1.jpg",
+    "bf568d39-2bac1d09.jpg",
+    "ac7cfb88-c35cefbe_1.jpg",
+    "c5f0cacd-3c4333b4.jpg",
+    "47155b69-c252a357_3.jpg",
+    "6b370019-98c816f9_1.jpg",
+    "7c6fa554-54b4c571_1.jpg",
+    "b4ef573f-8a8e0ea3.jpg",
+    "6e631f87-a0c1cf74.jpg"
+  ],
+  "gate_passed": true
+}
+{"stage":"paired_design_preflight","time":"2026-07-31T01:24:06.1550491+08:00","duration_seconds":5.902881,"seed":46,"event":"stage_completed"}
+{"stage":"paired_design_preflight","time":"2026-07-31T01:24:06.1560303+08:00","seed":47,"event":"stage_started"}
+{
+  "seed": 47,
+  "common_parameter_tensors": 320,
+  "common_initialization_exact_match": true,
+  "mismatched_common_keys": [],
+  "unexpected_action_only_keys": [],
+  "joint_only_keys": [
+    "rationale_head.bias",
+    "rationale_head.weight"
+  ],
+  "expected_joint_only_keys": [
+    "rationale_head.bias",
+    "rationale_head.weight"
+  ],
+  "checked_training_order_samples": 96,
+  "training_order_exact_match_after_global_rng_consumption": true,
+  "first_training_file_names": [
+    "25e5b712-a0331438_3.jpg",
+    "769136f0-8748b668_1.jpg",
+    "1ee47022-d34e49d5_1.jpg",
+    "47ec5f3c-f53ed1ce.jpg",
+    "43f61d4d-5896a8db_3.jpg",
+    "af6e7682-584f7afe_1.jpg",
+    "95bd3f58-5e955b7c_1.jpg",
+    "889b7dda-77f16103.jpg",
+    "08afd010-430001a7.jpg",
+    "722610e8-4c49826d_1.jpg"
+  ],
+  "gate_passed": true
+}
+{"stage":"paired_design_preflight","time":"2026-07-31T01:24:12.0530604+08:00","duration_seconds":5.8960305,"seed":47,"event":"stage_completed"}
+{"stage":"freeze_protocol","time":"2026-07-31T01:24:12.0540605+08:00","seed":0,"event":"stage_started"}
+{
+  "status": "frozen_before_new_seed_training_and_test_inference",
+  "independent_review": {
+    "path": "outputs\\research_review_memo_round4_vla_feasibility.md",
+    "bytes": 26712,
+    "sha256": "5b5411fec46614d46371d1445a163b8832a11e4dcdf0592ebf12aab5e205b687"
+  },
+  "primary_new_seeds": [
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "archival_pilot_seed_excluded": 42,
+  "epochs": 5,
+  "checkpoint_selection": "best validation action Macro-F1",
+  "thresholds": {
+    "action": 0.5,
+    "rationale": 0.5
+  },
+  "models": "paired ImageNet ResNet-50 initialization and data order; Joint adds only the 21-label rationale head/loss",
+  "action_equivalence_margin": [
+    -0.03,
+    0.03
+  ],
+  "c1": {
+    "transforms": "in-memory, no JPEG re-encoding",
+    "semantic_audit": {
+      "path": "outputs\\validity\\perturbation_semantic_audit\\audit_summary.json",
+      "bytes": 653,
+      "sha256": "757cd4b9361d82beda2928c4af5bd8e80eb81b3f4ba6b7d5bba2d8744868d24d"
+    },
+    "semantic_audit_rates": {
+      "brightness": {
+        "unchanged": 100,
+        "reviewed": 100,
+        "rate": 1.0
+      },
+      "blur": {
+        "unchanged": 100,
+        "reviewed": 100,
+        "rate": 1.0
+      },
+      "noise": {
+        "unchanged": 100,
+        "reviewed": 100,
+        "rate": 1.0
+      }
+    },
+    "minimum_rate": 0.95
+  },
+  "rq2_light_perturbation_decision": {
+    "mean_flip_advantage_action_minus_joint_minimum": 0.01,
+    "minimum_positive_seeds": 4,
+    "no_single_perturbation_mean_advantage_below": -0.01
+  },
+  "ceg": "excluded; v4 measurement gate failed",
+  "configs": [
+    {
+      "path": "configs\\rq1_seed43.yaml",
+      "bytes": 592,
+      "sha256": "42be7599c09d17654868db260e203d4de7ea0d1fda49a5c36b6ba3df7750e55e"
+    },
+    {
+      "path": "configs\\rq1_seed44.yaml",
+      "bytes": 592,
+      "sha256": "5b3e3d2b215d4d56b4c4ee70c23428abf2d4a06e8871ce342e7518cef44edb81"
+    },
+    {
+      "path": "configs\\rq1_seed45.yaml",
+      "bytes": 592,
+      "sha256": "aae752920d5e9f262343b5c0921c3c5c6b0c0eba1c3a543b68911d7b7de2b2eb"
+    },
+    {
+      "path": "configs\\rq1_seed46.yaml",
+      "bytes": 592,
+      "sha256": "9b605ac4ae5c2d4f0c841da587ca8b6346af2bd33857b29281ac6ecfabdfcf50"
+    },
+    {
+      "path": "configs\\rq1_seed47.yaml",
+      "bytes": 592,
+      "sha256": "5649d9f85392e1cbd52411dcdb7ed3ef079cdb0f7682ad13eb7578b11f032a5e"
+    }
+  ],
+  "paired_design_checks": [
+    {
+      "path": "outputs\\validity\\rq1_seed_43\\paired_design_check.json",
+      "bytes": 838,
+      "sha256": "53cc5d48560c13db655711e7a390312605a31d07722f959c2b0d04b6285a0566"
+    },
+    {
+      "path": "outputs\\validity\\rq1_seed_44\\paired_design_check.json",
+      "bytes": 842,
+      "sha256": "7334d9a4401d4750f694dbd55999ecb2c0980eab37ff6e2837dd0f0350029685"
+    },
+    {
+      "path": "outputs\\validity\\rq1_seed_45\\paired_design_check.json",
+      "bytes": 838,
+      "sha256": "f5f392f6fb81d47abee4826320eed1e61f37945d668c156acbad351d645bdebd"
+    },
+    {
+      "path": "outputs\\validity\\rq1_seed_46\\paired_design_check.json",
+      "bytes": 840,
+      "sha256": "466e522301792bb94b03059a48388f27a0304d3415daee01e30b89472edda1cb"
+    },
+    {
+      "path": "outputs\\validity\\rq1_seed_47\\paired_design_check.json",
+      "bytes": 842,
+      "sha256": "e8f4eb361176c6bddb16dff21e63318cb580a8799a346bc0889af0147e138017"
+    }
+  ],
+  "frozen_code": [
+    {
+      "path": "src\\arsc_eval\\data.py",
+      "bytes": 3576,
+      "sha256": "da9f8f752f4b4510a5589ab0f7f2bd9a9c06cfa2fb09ce0dec15287f9bad2517"
+    },
+    {
+      "path": "src\\arsc_eval\\engine.py",
+      "bytes": 2763,
+      "sha256": "d85b6199a3513b947443d7e0b7acd4378ab7170503986a477252635705a65221"
+    },
+    {
+      "path": "src\\arsc_eval\\models.py",
+      "bytes": 2151,
+      "sha256": "86128e34fe8f95c879891117b8b5c585ee133a40c95ecf72568c149faf3140ab"
+    },
+    {
+      "path": "src\\arsc_eval\\metrics.py",
+      "bytes": 4176,
+      "sha256": "68bff3f6114d3ed6a01f99814de763146451ce37f9f39747319c51f3e0f19ad4"
+    },
+    {
+      "path": "src\\arsc_eval\\rq1.py",
+      "bytes": 6640,
+      "sha256": "849f8d7790d947a45d0e03d5e4301d84d00591e1a161c84d3b647cb086f15420"
+    },
+    {
+      "path": "scripts\\train_model.py",
+      "bytes": 10990,
+      "sha256": "f9a8433758baaeb3aaaa4cd489e3b3e246f3b0a17c46532e548b67632829470b"
+    },
+    {
+      "path": "scripts\\calibrate.py",
+      "bytes": 3811,
+      "sha256": "ca991a21855741263d654ce8535eebe7e8eabeaf31d9bb9e72790cd2137adad6"
+    },
+    {
+      "path": "scripts\\evaluate_rq1_seed.py",
+      "bytes": 13778,
+      "sha256": "3df86a5482ba8c711d833f762e11e99afa18e886eb3af28791d6905144494ef6"
+    },
+    {
+      "path": "scripts\\aggregate_rq1_multiseed.py",
+      "bytes": 10661,
+      "sha256": "53ceb47b8344ee609b75e5aa81a273f50db16964af2ca298c4ebb14160c5c0a6"
+    }
+  ],
+  "test_nonadaptation": "No test result may change epochs, checkpoints, thresholds, loss weights, seeds, perturbation parameters, or analysis code."
+}
+{"stage":"freeze_protocol","time":"2026-07-31T01:24:13.7608291+08:00","duration_seconds":1.6917678999999999,"seed":0,"event":"stage_completed"}
+{"stage":"train_action_only","time":"2026-07-31T01:24:13.7678290+08:00","seed":43,"event":"stage_started"}
+{"model": "action_only", "epoch": 1, "train_total_loss": 0.558659169736059, "validation_action_macro_f1": 0.5490685545860206, "validation_rationale_macro_f1": null, "duration_seconds": 64.65101960115135}
+{"model": "action_only", "epoch": 2, "train_total_loss": 0.3875989619039035, "validation_action_macro_f1": 0.646143472565663, "validation_rationale_macro_f1": null, "duration_seconds": 27.15370300039649}
+{"model": "action_only", "epoch": 3, "train_total_loss": 0.2136459953675084, "validation_action_macro_f1": 0.6495044623190568, "validation_rationale_macro_f1": null, "duration_seconds": 27.45869529992342}
+{"model": "action_only", "epoch": 4, "train_total_loss": 0.10647960927387115, "validation_action_macro_f1": 0.6641330005329293, "validation_rationale_macro_f1": null, "duration_seconds": 27.181214198470116}
+{"model": "action_only", "epoch": 5, "train_total_loss": 0.05841167006432111, "validation_action_macro_f1": 0.6604956340568527, "validation_rationale_macro_f1": null, "duration_seconds": 27.29797239974141}
+{"stage":"train_action_only","time":"2026-07-31T01:27:17.4884714+08:00","duration_seconds":183.7206424,"seed":43,"event":"stage_completed"}
+{"stage":"train_joint","time":"2026-07-31T01:27:17.4894721+08:00","seed":43,"event":"stage_started"}
+{"model": "joint", "epoch": 1, "train_total_loss": 0.8998350639461594, "validation_action_macro_f1": 0.5626372056191931, "validation_rationale_macro_f1": 0.1671359276833242, "duration_seconds": 65.42231949977577}
+{"model": "joint", "epoch": 2, "train_total_loss": 0.6269799468002648, "validation_action_macro_f1": 0.6527047360704757, "validation_rationale_macro_f1": 0.21893270021537134, "duration_seconds": 27.542382199317217}
+{"model": "joint", "epoch": 3, "train_total_loss": 0.42389588135854755, "validation_action_macro_f1": 0.6504002742746425, "validation_rationale_macro_f1": 0.27581534102670785, "duration_seconds": 27.664382399991155}
+{"model": "joint", "epoch": 4, "train_total_loss": 0.2903586629694991, "validation_action_macro_f1": 0.6713551383648848, "validation_rationale_macro_f1": 0.28137136976526256, "duration_seconds": 27.83165369927883}
+{"model": "joint", "epoch": 5, "train_total_loss": 0.21999642136225098, "validation_action_macro_f1": 0.6478590125455205, "validation_rationale_macro_f1": 0.3025660847178549, "duration_seconds": 27.756396800279617}
+{"stage":"train_joint","time":"2026-07-31T01:30:24.6012610+08:00","duration_seconds":187.1117889,"seed":43,"event":"stage_completed"}
+{"stage":"calibrate_action_only","time":"2026-07-31T01:30:24.6022612+08:00","seed":43,"event":"stage_started"}
+{
+  "method": "scalar temperature scaling",
+  "model_type": "action_only",
+  "checkpoint": "checkpoints\\validity\\rq1_seed_43\\action_only_best_action.pt",
+  "split": "official validation (valid four-action samples)",
+  "validation_samples": 2258,
+  "temperature": 2.58642840385437,
+  "bce_before": 0.6567114591598511,
+  "bce_after": 0.48065364360809326,
+  "optimized_outputs": "four action logits only"
+}
+{"stage":"calibrate_action_only","time":"2026-07-31T01:30:52.5527338+08:00","duration_seconds":27.950472599999998,"seed":43,"event":"stage_completed"}
+{"stage":"calibrate_joint","time":"2026-07-31T01:30:52.5537342+08:00","seed":43,"event":"stage_started"}
+{
+  "method": "scalar temperature scaling",
+  "model_type": "joint",
+  "checkpoint": "checkpoints\\validity\\rq1_seed_43\\joint_best_action.pt",
+  "split": "official validation (valid four-action samples)",
+  "validation_samples": 2258,
+  "temperature": 2.5693113803863525,
+  "bce_before": 0.6439608931541443,
+  "bce_after": 0.47155776619911194,
+  "optimized_outputs": "four action logits only"
+}
+{"stage":"calibrate_joint","time":"2026-07-31T01:31:20.0637318+08:00","duration_seconds":27.5089978,"seed":43,"event":"stage_completed"}
+{"stage":"evaluate_rq1","time":"2026-07-31T01:31:20.0667319+08:00","seed":43,"event":"stage_started"}
+Traceback (most recent call last):
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\evaluate_rq1_seed.py", line 413, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\evaluate_rq1_seed.py", line 283, in main
+    cache = run_inference(
+            ^^^^^^^^^^^^^^
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\evaluate_rq1_seed.py", line 167, in run_inference
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "D:\anaconda3\envs\Nuclear_Transformer\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    predictions[model_type] = predict(
+                              ^^^^^^^^
+  File "D:\anaconda3\envs\Nuclear_Transformer\Lib\site-packages\torch\utils\_contextlib.py", line 122, in decorate_context
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\Nuclear_Transformer\Lib\multiprocessing\spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: Ran out of input
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\src\arsc_eval\engine.py", line 65, in predict
+    for batch in loader:
+  File "D:\anaconda3\envs\Nuclear_Transformer\Lib\site-packages\torch\utils\data\dataloader.py", line 490, in __iter__
+    self._iterator = self._get_iterator()
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\Nuclear_Transformer\Lib\site-packages\torch\utils\data\dataloader.py", line 428, in _get_iterator
+    return _MultiProcessingDataLoaderIter(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\Nuclear_Transformer\Lib\site-packages\torch\utils\data\dataloader.py", line 1172, in __init__
+    w.start()
+  File "D:\anaconda3\envs\Nuclear_Transformer\Lib\multiprocessing\process.py", line 121, in start
+    self._popen = self._Popen(self)
+                  ^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\Nuclear_Transformer\Lib\multiprocessing\context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\Nuclear_Transformer\Lib\multiprocessing\context.py", line 336, in _Popen
+    return Popen(process_obj)
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\Nuclear_Transformer\Lib\multiprocessing\popen_spawn_win32.py", line 95, in __init__
+    reduction.dump(process_obj, to_child)
+  File "D:\anaconda3\envs\Nuclear_Transformer\Lib\multiprocessing\reduction.py", line 60, in dump
+    ForkingPickler(file, protocol).dump(obj)
+AttributeError: Can't pickle local object 'make_benign_perturbation.<locals>.transform'
+Seed 43 stage evaluate_rq1 failed with exit code 1
+ËùÔÚÎ»ÖÃ D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\run_rq1_multiseed.ps1:27 ×Ö·û: 9
++         throw "Seed $Seed stage $Stage failed with exit code $LASTEXI ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Seed 43 stage e...ith exit code 1:String) [], RuntimeException
+    + FullyQualifiedErrorId : Seed 43 stage evaluate_rq1 failed with exit code 1
+ 

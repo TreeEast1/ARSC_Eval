@@ -1,0 +1,254 @@
+{
+  "phase": "small_sample_feasibility_only",
+  "training_authorized": false,
+  "root": "data\\external\\VLA4CoDrive_probe_repo",
+  "counts": {
+    "action_windows": 10,
+    "language_windows": 10,
+    "paired_action_language_windows": 10,
+    "videos": 10,
+    "coco_files": 1,
+    "canonical_scenes": 1
+  },
+  "cross_modal_join": {
+    "completeness": 1.0,
+    "action_only_keys": [],
+    "language_only_keys": []
+  },
+  "action_schema": {
+    "valid_window_rate": 1.0,
+    "failures": [],
+    "frame_counts": {
+      "30": 10
+    },
+    "trajectory_point_counts": {
+      "30": 300
+    },
+    "speed_m_per_s": {
+      "count": 300,
+      "minimum": 0.0,
+      "median": 7.057281613172764e-07,
+      "mean": 1.9178976033675983,
+      "maximum": 8.5728749557035
+    },
+    "acceleration_reported": {
+      "count": 300,
+      "minimum": -25.120248794555664,
+      "median": 2.338885678909719e-06,
+      "mean": 21.52566636638813,
+      "maximum": 6457.6591796875
+    },
+    "abs_acceleration_above_50_frames": 1,
+    "nonfinite_numeric_frames": 0,
+    "brake_rising_edges_per_window": {
+      "2": 3,
+      "3": 1,
+      "1": 6
+    },
+    "positive_brake_frames_per_window": {
+      "3": 1,
+      "2": 1,
+      "14": 1,
+      "30": 6,
+      "25": 1
+    },
+    "last_frame_future_trajectory_final_axis_0": {
+      "count": 10,
+      "minimum": 0.0,
+      "median": 0.0636312839275407,
+      "mean": 3.6693208828155113,
+      "maximum": 18.817472936363174
+    },
+    "last_frame_future_trajectory_final_axis_1": {
+      "count": 10,
+      "minimum": -12.545998107058965,
+      "median": 0.0,
+      "mean": -1.2505560805989595,
+      "maximum": 0.04496293515696831
+    },
+    "pre_registered_action_mapping_ready": false,
+    "blocking_reason": "coordinate sign/unit and terminal speed/future-brake availability still require audit"
+  },
+  "language_schema": {
+    "valid_window_rate": 1.0,
+    "failures": [],
+    "exploratory_reasoning_lexicon_counts": {
+      "lead_or_parked_vehicle": 1,
+      "junction_or_route_constraint": 3,
+      "traffic_signal_or_sign": 4,
+      "visibility_or_weather_hazard": 3
+    },
+    "reasoning_action_word_rate": 1.0,
+    "declared_braking_event_windows": 10,
+    "declared_count_matches_brake_rising_edges": 1,
+    "declared_count_match_rate": 0.1,
+    "ontology_confirmed": false
+  },
+  "videos": [
+    {
+      "path": "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win01.mp4",
+      "opened": true,
+      "frame_count": 30,
+      "width": 1280,
+      "height": 1080,
+      "fps": 10.0
+    },
+    {
+      "path": "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win02.mp4",
+      "opened": true,
+      "frame_count": 30,
+      "width": 1280,
+      "height": 1080,
+      "fps": 10.0
+    },
+    {
+      "path": "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win03.mp4",
+      "opened": true,
+      "frame_count": 30,
+      "width": 1280,
+      "height": 1080,
+      "fps": 10.0
+    },
+    {
+      "path": "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win04.mp4",
+      "opened": true,
+      "frame_count": 30,
+      "width": 1280,
+      "height": 1080,
+      "fps": 10.0
+    },
+    {
+      "path": "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win05.mp4",
+      "opened": true,
+      "frame_count": 30,
+      "width": 1280,
+      "height": 1080,
+      "fps": 10.0
+    },
+    {
+      "path": "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win06.mp4",
+      "opened": true,
+      "frame_count": 30,
+      "width": 1280,
+      "height": 1080,
+      "fps": 10.0
+    },
+    {
+      "path": "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win07.mp4",
+      "opened": true,
+      "frame_count": 30,
+      "width": 1280,
+      "height": 1080,
+      "fps": 10.0
+    },
+    {
+      "path": "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win08.mp4",
+      "opened": true,
+      "frame_count": 30,
+      "width": 1280,
+      "height": 1080,
+      "fps": 10.0
+    },
+    {
+      "path": "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win09.mp4",
+      "opened": true,
+      "frame_count": 30,
+      "width": 1280,
+      "height": 1080,
+      "fps": 10.0
+    },
+    {
+      "path": "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win10.mp4",
+      "opened": true,
+      "frame_count": 30,
+      "width": 1280,
+      "height": 1080,
+      "fps": 10.0
+    }
+  ],
+  "video_readability_rate": 1.0,
+  "coco": [
+    {
+      "path": "Vision\\clearNight\\Labels_2D\\COCO\\instances_all.json",
+      "images": 8530,
+      "annotations": 57076,
+      "categories": {
+        "1": "car"
+      },
+      "annotations_per_category": {
+        "car": 57076
+      },
+      "example_image_names": [
+        "V1_front_000000.png",
+        "V2_front_000000.png",
+        "V3_front_000000.png",
+        "V1_front_000001.png",
+        "V2_front_000001.png",
+        "V3_front_000001.png",
+        "V1_front_000002.png",
+        "V2_front_000002.png",
+        "V3_front_000002.png",
+        "V1_front_000003.png"
+      ]
+    }
+  ],
+  "technical_gate": {
+    "minimum_paired_windows_10": true,
+    "join_completeness_at_least_0_95": true,
+    "action_schema_rate_1_00": true,
+    "language_schema_rate_1_00": true,
+    "video_readability_rate_at_least_0_95": true,
+    "coco_labels_present": true,
+    "passed": true
+  },
+  "hard_gate_status": {
+    "minimum_200_window_feasibility_audit": false,
+    "minimum_150_canonical_scenes": false,
+    "minimum_5000_valid_windows": false,
+    "action_semantics_audited": false,
+    "rationale_ontology_audited": false,
+    "split_frozen": false,
+    "bbox_ceg_audited": false,
+    "weather_pairing_audited": false,
+    "go_to_training": false
+  },
+  "provenance": {
+    "repository": "https://github.com/SayedPedramHaeri/VLA4CoDrive.git",
+    "commit": "d8d6b290b7acfe1ae89b75f2d72fc8f94deeef61",
+    "sparse_checkout": "/Action/clearNight/Vehicle_1/Town10HD_WeatherclearNight_scene001_win*.json\n/Language/clearNight/Vehicle_1/Town10HD_WeatherclearNight_scene001_win*.json\n/Vision/clearNight/Vehicle_1/Town10HD_WeatherclearNight_scene001_win*.mp4\n/Vision/clearNight/Labels_2D/COCO/instances_all.json\n/README.md\n/LICENSE\n",
+    "sha256": {
+      "Action\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win01.json": "edeaca55faf188b352bdde9fdb8a7c302a4e946e0b516805c1d45d3d03e78e86",
+      "Action\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win02.json": "0b40a4ed189001ec5738c39ca7cb6cbd82b893b4f0b3af544e76f6023c30fbfb",
+      "Action\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win03.json": "1e158f1feb3de80a209d9100a23ecca3e4a397a473c34de982f1d514babe6307",
+      "Action\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win04.json": "7868cdf1d5b7888b55443d1441be30b476896c151f6e20ead6a2c4bc829cf60c",
+      "Action\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win05.json": "19e5134ead43750dde9e499b56223c5624076df4d66fb00dad7a62cb0f66b434",
+      "Action\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win06.json": "789119967a23788f5e719e524eae36d12ad6dbbe0f70aa99ffd8f9ae69bebf55",
+      "Action\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win07.json": "420cddd0b63db7c4f29d7172249682edf2cc6ff9a230d1c814de339e90910131",
+      "Action\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win08.json": "38dd297915d9186ece72b9a6253ba6e7cc3da9b04ca26859cdc715b97847a3f4",
+      "Action\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win09.json": "abb56948343e61e4c99b509087b3b926afca46476c684162dbba006e14dd3450",
+      "Action\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win10.json": "7c48edd129bf7f5d91ac85519bdeec5e781fcd0b4b04aead833075ae9a5b3556",
+      "Language\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win01.json": "d396229f8e0a942a45fc8c15d3ee5f2f0151440ab067595ba0772e3ce3c67db5",
+      "Language\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win02.json": "6a8936ba4248ed0ac2b7e012ef933de53a818e46eb910dd042c068808c0b1c92",
+      "Language\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win03.json": "75e71858812ffbdb5ba023ae5c69b4be70449e2d2a64edd4649d72189c8ee8d6",
+      "Language\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win04.json": "15d21215f913eea726baaabd0bd0459b665a74c8933ac327353d3e4feed2a197",
+      "Language\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win05.json": "e71cff5530b2cbaf8da38b8ddca79d6d33da645310855ef35a759b6e827e786f",
+      "Language\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win06.json": "817814a53a513c17b4048bd26aab9495a7efc2537921b956dcb5f8ddf0d8f893",
+      "Language\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win07.json": "71a74036c145e22a529dbc036b6628db0d31cd34438827b270c291e7853866ea",
+      "Language\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win08.json": "7565ee229296e8181fe69a76396734e32bd09db71756627d954102abc18086f8",
+      "Language\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win09.json": "f3ccc0f9ef69992a2804e3ad855aeab5fda16d99ed721c51601717577d06c5fa",
+      "Language\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win10.json": "968cd1918ccaf062f6a1f68067c79d7ef1fbe51748acb02d06cbf0d19d8954cb",
+      "Vision\\clearNight\\Labels_2D\\COCO\\instances_all.json": "098a6a108a73e104a8f0ccc018cd9ced283ffa1a10bbded80505bd155405d084",
+      "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win01.mp4": "e9196aabb9057dc3045f50aed1759bb83c2e5acef7f5f0fe22bd4f16509fa0ef",
+      "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win02.mp4": "1ab85ff47c29f22e157b6dd7d4405605dea166817fd2402ccf4ba1ad7b49fbb0",
+      "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win03.mp4": "631eec8145f2c0dc122e60a300a963c3fc435c4998be3e8293c80ace1ee474ae",
+      "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win04.mp4": "f226db2625e12d4800dad2104fd5a596f9eb41c1a07d92530244aac6eec10420",
+      "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win05.mp4": "c0d45bbc787af61a9adbadb5dc98e5197e7f69e6a13bb7d2d2aafe4fbfad43eb",
+      "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win06.mp4": "12141c0e2ed4d3f6280d09b7e2c06c918471da79ecf4c4088cc4dc212dc0eb96",
+      "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win07.mp4": "68c5a12b98a6e2a69936057d50d0ba5cc9e11442e2fd29a1b592f2abca4fd96f",
+      "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win08.mp4": "1a0b9967f4dd9a9e7d2a5ecb9c3f176bcc03bc0bd2431cac8db03dce2134b060",
+      "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win09.mp4": "637e6608825337921d80d23b5eb749c1f6eb1ab77dbe7441cff791460cb9d4c5",
+      "Vision\\clearNight\\Vehicle_1\\Town10HD_WeatherclearNight_scene001_win10.mp4": "7717ed2457f43f845a676bfc42aabf51ad21f54ecb54b2242ea644ca106884b9"
+    },
+    "analysis_script_sha256": "bc1a6f3f90ce831b56660da1906a33dad359ae395a46a6d6a5a246af29d0cf23"
+  }
+}

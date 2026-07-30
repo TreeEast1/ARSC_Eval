@@ -1,0 +1,67 @@
+{
+  "mask_generation": {
+    "detector": "yolo11n.pt",
+    "confidence_threshold": 0.35,
+    "mask_fill": "image_mean",
+    "eligible_by_rationale": 3798,
+    "valid_mask_pairs": 769,
+    "minimum_target_samples": 500,
+    "minimum_met": true,
+    "skipped": {
+      "no_matching_detection": 3029
+    },
+    "detected_class_counts": {
+      "traffic light": 663,
+      "person": 27,
+      "car": 37,
+      "bicycle": 26,
+      "motorcycle": 15,
+      "stop sign": 1
+    },
+    "manifest": "data\\processed\\masks\\manifest.jsonl",
+    "localization_mapping": {
+      "green_light": [
+        "traffic light"
+      ],
+      "red_light": [
+        "traffic light"
+      ],
+      "left_green_light": [
+        "traffic light"
+      ],
+      "right_green_light": [
+        "traffic light"
+      ],
+      "traffic_sign": [
+        "stop sign"
+      ],
+      "car": [
+        "car"
+      ],
+      "person": [
+        "person"
+      ],
+      "rider": [
+        "bicycle",
+        "motorcycle"
+      ]
+    },
+    "traffic_sign_limitation": "COCO has no generic traffic-sign class; the fixed detector's stop-sign class is used for the BDD-OIA traffic_sign rationale."
+  },
+  "models": {
+    "Joint Action-Rationale": {
+      "samples": 769,
+      "mean_delta_critical": 0.004884339154729593,
+      "mean_delta_noncritical": 0.00042321721893603237,
+      "mean_causal_evidence_gap": 0.0044611219357935635,
+      "multiple_correct_action_policy": "mean probability over all positive ground-truth actions"
+    },
+    "Joint-Calibrated": {
+      "samples": 769,
+      "mean_delta_critical": 0.008401305021134403,
+      "mean_delta_noncritical": 0.000716682302264563,
+      "mean_causal_evidence_gap": 0.007684622718869841,
+      "multiple_correct_action_policy": "mean probability over all positive ground-truth actions"
+    }
+  }
+}

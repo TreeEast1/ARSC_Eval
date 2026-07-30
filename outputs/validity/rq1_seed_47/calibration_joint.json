@@ -1,0 +1,11 @@
+{
+  "method": "scalar temperature scaling",
+  "model_type": "joint",
+  "checkpoint": "checkpoints\\validity\\rq1_seed_47\\joint_best_action.pt",
+  "split": "official validation (valid four-action samples)",
+  "validation_samples": 2258,
+  "temperature": 2.8457589149475098,
+  "bce_before": 0.6923043131828308,
+  "bce_after": 0.467033326625824,
+  "optimized_outputs": "four action logits only"
+}

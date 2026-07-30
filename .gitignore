@@ -1,0 +1,30 @@
+# Downloaded datasets, generated images/masks, and nested external repositories
+data/
+
+# Large resumable model artifacts
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Python/runtime caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local detector weight; download/provenance scripts remain tracked
+yolo11n.pt
+
+# Visual-audit contact sheets contain redistributed dataset pixels. Keep the
+# numeric/manual audit evidence and regenerate the sheets locally when needed.
+outputs/validity/**/pages/*.png

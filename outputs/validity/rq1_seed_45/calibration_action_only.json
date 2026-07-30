@@ -1,0 +1,11 @@
+{
+  "method": "scalar temperature scaling",
+  "model_type": "action_only",
+  "checkpoint": "checkpoints\\validity\\rq1_seed_45\\action_only_best_action.pt",
+  "split": "official validation (valid four-action samples)",
+  "validation_samples": 2258,
+  "temperature": 2.8795323371887207,
+  "bce_before": 0.7175806164741516,
+  "bce_after": 0.48897138237953186,
+  "optimized_outputs": "four action logits only"
+}

@@ -1,0 +1,216 @@
+{"processed": 16, "eligible": 2517, "valid_masks": 1}
+{"processed": 32, "eligible": 2517, "valid_masks": 2}
+{"processed": 48, "eligible": 2517, "valid_masks": 3}
+{"processed": 64, "eligible": 2517, "valid_masks": 4}
+{"processed": 80, "eligible": 2517, "valid_masks": 5}
+{"processed": 96, "eligible": 2517, "valid_masks": 6}
+{"processed": 112, "eligible": 2517, "valid_masks": 8}
+{"processed": 128, "eligible": 2517, "valid_masks": 8}
+{"processed": 144, "eligible": 2517, "valid_masks": 9}
+{"processed": 160, "eligible": 2517, "valid_masks": 10}
+{"processed": 176, "eligible": 2517, "valid_masks": 12}
+{"processed": 192, "eligible": 2517, "valid_masks": 13}
+{"processed": 208, "eligible": 2517, "valid_masks": 15}
+{"processed": 224, "eligible": 2517, "valid_masks": 16}
+{"processed": 240, "eligible": 2517, "valid_masks": 18}
+{"processed": 256, "eligible": 2517, "valid_masks": 18}
+{"processed": 272, "eligible": 2517, "valid_masks": 19}
+{"processed": 288, "eligible": 2517, "valid_masks": 20}
+{"processed": 304, "eligible": 2517, "valid_masks": 21}
+{"processed": 320, "eligible": 2517, "valid_masks": 22}
+{"processed": 336, "eligible": 2517, "valid_masks": 25}
+{"processed": 352, "eligible": 2517, "valid_masks": 28}
+{"processed": 368, "eligible": 2517, "valid_masks": 28}
+{"processed": 384, "eligible": 2517, "valid_masks": 28}
+{"processed": 400, "eligible": 2517, "valid_masks": 29}
+{"processed": 416, "eligible": 2517, "valid_masks": 32}
+{"processed": 432, "eligible": 2517, "valid_masks": 34}
+{"processed": 448, "eligible": 2517, "valid_masks": 34}
+{"processed": 464, "eligible": 2517, "valid_masks": 35}
+{"processed": 480, "eligible": 2517, "valid_masks": 36}
+{"processed": 496, "eligible": 2517, "valid_masks": 37}
+{"processed": 512, "eligible": 2517, "valid_masks": 38}
+{"processed": 528, "eligible": 2517, "valid_masks": 38}
+{"processed": 544, "eligible": 2517, "valid_masks": 40}
+{"processed": 560, "eligible": 2517, "valid_masks": 42}
+{"processed": 576, "eligible": 2517, "valid_masks": 44}
+{"processed": 592, "eligible": 2517, "valid_masks": 44}
+{"processed": 608, "eligible": 2517, "valid_masks": 45}
+{"processed": 624, "eligible": 2517, "valid_masks": 48}
+{"processed": 640, "eligible": 2517, "valid_masks": 49}
+{"processed": 656, "eligible": 2517, "valid_masks": 49}
+{"processed": 672, "eligible": 2517, "valid_masks": 50}
+{"processed": 688, "eligible": 2517, "valid_masks": 51}
+{"processed": 704, "eligible": 2517, "valid_masks": 51}
+{"processed": 720, "eligible": 2517, "valid_masks": 53}
+{"processed": 736, "eligible": 2517, "valid_masks": 54}
+{"processed": 752, "eligible": 2517, "valid_masks": 54}
+{"processed": 768, "eligible": 2517, "valid_masks": 55}
+{"processed": 784, "eligible": 2517, "valid_masks": 55}
+{"processed": 800, "eligible": 2517, "valid_masks": 55}
+{"processed": 816, "eligible": 2517, "valid_masks": 57}
+{"processed": 832, "eligible": 2517, "valid_masks": 57}
+{"processed": 848, "eligible": 2517, "valid_masks": 59}
+{"processed": 864, "eligible": 2517, "valid_masks": 60}
+{"processed": 880, "eligible": 2517, "valid_masks": 61}
+{"processed": 896, "eligible": 2517, "valid_masks": 63}
+{"processed": 912, "eligible": 2517, "valid_masks": 63}
+{"processed": 928, "eligible": 2517, "valid_masks": 65}
+{"processed": 944, "eligible": 2517, "valid_masks": 67}
+{"processed": 960, "eligible": 2517, "valid_masks": 69}
+{"processed": 976, "eligible": 2517, "valid_masks": 69}
+{"processed": 992, "eligible": 2517, "valid_masks": 72}
+{"processed": 1008, "eligible": 2517, "valid_masks": 73}
+{"processed": 1024, "eligible": 2517, "valid_masks": 75}
+{"processed": 1040, "eligible": 2517, "valid_masks": 75}
+{"processed": 1056, "eligible": 2517, "valid_masks": 76}
+{"processed": 1072, "eligible": 2517, "valid_masks": 77}
+{"processed": 1088, "eligible": 2517, "valid_masks": 78}
+{"processed": 1104, "eligible": 2517, "valid_masks": 79}
+{"processed": 1120, "eligible": 2517, "valid_masks": 81}
+{"processed": 1136, "eligible": 2517, "valid_masks": 81}
+{"processed": 1152, "eligible": 2517, "valid_masks": 85}
+{"processed": 1168, "eligible": 2517, "valid_masks": 86}
+{"processed": 1184, "eligible": 2517, "valid_masks": 89}
+{"processed": 1200, "eligible": 2517, "valid_masks": 90}
+{"processed": 1216, "eligible": 2517, "valid_masks": 91}
+{"processed": 1232, "eligible": 2517, "valid_masks": 93}
+{"processed": 1248, "eligible": 2517, "valid_masks": 94}
+{"processed": 1264, "eligible": 2517, "valid_masks": 95}
+{"processed": 1280, "eligible": 2517, "valid_masks": 97}
+{"processed": 1296, "eligible": 2517, "valid_masks": 97}
+{"processed": 1312, "eligible": 2517, "valid_masks": 98}
+{"processed": 1328, "eligible": 2517, "valid_masks": 100}
+{"processed": 1344, "eligible": 2517, "valid_masks": 103}
+{"processed": 1360, "eligible": 2517, "valid_masks": 105}
+{"processed": 1376, "eligible": 2517, "valid_masks": 106}
+{"processed": 1392, "eligible": 2517, "valid_masks": 109}
+{"processed": 1408, "eligible": 2517, "valid_masks": 109}
+{"processed": 1424, "eligible": 2517, "valid_masks": 109}
+{"processed": 1440, "eligible": 2517, "valid_masks": 111}
+{"processed": 1456, "eligible": 2517, "valid_masks": 111}
+{"processed": 1472, "eligible": 2517, "valid_masks": 111}
+{"processed": 1488, "eligible": 2517, "valid_masks": 111}
+{"processed": 1504, "eligible": 2517, "valid_masks": 112}
+{"processed": 1520, "eligible": 2517, "valid_masks": 114}
+{"processed": 1536, "eligible": 2517, "valid_masks": 117}
+{"processed": 1552, "eligible": 2517, "valid_masks": 119}
+{"processed": 1568, "eligible": 2517, "valid_masks": 119}
+{"processed": 1584, "eligible": 2517, "valid_masks": 119}
+{"processed": 1600, "eligible": 2517, "valid_masks": 120}
+{"processed": 1616, "eligible": 2517, "valid_masks": 121}
+{"processed": 1632, "eligible": 2517, "valid_masks": 123}
+{"processed": 1648, "eligible": 2517, "valid_masks": 124}
+{"processed": 1664, "eligible": 2517, "valid_masks": 126}
+{"processed": 1680, "eligible": 2517, "valid_masks": 129}
+{"processed": 1696, "eligible": 2517, "valid_masks": 129}
+{"processed": 1712, "eligible": 2517, "valid_masks": 129}
+{"processed": 1728, "eligible": 2517, "valid_masks": 130}
+{"processed": 1744, "eligible": 2517, "valid_masks": 131}
+{"processed": 1760, "eligible": 2517, "valid_masks": 131}
+{"processed": 1776, "eligible": 2517, "valid_masks": 132}
+{"processed": 1792, "eligible": 2517, "valid_masks": 133}
+{"processed": 1808, "eligible": 2517, "valid_masks": 133}
+{"processed": 1824, "eligible": 2517, "valid_masks": 134}
+{"processed": 1840, "eligible": 2517, "valid_masks": 135}
+{"processed": 1856, "eligible": 2517, "valid_masks": 136}
+{"processed": 1872, "eligible": 2517, "valid_masks": 138}
+{"processed": 1888, "eligible": 2517, "valid_masks": 139}
+{"processed": 1904, "eligible": 2517, "valid_masks": 140}
+{"processed": 1920, "eligible": 2517, "valid_masks": 141}
+{"processed": 1936, "eligible": 2517, "valid_masks": 141}
+{"processed": 1952, "eligible": 2517, "valid_masks": 142}
+{"processed": 1968, "eligible": 2517, "valid_masks": 143}
+{"processed": 1984, "eligible": 2517, "valid_masks": 144}
+{"processed": 2000, "eligible": 2517, "valid_masks": 145}
+{"processed": 2016, "eligible": 2517, "valid_masks": 146}
+{"processed": 2032, "eligible": 2517, "valid_masks": 149}
+{"processed": 2048, "eligible": 2517, "valid_masks": 151}
+{"processed": 2064, "eligible": 2517, "valid_masks": 153}
+{"processed": 2080, "eligible": 2517, "valid_masks": 154}
+{"processed": 2096, "eligible": 2517, "valid_masks": 157}
+{"processed": 2112, "eligible": 2517, "valid_masks": 158}
+{"processed": 2128, "eligible": 2517, "valid_masks": 159}
+{"processed": 2144, "eligible": 2517, "valid_masks": 160}
+{"processed": 2160, "eligible": 2517, "valid_masks": 160}
+{"processed": 2176, "eligible": 2517, "valid_masks": 160}
+{"processed": 2192, "eligible": 2517, "valid_masks": 160}
+{"processed": 2208, "eligible": 2517, "valid_masks": 160}
+{"processed": 2224, "eligible": 2517, "valid_masks": 162}
+{"processed": 2240, "eligible": 2517, "valid_masks": 162}
+{"processed": 2256, "eligible": 2517, "valid_masks": 164}
+{"processed": 2272, "eligible": 2517, "valid_masks": 164}
+{"processed": 2288, "eligible": 2517, "valid_masks": 164}
+{"processed": 2304, "eligible": 2517, "valid_masks": 165}
+{"processed": 2320, "eligible": 2517, "valid_masks": 166}
+{"processed": 2336, "eligible": 2517, "valid_masks": 167}
+{"processed": 2352, "eligible": 2517, "valid_masks": 170}
+{"processed": 2368, "eligible": 2517, "valid_masks": 171}
+{"processed": 2384, "eligible": 2517, "valid_masks": 173}
+{"processed": 2400, "eligible": 2517, "valid_masks": 174}
+{"processed": 2416, "eligible": 2517, "valid_masks": 175}
+{"processed": 2432, "eligible": 2517, "valid_masks": 176}
+{"processed": 2448, "eligible": 2517, "valid_masks": 176}
+{"processed": 2464, "eligible": 2517, "valid_masks": 176}
+{"processed": 2480, "eligible": 2517, "valid_masks": 177}
+{"processed": 2496, "eligible": 2517, "valid_masks": 177}
+{"processed": 2512, "eligible": 2517, "valid_masks": 178}
+{"processed": 2517, "eligible": 2517, "valid_masks": 178}
+{
+  "version": "v4_disjoint_high_precision_traffic_light",
+  "detector": "yolo11n.pt",
+  "selection_confidence": 0.35,
+  "exclusion_confidence": 0.1,
+  "image_format": "lossless PNG for both masked variants",
+  "eligible_single_state_images": 2517,
+  "valid_mask_pairs": 178,
+  "skipped": {
+    "no_strict_state_binding": 2338,
+    "no_clean_spatial_control": 1
+  },
+  "state_counts": {
+    "green": 106,
+    "red": 72
+  },
+  "manifest": "data\\processed\\masks_v4\\manifest.jsonl",
+  "development_provenance": "rules fixed from masks_v3 audit; v4 requires a filename-disjoint audit excluding v2 and v3 audit samples",
+  "pre_registered_binding_policy": {
+    "scope": "non-directional red/green traffic lights only",
+    "red": "strict HSV pixels >=40, y centroid <=0.50; if colored area >0.30 then detector-box aspect ratio must be >=1.45",
+    "green": "strict HSV pixels >=10, detector-box aspect ratio >=1.90, and colored-pixel y centroid >=0.55"
+  },
+  "control_policy": {
+    "area": "exact width and height match",
+    "position": "nearest candidate with 4x vertical penalty",
+    "maximum_normalized_center_offset": 0.35,
+    "object_exclusion": "zero overlap with detections at exclusion confidence after 25%/minimum-6px box expansion",
+    "signal_color_guard": "at most max(2, floor(0.002*area)) strict red/amber/green pixels"
+  },
+  "spatial_diagnostics": {
+    "center_offset_norm": {
+      "minimum": 0.014843749999999989,
+      "median": 0.034375000000000024,
+      "p95": 0.08609375000000008,
+      "maximum": 0.19218749999999998
+    },
+    "x_center_offset_norm": {
+      "minimum": 0.003124999999999989,
+      "median": 0.03359374999999998,
+      "p95": 0.07718749999999998,
+      "maximum": 0.19218749999999998
+    },
+    "y_center_offset_norm": {
+      "minimum": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "maximum": 0.15
+    },
+    "area_ratio": {
+      "minimum": 1.0,
+      "median": 1.0,
+      "p95": 1.0,
+      "maximum": 1.0
+    }
+  },
+  "audit_status": "pending independent filename-disjoint manual audit"
+}

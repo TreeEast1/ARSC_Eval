@@ -1,0 +1,28 @@
+{
+  "status": "completed_model_output_blind_visual_review",
+  "reviewed_unique_images": 100,
+  "reviewed_pairs": 300,
+  "by_perturbation": {
+    "brightness": {
+      "unchanged": 100,
+      "reviewed": 100,
+      "rate": 1.0
+    },
+    "blur": {
+      "unchanged": 100,
+      "reviewed": 100,
+      "rate": 1.0
+    },
+    "noise": {
+      "unchanged": 100,
+      "reviewed": 100,
+      "rate": 1.0
+    }
+  },
+  "overall_semantic_unchanged_rate": 1.0,
+  "minimum_rate": 0.95,
+  "gate_passed": true,
+  "notes": [
+    "Codex model-output-blind visual audit of all 20 contact sheets; no traffic-semantic change observed."
+  ]
+}

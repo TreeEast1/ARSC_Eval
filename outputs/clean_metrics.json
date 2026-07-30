@@ -1,0 +1,45 @@
+{
+  "split": "official test (valid four-action samples)",
+  "samples": 4557,
+  "models": {
+    "Action-Only": {
+      "action": {
+        "macro_f1": 0.6760957628448777,
+        "micro_f1": 0.7117123531505875,
+        "per_class_f1": {
+          "Forward": 0.8085519922254616,
+          "Stop": 0.7592638036809816,
+          "Left": 0.5717832023169218,
+          "Right": 0.5647840531561462
+        },
+        "threshold": 0.5
+      }
+    },
+    "Joint Action-Rationale": {
+      "action": {
+        "macro_f1": 0.6865757074165373,
+        "micro_f1": 0.7211223472439824,
+        "per_class_f1": {
+          "Forward": 0.8108210367007189,
+          "Stop": 0.7632172387872713,
+          "Left": 0.5804195804195804,
+          "Right": 0.5918449737585789
+        },
+        "threshold": 0.5
+      }
+    },
+    "Joint-Calibrated": {
+      "action": {
+        "macro_f1": 0.6865757074165373,
+        "micro_f1": 0.7211223472439824,
+        "per_class_f1": {
+          "Forward": 0.8108210367007189,
+          "Stop": 0.7632172387872713,
+          "Left": 0.5804195804195804,
+          "Right": 0.5918449737585789
+        },
+        "threshold": 0.5
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "label_source": "data\\external\\bdd100k\\validation_samples.json",
+  "official_validation_samples": 10000,
+  "bdd_oia_manifest": "data/processed/test.jsonl",
+  "bdd_oia_records": 4557,
+  "filename_overlap": 268,
+  "filename_overlap_rate": 0.05881062102260259,
+  "overlap_with_official_traffic_lights": 200,
+  "official_traffic_light_color_counts": {
+    "G": 463,
+    "R": 247,
+    "NA": 344,
+    "Y": 23
+  },
+  "overlap_single_red_or_green_rationale": 134,
+  "rationale_with_matching_official_state_box": {
+    "red_light": 45,
+    "green_light": 23
+  },
+  "rationale_with_matching_official_state_box_unseen_by_any_audit": {
+    "red_light": 34,
+    "green_light": 19
+  },
+  "excluded_unique_prior_audit_filenames": 323,
+  "exclusion_manifests": {
+    "outputs\\validity\\mask_audit_v2\\sample_manifest.jsonl": 108,
+    "outputs\\validity\\mask_audit_v3\\sample_manifest.jsonl": 102,
+    "outputs\\validity\\mask_audit_v4\\sample_manifest.jsonl": 113
+  },
+  "candidate_gate": {
+    "minimum_total_unseen_state_matched": 100,
+    "minimum_each_state_unseen_state_matched": 30,
+    "observed_total": 53,
+    "observed_red": 34,
+    "observed_green": 19,
+    "passed": false
+  }
+}

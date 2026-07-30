@@ -1,0 +1,66 @@
+{
+  "split": "official test (valid four-action samples)",
+  "samples": 4557,
+  "models": {
+    "Joint Action-Rationale": {
+      "rationale": {
+        "macro_f1": 0.3009910922159824,
+        "micro_f1": 0.5347363899924836,
+        "per_class_f1": {
+          "green_light": 0.66541588492808,
+          "follow": 0.44150943396226416,
+          "road_clear": 0.40959170447180815,
+          "red_light": 0.5894854586129754,
+          "traffic_sign": 0.48156182212581344,
+          "car": 0.0,
+          "person": 0.0,
+          "rider": 0.7585492227979275,
+          "other_obstacle": 0.043010752688172046,
+          "left_lane": 0.0,
+          "left_green_light": 0.0,
+          "left_follow": 0.0,
+          "no_left_lane": 0.0,
+          "left_obstacle": 0.1116751269035533,
+          "left_solid_line": 0.0,
+          "right_lane": 0.56625,
+          "right_green_light": 0.42042042042042044,
+          "right_follow": 0.42923219241443106,
+          "no_right_lane": 0.624367816091954,
+          "right_obstacle": 0.3684661525278492,
+          "right_solid_line": 0.41127694859038144
+        },
+        "threshold": 0.5
+      }
+    },
+    "Joint-Calibrated": {
+      "rationale": {
+        "macro_f1": 0.3009910922159824,
+        "micro_f1": 0.5347363899924836,
+        "per_class_f1": {
+          "green_light": 0.66541588492808,
+          "follow": 0.44150943396226416,
+          "road_clear": 0.40959170447180815,
+          "red_light": 0.5894854586129754,
+          "traffic_sign": 0.48156182212581344,
+          "car": 0.0,
+          "person": 0.0,
+          "rider": 0.7585492227979275,
+          "other_obstacle": 0.043010752688172046,
+          "left_lane": 0.0,
+          "left_green_light": 0.0,
+          "left_follow": 0.0,
+          "no_left_lane": 0.0,
+          "left_obstacle": 0.1116751269035533,
+          "left_solid_line": 0.0,
+          "right_lane": 0.56625,
+          "right_green_light": 0.42042042042042044,
+          "right_follow": 0.42923219241443106,
+          "no_right_lane": 0.624367816091954,
+          "right_obstacle": 0.3684661525278492,
+          "right_solid_line": 0.41127694859038144
+        },
+        "threshold": 0.5
+      }
+    }
+  }
+}

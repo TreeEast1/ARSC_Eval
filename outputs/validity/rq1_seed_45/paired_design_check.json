@@ -1,0 +1,30 @@
+{
+  "seed": 45,
+  "common_parameter_tensors": 320,
+  "common_initialization_exact_match": true,
+  "mismatched_common_keys": [],
+  "unexpected_action_only_keys": [],
+  "joint_only_keys": [
+    "rationale_head.bias",
+    "rationale_head.weight"
+  ],
+  "expected_joint_only_keys": [
+    "rationale_head.bias",
+    "rationale_head.weight"
+  ],
+  "checked_training_order_samples": 96,
+  "training_order_exact_match_after_global_rng_consumption": true,
+  "first_training_file_names": [
+    "7a4fe9fb-6cb36302.jpg",
+    "5b7f03ae-966bdae6_1.jpg",
+    "9760d7ce-8c65c87f.jpg",
+    "b87a03a9-1ddfba47.jpg",
+    "ca0b4ef4-3917ead1_1.jpg",
+    "2cf85406-e67512c2.jpg",
+    "353ef67a-89bf1cc5_1.jpg",
+    "69bf175c-62b67fbe_1.jpg",
+    "b6770025-c81ef5ed.jpg",
+    "55ec61de-4a7541fd_3.jpg"
+  ],
+  "gate_passed": true
+}

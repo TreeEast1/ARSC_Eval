@@ -1,0 +1,91 @@
+{
+  "manifest": "data\\processed\\masks_v4\\manifest_confirmatory.jsonl",
+  "population_pairs": 113,
+  "sample_pairs": 113,
+  "prior_audit_excluded_file_names": 0,
+  "sampling": "100% per detected class with at least 100 when available; confidence-sorted evenly spaced selection after prior-audit filename exclusions",
+  "population_by_class": {
+    "traffic light": 113
+  },
+  "sample_by_class": {
+    "traffic light": 113
+  },
+  "automated_checks": {
+    "exact_area_match_rate": 1.0,
+    "control_detector_overlap_rate": 0.0,
+    "control_detector_overlap_basis": "generator rejects any pixel intersection with all retained detector boxes",
+    "center_offset_median": 0.034375,
+    "center_offset_p95": 0.126875,
+    "vertical_offset_median": 0.0,
+    "vertical_offset_p95": 0.0
+  },
+  "manual_review_file": "outputs\\validity\\mask_audit_v4\\manual_review.csv",
+  "pages": [
+    "outputs\\validity\\mask_audit_v4\\pages\\page_001.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_002.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_003.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_004.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_005.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_006.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_007.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_008.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_009.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_010.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_011.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_012.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_013.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_014.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_015.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_016.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_017.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_018.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_019.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_020.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_021.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_022.png",
+    "outputs\\validity\\mask_audit_v4\\pages\\page_023.png"
+  ],
+  "manual_status": "completed_fail",
+  "acceptance_thresholds": {
+    "critical_binding_correct_rate_minimum": 0.9,
+    "control_critical_evidence_contamination_rate_maximum": 0.05,
+    "semantic_label_unchanged_rate_minimum": 0.95
+  },
+  "manual_results": {
+    "reviewed_pairs": 113,
+    "population_review_rate": 1.0,
+    "model_output_blind": true,
+    "critical_binding_correct": 106,
+    "critical_binding_correct_rate": 0.9380530973451328,
+    "control_contaminated": 6,
+    "control_critical_evidence_contamination_rate": 0.05309734513274336,
+    "semantic_label_unchanged": 113,
+    "semantic_label_unchanged_rate": 1.0,
+    "overall_critical_binding_threshold_passed": true,
+    "overall_control_contamination_threshold_passed": false,
+    "semantic_threshold_passed": true,
+    "by_light_state": {
+      "green": {
+        "reviewed_pairs": 67,
+        "critical_binding_correct": 67,
+        "critical_binding_correct_rate": 1.0,
+        "control_contaminated": 4,
+        "control_critical_evidence_contamination_rate": 0.05970149253731343,
+        "critical_binding_threshold_passed": true,
+        "control_contamination_threshold_passed": false
+      },
+      "red": {
+        "reviewed_pairs": 46,
+        "critical_binding_correct": 39,
+        "critical_binding_correct_rate": 0.8478260869565217,
+        "control_contaminated": 2,
+        "control_critical_evidence_contamination_rate": 0.043478260869565216,
+        "critical_binding_threshold_passed": false,
+        "control_contamination_threshold_passed": true
+      }
+    },
+    "all_state_specific_thresholds_passed": false,
+    "overall_gate_passed": false
+  },
+  "decision": "FAIL confirmatory gate. Overall binding exceeds 90%, but the red stratum is below 90%; overall controls also slightly exceed 5%. Do not run confirmatory CEG with v4."
+}

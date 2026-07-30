@@ -1,0 +1,386 @@
+{
+  "study": "BDD-OIA RQ1 paired-seed replication",
+  "seed": 47,
+  "status": "confirmatory_new_seed",
+  "samples": 4557,
+  "threshold": 0.5,
+  "bootstrap": {
+    "unit": "image; paired across models and all perturbations",
+    "replicates": 2000,
+    "seed": 20260778,
+    "confidence_level": 0.95
+  },
+  "c1_measurement_gate": {
+    "status": "completed_model_output_blind_visual_review",
+    "reviewed_unique_images": 100,
+    "reviewed_pairs": 300,
+    "by_perturbation": {
+      "brightness": {
+        "unchanged": 100,
+        "reviewed": 100,
+        "rate": 1.0
+      },
+      "blur": {
+        "unchanged": 100,
+        "reviewed": 100,
+        "rate": 1.0
+      },
+      "noise": {
+        "unchanged": 100,
+        "reviewed": 100,
+        "rate": 1.0
+      }
+    },
+    "overall_semantic_unchanged_rate": 1.0,
+    "minimum_rate": 0.95,
+    "gate_passed": true,
+    "notes": [
+      "Codex model-output-blind visual audit of all 20 contact sheets; no traffic-semantic change observed."
+    ]
+  },
+  "perturbation_execution": "frozen in-memory PIL transforms before tensor conversion; no JPEG re-encoding",
+  "temperatures": {
+    "Action-Only": 2.9120659828186035,
+    "Joint Action-Rationale": 2.8457589149475098
+  },
+  "positive_temperature_ranking_invariance": {
+    "by_model": {
+      "Action-Only": {
+        "aurc_absolute_difference": 0.0,
+        "uar90_absolute_difference": 0.0
+      },
+      "Joint Action-Rationale": {
+        "aurc_absolute_difference": 0.0,
+        "uar90_absolute_difference": 0.0
+      }
+    },
+    "passed": true
+  },
+  "metrics": [
+    {
+      "metric": "action_flip_rate_blur::Action-Only",
+      "estimate": 0.13759052007899933,
+      "ci_lower": 0.12749615975422426,
+      "ci_upper": 0.14702655255650648
+    },
+    {
+      "metric": "action_flip_rate_blur::Joint Action-Rationale",
+      "estimate": 0.130348913759052,
+      "ci_lower": 0.1206934386657889,
+      "ci_upper": 0.1404432740838271
+    },
+    {
+      "metric": "action_flip_rate_brightness::Action-Only",
+      "estimate": 0.10533245556287031,
+      "ci_lower": 0.09611586570111916,
+      "ci_upper": 0.11454904542462147
+    },
+    {
+      "metric": "action_flip_rate_brightness::Joint Action-Rationale",
+      "estimate": 0.10291858678955453,
+      "ci_lower": 0.09392143954355936,
+      "ci_upper": 0.11213517665130568
+    },
+    {
+      "metric": "action_flip_rate_mean_three::Action-Only",
+      "estimate": 0.1228878648233487,
+      "ci_lower": 0.1152073732718894,
+      "ci_upper": 0.12998500475459002
+    },
+    {
+      "metric": "action_flip_rate_mean_three::Joint Action-Rationale",
+      "estimate": 0.11389071757735353,
+      "ci_lower": 0.1068648964962329,
+      "ci_upper": 0.12106100504718015
+    },
+    {
+      "metric": "action_flip_rate_noise::Action-Only",
+      "estimate": 0.12574061882817644,
+      "ci_lower": 0.1163045863506693,
+      "ci_upper": 0.13517665130568357
+    },
+    {
+      "metric": "action_flip_rate_noise::Joint Action-Rationale",
+      "estimate": 0.10840465218345402,
+      "ci_lower": 0.09962694755321483,
+      "ci_upper": 0.11762124204520517
+    },
+    {
+      "metric": "action_macro_f1::Action-Only",
+      "estimate": 0.6813323662454802,
+      "ci_lower": 0.6698913748851923,
+      "ci_upper": 0.6924604070187022
+    },
+    {
+      "metric": "action_macro_f1::Joint Action-Rationale",
+      "estimate": 0.678809184870399,
+      "ci_lower": 0.6677740605867624,
+      "ci_upper": 0.6897510492386961
+    },
+    {
+      "metric": "action_micro_f1::Action-Only",
+      "estimate": 0.716514487022791,
+      "ci_lower": 0.7067061048141294,
+      "ci_upper": 0.7258692921895505
+    },
+    {
+      "metric": "action_micro_f1::Joint Action-Rationale",
+      "estimate": 0.7151962914674779,
+      "ci_lower": 0.705602572704224,
+      "ci_upper": 0.7248871445773674
+    },
+    {
+      "metric": "advantage_action_flip_rate_blur::Action-Joint",
+      "estimate": 0.00724160631994733,
+      "ci_lower": -0.006802721088435354,
+      "ci_upper": 0.020408163265306117
+    },
+    {
+      "metric": "advantage_action_flip_rate_brightness::Action-Joint",
+      "estimate": 0.002413868773315786,
+      "ci_lower": -0.010094360324775065,
+      "ci_upper": 0.014483212639894674
+    },
+    {
+      "metric": "advantage_action_flip_rate_mean_three::Action-Joint",
+      "estimate": 0.008997147245995166,
+      "ci_lower": -0.0005138614585619305,
+      "ci_upper": 0.018508155950552257
+    },
+    {
+      "metric": "advantage_action_flip_rate_noise::Action-Joint",
+      "estimate": 0.017335966644722423,
+      "ci_lower": 0.00460280886548168,
+      "ci_upper": 0.02984968180820713
+    },
+    {
+      "metric": "aurc::Action-Only",
+      "estimate": 0.39964274154775264,
+      "ci_lower": 0.3796902104070567,
+      "ci_upper": 0.42019049249899
+    },
+    {
+      "metric": "aurc::Joint Action-Rationale",
+      "estimate": 0.3789384007301017,
+      "ci_lower": 0.36024962372647257,
+      "ci_upper": 0.39784479157077907
+    },
+    {
+      "metric": "delta_action_macro_f1::Joint-Action",
+      "estimate": -0.0025231813750812293,
+      "ci_lower": -0.011788531311777848,
+      "ci_upper": 0.007179342659523117
+    },
+    {
+      "metric": "delta_aurc::Joint-Action",
+      "estimate": -0.020704340817650935,
+      "ci_lower": -0.039187728910536644,
+      "ci_upper": -0.0027849877978391676
+    },
+    {
+      "metric": "delta_ece_calibrated::Joint-Action",
+      "estimate": 0.008130400362466317,
+      "ci_lower": -0.004492220842293056,
+      "ci_upper": 0.021193564896522132
+    },
+    {
+      "metric": "delta_ece_uncalibrated::Joint-Action",
+      "estimate": 0.0002617279837322517,
+      "ci_lower": -0.012370783231711382,
+      "ci_upper": 0.012941818596112233
+    },
+    {
+      "metric": "delta_unsafe_acceptance_rate_90::Joint-Action",
+      "estimate": 0.005850804485616756,
+      "ci_lower": -0.007313505607020987,
+      "ci_upper": 0.01852754753778646
+    },
+    {
+      "metric": "ece_calibrated::Action-Only",
+      "estimate": 0.32161031577789595,
+      "ci_lower": 0.30781429991011133,
+      "ci_upper": 0.33585948365561036
+    },
+    {
+      "metric": "ece_calibrated::Joint Action-Rationale",
+      "estimate": 0.32974071614036227,
+      "ci_lower": 0.3152441566578864,
+      "ci_upper": 0.3429254950950572
+    },
+    {
+      "metric": "ece_uncalibrated::Action-Only",
+      "estimate": 0.4597201339632987,
+      "ci_lower": 0.4457144220011537,
+      "ci_upper": 0.47467801609978066
+    },
+    {
+      "metric": "ece_uncalibrated::Joint Action-Rationale",
+      "estimate": 0.45998186194703095,
+      "ci_lower": 0.4456698046269665,
+      "ci_upper": 0.4735603915027031
+    },
+    {
+      "metric": "rationale_jaccard_blur_empty_empty_fraction::Joint Action-Rationale",
+      "estimate": 0.10313802940531051,
+      "ci_lower": 0.09413539609392145,
+      "ci_upper": 0.11148233486943161
+    },
+    {
+      "metric": "rationale_jaccard_blur_unconditional::Joint Action-Rationale",
+      "estimate": 0.884551239850779,
+      "ci_lower": 0.877049594031161,
+      "ci_upper": 0.8916725184697535
+    },
+    {
+      "metric": "rationale_jaccard_blur_union_nonempty_conditional::Joint Action-Rationale",
+      "estimate": 0.8712747736726205,
+      "ci_lower": 0.8629873179512355,
+      "ci_upper": 0.8793261799251169
+    },
+    {
+      "metric": "rationale_jaccard_brightness_empty_empty_fraction::Joint Action-Rationale",
+      "estimate": 0.10884353741496598,
+      "ci_lower": 0.09940750493745885,
+      "ci_upper": 0.11762124204520517
+    },
+    {
+      "metric": "rationale_jaccard_brightness_unconditional::Joint Action-Rationale",
+      "estimate": 0.9209092239046157,
+      "ci_lower": 0.914157340355497,
+      "ci_upper": 0.9274269438958378
+    },
+    {
+      "metric": "rationale_jaccard_brightness_union_nonempty_conditional::Joint Action-Rationale",
+      "estimate": 0.9112492817860953,
+      "ci_lower": 0.9038215192207364,
+      "ci_upper": 0.9185074242195582
+    },
+    {
+      "metric": "rationale_jaccard_mean_three::Joint Action-Rationale",
+      "estimate": 0.9054433959963913,
+      "ci_lower": 0.9001430339160753,
+      "ci_upper": 0.9103797881159633
+    },
+    {
+      "metric": "rationale_jaccard_noise_empty_empty_fraction::Joint Action-Rationale",
+      "estimate": 0.10533245556287031,
+      "ci_lower": 0.09632982225148125,
+      "ci_upper": 0.11345183234584157
+    },
+    {
+      "metric": "rationale_jaccard_noise_unconditional::Joint Action-Rationale",
+      "estimate": 0.9108697242337797,
+      "ci_lower": 0.9037775217613927,
+      "ci_upper": 0.9170000365737693
+    },
+    {
+      "metric": "rationale_jaccard_noise_union_nonempty_conditional::Joint Action-Rationale",
+      "estimate": 0.9003760935328264,
+      "ci_lower": 0.8925590513782099,
+      "ci_upper": 0.9072675972981645
+    },
+    {
+      "metric": "rationale_macro_f1::Joint Action-Rationale",
+      "estimate": 0.30405073603883065,
+      "ci_lower": 0.29613334303425976,
+      "ci_upper": 0.3120617948932713
+    },
+    {
+      "metric": "rationale_micro_f1::Joint Action-Rationale",
+      "estimate": 0.5267993874425727,
+      "ci_lower": 0.5172789508225799,
+      "ci_upper": 0.5365902003310337
+    },
+    {
+      "metric": "unsafe_acceptance_rate_90::Action-Only",
+      "estimate": 0.48293515358361777,
+      "ci_lower": 0.46708922476840564,
+      "ci_upper": 0.4990309605070697
+    },
+    {
+      "metric": "unsafe_acceptance_rate_90::Joint Action-Rationale",
+      "estimate": 0.4887859580692345,
+      "ci_lower": 0.47317771818625065,
+      "ci_upper": 0.5036567528035105
+    }
+  ],
+  "per_class_action_f1": {
+    "Action-Only": {
+      "Forward": 0.8062645011600929,
+      "Stop": 0.7599113518837725,
+      "Left": 0.5800981704596162,
+      "Right": 0.5790554414784395
+    },
+    "Joint Action-Rationale": {
+      "Forward": 0.8016032064128257,
+      "Stop": 0.7651677373304783,
+      "Left": 0.5474964904071128,
+      "Right": 0.6009693053311793
+    }
+  },
+  "per_class_rationale_f1": {
+    "green_light": 0.6064420584968531,
+    "follow": 0.5104,
+    "road_clear": 0.4098798397863818,
+    "red_light": 0.6303696303696303,
+    "traffic_sign": 0.425629290617849,
+    "car": 0.0,
+    "person": 0.0,
+    "rider": 0.7541157727031333,
+    "other_obstacle": 0.043478260869565216,
+    "left_lane": 0.0,
+    "left_green_light": 0.027972027972027972,
+    "left_follow": 0.0,
+    "no_left_lane": 0.0,
+    "left_obstacle": 0.13658536585365855,
+    "left_solid_line": 0.0,
+    "right_lane": 0.527363184079602,
+    "right_green_light": 0.4474053295932679,
+    "right_follow": 0.4816396242527754,
+    "no_right_lane": 0.5890547263681593,
+    "right_obstacle": 0.39068994181213634,
+    "right_solid_line": 0.40404040404040403
+  },
+  "cache": {
+    "path": "outputs\\validity\\rq1_seed_47\\prediction_cache\\rq1_lossless.npz",
+    "reused": false,
+    "sha256": "7dde8e4acdfa06004ade4af33c679ec2a53e9f689b214a2ed36edf91598af743",
+    "metadata": {
+      "cache_schema_version": 1,
+      "seed": 47,
+      "image_size": 224,
+      "test_manifest": {
+        "path": "data\\processed\\test.jsonl",
+        "bytes": 533260,
+        "sha256": "89364a265fe4c2edca5125d34c4c25d47c96afb46a5c4a8fe86b649785539004"
+      },
+      "action_checkpoint": {
+        "path": "checkpoints\\validity\\rq1_seed_47\\action_only_best_action.pt",
+        "bytes": 282667209,
+        "sha256": "bf85c5e2594d6e4aac8a20e1eda40af9bfb5d82c54609d3e424a586038c1a3f1"
+      },
+      "joint_checkpoint": {
+        "path": "checkpoints\\validity\\rq1_seed_47\\joint_best_action.pt",
+        "bytes": 283181715,
+        "sha256": "fddcfab53689162e9951158750180a7765ee283fedced723332758e34eca2810"
+      },
+      "semantic_audit": {
+        "path": "outputs\\validity\\perturbation_semantic_audit\\audit_summary.json",
+        "bytes": 653,
+        "sha256": "757cd4b9361d82beda2928c4af5bd8e80eb81b3f4ba6b7d5bba2d8744868d24d"
+      },
+      "perturbations": {
+        "execution": "in_memory_no_jpeg_reencoding",
+        "brightness_factor": 1.1,
+        "blur_radius": 1.0,
+        "noise_std_255": 5.0,
+        "noise_seed": 20260731
+      }
+    }
+  },
+  "guardrails": [
+    "CEG and every v2/v3/v4 mask output are excluded.",
+    "Test data are not used for checkpoint, threshold, seed, or temperature selection.",
+    "Seed 42 is an archival pilot and is not part of the primary five-seed replication."
+  ]
+}

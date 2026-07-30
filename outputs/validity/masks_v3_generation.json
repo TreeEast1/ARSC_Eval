@@ -1,0 +1,77 @@
+{
+  "version": "v3_high_precision_binding",
+  "detector": "yolo11n.pt",
+  "confidence_threshold": 0.35,
+  "image_format": "lossless PNG for both masked variants",
+  "eligible_by_rationale": 3798,
+  "valid_mask_pairs": 362,
+  "pilot_minimum_target_samples": 500,
+  "pilot_minimum_met": false,
+  "skipped": {
+    "no_high_precision_binding": 3432,
+    "no_spatially_matched_control": 4
+  },
+  "detected_class_counts": {
+    "traffic light": 313,
+    "car": 18,
+    "bicycle": 12,
+    "person": 12,
+    "motorcycle": 6,
+    "stop sign": 1
+  },
+  "localized_rationale_counts": {
+    "green_light": 187,
+    "red_light": 126,
+    "car": 18,
+    "rider": 18,
+    "person": 12,
+    "traffic_sign": 1
+  },
+  "selection_policy_counts": {
+    "hsv_light_state_match": 313,
+    "ego_road_corridor": 48,
+    "explicit_stop_sign_class": 1
+  },
+  "manifest": "data\\processed\\masks_v3\\manifest.jsonl",
+  "pre_registered_binding_policy": {
+    "traffic_lights": "fixed HSV red/green state match; directional green-light rationales excluded",
+    "road_objects": "fixed perspective-aware ego-road corridor and relevance score",
+    "traffic_sign": "explicit COCO stop-sign class only",
+    "one_rationale_action_binding_per_image": true
+  },
+  "control_policy": {
+    "area": "exact width and height match",
+    "position": "nearest candidate with 4x vertical displacement penalty",
+    "maximum_normalized_center_offset": 0.35,
+    "object_exclusion": "zero intersection with every detector box above threshold"
+  },
+  "spatial_diagnostics": {
+    "center_offset_norm": {
+      "minimum": 0.010156250000000033,
+      "median": 0.02656249999999999,
+      "p95": 0.13027343749999998,
+      "maximum": 0.34921875
+    },
+    "x_center_offset_norm": {
+      "minimum": 0.010156250000000033,
+      "median": 0.02656249999999996,
+      "p95": 0.12218749999999987,
+      "maximum": 0.34921875
+    },
+    "y_center_offset_norm": {
+      "minimum": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "maximum": 0.19999999999999996
+    },
+    "area_ratio": {
+      "minimum": 1.0,
+      "median": 1.0,
+      "p95": 1.0,
+      "maximum": 1.0
+    }
+  },
+  "audit_status": "completed_fail",
+  "audit_summary": "outputs\\validity\\mask_audit_v3\\audit_summary.json",
+  "validity_scope": "measurement-development diagnostic only; do not use for causal faithfulness claims"
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "required_outputs_missing": [],
+  "main_results_columns": [
+    "Model",
+    "Action_Macro_F1",
+    "Rationale_Macro_F1",
+    "Causal_Evidence_Gap",
+    "AURC",
+    "Unsafe_Acceptance_Rate_90",
+    "ECE",
+    "Action_Flip_Rate",
+    "Rationale_Jaccard"
+  ],
+  "main_results_row_count": 3,
+  "readme_commands_missing": [],
+  "checkpoints_missing": []
+}

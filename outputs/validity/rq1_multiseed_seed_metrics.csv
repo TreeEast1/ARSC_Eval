@@ -1,0 +1,206 @@
+seed,metric,estimate
+43,action_flip_rate_blur::Action-Only,0.11367127496159754
+43,action_flip_rate_blur::Joint Action-Rationale,0.130348913759052
+43,action_flip_rate_brightness::Action-Only,0.09940750493745885
+43,action_flip_rate_brightness::Joint Action-Rationale,0.10226025894228659
+43,action_flip_rate_mean_three::Action-Only,0.11367127496159754
+43,action_flip_rate_mean_three::Joint Action-Rationale,0.11871845512398507
+43,action_flip_rate_noise::Action-Only,0.12793504498573624
+43,action_flip_rate_noise::Joint Action-Rationale,0.12354619267061663
+43,action_macro_f1::Action-Only,0.6688743764074188
+43,action_macro_f1::Joint Action-Rationale,0.6891555466668658
+43,action_micro_f1::Action-Only,0.7060679959833597
+43,action_micro_f1::Joint Action-Rationale,0.7202317857395237
+43,advantage_action_flip_rate_blur::Action-Joint,-0.016677638797454458
+43,advantage_action_flip_rate_brightness::Action-Joint,-0.0028527540048277344
+43,advantage_action_flip_rate_mean_three::Action-Joint,-0.005047180162387532
+43,advantage_action_flip_rate_noise::Action-Joint,0.00438885231511961
+43,aurc::Action-Only,0.3734892826339159
+43,aurc::Joint Action-Rationale,0.3580176254209994
+43,delta_action_macro_f1::Joint-Action,0.02028117025944709
+43,delta_aurc::Joint-Action,-0.01547165721291649
+43,delta_ece_calibrated::Joint-Action,0.0002962531634347898
+43,delta_ece_uncalibrated::Joint-Action,-0.009579017369832687
+43,delta_unsafe_acceptance_rate_90::Joint-Action,-0.015114578254510014
+43,ece_calibrated::Action-Only,0.3282950660194483
+43,ece_calibrated::Joint Action-Rationale,0.3285913191828831
+43,ece_uncalibrated::Action-Only,0.4581962777023566
+43,ece_uncalibrated::Joint Action-Rationale,0.4486172603325239
+43,rationale_jaccard_blur_empty_empty_fraction::Joint Action-Rationale,0.10050471801623875
+43,rationale_jaccard_blur_unconditional::Joint Action-Rationale,0.902966132689635
+43,rationale_jaccard_blur_union_nonempty_conditional::Joint Action-Rationale,0.8921240953077987
+43,rationale_jaccard_brightness_empty_empty_fraction::Joint Action-Rationale,0.10577134079438227
+43,rationale_jaccard_brightness_unconditional::Joint Action-Rationale,0.9264976958525344
+43,rationale_jaccard_brightness_union_nonempty_conditional::Joint Action-Rationale,0.9178036809815951
+43,rationale_jaccard_mean_three::Joint Action-Rationale,0.9108246165849851
+43,rationale_jaccard_noise_empty_empty_fraction::Joint Action-Rationale,0.09984639016897082
+43,rationale_jaccard_noise_unconditional::Joint Action-Rationale,0.9030100212127862
+43,rationale_jaccard_noise_union_nonempty_conditional::Joint Action-Rationale,0.8922517471152284
+43,rationale_macro_f1::Joint Action-Rationale,0.28431101754148225
+43,rationale_micro_f1::Joint Action-Rationale,0.5202539960586818
+43,unsafe_acceptance_rate_90::Action-Only,0.49658703071672355
+43,unsafe_acceptance_rate_90::Joint Action-Rationale,0.48147245246221354
+44,action_flip_rate_blur::Action-Only,0.12705727452271232
+44,action_flip_rate_blur::Joint Action-Rationale,0.130568356374808
+44,action_flip_rate_brightness::Action-Only,0.09765196401141102
+44,action_flip_rate_brightness::Joint Action-Rationale,0.10445468509984639
+44,action_flip_rate_mean_three::Action-Only,0.1184990125082291
+44,action_flip_rate_mean_three::Joint Action-Rationale,0.11454904542462147
+44,action_flip_rate_noise::Action-Only,0.13078779899056397
+44,action_flip_rate_noise::Joint Action-Rationale,0.10862409479921001
+44,action_macro_f1::Action-Only,0.6683865626209756
+44,action_macro_f1::Joint Action-Rationale,0.6938817136532921
+44,action_micro_f1::Action-Only,0.7072691552062869
+44,action_micro_f1::Joint Action-Rationale,0.7224265981814396
+44,advantage_action_flip_rate_blur::Action-Joint,-0.003511081852095671
+44,advantage_action_flip_rate_brightness::Action-Joint,-0.006802721088435368
+44,advantage_action_flip_rate_mean_three::Action-Joint,0.003949967083607633
+44,advantage_action_flip_rate_noise::Action-Joint,0.022163704191353967
+44,aurc::Action-Only,0.39995108947180996
+44,aurc::Joint Action-Rationale,0.3918369113040415
+44,delta_action_macro_f1::Joint-Action,0.025495151032316477
+44,delta_aurc::Joint-Action,-0.008114178167768438
+44,delta_ece_calibrated::Joint-Action,0.018920433781779822
+44,delta_ece_uncalibrated::Joint-Action,-0.012545111364448025
+44,delta_unsafe_acceptance_rate_90::Joint-Action,0.0007313505607021153
+44,ece_calibrated::Action-Only,0.3280800593920099
+44,ece_calibrated::Joint Action-Rationale,0.3470004931737897
+44,ece_uncalibrated::Action-Only,0.46576813363420144
+44,ece_uncalibrated::Joint Action-Rationale,0.4532230222697534
+44,rationale_jaccard_blur_empty_empty_fraction::Joint Action-Rationale,0.10555189817862629
+44,rationale_jaccard_blur_unconditional::Joint Action-Rationale,0.9024943310657597
+44,rationale_jaccard_blur_union_nonempty_conditional::Joint Action-Rationale,0.8909878966306837
+44,rationale_jaccard_brightness_empty_empty_fraction::Joint Action-Rationale,0.10730743910467412
+44,rationale_jaccard_brightness_unconditional::Joint Action-Rationale,0.9244934532952965
+44,rationale_jaccard_brightness_union_nonempty_conditional::Joint Action-Rationale,0.9154170763684037
+44,rationale_jaccard_mean_three::Joint Action-Rationale,0.9130909711554874
+44,rationale_jaccard_noise_empty_empty_fraction::Joint Action-Rationale,0.10577134079438227
+44,rationale_jaccard_noise_unconditional::Joint Action-Rationale,0.9122851291054057
+44,rationale_jaccard_noise_union_nonempty_conditional::Joint Action-Rationale,0.9019100204498977
+44,rationale_macro_f1::Joint Action-Rationale,0.2769215576808766
+44,rationale_micro_f1::Joint Action-Rationale,0.5154480483782298
+44,unsafe_acceptance_rate_90::Action-Only,0.4900048756704047
+44,unsafe_acceptance_rate_90::Joint Action-Rationale,0.4907362262311068
+45,action_flip_rate_blur::Action-Only,0.13276278253236778
+45,action_flip_rate_blur::Joint Action-Rationale,0.11718235681369323
+45,action_flip_rate_brightness::Action-Only,0.10730743910467412
+45,action_flip_rate_brightness::Joint Action-Rationale,0.07746324336186088
+45,action_flip_rate_mean_three::Action-Only,0.1261795040596884
+45,action_flip_rate_mean_three::Joint Action-Rationale,0.09867602955160558
+45,action_flip_rate_noise::Action-Only,0.13846829054202325
+45,action_flip_rate_noise::Joint Action-Rationale,0.10138248847926268
+45,action_macro_f1::Action-Only,0.6679932568471639
+45,action_macro_f1::Joint Action-Rationale,0.6835912836700506
+45,action_micro_f1::Action-Only,0.7055188272492096
+45,action_micro_f1::Joint Action-Rationale,0.7143562610229277
+45,advantage_action_flip_rate_blur::Action-Joint,0.01558042571867456
+45,advantage_action_flip_rate_brightness::Action-Joint,0.029844195742813245
+45,advantage_action_flip_rate_mean_three::Action-Joint,0.027503474508082812
+45,advantage_action_flip_rate_noise::Action-Joint,0.037085802062760576
+45,aurc::Action-Only,0.38513361225255244
+45,aurc::Joint Action-Rationale,0.39148755494536613
+45,delta_action_macro_f1::Joint-Action,0.01559802682288669
+45,delta_aurc::Joint-Action,0.006353942692813697
+45,delta_ece_calibrated::Joint-Action,0.013784375000498672
+45,delta_ece_uncalibrated::Joint-Action,-0.040038588337956926
+45,delta_unsafe_acceptance_rate_90::Joint-Action,-0.010238907849829393
+45,ece_calibrated::Action-Only,0.318841116651822
+45,ece_calibrated::Joint Action-Rationale,0.3326254916523207
+45,ece_uncalibrated::Action-Only,0.4643091957994432
+45,ece_uncalibrated::Joint Action-Rationale,0.42427060746148626
+45,rationale_jaccard_blur_empty_empty_fraction::Joint Action-Rationale,0.1468071099407505
+45,rationale_jaccard_blur_unconditional::Joint Action-Rationale,0.8945614805061809
+45,rationale_jaccard_blur_union_nonempty_conditional::Joint Action-Rationale,0.8764188957475993
+45,rationale_jaccard_brightness_empty_empty_fraction::Joint Action-Rationale,0.15163484748738204
+45,rationale_jaccard_brightness_unconditional::Joint Action-Rationale,0.9328907907248921
+45,rationale_jaccard_brightness_union_nonempty_conditional::Joint Action-Rationale,0.9208958441110536
+45,rationale_jaccard_mean_three::Joint Action-Rationale,0.9145868383195572
+45,rationale_jaccard_noise_empty_empty_fraction::Joint Action-Rationale,0.14702655255650648
+45,rationale_jaccard_noise_unconditional::Joint Action-Rationale,0.9163082437275986
+45,rationale_jaccard_noise_union_nonempty_conditional::Joint Action-Rationale,0.9018823428522424
+45,rationale_macro_f1::Joint Action-Rationale,0.2568375984960144
+45,rationale_micro_f1::Joint Action-Rationale,0.4791702481233167
+45,unsafe_acceptance_rate_90::Action-Only,0.4985372988785958
+45,unsafe_acceptance_rate_90::Joint Action-Rationale,0.48829839102876643
+46,action_flip_rate_blur::Action-Only,0.12332675005486066
+46,action_flip_rate_blur::Joint Action-Rationale,0.08009655475093264
+46,action_flip_rate_brightness::Action-Only,0.09589642308536318
+46,action_flip_rate_brightness::Joint Action-Rationale,0.05069124423963134
+46,action_flip_rate_mean_three::Action-Only,0.11147684880403773
+46,action_flip_rate_mean_three::Joint Action-Rationale,0.06634481749689122
+46,action_flip_rate_noise::Action-Only,0.1152073732718894
+46,action_flip_rate_noise::Joint Action-Rationale,0.06824665350010972
+46,action_macro_f1::Action-Only,0.6836639955213245
+46,action_macro_f1::Joint Action-Rationale,0.6824921978165104
+46,action_micro_f1::Action-Only,0.7130398086932058
+46,action_micro_f1::Joint Action-Rationale,0.7217043941411452
+46,advantage_action_flip_rate_blur::Action-Joint,0.04323019530392802
+46,advantage_action_flip_rate_brightness::Action-Joint,0.045205178845731844
+46,advantage_action_flip_rate_mean_three::Action-Joint,0.045132031307146506
+46,advantage_action_flip_rate_noise::Action-Joint,0.04696071977177968
+46,aurc::Action-Only,0.38590374051112847
+46,aurc::Joint Action-Rationale,0.3408557621801786
+46,delta_action_macro_f1::Joint-Action,-0.001171797704814126
+46,delta_aurc::Joint-Action,-0.04504797833094987
+46,delta_ece_calibrated::Joint-Action,-0.03886085931007793
+46,delta_ece_uncalibrated::Joint-Action,-0.1309912315993192
+46,delta_unsafe_acceptance_rate_90::Joint-Action,-0.036567528035104824
+46,ece_calibrated::Action-Only,0.32320952659117813
+46,ece_calibrated::Joint Action-Rationale,0.2843486672811002
+46,ece_uncalibrated::Action-Only,0.44685410859018804
+46,ece_uncalibrated::Joint Action-Rationale,0.31586287699086885
+46,rationale_jaccard_blur_empty_empty_fraction::Joint Action-Rationale,0.17709019091507572
+46,rationale_jaccard_blur_unconditional::Joint Action-Rationale,0.9232170287469827
+46,rationale_jaccard_blur_union_nonempty_conditional::Joint Action-Rationale,0.9066933333333334
+46,rationale_jaccard_brightness_empty_empty_fraction::Joint Action-Rationale,0.17555409260478386
+46,rationale_jaccard_brightness_unconditional::Joint Action-Rationale,0.9453514739229026
+46,rationale_jaccard_brightness_union_nonempty_conditional::Joint Action-Rationale,0.9337148434034247
+46,rationale_jaccard_mean_three::Joint Action-Rationale,0.9360702704020678
+46,rationale_jaccard_noise_empty_empty_fraction::Joint Action-Rationale,0.17972350230414746
+46,rationale_jaccard_noise_unconditional::Joint Action-Rationale,0.9396423085363177
+46,rationale_jaccard_noise_union_nonempty_conditional::Joint Action-Rationale,0.926417870518994
+46,rationale_macro_f1::Joint Action-Rationale,0.24582372499885144
+46,rationale_micro_f1::Joint Action-Rationale,0.4736375981578792
+46,unsafe_acceptance_rate_90::Action-Only,0.48659190638712824
+46,unsafe_acceptance_rate_90::Joint Action-Rationale,0.4500243783520234
+47,action_flip_rate_blur::Action-Only,0.13759052007899933
+47,action_flip_rate_blur::Joint Action-Rationale,0.130348913759052
+47,action_flip_rate_brightness::Action-Only,0.10533245556287031
+47,action_flip_rate_brightness::Joint Action-Rationale,0.10291858678955453
+47,action_flip_rate_mean_three::Action-Only,0.1228878648233487
+47,action_flip_rate_mean_three::Joint Action-Rationale,0.11389071757735353
+47,action_flip_rate_noise::Action-Only,0.12574061882817644
+47,action_flip_rate_noise::Joint Action-Rationale,0.10840465218345402
+47,action_macro_f1::Action-Only,0.6813323662454802
+47,action_macro_f1::Joint Action-Rationale,0.678809184870399
+47,action_micro_f1::Action-Only,0.716514487022791
+47,action_micro_f1::Joint Action-Rationale,0.7151962914674779
+47,advantage_action_flip_rate_blur::Action-Joint,0.00724160631994733
+47,advantage_action_flip_rate_brightness::Action-Joint,0.002413868773315786
+47,advantage_action_flip_rate_mean_three::Action-Joint,0.008997147245995166
+47,advantage_action_flip_rate_noise::Action-Joint,0.017335966644722423
+47,aurc::Action-Only,0.39964274154775264
+47,aurc::Joint Action-Rationale,0.3789384007301017
+47,delta_action_macro_f1::Joint-Action,-0.0025231813750812293
+47,delta_aurc::Joint-Action,-0.020704340817650935
+47,delta_ece_calibrated::Joint-Action,0.008130400362466317
+47,delta_ece_uncalibrated::Joint-Action,0.0002617279837322517
+47,delta_unsafe_acceptance_rate_90::Joint-Action,0.005850804485616756
+47,ece_calibrated::Action-Only,0.32161031577789595
+47,ece_calibrated::Joint Action-Rationale,0.32974071614036227
+47,ece_uncalibrated::Action-Only,0.4597201339632987
+47,ece_uncalibrated::Joint Action-Rationale,0.45998186194703095
+47,rationale_jaccard_blur_empty_empty_fraction::Joint Action-Rationale,0.10313802940531051
+47,rationale_jaccard_blur_unconditional::Joint Action-Rationale,0.884551239850779
+47,rationale_jaccard_blur_union_nonempty_conditional::Joint Action-Rationale,0.8712747736726205
+47,rationale_jaccard_brightness_empty_empty_fraction::Joint Action-Rationale,0.10884353741496598
+47,rationale_jaccard_brightness_unconditional::Joint Action-Rationale,0.9209092239046157
+47,rationale_jaccard_brightness_union_nonempty_conditional::Joint Action-Rationale,0.9112492817860953
+47,rationale_jaccard_mean_three::Joint Action-Rationale,0.9054433959963913
+47,rationale_jaccard_noise_empty_empty_fraction::Joint Action-Rationale,0.10533245556287031
+47,rationale_jaccard_noise_unconditional::Joint Action-Rationale,0.9108697242337797
+47,rationale_jaccard_noise_union_nonempty_conditional::Joint Action-Rationale,0.9003760935328264
+47,rationale_macro_f1::Joint Action-Rationale,0.30405073603883065
+47,rationale_micro_f1::Joint Action-Rationale,0.5267993874425727
+47,unsafe_acceptance_rate_90::Action-Only,0.48293515358361777
+47,unsafe_acceptance_rate_90::Joint Action-Rationale,0.4887859580692345

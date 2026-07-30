@@ -1,0 +1,24 @@
+* text=auto
+
+.gitattributes text eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.csv text eol=lf
+*.txt text eol=lf
+*.log text eol=lf
+
+*.ps1 text eol=crlf
+
+*.npz binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+
+# Preserve generated evidence byte-for-byte so recorded SHA-256 values remain
+# valid after clone, including Windows CRLF logs and JSON/CSV outputs.
+outputs/** -text

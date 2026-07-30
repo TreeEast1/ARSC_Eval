@@ -1,0 +1,103 @@
+Audit_ID,File_Name,Detected_Class,Localized_Rationales,Critical_Binding_Correct,Control_Free_Of_Critical_Evidence,Semantic_Label_Unchanged,Notes
+1,0a53c48b-86fda2c8_1.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+2,0b8b0111-3e546d48_1.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+3,0f026efa-e39b024a_3.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+4,2f26b25d-3de74369_1.jpg,bicycle,rider,no,yes,yes,detected instance is not credibly action-inducing or is a false detection
+5,316fc6f3-a1ee30f7_1.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+6,373e20c8-82cb9d82_3.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+7,5f0fa199-ed52d1c4_3.jpg,bicycle,rider,yes,yes,yes,manual audit pass
+8,d9680852-5cad1d2e.jpg,bicycle,rider,no,yes,yes,detected instance is not credibly action-inducing or is a false detection
+9,0ec99587-ca663a13_3.jpg,car,car,yes,yes,yes,manual audit pass
+10,124c7772-efeb2f24_3.jpg,car,car,yes,yes,yes,manual audit pass
+11,1d981a62-27584b3b_1.jpg,car,car,no,yes,yes,detected instance is not credibly action-inducing or is a false detection
+12,1de10d4d-b513a307_1.jpg,car,car,yes,no,yes,control contains another potentially action-relevant object
+13,230e05d9-e49f6cf8.jpg,car,car,yes,yes,yes,manual audit pass
+14,39fba3aa-43b709f1_1.jpg,car,car,yes,no,yes,control contains another potentially action-relevant object
+15,46794278-0f2e6071_3.jpg,car,car,yes,yes,yes,manual audit pass
+16,51a4b41b-d48a27b0_1.jpg,car,car,yes,yes,yes,manual audit pass
+17,52e44f43-fa926ef1.jpg,car,car,yes,yes,yes,manual audit pass
+18,54ba42da-f0ac979d_3.jpg,car,car,yes,yes,yes,manual audit pass
+19,73ede6fa-1534ebc3_3.jpg,car,car,no,no,yes,detected instance is not credibly action-inducing or is a false detection; control contains another potentially action-relevant object
+20,fdd1e5d3-3b2ec93c.jpg,car,car,yes,no,yes,control contains another potentially action-relevant object
+21,3a451ce7-252c8aa2_1.jpg,motorcycle,rider,yes,yes,yes,manual audit pass
+22,44299a98-7889dad7_3.jpg,motorcycle,rider,yes,yes,yes,manual audit pass
+23,ad49da5f-2b5d9c4f.jpg,motorcycle,rider,no,yes,yes,detected instance is not credibly action-inducing or is a false detection
+24,b3853f81-272f6c37_1.jpg,motorcycle,rider,no,yes,yes,detected instance is not credibly action-inducing or is a false detection
+25,c6dcb37c-ffd8264e.jpg,motorcycle,rider,no,yes,yes,detected instance is not credibly action-inducing or is a false detection
+26,315aa1d5-26d7174c_3.jpg,person,person,no,yes,yes,detected instance is not credibly action-inducing or is a false detection
+27,34b2fd3a-cdc2b21a_3.jpg,person,person,no,yes,yes,detected instance is not credibly action-inducing or is a false detection
+28,4605075f-f5cc89d3_1.jpg,person,person,no,no,yes,detected instance is not credibly action-inducing or is a false detection; control contains another potentially action-relevant object
+29,a913570d-5f7b0271_1.jpg,person,person,yes,no,yes,control contains another potentially action-relevant object
+30,b102b649-31129ee6_1.jpg,person,person,no,yes,yes,detected instance is not credibly action-inducing or is a false detection
+31,c050a325-3fbdf46f_3.jpg,person,person,no,yes,yes,detected instance is not credibly action-inducing or is a false detection
+32,c5b2506d-1c31cee3_3.jpg,person,person,no,yes,yes,detected instance is not credibly action-inducing or is a false detection
+33,0252f2b5-1f4c92f2.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+34,0fa64aef-64070758.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+35,1d5d5507-4d202189_3.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+36,1daf360b-d293a801_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+37,22c3eb6a-96e57a3d.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+38,23f615c2-c0a3a7f9_3.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+39,247fe4dd-4145941d.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+40,24894c5f-b5e04596.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+41,2b6f670e-c0578f7e_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+42,2c5c58ae-2c5e37e2_3.jpg,traffic light,green_light,no,yes,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing"
+43,3468312a-4d665f6a_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+44,359f02ae-2a4f553b_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+45,37e0eea3-f3175d19.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+46,3c90d181-9e6a32e5.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+47,3e8f9a6b-ee66c702.jpg,traffic light,red_light,no,yes,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing"
+48,43407e86-b7a933e4.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+49,4766b490-db8d49ad.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+50,488480d6-e285e40b_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+51,48ba7adf-56aaa659_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+52,4a86c8ef-fd65d5f7_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+53,4e3102a7-44404f1c_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+54,546e4d94-eeef441d.jpg,traffic light,red_light,no,yes,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing"
+55,5755fabd-347b9f33_3.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+56,5a2349c6-31451a46_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+57,5d27f0e4-56996797_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+58,608e3aa4-010de0fc.jpg,traffic light,red_light,no,yes,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing"
+59,625435f7-ce7ebb58.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+60,6293d2da-161e4597_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+61,6335470d-dd72d0e5_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+62,65a435cf-70840648.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+63,66fab43d-da7916dd_1.jpg,traffic light,red_light,no,yes,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing"
+64,73fe8b3d-48b199a5_1.jpg,traffic light,green_light,no,yes,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing"
+65,77e31cc0-f5f29843_1.jpg,traffic light,green_light,no,yes,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing"
+66,79b0610d-cb2d3316_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+67,7cc04f10-bb0f1b20.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+68,83574518-a1c81a98_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+69,83a111fa-c1080cf6.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+70,861b341f-54bc9743.jpg,traffic light,green_light,yes,no,yes,control contains another potentially action-relevant object
+71,8b2d3a2b-77cf3766_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+72,8b48acc3-7f1b9397_3.jpg,traffic light,red_light,no,yes,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing"
+73,8cb14fde-4dd7fd73.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+74,8e229c9b-f190c2a4.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+75,9498af06-91111910_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+76,98eb1206-a3037c4b_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+77,9d7a02f9-9cbb9050_1.jpg,traffic light,green_light,no,yes,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing"
+78,9e4a1e38-81e71e95_3.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+79,9e75b2a9-98437b5b_1.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+80,9fa7e629-74e7dae7_3.jpg,traffic light,green_light,no,yes,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing"
+81,a2b9a29c-3c492160_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+82,a8305048-bd7134f0.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+83,aaa76e5e-1f5bc10c_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+84,afb4c2d6-270e1a9c.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+85,b0a2a5d9-136b6766_3.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+86,b112e05e-28cf1b8f.jpg,traffic light,red_light,no,no,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing; control contains another potentially action-relevant object"
+87,b49a1b50-aad00d19.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+88,b59d9baf-e6b58cf2.jpg,traffic light,red_light,no,no,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing; control contains another potentially action-relevant object"
+89,b84eef86-eb4bb6e0_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+90,bcbbfe2a-33e57bea.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+91,be2c1849-5faf51d5_3.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+92,be4f3873-33c738a5_1.jpg,traffic light,green_light,no,yes,yes,"visible signal state is inconsistent/ambiguous, the box is a false detection, or the signal is not credibly action-inducing"
+93,bfc06497-fc2b4581.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+94,c2ef33b3-561067be.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+95,c308561a-7b825f0b.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+96,c31625c9-9e5a7d0c_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+97,c56d9ab9-fd988840_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+98,c680eea3-5a7f9086.jpg,traffic light,red_light,yes,no,yes,control contains another potentially action-relevant object
+99,d3fdd509-b8408ec2.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+100,eb62b231-5796edd4.jpg,traffic light,green_light,yes,yes,yes,manual audit pass
+101,f86fc0c8-e4366649.jpg,traffic light,red_light,yes,yes,yes,manual audit pass
+102,fdc8f537-5d675d42_1.jpg,traffic light,green_light,yes,yes,yes,manual audit pass

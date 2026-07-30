@@ -1,0 +1,112 @@
+{
+  "manifest": "data\\processed\\masks_v3\\manifest.jsonl",
+  "population_pairs": 362,
+  "sample_pairs": 102,
+  "prior_audit_excluded_file_names": 108,
+  "sampling": "10% per detected class with at least 10 when available; confidence-sorted evenly spaced selection",
+  "population_by_class": {
+    "traffic light": 313,
+    "car": 18,
+    "bicycle": 12,
+    "person": 12,
+    "motorcycle": 6,
+    "stop sign": 1
+  },
+  "sample_by_class": {
+    "bicycle": 8,
+    "car": 12,
+    "motorcycle": 5,
+    "person": 7,
+    "traffic light": 70
+  },
+  "automated_checks": {
+    "exact_area_match_rate": 1.0,
+    "control_detector_overlap_rate": 0.0,
+    "control_detector_overlap_basis": "generator rejects any pixel intersection with all retained detector boxes",
+    "center_offset_median": 0.02656249999999999,
+    "center_offset_p95": 0.13027343749999998,
+    "vertical_offset_median": 0.0,
+    "vertical_offset_p95": 0.0
+  },
+  "manual_review_file": "outputs\\validity\\mask_audit_v3\\manual_review.csv",
+  "pages": [
+    "outputs\\validity\\mask_audit_v3\\pages\\page_001.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_002.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_003.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_004.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_005.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_006.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_007.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_008.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_009.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_010.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_011.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_012.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_013.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_014.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_015.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_016.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_017.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_018.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_019.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_020.png",
+    "outputs\\validity\\mask_audit_v3\\pages\\page_021.png"
+  ],
+  "manual_status": "completed_fail",
+  "acceptance_thresholds": {
+    "critical_binding_correct_rate_minimum": 0.9,
+    "control_critical_evidence_contamination_rate_maximum": 0.05,
+    "semantic_label_unchanged_rate_minimum": 0.95
+  },
+  "manual_results": {
+    "reviewed_pairs": 102,
+    "critical_binding_correct": 76,
+    "critical_binding_correct_rate": 0.7450980392156863,
+    "control_contaminated": 10,
+    "control_critical_evidence_contamination_rate": 0.09803921568627451,
+    "semantic_label_unchanged": 102,
+    "semantic_label_unchanged_rate": 1.0,
+    "critical_binding_threshold_passed": false,
+    "control_contamination_threshold_passed": false,
+    "semantic_threshold_passed": true,
+    "overall_gate_passed": false,
+    "by_detected_class": {
+      "bicycle": {
+        "reviewed_pairs": 8,
+        "critical_binding_correct": 6,
+        "critical_binding_correct_rate": 0.75,
+        "control_contaminated": 0,
+        "control_critical_evidence_contamination_rate": 0.0
+      },
+      "car": {
+        "reviewed_pairs": 12,
+        "critical_binding_correct": 10,
+        "critical_binding_correct_rate": 0.8333333333333334,
+        "control_contaminated": 4,
+        "control_critical_evidence_contamination_rate": 0.3333333333333333
+      },
+      "motorcycle": {
+        "reviewed_pairs": 5,
+        "critical_binding_correct": 2,
+        "critical_binding_correct_rate": 0.4,
+        "control_contaminated": 0,
+        "control_critical_evidence_contamination_rate": 0.0
+      },
+      "person": {
+        "reviewed_pairs": 7,
+        "critical_binding_correct": 1,
+        "critical_binding_correct_rate": 0.14285714285714285,
+        "control_contaminated": 2,
+        "control_critical_evidence_contamination_rate": 0.2857142857142857
+      },
+      "traffic light": {
+        "reviewed_pairs": 70,
+        "critical_binding_correct": 57,
+        "critical_binding_correct_rate": 0.8142857142857143,
+        "control_contaminated": 4,
+        "control_critical_evidence_contamination_rate": 0.05714285714285714
+      }
+    }
+  },
+  "decision": "FAIL for causal-faithfulness claims. State-aware filtering improved traffic-light binding but did not meet the preregistered audit gate; controls also exceeded the contamination limit."
+}

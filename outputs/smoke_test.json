@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "seed": 42,
+  "device": "cuda",
+  "image_size": 224,
+  "train_samples": 256,
+  "validation_samples": 128,
+  "label_shapes": {
+    "actions": 4,
+    "rationales": 21
+  },
+  "action_only": {
+    "output_shapes": {
+      "action_logits": [
+        32,
+        4
+      ]
+    },
+    "losses_repeated_same_batch": [
+      0.6934463977813721,
+      0.5876238942146301,
+      0.5089468955993652,
+      0.4409681260585785
+    ],
+    "loss_decreased": true,
+    "action_macro_f1": 0.26352708744930853,
+    "evaluation_samples": 128
+  },
+  "joint": {
+    "output_shapes": {
+      "action_logits": [
+        32,
+        4
+      ],
+      "rationale_logits": [
+        32,
+        21
+      ]
+    },
+    "losses_repeated_same_batch": [
+      1.3837389945983887,
+      1.2553324699401855,
+      1.154435157775879,
+      1.0659761428833008
+    ],
+    "loss_decreased": true,
+    "action_macro_f1": 0.2794713438531504,
+    "evaluation_samples": 128,
+    "rationale_macro_f1": 0.12288050095556523
+  }
+}

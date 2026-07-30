@@ -1,0 +1,76 @@
+{
+  "manifest": "data\\processed\\masks_v2\\manifest.jsonl",
+  "population_pairs": 760,
+  "sample_pairs": 108,
+  "sampling": "10% per detected class with at least 10 when available; confidence-sorted evenly spaced selection",
+  "population_by_class": {
+    "traffic light": 662,
+    "person": 26,
+    "car": 30,
+    "bicycle": 26,
+    "motorcycle": 15,
+    "stop sign": 1
+  },
+  "sample_by_class": {
+    "bicycle": 10,
+    "car": 10,
+    "motorcycle": 10,
+    "person": 10,
+    "stop sign": 1,
+    "traffic light": 67
+  },
+  "automated_checks": {
+    "exact_area_match_rate": 1.0,
+    "control_detector_overlap_rate": 0.0,
+    "control_detector_overlap_basis": "generator rejects any pixel intersection with all retained detector boxes",
+    "center_offset_median": 0.02695312500000002,
+    "center_offset_p95": 0.14005929556024843,
+    "vertical_offset_median": 0.0,
+    "vertical_offset_p95": 0.0
+  },
+  "manual_review_file": "outputs\\validity\\mask_audit_v2\\manual_review.csv",
+  "pages": [
+    "outputs\\validity\\mask_audit_v2\\pages\\page_001.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_002.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_003.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_004.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_005.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_006.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_007.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_008.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_009.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_010.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_011.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_012.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_013.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_014.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_015.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_016.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_017.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_018.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_019.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_020.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_021.png",
+    "outputs\\validity\\mask_audit_v2\\pages\\page_022.png"
+  ],
+  "manual_status": "completed_fail",
+  "acceptance_thresholds": {
+    "critical_binding_correct_rate_minimum": 0.9,
+    "control_critical_evidence_contamination_rate_maximum": 0.05,
+    "semantic_label_unchanged_rate_minimum": 0.95
+  },
+  "manual_results": {
+    "reviewed_pairs": 108,
+    "critical_binding_correct": 45,
+    "critical_binding_correct_rate": 0.4166666666666667,
+    "control_contaminated": 5,
+    "control_critical_evidence_contamination_rate": 0.046296296296296294,
+    "semantic_label_unchanged": 108,
+    "semantic_label_unchanged_rate": 1.0,
+    "critical_binding_threshold_passed": false,
+    "control_contamination_threshold_passed": true,
+    "semantic_threshold_passed": true,
+    "overall_gate_passed": false
+  },
+  "decision": "FAIL for causal-faithfulness claims. Retain only as a detector-localized occlusion-sensitivity diagnostic."
+}

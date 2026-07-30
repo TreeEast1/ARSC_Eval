@@ -1,0 +1,97 @@
+{
+  "version": "v2_spatially_matched_control",
+  "detector": "yolo11n.pt",
+  "confidence_threshold": 0.35,
+  "mask_fill": "image_mean",
+  "image_format": "lossless PNG for both masked variants",
+  "eligible_by_rationale": 3798,
+  "valid_mask_pairs": 760,
+  "minimum_target_samples": 500,
+  "minimum_met": true,
+  "skipped": {
+    "no_matching_detection": 3029,
+    "no_spatially_matched_control": 9
+  },
+  "detected_class_counts": {
+    "traffic light": 662,
+    "person": 26,
+    "car": 30,
+    "bicycle": 26,
+    "motorcycle": 15,
+    "stop sign": 1
+  },
+  "localized_rationale_counts": {
+    "green_light": 336,
+    "right_green_light": 191,
+    "left_green_light": 54,
+    "red_light": 246,
+    "person": 26,
+    "car": 30,
+    "rider": 41,
+    "traffic_sign": 1
+  },
+  "manifest": "data\\processed\\masks_v2\\manifest.jsonl",
+  "control_policy": {
+    "area": "exact width and height match",
+    "position": "nearest candidate with 4x vertical displacement penalty",
+    "maximum_normalized_center_offset": 0.35,
+    "object_exclusion": "zero intersection with every detector box above the configured confidence threshold"
+  },
+  "spatial_diagnostics": {
+    "center_offset_norm": {
+      "minimum": 0.010156250000000033,
+      "median": 0.02695312500000002,
+      "p95": 0.14005929556024843,
+      "maximum": 0.34296875000000004
+    },
+    "x_center_offset_norm": {
+      "minimum": 0.0,
+      "median": 0.026562500000000044,
+      "p95": 0.12265625000000002,
+      "maximum": 0.34296875000000004
+    },
+    "y_center_offset_norm": {
+      "minimum": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "maximum": 0.2
+    },
+    "area_ratio": {
+      "minimum": 1.0,
+      "median": 1.0,
+      "p95": 1.0,
+      "maximum": 1.0
+    }
+  },
+  "localization_mapping": {
+    "green_light": [
+      "traffic light"
+    ],
+    "red_light": [
+      "traffic light"
+    ],
+    "left_green_light": [
+      "traffic light"
+    ],
+    "right_green_light": [
+      "traffic light"
+    ],
+    "traffic_sign": [
+      "stop sign"
+    ],
+    "car": [
+      "car"
+    ],
+    "person": [
+      "person"
+    ],
+    "rider": [
+      "bicycle",
+      "motorcycle"
+    ]
+  },
+  "traffic_sign_limitation": "COCO has no generic traffic-sign class; stop-sign detections are the only localization proxy for traffic_sign.",
+  "audit_status": "completed_fail",
+  "audit_summary": "outputs\\validity\\mask_audit_v2\\audit_summary.json",
+  "validity_scope": "detector-localized occlusion sensitivity only; generic detections did not pass rationale/action binding audit"
+}

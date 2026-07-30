@@ -1,0 +1,17 @@
+{
+  "source_manifest": "data\\processed\\masks_v4\\manifest.jsonl",
+  "confirmatory_manifest": "data\\processed\\masks_v4\\manifest_confirmatory.jsonl",
+  "source_pairs": 178,
+  "excluded_unique_development_audit_file_names": 210,
+  "removed_source_pairs": 65,
+  "confirmatory_pairs": 113,
+  "exclusion_manifests": {
+    "outputs\\validity\\mask_audit_v2\\sample_manifest.jsonl": 108,
+    "outputs\\validity\\mask_audit_v3\\sample_manifest.jsonl": 102
+  },
+  "state_counts": {
+    "red": 46,
+    "green": 67
+  },
+  "freeze_policy": "all filenames shown during v2/v3 measurement-development audits are excluded before the v4 confirmatory audit and CEG analysis"
+}

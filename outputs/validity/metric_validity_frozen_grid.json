@@ -1,0 +1,414 @@
+{
+  "analysis_status": "exploratory_metric_falsification",
+  "primary_definition_unchanged": {
+    "threshold": 0.5,
+    "confidence": "maximum_action_probability"
+  },
+  "cache": "outputs\\validity\\prediction_cache\\internal_validity_v2.npz",
+  "samples": 4557,
+  "threshold_grid": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+  ],
+  "threshold_contrast_stability": {
+    "action_macro_f1": {
+      "direction": "Joint - Action-Only",
+      "values": [
+        {
+          "threshold": 0.3,
+          "contrast": 0.014145187670367765
+        },
+        {
+          "threshold": 0.4,
+          "contrast": 0.011477903109971432
+        },
+        {
+          "threshold": 0.5,
+          "contrast": 0.010479944571659572
+        },
+        {
+          "threshold": 0.6,
+          "contrast": 0.011863100082136091
+        },
+        {
+          "threshold": 0.7,
+          "contrast": 0.008596146873917743
+        }
+      ],
+      "minimum": 0.008596146873917743,
+      "maximum": 0.014145187670367765,
+      "sign_reversals": 0,
+      "same_direction_all_thresholds": true
+    },
+    "aurc": {
+      "direction": "Joint - Action-Only",
+      "values": [
+        {
+          "threshold": 0.3,
+          "contrast": -0.01063766704336111
+        },
+        {
+          "threshold": 0.4,
+          "contrast": -0.008211466258413402
+        },
+        {
+          "threshold": 0.5,
+          "contrast": -0.010331177407868541
+        },
+        {
+          "threshold": 0.6,
+          "contrast": -0.012476453382637864
+        },
+        {
+          "threshold": 0.7,
+          "contrast": -0.018061928599423904
+        }
+      ],
+      "minimum": -0.018061928599423904,
+      "maximum": -0.008211466258413402,
+      "sign_reversals": 0,
+      "same_direction_all_thresholds": true
+    },
+    "unsafe_acceptance_rate_90": {
+      "direction": "Joint - Action-Only",
+      "values": [
+        {
+          "threshold": 0.3,
+          "contrast": -0.016577279375914244
+        },
+        {
+          "threshold": 0.4,
+          "contrast": -0.014627011214041863
+        },
+        {
+          "threshold": 0.5,
+          "contrast": -0.020234032179424655
+        },
+        {
+          "threshold": 0.6,
+          "contrast": -0.024622135543637236
+        },
+        {
+          "threshold": 0.7,
+          "contrast": -0.02584105314480739
+        }
+      ],
+      "minimum": -0.02584105314480739,
+      "maximum": -0.014627011214041863,
+      "sign_reversals": 0,
+      "same_direction_all_thresholds": true
+    },
+    "ece": {
+      "direction": "Joint - Action-Only",
+      "values": [
+        {
+          "threshold": 0.3,
+          "contrast": -0.01542337132175764
+        },
+        {
+          "threshold": 0.4,
+          "contrast": -0.011253961622394115
+        },
+        {
+          "threshold": 0.5,
+          "contrast": -0.015862256553269616
+        },
+        {
+          "threshold": 0.6,
+          "contrast": -0.016740027016293513
+        },
+        {
+          "threshold": 0.7,
+          "contrast": -0.016081699169025576
+        }
+      ],
+      "minimum": -0.016740027016293513,
+      "maximum": -0.011253961622394115,
+      "sign_reversals": 0,
+      "same_direction_all_thresholds": true
+    },
+    "mean_action_flip_rate": {
+      "direction": "Joint - Action-Only",
+      "values": [
+        {
+          "threshold": 0.3,
+          "contrast": -0.01411747494696805
+        },
+        {
+          "threshold": 0.4,
+          "contrast": -0.014995245409991947
+        },
+        {
+          "threshold": 0.5,
+          "contrast": -0.0025601638504864355
+        },
+        {
+          "threshold": 0.6,
+          "contrast": -0.010021212786189754
+        },
+        {
+          "threshold": 0.7,
+          "contrast": -0.01718967156755176
+        }
+      ],
+      "minimum": -0.01718967156755176,
+      "maximum": -0.0025601638504864355,
+      "sign_reversals": 0,
+      "same_direction_all_thresholds": true
+    }
+  },
+  "confidence_definition_sensitivity_at_threshold_0_5": {
+    "maximum_action_probability": {
+      "models": {
+        "Action-Only": {
+          "aurc": 0.4000262648084986,
+          "unsafe_acceptance_rate_90": 0.5026816187225743,
+          "ece": 0.4775508859470871,
+          "exact_set_error_rate": 0.533026113671275,
+          "correctness_auroc": 0.6772012175869893,
+          "highest_confidence_decile_error_rate": 0.2703296703296703,
+          "lowest_confidence_decile_error_rate": 0.8065934065934066
+        },
+        "Joint Action-Rationale": {
+          "aurc": 0.3896950874006301,
+          "unsafe_acceptance_rate_90": 0.4824475865431497,
+          "ece": 0.4616886293938175,
+          "exact_set_error_rate": 0.5150318191792846,
+          "correctness_auroc": 0.669351554984027,
+          "highest_confidence_decile_error_rate": 0.3054945054945055,
+          "lowest_confidence_decile_error_rate": 0.8087912087912088
+        },
+        "Joint-Calibrated": {
+          "aurc": 0.3896950874006301,
+          "unsafe_acceptance_rate_90": 0.4824475865431497,
+          "ece": 0.3377588928563727,
+          "exact_set_error_rate": 0.5150318191792846,
+          "correctness_auroc": 0.669351554984027,
+          "highest_confidence_decile_error_rate": 0.3054945054945055,
+          "lowest_confidence_decile_error_rate": 0.8087912087912088
+        }
+      },
+      "joint_vs_action_risk_curve": {
+        "first_lower_fraction": 0.8079877112135176,
+        "second_lower_fraction": 0.1858678955453149,
+        "tie_fraction": 0.006144393241167435,
+        "strict_first_dominance": false,
+        "strict_second_dominance": false,
+        "direction_crossings": 6,
+        "maximum_absolute_risk_gap": 0.6000000000000001
+      },
+      "joint_minus_action": {
+        "aurc": -0.010331177407868541,
+        "unsafe_acceptance_rate_90": -0.020234032179424655,
+        "ece": -0.015862256553269616,
+        "correctness_auroc": -0.00784966260296227
+      }
+    },
+    "minimum_predicted_state_probability": {
+      "models": {
+        "Action-Only": {
+          "aurc": 0.34772996140359713,
+          "unsafe_acceptance_rate_90": 0.5036567528035105,
+          "ece": 0.3410532999111603,
+          "exact_set_error_rate": 0.533026113671275,
+          "correctness_auroc": 0.7232635223814993,
+          "highest_confidence_decile_error_rate": 0.13406593406593406,
+          "lowest_confidence_decile_error_rate": 0.7978021978021979
+        },
+        "Joint Action-Rationale": {
+          "aurc": 0.33823647325003686,
+          "unsafe_acceptance_rate_90": 0.48732325694783035,
+          "ece": 0.32804808602566216,
+          "exact_set_error_rate": 0.5150318191792846,
+          "correctness_auroc": 0.7251023256800344,
+          "highest_confidence_decile_error_rate": 0.1824175824175824,
+          "lowest_confidence_decile_error_rate": 0.7648351648351648
+        },
+        "Joint-Calibrated": {
+          "aurc": 0.33823305246831004,
+          "unsafe_acceptance_rate_90": 0.48732325694783035,
+          "ece": 0.18512515555566106,
+          "exact_set_error_rate": 0.5150318191792846,
+          "correctness_auroc": 0.7251043500222678,
+          "highest_confidence_decile_error_rate": 0.1824175824175824,
+          "lowest_confidence_decile_error_rate": 0.7648351648351648
+        }
+      },
+      "joint_vs_action_risk_curve": {
+        "first_lower_fraction": 0.8027210884353742,
+        "second_lower_fraction": 0.19267061663375026,
+        "tie_fraction": 0.004608294930875576,
+        "strict_first_dominance": false,
+        "strict_second_dominance": false,
+        "direction_crossings": 1,
+        "maximum_absolute_risk_gap": 0.21428571428571427
+      },
+      "joint_minus_action": {
+        "aurc": -0.00949348815356027,
+        "unsafe_acceptance_rate_90": -0.01633349585568017,
+        "ece": -0.013005213885498135,
+        "correctness_auroc": 0.001838803298535141
+      }
+    },
+    "mean_predicted_state_probability": {
+      "models": {
+        "Action-Only": {
+          "aurc": 0.34180131852103457,
+          "unsafe_acceptance_rate_90": 0.49951243295953196,
+          "ece": 0.4520505265212164,
+          "exact_set_error_rate": 0.533026113671275,
+          "correctness_auroc": 0.7351394258598328,
+          "highest_confidence_decile_error_rate": 0.12087912087912088,
+          "lowest_confidence_decile_error_rate": 0.8351648351648352
+        },
+        "Joint Action-Rationale": {
+          "aurc": 0.33196764107569826,
+          "unsafe_acceptance_rate_90": 0.4807411019015115,
+          "ece": 0.43749118563139255,
+          "exact_set_error_rate": 0.5150318191792846,
+          "correctness_auroc": 0.7364788398398263,
+          "highest_confidence_decile_error_rate": 0.18021978021978022,
+          "lowest_confidence_decile_error_rate": 0.8241758241758241
+        },
+        "Joint-Calibrated": {
+          "aurc": 0.33524912164337445,
+          "unsafe_acceptance_rate_90": 0.4802535348610434,
+          "ece": 0.30288695955617373,
+          "exact_set_error_rate": 0.5150318191792846,
+          "correctness_auroc": 0.7293876653935804,
+          "highest_confidence_decile_error_rate": 0.17802197802197803,
+          "lowest_confidence_decile_error_rate": 0.8285714285714286
+        }
+      },
+      "joint_vs_action_risk_curve": {
+        "first_lower_fraction": 0.8053543998244459,
+        "second_lower_fraction": 0.1924511740179943,
+        "tie_fraction": 0.0021944261575597983,
+        "strict_first_dominance": false,
+        "strict_second_dominance": false,
+        "direction_crossings": 2,
+        "maximum_absolute_risk_gap": 0.25
+      },
+      "joint_minus_action": {
+        "aurc": -0.009833677445336308,
+        "unsafe_acceptance_rate_90": -0.01877133105802048,
+        "ece": -0.014559340889823857,
+        "correctness_auroc": 0.0013394139799934868
+      }
+    },
+    "one_minus_mean_binary_entropy": {
+      "models": {
+        "Action-Only": {
+          "aurc": 0.3415986737163785,
+          "unsafe_acceptance_rate_90": 0.500487567040468,
+          "ece": 0.25046641904273975,
+          "exact_set_error_rate": 0.533026113671275,
+          "correctness_auroc": 0.7352876195222515,
+          "highest_confidence_decile_error_rate": 0.12087912087912088,
+          "lowest_confidence_decile_error_rate": 0.8263736263736263
+        },
+        "Joint Action-Rationale": {
+          "aurc": 0.33197734714561117,
+          "unsafe_acceptance_rate_90": 0.47927840078010725,
+          "ece": 0.24681194164496587,
+          "exact_set_error_rate": 0.5150318191792846,
+          "correctness_auroc": 0.7357616443057181,
+          "highest_confidence_decile_error_rate": 0.17582417582417584,
+          "lowest_confidence_decile_error_rate": 0.8373626373626374
+        },
+        "Joint-Calibrated": {
+          "aurc": 0.34574681814750874,
+          "unsafe_acceptance_rate_90": 0.48293515358361777,
+          "ece": 0.15481770663319383,
+          "exact_set_error_rate": 0.5150318191792846,
+          "correctness_auroc": 0.7126746959148774,
+          "highest_confidence_decile_error_rate": 0.1824175824175824,
+          "lowest_confidence_decile_error_rate": 0.8043956043956044
+        }
+      },
+      "joint_vs_action_risk_curve": {
+        "first_lower_fraction": 0.8011849901250823,
+        "second_lower_fraction": 0.19289005924950625,
+        "tie_fraction": 0.005924950625411455,
+        "strict_first_dominance": false,
+        "strict_second_dominance": false,
+        "direction_crossings": 2,
+        "maximum_absolute_risk_gap": 0.25
+      },
+      "joint_minus_action": {
+        "aurc": -0.009621326570767308,
+        "unsafe_acceptance_rate_90": -0.02120916626036079,
+        "ece": -0.0036544773977738865,
+        "correctness_auroc": 0.0004740247834665867
+      }
+    }
+  },
+  "sanity_checks": {
+    "perfect_action_prediction": {
+      "macro_f1": 1.0,
+      "micro_f1": 1.0,
+      "passed": true
+    },
+    "action_boundary_predictions": {
+      "all_zero_macro_f1": 0.0,
+      "all_zero_micro_f1": 0.0,
+      "all_one_macro_f1": 0.4,
+      "all_one_micro_f1": 0.4,
+      "definition": "A class with no true or predicted positives receives F1=0."
+    },
+    "rationale_label_permutation": {
+      "seed": 20260731,
+      "observed_macro_f1": 0.3009910922159824,
+      "permuted_macro_f1": 0.08857720820713917,
+      "observed_micro_f1": 0.5347363899924836,
+      "permuted_micro_f1": 0.18533233115000536,
+      "macro_f1_decreased": true,
+      "predicted_empty_set_fraction": 0.10182137371077463
+    },
+    "identity_transform": {
+      "action_flip_rate": {
+        "Action-Only": 0.0,
+        "Joint Action-Rationale": 0.0,
+        "Joint-Calibrated": 0.0
+      },
+      "joint_rationale_jaccard": 1.0,
+      "passed": true
+    },
+    "ceg_critical_control_swap": {
+      "original_mean": -0.00031404393178954034,
+      "swapped_mean": 0.00031404393178954034,
+      "maximum_pairwise_sum_residual": 0.0,
+      "passed": true,
+      "development_only_due_to_v2_mask_audit_failure": true
+    },
+    "confidence_references": {
+      "random_ordering": {
+        "aurc": 0.5062448739116788,
+        "unsafe_acceptance_rate_90": 0.51511457825451,
+        "ece": 0.24260912360889555,
+        "exact_set_error_rate": 0.5150318191792846,
+        "correctness_auroc": 0.5075901266081471,
+        "highest_confidence_decile_error_rate": 0.4879120879120879,
+        "lowest_confidence_decile_error_rate": 0.5142857142857142
+      },
+      "constant_stable_ordering": {
+        "aurc": 0.5333442023871714,
+        "unsafe_acceptance_rate_90": 0.5182837640175524,
+        "ece": 0.015031819179284645,
+        "exact_set_error_rate": 0.5150318191792846,
+        "correctness_auroc": 0.5,
+        "highest_confidence_decile_error_rate": 0.5626373626373626,
+        "lowest_confidence_decile_error_rate": 0.4857142857142857
+      },
+      "overall_error_rate": 0.5150318191792846
+    }
+  },
+  "interpretation_guardrails": [
+    "Alternative thresholds and confidence definitions are exploratory and do not replace the preregistered primary metrics.",
+    "Joint-Calibrated is a monotone transform of the Joint checkpoint, not an independently trained model.",
+    "The CEG swap check tests algebraic implementation only; v2 mask effects remain invalid for confirmatory inference."
+  ]
+}

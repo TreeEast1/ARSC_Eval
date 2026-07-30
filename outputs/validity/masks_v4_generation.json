@@ -1,0 +1,61 @@
+{
+  "version": "v4_disjoint_high_precision_traffic_light",
+  "detector": "yolo11n.pt",
+  "selection_confidence": 0.35,
+  "exclusion_confidence": 0.1,
+  "image_format": "lossless PNG for both masked variants",
+  "eligible_single_state_images": 2517,
+  "valid_mask_pairs": 178,
+  "skipped": {
+    "no_strict_state_binding": 2338,
+    "no_clean_spatial_control": 1
+  },
+  "state_counts": {
+    "green": 106,
+    "red": 72
+  },
+  "manifest": "data\\processed\\masks_v4\\manifest.jsonl",
+  "development_provenance": "rules fixed from masks_v3 audit; v4 requires a filename-disjoint audit excluding v2 and v3 audit samples",
+  "pre_registered_binding_policy": {
+    "scope": "non-directional red/green traffic lights only",
+    "red": "strict HSV pixels >=40, y centroid <=0.50; if colored area >0.30 then detector-box aspect ratio must be >=1.45",
+    "green": "strict HSV pixels >=10, detector-box aspect ratio >=1.90, and colored-pixel y centroid >=0.55"
+  },
+  "control_policy": {
+    "area": "exact width and height match",
+    "position": "nearest candidate with 4x vertical penalty",
+    "maximum_normalized_center_offset": 0.35,
+    "object_exclusion": "zero overlap with detections at exclusion confidence after 25%/minimum-6px box expansion",
+    "signal_color_guard": "at most max(2, floor(0.002*area)) strict red/amber/green pixels"
+  },
+  "spatial_diagnostics": {
+    "center_offset_norm": {
+      "minimum": 0.014843749999999989,
+      "median": 0.034375000000000024,
+      "p95": 0.08609375000000008,
+      "maximum": 0.19218749999999998
+    },
+    "x_center_offset_norm": {
+      "minimum": 0.003124999999999989,
+      "median": 0.03359374999999998,
+      "p95": 0.07718749999999998,
+      "maximum": 0.19218749999999998
+    },
+    "y_center_offset_norm": {
+      "minimum": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "maximum": 0.15
+    },
+    "area_ratio": {
+      "minimum": 1.0,
+      "median": 1.0,
+      "p95": 1.0,
+      "maximum": 1.0
+    }
+  },
+  "audit_status": "completed_fail",
+  "audit_summary": "outputs\\validity\\mask_audit_v4\\audit_summary.json",
+  "confirmatory_population_manifest": "data\\processed\\masks_v4\\manifest_confirmatory.jsonl",
+  "validity_scope": "measurement-development only; red-light binding and control contamination did not pass state-specific confirmatory gates"
+}

@@ -1,0 +1,258 @@
+{
+  "amendment_id": "RQ1-AMENDMENT-01",
+  "status": "frozen_pre_result_engineering_amendment",
+  "independent_review_decision": "GO serialization-only fix; CONDITIONAL GO evaluation restart",
+  "original_protocol": {
+    "path": "outputs\\validity\\rq1_multiseed_frozen_protocol.json",
+    "bytes": 5153,
+    "sha256": "cc5fe969ea90efb1181f67ab5d18ce67c05de9207f903c7f14ebd964ac07ee0c"
+  },
+  "independent_review": {
+    "path": "outputs\\research_review_memo_round4_amendment01.md",
+    "bytes": 10900,
+    "sha256": "a4e953824c2b773857a2a1acfd83d1f29b8111a2b8b9dce961bcfbdbd6fed253"
+  },
+  "failed_attempt_log": {
+    "path": "outputs\\validity\\tmux_rq1_multiseed_attempt01_failed.log",
+    "bytes": 18313,
+    "sha256": "6a717a530e6f2415c284ea199de9947d49dc99f4ce409e9760ca6c5214fd412e"
+  },
+  "result_visibility_gate": {
+    "prediction_cache_absent": true,
+    "rq1_metrics_absent": true,
+    "saved_or_viewed_test_effect": false
+  },
+  "authorized_change": {
+    "file": "src\\arsc_eval\\data.py",
+    "old": {
+      "path": "src\\arsc_eval\\data.py",
+      "bytes": 3576,
+      "sha256": "da9f8f752f4b4510a5589ab0f7f2bd9a9c06cfa2fb09ce0dec15287f9bad2517"
+    },
+    "new": {
+      "path": "src\\arsc_eval\\data.py",
+      "bytes": 4182,
+      "sha256": "b46f21c217240cf23d017310d35d44e414b75bc2a9ce568ee42e86521d372004"
+    },
+    "description": "local closure replaced by module-level frozen dataclass callable; transform formulas and parameters unchanged"
+  },
+  "tests": {
+    "unit_and_pixel_equivalence": {
+      "path": "outputs\\validity\\rq1_amendment01_tests.log",
+      "bytes": 8868,
+      "sha256": "a85838b84e5346e94e9b47215c62c6425f4309ecf1b65f1dce6a1317ce525cf1"
+    },
+    "windows_spawn_num_workers_8": {
+      "path": "outputs\\validity\\rq1_amendment01_worker_check.json",
+      "bytes": 4479,
+      "sha256": "e82328855b66039e3497d9ab05cc344fbfdbc8c5cefd81461be56418d5f02a21"
+    },
+    "worker_conditions": {
+      "brightness": {
+        "samples": 32,
+        "file_names": [
+          "4f96b135-c007f1c5_1.jpg",
+          "57aff47a-053377cd_3.jpg",
+          "1e6a6965-0833ba9c_3.jpg",
+          "b7676214-60e4d9eb_1.jpg",
+          "2175b93a-c0ae0682_3.jpg",
+          "c4aac9d9-47b01027_3.jpg",
+          "8b2d3a2b-77cf3766_3.jpg",
+          "54809b41-cc93144e_3.jpg",
+          "227b2c77-981e5e29_1.jpg",
+          "255400b7-0def2a8f_3.jpg",
+          "a10582c9-a96da043_3.jpg",
+          "1155e4cc-d31b5aa8_1.jpg",
+          "b2daf29d-6198754f_1.jpg",
+          "8f868dff-2fbb4d18_3.jpg",
+          "9cb09fdf-b17c2794_3.jpg",
+          "1db91b25-a34b42fd_1.jpg",
+          "971d3930-0e67b43f_1.jpg",
+          "05a80599-b5dcef16_1.jpg",
+          "b6f2176b-fcca7545_1.jpg",
+          "6dd63871-763a344b_1.jpg",
+          "072a5b71-dfd14a9a_3.jpg",
+          "71838d22-e86dbb55_3.jpg",
+          "809adbbc-53c4d4ae_3.jpg",
+          "0f026efa-5f053ae7_1.jpg",
+          "8e380fb2-6f6e4103_3.jpg",
+          "7899f781-4baf454d_3.jpg",
+          "1f693cf9-b3c730a4_3.jpg",
+          "863d690c-e1e09a79_1.jpg",
+          "647c6812-55465775_1.jpg",
+          "2da8543a-a0545912_1.jpg",
+          "754374b3-1b375441_3.jpg",
+          "997d5906-b6d33e03_3.jpg"
+        ],
+        "tensor_shape": [
+          32,
+          3,
+          224,
+          224
+        ],
+        "tensor_sha256": "99ec72550b8548b796b2dc2e88b21e6594cfbef442f667687f1679aff5dc0a32",
+        "finite": true
+      },
+      "blur": {
+        "samples": 32,
+        "file_names": [
+          "4f96b135-c007f1c5_1.jpg",
+          "57aff47a-053377cd_3.jpg",
+          "1e6a6965-0833ba9c_3.jpg",
+          "b7676214-60e4d9eb_1.jpg",
+          "2175b93a-c0ae0682_3.jpg",
+          "c4aac9d9-47b01027_3.jpg",
+          "8b2d3a2b-77cf3766_3.jpg",
+          "54809b41-cc93144e_3.jpg",
+          "227b2c77-981e5e29_1.jpg",
+          "255400b7-0def2a8f_3.jpg",
+          "a10582c9-a96da043_3.jpg",
+          "1155e4cc-d31b5aa8_1.jpg",
+          "b2daf29d-6198754f_1.jpg",
+          "8f868dff-2fbb4d18_3.jpg",
+          "9cb09fdf-b17c2794_3.jpg",
+          "1db91b25-a34b42fd_1.jpg",
+          "971d3930-0e67b43f_1.jpg",
+          "05a80599-b5dcef16_1.jpg",
+          "b6f2176b-fcca7545_1.jpg",
+          "6dd63871-763a344b_1.jpg",
+          "072a5b71-dfd14a9a_3.jpg",
+          "71838d22-e86dbb55_3.jpg",
+          "809adbbc-53c4d4ae_3.jpg",
+          "0f026efa-5f053ae7_1.jpg",
+          "8e380fb2-6f6e4103_3.jpg",
+          "7899f781-4baf454d_3.jpg",
+          "1f693cf9-b3c730a4_3.jpg",
+          "863d690c-e1e09a79_1.jpg",
+          "647c6812-55465775_1.jpg",
+          "2da8543a-a0545912_1.jpg",
+          "754374b3-1b375441_3.jpg",
+          "997d5906-b6d33e03_3.jpg"
+        ],
+        "tensor_shape": [
+          32,
+          3,
+          224,
+          224
+        ],
+        "tensor_sha256": "2614a6ff846582f68c6609db2fb08fc08b932e1f769e9bc196d43fd1c16c51b1",
+        "finite": true
+      },
+      "noise": {
+        "samples": 32,
+        "file_names": [
+          "4f96b135-c007f1c5_1.jpg",
+          "57aff47a-053377cd_3.jpg",
+          "1e6a6965-0833ba9c_3.jpg",
+          "b7676214-60e4d9eb_1.jpg",
+          "2175b93a-c0ae0682_3.jpg",
+          "c4aac9d9-47b01027_3.jpg",
+          "8b2d3a2b-77cf3766_3.jpg",
+          "54809b41-cc93144e_3.jpg",
+          "227b2c77-981e5e29_1.jpg",
+          "255400b7-0def2a8f_3.jpg",
+          "a10582c9-a96da043_3.jpg",
+          "1155e4cc-d31b5aa8_1.jpg",
+          "b2daf29d-6198754f_1.jpg",
+          "8f868dff-2fbb4d18_3.jpg",
+          "9cb09fdf-b17c2794_3.jpg",
+          "1db91b25-a34b42fd_1.jpg",
+          "971d3930-0e67b43f_1.jpg",
+          "05a80599-b5dcef16_1.jpg",
+          "b6f2176b-fcca7545_1.jpg",
+          "6dd63871-763a344b_1.jpg",
+          "072a5b71-dfd14a9a_3.jpg",
+          "71838d22-e86dbb55_3.jpg",
+          "809adbbc-53c4d4ae_3.jpg",
+          "0f026efa-5f053ae7_1.jpg",
+          "8e380fb2-6f6e4103_3.jpg",
+          "7899f781-4baf454d_3.jpg",
+          "1f693cf9-b3c730a4_3.jpg",
+          "863d690c-e1e09a79_1.jpg",
+          "647c6812-55465775_1.jpg",
+          "2da8543a-a0545912_1.jpg",
+          "754374b3-1b375441_3.jpg",
+          "997d5906-b6d33e03_3.jpg"
+        ],
+        "tensor_shape": [
+          32,
+          3,
+          224,
+          224
+        ],
+        "tensor_sha256": "1dfa28f5aad1fcae73591d1d7cf21e4974c27d4bae138ca9d1d11f822e16c6a3",
+        "finite": true
+      }
+    }
+  },
+  "restart_invariants": [
+    {
+      "path": "configs\\rq1_seed43.yaml",
+      "bytes": 592,
+      "sha256": "42be7599c09d17654868db260e203d4de7ea0d1fda49a5c36b6ba3df7750e55e"
+    },
+    {
+      "path": "data\\processed\\test.jsonl",
+      "bytes": 533260,
+      "sha256": "89364a265fe4c2edca5125d34c4c25d47c96afb46a5c4a8fe86b649785539004"
+    },
+    {
+      "path": "outputs\\validity\\perturbation_semantic_audit\\audit_summary.json",
+      "bytes": 653,
+      "sha256": "757cd4b9361d82beda2928c4af5bd8e80eb81b3f4ba6b7d5bba2d8744868d24d"
+    },
+    {
+      "path": "scripts\\evaluate_rq1_seed.py",
+      "bytes": 13778,
+      "sha256": "3df86a5482ba8c711d833f762e11e99afa18e886eb3af28791d6905144494ef6"
+    },
+    {
+      "path": "src\\arsc_eval\\rq1.py",
+      "bytes": 6640,
+      "sha256": "849f8d7790d947a45d0e03d5e4301d84d00591e1a161c84d3b647cb086f15420"
+    },
+    {
+      "path": "src\\arsc_eval\\metrics.py",
+      "bytes": 4176,
+      "sha256": "68bff3f6114d3ed6a01f99814de763146451ce37f9f39747319c51f3e0f19ad4"
+    },
+    {
+      "path": "scripts\\aggregate_rq1_multiseed.py",
+      "bytes": 10661,
+      "sha256": "53ceb47b8344ee609b75e5aa81a273f50db16964af2ca298c4ebb14160c5c0a6"
+    },
+    {
+      "path": "checkpoints\\validity\\rq1_seed_43\\action_only_best_action.pt",
+      "bytes": 282667209,
+      "sha256": "aea84f2e465b23b776aa04ec25dc62f51c3830fe6b2b05d92b9db546a1da884b"
+    },
+    {
+      "path": "checkpoints\\validity\\rq1_seed_43\\joint_best_action.pt",
+      "bytes": 283181715,
+      "sha256": "3984528c3f54a83216cebe7690d711b2e96eabf75692fa56ad43012d40a0e343"
+    },
+    {
+      "path": "outputs\\validity\\rq1_seed_43\\calibration_action_only.json",
+      "bytes": 418,
+      "sha256": "42bed1e43902103ab37864ffa7f48cdd2516c59205fe810ab461511095aa7ad0"
+    },
+    {
+      "path": "outputs\\validity\\rq1_seed_43\\calibration_joint.json",
+      "bytes": 408,
+      "sha256": "a8a9ad227bab110778e3d49f8ba78bab21500fd3ecaee7280763c6af25cc137f"
+    }
+  ],
+  "restart_boundary": {
+    "first_stage": "seed43 evaluate_rq1",
+    "reuse_seed43_training": true,
+    "reuse_seed43_calibrations": true,
+    "retrain_seed43": false,
+    "recalibrate_seed43": false,
+    "then_continue_seeds": [
+      44,
+      45,
+      46,
+      47
+    ]
+  }
+}
