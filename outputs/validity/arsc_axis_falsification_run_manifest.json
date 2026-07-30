@@ -1,0 +1,133 @@
+{
+  "study": "ARSC axis falsification immutable pre-run manifest",
+  "status": "PRE_OUTCOME_PREFLIGHT_PASSED",
+  "intervention_direction_outcomes_computed": false,
+  "frozen_artifacts": {
+    "outputs/validity/arsc_axis_falsification_protocol.json": "21504FD66E984E211C3E8C51AF013C7C30F8D6E14CFCE01A832FD53711482442",
+    "outputs/validity/arsc_axis_falsification_protocol_amendment01.json": "BD089BED634FC7D50D391AE17FFEEC54EB1D3ADBA91035EB553D8C5D7E0CE91F",
+    "outputs/research_review_memo_round7_preregister.md": "BDE9B4387F5B2015B29387B96E7033B0E43E1940098B807CA811C30CD1486A9D",
+    "outputs/research_review_memo_round7_amendment01.md": "6A6734719C779A603B3926F7A93B469A7EC44A6FC61779598DEA345E3E7EEA71"
+  },
+  "implementation": {
+    "src/arsc_eval/axis_falsification.py": "FCA31021DD91D604227706178B1F589F0212DF79D4E7169AE44085CCDFEB1863",
+    "scripts/analyze_axis_falsification.py": "A6DEE2370E5AF5483C47C3F8271E786FF82D8A4A72659CC55DE4BB2301E1B4AF",
+    "tests/test_axis_falsification.py": "5072BA30B5FF960C26CAE1BAC105CD4061196DC94FB9710294E31675763AF0DC"
+  },
+  "implementation_last_commit": "9363dc20985f6e898eb3e35877ec329607d6a325",
+  "preflight": {
+    "path": "outputs/validity/arsc_axis_falsification_preflight.json",
+    "sha256": "0D91D38BA88F488F1B58F50F63BFF593C21B1B8892854FB71AFB94930F7D1D77",
+    "status": "PASS"
+  },
+  "inputs": {
+    "43": {
+      "cache": {
+        "path": "outputs/validity/rq1_seed_43/prediction_cache/rq1_lossless.npz",
+        "sha256": "0794249465A4EFEDB5177E8B74CC76C4537B4044411EE17E7BACBC66FA6E47A3"
+      },
+      "action_calibration": {
+        "path": "outputs/validity/rq1_seed_43/calibration_action_only.json",
+        "sha256": "42BED1E43902103AB37864FFA7F48CDD2516C59205FE810AB461511095AA7AD0"
+      },
+      "joint_calibration": {
+        "path": "outputs/validity/rq1_seed_43/calibration_joint.json",
+        "sha256": "A8A9AD227BAB110778E3D49F8BA78BAB21500FD3ECAEE7280763C6AF25CC137F"
+      },
+      "round5_reference": {
+        "path": "outputs/validity/rq1_seed_43/rq1_metrics.json",
+        "sha256": "F0A79177B73C66412455FAFF13B570EC09B619F0EA948EE1C55B940719121738"
+      }
+    },
+    "44": {
+      "cache": {
+        "path": "outputs/validity/rq1_seed_44/prediction_cache/rq1_lossless.npz",
+        "sha256": "BA2D0E2061158358BE5D5B3D68AAFDA7FF57E7C571C0C679502A9CC9C6ADB465"
+      },
+      "action_calibration": {
+        "path": "outputs/validity/rq1_seed_44/calibration_action_only.json",
+        "sha256": "F670A6EE78230DE9856DA3BFEDA16DF59C8C02E2962F4518C651DA5560D6C6CF"
+      },
+      "joint_calibration": {
+        "path": "outputs/validity/rq1_seed_44/calibration_joint.json",
+        "sha256": "89B07811122FE266C79541AD00AA1BEFFCE6E466CCB8B7D2E34D8B5E73A8B19B"
+      },
+      "round5_reference": {
+        "path": "outputs/validity/rq1_seed_44/rq1_metrics.json",
+        "sha256": "685B314AC339CC9439E72EA33948C62BCE7AD95E06DEF2C43ED846A693CE2FD7"
+      }
+    },
+    "45": {
+      "cache": {
+        "path": "outputs/validity/rq1_seed_45/prediction_cache/rq1_lossless.npz",
+        "sha256": "A7C179876FC3C57F06D3D7A9FE8EDFA286B6667C1B125933F8E350F657AD1187"
+      },
+      "action_calibration": {
+        "path": "outputs/validity/rq1_seed_45/calibration_action_only.json",
+        "sha256": "E8E01FE05656BDCB188700875609E1FFDF16B5C62FB99658F89B0CB983DD913F"
+      },
+      "joint_calibration": {
+        "path": "outputs/validity/rq1_seed_45/calibration_joint.json",
+        "sha256": "817A007E33AF09AE1DBBF1C3B45216D427C116A15E2DC4A172E5DE8C897857FB"
+      },
+      "round5_reference": {
+        "path": "outputs/validity/rq1_seed_45/rq1_metrics.json",
+        "sha256": "7A85E4CD5BF98988048AC48F37E5BDB6C1303701DA42036339302E65AF68199C"
+      }
+    },
+    "46": {
+      "cache": {
+        "path": "outputs/validity/rq1_seed_46/prediction_cache/rq1_lossless.npz",
+        "sha256": "1EA70BC6F3D59D9B07D28369982D271FA3951E97FFFE1870A3E7C7530054EAD0"
+      },
+      "action_calibration": {
+        "path": "outputs/validity/rq1_seed_46/calibration_action_only.json",
+        "sha256": "D7C8C90570D357EA144642F4628538D6D2B1B61F018302AFB248FD82507698BE"
+      },
+      "joint_calibration": {
+        "path": "outputs/validity/rq1_seed_46/calibration_joint.json",
+        "sha256": "F9935A65A0B187373FC16742207720D54C41C46071A1498393985ABB18E5E29A"
+      },
+      "round5_reference": {
+        "path": "outputs/validity/rq1_seed_46/rq1_metrics.json",
+        "sha256": "D7FFEDF3ACCA49CFBA0D99FD7C9B6F7549215AD710CFC2E1D68D5ABF67297860"
+      }
+    },
+    "47": {
+      "cache": {
+        "path": "outputs/validity/rq1_seed_47/prediction_cache/rq1_lossless.npz",
+        "sha256": "7DDE8E4ACDFA06004ADE4AF33C679EC2A53E9F689B214A2ED36EDF91598AF743"
+      },
+      "action_calibration": {
+        "path": "outputs/validity/rq1_seed_47/calibration_action_only.json",
+        "sha256": "E9FCAF432BC857AB3A4CEF69403975D6B22D86DD52A2540E65B96C9C1F9B07EB"
+      },
+      "joint_calibration": {
+        "path": "outputs/validity/rq1_seed_47/calibration_joint.json",
+        "sha256": "06E05CA5334EBF74DCBE72829133A31707CFA94FADDA0FE6BE38F249E3A86101"
+      },
+      "round5_reference": {
+        "path": "outputs/validity/rq1_seed_47/rq1_metrics.json",
+        "sha256": "49008E9D4BA03B59D2DD4631EFD4F862DB0F8C3E85BAD6217028D41D28355A16"
+      }
+    }
+  },
+  "frozen_parameters": {
+    "seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "sample_count": 4557,
+    "threshold": 0.5,
+    "target_row_offset": 2281,
+    "action_class_shift": 1,
+    "rationale_class_shift": 7,
+    "wrong_pair_offset": 997,
+    "random_order_seed": 20260801,
+    "bootstrap_seed": 20260802,
+    "bootstrap_replicates": 2000,
+    "bootstrap": "crossed seed x shared-image paired bootstrap; one common canonical image multiset per replicate"
+  }
+}
