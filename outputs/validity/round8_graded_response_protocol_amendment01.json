@@ -1,0 +1,142 @@
+{
+  "amendment_id": "ARSC_ROUND8_GRADED_RESPONSE_V1_AMENDMENT01",
+  "status": "FROZEN_BEFORE_METRIC_RESPONSE_OUTCOMES",
+  "frozen_at": "2026-07-31T06:55:00+08:00",
+  "scope": "The only permitted Round 8 amendment; all unlisted protocol fields remain unchanged.",
+  "authority": {
+    "original_protocol": {
+      "path": "outputs/validity/round8_graded_response_protocol.json",
+      "sha256": "B96AC789BA12DD0FE65AF2138C54248C2154C1E1489D911571422EDE94B65357"
+    },
+    "outcome_blind_preregister_review": {
+      "path": "outputs/research_review_memo_round8_preregister.md",
+      "sha256": "83C13D1112ABAF9CBA6504E26BBB0BDBBDD99C5D7A45DB27A840D0A695B65BF2",
+      "verdict": "GO_WITH_AMENDMENT"
+    },
+    "map_manifest": {
+      "path": "outputs/validity/round8_graded_association_map_manifest.json",
+      "sha256": "73B89C3438262BA272E0E90EDC2A6F9408B196CCBD4A30D9FA6FFFA798C273DC"
+    },
+    "map_artifact": {
+      "path": "outputs/validity/round8_graded_association_maps.npz",
+      "sha256": "8685E1A4605B5D6355A432BC6CA03CF61930BAB23D41D899478A5C1D8FC47ED1"
+    }
+  },
+  "amendment_01_changes": {
+    "association_component_bootstrap": {
+      "replaces": "seed by shared destination-clip crossed paired bootstrap",
+      "with": "seed by one shared association-component multiset crossed paired bootstrap",
+      "derivation": {
+        "nodes": "the 3904 frozen clip groups",
+        "edges": "for every image i, undirected clip(i)--clip(q=1 source_map[i])",
+        "connected_components": 1625,
+        "reason": "Each q>0 primitive depends jointly on destination and source clips; q=1 components contain every lower-q dyad."
+      },
+      "frozen_component_artifact": {
+        "path": "outputs/validity/round8_association_components.npz",
+        "sha256": "F1DF45A526EEBE02C2CDA6EA2FB1FE8B034A3FDD3B1582B3598B602916CDD0E8"
+      },
+      "frozen_component_manifest": {
+        "path": "outputs/validity/round8_association_component_manifest.json",
+        "sha256": "7E5EA6AB9E83A0CCE03FDBBBAC274AB01D1B7773CA43833348C77ED71127653F"
+      },
+      "exact_partition": {
+        "component_count": 1625,
+        "clip_count_histogram": {
+          "2": 1191,
+          "3": 291,
+          "4": 101,
+          "5": 22,
+          "6": 7,
+          "7": 11,
+          "8": 2
+        },
+        "image_count_histogram": {
+          "2": 1191,
+          "4": 291,
+          "6": 101,
+          "8": 22,
+          "10": 7,
+          "12": 11,
+          "13": 1,
+          "14": 1
+        },
+        "maximum_clips": 8,
+        "maximum_images": 14,
+        "all_five_q_maps_source_closed": true,
+        "all_five_q_maps_restricted_bijections": true
+      },
+      "algorithm_per_replicate": [
+        "sample five training-seed indices with replacement",
+        "sample one multiset of 1625 association-component indices with replacement",
+        "include every clip and every image in each selected component, retaining complete membership and multiplicity when selected repeatedly",
+        "use that one shared image-index vector for every selected seed, q, model, axis, and perturbation",
+        "when a seed is selected repeatedly, reuse its frozen output and the same shared component draw"
+      ],
+      "unchanged_parameters": {
+        "replicates": 2000,
+        "seed": 20260803,
+        "confidence_level": 0.95,
+        "interval": "percentile",
+        "interval_scope": "four pointwise axis-statistic intervals, not a simultaneous 95 percent family"
+      },
+      "prohibition": "Do not run or retain destination-clip bootstrap as a competing inferential analysis."
+    },
+    "bootstrap_bottleneck_order": {
+      "full_sample_raw_seed_statistic": "Within each seed, compute all required q curves and expected-direction adjacent steps, then take that seed's minimum adjacent step.",
+      "replicate_order": [
+        "construct the one shared association-component image-index vector",
+        "for each selected seed, recompute all q curve points for the axis on that vector",
+        "within that seed, compute all expected-direction adjacent steps and take their minimum as its seed bottleneck",
+        "average the five selected seed bottlenecks to obtain the replicate statistic"
+      ],
+      "mean_curve_check": "Separately compute q-wise component means across the five unresampled seeds and require no adjacent expected-direction reversal; this does not replace the bottleneck statistic."
+    },
+    "q0_reproduction_boundary": {
+      "A_R_C1": "At q=0, A/R and correct-pair C1 point estimates must exactly reproduce Round 7 for every seed.",
+      "S_primitives": "At q=0, calibrated predictions, exact-set errors, and confidence values must exactly reproduce Round 7.",
+      "S_round7_bridge": "At q=0, secondary canonical-stable AURC, UAR@90, correctness AUROC, and ECE must exactly reproduce Round 7.",
+      "S_round8_primary": "Tie-averaged AURC is the new frozen Round 8 primary convention; it must pass independent closed-form and brute-force synthetic tests and is not required to equal Round 7 canonical-stable AURC when confidence ties exist."
+    },
+    "gate_and_claim_boundary": {
+      "A_gate": "Only the two four-label Macro-F1 curves are required components; Micro-F1 and per-class curves are diagnostics.",
+      "R_gate": "Only the 21-label Macro-F1 curve is a required component; Micro-F1, coverage, and all per-class curves are diagnostics.",
+      "S_gate": "Only the two tie-averaged AURC curves are required components; stable AURC, UAR@90, correctness AUROC, ECE, and decile diagnostics are diagnostics. ECE remains non-directional.",
+      "C1_gate": "Only two action mean-three flip curves and one rationale mean-three Jaccard curve are required components; individual perturbation curves are diagnostics.",
+      "full_suite": "All four fixed axis gates must pass; no passing subset may be relabeled as a full Round 8 pass.",
+      "conditionality_term": "Replace clip-cluster-conditional with association-component-cluster-conditional in any permitted claim.",
+      "strongest_permitted_pass_claim": "In the five frozen BDD-OIA training seeds, under one outcome-blind nested association map and association-component-cluster conditional inference, A/R Macro-F1, S tie-averaged AURC, and C1 mean-three correspondence metrics satisfy the preregistered strict adjacent-step monotonic response gates.",
+      "does_not_support": [
+        "construct, ontology, grounding, faithfulness, causal, or real-safety validity",
+        "visual perturbation severity",
+        "monotonicity of A/R Micro-F1, every R class, every C1 perturbation, or S diagnostics",
+        "other maps, salts, thresholds, models, training protocols, datasets, or real driving",
+        "simultaneous 95 percent familywise coverage"
+      ]
+    }
+  },
+  "implementation_freeze_before_formal_outcome": {
+    "required": [
+      "final analysis core and synthetic tests",
+      "formal one-shot analysis script",
+      "pre-outcome implementation and input hash manifest",
+      "independent Amendment 01 compliance memo with explicit GO"
+    ],
+    "preflight_requirements": [
+      "exactly reproduce all component partition and map closure invariants",
+      "prove one shared component draw with complete-membership multiplicity",
+      "prove per-seed-then-mean bottleneck order",
+      "split stable-tie q=0 reproduction from tie-averaged primary",
+      "bind all final code, test, protocol, review, input, cache, calibration, map, component, and Round 7 reference hashes"
+    ],
+    "formal_outcome_stop": "No q-response outcome may be computed until the independent compliance memo says GO and all frozen preflight checks pass."
+  },
+  "unchanged_and_prohibited": [
+    "Do not change the q grid, active counts, cycle order, pair/triplet construction, salt, or source arrays.",
+    "Do not change cache, calibration, threshold, training seed, model, perturbation, or input population.",
+    "Do not change tie-averaged AURC, the within-axis minimum adjacent-step bottleneck, the axis components, the 4-of-5 rule, the CI level, or 2000 replicates.",
+    "Do not replace a failed bottleneck with an endpoint slope, rank trend, selected q pair, selected model, selected perturbation, or relaxed gate.",
+    "Do not inspect q-response outcomes and then revise this amendment."
+  ],
+  "failure_policy": "Any missing amendment item, hash mismatch, failed component invariant, or non-GO compliance review stops formal Round 8 without changing this protocol."
+}
