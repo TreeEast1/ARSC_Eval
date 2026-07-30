@@ -26,9 +26,14 @@ class BDD100KAnnotationDownloadTests(unittest.TestCase):
         url = filter_url(["abc-def", "ghi-jkl"])
         parameters = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
         self.assertEqual(
-            ['"image_id" IN (\'abc-def\',\'ghi-jkl\')'],
+            [
+                '"image_id" = \'abc-def\' OR '
+                '"image_id" = \'ghi-jkl\''
+            ],
             parameters["where"],
         )
+        self.assertNotIn(" IN ", parameters["where"][0])
+        self.assertEqual(["train"], parameters["split"])
         self.assertEqual(["100"], parameters["length"])
 
 

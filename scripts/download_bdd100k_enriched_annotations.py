@@ -17,9 +17,11 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 API_URL = "https://datasets-server.huggingface.co/filter"
+HUB_API_URL = "https://huggingface.co/api/datasets"
 DATASET = "lance-format/BDD100K-enriched"
 CONFIG = "default"
 SPLIT = "train"
+EXPECTED_DATASET_REVISION = "d82c5188d392714ba8091d68014f7b9838ceadf2"
 KEEP_FIELDS = (
     "image_id",
     "split",
@@ -49,6 +51,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--limit", type=int)
     parser.add_argument("--timeout", type=float, default=120.0)
     parser.add_argument("--retries", type=int, default=8)
+    parser.add_argument(
+        "--expected-dataset-revision",
+        default=EXPECTED_DATASET_REVISION,
+        help=(
+            "Abort unless the public metadata mirror resolves to this exact "
+            "Git revision before and after the download."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -78,16 +88,31 @@ def filter_url(image_ids: list[str]) -> str:
         raise ValueError("image_ids cannot be empty")
     if any("'" in image_id for image_id in image_ids):
         raise ValueError("unexpected quote in image ID")
-    values = ",".join(f"'{image_id}'" for image_id in image_ids)
+    predicate = " OR ".join(
+        f'"image_id" = \'{image_id}\'' for image_id in image_ids
+    )
     parameters = {
         "dataset": DATASET,
         "config": CONFIG,
         "split": SPLIT,
-        "where": f'"image_id" IN ({values})',
+        "where": predicate,
         "offset": 0,
         "length": 100,
     }
     return f"{API_URL}?{urllib.parse.urlencode(parameters)}"
+
+
+def resolve_dataset_revision(timeout: float) -> str:
+    url = f"{HUB_API_URL}/{DATASET}/revision/main"
+    request = urllib.request.Request(
+        url, headers={"User-Agent": "ARSC-Eval/1.0"}
+    )
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        payload = json.load(response)
+    revision = str(payload.get("sha", ""))
+    if len(revision) != 40:
+        raise RuntimeError("dataset mirror returned an invalid Git revision")
+    return revision
 
 
 def fetch_batch(
@@ -121,6 +146,7 @@ def write_checkpoint(
     requested_ids: list[str],
     rows_by_id: dict[str, dict],
     completed_batches: int,
+    resolved_revision: str,
 ) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     payload = {
@@ -129,9 +155,22 @@ def write_checkpoint(
             "config": CONFIG,
             "api_split": SPLIT,
             "api_endpoint": API_URL,
+            "official_annotation_release": (
+                "BDD100K Detection 2020 train annotations"
+            ),
+            "official_format_documentation": (
+                "https://github.com/bdd100k/bdd100k/blob/master/"
+                "doc/format.md"
+            ),
             "repository": (
                 "https://huggingface.co/datasets/"
                 "lance-format/BDD100K-enriched"
+            ),
+            "resolved_repository_revision": resolved_revision,
+            "access_note": (
+                "The public mirror is used only as a metadata transport for "
+                "BDD100K object annotations; no image bytes or embeddings are "
+                "retained."
             ),
         },
         "requested_keyframe_ids": len(requested_ids),
@@ -157,10 +196,25 @@ def main() -> int:
         requested_ids = requested_ids[: args.limit]
 
     output_path = rooted(args.output)
+    resolved_revision = resolve_dataset_revision(args.timeout)
+    if resolved_revision != args.expected_dataset_revision:
+        raise RuntimeError(
+            "dataset mirror revision mismatch before download: "
+            f"expected {args.expected_dataset_revision}, "
+            f"observed {resolved_revision}"
+        )
     rows_by_id: dict[str, dict] = {}
     completed_batches = 0
     if output_path.exists():
         existing = json.loads(output_path.read_text(encoding="utf-8"))
+        existing_revision = existing.get("source", {}).get(
+            "resolved_repository_revision"
+        )
+        if existing.get("rows") and existing_revision != resolved_revision:
+            raise RuntimeError(
+                "existing checkpoint was produced from a different or "
+                "unrecorded dataset revision"
+            )
         rows_by_id = {
             row["image_id"]: row for row in existing.get("rows", [])
         }
@@ -181,7 +235,11 @@ def main() -> int:
             rows_by_id[row["image_id"]] = row
         completed_batches += 1
         write_checkpoint(
-            output_path, requested_ids, rows_by_id, completed_batches
+            output_path,
+            requested_ids,
+            rows_by_id,
+            completed_batches,
+            resolved_revision,
         )
         print(
             json.dumps(
@@ -195,9 +253,16 @@ def main() -> int:
             flush=True,
         )
 
+    final_revision = resolve_dataset_revision(args.timeout)
+    if final_revision != resolved_revision:
+        raise RuntimeError(
+            "dataset mirror revision changed during download: "
+            f"{resolved_revision} -> {final_revision}"
+        )
     payload = json.loads(output_path.read_text(encoding="utf-8"))
     payload["complete"] = True
     payload["completed_batches"] = total_batches
+    payload["source"]["post_download_repository_revision"] = final_revision
     payload["unmatched_keyframe_ids"] = sorted(
         set(requested_ids).difference(rows_by_id)
     )

@@ -1,0 +1,144 @@
+{
+  "protocol_name": "BDD100K-train v5 one-shot metadata intersection gate",
+  "created_at": "2026-07-31T03:30:33+08:00",
+  "status": "FROZEN_BEFORE_TARGET_ANNOTATION_INTERSECTION",
+  "authorizing_review": {
+    "path": "outputs/research_review_memo_round5_multiseed.md",
+    "sha256": "C060E66A25793DE9C10239AAE6286F93C51C6A394CE48888FA50F63BCAAA0CF5",
+    "verdict": "PASS with bounded claims",
+    "unique_next_step": "BDD100K train official traffic-light state boxes x frozen BDD-OIA evaluation manifest metadata intersection"
+  },
+  "outcome_blindness_at_freeze": {
+    "successful_target_image_annotation_queries": 0,
+    "model_logits_read": false,
+    "masks_generated": false,
+    "models_trained_or_updated": false,
+    "note": "Only source availability, schema, manifest identities, and non-outcome preflight mechanics were inspected. The population thresholds are inherited verbatim from the independent Round 5 review."
+  },
+  "annotation_source": {
+    "semantic_authority": "BDD100K Detection 2020 train annotations",
+    "official_download_page": "https://bdd-data.berkeley.edu/download.html",
+    "official_format_documentation": "https://github.com/bdd100k/bdd100k/blob/master/doc/format.md",
+    "metadata_transport_repository": "https://huggingface.co/datasets/lance-format/BDD100K-enriched",
+    "frozen_transport_revision": "d82c5188d392714ba8091d68014f7b9838ceadf2",
+    "transport_split": "train",
+    "retained_fields": [
+      "image_id",
+      "split",
+      "width",
+      "height",
+      "ann_categories",
+      "ann_bboxes",
+      "ann_occluded",
+      "ann_truncated",
+      "ann_traffic_light_colors"
+    ],
+    "prohibited_fields": [
+      "image_bytes",
+      "embedding"
+    ]
+  },
+  "frozen_inputs": [
+    {
+      "role": "model_train_manifest",
+      "path": "data/processed/train.jsonl",
+      "bytes": 1876620,
+      "sha256": "73026B810EFB42DE19A15652596E03BE69C837472AF650B8A6BF804549280295"
+    },
+    {
+      "role": "model_validation_manifest",
+      "path": "data/processed/val.jsonl",
+      "bytes": 264216,
+      "sha256": "C424D38B0CB3EE7D6F2EE0E641FCE966F6D24FA90B1718F1BB884EC4DE68B7AE"
+    },
+    {
+      "role": "evaluation_manifest",
+      "path": "data/processed/test.jsonl",
+      "bytes": 533260,
+      "sha256": "89364A265FE4C2EDCA5125D34C4C25D47C96AFB46A5C4A8FE86B649785539004"
+    },
+    {
+      "role": "prior_generation",
+      "path": "data/processed/masks_v2/manifest.jsonl",
+      "bytes": 650361,
+      "sha256": "022E744AC01DACA8229818F69CACCF7CE2132204BD37BAB21DABCD4EA7A11AB2"
+    },
+    {
+      "role": "prior_generation",
+      "path": "data/processed/masks_v3/manifest.jsonl",
+      "bytes": 381887,
+      "sha256": "427E84F90D70321673D546D9F8259C2ADC2E21CBDA4C898E7D2106CCB0C527A0"
+    },
+    {
+      "role": "prior_generation",
+      "path": "data/processed/masks_v4/manifest.jsonl",
+      "bytes": 208842,
+      "sha256": "0BC9E68CB5C911AB977DA418691CC8F1F5CA5F4FD58E5281FCEC6908263125E0"
+    },
+    {
+      "role": "prior_generation",
+      "path": "data/processed/masks_v4/manifest_confirmatory.jsonl",
+      "bytes": 132597,
+      "sha256": "45AAAE7B6BB8A71FD49DBE5E10451067F2D978D331B58056138561092432B5BF"
+    },
+    {
+      "role": "prior_audit",
+      "path": "outputs/validity/mask_audit_v2/sample_manifest.jsonl",
+      "bytes": 93519,
+      "sha256": "04D7861E89BD68E9851DD2B50A8D0F6517D9A926A97E483F531070280E30F436"
+    },
+    {
+      "role": "prior_audit",
+      "path": "outputs/validity/mask_audit_v3/sample_manifest.jsonl",
+      "bytes": 106706,
+      "sha256": "888BE9F9845DEB1F5AA6E8E1DA44CEF8CCFFEECB9F18628A89E295F2FA76CD7D"
+    },
+    {
+      "role": "prior_audit",
+      "path": "outputs/validity/mask_audit_v4/sample_manifest.jsonl",
+      "bytes": 134184,
+      "sha256": "D69D97F831E27844FB2E602C035A80DBB8F54D16631E548BA682B18AA1849258"
+    }
+  ],
+  "eligibility_definition": {
+    "evaluation_population": "BDD-OIA test keyframes only; filenames ending _1 or _3 are temporal neighbors and cannot be candidates",
+    "target_rationale": "exactly one of red_light or green_light is positive",
+    "official_state_match": "at least one BDD100K traffic light box has trafficLightColor equal to the sole target rationale state",
+    "clip_group_key": "filename stem after removing a terminal _1 or _3",
+    "independence_exclusions": [
+      "any exact filename or clip group present in BDD-OIA model train or validation manifests",
+      "any exact filename or clip group present in any v2-v4 generation or audit manifest",
+      "any image SHA256 present in model train/validation or v2-v4 generation/audit populations",
+      "duplicate image SHA256 values within the proposed candidate pool"
+    ]
+  },
+  "go_stop_gates": {
+    "gate_1_independence": {
+      "required": true,
+      "maximum_filename_overlap": 0,
+      "maximum_clip_group_overlap": 0,
+      "maximum_image_sha256_overlap": 0,
+      "maximum_within_pool_duplicate_sha256": 0,
+      "missing_required_image_files": 0,
+      "failure_decision": "STOP_CEG_INDEPENDENCE"
+    },
+    "gate_2_population": {
+      "minimum_total": 200,
+      "minimum_red": 50,
+      "minimum_green": 50,
+      "minimum_independent_clip_groups": 30,
+      "failure_decision": "STOP_CEG_POPULATION_NO_V6"
+    }
+  },
+  "post_gate_policy": {
+    "if_gate_1_or_2_fails": "Formally end the CEG mainline. Do not lower thresholds and do not start v6 or horizontal dataset hunting.",
+    "if_both_pass": "Freeze the generator on the old development pool before one-shot v5 generation. Do not read model outputs before the blind audit passes.",
+    "disallowed_in_this_stage": [
+      "mask generation",
+      "checkpoint inference",
+      "logit or prediction-cache access",
+      "training",
+      "threshold adaptation"
+    ]
+  }
+}
