@@ -1,0 +1,275 @@
+{
+  "protocol_id": "ARSC_ROUND8_GRADED_RESPONSE_V1",
+  "status": "FROZEN_BEFORE_METRIC_RESPONSE_OUTCOMES",
+  "frozen_at": "2026-07-31T05:05:00+08:00",
+  "reviewer_authority": {
+    "source": "outputs/research_review_memo_round7_final.md",
+    "sha256": "36F0BB6AF4C61ECC6ADD83DF3B0302FD8352C18EB91981B35B854D9BD5AFC9A1",
+    "authorized_direction": "graded association-destruction response curves on the same frozen caches with seed by shared-clip crossed bootstrap"
+  },
+  "scientific_question": "Under one outcome-blind nested association map, do A, R, S, and C1 respond monotonically as the fraction of association-destroyed BDD-OIA samples increases?",
+  "scope": {
+    "dataset": "BDD-OIA frozen test population only",
+    "training_seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "new_data": false,
+    "training": false,
+    "inference": false,
+    "masks": false,
+    "threshold_selection": false,
+    "new_model_or_checkpoint": false,
+    "CEG": "closed; not evaluated",
+    "second_dataset_migration": "prohibited until Round 8 is independently reviewed"
+  },
+  "frozen_inputs": {
+    "threshold": 0.5,
+    "sample_count": 4557,
+    "filename_order_sha256": "9D9D4E74272AB3A71390B4204CE56F1831350A29EED009111EF1AD5A29026DF6",
+    "action_target_sha256": "C28063DE57B7E4CAF8B1A19C074BB5F1DF05C4984377856EDF2522387CEB7A39",
+    "rationale_target_sha256": "F787A947EC2ECA728166DC83B621402EDE27CAF7DDB1E7C3D3BBDD36B2BED469",
+    "cache_sha256": {
+      "43": "0794249465A4EFEDB5177E8B74CC76C4537B4044411EE17E7BACBC66FA6E47A3",
+      "44": "BA2D0E2061158358BE5D5B3D68AAFDA7FF57E7C571C0C679502A9CC9C6ADB465",
+      "45": "A7C179876FC3C57F06D3D7A9FE8EDFA286B6667C1B125933F8E350F657AD1187",
+      "46": "1EA70BC6F3D59D9B07D28369982D271FA3951E97FFFE1870A3E7C7530054EAD0",
+      "47": "7DDE8E4ACDFA06004ADE4AF33C679EC2A53E9F689B214A2ED36EDF91598AF743"
+    },
+    "calibration_sha256": {
+      "43": {
+        "action_only": "42BED1E43902103AB37864FFA7F48CDD2516C59205FE810AB461511095AA7AD0",
+        "joint": "A8A9AD227BAB110778E3D49F8BA78BAB21500FD3ECAEE7280763C6AF25CC137F"
+      },
+      "44": {
+        "action_only": "F670A6EE78230DE9856DA3BFEDA16DF59C8C02E2962F4518C651DA5560D6C6CF",
+        "joint": "89B07811122FE266C79541AD00AA1BEFFCE6E466CCB8B7D2E34D8B5E73A8B19B"
+      },
+      "45": {
+        "action_only": "E8E01FE05656BDCB188700875609E1FFDF16B5C62FB99658F89B0CB983DD913F",
+        "joint": "817A007E33AF09AE1DBBF1C3B45216D427C116A15E2DC4A172E5DE8C897857FB"
+      },
+      "46": {
+        "action_only": "D7C8C90570D357EA144642F4628538D6D2B1B61F018302AFB248FD82507698BE",
+        "joint": "F9935A65A0B187373FC16742207720D54C41C46071A1498393985ABB18E5E29A"
+      },
+      "47": {
+        "action_only": "E9FCAF432BC857AB3A4CEF69403975D6B22D86DD52A2540E65B96C9C1F9B07EB",
+        "joint": "06E05CA5334EBF74DCBE72829133A31707CFA94FADDA0FE6BE38F249E3A86101"
+      }
+    },
+    "Round7_exact_reproduction_reference": {
+      "results_path": "outputs/validity/arsc_axis_falsification_results.json",
+      "results_sha256": "E0A1802EC426989B2F46FE5DED8F554A0CCAA63CFA5D1011A5F46808A56775EA",
+      "artifact_index_path": "outputs/validity/arsc_axis_falsification_artifact_index.json",
+      "artifact_index_sha256": "1A3B27102F3497A987E344B04BB723B3992383DF7943C7C006290D9BC2EF8C74"
+    }
+  },
+  "outcome_blind_map": {
+    "manifest_path": "outputs/validity/round8_graded_association_map_manifest.json",
+    "manifest_sha256": "73B89C3438262BA272E0E90EDC2A6F9408B196CCBD4A30D9FA6FFFA798C273DC",
+    "npz_path": "outputs/validity/round8_graded_association_maps.npz",
+    "npz_sha256": "8685E1A4605B5D6355A432BC6CA03CF61930BAB23D41D899478A5C1D8FC47ED1",
+    "construction_commit": "b24b91ec4a85ef03f77b3bef95ea4f9a9b5dd6f9",
+    "salt": "ARSC_ROUND8_GRADED_ASSOCIATION_V1",
+    "construction_read_only_fields": [
+      "test_file_names"
+    ],
+    "targets_logits_probabilities_or_metric_outcomes_read": false,
+    "severity_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "active_images": [
+      0,
+      1140,
+      2278,
+      3418,
+      4557
+    ],
+    "active_fractions": [
+      0.0,
+      0.250164581961817,
+      0.499890278692122,
+      0.750054860653939,
+      1.0
+    ],
+    "properties_at_every_q": [
+      "global source-index bijection",
+      "identity outside a nested union of complete cycles",
+      "zero same-filename pairs among activated images",
+      "zero same-clip pairs among activated images",
+      "same map shared by all seeds, models, axes, and perturbations",
+      "target and confidence-value multisets preserved"
+    ],
+    "map_sha256_by_q": {
+      "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+      "0.25": "03C88BA66A9F11075C7562994B4B3837E8AACB6474D2DD4B563D673E3BFE2F9B",
+      "0.5": "A14CE26622F4306EA718037858CBE8C1DD8018168F157A6E5615D68883E2119F",
+      "0.75": "3D89FFDAB4AE0FD5121D498F72AB071881620D89118CBED7A4426EEB1B657A00",
+      "1.0": "CEF0D9B1E82DCECC6B4D31C1664DD868E7B64FA6F065244A6539D27C1CE2D446"
+    }
+  },
+  "graded_controls": {
+    "A": {
+      "models": [
+        "Action-Only",
+        "Joint Action-Rationale"
+      ],
+      "definition_at_q": "fixed clean raw action predictions scored against action_targets[source_map_q]",
+      "reported_curve": "four-label Macro-F1 and Micro-F1 for every seed/model/q, plus per-class F1 and target/predicted positive counts",
+      "expected_direction": "decreasing"
+    },
+    "R": {
+      "model": "Joint Action-Rationale",
+      "definition_at_q": "fixed clean rationale predictions scored against rationale_targets[source_map_q]",
+      "reported_curve": "21-label Macro-F1 and Micro-F1 for every seed/q, plus all 21 per-class F1 and target/predicted positive counts including zero-response classes",
+      "expected_direction": "decreasing"
+    },
+    "S": {
+      "models": [
+        "Action-Only",
+        "Joint Action-Rationale"
+      ],
+      "predictions_and_errors": "fixed calibrated threshold-0.5 action decisions and exact-set-error vectors",
+      "definition_at_q": "confidence_q[i] = original maximum calibrated action probability[source_map_q[i]]",
+      "preserved": [
+        "thresholded predictions",
+        "exact-set errors",
+        "A Macro-F1 and Micro-F1",
+        "confidence-value multiset"
+      ],
+      "primary_metric": {
+        "name": "tie-averaged AURC",
+        "tie_rule": "within each equal-confidence block, use the exact expected cumulative risk over all within-block orderings",
+        "expected_direction": "increasing"
+      },
+      "secondary_diagnostics": [
+        "canonical-stable-tie AURC",
+        "UAR@90",
+        "correctness AUROC",
+        "ECE"
+      ],
+      "ECE_boundary": "reported as a numeric association/calibration diagnostic only; it cannot enter the monotonic gate or any directional validity claim"
+    },
+    "C1": {
+      "action_models": [
+        "Action-Only",
+        "Joint Action-Rationale"
+      ],
+      "rationale_model": "Joint Action-Rationale",
+      "perturbations": [
+        "brightness",
+        "blur",
+        "noise"
+      ],
+      "definition_at_q": "clean prediction i is compared with each perturbed prediction at source_map_q[i]",
+      "reported_curves": [
+        "mean-three action flip for both action models; expected increasing",
+        "mean-three rationale Jaccard for Joint; expected decreasing",
+        "every individual perturbation value"
+      ],
+      "interpretation": "graded destruction of sample correspondence, not graded visual perturbation severity"
+    }
+  },
+  "one_statistic_per_axis": {
+    "definition": "For an axis, compute every expected-direction adjacent q-step in every required component curve and take the minimum; positive means all component curves move in the expected direction at all four adjacent steps.",
+    "A": {
+      "components": [
+        "Action-Only Macro-F1",
+        "Joint Macro-F1"
+      ],
+      "statistic": "minimum of original-direction drops across 8 adjacent steps"
+    },
+    "R": {
+      "components": [
+        "Joint rationale Macro-F1"
+      ],
+      "statistic": "minimum of original-direction drops across 4 adjacent steps"
+    },
+    "S": {
+      "components": [
+        "Action-Only tie-averaged AURC",
+        "Joint tie-averaged AURC"
+      ],
+      "statistic": "minimum of AURC increases across 8 adjacent steps"
+    },
+    "C1": {
+      "components": [
+        "Action-Only mean-three action flip",
+        "Joint mean-three action flip",
+        "Joint mean-three rationale Jaccard with sign reversed"
+      ],
+      "statistic": "minimum of 12 expected-direction adjacent steps"
+    }
+  },
+  "clip_population_and_bootstrap": {
+    "clip_rule": "remove only terminal _1 or _3 from the filename stem",
+    "clip_groups": 3904,
+    "group_size_histogram": {
+      "1": 3291,
+      "2": 573,
+      "3": 40
+    },
+    "images_in_non_singleton_groups": 1266,
+    "method": "seed by shared-clip crossed paired bootstrap",
+    "algorithm_per_replicate": [
+      "sample five training-seed indices with replacement",
+      "sample one multiset of 3904 clip-group indices with replacement",
+      "include every frame of every selected clip, retaining multiplicity when a clip is selected repeatedly",
+      "apply the same resulting image-index vector to every selected seed, q condition, model, axis, and perturbation",
+      "when a seed is selected repeatedly, reuse its frozen output and the same shared clip draw"
+    ],
+    "replicates": 2000,
+    "seed": 20260803,
+    "confidence_level": 0.95,
+    "interval": "percentile",
+    "interval_scope": "four pointwise axis-statistic intervals, not a simultaneous 95 percent family"
+  },
+  "decision_rules": {
+    "preanalysis_exact_stop": [
+      "all protocol, map, cache, calibration, Round 7 reference, code, filename, target, and clip hashes match",
+      "all q maps reproduce their frozen hashes and exact bijection/nesting/no-same-file/no-same-clip invariants",
+      "each q preserves action/rationale class-positive counts and every model confidence-value multiset exactly",
+      "q=0 exactly reproduces Round 7 original A/R/S and correct-pair C1 point estimates for every seed",
+      "predictions/errors/A are exactly invariant across S q",
+      "no target, logit, probability, confidence, prediction, or map array is modified in place",
+      "synthetic tests prove tie-averaged AURC, nested maps, bottleneck statistic, and whole-clip shared bootstrap behavior"
+    ],
+    "axis_gate": "The axis bottleneck statistic must have a positive five-seed mean, at least four of five raw seed statistics positive, a seed-by-shared-clip crossed-bootstrap pointwise 95 percent CI lower bound greater than zero, and the five-seed mean component curves must contain no adjacent direction reversal.",
+    "full_Round8_measurement_pass": "all exact checks and all four fixed axis gates pass",
+    "failure_policy": "Preserve any failure. Do not change q, salt, cycles, maps, metric, tie rule, statistic, bootstrap unit, threshold, seeds, model, or gate; request independent review.",
+    "no_multiple_testing_claim": "All four axes and all q values must be reported. No individual interval is a simultaneous familywise interval and no passing subset can be relabeled as the whole suite."
+  },
+  "required_outputs": [
+    "pre-outcome implementation and input hash manifest",
+    "exact preanalysis audit",
+    "all per-seed per-q A/R/S/C1 curves and per-class coverage",
+    "four raw seed bottleneck statistics",
+    "four seed-by-shared-clip bootstrap summaries",
+    "compact per-image/per-q primitives sufficient for independent reproduction",
+    "formal tmux log",
+    "independent post-result scientific review",
+    "top-level artifact index with SHA256 bindings"
+  ],
+  "claim_boundaries": {
+    "pass_supports": "BDD-OIA five-seed internal graded response and clip-cluster-conditional monotonic sensitivity to one frozen association-destruction construction.",
+    "pass_does_not_support": [
+      "construct validity",
+      "ontology validity",
+      "rationale correctness, grounding, or faithfulness",
+      "visual perturbation severity",
+      "calibration or a safety guarantee",
+      "CEG or causal evidence",
+      "other thresholds, maps, training protocols, architectures, datasets, or real-world driving",
+      "simultaneous 95 percent coverage"
+    ],
+    "next_dataset_rule": "Only an independent Round 8 PASS may authorize a result-blind protocol-preserving second-dataset replication."
+  }
+}
