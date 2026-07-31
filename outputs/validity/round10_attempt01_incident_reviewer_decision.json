@@ -1,0 +1,181 @@
+{
+  "schema_version": "ARSC_ROUND10_ATTEMPT01_INCIDENT_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-07-31T07:32:05Z",
+  "reviewer_role": "independent_outcome_blind_incident_reviewer",
+  "study": "BDD-OIA Round 10 corruption dose-response construct validation",
+  "reviewed_snapshot": {
+    "incident_commit": "7cc05537976d0fae1ebfb1aaa0618319a4cf69ca",
+    "incident_tree": "b4e90039289addf0cfbbca9044be65ce9cc36b94",
+    "launch_commit": "8dc7d829532a88d8aa0c50fffcdce1e181392586",
+    "implementation_commit": "69a9b8fe8123efaa30272500546f4e3e2edb0615"
+  },
+  "review_mode": {
+    "outcome_blind": true,
+    "checkpoint_files_read": false,
+    "checkpoint_tensors_loaded": false,
+    "model_constructed_or_loaded": false,
+    "model_inference_run": false,
+    "round10_nonzero_severity_predictions_read_or_computed": false,
+    "round10_nonzero_severity_logits_read_or_computed": false,
+    "round10_nonzero_severity_confidences_read_or_computed": false,
+    "round10_nonzero_severity_metric_outcomes_read_or_computed": false,
+    "implementation_modified": false,
+    "formal_run_started_by_reviewer": false
+  },
+  "verdict": {
+    "decision": "AUTHORIZE_OUTCOME_BLIND_ATTEMPT02_INFRASTRUCTURE_REPAIR_ONLY",
+    "attempt01_may_be_reused_or_restarted": false,
+    "attempt02_infrastructure_repair_authorized": true,
+    "attempt02_formal_run_authorized": false,
+    "formal_run_authorized": false,
+    "checkpoint_loading_authorized": false,
+    "model_inference_authorized": false,
+    "requires_new_implementation_commit": true,
+    "requires_new_manifest_and_preflight": true,
+    "requires_new_independent_preformal_go": true
+  },
+  "attempt01_classification": {
+    "classification": "PREFORMAL_INFRASTRUCTURE_FAILURE_ZERO_OUTCOME",
+    "counts_as_completed_or_started_formal_model_grid": false,
+    "is_a_scientific_result": false,
+    "is_available_for_model_metric_or_threshold_selection": false,
+    "must_remain_permanently_reported": true,
+    "exit_code": 1,
+    "exit_marker": "EXIT_CODE=1",
+    "failure_message": "formal analyzer requires the frozen tmux launcher contract"
+  },
+  "execution_order_evidence": {
+    "formal_run_tmux_and_environment_precondition": {
+      "line": 1304,
+      "executed": true,
+      "failed": true
+    },
+    "formal_authorization_revalidation": {
+      "line": 1309,
+      "executed": false
+    },
+    "staging_directory_creation": {
+      "line": 1312,
+      "executed": false
+    },
+    "first_run_seed_inference_call": {
+      "line": 1320,
+      "executed": false
+    },
+    "delayed_imports": {
+      "function": "run_seed_inference",
+      "lines": [
+        840,
+        842,
+        843,
+        844
+      ],
+      "modules": [
+        "torch",
+        "arsc_eval.engine",
+        "arsc_eval.models",
+        "arsc_eval.utils"
+      ],
+      "executed": false
+    },
+    "top_level_torch_engine_or_model_imports": false,
+    "log_contains_seed_condition_inference_bootstrap_or_result_output": false
+  },
+  "artifact_absence": {
+    "attempt01_staging_directory_absent": true,
+    "attempt01_final_directory_absent": true,
+    "attempt01_artifact_index_absent": true,
+    "seed_logits_absent": true,
+    "primitives_absent": true,
+    "point_diagnostics_absent": true,
+    "bootstrap_draws_absent": true,
+    "bootstrap_summary_absent": true,
+    "results_json_absent": true
+  },
+  "root_cause_assessment": {
+    "status": "SUPPORTED_BY_CODE_AND_LOG",
+    "launcher_supplied_cli_tmux_session": true,
+    "launcher_used_inline_wsl_environment_sentinel_for_windows_python": true,
+    "analyzer_required_both_cli_and_environment_sentinels": true,
+    "failure_occurred_at_combined_sentinel_precondition": true,
+    "conclusion": "The WSL-to-Windows launch did not propagate the inline ARSC_ROUND10_LAUNCHED_BY_TMUX value while the explicit CLI session was present.",
+    "gpu_nonparticipation_used_as_primary_evidence": false
+  },
+  "scientific_integrity_assessment": {
+    "formal_run_count_remains_available": 1,
+    "basis": "The frozen formal grid had not reached authorization revalidation, staging creation, checkpoint/model code, inference, statistics, or outcomes. A prospective infrastructure-only repair therefore does not duplicate a model grid or create outcome-dependent selection.",
+    "attempt02_cannot_be_used_to_change_scientific_design": true,
+    "automatic_permanent_stop_if_any_model_or_outcome_artifact_is_later_found": true,
+    "automatic_permanent_stop_decision": "PERMANENT_ROUND10_INCONCLUSIVE_STOP"
+  },
+  "attempt02_repair_authorization": {
+    "allowed_changes": [
+      "remove only the nonportable ARSC_ROUND10_LAUNCHED_BY_TMUX environment-variable requirement",
+      "retain an explicit CLI tmux-session requirement using a new attempt02 session",
+      "require a new attempt02 log sentinel before formal authorization",
+      "retain the shared strict Round 10 output allowlist and guard",
+      "use new attempt02 staging, final, log, and artifact-index paths",
+      "allow and SHA256-bind the immutable attempt01 log, incident, and this reviewer decision"
+    ],
+    "prohibited_changes": [
+      "deleting, overwriting, truncating, renaming, or reusing attempt01 log or incident",
+      "reusing attempt01 session, log, staging, final, or artifact-index path",
+      "changing data, source-clip grouping, models, checkpoints, calibrations, operators, families, levels, parameters, thresholds, metrics, diagnostics, seeds, bootstrap, quantiles, multiplicity, gates, decision rules, or claim boundaries",
+      "adding prediction cache, result cache, checkpoint cache, resume, or restart behavior",
+      "loading checkpoints, constructing models, running inference, or reading/computing nonzero-severity outputs during repair or preflight"
+    ],
+    "required_new_identifiers": {
+      "tmux_session": "arsc_round10_formal_attempt02",
+      "log": "outputs/validity/round10_corruption_formal_attempt02.log",
+      "staging": "outputs/validity/round10_corruption_formal_attempt02.staging",
+      "final": "outputs/validity/round10_corruption_formal_attempt02",
+      "artifact_index": "outputs/validity/round10_corruption_artifact_index_attempt02.json"
+    }
+  },
+  "required_authorization_sequence": [
+    "Implement only the bounded outcome-blind infrastructure repair.",
+    "Commit a new implementation snapshot.",
+    "Generate a new attempt02 implementation manifest and outcome-blind preflight.",
+    "Bind every direct and transitive dependency, all frozen inputs, the original GO, the immutable attempt01 log and incident, and this incident reviewer decision.",
+    "Run only synthetic contract and negative tests before GO.",
+    "Obtain a new independent outcome-blind preformal reviewer decision.",
+    "Launch attempt02 only if that later decision explicitly authorizes attempt02.",
+    "Treat attempt02 as the sole remaining formal model grid; after completion, scientific failure, or interruption, stop permanently."
+  ],
+  "preservation_requirements": {
+    "attempt01_log": {
+      "path": "outputs/validity/round10_corruption_formal_attempt01.log",
+      "sha256": "BB6CCB81A6AF980C5BE35EED3D36DDE9D5E1DABADD2EDAF187011B1A8C22A3CC",
+      "bytes": 798,
+      "immutable": true
+    },
+    "attempt01_incident": {
+      "path": "outputs/validity/round10_formal_attempt01_incident.json",
+      "sha256": "1DA010284B0E6F8311E3A76DDF0E2C0C1015891EE244D92B115C550273C5D712",
+      "bytes": 2786,
+      "immutable": true
+    },
+    "original_preformal_go": {
+      "path": "outputs/validity/round10_preformal_reviewer_decision_amendment01.json",
+      "sha256": "913D580D31F41F1F0DE8F597D7439F241B6BFA5081DF35844ABF7CF5F97B6DFA",
+      "immutable": true
+    }
+  },
+  "memo": {
+    "path": "outputs/research_review_memo_round10_attempt01_incident.md",
+    "sha256": "62CC1B1DF19FF68563E6152BA34080FB83925E34082E11C890F30D550C0063DC"
+  },
+  "reviewed_files_sha256": {
+    "outputs/research_review_memo_round10_preformal_amendment01.md": "926632B4D2569E36989072BDF672680C420441DFFD7ECF547A03E2FCAAB86F44",
+    "outputs/validity/round10_corruption_dose_response_protocol.json": "E3F54B24A50D847636FA644355BF78DB1AB2432CF74543E8AEF11A005D17029D",
+    "outputs/validity/round10_corruption_dose_response_protocol_amendment01.json": "220D36BEB76CAFDE5BCC3528B49F737E6681A43FF2ECA9A3C22531A1FF88644B",
+    "outputs/validity/round10_corruption_formal_attempt01.log": "BB6CCB81A6AF980C5BE35EED3D36DDE9D5E1DABADD2EDAF187011B1A8C22A3CC",
+    "outputs/validity/round10_corruption_formal_implementation_manifest_amendment01.json": "5783C9FE25A593DFE4FFDA3CAA594079D955C5C33DBF32D966717412A474A101",
+    "outputs/validity/round10_corruption_formal_preflight_amendment01.json": "42B06C21EF585780C18EE644AB00C324A2BD6EB8576CD2915091594EB968BCE2",
+    "outputs/validity/round10_formal_attempt01_incident.json": "1DA010284B0E6F8311E3A76DDF0E2C0C1015891EE244D92B115C550273C5D712",
+    "outputs/validity/round10_preformal_reviewer_decision_amendment01.json": "913D580D31F41F1F0DE8F597D7439F241B6BFA5081DF35844ABF7CF5F97B6DFA",
+    "scripts/analyze_round10_corruption.py": "26EE06CC930BF2FCD1EDFCF020AE1610644C6A4ABA59F2A1F2D51B45E38DCFAF",
+    "scripts/launch_round10_corruption_tmux.sh": "9632D5AD94083E7BDE1608367FB43C63448779385B8BF7371E1804EF62846A69",
+    "src/arsc_eval/round10_formal_contract.py": "69BFB1D3E8EDAE024B32725A68F0F5FDC79755A1EC7C1C86DFB44DF27CFDC62F"
+  }
+}
