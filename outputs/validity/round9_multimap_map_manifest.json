@@ -1,0 +1,2012 @@
+{
+  "study": "Round 9 outcome-blind 20-map construction",
+  "status": "FROZEN_BEFORE_NEW_MAP_Q_GREATER_THAN_ZERO_OUTCOMES",
+  "protocol": {
+    "path": "outputs/validity/round9_multimap_protocol.json",
+    "sha256": "B8E180ECB3CDCE2F34EC987BDE33F9B8FEFE0D60509962C09D69811FD7D7F5F3"
+  },
+  "construction_inputs": {
+    "cache_path": "outputs/validity/rq1_seed_43/prediction_cache/rq1_lossless.npz",
+    "cache_sha256": "0794249465A4EFEDB5177E8B74CC76C4537B4044411EE17E7BACBC66FA6E47A3",
+    "archive_keys_read": [
+      "test_file_names"
+    ],
+    "filename_array_sha256": "9D9D4E74272AB3A71390B4204CE56F1831350A29EED009111EF1AD5A29026DF6",
+    "targets_read": false,
+    "predictions_read": false,
+    "logits_or_probabilities_read": false,
+    "confidence_or_errors_read": false,
+    "new_map_q_greater_than_zero_metric_outcomes_read": false
+  },
+  "construction": {
+    "algorithm": "Round 8 deterministic salted filename/clip cycle builder",
+    "map_ids": [
+      "map00",
+      "map01",
+      "map02",
+      "map03",
+      "map04",
+      "map05",
+      "map06",
+      "map07",
+      "map08",
+      "map09",
+      "map10",
+      "map11",
+      "map12",
+      "map13",
+      "map14",
+      "map15",
+      "map16",
+      "map17",
+      "map18",
+      "map19"
+    ],
+    "salts": [
+      "arsc-round9-map00",
+      "arsc-round9-map01",
+      "arsc-round9-map02",
+      "arsc-round9-map03",
+      "arsc-round9-map04",
+      "arsc-round9-map05",
+      "arsc-round9-map06",
+      "arsc-round9-map07",
+      "arsc-round9-map08",
+      "arsc-round9-map09",
+      "arsc-round9-map10",
+      "arsc-round9-map11",
+      "arsc-round9-map12",
+      "arsc-round9-map13",
+      "arsc-round9-map14",
+      "arsc-round9-map15",
+      "arsc-round9-map16",
+      "arsc-round9-map17",
+      "arsc-round9-map18",
+      "arsc-round9-map19"
+    ],
+    "severity_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "expected_active_images": [
+      0,
+      1140,
+      2278,
+      3418,
+      4557
+    ],
+    "salt_replacement_allowed": false,
+    "all_salts_unique": true,
+    "all_q1_source_maps_unique": true,
+    "depends_only_on": [
+      "canonical filename strings",
+      "clip groups derived by removing terminal _1 or _3",
+      "prefixed fixed salt",
+      "frozen q grid"
+    ]
+  },
+  "clip_population": {
+    "sample_count": 4557,
+    "clip_groups": 3904,
+    "size_histogram": {
+      "1": 3291,
+      "2": 573,
+      "3": 40
+    },
+    "clip_group_ids_sha256": "CBCF3E385E0FEBB22B364047BBB219CD959913F89C89663D523F6829F17DE92B"
+  },
+  "maps": {
+    "map00": {
+      "salt": "arsc-round9-map00",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map00",
+        "pair_count": 2277,
+        "triplet": [
+          2706,
+          4045,
+          2412
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        2706,
+        4045,
+        2412
+      ],
+      "source_array_key": "map00_source_maps",
+      "source_array_sha256": "85DB26DCDBEF18604ABFE0F5CCEE73DB1A23210BFF5E70FBE58115A080923DD8",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "41A5143C31E78DC193B300AC62115FB46ECDF266BA187C8B550CAD715374E5E6",
+        "0.5": "296FE82EEA84867FE50FE0E78B2B7A72D2845A43563BDE310610FEC7918FAB97",
+        "0.75": "31AB1AC1BC961E428D1888A9F9FCE05385D8CAFC8CB916924BEE226D4F66A363",
+        "1.0": "DEF467BF6207D49DE943B59089DAE006414569DDC377FE73BC91B9B9CDB24B7B"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map01": {
+      "salt": "arsc-round9-map01",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map01",
+        "pair_count": 2277,
+        "triplet": [
+          1936,
+          2729,
+          1972
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        1936,
+        2729,
+        1972
+      ],
+      "source_array_key": "map01_source_maps",
+      "source_array_sha256": "AA9D56F8FE7C0161348B2D3B9304792D62F114E8B28EB73CED36B7B4A6132426",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "544D7D10735019E390C37F045A8A00ADAD74D8C2450218AE8E4D24BE5302FAF9",
+        "0.5": "1F12639D27AF839B76C3637D79DFEB2895A1A21FDC8494F02B77FD328FCED74C",
+        "0.75": "46F340BD035C9CE69FFC2270C173A0CDB740AAC56E7536158FE41CEE8DFB7548",
+        "1.0": "63257045C759A1E03B2607F3E2614DD968F52DFB2F8D770B2D75B842AC984369"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map02": {
+      "salt": "arsc-round9-map02",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map02",
+        "pair_count": 2277,
+        "triplet": [
+          985,
+          1363,
+          1265
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        985,
+        1363,
+        1265
+      ],
+      "source_array_key": "map02_source_maps",
+      "source_array_sha256": "212AB9048FD84A959D2A09AF4F0CF8F3D543E1A9CE907DFC4EA9909E3A4ADA37",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "18CC5C89A05896511F0A4CD77DC5C834633F53A83B7315C49230875A03FDC6B1",
+        "0.5": "BA38857ED06E259059EF9C0A2497E6E2A414B862641486D67E1F389C5D43AEF3",
+        "0.75": "25A17377525FD8486316D963C748DE033CD5DA2DEBDD0D19F4F6E20FF0EDFBC6",
+        "1.0": "52994BE65815D090A214A8E85A33BC33DA6EC29E27E93186D1D4B5AD3B828FF9"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map03": {
+      "salt": "arsc-round9-map03",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map03",
+        "pair_count": 2277,
+        "triplet": [
+          3888,
+          759,
+          3764
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        3888,
+        759,
+        3764
+      ],
+      "source_array_key": "map03_source_maps",
+      "source_array_sha256": "89F2B44CDDBF171B5C2654AEF07188A10F902B5CECB582E5F8E31F949E37C1F4",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "505E7A505944F9E233435A271B5F8E9354155C24D663F7600F163301C86B1B2B",
+        "0.5": "1AD1BB8ED0A41D715E855B8B68456905CF9252800F54408A33795AD3E5AEC887",
+        "0.75": "7B6E804DFA6A49E72A14F796C18E7D913E29B773AC940AE7F957AEFE62FB59D1",
+        "1.0": "32CE5D74F17B0958EFAE6E0E35D4D5F3119652BD9EF6303FA3723CA8BF396B26"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map04": {
+      "salt": "arsc-round9-map04",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map04",
+        "pair_count": 2277,
+        "triplet": [
+          1018,
+          699,
+          633
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        1018,
+        699,
+        633
+      ],
+      "source_array_key": "map04_source_maps",
+      "source_array_sha256": "E063FFDEF98209A40512282B810B1C555FFD0847BA9A998166F889A736915563",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "9DFDDA89BBA4C55F9A36FC48119B8E09E234F576CF4E7E5B5302EBBDC9438D42",
+        "0.5": "D06CD2E987EA37945F7B7DB29BFEFE3FAE55EB771D8A15C1DDC0A1147C7A6A2F",
+        "0.75": "9BAE752DFCA48CCA49356BDE96B04DCC383DE8F39074F800344AD9429422EDB4",
+        "1.0": "E2A17FD3BE4F617EDF7936CB726DC9A441ABD07DD0A645C3B746C68CE2AB93C1"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map05": {
+      "salt": "arsc-round9-map05",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map05",
+        "pair_count": 2277,
+        "triplet": [
+          2654,
+          2564,
+          831
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        2654,
+        2564,
+        831
+      ],
+      "source_array_key": "map05_source_maps",
+      "source_array_sha256": "050074EAF9A6C9C5C0860511F1852C1E14E57FA13883D20CCD47E1C203A08A22",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "200FA78E573737ABBAAC86213C7D8423805F50A0BD7CE4A84A09EDFBB511158D",
+        "0.5": "74086C52BF2C4B39606BAC8C0A4A0B5DBE64E38E9A4FC002A4BA21D0FE8D1D90",
+        "0.75": "D74438F6D86833D28D681E985B461405948ADAD618950A2A7D21D3DDD2FAC66D",
+        "1.0": "03058D4C1C85665E8F46230F1863359AD05C9830659910C7455AD463EABFC9C0"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map06": {
+      "salt": "arsc-round9-map06",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map06",
+        "pair_count": 2277,
+        "triplet": [
+          2736,
+          2718,
+          544
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        2736,
+        2718,
+        544
+      ],
+      "source_array_key": "map06_source_maps",
+      "source_array_sha256": "E1ECD6F3519A242A6A762477E1906AF02BEA9DD911E3E52C4250CF2CC37FE692",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "E3724EC3DDCFB14331BEB3D3F6CA99456526E53C602307052598E2A56B3133E3",
+        "0.5": "39F0585015A57A3CF589678B12D32612FEDB3307276E0BFACCC803D79749C941",
+        "0.75": "CD25F1408542AC13BB4C51DD92DC90A55B1A7782DA9E48B741662EC21DA5894F",
+        "1.0": "2A56DCA430712500E3A7E1595496C16135E252AFAD67721D6BAAC352C939FE14"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map07": {
+      "salt": "arsc-round9-map07",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map07",
+        "pair_count": 2277,
+        "triplet": [
+          379,
+          3359,
+          2560
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        379,
+        3359,
+        2560
+      ],
+      "source_array_key": "map07_source_maps",
+      "source_array_sha256": "C89A49BD1B74000D40B89F73256C2F50FD97339AD15E981E8322665B2A2DF000",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "1F640827B34A1373D63627796962BBB66DA92DAAC1687DB1CCB0B9A29C150206",
+        "0.5": "71463BE66677369EFEC83F9CC589355A3FAB00D13474A4C4F85FBB0D87D20D3C",
+        "0.75": "3A002EA1C049E9870511106BAB84FBC31CC79395D290CACF4E193B109B3D26EF",
+        "1.0": "612EB01896ACFC3B9C257A10C3D5F5542445CC904657E122A3DF3F14D8BE3955"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map08": {
+      "salt": "arsc-round9-map08",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map08",
+        "pair_count": 2277,
+        "triplet": [
+          1669,
+          2669,
+          307
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        1669,
+        2669,
+        307
+      ],
+      "source_array_key": "map08_source_maps",
+      "source_array_sha256": "D581CB212A8378E56DDD3D8952724D564537CE204D28872586BB7EA78A4C105B",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "55FAFC4BB778950FD05AAE68452EEEF02D6A57EAB70DB3F7B5D031355A1CFAAB",
+        "0.5": "DA654820E1210EDBE13F24FE130270988AB461DA35CBECDC0FFB4E7AB4399492",
+        "0.75": "C6C046A4B01743230BC7651583FC703FD26DF306794F0F2DF3BAE7924D89D067",
+        "1.0": "2FD1B096A34E10D763F103674639623AB70250CA072A22A57AD5E53F6211894B"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map09": {
+      "salt": "arsc-round9-map09",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map09",
+        "pair_count": 2277,
+        "triplet": [
+          3689,
+          3688,
+          2550
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        3689,
+        3688,
+        2550
+      ],
+      "source_array_key": "map09_source_maps",
+      "source_array_sha256": "1B9A9FB7FFDE373F7DD6D4DEF64CF7F6AD96E8C2B1DC4E2C489DA8566517DBFB",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "8C35A04E478B1724D2EDBD7A835DA4DE22AA699818465E5FA770498FDCC193F6",
+        "0.5": "8D99B96E910CE1777D8F7F6DE2201210A5E2DFEC444FC3C56A10EF6F758141B5",
+        "0.75": "82846D0163FA709B2A9135250E203DDAF710D5A65534F4E51531AC80D7D713E5",
+        "1.0": "131DBB997C9213D141501206CEC5B55205D280CC12651455F769E45D83AB86EF"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map10": {
+      "salt": "arsc-round9-map10",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map10",
+        "pair_count": 2277,
+        "triplet": [
+          3096,
+          674,
+          1009
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        3096,
+        674,
+        1009
+      ],
+      "source_array_key": "map10_source_maps",
+      "source_array_sha256": "B71BD0D9D12204166D7862E0BE32437AACF2FC34FD7741858E5B42DE0D53B3C4",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "60261EC6E88D54EE3C6256108D7A8FD6E66706FE0AE727A192BC957CD9CD1E23",
+        "0.5": "A25613C13B076BBBD5F3579C11BCE2997EC4BAE7715AACFDBB16E64E1E043A3F",
+        "0.75": "E350E7AE8B7B84E1BC5FF1FAB39540BED71D3BCFD7081867B27B42E63375AE57",
+        "1.0": "FA0255B454B75C9AEEA022B739EC5FDAA0AB7329FD3C8F48B778A5302162BE38"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map11": {
+      "salt": "arsc-round9-map11",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map11",
+        "pair_count": 2277,
+        "triplet": [
+          1820,
+          3925,
+          4455
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        1820,
+        3925,
+        4455
+      ],
+      "source_array_key": "map11_source_maps",
+      "source_array_sha256": "68098BB4B27AE5EC8E5893EF3C092DE846F61AC8D7035DAED24C57349E836E8C",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "A848EDC87F1FFAF130AAC12F8B0C0042C60F82BF9A6F0F38DC9005601A239A30",
+        "0.5": "970D4258D51CE6A640233D282D48D9479AEDC34AA9BCF61992627A53F96E1CA9",
+        "0.75": "222F33A07B5CD9F730B51706F90AE6CA1FC3092D9C21F7B93EB7CD6686297A4B",
+        "1.0": "F51C7C509E3027EBF18526AC858F2449E994F8AB47E5741F93E5DE08EFE0F612"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map12": {
+      "salt": "arsc-round9-map12",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map12",
+        "pair_count": 2277,
+        "triplet": [
+          371,
+          4400,
+          36
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        371,
+        4400,
+        36
+      ],
+      "source_array_key": "map12_source_maps",
+      "source_array_sha256": "AE0E6AE806EE33118574BC36129AC81BF7BCA4303C476AD523FD35131CB216C7",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "4D5121BBF824EDF07CD89D31179C123DEB94242B1834B8A9D8CB3B48B13869B5",
+        "0.5": "C5CA8D99777E450C12B12C2068863C73D0D39B4A258EAE39C264742769DAA6D7",
+        "0.75": "A3E4762A00670CF4F41FEDD4BF8B6B337F1B6FE2C9689ED327F3AD93A2238298",
+        "1.0": "CC3E6B476A179D49C2D73B6D798D575339F7ED2DC4FA707AD3633ECE1BCE685F"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map13": {
+      "salt": "arsc-round9-map13",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map13",
+        "pair_count": 2277,
+        "triplet": [
+          759,
+          1546,
+          4346
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        759,
+        1546,
+        4346
+      ],
+      "source_array_key": "map13_source_maps",
+      "source_array_sha256": "3F2C4BBC3BD1F5AF90690A0A8D22D08BCCD9927F9153AE7A8DF8C4AD1C01E41B",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "921C20D2ADD017D0CC02EB56FED87BE1024D2C26F5FDFD1D012DAA9C0850E6DB",
+        "0.5": "BD2484ECD20BF13C2A425B984BA8390A1678D40AB30E654715043830F619A6F1",
+        "0.75": "E47175BACC693D599A79E9727A3F2A05B11076E625DA3F6C91C696CCD107FEB1",
+        "1.0": "19640595E21705397AED9728AB22E8AFDBCCEB9B5550B22019DA95A914277FA3"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map14": {
+      "salt": "arsc-round9-map14",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map14",
+        "pair_count": 2277,
+        "triplet": [
+          3028,
+          3244,
+          574
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        3028,
+        3244,
+        574
+      ],
+      "source_array_key": "map14_source_maps",
+      "source_array_sha256": "D3126E01D1F4351A60061BF02E278EF2D32247A271F526726F3A90B24E26870B",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "7B3EE78F4103135D09235A1777D216522D4C5B60FAEFEDF74A26B85F42C5FA6B",
+        "0.5": "BC8A0299F97CEDCB0F15F1BA555BE4B4E7523F2535E2D0E3C3F1C75B8082494C",
+        "0.75": "94A1F9CBC41DC0F77281990F866A550ED41BC7D46823DB0CA6CD64F82E12CF2A",
+        "1.0": "2D6EC44838AEE9A0E917EFBAF1017D99C8A1D8B743EF63A02C2C0D9AB51C05F1"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map15": {
+      "salt": "arsc-round9-map15",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map15",
+        "pair_count": 2277,
+        "triplet": [
+          4217,
+          1416,
+          1617
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        4217,
+        1416,
+        1617
+      ],
+      "source_array_key": "map15_source_maps",
+      "source_array_sha256": "2955446C8F0E0974EEF5960E8BB6359BB70B6E858EB446326881E0908B6AAF07",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "C09AD3A3B7E5A7C9A4E3AC0E9B1F9E7F3528C37AC1AD610522FD4796C173B3E2",
+        "0.5": "40F7C0EFE3692B514F043A4D307140B8D7B2782E2143969AF0CF06201649E205",
+        "0.75": "CFB805376C8CFF531F82A826D91028CC6A8067A4857D466A37F30D3EC22BFEA4",
+        "1.0": "722A6EB3358BA2D470A7A4E8ABCF89AE1C06F5E6C3D6CC7DA9E35B456050D0E4"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map16": {
+      "salt": "arsc-round9-map16",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map16",
+        "pair_count": 2277,
+        "triplet": [
+          1516,
+          3228,
+          1994
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        1516,
+        3228,
+        1994
+      ],
+      "source_array_key": "map16_source_maps",
+      "source_array_sha256": "DACF65B6ECB35D819EDE182F8885612A4BD2ECEBA3A8D08E86AC176F0D7BEA46",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "A7C70A50FEBAE28BF679F02CBB936E8E58971993C257F790A101F6E2D99ED4CF",
+        "0.5": "4FE1C2D1C396466A1D4C3A8019850409C6689F39FFC46197CB2A6184ABBF773C",
+        "0.75": "995CE614FC0C00F8A1AC710FA58CC742E5FA9AA50693AC0918025D36BA11C4DC",
+        "1.0": "C0F78990B199E35086E64CCE4DCAC55100FA1D872BF648FCBE3140A29BE6F77C"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map17": {
+      "salt": "arsc-round9-map17",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map17",
+        "pair_count": 2277,
+        "triplet": [
+          3816,
+          4201,
+          4194
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        3816,
+        4201,
+        4194
+      ],
+      "source_array_key": "map17_source_maps",
+      "source_array_sha256": "DA8B3BB88BCB540B22C0F7CF02155E32499EC014039F10F08FB1910817CC8D2A",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "55960D698C5468A3690399F494948AE2A9BA113AE78CDA4E636FD0681C45BC97",
+        "0.5": "C75C503581E086BBEE5A1ECD3779C9B304DCDB2F28C8C617D67E200A1111E0DE",
+        "0.75": "E0FD9FA687D619DFF532241E9418796519C1F63A7DF417E8A210BF46D1A17B7D",
+        "1.0": "758C92059A7281BEBC70FBF33CB1CBA12628084A60CB12EDBCA552C69826651F"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map18": {
+      "salt": "arsc-round9-map18",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map18",
+        "pair_count": 2277,
+        "triplet": [
+          2460,
+          2670,
+          1164
+        ],
+        "right_half_rotation": 0,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        2460,
+        2670,
+        1164
+      ],
+      "source_array_key": "map18_source_maps",
+      "source_array_sha256": "60963981B2631B6B3585C065D5E8DB5269375C06D4EA457404501093EF5686F6",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "9132CD3187A598D23AE4A0E2806176E205ACDB40A2869C6151F335DA67A0476B",
+        "0.5": "520A79792C57C2D4264A25490ACE34D82739BF017AFA92F8C7B6BDE50D7D9B06",
+        "0.75": "B253BB87241F844BB9793C7A496B21C1BFCB1C3EE0443FFFD8379BAC674A6B6F",
+        "1.0": "3259D7F44F8E33DD5525C59E13BC48062F13D8DA927FFCBBDE852765970FD707"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    },
+    "map19": {
+      "salt": "arsc-round9-map19",
+      "cycle_diagnostics": {
+        "salt": "arsc-round9-map19",
+        "pair_count": 2277,
+        "triplet": [
+          1971,
+          4423,
+          2242
+        ],
+        "right_half_rotation": 2,
+        "all_cycle_members_unique": true,
+        "all_cycle_edges_cross_clip": true
+      },
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        1971,
+        4423,
+        2242
+      ],
+      "source_array_key": "map19_source_maps",
+      "source_array_sha256": "EE5F17A0EC288486ACBA2C4EEDA6117C9895E41813F3049721E6D2D589BC9DF9",
+      "source_sha256_by_q": {
+        "0.0": "AECED390CC5B008AFFAE6274401884BE7A455A5C793F1C1105CA812C89323F3F",
+        "0.25": "0C6CC016089DBDFC5B9D4447E9CA985655524A3E3FC3C791C1076E9A7B599D48",
+        "0.5": "335A3623B9B31562BB20813828C828EB3A2BCD5649C616FB5E2E7ADB83BF6C14",
+        "0.75": "1FA72DF2DA0476FA0D007CB411107D71BECEC1C2DA68A19E69C30FADA9EE6A3F",
+        "1.0": "8D3D78034DB5915E878A6DE0CDE840C0D8EEFAC758E1AACEBFBBE881D2F5C6EE"
+      },
+      "active_images": [
+        0,
+        1140,
+        2278,
+        3418,
+        4557
+      ],
+      "audit": {
+        "sample_count": 4557,
+        "clip_group_count": 3904,
+        "by_severity": {
+          "0.0": {
+            "bijection": true,
+            "active_images": 0,
+            "active_fraction": 0.0,
+            "fixed_points": 4557,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.25": {
+            "bijection": true,
+            "active_images": 1140,
+            "active_fraction": 0.250164581961817,
+            "fixed_points": 3417,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.5": {
+            "bijection": true,
+            "active_images": 2278,
+            "active_fraction": 0.499890278692122,
+            "fixed_points": 2279,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "0.75": {
+            "bijection": true,
+            "active_images": 3418,
+            "active_fraction": 0.750054860653939,
+            "fixed_points": 1139,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          },
+          "1.0": {
+            "bijection": true,
+            "active_images": 4557,
+            "active_fraction": 1.0,
+            "fixed_points": 0,
+            "active_same_filename_pairs": 0,
+            "active_same_clip_pairs": 0,
+            "nested_superset": true
+          }
+        },
+        "all_passed": true
+      },
+      "all_complete_cycles_only": true,
+      "q1_fixed_points": 0
+    }
+  },
+  "artifact": {
+    "path": "outputs/validity/round9_multimap_maps.npz",
+    "sha256": "9F540646ABF101800F5BC65AF272F4906C57EBFA94BEBB78B909DD52F1E627F4",
+    "bytes": 1331568,
+    "array_count": 65,
+    "array_keys": [
+      "active_images",
+      "clip_group_ids",
+      "clip_group_names",
+      "file_names",
+      "map00_final_triplet",
+      "map00_pair_cycles",
+      "map00_source_maps",
+      "map01_final_triplet",
+      "map01_pair_cycles",
+      "map01_source_maps",
+      "map02_final_triplet",
+      "map02_pair_cycles",
+      "map02_source_maps",
+      "map03_final_triplet",
+      "map03_pair_cycles",
+      "map03_source_maps",
+      "map04_final_triplet",
+      "map04_pair_cycles",
+      "map04_source_maps",
+      "map05_final_triplet",
+      "map05_pair_cycles",
+      "map05_source_maps",
+      "map06_final_triplet",
+      "map06_pair_cycles",
+      "map06_source_maps",
+      "map07_final_triplet",
+      "map07_pair_cycles",
+      "map07_source_maps",
+      "map08_final_triplet",
+      "map08_pair_cycles",
+      "map08_source_maps",
+      "map09_final_triplet",
+      "map09_pair_cycles",
+      "map09_source_maps",
+      "map10_final_triplet",
+      "map10_pair_cycles",
+      "map10_source_maps",
+      "map11_final_triplet",
+      "map11_pair_cycles",
+      "map11_source_maps",
+      "map12_final_triplet",
+      "map12_pair_cycles",
+      "map12_source_maps",
+      "map13_final_triplet",
+      "map13_pair_cycles",
+      "map13_source_maps",
+      "map14_final_triplet",
+      "map14_pair_cycles",
+      "map14_source_maps",
+      "map15_final_triplet",
+      "map15_pair_cycles",
+      "map15_source_maps",
+      "map16_final_triplet",
+      "map16_pair_cycles",
+      "map16_source_maps",
+      "map17_final_triplet",
+      "map17_pair_cycles",
+      "map17_source_maps",
+      "map18_final_triplet",
+      "map18_pair_cycles",
+      "map18_source_maps",
+      "map19_final_triplet",
+      "map19_pair_cycles",
+      "map19_source_maps",
+      "q_values"
+    ],
+    "contains_targets_predictions_logits_probabilities_confidence_errors_or_metric_outcomes": false
+  },
+  "implementation": {
+    "builder": {
+      "path": "scripts/build_round9_multimap_maps.py",
+      "sha256": "12540C081C37DD9002CBB89FD11D9EB9FCB1FAF3DA9B609557D158D7D88CD3AD"
+    },
+    "Round8_core_reused_without_change": {
+      "path": "src/arsc_eval/graded_association.py",
+      "sha256": "529C0AB3364CA48AEFDD6FC91C7B1390D57110CFA221437B3F7FED4D709DD443"
+    },
+    "existing_synthetic_tests": {
+      "path": "tests/test_graded_association.py",
+      "sha256": "AB067CEF3384191C1DF80ACA18E3FAF201D43B7B72DE3911B541D2508C0942DA"
+    }
+  },
+  "failure_policy": "Any salt, hash, uniqueness, cycle, nesting, bijection, same-file, same-clip, or q1 fixed-point failure stops all of Round 9; do not drop or replace a prefixed salt."
+}

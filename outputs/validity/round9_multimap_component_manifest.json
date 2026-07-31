@@ -1,0 +1,2688 @@
+{
+  "study": "Round 9 per-map outcome-blind association components",
+  "status": "FROZEN_BEFORE_NEW_MAP_Q_GREATER_THAN_ZERO_OUTCOMES",
+  "derivation": {
+    "for_each_map": "connected components of clip(i)--clip(q1_source[i])",
+    "map_count": 20,
+    "targets_predictions_logits_probabilities_confidences_errors_or_metric_outcomes_read": false,
+    "new_map_q_greater_than_zero_metric_outcomes_read": false,
+    "all_component_partitions_unique": true
+  },
+  "frozen_inputs": {
+    "protocol": {
+      "path": "outputs/validity/round9_multimap_protocol.json",
+      "sha256": "B8E180ECB3CDCE2F34EC987BDE33F9B8FEFE0D60509962C09D69811FD7D7F5F3"
+    },
+    "map_artifact": {
+      "path": "outputs/validity/round9_multimap_maps.npz",
+      "sha256": "9F540646ABF101800F5BC65AF272F4906C57EBFA94BEBB78B909DD52F1E627F4",
+      "archive_keys_read": [
+        "clip_group_ids",
+        "map00_source_maps",
+        "map01_source_maps",
+        "map02_source_maps",
+        "map03_source_maps",
+        "map04_source_maps",
+        "map05_source_maps",
+        "map06_source_maps",
+        "map07_source_maps",
+        "map08_source_maps",
+        "map09_source_maps",
+        "map10_source_maps",
+        "map11_source_maps",
+        "map12_source_maps",
+        "map13_source_maps",
+        "map14_source_maps",
+        "map15_source_maps",
+        "map16_source_maps",
+        "map17_source_maps",
+        "map18_source_maps",
+        "map19_source_maps"
+      ]
+    },
+    "map_manifest": {
+      "path": "outputs/validity/round9_multimap_map_manifest.json",
+      "sha256": "1163E8AC6638FFD145167D0F3F5CFDEB6829A876FBAD7C4F06B14C3F0E37E7DB"
+    },
+    "clip_group_ids_sha256": "CBCF3E385E0FEBB22B364047BBB219CD959913F89C89663D523F6829F17DE92B"
+  },
+  "component_count_summary": {
+    "minimum": 1625,
+    "maximum": 1625,
+    "mean": 1625.0,
+    "by_map": {
+      "map00": 1625,
+      "map01": 1625,
+      "map02": 1625,
+      "map03": 1625,
+      "map04": 1625,
+      "map05": 1625,
+      "map06": 1625,
+      "map07": 1625,
+      "map08": 1625,
+      "map09": 1625,
+      "map10": 1625,
+      "map11": 1625,
+      "map12": 1625,
+      "map13": 1625,
+      "map14": 1625,
+      "map15": 1625,
+      "map16": 1625,
+      "map17": 1625,
+      "map18": 1625,
+      "map19": 1625
+    }
+  },
+  "maps": {
+    "map00": {
+      "source_maps_sha256": "85DB26DCDBEF18604ABFE0F5CCEE73DB1A23210BFF5E70FBE58115A080923DD8",
+      "component_count": 1625,
+      "partition_sha256": "4A405E8F35149F4CB7FEF6865A43A1047A592D0B4B68202C24738C4E7C87F5FE",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1194,
+          "3": 288,
+          "4": 90,
+          "5": 36,
+          "6": 9,
+          "7": 7,
+          "9": 1
+        },
+        "image_count_histogram": {
+          "2": 1194,
+          "3": 1,
+          "4": 287,
+          "6": 90,
+          "8": 36,
+          "10": 9,
+          "12": 7,
+          "16": 1
+        },
+        "maximum_clips_per_component": 9,
+        "maximum_images_per_component": 16,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map00_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "DB78697534789FAD6B1F8712401125BE7C52E606DC0F3B476F05F55E1CD53E21"
+        },
+        "component_id_by_image": {
+          "key": "map00_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "4A405E8F35149F4CB7FEF6865A43A1047A592D0B4B68202C24738C4E7C87F5FE"
+        },
+        "component_clip_offsets": {
+          "key": "map00_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "074FF68DCFC9013378D9A69FCB8BC40C106E5E104DC8AA9A4CDBD60DFADF62B5"
+        },
+        "component_clip_ids": {
+          "key": "map00_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "70C09A0A7DCF2C689FC62A2C2E700AAE2A47E2214053130285B5E1FD5123FDA0"
+        },
+        "component_image_offsets": {
+          "key": "map00_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "18E771075E956D37A1200506F98814864FBAF0F18CAE4E5589D1FE8551621AA1"
+        },
+        "component_image_indices": {
+          "key": "map00_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "F35DB5B7FC87A926769B8F74007AB20DEB557D1408C2C6884A16EF600585F554"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map01": {
+      "source_maps_sha256": "AA9D56F8FE7C0161348B2D3B9304792D62F114E8B28EB73CED36B7B4A6132426",
+      "component_count": 1625,
+      "partition_sha256": "F03E715B815232C60580BE817DC6C5466C3F972430376FC48D38B69078FA5225",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1170,
+          "3": 322,
+          "4": 95,
+          "5": 20,
+          "6": 12,
+          "7": 4,
+          "9": 2
+        },
+        "image_count_histogram": {
+          "2": 1170,
+          "3": 1,
+          "4": 321,
+          "6": 95,
+          "8": 20,
+          "10": 12,
+          "12": 4,
+          "16": 2
+        },
+        "maximum_clips_per_component": 9,
+        "maximum_images_per_component": 16,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map01_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "6905E66615D1DDA5B42C373DC95E04C86C32E641428561FFE5667A41B1CB9E20"
+        },
+        "component_id_by_image": {
+          "key": "map01_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "F03E715B815232C60580BE817DC6C5466C3F972430376FC48D38B69078FA5225"
+        },
+        "component_clip_offsets": {
+          "key": "map01_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "7AEFB50A93DE238CB0E970028573DE9AF9C89921A1C7BC6F25FDD86D1C477F58"
+        },
+        "component_clip_ids": {
+          "key": "map01_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "300F67D5E8CE6E2A7F8410377408EB6B9116715FB8E7E47C18AFB519B713B875"
+        },
+        "component_image_offsets": {
+          "key": "map01_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "C73E7D2FCAAEDDAD6356A255D5D14B47D67F6C5C5327AC05362860C31FEA8B43"
+        },
+        "component_image_indices": {
+          "key": "map01_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "76B2507A3304E7A0A87FBB5E1CCC450B14F103EFEF4AB5D98633F85F3063AF06"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map02": {
+      "source_maps_sha256": "212AB9048FD84A959D2A09AF4F0CF8F3D543E1A9CE907DFC4EA9909E3A4ADA37",
+      "component_count": 1625,
+      "partition_sha256": "1E0D4285A85C2CDFDBB86BECA2313CAAEA1FE774B438F37520D7504640DEBA23",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1191,
+          "3": 293,
+          "4": 92,
+          "5": 30,
+          "6": 11,
+          "7": 6,
+          "8": 1,
+          "9": 1
+        },
+        "image_count_histogram": {
+          "2": 1191,
+          "4": 293,
+          "6": 92,
+          "8": 30,
+          "9": 1,
+          "10": 10,
+          "12": 6,
+          "14": 1,
+          "16": 1
+        },
+        "maximum_clips_per_component": 9,
+        "maximum_images_per_component": 16,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map02_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "94355FDE3B214FA625CCB3EAE79153DC7765205FD4A6CD0AE389DF90A7E6D6A8"
+        },
+        "component_id_by_image": {
+          "key": "map02_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "1E0D4285A85C2CDFDBB86BECA2313CAAEA1FE774B438F37520D7504640DEBA23"
+        },
+        "component_clip_offsets": {
+          "key": "map02_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "D41097956281FC34537A47EF4AB36EC65EBC204018701CC58A2434956F88CF71"
+        },
+        "component_clip_ids": {
+          "key": "map02_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "A006C418DE2300C043467A5049CA9C93CD2739E9026E55B04C68985B1EF12A48"
+        },
+        "component_image_offsets": {
+          "key": "map02_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "9F4912B776AE8973D98E59BDF4100A19F3F835DC52D46EA1718E44DF732EDF41"
+        },
+        "component_image_indices": {
+          "key": "map02_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "B56277B6FB5DE4222307229E84BDFA08E0C47BDC113074B15883A965C7AB639E"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map03": {
+      "source_maps_sha256": "89F2B44CDDBF171B5C2654AEF07188A10F902B5CECB582E5F8E31F949E37C1F4",
+      "component_count": 1625,
+      "partition_sha256": "BC1714592BF22C694E6A1E90217DC669C988C82E959BA73502F3138A75FD231D",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1196,
+          "3": 300,
+          "4": 73,
+          "5": 30,
+          "6": 13,
+          "7": 12,
+          "8": 1
+        },
+        "image_count_histogram": {
+          "2": 1196,
+          "3": 1,
+          "4": 299,
+          "6": 73,
+          "8": 30,
+          "10": 13,
+          "12": 12,
+          "14": 1
+        },
+        "maximum_clips_per_component": 8,
+        "maximum_images_per_component": 14,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map03_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "3948B519B13911202D02A70935D4A32547DCD51FE49D5535BA679A3116615C6E"
+        },
+        "component_id_by_image": {
+          "key": "map03_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "BC1714592BF22C694E6A1E90217DC669C988C82E959BA73502F3138A75FD231D"
+        },
+        "component_clip_offsets": {
+          "key": "map03_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "B429AE67881E9D69A5F1DB1699261CE38C6E8356F2D8B046EA655361211AD0E2"
+        },
+        "component_clip_ids": {
+          "key": "map03_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "D4B8464C530D7D8446A07EF2FCFD2C86F8496393A9A17E51D1325FE711ABBF39"
+        },
+        "component_image_offsets": {
+          "key": "map03_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "DD4D6374687B788E0D78D8AF8E9307C0A0DC1AA482DACD942FA55D34134C40CA"
+        },
+        "component_image_indices": {
+          "key": "map03_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "DF18BF630ADB7104A278C85EE372E97D34FF22E4EFBBDF8627F6F6F27320105C"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map04": {
+      "source_maps_sha256": "E063FFDEF98209A40512282B810B1C555FFD0847BA9A998166F889A736915563",
+      "component_count": 1625,
+      "partition_sha256": "14099D1FA3520E64DFC3A8837A6EECF65BFE8D68CBD2A33F136C3A051557B2BC",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1173,
+          "3": 317,
+          "4": 91,
+          "5": 29,
+          "6": 10,
+          "7": 4,
+          "10": 1
+        },
+        "image_count_histogram": {
+          "2": 1173,
+          "4": 317,
+          "5": 1,
+          "6": 90,
+          "8": 29,
+          "10": 10,
+          "12": 4,
+          "18": 1
+        },
+        "maximum_clips_per_component": 10,
+        "maximum_images_per_component": 18,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map04_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "5C28EFA2AE6E534B92984B23E5DFA25766C19325BDF3D080900CA92D1F6EAA62"
+        },
+        "component_id_by_image": {
+          "key": "map04_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "14099D1FA3520E64DFC3A8837A6EECF65BFE8D68CBD2A33F136C3A051557B2BC"
+        },
+        "component_clip_offsets": {
+          "key": "map04_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "DAB2B22B70EDAB52F9231A6CF450ED7A1A08CCBBFB2C735A95EC5865A6AAB05B"
+        },
+        "component_clip_ids": {
+          "key": "map04_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "411B39294F33D5A0478D4C19AE3105C004C72AED2E50193C16818313169774E1"
+        },
+        "component_image_offsets": {
+          "key": "map04_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "6A00CF62304CC961E37766A554FC35AE767BC5CEFCAC3A65CEC675A1827D16D9"
+        },
+        "component_image_indices": {
+          "key": "map04_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "07BE0147A9C08AE22418C00065BC4ADE7D3A3F6839186C1D195D976BD182C80D"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map05": {
+      "source_maps_sha256": "050074EAF9A6C9C5C0860511F1852C1E14E57FA13883D20CCD47E1C203A08A22",
+      "component_count": 1625,
+      "partition_sha256": "8CE43A669E1E96E5E98A59FEB846CA5196BDD36A355A659952EAECBA8E36B5D8",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1184,
+          "3": 304,
+          "4": 90,
+          "5": 32,
+          "6": 8,
+          "7": 1,
+          "8": 5,
+          "9": 1
+        },
+        "image_count_histogram": {
+          "2": 1184,
+          "4": 304,
+          "5": 1,
+          "6": 89,
+          "8": 32,
+          "10": 8,
+          "12": 1,
+          "14": 5,
+          "16": 1
+        },
+        "maximum_clips_per_component": 9,
+        "maximum_images_per_component": 16,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map05_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "6E3EEE53556692CE8B2D3FDB4BF6E92B4D55B3A450972527DC4D8FFEBE110B8D"
+        },
+        "component_id_by_image": {
+          "key": "map05_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "8CE43A669E1E96E5E98A59FEB846CA5196BDD36A355A659952EAECBA8E36B5D8"
+        },
+        "component_clip_offsets": {
+          "key": "map05_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "12C0F205D7B86A66FE45A5FD878A05A1C03B9EB1570EB407E60590430A9DA586"
+        },
+        "component_clip_ids": {
+          "key": "map05_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "E30105E91607177E00FA684A20ABCB29C03CD0C55519A0BFC003CD8F61132B7F"
+        },
+        "component_image_offsets": {
+          "key": "map05_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "C6FE3F3D0A606D41606E0E8350926322F79668D96FCEBD73DB1BD1744FA29267"
+        },
+        "component_image_indices": {
+          "key": "map05_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "BDA0ADAD7A61F831BD0B58A3A1D04ABBDA1DE1737FC487DB4C2AE3E2E6AB9F52"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map06": {
+      "source_maps_sha256": "E1ECD6F3519A242A6A762477E1906AF02BEA9DD911E3E52C4250CF2CC37FE692",
+      "component_count": 1625,
+      "partition_sha256": "1B21665324CA4B117885C718CFDABE56079B756986E1C1733AF580EBBD0B2966",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1188,
+          "3": 292,
+          "4": 99,
+          "5": 27,
+          "6": 14,
+          "7": 3,
+          "8": 2
+        },
+        "image_count_histogram": {
+          "2": 1188,
+          "3": 1,
+          "4": 291,
+          "6": 99,
+          "8": 27,
+          "10": 14,
+          "12": 3,
+          "14": 2
+        },
+        "maximum_clips_per_component": 8,
+        "maximum_images_per_component": 14,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map06_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "4CF7C9BA201131BE15DC5412BB8BAC1E70C789787766C2281E3A047408C7A857"
+        },
+        "component_id_by_image": {
+          "key": "map06_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "1B21665324CA4B117885C718CFDABE56079B756986E1C1733AF580EBBD0B2966"
+        },
+        "component_clip_offsets": {
+          "key": "map06_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "3F83E7497B7BDF30B8EF71CA35CEB28527CC4F8BF6270E65B9ABB72EE909BEAD"
+        },
+        "component_clip_ids": {
+          "key": "map06_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "49040E12B31F39A9BF1C3D8EBC9FA9943E9A537F38E9A45F21C12CD12F9FF92B"
+        },
+        "component_image_offsets": {
+          "key": "map06_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "71E33D643DC0C6457A194F357939A97DB2E25F55CFDEDD42E23AA23B4D1561C2"
+        },
+        "component_image_indices": {
+          "key": "map06_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "2874B3690BB937ED501E39C64EB07A5ACB76FCE67BCA1DD5A917947AABD6085C"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map07": {
+      "source_maps_sha256": "C89A49BD1B74000D40B89F73256C2F50FD97339AD15E981E8322665B2A2DF000",
+      "component_count": 1625,
+      "partition_sha256": "17AF75A97AF89CE0C6C4D43B7579B20333C25B77F801688D69755D02B02E7CE2",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1191,
+          "3": 285,
+          "4": 98,
+          "5": 35,
+          "6": 12,
+          "7": 4
+        },
+        "image_count_histogram": {
+          "2": 1191,
+          "3": 1,
+          "4": 284,
+          "6": 98,
+          "8": 35,
+          "10": 12,
+          "12": 4
+        },
+        "maximum_clips_per_component": 7,
+        "maximum_images_per_component": 12,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map07_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "1F487A6146B6142074B4872C75CC0D67B99095A0A0AD536232F7317E21372C72"
+        },
+        "component_id_by_image": {
+          "key": "map07_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "17AF75A97AF89CE0C6C4D43B7579B20333C25B77F801688D69755D02B02E7CE2"
+        },
+        "component_clip_offsets": {
+          "key": "map07_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "A7A4271CBE45E746A0D9237EB9DBB7B1BE540FBE84A0233B0B087FDA0FC3DAF4"
+        },
+        "component_clip_ids": {
+          "key": "map07_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "0B755B98129D1E0B121D03851BE92FFA1864804238AFBD4FC5CC07209F0B5AB0"
+        },
+        "component_image_offsets": {
+          "key": "map07_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "DDB42F0CE75BDAFA84FCE53D3EA0E217296BCCCE1A4A7085153A6FE5B3EEF1EC"
+        },
+        "component_image_indices": {
+          "key": "map07_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "0A87EE54B3500C28EA164AD99032DC7D614D8E36683AA5DBB0EB6033903206B1"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map08": {
+      "source_maps_sha256": "D581CB212A8378E56DDD3D8952724D564537CE204D28872586BB7EA78A4C105B",
+      "component_count": 1625,
+      "partition_sha256": "9B06AC0C37BF299D153AE5A19C92846CE34D18D601101BEE992F26879FD63381",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1172,
+          "3": 312,
+          "4": 96,
+          "5": 37,
+          "6": 4,
+          "7": 1,
+          "8": 3
+        },
+        "image_count_histogram": {
+          "2": 1172,
+          "4": 312,
+          "5": 1,
+          "6": 95,
+          "8": 37,
+          "10": 4,
+          "12": 1,
+          "14": 3
+        },
+        "maximum_clips_per_component": 8,
+        "maximum_images_per_component": 14,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map08_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "5AAC6CED021297EAE73271536D6A0236CE2D595EFA3A1BE34AC8DA72FBC2C6B6"
+        },
+        "component_id_by_image": {
+          "key": "map08_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "9B06AC0C37BF299D153AE5A19C92846CE34D18D601101BEE992F26879FD63381"
+        },
+        "component_clip_offsets": {
+          "key": "map08_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "8F5E6F49CD10269AE84776D6500717D92E96BF52DD9C77BE1E4118EBBFC9B53D"
+        },
+        "component_clip_ids": {
+          "key": "map08_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "188F6061B8F3C07A461E2BEDFE943B6D2EFDFCB2BD6CD952E510B326EF33E959"
+        },
+        "component_image_offsets": {
+          "key": "map08_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "E4367A6E60736488BCAB09E621E9D1217E3EF27B8DEFC431A93660AF548CAD08"
+        },
+        "component_image_indices": {
+          "key": "map08_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "DFA12CB75568A8D1E81C6F71D017EE21F93693E4E319114F9BD2C42A2C948AC4"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map09": {
+      "source_maps_sha256": "1B9A9FB7FFDE373F7DD6D4DEF64CF7F6AD96E8C2B1DC4E2C489DA8566517DBFB",
+      "component_count": 1625,
+      "partition_sha256": "517090FEB535C0C1F7FEB8B06AA8CEB7FC56EAFD80162696E1459EB69384DE6C",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1203,
+          "3": 277,
+          "4": 91,
+          "5": 33,
+          "6": 14,
+          "7": 5,
+          "9": 1,
+          "10": 1
+        },
+        "image_count_histogram": {
+          "2": 1203,
+          "3": 1,
+          "4": 276,
+          "6": 91,
+          "8": 33,
+          "10": 14,
+          "12": 5,
+          "16": 1,
+          "18": 1
+        },
+        "maximum_clips_per_component": 10,
+        "maximum_images_per_component": 18,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map09_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "E724A02BD664B89DA4C5F55FD3CA1230193AF2F527DD616DFC92CC1C76A44BC9"
+        },
+        "component_id_by_image": {
+          "key": "map09_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "517090FEB535C0C1F7FEB8B06AA8CEB7FC56EAFD80162696E1459EB69384DE6C"
+        },
+        "component_clip_offsets": {
+          "key": "map09_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "896DCC48E9F6064720DB0280FB17D9B11644B1BACF2C74AAE92D343B3E01FAFA"
+        },
+        "component_clip_ids": {
+          "key": "map09_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "2440175D4327912F461A1C69589C88854AFE0B3D7C360AA95734676D162BAB29"
+        },
+        "component_image_offsets": {
+          "key": "map09_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "65AA023ECB92714FFE6A07F0D2A3DFF41E95020F8493675E93FA2D1B090469AC"
+        },
+        "component_image_indices": {
+          "key": "map09_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "5F89CB300EECEB7CAFE87A3AAE7B618E0701287136B56FB1F53E74E3F82B3C91"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map10": {
+      "source_maps_sha256": "B71BD0D9D12204166D7862E0BE32437AACF2FC34FD7741858E5B42DE0D53B3C4",
+      "component_count": 1625,
+      "partition_sha256": "E0B1EDB923E7A876F4B1C5357C349600A045B13BF20C837A15178F43D55B3BB8",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1188,
+          "3": 292,
+          "4": 93,
+          "5": 38,
+          "6": 9,
+          "7": 4,
+          "8": 1
+        },
+        "image_count_histogram": {
+          "2": 1188,
+          "4": 292,
+          "5": 1,
+          "6": 92,
+          "8": 38,
+          "10": 9,
+          "12": 4,
+          "14": 1
+        },
+        "maximum_clips_per_component": 8,
+        "maximum_images_per_component": 14,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map10_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "789B33700F286DD59AF48DF9B136068E373AAE299A59AC4641DD0E0A8C24FDEB"
+        },
+        "component_id_by_image": {
+          "key": "map10_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "E0B1EDB923E7A876F4B1C5357C349600A045B13BF20C837A15178F43D55B3BB8"
+        },
+        "component_clip_offsets": {
+          "key": "map10_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "3A1574C09A34DC294F0D86E94EC9A4CC05C572521505F11579007544CE2F85EE"
+        },
+        "component_clip_ids": {
+          "key": "map10_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "CAA707EB1F2ABA3383190AD92BB5AF461C98029D32F0133371D948A53BD99998"
+        },
+        "component_image_offsets": {
+          "key": "map10_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "44BC4120C3C57B756855ED76DFD5720FE5CD5E86AD25A7DDCB55BF6CF9CED3F9"
+        },
+        "component_image_indices": {
+          "key": "map10_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "15B72A90DB8A9F3B9529CD46524AB9FC1C99DBACFC3F545525F8077DE0879E4D"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map11": {
+      "source_maps_sha256": "68098BB4B27AE5EC8E5893EF3C092DE846F61AC8D7035DAED24C57349E836E8C",
+      "component_count": 1625,
+      "partition_sha256": "B478B4A2948621B1112F76F18D821B0C2B48BDFCAA5C805420AD6A50D7DE76FD",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1184,
+          "3": 302,
+          "4": 93,
+          "5": 31,
+          "6": 8,
+          "7": 5,
+          "8": 1,
+          "12": 1
+        },
+        "image_count_histogram": {
+          "2": 1184,
+          "4": 302,
+          "6": 93,
+          "8": 31,
+          "10": 8,
+          "12": 5,
+          "13": 1,
+          "22": 1
+        },
+        "maximum_clips_per_component": 12,
+        "maximum_images_per_component": 22,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map11_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "005DE6C6F4D1A35DA32A894A280D1F7A48C6BC43D56537ABBBEDC2F194EC9EC0"
+        },
+        "component_id_by_image": {
+          "key": "map11_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "B478B4A2948621B1112F76F18D821B0C2B48BDFCAA5C805420AD6A50D7DE76FD"
+        },
+        "component_clip_offsets": {
+          "key": "map11_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "69BB4E4474EF24022E9BBF386A26FA6FBB482DAF872F80D1EDFF34C62A0BC159"
+        },
+        "component_clip_ids": {
+          "key": "map11_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "7314E22EA9347C8FEEA8E67179E942C3FA7B5BA1ECA8399626CA460102D80FA2"
+        },
+        "component_image_offsets": {
+          "key": "map11_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "9B7EB30F63F24CB7725E2C27D884C59743D7E1213C8CF7B79C182050CE5E7904"
+        },
+        "component_image_indices": {
+          "key": "map11_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "4034670CC2E50DF10543380875D0958A717EB17FB77A4CF037C647C539103641"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map12": {
+      "source_maps_sha256": "AE0E6AE806EE33118574BC36129AC81BF7BCA4303C476AD523FD35131CB216C7",
+      "component_count": 1625,
+      "partition_sha256": "28EACC0E628BC60E1D1F94858AB849D3787FF6BD6C3563D1C20E32C5A02E5A72",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1189,
+          "3": 299,
+          "4": 88,
+          "5": 31,
+          "6": 10,
+          "7": 4,
+          "8": 3,
+          "10": 1
+        },
+        "image_count_histogram": {
+          "2": 1189,
+          "4": 299,
+          "6": 88,
+          "8": 31,
+          "9": 1,
+          "10": 9,
+          "12": 4,
+          "14": 3,
+          "18": 1
+        },
+        "maximum_clips_per_component": 10,
+        "maximum_images_per_component": 18,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map12_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "AFC110286DDBF50C2A357F33863F643C9B5625E99C508C7F4C36441FC8338375"
+        },
+        "component_id_by_image": {
+          "key": "map12_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "28EACC0E628BC60E1D1F94858AB849D3787FF6BD6C3563D1C20E32C5A02E5A72"
+        },
+        "component_clip_offsets": {
+          "key": "map12_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "9BEFC60831AEE8183E03FA2629C57DC181C02E23C77961EBC4E075BD25385C49"
+        },
+        "component_clip_ids": {
+          "key": "map12_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "F05AA659FB143860C4B445A21E88C9AD5CF312AB18814E12A80BCCFD9DA62447"
+        },
+        "component_image_offsets": {
+          "key": "map12_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "849B5103B736D57D2BDE0FA470AFFC40BC731712A2DC17BEF92A5A3BC4C78683"
+        },
+        "component_image_indices": {
+          "key": "map12_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "39A83FD9F58468824D203C905AC92A44D0F1636B0C6CF300E60DFD2D6B7D9AFC"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map13": {
+      "source_maps_sha256": "3F2C4BBC3BD1F5AF90690A0A8D22D08BCCD9927F9153AE7A8DF8C4AD1C01E41B",
+      "component_count": 1625,
+      "partition_sha256": "FCF21F4698286AA5D13ACF9AAF29E11E0AD158C251D9B199CC713DE8625AD5F1",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1179,
+          "3": 318,
+          "4": 82,
+          "5": 26,
+          "6": 14,
+          "7": 2,
+          "8": 1,
+          "9": 2,
+          "10": 1
+        },
+        "image_count_histogram": {
+          "2": 1179,
+          "4": 318,
+          "6": 82,
+          "8": 26,
+          "9": 1,
+          "10": 13,
+          "12": 2,
+          "14": 1,
+          "16": 2,
+          "18": 1
+        },
+        "maximum_clips_per_component": 10,
+        "maximum_images_per_component": 18,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map13_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "E7BB19B7FC01023BB7D9F0D0ACD7DDE7DC112322888E4F5F9F0B7110C7A1724C"
+        },
+        "component_id_by_image": {
+          "key": "map13_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "FCF21F4698286AA5D13ACF9AAF29E11E0AD158C251D9B199CC713DE8625AD5F1"
+        },
+        "component_clip_offsets": {
+          "key": "map13_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "C52C7E28EE1F8E37F8AEDB10699C593E7BF253EED31D21354601BBD3855ABD23"
+        },
+        "component_clip_ids": {
+          "key": "map13_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "6DFC177675F8EDF460592E7F64AC28157A3A769EDF82FFE6F6ADA345EED465D4"
+        },
+        "component_image_offsets": {
+          "key": "map13_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "B51C03059B6F2CD081BEC0F8A8F339E1E823E6B170DDD5AB0A55282AE4E15C6A"
+        },
+        "component_image_indices": {
+          "key": "map13_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "CC67BB8C7D397A61BF934FB541A0374B1EB0263B9C3A9E357440597F21A8EC87"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map14": {
+      "source_maps_sha256": "D3126E01D1F4351A60061BF02E278EF2D32247A271F526726F3A90B24E26870B",
+      "component_count": 1625,
+      "partition_sha256": "CCCF8CBBB555D0C8CAD1B3BB3B1ED3FCEA77DC2133ADC91363F1CBA6107C2519",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1178,
+          "3": 318,
+          "4": 84,
+          "5": 28,
+          "6": 9,
+          "7": 4,
+          "8": 3,
+          "12": 1
+        },
+        "image_count_histogram": {
+          "2": 1178,
+          "4": 318,
+          "5": 1,
+          "6": 83,
+          "8": 28,
+          "10": 9,
+          "12": 4,
+          "14": 3,
+          "22": 1
+        },
+        "maximum_clips_per_component": 12,
+        "maximum_images_per_component": 22,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map14_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "AC975351F5BA5B4D6CB165A9B7445D7956BB7DF769F30653EF886D42B66455FE"
+        },
+        "component_id_by_image": {
+          "key": "map14_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "CCCF8CBBB555D0C8CAD1B3BB3B1ED3FCEA77DC2133ADC91363F1CBA6107C2519"
+        },
+        "component_clip_offsets": {
+          "key": "map14_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "6A72DF20A214B83B8E411F8CFDE004F9D28D9681E0945B1786E89F86A52EC471"
+        },
+        "component_clip_ids": {
+          "key": "map14_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "AA63AF06C2F59771AF33C9F8B0EF702C7882A501B1C2CB6C60857216622EDF9E"
+        },
+        "component_image_offsets": {
+          "key": "map14_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "8BF9011AC08171D544BF2013C4F316BC41146B9618DDB76963E36165516DCA91"
+        },
+        "component_image_indices": {
+          "key": "map14_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "7DEDFA16326E9515452AAF15A2A47B61D0CFF9F1CFA80FA1D7A1E318DE991DCD"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map15": {
+      "source_maps_sha256": "2955446C8F0E0974EEF5960E8BB6359BB70B6E858EB446326881E0908B6AAF07",
+      "component_count": 1625,
+      "partition_sha256": "CFD843A1A283E8CEAA49D909088A2AF6AEF5992177EA0129C1AC2BDDA260B97F",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1197,
+          "3": 295,
+          "4": 78,
+          "5": 34,
+          "6": 12,
+          "7": 4,
+          "8": 2,
+          "9": 3
+        },
+        "image_count_histogram": {
+          "2": 1197,
+          "3": 1,
+          "4": 294,
+          "6": 78,
+          "8": 34,
+          "10": 12,
+          "12": 4,
+          "14": 2,
+          "16": 3
+        },
+        "maximum_clips_per_component": 9,
+        "maximum_images_per_component": 16,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map15_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "8BCA6F4579C14A1940014FD3A7AD461F843F428D1A863BDA4ACB667885BE4C77"
+        },
+        "component_id_by_image": {
+          "key": "map15_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "CFD843A1A283E8CEAA49D909088A2AF6AEF5992177EA0129C1AC2BDDA260B97F"
+        },
+        "component_clip_offsets": {
+          "key": "map15_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "2534DD91B46487CA0B4CDF8CC0671BF2344E276A6472FEE40D44ECF2A66EAE73"
+        },
+        "component_clip_ids": {
+          "key": "map15_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "6EFEEBFFB70316A223DEA2347419219D81C2E843C0047C759984B15186FF8A32"
+        },
+        "component_image_offsets": {
+          "key": "map15_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "F4C538F14C7A99914431F5B8914A97984EB099F6291B669EA8894CECBC49BDBB"
+        },
+        "component_image_indices": {
+          "key": "map15_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "549EE7CFA5F947C1FDFD0B41E4BABB27B7E03A4827C239F43C7DB5D93D4B2F23"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map16": {
+      "source_maps_sha256": "DACF65B6ECB35D819EDE182F8885612A4BD2ECEBA3A8D08E86AC176F0D7BEA46",
+      "component_count": 1625,
+      "partition_sha256": "92E0753B42438180A81062B679C0CC582F9E3A67E480D4E0FD310794093BD6A3",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1183,
+          "3": 308,
+          "4": 83,
+          "5": 37,
+          "6": 6,
+          "7": 4,
+          "8": 3,
+          "9": 1
+        },
+        "image_count_histogram": {
+          "2": 1183,
+          "4": 308,
+          "6": 83,
+          "7": 1,
+          "8": 36,
+          "10": 6,
+          "12": 4,
+          "14": 3,
+          "16": 1
+        },
+        "maximum_clips_per_component": 9,
+        "maximum_images_per_component": 16,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map16_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "8758A49FF744F664529E7264AD63CE7BB1DFBB391B4F2BBB3A98C48D4A029CF4"
+        },
+        "component_id_by_image": {
+          "key": "map16_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "92E0753B42438180A81062B679C0CC582F9E3A67E480D4E0FD310794093BD6A3"
+        },
+        "component_clip_offsets": {
+          "key": "map16_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "B0792B53A896956D84A510A094D5A7F953562FEF0D6CE82F8B23E358C396464C"
+        },
+        "component_clip_ids": {
+          "key": "map16_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "9DA5E8F1FA67E60CB00FBACD13EFFA5942F5E19C76D2D85AE51869521BB0A217"
+        },
+        "component_image_offsets": {
+          "key": "map16_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "6A2900D2712A2F6E2A4B26A7D957E3F3C11708FCB5D8A4B2476D6997D2CC339E"
+        },
+        "component_image_indices": {
+          "key": "map16_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "A31029234663CA3C5DF1FDB171A04E4E0CD74E3181132E9F628771101A4EC45E"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map17": {
+      "source_maps_sha256": "DA8B3BB88BCB540B22C0F7CF02155E32499EC014039F10F08FB1910817CC8D2A",
+      "component_count": 1625,
+      "partition_sha256": "F57A132BDE100FBE3E40FEE374BE18E3E6A23A565735E21402FBA6B953D667DE",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1189,
+          "3": 300,
+          "4": 90,
+          "5": 29,
+          "6": 10,
+          "7": 3,
+          "9": 1,
+          "10": 2,
+          "11": 1
+        },
+        "image_count_histogram": {
+          "2": 1189,
+          "4": 300,
+          "5": 1,
+          "6": 89,
+          "8": 29,
+          "10": 10,
+          "12": 3,
+          "16": 1,
+          "18": 2,
+          "20": 1
+        },
+        "maximum_clips_per_component": 11,
+        "maximum_images_per_component": 20,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map17_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "5E1B0F99DB2BDC2F076E3C554E34742508E2F83A445D27CB07B9CF1177D05F30"
+        },
+        "component_id_by_image": {
+          "key": "map17_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "F57A132BDE100FBE3E40FEE374BE18E3E6A23A565735E21402FBA6B953D667DE"
+        },
+        "component_clip_offsets": {
+          "key": "map17_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "898E533C2C72E3FE4BC4E9AD3E1F419C168C3FEF5802C355F54540657EF07739"
+        },
+        "component_clip_ids": {
+          "key": "map17_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "9D6AA5F9DF02B872FA111A801FBB550A2474409B056A778E6286A2556008E406"
+        },
+        "component_image_offsets": {
+          "key": "map17_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "4E42D69B3253D885C539974C55969BF16B5101E1B73428394F17A6BA39C6DB23"
+        },
+        "component_image_indices": {
+          "key": "map17_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "541CB20D017108988FDE507ADAF1D09A98B15BBE636AB62FC4FECE4FF28C0DE4"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map18": {
+      "source_maps_sha256": "60963981B2631B6B3585C065D5E8DB5269375C06D4EA457404501093EF5686F6",
+      "component_count": 1625,
+      "partition_sha256": "A9774D0408D7B6C9E58EFCE9B1383C5ABF908A98FC9AE9E26B23EFA0F34708C6",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1197,
+          "3": 281,
+          "4": 97,
+          "5": 31,
+          "6": 12,
+          "7": 6,
+          "10": 1
+        },
+        "image_count_histogram": {
+          "2": 1197,
+          "3": 1,
+          "4": 280,
+          "6": 97,
+          "8": 31,
+          "10": 12,
+          "12": 6,
+          "18": 1
+        },
+        "maximum_clips_per_component": 10,
+        "maximum_images_per_component": 18,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map18_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "C9BB66B857E662688FE303C699137AC2CF1E71E15BA2DD8AC994E6E743DE98A6"
+        },
+        "component_id_by_image": {
+          "key": "map18_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "A9774D0408D7B6C9E58EFCE9B1383C5ABF908A98FC9AE9E26B23EFA0F34708C6"
+        },
+        "component_clip_offsets": {
+          "key": "map18_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "C0EEE59843F904A46E565AECA3EE106E15402CD3C027F4026FF618B1CD9654D4"
+        },
+        "component_clip_ids": {
+          "key": "map18_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "1558EE7CA44C5EF247286AD7D92B81A703E1F6D698030EEB2876F3DFB97D85BF"
+        },
+        "component_image_offsets": {
+          "key": "map18_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "8657377696E604404AE108F6E3A4ED28759638A865D5A293E510456CDD7DA35E"
+        },
+        "component_image_indices": {
+          "key": "map18_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "D868F72AC0FC0AA208880D12CD95A031B6F8F2CFCF08A2A529ACD27AAD1AE154"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    },
+    "map19": {
+      "source_maps_sha256": "EE5F17A0EC288486ACBA2C4EEDA6117C9895E41813F3049721E6D2D589BC9DF9",
+      "component_count": 1625,
+      "partition_sha256": "2F307F6DA240280314D5CF43D55A46B19F38F9000785D92D1F49400E8D6F3513",
+      "exact_audit": {
+        "component_count": 1625,
+        "clip_count": 3904,
+        "image_count": 4557,
+        "clip_count_histogram": {
+          "2": 1170,
+          "3": 322,
+          "4": 94,
+          "5": 26,
+          "6": 6,
+          "7": 3,
+          "8": 2,
+          "9": 1,
+          "10": 1
+        },
+        "image_count_histogram": {
+          "2": 1170,
+          "4": 322,
+          "5": 1,
+          "6": 93,
+          "8": 26,
+          "10": 6,
+          "12": 3,
+          "14": 2,
+          "16": 1,
+          "18": 1
+        },
+        "maximum_clips_per_component": 10,
+        "maximum_images_per_component": 18,
+        "minimum_clips_per_component": 2,
+        "minimum_images_per_component": 2,
+        "maps": {
+          "q_000": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_025": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_050": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_075": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          },
+          "q_100": {
+            "global_bijection": true,
+            "source_closure": true,
+            "restricted_bijection": true,
+            "passed": true
+          }
+        },
+        "all_maps_passed": true
+      },
+      "arrays": {
+        "component_id_by_clip": {
+          "key": "map19_component_id_by_clip",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "823D0447F3AB8D18959EA20B6F0E424FA2F273B0D6698DB39B9990939EFBD879"
+        },
+        "component_id_by_image": {
+          "key": "map19_component_id_by_image",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "2F307F6DA240280314D5CF43D55A46B19F38F9000785D92D1F49400E8D6F3513"
+        },
+        "component_clip_offsets": {
+          "key": "map19_component_clip_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "A36AD45F4B0556BBA5EEA2AD778C22C1F3E438E15335080790D8EB4103888D49"
+        },
+        "component_clip_ids": {
+          "key": "map19_component_clip_ids",
+          "shape": [
+            3904
+          ],
+          "dtype": "int64",
+          "sha256": "4F2258A9310CD2FCD3A58587DCB9B7FB687DC8581177F92B53532765FE3621E8"
+        },
+        "component_image_offsets": {
+          "key": "map19_component_image_offsets",
+          "shape": [
+            1626
+          ],
+          "dtype": "int64",
+          "sha256": "C9C04A00D148C5C853257E0620DEDAE0675F81BCCCA68AE5A5DFEEF70FAEA9E4"
+        },
+        "component_image_indices": {
+          "key": "map19_component_image_indices",
+          "shape": [
+            4557
+          ],
+          "dtype": "int64",
+          "sha256": "80597AF076BF0394DD2C514124F440C5D16B058A30378719021AEB9ABCBAC4C1"
+        }
+      },
+      "bootstrap_contract": {
+        "unit": "association component",
+        "component_draws_per_occurrence": 1625,
+        "complete_membership_when_selected": true,
+        "repeated_selection_retains_membership_and_multiplicity": true
+      }
+    }
+  },
+  "artifact": {
+    "path": "outputs/validity/round9_multimap_components.npz",
+    "sha256": "23C86D0B87C55287033531A66D0E78182263A2734A23C966D431B09DF0298272",
+    "bytes": 885848,
+    "array_count": 120,
+    "array_keys": [
+      "map00_component_clip_ids",
+      "map00_component_clip_offsets",
+      "map00_component_id_by_clip",
+      "map00_component_id_by_image",
+      "map00_component_image_indices",
+      "map00_component_image_offsets",
+      "map01_component_clip_ids",
+      "map01_component_clip_offsets",
+      "map01_component_id_by_clip",
+      "map01_component_id_by_image",
+      "map01_component_image_indices",
+      "map01_component_image_offsets",
+      "map02_component_clip_ids",
+      "map02_component_clip_offsets",
+      "map02_component_id_by_clip",
+      "map02_component_id_by_image",
+      "map02_component_image_indices",
+      "map02_component_image_offsets",
+      "map03_component_clip_ids",
+      "map03_component_clip_offsets",
+      "map03_component_id_by_clip",
+      "map03_component_id_by_image",
+      "map03_component_image_indices",
+      "map03_component_image_offsets",
+      "map04_component_clip_ids",
+      "map04_component_clip_offsets",
+      "map04_component_id_by_clip",
+      "map04_component_id_by_image",
+      "map04_component_image_indices",
+      "map04_component_image_offsets",
+      "map05_component_clip_ids",
+      "map05_component_clip_offsets",
+      "map05_component_id_by_clip",
+      "map05_component_id_by_image",
+      "map05_component_image_indices",
+      "map05_component_image_offsets",
+      "map06_component_clip_ids",
+      "map06_component_clip_offsets",
+      "map06_component_id_by_clip",
+      "map06_component_id_by_image",
+      "map06_component_image_indices",
+      "map06_component_image_offsets",
+      "map07_component_clip_ids",
+      "map07_component_clip_offsets",
+      "map07_component_id_by_clip",
+      "map07_component_id_by_image",
+      "map07_component_image_indices",
+      "map07_component_image_offsets",
+      "map08_component_clip_ids",
+      "map08_component_clip_offsets",
+      "map08_component_id_by_clip",
+      "map08_component_id_by_image",
+      "map08_component_image_indices",
+      "map08_component_image_offsets",
+      "map09_component_clip_ids",
+      "map09_component_clip_offsets",
+      "map09_component_id_by_clip",
+      "map09_component_id_by_image",
+      "map09_component_image_indices",
+      "map09_component_image_offsets",
+      "map10_component_clip_ids",
+      "map10_component_clip_offsets",
+      "map10_component_id_by_clip",
+      "map10_component_id_by_image",
+      "map10_component_image_indices",
+      "map10_component_image_offsets",
+      "map11_component_clip_ids",
+      "map11_component_clip_offsets",
+      "map11_component_id_by_clip",
+      "map11_component_id_by_image",
+      "map11_component_image_indices",
+      "map11_component_image_offsets",
+      "map12_component_clip_ids",
+      "map12_component_clip_offsets",
+      "map12_component_id_by_clip",
+      "map12_component_id_by_image",
+      "map12_component_image_indices",
+      "map12_component_image_offsets",
+      "map13_component_clip_ids",
+      "map13_component_clip_offsets",
+      "map13_component_id_by_clip",
+      "map13_component_id_by_image",
+      "map13_component_image_indices",
+      "map13_component_image_offsets",
+      "map14_component_clip_ids",
+      "map14_component_clip_offsets",
+      "map14_component_id_by_clip",
+      "map14_component_id_by_image",
+      "map14_component_image_indices",
+      "map14_component_image_offsets",
+      "map15_component_clip_ids",
+      "map15_component_clip_offsets",
+      "map15_component_id_by_clip",
+      "map15_component_id_by_image",
+      "map15_component_image_indices",
+      "map15_component_image_offsets",
+      "map16_component_clip_ids",
+      "map16_component_clip_offsets",
+      "map16_component_id_by_clip",
+      "map16_component_id_by_image",
+      "map16_component_image_indices",
+      "map16_component_image_offsets",
+      "map17_component_clip_ids",
+      "map17_component_clip_offsets",
+      "map17_component_id_by_clip",
+      "map17_component_id_by_image",
+      "map17_component_image_indices",
+      "map17_component_image_offsets",
+      "map18_component_clip_ids",
+      "map18_component_clip_offsets",
+      "map18_component_id_by_clip",
+      "map18_component_id_by_image",
+      "map18_component_image_indices",
+      "map18_component_image_offsets",
+      "map19_component_clip_ids",
+      "map19_component_clip_offsets",
+      "map19_component_id_by_clip",
+      "map19_component_id_by_image",
+      "map19_component_image_indices",
+      "map19_component_image_offsets"
+    ],
+    "contains_only_integer_partition_indices": true,
+    "contains_targets_predictions_logits_probabilities_confidences_errors_or_metric_outcomes": false
+  },
+  "implementation": {
+    "builder": {
+      "path": "scripts/build_round9_multimap_components.py",
+      "sha256": "30B4A2E278C12B0ED781DC745D675739F7D9DF654233807784F22B02143DF312"
+    },
+    "Round8_core_reused_without_change": {
+      "path": "src/arsc_eval/association_components.py",
+      "sha256": "F8AA90F0756032ADCB283D111E5B29F03C9D93D96ABDA383E8F9E737B57CE6B5"
+    },
+    "existing_synthetic_tests": {
+      "path": "tests/test_association_components.py",
+      "sha256": "918ABF1D6BC8EBB54F3872474AD484729E7F374DFDD4DA04C4F3F85ECFADF214"
+    }
+  },
+  "failure_policy": "Any map-specific hash, partition, closure, restricted bijection, or bootstrap-membership failure stops Round 9; do not drop or replace the map/salt."
+}
