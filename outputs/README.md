@@ -147,9 +147,57 @@ ontology, grounding, faithfulness, causal robustness, calibration, real-world
 safety, or another dataset. Six rationale classes remain identically zero.
 C1 must be described as sample-correspondence sensitivity.
 
-The sole authorized successor is Round 9 on the same caches with 20 fixed,
-outcome-blind maps/salts and a map x seed x association-component hierarchy.
-VLA4CoDrive remains `STOP_EXTERNAL_TRAINING`.
+Round 9 has now completed that sole authorized successor and permanently
+closes the BDD-OIA salt/map line. VLA4CoDrive remains
+`STOP_EXTERNAL_TRAINING`.
+
+## Round 9 20-map association-response robustness
+
+- `validity/round9_multimap_protocol.json`: immutable 20-map protocol and
+  one-shot stopping rule.
+- `validity/round9_multimap_maps.npz`, its manifest, and the independent salt
+  replay audit: 20 prefixed outcome-blind legal map realizations.
+- `validity/round9_multimap_components.npz` and its manifest: one source-closed
+  1,625-component partition per map.
+- `validity/round9_multimap_preoutcome_independent_audit.json`, the preflight,
+  implementation manifest, preregistration review, and machine GO: complete
+  result-blind binding before q>0 outcomes.
+- `validity/round9_multimap_results.json`,
+  `round9_multimap_primitives.npz`, the two CSV files, and the formal log:
+  complete `attempt01` one-shot result and diagnostics.
+- `scripts/verify_round9_multimap_outputs.py`,
+  `validity/round9_multimap_independent_audit.json`,
+  `round9_multimap_independent_bootstrap_draws.npz`, and the audit log:
+  separate raw-array implementation of every point and all 2,000 draws.
+- `validity/round9_multimap_curves.png` and `.svg`: descriptive 20-map response
+  curves without invalid pointwise q bands.
+- `research_review_memo_round9_postresult.md` and
+  `validity/round9_postresult_reviewer_decision.json`: independent
+  post-result computational and scientific ruling.
+- `validity/round9_multimap_artifact_index.json`: top-level SHA-256 binding for
+  the 41-artifact evidence chain.
+
+Formal axis results:
+
+| Axis | 20-map grand mean bottleneck | Hierarchical pointwise 95% interval | Positive maps |
+|---|---:|---:|---:|
+| A | 0.068648 | [0.064261, 0.067624] | 20/20 |
+| R | 0.045433 | [0.040589, 0.047385] | 20/20 |
+| S | 0.027080 | [0.021644, 0.026686] | 20/20 |
+| C1 | 0.163594 | [0.155702, 0.160482] | 20/20 |
+
+The frozen formal verdict is `ROUND9_FULL_PASS`; independent reproduction
+passed 8/8 checks. The maximum point/diagnostic difference was `2.23e-14`, and
+all bootstrap arrays matched exactly. The scientific verdict is **BOUNDED
+CONDITIONAL PASS**: robust across the 20 prefixed maps, not 20 independent
+datasets or external validity. The four intervals are pointwise rather than
+familywise simultaneous. Six rationale classes have positive target support
+but zero predicted positives and F1 throughout.
+
+No further BDD-OIA salt/map iteration is permitted. The only authorized next
+work is an outcome-blind Round 10 protocol and preflight for actual
+pixel-space brightness/blur/noise multi-severity inference. Formal execution
+requires a new independent GO.
 
 ## Archival seed-42 pilot
 

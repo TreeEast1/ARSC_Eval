@@ -168,7 +168,7 @@ python -m compileall -q scripts src tests
 python scripts/verify_outputs.py --config configs/experiment.yaml
 ```
 
-The current repository check reports 57 passing tests, successful compilation, and all
+The current repository check reports 63 passing tests, successful compilation, and all
 original required pilot outputs present.
 
 ## Measurement and external-data stopping results
@@ -258,24 +258,56 @@ The complete evidence chain is bound in
 `outputs/validity/round8_graded_response_artifact_index.json`, with the final
 review in `outputs/research_review_memo_round8_final.md`.
 
+## Round 9 20-map robustness result
+
+Round 9 tested whether the Round 8 graded association-response finding depended
+on one favorable map/salt. It froze 20 new outcome-blind legal maps before
+reading any new q>0 outcome, excluded the historical Round 8 map from the
+primary gate, and used a map x seed x per-map-association-component bootstrap.
+The formal one-shot run completed as `attempt01`.
+
+| Axis | 20-map grand mean bottleneck | Hierarchical pointwise 95% interval | Positive maps |
+|---|---:|---:|---:|
+| A | 0.068648 | [0.064261, 0.067624] | 20/20 |
+| R | 0.045433 | [0.040589, 0.047385] | 20/20 |
+| S | 0.027080 | [0.021644, 0.026686] | 20/20 |
+| C1 | 0.163594 | [0.155702, 0.160482] | 20/20 |
+
+All four preregistered gates passed. An independent implementation imported
+neither the formal Round 9 analysis nor `arsc_eval`, recomputed all point
+diagnostics and all 2,000 hierarchical draws, and passed 8/8 checks. The
+maximum point difference was `2.23e-14`; every bootstrap selection and
+four-axis value matched exactly, and the formal and independent draw files are
+byte-identical.
+
+![Round 9 20-map graded response curves](outputs/validity/round9_multimap_curves.png)
+
+The independent scientific verdict is **BOUNDED CONDITIONAL PASS**. The result
+closes the single-map/salt concern for the 20 prefixed maps; it does not turn
+those maps into 20 datasets or establish external validity, simultaneous
+familywise 95% coverage, rationale faithfulness, calibration validity, causal
+evidence, or real-driving safety. Six rationale classes have positive target
+support but zero predicted positives and F1 at every map, seed, and q, so the
+aggregate R response is driven by the other 15 classes.
+
+The complete evidence chain is in
+`outputs/validity/round9_multimap_artifact_index.json`, with the independent
+post-result ruling in `outputs/research_review_memo_round9_postresult.md`.
+The BDD-OIA salt/map line is now permanently closed.
+
 ## Reviewer-bounded next step
 
 CEG remains closed and unanswered. VLA4CoDrive remains
-`STOP_EXTERNAL_TRAINING`: its frozen repository audit found one town, nine
-canonical scenes, and 540 weather/filename inconsistencies, so full download,
-training, and external-result claims are not authorized.
+`STOP_EXTERNAL_TRAINING`.
 
-The only approved Round 9 experiment is a 20-map/salt robustness confirmation
-on the same frozen BDD-OIA caches. Map IDs `map00`-`map19` and salts
-`arsc-round9-map00`-`arsc-round9-map19` must be frozen before any new q>0
-outcome is read. Every map must pass the same outcome-blind legality and
-component-closure gates. Each axis must have at least 18/20 positive
-map-specific mean bottlenecks, a positive 20-map grand mean, a hierarchical
-map x seed x component bootstrap lower bound above zero, and no grand-mean
-curve reversal. All maps, including failures, must be reported. No salt may be
-replaced, and Round 8's map is historical only. This direction and its
-one-shot stopping rules are frozen in
-`outputs/research_review_memo_round8_final.md`.
+The only authorized successor is the outcome-blind protocol and preflight for
+Round 10: a BDD-OIA pixel-space brightness/blur/noise multi-severity
+dose-response construct-validation experiment using actual corrupted-image
+inference. Exact operators, four nonzero severities per family, semantic
+invariance gates, directional estimands, practical thresholds, multiplicity,
+clip-cluster resampling, and one-shot failure rules must be frozen before any
+new-severity metric outcome is read. A formal run is not authorized until an
+independent reviewer gives GO.
 
 ## Publishing policy
 

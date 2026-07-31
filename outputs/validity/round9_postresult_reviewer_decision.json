@@ -1,0 +1,257 @@
+{
+  "schema_version": "ARSC_ROUND9_POSTRESULT_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-07-31T03:47:41Z",
+  "reviewer_role": "independent_postresult_research_reviewer",
+  "study": "BDD-OIA Round 9 prefixed 20-map graded-response robustness",
+  "formal_attempt_reviewed": "attempt01",
+  "verdict": {
+    "decision": "CONFIRM_ROUND9_FULL_PASS_WITH_BOUNDED_CONDITIONAL_CLAIM",
+    "computational_integrity": "PASS",
+    "frozen_formal_gate": "ROUND9_FULL_PASS_CONFIRMED",
+    "statistical_interpretation": "PASS_CONDITIONAL_ON_FROZEN_MAP_SEED_COMPONENT_PROCEDURE",
+    "construct_validity": "PARTIAL",
+    "external_validity": "NOT_ESTABLISHED",
+    "bdd_oia_salt_map_line": "CLOSED_NO_FURTHER_ITERATION"
+  },
+  "formal_gate_results": {
+    "A": {
+      "positive_maps": 20,
+      "map_count": 20,
+      "point_grand_mean": 0.06864758365677283,
+      "pointwise_percentile_interval": [
+        0.06426131356171416,
+        0.06762400035997473
+      ],
+      "passed": true
+    },
+    "R": {
+      "positive_maps": 20,
+      "map_count": 20,
+      "point_grand_mean": 0.045433441095406105,
+      "pointwise_percentile_interval": [
+        0.04058855519326802,
+        0.04738543462209599
+      ],
+      "passed": true
+    },
+    "S": {
+      "positive_maps": 20,
+      "map_count": 20,
+      "point_grand_mean": 0.027079872787876706,
+      "pointwise_percentile_interval": [
+        0.021644456284410436,
+        0.02668580942796257
+      ],
+      "passed": true
+    },
+    "C1": {
+      "positive_maps": 20,
+      "map_count": 20,
+      "point_grand_mean": 0.1635937385706971,
+      "pointwise_percentile_interval": [
+        0.15570246263647258,
+        0.16048202283865717
+      ],
+      "passed": true
+    }
+  },
+  "independent_reproduction": {
+    "status": "PASS",
+    "checks_passed": 8,
+    "checks_total": 8,
+    "point_and_diagnostic_tolerance": 5e-13,
+    "maximum_point_or_diagnostic_abs_difference": 2.2315482794965646e-14,
+    "maximum_map_seed_bottleneck_abs_difference": 1.4765966227514582e-14,
+    "maximum_map_mean_bottleneck_abs_difference": 4.784367346744034e-15,
+    "bootstrap_replicates": 2000,
+    "bootstrap_maximum_numeric_abs_difference": 0.0,
+    "map_seed_component_selections_exact": true,
+    "first_and_last_draw_exact": true,
+    "formal_and_independent_bootstrap_npz_byte_identical": true,
+    "shared_bootstrap_npz_sha256": "C31AF6BFB6015FC499CDA7A2D7FB875C07BB61E2829EB39F3801CB24E71BCD43",
+    "formal_and_independent_axis_gates_identical": true,
+    "round8_q0_bridge_maximum_abs_difference": 0.0
+  },
+  "statistical_scope": {
+    "map_count": 20,
+    "training_seed_count": 5,
+    "bdd_oia_image_count": 4557,
+    "maps_are_independent_datasets_or_domains": false,
+    "maps_reuse_same_images_targets_predictions_confidence_and_training_seeds": true,
+    "map_inference_target": "robustness over the 20 prefixed outcome-blind legal association realizations",
+    "seed_draw_shared_across_maps": true,
+    "component_partition_is_map_specific": true,
+    "interval_type": "four pointwise map-by-seed-by-per-map-association-component percentile intervals",
+    "simultaneous_familywise_95_percent_coverage": false,
+    "bootstrap_point_estimate_noncentering": {
+      "present": true,
+      "bootstrap_distribution_means": {
+        "A": 0.06597904148542653,
+        "R": 0.04390589717291916,
+        "S": 0.024034196059492,
+        "C1": 0.1581194251982938
+      },
+      "interpretation": "Compatible with recomputing a nonlinear weakest-adjacent-step bottleneck after component resampling; independently reproduced exactly and not a protocol violation. Report point statistics and procedural intervals separately."
+    }
+  },
+  "rationale_all_zero_classes": [
+    {
+      "class": "car",
+      "target_positive_count": 39,
+      "predicted_positive_count": 0
+    },
+    {
+      "class": "person",
+      "target_positive_count": 34,
+      "predicted_positive_count": 0
+    },
+    {
+      "class": "left_lane",
+      "target_positive_count": 29,
+      "predicted_positive_count": 0
+    },
+    {
+      "class": "left_follow",
+      "target_positive_count": 68,
+      "predicted_positive_count": 0
+    },
+    {
+      "class": "no_left_lane",
+      "target_positive_count": 23,
+      "predicted_positive_count": 0
+    },
+    {
+      "class": "left_solid_line",
+      "target_positive_count": 69,
+      "predicted_positive_count": 0
+    }
+  ],
+  "rationale_zero_support_classes": [],
+  "rationale_interpretation": "The six classes are model-coverage failures at the frozen threshold, not absent targets. They contribute a fixed zero floor, so the aggregate R response is driven by the other 15 classes and does not validate all 21 ontology classes.",
+  "rq_interpretation": {
+    "RQ1": "Round 9 strengthens internal map-realization robustness of the four statistics but adds no new model-comparison effect and does not establish a causal rationale-supervision benefit.",
+    "RQ2_light": "Existing support remains bounded to the frozen brightness, blur, and noise perturbations; Round 9 validates correspondence sensitivity, not a natural visual-severity scale.",
+    "RQ2_CEG": "UNANSWERED_AND_CLOSED"
+  },
+  "claim_boundary": {
+    "supports": [
+      "All four preregistered Round 9 graded association-response gates pass on all 20 prefixed outcome-blind legal maps under the frozen BDD-OIA map-by-seed-by-association-component conditional procedure.",
+      "The formal result is fully reproduced by an implementation that does not import the formal analysis or arsc_eval implementation modules.",
+      "The Round 8 single-map/salt realization concern is resolved for the fixed set of 20 prefixed maps."
+    ],
+    "does_not_support": [
+      "external validity or 20 independent datasets or domains",
+      "simultaneous familywise 95 percent coverage",
+      "ontology completeness or validity for every rationale class",
+      "rationale grounding or faithfulness",
+      "natural corruption severity validity",
+      "calibration validity, real-world safety, or a safety guarantee",
+      "causal evidence, CEG, or correct critical-evidence reliance",
+      "other datasets, architectures, training protocols, thresholds, metrics, or real-world driving"
+    ]
+  },
+  "launcher_observability": {
+    "formal_log_exit_marker": "EXIT_CODE=0",
+    "independent_audit_log_exit_marker": "EXIT_CODE=",
+    "classification": "WRAPPER_OBSERVABILITY_DEFECT_ONLY",
+    "statistical_validity_impact": "NONE",
+    "basis": "The independent JSON is complete and PASS, all 8 checks are present, 2000 of 2000 replicates completed, the independent NPZ is complete, and it is byte-identical to the formal bootstrap NPZ.",
+    "remediation": "Fix and smoke-test the launcher exit marker before future reuse; do not rerun Round 9 merely to populate the marker."
+  },
+  "next_action": {
+    "rank": 1,
+    "experiment": "ROUND10_BDD_OIA_PIXEL_SPACE_CORRUPTION_SEVERITY_DOSE_RESPONSE_CONSTRUCT_VALIDATION",
+    "authorization": "OUTCOME_BLIND_PROTOCOL_AND_PREFLIGHT_ONLY",
+    "formal_run_authorized": false,
+    "why_highest_information": "It directly tests the unresolved visual-corruption-severity construct using actual corrupted-image inference while retaining the existing dataset, five frozen checkpoints, four metrics, and RQ2-light perturbation families. More salt is exhausted, and external replication is currently blocked by population and ontology feasibility.",
+    "fixed_scope_recommendation": {
+      "dataset": "BDD-OIA frozen 4557-image test population",
+      "training_seeds": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "models": [
+        "Action-only frozen checkpoints",
+        "Joint frozen checkpoints"
+      ],
+      "corruption_families": [
+        "brightness",
+        "Gaussian blur",
+        "Gaussian noise"
+      ],
+      "severity_grid": "identity plus four outcome-blind prefixed nonzero levels per family",
+      "requires_actual_pixel_inference": true,
+      "association_maps_or_new_salts": false,
+      "metrics": [
+        "A",
+        "R",
+        "S tie-averaged AURC",
+        "C1 action flip and rationale Jaccard"
+      ],
+      "resampling_unit": "original source clip, with one shared draw across severities, models, axes, and corruption families",
+      "family_reporting": "all three families separately and completely; no passing-family selection"
+    },
+    "preformal_hard_gates": [
+      "Freeze exact operators, severity values, directional estimands, practical thresholds, multiplicity treatment, cluster resampling, failure rules, and one-shot run count before reading any new severity metric outcome.",
+      "Complete outcome-blind label and scene-semantic invariance audit for every corruption-by-severity stratum.",
+      "Independently review code, hashes, caches, inference plan, and protocol before formal GO.",
+      "If any severity stratum fails the prefixed semantic gate, follow the frozen STOP rule rather than replace or tune that severity."
+    ],
+    "termination_rule": "After one authorized formal severity grid, report PASS, FAIL, or INCONCLUSIVE and stop; do not add seeds, severities, corruption families, thresholds, or metrics after outcome inspection."
+  },
+  "deferred_not_authorized": [
+    {
+      "rank": 2,
+      "direction": "external compatible-dataset replication",
+      "reason": "Requires a new independent population and ontology feasibility gate; VLA4CoDrive remains STOP."
+    },
+    {
+      "rank": 3,
+      "direction": "new human rationale grounding or faithfulness study",
+      "reason": "High annotation and measurement burden and does not jointly validate all four current axes."
+    }
+  ],
+  "prohibited_actions": [
+    "Any further BDD-OIA salt or association-map robustness iteration.",
+    "Adding maps, seeds, q levels, bootstrap replicates, thresholds, or metrics to narrow Round 9 intervals or seek a stronger PASS.",
+    "Rerunning Round 9 solely to repair the blank independent launcher exit marker.",
+    "Treating the 20 maps as independent datasets, domains, or clean replications.",
+    "Claiming simultaneous four-axis 95 percent coverage from the pointwise intervals.",
+    "Claiming complete rationale ontology validity while six supported classes have zero predicted positives and F1.",
+    "Equating C1 correspondence sensitivity with faithfulness, grounding, natural corruption severity, or causal evidence.",
+    "Reopening the CEG or mask mainline.",
+    "Bypassing the VLA4CoDrive population or ontology STOP.",
+    "Searching or selecting datasets, corruption families, severities, subsets, gates, or thresholds after viewing outcomes.",
+    "Running the Round 10 formal experiment before an outcome-blind protocol, preflight, and independent reviewer GO."
+  ],
+  "memo": {
+    "path": "outputs/research_review_memo_round9_postresult.md",
+    "sha256": "AACFBBCE2B3BAF57FDC4A30568978AF88FB94AA0575D9D5A759F12B9D7AD2360"
+  },
+  "reviewed_files_sha256": {
+    "outputs/experiment_summary.md": "6298D283024D28752065643E8B0B41F95FC631B08BB47212B92F6582EC731601",
+    "outputs/research_review_memo_round8_final.md": "87CD4973DDD769F1F3D2EECC662185B57E73E34A71CF913FB994E3DDC16761AE",
+    "outputs/research_review_memo_round9_preregister.md": "E655661E19FD7E73FFC4E013349BD4E4FD5C71D8C1416E6704B7AEADDA3B687C",
+    "outputs/validity/round8_graded_response_results.json": "4CD0FCD16ED4A3BAE1D378FD10B3A44705F2433FDF3C3E15A26FBCE303AF6FD3",
+    "outputs/validity/round9_independent_reviewer_decision.json": "519CE7ECDFAB621483DD2D0338AEAE5F2AB78906C88DA4EBED814900674412D5",
+    "outputs/validity/round9_multimap_protocol.json": "B8E180ECB3CDCE2F34EC987BDE33F9B8FEFE0D60509962C09D69811FD7D7F5F3",
+    "outputs/validity/round9_multimap_results.json": "667C34891BADF1861757877DDE263A218652AA60B4B00E58E03421F7CE162735",
+    "outputs/validity/round9_multimap_primitives.npz": "A22EC34B81474A335D90F58CAA4E18F0611FE69E9A42332CDD770387F1949A50",
+    "outputs/validity/round9_multimap_bootstrap_summary.csv": "94E7B54AC77C909140048A43F9521C5EDBA3F600F7B219A05D9444FDDE708B8E",
+    "outputs/validity/round9_multimap_bootstrap_draws.npz": "C31AF6BFB6015FC499CDA7A2D7FB875C07BB61E2829EB39F3801CB24E71BCD43",
+    "outputs/validity/round9_multimap_point_diagnostics.csv": "3D414D8B2A1FE73D250A09E31FC5AB941DE94E273256F0F73FA8904E7B269332",
+    "outputs/validity/round9_multimap_formal.log": "5B800BEF1FFA239AF3FD06EDCB063A6078F34F9B736E9868E64CC59C81D762DC",
+    "outputs/validity/round9_multimap_independent_audit.json": "7C24E7C2DEFD234490F989E73312157948ED9F516F79683C805E081EE94EF219",
+    "outputs/validity/round9_multimap_independent_bootstrap_draws.npz": "C31AF6BFB6015FC499CDA7A2D7FB875C07BB61E2829EB39F3801CB24E71BCD43",
+    "outputs/validity/round9_multimap_independent_audit.log": "1F4017CBB6109DB7D064D1E769A7DD98FDF0335AAFB9E1BA7A9586C62EE37A28",
+    "scripts/analyze_round9_multimap.py": "7AD465B3CE868AAC903820C387B3C2857779403F92C5AF196220854D2AA07C1C",
+    "scripts/verify_round9_multimap_outputs.py": "4F376D224A1E865C7197B302659F7083BFC750170F63EE7E73896E8367D6F150",
+    "scripts/launch_round9_multimap_tmux.sh": "7647009915592B73FC67137992DB1DE21C287D7AD1934676CAC2FBB15FCF66E4",
+    "scripts/launch_round9_independent_audit_tmux.sh": "61A22F552A65C42E55F614CD4E893E1457812E3AEE8F348F7000CF6D8E175678",
+    "src/arsc_eval/multimap_statistics.py": "6ABFF628A797C2EE3A14504A230387461FB18401602C7C559BF05493EC6EDEDA",
+    "src/arsc_eval/multimap_response.py": "7A044FA74B56B8EFD389ADC82F44B0C156951B3DA33A4B674FC52AFC5AD125EB"
+  }
+}
