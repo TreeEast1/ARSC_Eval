@@ -1,0 +1,106 @@
+{
+  "study": "Round 9 immutable preoutcome implementation/input manifest",
+  "status": "AWAITING_INDEPENDENT_REVIEWER_GO",
+  "preregistration_commit": "2dda1524d77974f12092979293ebd4b9ddc98f7b",
+  "formal_run_permitted": false,
+  "formal_run_blocker": "An independent reviewer must inspect this manifest, protocol, artifacts, audit, and formal implementation before issuing GO.",
+  "files": {
+    "outputs/validity/round9_multimap_protocol.json": {
+      "sha256": "B8E180ECB3CDCE2F34EC987BDE33F9B8FEFE0D60509962C09D69811FD7D7F5F3",
+      "bytes": 11175
+    },
+    "outputs/validity/round9_multimap_maps.npz": {
+      "sha256": "9F540646ABF101800F5BC65AF272F4906C57EBFA94BEBB78B909DD52F1E627F4",
+      "bytes": 1331568
+    },
+    "outputs/validity/round9_multimap_map_manifest.json": {
+      "sha256": "1163E8AC6638FFD145167D0F3F5CFDEB6829A876FBAD7C4F06B14C3F0E37E7DB",
+      "bytes": 64814
+    },
+    "outputs/validity/round9_multimap_components.npz": {
+      "sha256": "23C86D0B87C55287033531A66D0E78182263A2734A23C966D431B09DF0298272",
+      "bytes": 885848
+    },
+    "outputs/validity/round9_multimap_component_manifest.json": {
+      "sha256": "AC7A688A1F0603DFA2D9CD3C9AE16FB000CB1B8B26427B589AD4DE24716CFBE9",
+      "bytes": 84963
+    },
+    "scripts/build_round9_multimap_maps.py": {
+      "sha256": "12540C081C37DD9002CBB89FD11D9EB9FCB1FAF3DA9B609557D158D7D88CD3AD",
+      "bytes": 10373
+    },
+    "scripts/build_round9_multimap_components.py": {
+      "sha256": "30B4A2E278C12B0ED781DC745D675739F7D9DF654233807784F22B02143DF312",
+      "bytes": 10287
+    },
+    "scripts/verify_round9_preoutcome_artifacts.py": {
+      "sha256": "DF02D3F44D9FF0B6C7EB10F65FA296869AECE7115977455682CEA347F38EAF80",
+      "bytes": 25520
+    },
+    "src/arsc_eval/graded_association.py": {
+      "sha256": "529C0AB3364CA48AEFDD6FC91C7B1390D57110CFA221437B3F7FED4D709DD443",
+      "bytes": 9187
+    },
+    "src/arsc_eval/association_components.py": {
+      "sha256": "F8AA90F0756032ADCB283D111E5B29F03C9D93D96ABDA383E8F9E737B57CE6B5",
+      "bytes": 8754
+    },
+    "src/arsc_eval/multimap_response.py": {
+      "sha256": "7A044FA74B56B8EFD389ADC82F44B0C156951B3DA33A4B674FC52AFC5AD125EB",
+      "bytes": 8101
+    },
+    "tests/test_graded_association.py": {
+      "sha256": "AB067CEF3384191C1DF80ACA18E3FAF201D43B7B72DE3911B541D2508C0942DA",
+      "bytes": 3085
+    },
+    "tests/test_association_components.py": {
+      "sha256": "918ABF1D6BC8EBB54F3872474AD484729E7F374DFDD4DA04C4F3F85ECFADF214",
+      "bytes": 2476
+    },
+    "tests/test_multimap_response.py": {
+      "sha256": "BB31CC91C3C853C9FD467A731716AFC6166FE3DA96E697994EA80A86D973CCB4",
+      "bytes": 4887
+    },
+    "outputs/validity/round9_multimap_preoutcome_independent_audit.json": {
+      "sha256": "1E39F5F28591BE692B62204F79C2BB0CD1AFD0FFE954C7B232ABBCF3E63B8ADD",
+      "bytes": 34931
+    },
+    "outputs/validity/round9_multimap_preoutcome_tests.log": {
+      "sha256": "7CA4DB9B905ACB65BF55A6FD906C51D7D831826F1140DC3F5AE5EB4F6D9B2165",
+      "bytes": 9037
+    }
+  },
+  "formal_output_absence": {
+    "outputs/validity/round9_multimap_results.json": true,
+    "outputs/validity/round9_multimap_primitives.npz": true,
+    "outputs/validity/round9_multimap_bootstrap_draws.npz": true,
+    "outputs/validity/round9_multimap_formal.log": true
+  },
+  "test_report": {
+    "command": [
+      "D:\\anaconda3\\envs\\Nuclear_Transformer\\python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "return_code": 0,
+    "expected_test_count": 61,
+    "all_passed": true,
+    "log": {
+      "path": "outputs/validity/round9_multimap_preoutcome_tests.log",
+      "sha256": "7CA4DB9B905ACB65BF55A6FD906C51D7D831826F1140DC3F5AE5EB4F6D9B2165",
+      "bytes": 9037
+    }
+  },
+  "audit": {
+    "path": "outputs/validity/round9_multimap_preoutcome_independent_audit.json",
+    "sha256": "1E39F5F28591BE692B62204F79C2BB0CD1AFD0FFE954C7B232ABBCF3E63B8ADD",
+    "all_passed": true
+  },
+  "outcome_blind_preflight": true
+}

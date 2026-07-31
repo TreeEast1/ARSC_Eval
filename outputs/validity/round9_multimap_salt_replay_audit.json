@@ -1,0 +1,284 @@
+{
+  "study": "Round 9 independent salt-to-cycle-to-map replay",
+  "status": "PASS",
+  "independence": {
+    "imports_arsc_eval_construction_code": false,
+    "reimplements_salted_filename_order": true,
+    "reimplements_distinct_clip_triplet": true,
+    "reimplements_rotation_search_and_cycle_sort": true,
+    "reimplements_nested_map_activation": true,
+    "targets_predictions_confidences_errors_or_metrics_read": false
+  },
+  "inputs": {
+    "protocol_sha256": "B8E180ECB3CDCE2F34EC987BDE33F9B8FEFE0D60509962C09D69811FD7D7F5F3",
+    "map_artifact_sha256": "9F540646ABF101800F5BC65AF272F4906C57EBFA94BEBB78B909DD52F1E627F4"
+  },
+  "maps": {
+    "map00": {
+      "salt": "arsc-round9-map00",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        2706,
+        4045,
+        2412
+      ],
+      "pair_cycles_sha256": "1B6E9B8AC2573BDD938FDDAD56D08346F8936DAEE350F8AD30DE0210B2114F4C",
+      "source_maps_sha256": "85DB26DCDBEF18604ABFE0F5CCEE73DB1A23210BFF5E70FBE58115A080923DD8",
+      "exact_match": true
+    },
+    "map01": {
+      "salt": "arsc-round9-map01",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        1936,
+        2729,
+        1972
+      ],
+      "pair_cycles_sha256": "F54C4D0EB7360430A39114622570D559F5827872C94C2532928ADCC3E3E1B5DD",
+      "source_maps_sha256": "AA9D56F8FE7C0161348B2D3B9304792D62F114E8B28EB73CED36B7B4A6132426",
+      "exact_match": true
+    },
+    "map02": {
+      "salt": "arsc-round9-map02",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        985,
+        1363,
+        1265
+      ],
+      "pair_cycles_sha256": "9F0872AC94F188A1AA91421D170D2ED728583F5C7A38F8711624B5F2353AE9FA",
+      "source_maps_sha256": "212AB9048FD84A959D2A09AF4F0CF8F3D543E1A9CE907DFC4EA9909E3A4ADA37",
+      "exact_match": true
+    },
+    "map03": {
+      "salt": "arsc-round9-map03",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        3888,
+        759,
+        3764
+      ],
+      "pair_cycles_sha256": "67B99317DFEAA454D2D0B63895638D8B07DFDB7FD38F554B5773895ADBC94754",
+      "source_maps_sha256": "89F2B44CDDBF171B5C2654AEF07188A10F902B5CECB582E5F8E31F949E37C1F4",
+      "exact_match": true
+    },
+    "map04": {
+      "salt": "arsc-round9-map04",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        1018,
+        699,
+        633
+      ],
+      "pair_cycles_sha256": "52F6C2BE8F05675FBB377D30B786F459AEDACEC443632EE9061FD5ED58FACD6F",
+      "source_maps_sha256": "E063FFDEF98209A40512282B810B1C555FFD0847BA9A998166F889A736915563",
+      "exact_match": true
+    },
+    "map05": {
+      "salt": "arsc-round9-map05",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        2654,
+        2564,
+        831
+      ],
+      "pair_cycles_sha256": "7751C817D33156E8B6C3F5D04E1A56C75B4EAED18A224EBE1747F06C95BD4580",
+      "source_maps_sha256": "050074EAF9A6C9C5C0860511F1852C1E14E57FA13883D20CCD47E1C203A08A22",
+      "exact_match": true
+    },
+    "map06": {
+      "salt": "arsc-round9-map06",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        2736,
+        2718,
+        544
+      ],
+      "pair_cycles_sha256": "DBF7D7DB274DD5A120014714E38A2010CF98503BB611D5EA5A35B06B04A888F6",
+      "source_maps_sha256": "E1ECD6F3519A242A6A762477E1906AF02BEA9DD911E3E52C4250CF2CC37FE692",
+      "exact_match": true
+    },
+    "map07": {
+      "salt": "arsc-round9-map07",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        379,
+        3359,
+        2560
+      ],
+      "pair_cycles_sha256": "D5B43830544E35522112525606009519B7874C685C51577D290E9318BD1542D6",
+      "source_maps_sha256": "C89A49BD1B74000D40B89F73256C2F50FD97339AD15E981E8322665B2A2DF000",
+      "exact_match": true
+    },
+    "map08": {
+      "salt": "arsc-round9-map08",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        1669,
+        2669,
+        307
+      ],
+      "pair_cycles_sha256": "94C39385E90CEA8228875A74AD312AEAFD80EB36193A8DA9CD849F7274D7C41B",
+      "source_maps_sha256": "D581CB212A8378E56DDD3D8952724D564537CE204D28872586BB7EA78A4C105B",
+      "exact_match": true
+    },
+    "map09": {
+      "salt": "arsc-round9-map09",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        3689,
+        3688,
+        2550
+      ],
+      "pair_cycles_sha256": "660ABE9754170BE3929FCC524406B9178B11F4DC64F0FDB8DAB3C1E1915FD174",
+      "source_maps_sha256": "1B9A9FB7FFDE373F7DD6D4DEF64CF7F6AD96E8C2B1DC4E2C489DA8566517DBFB",
+      "exact_match": true
+    },
+    "map10": {
+      "salt": "arsc-round9-map10",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        3096,
+        674,
+        1009
+      ],
+      "pair_cycles_sha256": "5A122CCBDC33E452B3A11DF97938B85781B1A1F27ADD2FE93E2BF026C0E089F2",
+      "source_maps_sha256": "B71BD0D9D12204166D7862E0BE32437AACF2FC34FD7741858E5B42DE0D53B3C4",
+      "exact_match": true
+    },
+    "map11": {
+      "salt": "arsc-round9-map11",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        1820,
+        3925,
+        4455
+      ],
+      "pair_cycles_sha256": "9EECE61575327BACB8785D1FA3C766C8C1075D55AF2BE05C8CFC38324715498B",
+      "source_maps_sha256": "68098BB4B27AE5EC8E5893EF3C092DE846F61AC8D7035DAED24C57349E836E8C",
+      "exact_match": true
+    },
+    "map12": {
+      "salt": "arsc-round9-map12",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        371,
+        4400,
+        36
+      ],
+      "pair_cycles_sha256": "EDF057A008F1F6839157F55F5C50A27FB8BA5583352CB44912014B3E61261B78",
+      "source_maps_sha256": "AE0E6AE806EE33118574BC36129AC81BF7BCA4303C476AD523FD35131CB216C7",
+      "exact_match": true
+    },
+    "map13": {
+      "salt": "arsc-round9-map13",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        759,
+        1546,
+        4346
+      ],
+      "pair_cycles_sha256": "A7B7CCC2DF810E59EC1CEA16A1A3C54905FD8D74CB4BE8AE23554DFA86AD6D99",
+      "source_maps_sha256": "3F2C4BBC3BD1F5AF90690A0A8D22D08BCCD9927F9153AE7A8DF8C4AD1C01E41B",
+      "exact_match": true
+    },
+    "map14": {
+      "salt": "arsc-round9-map14",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        3028,
+        3244,
+        574
+      ],
+      "pair_cycles_sha256": "67EEBF913A2E4D194E61CBC744B3C63E7F044567972DE492646CDDCBDBF52199",
+      "source_maps_sha256": "D3126E01D1F4351A60061BF02E278EF2D32247A271F526726F3A90B24E26870B",
+      "exact_match": true
+    },
+    "map15": {
+      "salt": "arsc-round9-map15",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        4217,
+        1416,
+        1617
+      ],
+      "pair_cycles_sha256": "A337FBFC2CF437BEBFE3CC9B579F88B036DAC8CDB6AD00036EE95F0C43F75116",
+      "source_maps_sha256": "2955446C8F0E0974EEF5960E8BB6359BB70B6E858EB446326881E0908B6AAF07",
+      "exact_match": true
+    },
+    "map16": {
+      "salt": "arsc-round9-map16",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        1516,
+        3228,
+        1994
+      ],
+      "pair_cycles_sha256": "7B768811CA04A78D23E08AAE1CD07F0ACC3D576AAF921500DF949E4AE028B7B5",
+      "source_maps_sha256": "DACF65B6ECB35D819EDE182F8885612A4BD2ECEBA3A8D08E86AC176F0D7BEA46",
+      "exact_match": true
+    },
+    "map17": {
+      "salt": "arsc-round9-map17",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        3816,
+        4201,
+        4194
+      ],
+      "pair_cycles_sha256": "E9547A3F113E4FFA6C2C99AF434FB1C34A25AE473D29AC19E5353588F4C5FC10",
+      "source_maps_sha256": "DA8B3BB88BCB540B22C0F7CF02155E32499EC014039F10F08FB1910817CC8D2A",
+      "exact_match": true
+    },
+    "map18": {
+      "salt": "arsc-round9-map18",
+      "right_half_rotation": 0,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        2460,
+        2670,
+        1164
+      ],
+      "pair_cycles_sha256": "0820D9C43E69BAAD97B18A3925DBCA30A4ABFD3B289EBC53F80297700AD8FC19",
+      "source_maps_sha256": "60963981B2631B6B3585C065D5E8DB5269375C06D4EA457404501093EF5686F6",
+      "exact_match": true
+    },
+    "map19": {
+      "salt": "arsc-round9-map19",
+      "right_half_rotation": 2,
+      "pair_cycle_count": 2277,
+      "final_triplet": [
+        1971,
+        4423,
+        2242
+      ],
+      "pair_cycles_sha256": "B1032C8076962BADE7D891B6C5EC09DB03A21DF53153A721E3F90A4676CB963D",
+      "source_maps_sha256": "EE5F17A0EC288486ACBA2C4EEDA6117C9895E41813F3049721E6D2D589BC9DF9",
+      "exact_match": true
+    }
+  },
+  "summary": {
+    "maps_replayed": 20,
+    "exact_cycle_matches": 20,
+    "exact_source_map_matches": 20,
+    "all_passed": true
+  }
+}

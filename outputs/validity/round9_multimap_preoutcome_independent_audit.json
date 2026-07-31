@@ -1,0 +1,1081 @@
+{
+  "study": "Round 9 independent preoutcome artifact audit",
+  "status": "PASS_AWAITING_INDEPENDENT_REVIEWER_GO",
+  "independence": {
+    "imports_formal_map_or_component_code": false,
+    "reconstructs_maps_from_stored_cycles": true,
+    "recomputes_q1_connected_components": true,
+    "reads_only": [
+      "protocol and outcome-blind manifests",
+      "filename and clip arrays",
+      "cycle and source-index arrays",
+      "component-index arrays"
+    ],
+    "does_not_read": [
+      "targets",
+      "predictions",
+      "logits or probabilities",
+      "confidence",
+      "errors",
+      "metric outcomes"
+    ]
+  },
+  "artifact_hashes": {
+    "outputs/validity/round9_multimap_protocol.json": "B8E180ECB3CDCE2F34EC987BDE33F9B8FEFE0D60509962C09D69811FD7D7F5F3",
+    "outputs/validity/round9_multimap_maps.npz": "9F540646ABF101800F5BC65AF272F4906C57EBFA94BEBB78B909DD52F1E627F4",
+    "outputs/validity/round9_multimap_map_manifest.json": "1163E8AC6638FFD145167D0F3F5CFDEB6829A876FBAD7C4F06B14C3F0E37E7DB",
+    "outputs/validity/round9_multimap_components.npz": "23C86D0B87C55287033531A66D0E78182263A2734A23C966D431B09DF0298272",
+    "outputs/validity/round9_multimap_component_manifest.json": "AC7A688A1F0603DFA2D9CD3C9AE16FB000CB1B8B26427B589AD4DE24716CFBE9"
+  },
+  "exact_gates": {
+    "protocol_status_and_constants_match": true,
+    "map_archive_exact_key_allowlist": true,
+    "component_archive_exact_key_allowlist": true,
+    "filename_and_clip_derivation_match": true,
+    "all_20_cycles_partition_all_images": true,
+    "all_20_map_stacks_match_independent_reconstruction": true,
+    "all_q_bijections_nested_and_cross_clip": true,
+    "all_20_q1_maps_unique": true,
+    "all_20_component_partitions_unique": true,
+    "all_components_match_independent_reconstruction": true,
+    "all_q_source_closed_and_restricted_bijections": true,
+    "all_formal_outcomes_absent": true,
+    "full_unit_tests_pass": true
+  },
+  "maps": {
+    "map00": {
+      "source_maps_sha256": "85DB26DCDBEF18604ABFE0F5CCEE73DB1A23210BFF5E70FBE58115A080923DD8",
+      "q1_sha256": "DEF467BF6207D49DE943B59089DAE006414569DDC377FE73BC91B9B9CDB24B7B",
+      "partition_sha256": "4A405E8F35149F4CB7FEF6865A43A1047A592D0B4B68202C24738C4E7C87F5FE",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map01": {
+      "source_maps_sha256": "AA9D56F8FE7C0161348B2D3B9304792D62F114E8B28EB73CED36B7B4A6132426",
+      "q1_sha256": "63257045C759A1E03B2607F3E2614DD968F52DFB2F8D770B2D75B842AC984369",
+      "partition_sha256": "F03E715B815232C60580BE817DC6C5466C3F972430376FC48D38B69078FA5225",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map02": {
+      "source_maps_sha256": "212AB9048FD84A959D2A09AF4F0CF8F3D543E1A9CE907DFC4EA9909E3A4ADA37",
+      "q1_sha256": "52994BE65815D090A214A8E85A33BC33DA6EC29E27E93186D1D4B5AD3B828FF9",
+      "partition_sha256": "1E0D4285A85C2CDFDBB86BECA2313CAAEA1FE774B438F37520D7504640DEBA23",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map03": {
+      "source_maps_sha256": "89F2B44CDDBF171B5C2654AEF07188A10F902B5CECB582E5F8E31F949E37C1F4",
+      "q1_sha256": "32CE5D74F17B0958EFAE6E0E35D4D5F3119652BD9EF6303FA3723CA8BF396B26",
+      "partition_sha256": "BC1714592BF22C694E6A1E90217DC669C988C82E959BA73502F3138A75FD231D",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map04": {
+      "source_maps_sha256": "E063FFDEF98209A40512282B810B1C555FFD0847BA9A998166F889A736915563",
+      "q1_sha256": "E2A17FD3BE4F617EDF7936CB726DC9A441ABD07DD0A645C3B746C68CE2AB93C1",
+      "partition_sha256": "14099D1FA3520E64DFC3A8837A6EECF65BFE8D68CBD2A33F136C3A051557B2BC",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map05": {
+      "source_maps_sha256": "050074EAF9A6C9C5C0860511F1852C1E14E57FA13883D20CCD47E1C203A08A22",
+      "q1_sha256": "03058D4C1C85665E8F46230F1863359AD05C9830659910C7455AD463EABFC9C0",
+      "partition_sha256": "8CE43A669E1E96E5E98A59FEB846CA5196BDD36A355A659952EAECBA8E36B5D8",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map06": {
+      "source_maps_sha256": "E1ECD6F3519A242A6A762477E1906AF02BEA9DD911E3E52C4250CF2CC37FE692",
+      "q1_sha256": "2A56DCA430712500E3A7E1595496C16135E252AFAD67721D6BAAC352C939FE14",
+      "partition_sha256": "1B21665324CA4B117885C718CFDABE56079B756986E1C1733AF580EBBD0B2966",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map07": {
+      "source_maps_sha256": "C89A49BD1B74000D40B89F73256C2F50FD97339AD15E981E8322665B2A2DF000",
+      "q1_sha256": "612EB01896ACFC3B9C257A10C3D5F5542445CC904657E122A3DF3F14D8BE3955",
+      "partition_sha256": "17AF75A97AF89CE0C6C4D43B7579B20333C25B77F801688D69755D02B02E7CE2",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map08": {
+      "source_maps_sha256": "D581CB212A8378E56DDD3D8952724D564537CE204D28872586BB7EA78A4C105B",
+      "q1_sha256": "2FD1B096A34E10D763F103674639623AB70250CA072A22A57AD5E53F6211894B",
+      "partition_sha256": "9B06AC0C37BF299D153AE5A19C92846CE34D18D601101BEE992F26879FD63381",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map09": {
+      "source_maps_sha256": "1B9A9FB7FFDE373F7DD6D4DEF64CF7F6AD96E8C2B1DC4E2C489DA8566517DBFB",
+      "q1_sha256": "131DBB997C9213D141501206CEC5B55205D280CC12651455F769E45D83AB86EF",
+      "partition_sha256": "517090FEB535C0C1F7FEB8B06AA8CEB7FC56EAFD80162696E1459EB69384DE6C",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map10": {
+      "source_maps_sha256": "B71BD0D9D12204166D7862E0BE32437AACF2FC34FD7741858E5B42DE0D53B3C4",
+      "q1_sha256": "FA0255B454B75C9AEEA022B739EC5FDAA0AB7329FD3C8F48B778A5302162BE38",
+      "partition_sha256": "E0B1EDB923E7A876F4B1C5357C349600A045B13BF20C837A15178F43D55B3BB8",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map11": {
+      "source_maps_sha256": "68098BB4B27AE5EC8E5893EF3C092DE846F61AC8D7035DAED24C57349E836E8C",
+      "q1_sha256": "F51C7C509E3027EBF18526AC858F2449E994F8AB47E5741F93E5DE08EFE0F612",
+      "partition_sha256": "B478B4A2948621B1112F76F18D821B0C2B48BDFCAA5C805420AD6A50D7DE76FD",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map12": {
+      "source_maps_sha256": "AE0E6AE806EE33118574BC36129AC81BF7BCA4303C476AD523FD35131CB216C7",
+      "q1_sha256": "CC3E6B476A179D49C2D73B6D798D575339F7ED2DC4FA707AD3633ECE1BCE685F",
+      "partition_sha256": "28EACC0E628BC60E1D1F94858AB849D3787FF6BD6C3563D1C20E32C5A02E5A72",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map13": {
+      "source_maps_sha256": "3F2C4BBC3BD1F5AF90690A0A8D22D08BCCD9927F9153AE7A8DF8C4AD1C01E41B",
+      "q1_sha256": "19640595E21705397AED9728AB22E8AFDBCCEB9B5550B22019DA95A914277FA3",
+      "partition_sha256": "FCF21F4698286AA5D13ACF9AAF29E11E0AD158C251D9B199CC713DE8625AD5F1",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map14": {
+      "source_maps_sha256": "D3126E01D1F4351A60061BF02E278EF2D32247A271F526726F3A90B24E26870B",
+      "q1_sha256": "2D6EC44838AEE9A0E917EFBAF1017D99C8A1D8B743EF63A02C2C0D9AB51C05F1",
+      "partition_sha256": "CCCF8CBBB555D0C8CAD1B3BB3B1ED3FCEA77DC2133ADC91363F1CBA6107C2519",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map15": {
+      "source_maps_sha256": "2955446C8F0E0974EEF5960E8BB6359BB70B6E858EB446326881E0908B6AAF07",
+      "q1_sha256": "722A6EB3358BA2D470A7A4E8ABCF89AE1C06F5E6C3D6CC7DA9E35B456050D0E4",
+      "partition_sha256": "CFD843A1A283E8CEAA49D909088A2AF6AEF5992177EA0129C1AC2BDDA260B97F",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map16": {
+      "source_maps_sha256": "DACF65B6ECB35D819EDE182F8885612A4BD2ECEBA3A8D08E86AC176F0D7BEA46",
+      "q1_sha256": "C0F78990B199E35086E64CCE4DCAC55100FA1D872BF648FCBE3140A29BE6F77C",
+      "partition_sha256": "92E0753B42438180A81062B679C0CC582F9E3A67E480D4E0FD310794093BD6A3",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map17": {
+      "source_maps_sha256": "DA8B3BB88BCB540B22C0F7CF02155E32499EC014039F10F08FB1910817CC8D2A",
+      "q1_sha256": "758C92059A7281BEBC70FBF33CB1CBA12628084A60CB12EDBCA552C69826651F",
+      "partition_sha256": "F57A132BDE100FBE3E40FEE374BE18E3E6A23A565735E21402FBA6B953D667DE",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map18": {
+      "source_maps_sha256": "60963981B2631B6B3585C065D5E8DB5269375C06D4EA457404501093EF5686F6",
+      "q1_sha256": "3259D7F44F8E33DD5525C59E13BC48062F13D8DA927FFCBBDE852765970FD707",
+      "partition_sha256": "A9774D0408D7B6C9E58EFCE9B1383C5ABF908A98FC9AE9E26B23EFA0F34708C6",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    },
+    "map19": {
+      "source_maps_sha256": "EE5F17A0EC288486ACBA2C4EEDA6117C9895E41813F3049721E6D2D589BC9DF9",
+      "q1_sha256": "8D3D78034DB5915E878A6DE0CDE840C0D8EEFAC758E1AACEBFBBE881D2F5C6EE",
+      "partition_sha256": "2F307F6DA240280314D5CF43D55A46B19F38F9000785D92D1F49400E8D6F3513",
+      "per_q": [
+        {
+          "q": 0.0,
+          "bijection": true,
+          "active_images": 0,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 4557
+        },
+        {
+          "q": 0.25,
+          "bijection": true,
+          "active_images": 1140,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 3417
+        },
+        {
+          "q": 0.5,
+          "bijection": true,
+          "active_images": 2278,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 2279
+        },
+        {
+          "q": 0.75,
+          "bijection": true,
+          "active_images": 3418,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 1139
+        },
+        {
+          "q": 1.0,
+          "bijection": true,
+          "active_images": 4557,
+          "same_clip_active_pairs": 0,
+          "fixed_points": 0
+        }
+      ],
+      "cycles_partition_all_images": true,
+      "source_maps_match_independent_reconstruction": true,
+      "component_count": 1625,
+      "components_match_independent_reconstruction": true,
+      "source_closure_all_q": true,
+      "restricted_bijection_all_q": true,
+      "minimum_clips_per_component": 2,
+      "minimum_images_per_component": 2
+    }
+  },
+  "formal_output_absence": {
+    "outputs/validity/round9_multimap_results.json": true,
+    "outputs/validity/round9_multimap_primitives.npz": true,
+    "outputs/validity/round9_multimap_bootstrap_draws.npz": true,
+    "outputs/validity/round9_multimap_formal.log": true
+  },
+  "test_report": {
+    "command": [
+      "D:\\anaconda3\\envs\\Nuclear_Transformer\\python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "return_code": 0,
+    "expected_test_count": 61,
+    "all_passed": true,
+    "log": {
+      "path": "outputs/validity/round9_multimap_preoutcome_tests.log",
+      "sha256": "7CA4DB9B905ACB65BF55A6FD906C51D7D831826F1140DC3F5AE5EB4F6D9B2165",
+      "bytes": 9037
+    }
+  },
+  "outcome_governance_evidence": {
+    "new_map_q_greater_than_zero_metric_outcomes_in_artifacts": false,
+    "formal_result_files_present": false,
+    "builder_archive_key_access_is_allowlisted_in_manifests": true,
+    "scope": "Exact for committed code paths, archive contents, and filesystem artifacts; does not claim to prove the absence of an unrecorded external computation."
+  },
+  "all_passed": true
+}

@@ -49,6 +49,12 @@ class MultiMapResponseTests(unittest.TestCase):
         selected_maps, selected_seeds, selected_components = (
             hierarchical_multimap_draw(rng, 4, 3, [2, 3, 4, 5])
         )
+        np.testing.assert_array_equal(selected_maps, [2, 2, 0, 1])
+        np.testing.assert_array_equal(selected_seeds, [0, 0, 0])
+        self.assertEqual(
+            [values.tolist() for values in selected_components],
+            [[1, 1, 3, 1], [1, 1, 3, 1], [1, 1], [0, 0, 2]],
+        )
         self.assertEqual(selected_maps.shape, (4,))
         self.assertEqual(selected_seeds.shape, (3,))
         self.assertEqual(len(selected_components), 4)
@@ -131,6 +137,18 @@ class MultiMapResponseTests(unittest.TestCase):
             np.full(20, 0.1), [0.01, 0.20], False
         )
         self.assertFalse(gate["passed"])
+        exactly_zero_mean = np.array([1.0] * 18 + [-9.0, -9.0])
+        gate = round9_axis_gate(
+            exactly_zero_mean, [0.01, 0.20], True
+        )
+        self.assertFalse(gate["passed"])
+        self.assertFalse(gate["subgates"]["grand_mean_positive"])
+        with self.assertRaises(ValueError):
+            round9_axis_gate(
+                np.array([0.1] * 19 + [np.nan]),
+                [0.01, 0.20],
+                True,
+            )
 
 
 if __name__ == "__main__":
