@@ -1,0 +1,472 @@
+{
+  "schema_version": "ARSC_ROUND10_CORRUPTION_PREFLIGHT_V1",
+  "status": "PASS_AWAITING_INDEPENDENT_REVIEWER_IMPLEMENTATION_AUTHORIZATION",
+  "study": "Round 10 BDD-OIA pixel-space corruption severity dose-response construct validation",
+  "preflight_base_commit": "debf928daefd573e4ebf893a91d235cb6e14c1e7",
+  "protocol": {
+    "path": "outputs/validity/round10_corruption_dose_response_protocol.json",
+    "sha256": "E3F54B24A50D847636FA644355BF78DB1AB2432CF74543E8AEF11A005D17029D",
+    "bytes": 11639,
+    "expected_sha256": "E3F54B24A50D847636FA644355BF78DB1AB2432CF74543E8AEF11A005D17029D",
+    "exact_hash_passed": true
+  },
+  "authorization_source": {
+    "path": "outputs/validity/round9_postresult_reviewer_decision.json",
+    "sha256": "7D362D283493440A2365149BADE802F6CA3B56FCED9824A7B5A5056571F387B3",
+    "bytes": 13518,
+    "expected_sha256": "7D362D283493440A2365149BADE802F6CA3B56FCED9824A7B5A5056571F387B3",
+    "exact_hash_passed": true,
+    "authorization": "OUTCOME_BLIND_PROTOCOL_AND_PREFLIGHT_ONLY"
+  },
+  "operator_grid": {
+    "families": [
+      "brightness",
+      "blur",
+      "noise"
+    ],
+    "levels": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "parameters": {
+      "brightness": [
+        1.0,
+        1.05,
+        1.1,
+        1.2,
+        1.3
+      ],
+      "blur": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "noise": [
+        0.0,
+        2.5,
+        5.0,
+        7.5,
+        10.0
+      ]
+    },
+    "noise_seed": 20260731,
+    "historical_level_two_exact": true
+  },
+  "semantic_audit": {
+    "status": "PASS_MODEL_OUTPUT_BLIND_SEMANTIC_GATE",
+    "complete_grid_passed": true,
+    "outcomes_read_or_computed": false,
+    "reviewed_unique_images": 100,
+    "reviewed_pairs": 1200,
+    "reviewed_decisions": 2400,
+    "passed_strata": 12,
+    "total_strata": 12,
+    "technical_gate_passed": true,
+    "page_hash_bindings_verified": 30,
+    "files": {
+      "outputs/validity/round10_corruption_semantic_audit/build_summary.json": {
+        "sha256": "59F4F52DB35DA869471CFD8D9BC34054CE7AD9658481ABC54B3A27D655B7F87C",
+        "bytes": 11407
+      },
+      "outputs/validity/round10_corruption_semantic_audit/audit_manifest.csv": {
+        "sha256": "94D30755D6E8BD48288ACF9690C828F201B41E3863349D5A2143D65AE15C7CF8",
+        "bytes": 67404
+      },
+      "outputs/validity/round10_corruption_semantic_audit/review_decision.json": {
+        "sha256": "471FB5BAD9AEFF9D22DAB3E72AA94A1390032D0BCE9302EF60A594A3F110F944",
+        "bytes": 5203
+      },
+      "outputs/validity/round10_corruption_semantic_audit/audit_summary.json": {
+        "sha256": "5CB6C9ECBB543625E295A3674B804333BC97996A9FFD034E66F806680CC3F894",
+        "bytes": 3968
+      }
+    }
+  },
+  "dataset": {
+    "manifest": {
+      "path": "data/processed/test.jsonl",
+      "sha256": "89364A265FE4C2EDCA5125D34C4C25D47C96AFB46A5C4A8FE86B649785539004",
+      "bytes": 533260
+    },
+    "rows": 4557,
+    "unique_filenames": 4557,
+    "source_clip_definition": "remove terminal _1 or _3 from filename stem",
+    "source_clip_count": 3904,
+    "all_source_images_exist": true,
+    "source_image_total_bytes": 159486737,
+    "ordered_source_image_inventory_sha256": "8034D044D55973917D0719A1CC829EEA002582420D6F7E05BB18F9AFF8894901",
+    "inventory_digest_definition": "SHA256 over manifest-order UTF-8 filename, NUL, decimal bytes, NUL, uppercase file SHA256, LF"
+  },
+  "frozen_inputs": {
+    "configs": {
+      "43": {
+        "path": "configs/rq1_seed43.yaml",
+        "sha256": "42BE7599C09D17654868DB260E203D4DE7EA0D1FDA49A5C36B6BA3DF7750E55E",
+        "bytes": 592,
+        "seed": 43,
+        "image_size": 224,
+        "backbone": "resnet50",
+        "threshold": 0.5,
+        "historical_level_two": {
+          "brightness_factor": 1.1,
+          "blur_radius": 1.0,
+          "noise_std_255": 5.0,
+          "noise_seed": 20260731
+        }
+      },
+      "44": {
+        "path": "configs/rq1_seed44.yaml",
+        "sha256": "5B3E3D2B215D4D56B4C4EE70C23428ABF2D4A06E8871CE342E7518CEF44EDB81",
+        "bytes": 592,
+        "seed": 44,
+        "image_size": 224,
+        "backbone": "resnet50",
+        "threshold": 0.5,
+        "historical_level_two": {
+          "brightness_factor": 1.1,
+          "blur_radius": 1.0,
+          "noise_std_255": 5.0,
+          "noise_seed": 20260731
+        }
+      },
+      "45": {
+        "path": "configs/rq1_seed45.yaml",
+        "sha256": "AAE752920D5E9F262343B5C0921C3C5C6B0C0EBA1C3A543B68911D7B7DE2B2EB",
+        "bytes": 592,
+        "seed": 45,
+        "image_size": 224,
+        "backbone": "resnet50",
+        "threshold": 0.5,
+        "historical_level_two": {
+          "brightness_factor": 1.1,
+          "blur_radius": 1.0,
+          "noise_std_255": 5.0,
+          "noise_seed": 20260731
+        }
+      },
+      "46": {
+        "path": "configs/rq1_seed46.yaml",
+        "sha256": "9B605AC4AE5C2D4F0C841DA587CA8B6346AF2BD33857B29281AC6ECFABDFCF50",
+        "bytes": 592,
+        "seed": 46,
+        "image_size": 224,
+        "backbone": "resnet50",
+        "threshold": 0.5,
+        "historical_level_two": {
+          "brightness_factor": 1.1,
+          "blur_radius": 1.0,
+          "noise_std_255": 5.0,
+          "noise_seed": 20260731
+        }
+      },
+      "47": {
+        "path": "configs/rq1_seed47.yaml",
+        "sha256": "5649D9F85392E1CBD52411DCDB7ED3EF079CDB0F7682AD13EB7578B11F032A5E",
+        "bytes": 592,
+        "seed": 47,
+        "image_size": 224,
+        "backbone": "resnet50",
+        "threshold": 0.5,
+        "historical_level_two": {
+          "brightness_factor": 1.1,
+          "blur_radius": 1.0,
+          "noise_std_255": 5.0,
+          "noise_seed": 20260731
+        }
+      }
+    },
+    "checkpoints": {
+      "seed_43_action_only": {
+        "path": "checkpoints/validity/rq1_seed_43/action_only_best_action.pt",
+        "sha256": "AEA84F2E465B23B776AA04EC25DC62F51C3830FE6B2B05D92B9DB546A1DA884B",
+        "bytes": 282667209,
+        "historical_selection": "best_action",
+        "loaded_with_torch": false
+      },
+      "seed_43_joint": {
+        "path": "checkpoints/validity/rq1_seed_43/joint_best_action.pt",
+        "sha256": "3984528C3F54A83216CEBE7690D711B2E96EABF75692FA56AD43012D40A0E343",
+        "bytes": 283181715,
+        "historical_selection": "best_action",
+        "loaded_with_torch": false
+      },
+      "seed_44_action_only": {
+        "path": "checkpoints/validity/rq1_seed_44/action_only_best_action.pt",
+        "sha256": "4DDCDDCE39D91DB4C6EFB7E053C23A8C67A4FAEBAB38DDCA4FE4C89018DF8EC7",
+        "bytes": 282667209,
+        "historical_selection": "best_action",
+        "loaded_with_torch": false
+      },
+      "seed_44_joint": {
+        "path": "checkpoints/validity/rq1_seed_44/joint_best_action.pt",
+        "sha256": "B08CD6CA02252B44F7833D730761A521C90C7D8A8C331235EEB906E3C4EF60BA",
+        "bytes": 283181715,
+        "historical_selection": "best_action",
+        "loaded_with_torch": false
+      },
+      "seed_45_action_only": {
+        "path": "checkpoints/validity/rq1_seed_45/action_only_best_action.pt",
+        "sha256": "3873122D368C8A1D58F38180398357FCD998B8C7F8F117070C3EE58B12B06786",
+        "bytes": 282667209,
+        "historical_selection": "best_action",
+        "loaded_with_torch": false
+      },
+      "seed_45_joint": {
+        "path": "checkpoints/validity/rq1_seed_45/joint_best_action.pt",
+        "sha256": "248626129D281D869E611E04CF4E3DF280E2F43F26B8101F635CB88946059816",
+        "bytes": 283181715,
+        "historical_selection": "best_action",
+        "loaded_with_torch": false
+      },
+      "seed_46_action_only": {
+        "path": "checkpoints/validity/rq1_seed_46/action_only_best_action.pt",
+        "sha256": "7138F145CEFEFDAD55762399B6DAD469BD175B39508FD8B8923234262D566D39",
+        "bytes": 282667209,
+        "historical_selection": "best_action",
+        "loaded_with_torch": false
+      },
+      "seed_46_joint": {
+        "path": "checkpoints/validity/rq1_seed_46/joint_best_action.pt",
+        "sha256": "41710D04C236DC013FE88408884C9BCD536C1765F210D0F4BA57A88C6E004824",
+        "bytes": 283181715,
+        "historical_selection": "best_action",
+        "loaded_with_torch": false
+      },
+      "seed_47_action_only": {
+        "path": "checkpoints/validity/rq1_seed_47/action_only_best_action.pt",
+        "sha256": "BF85C5E2594D6E4AAC8A20E1EDA40AF9BFB5D82C54609D3E424A586038C1A3F1",
+        "bytes": 282667209,
+        "historical_selection": "best_action",
+        "loaded_with_torch": false
+      },
+      "seed_47_joint": {
+        "path": "checkpoints/validity/rq1_seed_47/joint_best_action.pt",
+        "sha256": "FDDCFAB53689162E9951158750180A7765EE283FEDCED723332758E34ECA2810",
+        "bytes": 283181715,
+        "historical_selection": "best_action",
+        "loaded_with_torch": false
+      }
+    },
+    "calibrations": {
+      "seed_43_action_only": {
+        "path": "outputs/validity/rq1_seed_43/calibration_action_only.json",
+        "sha256": "42BED1E43902103AB37864FFA7F48CDD2516C59205FE810AB461511095AA7AD0",
+        "bytes": 418,
+        "model_type": "action_only",
+        "checkpoint": "checkpoints/validity/rq1_seed_43/action_only_best_action.pt",
+        "split": "official validation (valid four-action samples)",
+        "validation_samples": 2258,
+        "temperature": 2.58642840385437,
+        "refitted_for_round10": false
+      },
+      "seed_43_joint": {
+        "path": "outputs/validity/rq1_seed_43/calibration_joint.json",
+        "sha256": "A8A9AD227BAB110778E3D49F8BA78BAB21500FD3ECAEE7280763C6AF25CC137F",
+        "bytes": 408,
+        "model_type": "joint",
+        "checkpoint": "checkpoints/validity/rq1_seed_43/joint_best_action.pt",
+        "split": "official validation (valid four-action samples)",
+        "validation_samples": 2258,
+        "temperature": 2.5693113803863525,
+        "refitted_for_round10": false
+      },
+      "seed_44_action_only": {
+        "path": "outputs/validity/rq1_seed_44/calibration_action_only.json",
+        "sha256": "F670A6EE78230DE9856DA3BFEDA16DF59C8C02E2962F4518C651DA5560D6C6CF",
+        "bytes": 418,
+        "model_type": "action_only",
+        "checkpoint": "checkpoints/validity/rq1_seed_44/action_only_best_action.pt",
+        "split": "official validation (valid four-action samples)",
+        "validation_samples": 2258,
+        "temperature": 2.906062126159668,
+        "refitted_for_round10": false
+      },
+      "seed_44_joint": {
+        "path": "outputs/validity/rq1_seed_44/calibration_joint.json",
+        "sha256": "89B07811122FE266C79541AD00AA1BEFFCE6E466CCB8B7D2E34D8B5E73A8B19B",
+        "bytes": 405,
+        "model_type": "joint",
+        "checkpoint": "checkpoints/validity/rq1_seed_44/joint_best_action.pt",
+        "split": "official validation (valid four-action samples)",
+        "validation_samples": 2258,
+        "temperature": 2.317605972290039,
+        "refitted_for_round10": false
+      },
+      "seed_45_action_only": {
+        "path": "outputs/validity/rq1_seed_45/calibration_action_only.json",
+        "sha256": "E8E01FE05656BDCB188700875609E1FFDF16B5C62FB99658F89B0CB983DD913F",
+        "bytes": 420,
+        "model_type": "action_only",
+        "checkpoint": "checkpoints/validity/rq1_seed_45/action_only_best_action.pt",
+        "split": "official validation (valid four-action samples)",
+        "validation_samples": 2258,
+        "temperature": 2.8795323371887207,
+        "refitted_for_round10": false
+      },
+      "seed_45_joint": {
+        "path": "outputs/validity/rq1_seed_45/calibration_joint.json",
+        "sha256": "817A007E33AF09AE1DBBF1C3B45216D427C116A15E2DC4A172E5DE8C897857FB",
+        "bytes": 406,
+        "model_type": "joint",
+        "checkpoint": "checkpoints/validity/rq1_seed_45/joint_best_action.pt",
+        "split": "official validation (valid four-action samples)",
+        "validation_samples": 2258,
+        "temperature": 2.026177167892456,
+        "refitted_for_round10": false
+      },
+      "seed_46_action_only": {
+        "path": "outputs/validity/rq1_seed_46/calibration_action_only.json",
+        "sha256": "D7C8C90570D357EA144642F4628538D6D2B1B61F018302AFB248FD82507698BE",
+        "bytes": 420,
+        "model_type": "action_only",
+        "checkpoint": "checkpoints/validity/rq1_seed_46/action_only_best_action.pt",
+        "split": "official validation (valid four-action samples)",
+        "validation_samples": 2258,
+        "temperature": 2.5061240196228027,
+        "refitted_for_round10": false
+      },
+      "seed_46_joint": {
+        "path": "outputs/validity/rq1_seed_46/calibration_joint.json",
+        "sha256": "F9935A65A0B187373FC16742207720D54C41C46071A1498393985ABB18E5E29A",
+        "bytes": 409,
+        "model_type": "joint",
+        "checkpoint": "checkpoints/validity/rq1_seed_46/joint_best_action.pt",
+        "split": "official validation (valid four-action samples)",
+        "validation_samples": 2258,
+        "temperature": 1.2398866415023804,
+        "refitted_for_round10": false
+      },
+      "seed_47_action_only": {
+        "path": "outputs/validity/rq1_seed_47/calibration_action_only.json",
+        "sha256": "E9FCAF432BC857AB3A4CEF69403975D6B22D86DD52A2540E65B96C9C1F9B07EB",
+        "bytes": 418,
+        "model_type": "action_only",
+        "checkpoint": "checkpoints/validity/rq1_seed_47/action_only_best_action.pt",
+        "split": "official validation (valid four-action samples)",
+        "validation_samples": 2258,
+        "temperature": 2.9120659828186035,
+        "refitted_for_round10": false
+      },
+      "seed_47_joint": {
+        "path": "outputs/validity/rq1_seed_47/calibration_joint.json",
+        "sha256": "06E05CA5334EBF74DCBE72829133A31707CFA94FADDA0FE6BE38F249E3A86101",
+        "bytes": 406,
+        "model_type": "joint",
+        "checkpoint": "checkpoints/validity/rq1_seed_47/joint_best_action.pt",
+        "split": "official validation (valid four-action samples)",
+        "validation_samples": 2258,
+        "temperature": 2.8457589149475098,
+        "refitted_for_round10": false
+      }
+    }
+  },
+  "environment": {
+    "python_executable": "D:\\anaconda3\\envs\\Nuclear_Transformer\\python.exe",
+    "python_version": "3.11.13",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "key_packages": {
+      "numpy": "1.26.4",
+      "pillow": "10.4.0",
+      "torch": "2.10.0.dev20251012+cu130",
+      "torchvision": "0.25.0.dev20251012+cu130",
+      "pyyaml": "6.0.3",
+      "pytest": "9.1.1"
+    },
+    "installed_distribution_count": 179,
+    "sorted_installed_distributions_sha256": "8AAD2BE81F5F75706D74185C405BB0A5167AFB945E8DE2C84037C2C362F415F6",
+    "cuda_visible_devices": null
+  },
+  "code_and_protocol_files": {
+    "outputs/validity/round10_corruption_dose_response_protocol.json": {
+      "sha256": "E3F54B24A50D847636FA644355BF78DB1AB2432CF74543E8AEF11A005D17029D",
+      "bytes": 11639
+    },
+    "outputs/validity/round10_corruption_semantic_audit/build_summary.json": {
+      "sha256": "59F4F52DB35DA869471CFD8D9BC34054CE7AD9658481ABC54B3A27D655B7F87C",
+      "bytes": 11407
+    },
+    "outputs/validity/round10_corruption_semantic_audit/audit_manifest.csv": {
+      "sha256": "94D30755D6E8BD48288ACF9690C828F201B41E3863349D5A2143D65AE15C7CF8",
+      "bytes": 67404
+    },
+    "outputs/validity/round10_corruption_semantic_audit/review_decision.json": {
+      "sha256": "471FB5BAD9AEFF9D22DAB3E72AA94A1390032D0BCE9302EF60A594A3F110F944",
+      "bytes": 5203
+    },
+    "outputs/validity/round10_corruption_semantic_audit/audit_summary.json": {
+      "sha256": "5CB6C9ECBB543625E295A3674B804333BC97996A9FFD034E66F806680CC3F894",
+      "bytes": 3968
+    },
+    "scripts/build_round10_semantic_audit.py": {
+      "sha256": "8EE2D6EC1B3F03FDE0E3D96CE2A97345A80CEA4A1B129B135ECBD2602F3D1DDE",
+      "bytes": 10919
+    },
+    "scripts/summarize_round10_semantic_audit.py": {
+      "sha256": "9A96CECEE84B5F4D299AA820C43EAE7C7D6E254BB69DB240BB9E1433B55A178C",
+      "bytes": 5698
+    },
+    "scripts/preflight_round10_corruption.py": {
+      "sha256": "4E562A423EC6493B8DC4C56D82A3276764E1319B74D5315D8F0AAAF281DBBEA5",
+      "bytes": 23831
+    },
+    "src/arsc_eval/corruption_dose_response.py": {
+      "sha256": "93240DAD2C703BBFAF91DEA9564B0BC2BC9B27A7318CE090EA89A82A01926458",
+      "bytes": 3145
+    },
+    "tests/test_corruption_dose_response.py": {
+      "sha256": "853A2999595DD5AD10C0A97C2E287F06C012FD47F454BF8546F8CB407C9CC27E",
+      "bytes": 1749
+    },
+    "requirements.txt": {
+      "sha256": "908A857C5FBD2CF35FC2F0ADC3B18DAC0148BD9D833BF474C4BE38755365D4B2",
+      "bytes": 127
+    },
+    "requirements-dev.txt": {
+      "sha256": "A76BE8C00EEB2B8CCE49CD4BC9F516B56AD9F2ABC094811FBB066941C25A2A8C",
+      "bytes": 32
+    }
+  },
+  "formal_artifact_absence": {
+    "outputs/validity/round10_corruption_results.json": true,
+    "outputs/validity/round10_corruption_primitives.npz": true,
+    "outputs/validity/round10_corruption_bootstrap_draws.npz": true,
+    "outputs/validity/round10_corruption_point_diagnostics.csv": true,
+    "outputs/validity/round10_corruption_bootstrap_summary.csv": true,
+    "outputs/validity/round10_corruption_formal.log": true,
+    "outputs/validity/round10_corruption_prediction_cache": true
+  },
+  "tests": {
+    "command": [
+      "D:\\anaconda3\\envs\\Nuclear_Transformer\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "--disable-warnings"
+    ],
+    "return_code": 0,
+    "expected_test_count": 67,
+    "observed_test_count": 67,
+    "all_passed": true,
+    "log": {
+      "path": "outputs/validity/round10_corruption_preflight_tests.log",
+      "sha256": "92A7AAB1E0F2986F84EDF3E9A74C344F6D1C974A67594B6ED86C99F852991D35",
+      "bytes": 100
+    }
+  },
+  "outcome_blinding": {
+    "new_nonzero_severity_predictions_read": false,
+    "new_nonzero_severity_logits_read_or_computed": false,
+    "new_nonzero_severity_confidences_read_or_computed": false,
+    "new_nonzero_severity_metrics_read_or_computed": false,
+    "checkpoints_loaded_with_torch": false,
+    "checkpoint_bytes_only_hashed": true,
+    "formal_run_authorized": false,
+    "formal_analysis_implementation_authorized": false
+  },
+  "next_gate": "Independent reviewer must inspect and bind this complete outcome-blind protocol, semantic audit, operator code, tests, and input inventory before formal implementation begins."
+}

@@ -1,0 +1,399 @@
+{
+  "status": "AWAITING_MODEL_OUTPUT_BLIND_REVIEW",
+  "outcomes_read_or_computed": false,
+  "sample_seed": 20260810,
+  "sample_count": 100,
+  "selected_dataset_indices": [
+    37,
+    121,
+    132,
+    138,
+    148,
+    233,
+    285,
+    422,
+    442,
+    491,
+    530,
+    607,
+    649,
+    736,
+    816,
+    857,
+    869,
+    963,
+    1007,
+    1048,
+    1058,
+    1079,
+    1119,
+    1137,
+    1216,
+    1250,
+    1369,
+    1396,
+    1437,
+    1623,
+    1632,
+    1723,
+    1741,
+    1878,
+    1948,
+    2016,
+    2128,
+    2139,
+    2241,
+    2315,
+    2323,
+    2357,
+    2420,
+    2437,
+    2446,
+    2506,
+    2508,
+    2520,
+    2568,
+    2595,
+    2678,
+    2699,
+    2708,
+    2766,
+    2892,
+    2899,
+    2937,
+    2962,
+    2988,
+    2992,
+    3001,
+    3013,
+    3077,
+    3104,
+    3121,
+    3128,
+    3189,
+    3218,
+    3224,
+    3246,
+    3252,
+    3359,
+    3363,
+    3391,
+    3484,
+    3491,
+    3600,
+    3651,
+    3822,
+    3898,
+    3929,
+    3964,
+    3971,
+    4115,
+    4140,
+    4162,
+    4191,
+    4198,
+    4225,
+    4262,
+    4266,
+    4278,
+    4285,
+    4352,
+    4364,
+    4414,
+    4425,
+    4432,
+    4461,
+    4513
+  ],
+  "selected_indices_array_sha256": "510DD4B56FC25E2AEE79ED9F34E12722254E163F200DE423F7FD9D7F90E8523E",
+  "same_images_across_all_families_and_levels": true,
+  "families": [
+    "brightness",
+    "blur",
+    "noise"
+  ],
+  "nonzero_levels_per_family": 4,
+  "review_rows": 1200,
+  "manifest": "outputs/validity/round10_corruption_semantic_audit/audit_manifest.csv",
+  "manifest_sha256": "3746450D250194963A3CD14AB32E2D7A359772189F3FA63E22543F41E92D304D",
+  "pages": [
+    {
+      "family": "brightness",
+      "page": 1,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/brightness_page_01.png",
+      "sha256": "F0E62618240E414A86C8700F269959EFF322EA3EDE98524CEB85DC3D2FDA4C75",
+      "first_audit_index": 1,
+      "last_audit_index": 10
+    },
+    {
+      "family": "brightness",
+      "page": 2,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/brightness_page_02.png",
+      "sha256": "380C4B7B861B42E36FE450236C006BC350832E5DC6EDC1C063ECF7C30C29F2AA",
+      "first_audit_index": 11,
+      "last_audit_index": 20
+    },
+    {
+      "family": "brightness",
+      "page": 3,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/brightness_page_03.png",
+      "sha256": "2C99834C43FC80BF9B262A491BF049695A3077A05A3D51D5920498A93B8AA33D",
+      "first_audit_index": 21,
+      "last_audit_index": 30
+    },
+    {
+      "family": "brightness",
+      "page": 4,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/brightness_page_04.png",
+      "sha256": "5A4ED0697037C9E39C0299E2765D36A356BCEBFC6A39C619E4BB43C90BB5F9D4",
+      "first_audit_index": 31,
+      "last_audit_index": 40
+    },
+    {
+      "family": "brightness",
+      "page": 5,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/brightness_page_05.png",
+      "sha256": "B297C7C9E6E6F38A2E3A78A12521F2C567492D58371E09CB8189AFCA236BFC55",
+      "first_audit_index": 41,
+      "last_audit_index": 50
+    },
+    {
+      "family": "brightness",
+      "page": 6,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/brightness_page_06.png",
+      "sha256": "D274E21309317DBE686B4688FB7AEC774353936698CD9AD7E0A5130D43702188",
+      "first_audit_index": 51,
+      "last_audit_index": 60
+    },
+    {
+      "family": "brightness",
+      "page": 7,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/brightness_page_07.png",
+      "sha256": "2B2A1F65A677B0525FAEC593E17F5162FCF8C2184CE707B852E44796E73F2D74",
+      "first_audit_index": 61,
+      "last_audit_index": 70
+    },
+    {
+      "family": "brightness",
+      "page": 8,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/brightness_page_08.png",
+      "sha256": "31F3B4842D877B6EE27A179A675454A2680E1DA61328D3C3C69B939AC714B73C",
+      "first_audit_index": 71,
+      "last_audit_index": 80
+    },
+    {
+      "family": "brightness",
+      "page": 9,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/brightness_page_09.png",
+      "sha256": "273C3E26F20D07CADD3E4EF2B1C669B2D21ECDE2B3B6D86B3694FED5D33C9322",
+      "first_audit_index": 81,
+      "last_audit_index": 90
+    },
+    {
+      "family": "brightness",
+      "page": 10,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/brightness_page_10.png",
+      "sha256": "5FF745B4844A88998409F8DB36689B3B7709D2B895AB4C43ABD8F8813EC3070A",
+      "first_audit_index": 91,
+      "last_audit_index": 100
+    },
+    {
+      "family": "blur",
+      "page": 1,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/blur_page_01.png",
+      "sha256": "AFCB7F0BA5855210A3B22CB3CCA8782A60F4858AD340B657E3F53B789399EB37",
+      "first_audit_index": 1,
+      "last_audit_index": 10
+    },
+    {
+      "family": "blur",
+      "page": 2,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/blur_page_02.png",
+      "sha256": "16601B31CBB4AE02745C32801479C57D3730626FC5D7C8726DF5512E8F43DA60",
+      "first_audit_index": 11,
+      "last_audit_index": 20
+    },
+    {
+      "family": "blur",
+      "page": 3,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/blur_page_03.png",
+      "sha256": "1900BED15DE7928AF8D18B2A7BE2AFE83657DADE2985EAC0E95FFF132D806591",
+      "first_audit_index": 21,
+      "last_audit_index": 30
+    },
+    {
+      "family": "blur",
+      "page": 4,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/blur_page_04.png",
+      "sha256": "139EC788242E49C023E783FD1D793840797F7C2267294F9925E45B60A21B37BE",
+      "first_audit_index": 31,
+      "last_audit_index": 40
+    },
+    {
+      "family": "blur",
+      "page": 5,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/blur_page_05.png",
+      "sha256": "D3BF4F7FDA3D365E7199F3A11EA131CDA67B64C314A7F1A010AADD6269E6D536",
+      "first_audit_index": 41,
+      "last_audit_index": 50
+    },
+    {
+      "family": "blur",
+      "page": 6,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/blur_page_06.png",
+      "sha256": "58CADDD637B727CC07C3B306376A8DFCFA176736BB9B44A7145ACE044C6ADA68",
+      "first_audit_index": 51,
+      "last_audit_index": 60
+    },
+    {
+      "family": "blur",
+      "page": 7,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/blur_page_07.png",
+      "sha256": "9D357508526F4CDDC472CC4798B889BD5FC2E2A364ECF598680301DA716D70F3",
+      "first_audit_index": 61,
+      "last_audit_index": 70
+    },
+    {
+      "family": "blur",
+      "page": 8,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/blur_page_08.png",
+      "sha256": "83FEB9DF7E57DCB89892742A8081A6260F2EE796BAA423DFC788E499D9FA11CC",
+      "first_audit_index": 71,
+      "last_audit_index": 80
+    },
+    {
+      "family": "blur",
+      "page": 9,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/blur_page_09.png",
+      "sha256": "40501DBB46C5461E7CDC8E176EEFC135C19C5F71A18AD567CA8AEFAEDBDF1CD6",
+      "first_audit_index": 81,
+      "last_audit_index": 90
+    },
+    {
+      "family": "blur",
+      "page": 10,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/blur_page_10.png",
+      "sha256": "E5714221A0C641A2DBE931DE4F07567D3A186D7FC515DAAB7172AB8E3158AE81",
+      "first_audit_index": 91,
+      "last_audit_index": 100
+    },
+    {
+      "family": "noise",
+      "page": 1,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/noise_page_01.png",
+      "sha256": "CA47EB43DF08B856442C11F385FD0FFB69DABE5C9306EB58B3C4CA8E268FB80E",
+      "first_audit_index": 1,
+      "last_audit_index": 10
+    },
+    {
+      "family": "noise",
+      "page": 2,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/noise_page_02.png",
+      "sha256": "810FB5B6AAA8C24817CAF574F37761F0D3DE1697B8945F10AABCE19BD4EE657E",
+      "first_audit_index": 11,
+      "last_audit_index": 20
+    },
+    {
+      "family": "noise",
+      "page": 3,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/noise_page_03.png",
+      "sha256": "D7F4DBEC5BFA851B2B3F029D88AAA32CFD58339CFA96073EDB6379DA641ADE88",
+      "first_audit_index": 21,
+      "last_audit_index": 30
+    },
+    {
+      "family": "noise",
+      "page": 4,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/noise_page_04.png",
+      "sha256": "7857B13EC1100EFC85E2F6A6F0B0820606201E4B9F71B91147010FF72E6EAB9D",
+      "first_audit_index": 31,
+      "last_audit_index": 40
+    },
+    {
+      "family": "noise",
+      "page": 5,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/noise_page_05.png",
+      "sha256": "A9532ED3ABB801C79A5E5A32BABCFADB2BC3B52C9A32B7E4A2EF727DCF4F61F6",
+      "first_audit_index": 41,
+      "last_audit_index": 50
+    },
+    {
+      "family": "noise",
+      "page": 6,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/noise_page_06.png",
+      "sha256": "9C9CED10C6F8684A174EF6FD703194FD65FB42D6737132C15F6CC8FF4640A84E",
+      "first_audit_index": 51,
+      "last_audit_index": 60
+    },
+    {
+      "family": "noise",
+      "page": 7,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/noise_page_07.png",
+      "sha256": "77D5E4B45B2FB942A7E5729E60D1F56F19CF77B55FB109021E21022767DA6FA1",
+      "first_audit_index": 61,
+      "last_audit_index": 70
+    },
+    {
+      "family": "noise",
+      "page": 8,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/noise_page_08.png",
+      "sha256": "C621519C94F23BDD1BA6EBD8E7E856FE085808D2346905F1D0AAD93643FD0314",
+      "first_audit_index": 71,
+      "last_audit_index": 80
+    },
+    {
+      "family": "noise",
+      "page": 9,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/noise_page_09.png",
+      "sha256": "A7533A4CA278D85A710B30BCCAF3BE12AF73FF602453E5403F85C95CF0C21F41",
+      "first_audit_index": 81,
+      "last_audit_index": 90
+    },
+    {
+      "family": "noise",
+      "page": 10,
+      "path": "outputs/validity/round10_corruption_semantic_audit/pages/noise_page_10.png",
+      "sha256": "6776FB4525BDA2CB047DFBB9C547399201E9A8FEFB3CEF4D307BB4B4B69982FE",
+      "first_audit_index": 91,
+      "last_audit_index": 100
+    }
+  ],
+  "technical_gate": {
+    "level_zero_exact_identity_all_images_and_families": true,
+    "repeated_level_four_transform_exact_all_images": true,
+    "mean_absolute_rgb_change_by_family_and_level": {
+      "brightness": [
+        0.0,
+        3.483344976128472,
+        7.30561382740162,
+        14.447619896556713,
+        20.99476916232639
+      ],
+      "blur": [
+        0.0,
+        0.5821405635127315,
+        2.1063078486689815,
+        3.3623635814525463,
+        4.358784986255787
+      ],
+      "noise": [
+        0.0,
+        1.9974695167824075,
+        3.9269884946469906,
+        5.839060926649306,
+        7.727437525318287
+      ]
+    },
+    "aggregate_distance_nondecreasing": {
+      "brightness": true,
+      "blur": true,
+      "noise": true
+    },
+    "passed": true
+  },
+  "manual_gate": {
+    "minimum_rate_per_decision_per_stratum": 0.95,
+    "minimum_joint_pass_rate_per_stratum": 0.95,
+    "any_failed_stratum_stops_complete_grid": true
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "status": "PASS_MODEL_OUTPUT_BLIND_SEMANTIC_GATE",
+  "outcomes_read_or_computed": false,
+  "reviewer": "Codex model-output-blind visual review",
+  "review_completed_at_utc": "2026-07-31T04:05:56Z",
+  "reviewed_unique_images": 100,
+  "reviewed_pairs": 1200,
+  "reviewed_decisions": 2400,
+  "strata": {
+    "blur::level1": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "blur::level2": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "blur::level3": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "blur::level4": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "brightness::level1": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "brightness::level2": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "brightness::level3": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "brightness::level4": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "noise::level1": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "noise::level2": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "noise::level3": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "noise::level4": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    }
+  },
+  "manual_gate_passed": true,
+  "technical_gate": {
+    "level_zero_exact_identity_all_images_and_families": true,
+    "repeated_level_four_transform_exact_all_images": true,
+    "mean_absolute_rgb_change_by_family_and_level": {
+      "brightness": [
+        0.0,
+        3.483344976128472,
+        7.30561382740162,
+        14.447619896556713,
+        20.99476916232639
+      ],
+      "blur": [
+        0.0,
+        0.5821405635127315,
+        2.1063078486689815,
+        3.3623635814525463,
+        4.358784986255787
+      ],
+      "noise": [
+        0.0,
+        1.9974695167824075,
+        3.9269884946469906,
+        5.839060926649306,
+        7.727437525318287
+      ]
+    },
+    "aggregate_distance_nondecreasing": {
+      "brightness": true,
+      "blur": true,
+      "noise": true
+    },
+    "passed": true
+  },
+  "manifest": "outputs/validity/round10_corruption_semantic_audit/audit_manifest.csv",
+  "manifest_sha256": "94D30755D6E8BD48288ACF9690C828F201B41E3863349D5A2143D65AE15C7CF8",
+  "review_decision": "outputs/validity/round10_corruption_semantic_audit/review_decision.json",
+  "review_decision_sha256": "471FB5BAD9AEFF9D22DAB3E72AA94A1390032D0BCE9302EF60A594A3F110F944",
+  "complete_grid_passed": true,
+  "failure_rule": "Any failed stratum stops the entire Round 10 grid; no family or level replacement is permitted."
+}

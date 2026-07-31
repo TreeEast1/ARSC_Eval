@@ -28,3 +28,4 @@ yolo11n.pt
 # Visual-audit contact sheets contain redistributed dataset pixels. Keep the
 # numeric/manual audit evidence and regenerate the sheets locally when needed.
 outputs/validity/**/pages/*.png
+outputs/validity/**/pages_labelled/*.png

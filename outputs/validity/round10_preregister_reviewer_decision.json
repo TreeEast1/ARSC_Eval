@@ -1,0 +1,137 @@
+{
+  "schema_version": "ARSC_ROUND10_OUTCOME_BLIND_PREREGISTER_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-07-31T04:34:24Z",
+  "reviewer_role": "independent_outcome_blind_preregister_and_preflight_reviewer",
+  "study": "BDD-OIA Round 10 corruption dose-response construct validation",
+  "review_mode": {
+    "outcome_blind": true,
+    "model_loaded": false,
+    "model_inference_run": false,
+    "nonzero_severity_prediction_read_or_computed": false,
+    "nonzero_severity_logit_read_or_computed": false,
+    "nonzero_severity_confidence_read_or_computed": false,
+    "nonzero_severity_metric_outcome_read_or_computed": false,
+    "formal_analysis_written_or_started": false,
+    "existing_files_modified": false
+  },
+  "verdict": {
+    "decision": "STOP/REPAIR_PROTOCOL_PREFLIGHT",
+    "formal_implementation_authorized": false,
+    "formal_run_authorized": false,
+    "outcome_blind_repair_authorized": true,
+    "next_possible_decision_after_independent_rereview": "AUTHORIZE_OUTCOME_BLIND_FORMAL_IMPLEMENTATION_ONLY",
+    "formal_run_requires_later_separate_go": true
+  },
+  "positive_findings": {
+    "construct_direction_and_operator_structure": "CONDITIONALLY_SOUND_WITH_NARROW_OPERATOR_NAMES",
+    "family_by_axis_bottleneck_structure": "SOUND",
+    "fixed_primary_gate_count": 12,
+    "bonferroni_one_sided_alpha_per_gate": 0.004166666666666667,
+    "bonferroni_formula": "CORRECT",
+    "shared_seed_and_source_clip_bootstrap": "SOUND_IN_PRINCIPLE",
+    "semantic_grid_shape": "EXACT_100_IMAGES_X_12_NONZERO_FAMILY_LEVEL_STRATA",
+    "semantic_manifest_rows": 1200,
+    "semantic_manifest_unique_row_keys": 1200,
+    "semantic_scene_preservation_visual_review": "NO_MATERIAL_COUNTEREXAMPLE_OBSERVED_ON_ALL_30_CONTACT_SHEETS",
+    "current_artifact_internal_consistency": "INDEPENDENT_READ_ONLY_REPLAY_PASSED",
+    "formal_artifacts_absent": true
+  },
+  "blocking_findings": [
+    {
+      "id": "R10_STOP01_B1",
+      "title": "Practical endpoint threshold gate is not uniquely specified",
+      "finding": "The 0.01 A/R/S and 0.025 C1 thresholds are not assigned unambiguously to per-seed effects, the five-seed arithmetic mean, a bootstrap point statistic, a pointwise lower bound, a Bonferroni lower bound, or an all-seeds condition. Different conforming implementations can therefore produce different PASS/FAIL decisions.",
+      "required_repair": "Freeze the component formula, seed aggregation order, comparison operator, and uncertainty role. Recommended convention: retain every per-seed endpoint effect, use the arithmetic mean of the five seed effects for the primary practical gate, and report the bootstrap endpoint distribution descriptively without adding an unregistered confidence-bound threshold gate."
+    },
+    {
+      "id": "R10_STOP01_B2",
+      "title": "The executable noise operator has an unbound transitive dependency",
+      "finding": "src/arsc_eval/corruption_dose_response.py imports deterministic_noise from src/arsc_eval/data.py, but data.py is absent from the frozen preflight code inventory. Binding only the caller does not freeze the actual filename hash, RNG, float32 sampling, clipping, and uint8-cast implementation.",
+      "required_repair": "Inline the exact noise implementation into the bound Round 10 module or add src/arsc_eval/data.py to every protocol, preflight, and reviewer hash contract. Add a pixel-exact historical level-2 bridge test; parameter equality alone is insufficient."
+    },
+    {
+      "id": "R10_STOP01_B3",
+      "title": "Bootstrap tail quantile and edge-case semantics remain implementation-dependent",
+      "finding": "The protocol does not freeze the quantile interpolation method or state explicitly that the Bonferroni lower bound is calculated from each replicate's five-selected-seed family-axis mean bottleneck. Exact-zero, NaN, undefined F1, empty class, duplicate draw, and expanded-image-count conventions are also incomplete.",
+      "required_repair": "Freeze the pointwise and Bonferroni quantile methods, preferably numpy.quantile method='linear'; freeze the replicate statistic and every numerical edge case; and require preservation of all 12x5000 raw gate draws, seed selections, clip selections, expanded image counts, and quantile diagnostics."
+    },
+    {
+      "id": "R10_STOP01_B4",
+      "title": "Semantic label-applicability decisions are not auditable from the reviewed material",
+      "finding": "The 30 contact sheets show filenames and images but not action/rationale labels. review_decision.json supplies default true decisions with no overrides, and the summarizer expands them into 2400 true values. This establishes visible scene preservation but does not establish 2400 independently inspected label-applicability judgments. The blank manifest was also overwritten in place, so the original artifact is not retained.",
+      "required_repair": "Bind and display each selected image's action/rationale label vector or label names, or remove the redundant label-applicability decision from the protocol. Bind the exact 1200-row key set and label sidecar, require strict JSON booleans and complete/unique/in-grid overrides, attest review of every pair when using a default-true batch decision, and preserve immutable raw and reviewed manifests with a verifiable transition."
+    },
+    {
+      "id": "R10_STOP01_B5",
+      "title": "Preflight trusts semantic summaries and lacks claimed negative validation",
+      "finding": "The current preflight does not independently recompute the seeded sample, index-to-filename mapping, complete 1200-key grid, per-stratum counts, parameters, strict boolean types, or raw-to-reviewed provenance. The 67-test log consists of the prior suite plus four operator tests; tests/test_corruption_dose_response.py contains no semantic/preflight negative tests.",
+      "required_repair": "Turn all semantic structural checks into hard preflight assertions. Add outcome-blind negative tests for incorrect sample/grid, duplicate or out-of-grid overrides, page/hash mismatch, unbound transitive operator code, malformed practical-threshold schema, incorrect quantile method, and refusal of formal, staging, temporary, or prediction-cache artifacts. Produce a new preflight artifact and retain this STOP01 artifact."
+    }
+  ],
+  "operator_and_claim_boundaries": {
+    "brightness": "Global brightening only; not darkening, exposure-field variation, or natural low light.",
+    "blur": "Gaussian blur only; not motion blur or real optical defocus.",
+    "noise": "Deterministic iid Gaussian RGB noise added after JPEG decode; not real sensor noise.",
+    "dose": "A frozen pixel-operator parameter grid, not a natural-world severity scale.",
+    "directional_gates": "Falsifiable empirical model-by-dataset-by-operator hypotheses, not mathematical necessities of A/R/S/C1. A reversal, including improvement after brightening, must be reported as a gate failure without being generalized to global metric invalidity.",
+    "future_pass_supports": "Only joint metric-by-model-by-operator behavior on the frozen 4557-image BDD-OIA test population, five existing training seeds, frozen threshold and calibration, and the three prefixed synthetic grids under the preregistered source-clip and seed resampling procedure.",
+    "future_pass_does_not_support": [
+      "natural corruption prevalence or natural severity scaling",
+      "other datasets, domains, architectures, training protocols, seeds, thresholds, or metrics",
+      "real-road robustness or safety guarantees",
+      "rationale grounding or faithfulness",
+      "CEG or causal evidence",
+      "calibration validity",
+      "validity for all rationale ontology classes",
+      "a population-level 95 percent semantic-preservation guarantee from the single-reviewer 100-image audit"
+    ]
+  },
+  "rereview_requirements": [
+    "Preserve this memo, this machine decision, and every currently reviewed Round 10 artifact.",
+    "Create an outcome-blind protocol amendment or new version that closes all five blockers.",
+    "Do not load a model, run inference, create any nonzero-severity prediction cache, or implement a formal analyzer during the repair.",
+    "Generate a new outcome-blind preflight artifact and test log rather than overwriting the STOP01 record.",
+    "Obtain independent re-review before any formal implementation begins.",
+    "If implementation-only authorization is later granted, complete and hash-bind the full implementation and pass a separate independent preformal audit before requesting formal-run GO."
+  ],
+  "formal_artifact_absence": {
+    "status": "PASS_AT_REVIEW_TIME",
+    "formal_analyzer_absent": true,
+    "formal_launcher_absent": true,
+    "nonzero_severity_prediction_cache_absent": true,
+    "formal_results_absent": true,
+    "formal_primitives_absent": true,
+    "formal_bootstrap_draws_absent": true,
+    "formal_diagnostics_absent": true,
+    "formal_log_absent": true
+  },
+  "binding_notes": {
+    "preflight_base_commit": "debf928daefd573e4ebf893a91d235cb6e14c1e7",
+    "base_commit_contains_current_untracked_round10_files": false,
+    "interpretation": "The reviewed state is bound by the per-file hashes below. A later implementation-only GO must bind a committed complete preoutcome state and may not rely on the base commit alone.",
+    "semantic_raw_manifest_sha256_recorded_in_build_summary": "3746450D250194963A3CD14AB32E2D7A359772189F3FA63E22543F41E92D304D",
+    "semantic_reviewed_manifest_sha256": "94D30755D6E8BD48288ACF9690C828F201B41E3863349D5A2143D65AE15C7CF8",
+    "canonical_contact_sheet_path_sha256_map_aggregate_sha256": "F751992D96E386F54CE23F2F1945615B2662DC28D171E90B6270810E0FE2E778",
+    "test_log_result": "67 passed in 16.16s"
+  },
+  "memo": {
+    "path": "outputs/research_review_memo_round10_preregister.md",
+    "sha256": "EDFEBE3A65E28855724ED7E0915FE501BFA5FCDD4BAE2831C2FFE2C22320BB58"
+  },
+  "reviewed_files_sha256": {
+    "outputs/validity/round10_corruption_dose_response_protocol.json": "E3F54B24A50D847636FA644355BF78DB1AB2432CF74543E8AEF11A005D17029D",
+    "src/arsc_eval/corruption_dose_response.py": "93240DAD2C703BBFAF91DEA9564B0BC2BC9B27A7318CE090EA89A82A01926458",
+    "tests/test_corruption_dose_response.py": "853A2999595DD5AD10C0A97C2E287F06C012FD47F454BF8546F8CB407C9CC27E",
+    "scripts/build_round10_semantic_audit.py": "8EE2D6EC1B3F03FDE0E3D96CE2A97345A80CEA4A1B129B135ECBD2602F3D1DDE",
+    "scripts/summarize_round10_semantic_audit.py": "9A96CECEE84B5F4D299AA820C43EAE7C7D6E254BB69DB240BB9E1433B55A178C",
+    "scripts/preflight_round10_corruption.py": "4E562A423EC6493B8DC4C56D82A3276764E1319B74D5315D8F0AAAF281DBBEA5",
+    "outputs/validity/round10_corruption_semantic_audit/build_summary.json": "59F4F52DB35DA869471CFD8D9BC34054CE7AD9658481ABC54B3A27D655B7F87C",
+    "outputs/validity/round10_corruption_semantic_audit/audit_manifest.csv": "94D30755D6E8BD48288ACF9690C828F201B41E3863349D5A2143D65AE15C7CF8",
+    "outputs/validity/round10_corruption_semantic_audit/review_decision.json": "471FB5BAD9AEFF9D22DAB3E72AA94A1390032D0BCE9302EF60A594A3F110F944",
+    "outputs/validity/round10_corruption_semantic_audit/audit_summary.json": "5CB6C9ECBB543625E295A3674B804333BC97996A9FFD034E66F806680CC3F894",
+    "outputs/validity/round10_corruption_preflight.json": "487B711A91A59A434646A076679FC639AB79FFE1C70B893F4FF32C9D90227370",
+    "outputs/validity/round10_corruption_preflight_tests.log": "92A7AAB1E0F2986F84EDF3E9A74C344F6D1C974A67594B6ED86C99F852991D35",
+    "outputs/validity/round9_postresult_reviewer_decision.json": "7D362D283493440A2365149BADE802F6CA3B56FCED9824A7B5A5056571F387B3",
+    "src/arsc_eval/data.py": "B46F21C217240CF23D017310D35D44E414B75BC2A9CE568EE42E86521D372004"
+  }
+}

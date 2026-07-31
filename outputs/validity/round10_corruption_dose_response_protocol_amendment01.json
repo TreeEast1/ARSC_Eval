@@ -1,0 +1,217 @@
+{
+  "schema_version": "ARSC_ROUND10_CORRUPTION_DOSE_RESPONSE_PROTOCOL_AMENDMENT01_V1",
+  "amendment_id": "ARSC_ROUND10_BDD_OIA_PIXEL_CORRUPTION_DOSE_RESPONSE_AMENDMENT01",
+  "status": "FROZEN_OUTCOME_BLIND_REPAIR_AWAITING_INDEPENDENT_REREVIEW",
+  "frozen_at_utc": "2026-07-31T04:37:44Z",
+  "amends": {
+    "path": "outputs/validity/round10_corruption_dose_response_protocol.json",
+    "sha256": "E3F54B24A50D847636FA644355BF78DB1AB2432CF74543E8AEF11A005D17029D",
+    "conflict_rule": "This amendment takes precedence only for fields explicitly replaced below; every other original protocol field remains frozen."
+  },
+  "repair_authorization": {
+    "path": "outputs/validity/round10_preregister_reviewer_decision.json",
+    "sha256": "9B572FAFF4B46DCF31A034D64962C7E7304C1E3CC26342CA85F2C35E80889FDB",
+    "decision": "STOP/REPAIR_PROTOCOL_PREFLIGHT",
+    "outcome_blind_repair_authorized": true,
+    "formal_implementation_authorized": false,
+    "formal_run_authorized": false
+  },
+  "stop_artifact_preservation": {
+    "all_original_protocol_preflight_semantic_and_reviewer_artifacts_are_immutable": true,
+    "attempt02_outputs_must_use_new_paths": true,
+    "no_original_artifact_overwrite": true
+  },
+  "replacement_practical_endpoint_gates": {
+    "statistical_level": "For each family and component, compute one endpoint effect separately for each of the five historical training seeds, retain all five effects, then take their unweighted arithmetic mean. The observed five-seed mean alone is compared with the threshold for the primary practical gate.",
+    "uncertainty_role": "Bootstrap endpoint distributions and their method-linear 2.5/97.5 percentile intervals are descriptive only. No pointwise or Bonferroni endpoint confidence bound is an additional practical-threshold gate.",
+    "comparison_operator": "greater than or equal to; no rounding, tolerance, or printed-value comparison",
+    "thresholds_are_operational_conventions": true,
+    "thresholds_are_not_externally_validated_minimal_important_differences": true,
+    "A": {
+      "per_seed_component_effects": {
+        "action_only": "A_action_only(seed,family,level0) - A_action_only(seed,family,level4)",
+        "joint": "A_joint(seed,family,level0) - A_joint(seed,family,level4)"
+      },
+      "primary_gate": "For both components separately, mean over seeds 43,44,45,46,47 must be >= 0.01.",
+      "requires_every_seed_to_meet_threshold": false
+    },
+    "R": {
+      "per_seed_component_effects": {
+        "joint_rationale": "R_joint_rationale(seed,family,level0) - R_joint_rationale(seed,family,level4)"
+      },
+      "primary_gate": "The unweighted mean over seeds 43,44,45,46,47 must be >= 0.01.",
+      "requires_every_seed_to_meet_threshold": false
+    },
+    "S": {
+      "per_seed_component_effects": {
+        "action_only": "S_action_only_tie_aurc(seed,family,level4) - S_action_only_tie_aurc(seed,family,level0)",
+        "joint": "S_joint_tie_aurc(seed,family,level4) - S_joint_tie_aurc(seed,family,level0)"
+      },
+      "primary_gate": "For both components separately, mean over seeds 43,44,45,46,47 must be >= 0.01.",
+      "requires_every_seed_to_meet_threshold": false
+    },
+    "C1": {
+      "per_seed_component_effects": {
+        "action_only_flip": "C1_action_only_flip(seed,family,level4) - C1_action_only_flip(seed,family,level0), where level0 is required to equal exactly 0",
+        "joint_flip": "C1_joint_flip(seed,family,level4) - C1_joint_flip(seed,family,level0), where level0 is required to equal exactly 0",
+        "joint_rationale_jaccard": "C1_joint_rationale_jaccard(seed,family,level0) - C1_joint_rationale_jaccard(seed,family,level4), where level0 is required to equal exactly 1"
+      },
+      "primary_gate": "For all three components separately, mean over seeds 43,44,45,46,47 must be >= 0.025.",
+      "requires_every_seed_to_meet_threshold": false
+    }
+  },
+  "replacement_bootstrap_numeric_contract": {
+    "replicate_gate_statistic": "For each bootstrap replicate, use the single shared five-position training-seed draw and single shared 3904-position source-clip draw. For each selected seed position and each family-axis pair, recompute every component curve on the expanded clip sample, compute that selected seed's minimum expected-direction adjacent step across all required components and all four adjacent severity pairs, and then take the unweighted arithmetic mean of the five selected-position bottlenecks. This is the sole value stored as that replicate's family-axis mean-bottleneck gate draw.",
+    "seed_sampling": {
+      "population": "the ordered five positions for seeds 43,44,45,46,47",
+      "draw_size": 5,
+      "replacement": true,
+      "duplicate_selected_seed_positions_are_retained": true
+    },
+    "clip_sampling": {
+      "population": "the ordered 3904 unique source-clip positions defined by first occurrence in canonical test-manifest order",
+      "draw_size": 3904,
+      "replacement": true,
+      "duplicate_selected_clip_positions_are_retained": true,
+      "expansion": "For each selected clip occurrence, append all member image indices in canonical test-manifest order. A repeatedly selected clip appends its member images repeatedly.",
+      "metric_weighting": "Every expanded image occurrence has unit weight; expanded sample size may vary by replicate because source clips contain different numbers of images.",
+      "empty_expanded_sample": "inconclusive implementation failure; it cannot occur under the frozen nonempty clip population and draw size"
+    },
+    "shared_draw_rule": "The same seed-position vector and clip-position vector are shared across all three families, all five levels, both models, all four axes, all components, endpoint effects, and diagnostics in a replicate.",
+    "replicates": 5000,
+    "rng": "numpy.random.default_rng(20260810)",
+    "pointwise_interval": {
+      "quantiles": [
+        0.025,
+        0.975
+      ],
+      "numpy_method": "linear",
+      "scope": "descriptive pointwise interval"
+    },
+    "bonferroni_primary_lower_bound": {
+      "input": "the 5000 replicate family-axis mean-bottleneck gate draws defined above",
+      "quantile": 0.004166666666666667,
+      "formula": "0.05 / 12",
+      "numpy_method": "linear",
+      "pass_operator": "strictly greater than 0.0 using the unrounded float64 result",
+      "exact_zero_passes": false
+    },
+    "descriptive_endpoint_bootstrap": {
+      "replicate_effect": "Within each selected seed position and expanded clip sample compute the component endpoint effect, then average the five selected-position effects.",
+      "quantiles": [
+        0.025,
+        0.975
+      ],
+      "numpy_method": "linear",
+      "affects_practical_gate": false
+    },
+    "numeric_edge_cases": {
+      "metric_and_bootstrap_accumulation_dtype": "float64",
+      "nonfinite_input_or_result": "ROUND10_INCONCLUSIVE_STOP; no imputation, clipping, omission, or replacement",
+      "binary_f1_zero_denominator": 0.0,
+      "per_class_target_and_prediction_both_empty_f1": 0.0,
+      "macro_f1": "unweighted arithmetic mean over all four action classes or all 21 rationale classes, retaining zero-denominator class values",
+      "strict_positive_seed_bottleneck": "raw float64 > 0.0; exact zero fails; no tolerance",
+      "strict_positive_mean_bottleneck": "raw float64 > 0.0; exact zero fails; no tolerance",
+      "mean_curve_reversal": "any raw float64 adjacent difference in the wrong direction fails; exact ties are allowed; no tolerance",
+      "practical_gate": "raw float64 >= the frozen threshold; exact equality passes; no tolerance",
+      "confidence_ties": "S primary uses exact tie-averaged AURC; canonical stable-order AURC remains diagnostic only",
+      "empty_empty_rationale_jaccard": 1.0,
+      "empty_metric_input": "ROUND10_INCONCLUSIVE_STOP",
+      "rounding": "Display rounding never enters any gate."
+    },
+    "mandatory_saved_arrays": {
+      "family_axis_gate_draws_shape": [
+        5000,
+        12
+      ],
+      "seed_position_draws_shape": [
+        5000,
+        5
+      ],
+      "clip_position_draws_shape": [
+        5000,
+        3904
+      ],
+      "expanded_image_counts_shape": [
+        5000
+      ],
+      "endpoint_draws": "all component-level descriptive endpoint draws for every family",
+      "quantile_diagnostics": "For every reported quantile preserve input-array SHA256, finite count, minimum, maximum, quantile probability, method='linear', and unrounded result."
+    }
+  },
+  "replacement_operator_contract": {
+    "executable_module": "src/arsc_eval/corruption_dose_response_v2.py",
+    "noise_implementation": "self-contained in the executable module; no import of deterministic_noise from src/arsc_eval/data.py",
+    "noise_exact_algorithm": "SHA256 filename UTF-8, first 8 digest bytes interpreted little-endian, xor with 20260731, numpy.random.default_rng, standard-normal field sampled once in float64 and scaled by std_255, added to float32 decoded RGB pixels causing float64 addition, clipped to [0,255], truncated by uint8 cast",
+    "historical_bridge_test": "level-2 output must be pixel-exact equal to the immutable legacy RQ2-light deterministic_noise implementation for multiple filenames and boundary-valued RGB fixtures",
+    "operator_names": {
+      "brightness": "global PIL brightening only",
+      "blur": "PIL Gaussian blur only",
+      "noise": "deterministic iid Gaussian RGB noise after JPEG decode only"
+    }
+  },
+  "replacement_semantic_audit_contract": {
+    "same_frozen_sample_seed": 20260810,
+    "same_sample_count": 100,
+    "same_family_level_grid": "three families by four nonzero levels; no severity replacement",
+    "required_immutable_artifacts": [
+      "raw 1200-row semantic manifest",
+      "100-row selected-image action/rationale label sidecar",
+      "30 labelled contact sheets displaying each row's action and rationale label names",
+      "review decision bound to page hashes, exact row-key hash, raw-manifest hash, and label-sidecar hash",
+      "separate reviewed 1200-row manifest",
+      "audit summary binding the raw-to-reviewed transition"
+    ],
+    "review_attestation": "If default-true decisions are used, the reviewer must attest that every one of the 1200 image-family-level pairs was inspected together with the displayed action/rationale labels for both label applicability and scene-semantic preservation.",
+    "override_contract": {
+      "key": "unique tuple (audit_index, family, level)",
+      "must_be_in_complete_grid": true,
+      "duplicate_keys_rejected": true,
+      "out_of_grid_keys_rejected": true,
+      "decision_fields_must_be_json_booleans": true,
+      "missing_or_extra_fields_rejected": true,
+      "unknown_override_key_rejected": true
+    },
+    "gate_thresholds_unchanged": {
+      "minimum_rate_per_decision_per_stratum": 0.95,
+      "minimum_joint_pass_rate_per_stratum": 0.95,
+      "any_failed_stratum_stops_complete_grid": true
+    }
+  },
+  "replacement_preflight_contract": {
+    "attempt": "attempt02",
+    "must_independently_recompute": [
+      "numpy.default_rng(20260810) sorted 100-image sample indices",
+      "selected index-to-filename and label mapping",
+      "complete and unique 1200 row-key grid",
+      "100 rows in every family-by-nonzero-level stratum",
+      "every row parameter against the frozen operator grid",
+      "strict JSON boolean decision types",
+      "raw-manifest to reviewed-manifest provenance",
+      "all page, row-key, sidecar, code, input, and review hashes"
+    ],
+    "required_negative_tests": [
+      "incorrect sample or grid",
+      "duplicate override",
+      "out-of-grid override",
+      "non-boolean override",
+      "page or page-hash mismatch",
+      "unbound transitive operator dependency",
+      "malformed practical-threshold schema",
+      "incorrect quantile method",
+      "existing formal analyzer or launcher",
+      "existing formal result, primitive, bootstrap, diagnostic, log, implementation/run manifest, staging, temporary, or prediction-cache artifact"
+    ],
+    "formal_implementation_authorized": false,
+    "formal_run_authorized": false,
+    "next_possible_decision": "AUTHORIZE_OUTCOME_BLIND_FORMAL_IMPLEMENTATION_ONLY after independent rereview"
+  },
+  "claim_boundary_addendum": {
+    "dose_means_only_frozen_synthetic_operator_parameter": true,
+    "directional_response_is_falsifiable_not_mathematically_necessary": true,
+    "reversal_interpretation": "A reversal fails the relevant preregistered construct-response gate but does not by itself prove the metric globally invalid.",
+    "future_full_pass_remains_bdd_oia_model_operator_conditional": true,
+    "no_external_natural_real_road_grounding_faithfulness_causal_calibration_or_safety_claim": true
+  }
+}

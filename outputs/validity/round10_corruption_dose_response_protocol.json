@@ -1,0 +1,248 @@
+{
+  "schema_version": "ARSC_ROUND10_CORRUPTION_DOSE_RESPONSE_PROTOCOL_V1",
+  "protocol_id": "ARSC_ROUND10_BDD_OIA_PIXEL_CORRUPTION_DOSE_RESPONSE_V1",
+  "status": "FROZEN_OUTCOME_BLIND_PROTOCOL_AWAITING_PREFLIGHT_AND_REVIEWER_GO",
+  "frozen_at_utc": "2026-07-31T04:05:00Z",
+  "authorization_source": {
+    "path": "outputs/validity/round9_postresult_reviewer_decision.json",
+    "sha256": "7D362D283493440A2365149BADE802F6CA3B56FCED9824A7B5A5056571F387B3",
+    "authorization": "OUTCOME_BLIND_PROTOCOL_AND_PREFLIGHT_ONLY",
+    "formal_run_authorized": false
+  },
+  "scientific_scope": {
+    "question": "Do frozen A, R, S, and C1 measurements show preregistered dose-response to actual in-memory pixel corruptions of increasing severity?",
+    "relation_to_rq": "Construct validation for the unresolved visual-severity aspect of RQ2-light and the four ARSC measurements; not a new model-comparison effect.",
+    "allowed_claim_if_full_pass": "BDD-OIA-internal construct responsiveness to the three prefixed pixel-corruption severity grids under frozen five-seed clip-cluster inference.",
+    "prohibited_claims": [
+      "natural corruption prevalence or a natural-severity scale",
+      "external validity",
+      "rationale grounding or faithfulness",
+      "causal evidence or CEG",
+      "calibration validity or a safety guarantee",
+      "real-road robustness",
+      "other architectures, thresholds, datasets, corruptions, or training protocols"
+    ],
+    "no_new_data": true,
+    "no_training": true,
+    "no_model_selection": true,
+    "no_threshold_selection": true,
+    "no_association_maps_or_salts": true,
+    "requires_actual_corrupted_image_inference": true
+  },
+  "frozen_population_and_models": {
+    "dataset": "BDD-OIA official valid four-action test population",
+    "sample_count": 4557,
+    "source_clip_definition": "remove terminal _1 or _3 from the filename stem",
+    "expected_source_clip_count": 3904,
+    "training_seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "archival_seed_42_excluded": true,
+    "models": [
+      "Action-Only ResNet-50 action_best checkpoint",
+      "Joint Action-Rationale ResNet-50 action_best checkpoint"
+    ],
+    "checkpoint_selection_is_historical_and_frozen": true,
+    "threshold": 0.5,
+    "calibration": "reuse each model and seed's clean-validation scalar temperature without refitting",
+    "image_pipeline": "open original JPEG once, convert RGB, apply corruption in memory before 224x224 resize and ImageNet normalization; never save/reload a transformed JPEG"
+  },
+  "frozen_corruptions": {
+    "families": [
+      "brightness",
+      "blur",
+      "noise"
+    ],
+    "severity_levels": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "parameters": {
+      "brightness": {
+        "operator": "PIL.ImageEnhance.Brightness.enhance",
+        "factor_by_level": [
+          1.0,
+          1.05,
+          1.1,
+          1.2,
+          1.3
+        ]
+      },
+      "blur": {
+        "operator": "PIL.ImageFilter.GaussianBlur",
+        "radius_by_level": [
+          0.0,
+          0.5,
+          1.0,
+          1.5,
+          2.0
+        ]
+      },
+      "noise": {
+        "operator": "filename-deterministic additive Gaussian RGB noise with clipping to uint8",
+        "std_255_by_level": [
+          0.0,
+          2.5,
+          5.0,
+          7.5,
+          10.0
+        ],
+        "seed": 20260731,
+        "same_filename_specific_standard_normal_field_scaled_at_all_nonzero_levels": true
+      }
+    },
+    "identity_level": "level 0 is exact RGB identity and is shared across all families",
+    "historical_bridge_level": "level 2 exactly reproduces brightness=1.10, blur radius=1.0, and noise std=5/255 used in RQ2-light",
+    "no_replacement_rule": "No family or level may be replaced, weakened, strengthened, or removed after semantic review or model-outcome inspection."
+  },
+  "outcome_blind_semantic_gate": {
+    "sample_seed": 20260810,
+    "sample_count": 100,
+    "same_images_across_all_families_and_levels": true,
+    "strata": "12 family-by-nonzero-level strata",
+    "review_is_model_output_blind": true,
+    "decisions_per_image_and_stratum": [
+      "action_and_rationale_labels_still_applicable",
+      "scene_semantics_preserved"
+    ],
+    "minimum_rate_per_decision_per_stratum": 0.95,
+    "minimum_joint_pass_rate_per_stratum": 0.95,
+    "technical_checks": [
+      "level 0 exact identity",
+      "deterministic byte-identical repeated transform",
+      "aggregate pixel-distance from identity nondecreasing with level within each family",
+      "same canonical filename order and no JPEG re-encoding"
+    ],
+    "failure_rule": "Any failed stratum or technical check stops the complete Round 10 grid. Do not replace the stratum or report a passing subset."
+  },
+  "frozen_measurements": {
+    "A": {
+      "components": [
+        "Action-Only four-label Macro-F1",
+        "Joint four-label Macro-F1"
+      ],
+      "expected_direction": "nonincreasing with severity",
+      "adjacent_step": "value[level] - value[level+1]"
+    },
+    "R": {
+      "components": [
+        "Joint 21-label rationale Macro-F1"
+      ],
+      "expected_direction": "nonincreasing with severity",
+      "adjacent_step": "value[level] - value[level+1]",
+      "required_diagnostics": "all per-class F1, target positives, and predicted positives at every seed, family, and level"
+    },
+    "S": {
+      "components": [
+        "Action-Only exact-tie-averaged AURC",
+        "Joint exact-tie-averaged AURC"
+      ],
+      "expected_direction": "nondecreasing with severity",
+      "adjacent_step": "value[level+1] - value[level]",
+      "prediction_and_error": "threshold perturbed calibrated action probabilities at 0.5 and compare to unchanged action targets",
+      "confidence": "maximum perturbed action probability after division by the frozen clean-validation temperature and sigmoid",
+      "required_diagnostics": [
+        "canonical stable-order AURC",
+        "unsafe acceptance rate at 90 percent coverage",
+        "correctness AUROC",
+        "ECE",
+        "exact-set error rate",
+        "highest and lowest confidence decile error rates"
+      ]
+    },
+    "C1": {
+      "components": [
+        "Action-Only action-set flip from level-0 prediction",
+        "Joint action-set flip from level-0 prediction",
+        "Joint rationale-set Jaccard to level-0 prediction"
+      ],
+      "expected_directions": [
+        "nondecreasing",
+        "nondecreasing",
+        "nonincreasing"
+      ],
+      "adjacent_steps": [
+        "flip[level+1] - flip[level]",
+        "flip[level+1] - flip[level]",
+        "jaccard[level] - jaccard[level+1]"
+      ],
+      "empty_empty_rationale_jaccard": 1.0,
+      "families_are_never_averaged_for_primary_gates": true
+    }
+  },
+  "primary_statistics": {
+    "family_axis_seed_bottleneck": "Within one family, axis, and seed, take the minimum expected-direction adjacent step over all required components and four adjacent severity pairs.",
+    "family_axis_mean_bottleneck": "Arithmetic mean of the five seed bottlenecks.",
+    "positive_seed_rule": "At least four of five seed bottlenecks must be strictly positive.",
+    "grand_curve_rule": "For every family and axis, every required five-seed mean component curve must have no adjacent reversal.",
+    "practical_endpoint_thresholds": {
+      "A": "Each component's level0-minus-level4 change must be at least 0.01.",
+      "R": "Level0-minus-level4 Macro-F1 must be at least 0.01.",
+      "S": "Each component's level4-minus-level0 tie-AURC change must be at least 0.01.",
+      "C1": "Each action-flip component at level4 must be at least 0.025 and level0-minus-level4 rationale Jaccard must be at least 0.025."
+    }
+  },
+  "frozen_inference": {
+    "bootstrap": {
+      "replicates": 5000,
+      "rng": "numpy.random.default_rng",
+      "seed": 20260810,
+      "hierarchy": [
+        "sample five training-seed positions with replacement once per replicate",
+        "sample all 3904 source clips with replacement once per replicate",
+        "expand each selected clip to all of its member images",
+        "share that seed vector and expanded clip draw across every family, severity, model, axis, and diagnostic",
+        "recompute metrics and the within-family-axis-seed bottleneck before averaging selected seed positions"
+      ],
+      "pointwise_interval": "2.5 and 97.5 percentile interval reported for every family-axis statistic",
+      "multiplicity_gate": "Bonferroni one-sided familywise alpha 0.05 across the 12 fixed family-by-axis gates; each lower bound uses quantile alpha/12 = 0.004166666666666667.",
+      "familywise_claim": "Only the 12-gate Bonferroni lower-bound intersection may be described as familywise controlled; descriptive 95 percent intervals remain pointwise."
+    },
+    "formal_run_count": 1,
+    "formal_outputs_must_include": [
+      "all seed-by-family-by-level component curves and diagnostics",
+      "all 60 family-axis-seed bottlenecks",
+      "all 12 family-axis mean bottlenecks and practical endpoint effects",
+      "all 5000 bootstrap draws for all 12 gates",
+      "seed and clip selection arrays",
+      "lossless float logits and binary primitives sufficient for independent offline reconstruction",
+      "complete hashes and tmux log"
+    ]
+  },
+  "decision_rules": {
+    "family_axis_pass": [
+      "at least four of five seed bottlenecks are strictly positive",
+      "five-seed mean bottleneck is strictly positive",
+      "Bonferroni one-sided bootstrap lower bound is strictly positive",
+      "all required grand-mean component curves have no reversal",
+      "all required practical endpoint thresholds pass"
+    ],
+    "round10_full_construct_pass": "All 12 fixed family-by-axis gates pass and all three families are reported completely.",
+    "partial_or_fail": "If any family-axis gate fails, report ROUND10_PARTIAL_OR_FAIL with every passing and failing result; do not pool families or select a passing subset.",
+    "inconclusive": "Any provenance, semantic, identity/historical bridge, inference-completeness, or implementation failure yields ROUND10_INCONCLUSIVE_STOP before scientific interpretation.",
+    "termination": "After the single authorized formal grid, preserve PASS, FAIL, or INCONCLUSIVE and stop. Do not add seeds, levels, families, thresholds, metrics, bootstrap replicates, or subsets."
+  },
+  "preformal_go_requirements": [
+    "All 63 pre-Round10 repository tests plus new operator/preflight tests pass.",
+    "Exact dataset manifest, 4557 source images, five configs, ten checkpoints, ten calibration files, Round 9 decision, protocol, code, and environment hashes are recorded.",
+    "The 100-image by 12-stratum semantic audit passes without reading model outputs.",
+    "The formal implementation has a no-outcome preflight and atomic one-shot output policy.",
+    "An independent research reviewer binds the complete preoutcome code and inputs and issues explicit GO."
+  ],
+  "prohibited_actions": [
+    "Reading or computing any new nonzero-severity model metric before the semantic gate and independent GO.",
+    "Any new BDD-OIA association map or salt.",
+    "Tuning severity values, practical thresholds, directions, multiplicity, cluster units, or metrics after seeing outcomes.",
+    "Dropping a failed corruption family, severity, seed, model, axis, class, or diagnostic.",
+    "Refitting calibration on corrupted validation or test images.",
+    "Treating pixel corruption as naturally occurring weather or real-road safety evidence.",
+    "Reopening CEG, mask, VLA4CoDrive, or external-data branches during Round 10."
+  ]
+}

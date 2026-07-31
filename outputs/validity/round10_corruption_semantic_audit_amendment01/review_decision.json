@@ -1,0 +1,53 @@
+{
+  "schema_version": "ARSC_ROUND10_SEMANTIC_REVIEW_DECISION_AMENDMENT01_V1",
+  "reviewer": "Codex label-visible model-output-blind visual review",
+  "review_completed_at_utc": "2026-07-31T04:59:10Z",
+  "reviewed_all_30_labelled_contact_sheets": true,
+  "reviewed_all_1200_pairs_with_displayed_labels": true,
+  "bindings": {
+    "raw_manifest_sha256": "3746450D250194963A3CD14AB32E2D7A359772189F3FA63E22543F41E92D304D",
+    "label_sidecar_sha256": "3A7C973A7DECE98E110D7A444FB61AEC36FA822C41C46CD8951D578BF114203D",
+    "row_key_sha256": "5896BE2225E37C4A0A936C9CC086699D20CDA91498D8E52B703AF690BB2679CD",
+    "selected_indices_array_sha256": "510DD4B56FC25E2AEE79ED9F34E12722254E163F200DE423F7FD9D7F90E8523E",
+    "labelled_page_map_sha256": "F91AE2704162718F075F639A205EE65E3BC0CF61977193D4F564E17DCBBD2458",
+    "build_summary_sha256": "A91329D38F41C6F16435F32A7A32BA0FDB6FD8AF36FE25621B11A09FDE281423"
+  },
+  "reviewed_page_sha256": {
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/brightness_labelled_page_01.png": "5F4C743BB876A02784E4207991F5CE45016620476C3144A8C4CB24F86D28FC7E",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/brightness_labelled_page_02.png": "537950662597A9AB440FD17DDC95FD548CEF9E5E08FC1471E13C8AE129162FAB",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/brightness_labelled_page_03.png": "0B5CBD850F6CDCFF50DEC1A76F88D375365DD887E6C440027437DD559F362DD2",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/brightness_labelled_page_04.png": "538D42DD81875AA1ECB70094A1CA1B30ACBBE4B9BF92381B1E90529F00F5B30D",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/brightness_labelled_page_05.png": "71453923558877BBD413C93383E68CE3F01CF6661F54A8A7D3FFEBF93F5EB551",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/brightness_labelled_page_06.png": "6BCC4A3F2644A958C59A4C2E66013677AF2CE3D8413BBF6164CFBBA458446F0C",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/brightness_labelled_page_07.png": "E976A739C28B7AA316F3543D4CAA4C429EB564A6AB354326B51199FF049F792E",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/brightness_labelled_page_08.png": "1E86B71DAB84D74647225857D22263F5F1CFE8A7AF0787F4E98959E9483B3D2E",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/brightness_labelled_page_09.png": "8AAF44DD75CABBBCB48D22D9D67DB44328E90F80DC2FD878E3172CC0A9D74B1E",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/brightness_labelled_page_10.png": "E48FA0459DCB15E7F9679546312E1ADF9AF597FF2154857930034358C647E210",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/blur_labelled_page_01.png": "A590F8CF38E02FC9AD56E2CAD8E903503703B5B9C417D556E6F3D3033CA23ACE",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/blur_labelled_page_02.png": "F09EDAEF665E22DA4BE3DAA1455D7727CF3597513935AFD72B5D34DA2BFECCE3",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/blur_labelled_page_03.png": "7E98EB56896E5DC99F6773D061557136563A1287F963D3B97874F7A0D9826CA9",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/blur_labelled_page_04.png": "E9755022109F91FB75745A0A62F8F71EAFB26F327687162B2C184E981D9199C0",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/blur_labelled_page_05.png": "D8B1D03B9E67D41B8D915852DA097BD80E618895F055FB64FC45BA5AA60018A2",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/blur_labelled_page_06.png": "0195C9193007A927517E9F8391DB52AEEB42321338F781371B2161620EC2A79F",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/blur_labelled_page_07.png": "ADDDF68833537B385E4093A08E0E0B9C96FF023B7F06B650B6236DECBAAE3150",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/blur_labelled_page_08.png": "774C9BA61966FEAD19535A1DC3E57B8619EA3B28B8FB06CF28F240354B67BC60",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/blur_labelled_page_09.png": "574639EA3351EE2AB0094AC92DE20823A54A8FD227ACA216D051E696648B6C16",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/blur_labelled_page_10.png": "F3739B5E7658045DBE3329FAE46C093C5C213297771984DE7E93E11F7AA8EE3F",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/noise_labelled_page_01.png": "C3412994E72618094F49EE08256ECEE5D585682A41EE95C8DFE8881067655CD8",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/noise_labelled_page_02.png": "0068240049272DD083791778C51C517BCE50EF62705ED800935F70CAC5F6A25E",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/noise_labelled_page_03.png": "3282974582FA4D59B885A9F7487108E3A0356CF0737940EF0DBF6196DD5B0F4B",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/noise_labelled_page_04.png": "27D2EC8E513415C94FD319AB9280CE72DC9680E6FB914D6C743E8767500E4CA5",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/noise_labelled_page_05.png": "07E82F721C122D9143C7E403D565FDF68BC6BDC587307CEFFA7BECDAFDB4BDE3",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/noise_labelled_page_06.png": "75889C86C216FFA9F37812F86A0B16A237F44129EB3B062A3833F73AE433D64B",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/noise_labelled_page_07.png": "71A7A68E2707E267F62E9F3261F286913991067F06A9408CAF97F74E72EDDE95",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/noise_labelled_page_08.png": "719EB439CE587BCAC6DA22C035B365CFD5613855421EC5B2F93E63D3D7BDB103",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/noise_labelled_page_09.png": "C7DEC0F6C3D8FDB98AEC6CCA80C9A101FF1739CF46912ECDD64CB000F7110327",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/pages_labelled/noise_labelled_page_10.png": "785222E9C8D7120EBB2C6A382D7A794F1AFEE9FD5E33CD8F0CE4086D34779F02"
+  },
+  "default_decisions": {
+    "action_and_rationale_labels_still_applicable": true,
+    "scene_semantics_preserved": true
+  },
+  "overrides": [],
+  "notes": "All 30 label-visible contact sheets and all 1,200 nonzero-level pairs were reviewed without access to model outputs. The bounded corruption levels preserved both the displayed action/rationale label applicability and scene semantics in every reviewed pair; no overrides were required."
+}

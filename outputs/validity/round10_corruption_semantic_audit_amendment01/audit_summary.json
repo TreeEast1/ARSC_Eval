@@ -1,0 +1,150 @@
+{
+  "schema_version": "ARSC_ROUND10_SEMANTIC_AUDIT_AMENDMENT01_SUMMARY_V1",
+  "status": "PASS_LABEL_VISIBLE_MODEL_OUTPUT_BLIND_SEMANTIC_GATE",
+  "outcomes_read_or_computed": false,
+  "reviewer": "Codex label-visible model-output-blind visual review",
+  "review_completed_at_utc": "2026-07-31T04:59:10Z",
+  "reviewed_unique_images": 100,
+  "reviewed_pairs": 1200,
+  "reviewed_decisions": 2400,
+  "labels_displayed_for_every_pair": true,
+  "all_1200_pairs_attested_reviewed": true,
+  "strata": {
+    "blur::level1": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "blur::level2": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "blur::level3": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "blur::level4": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "brightness::level1": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "brightness::level2": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "brightness::level3": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "brightness::level4": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "noise::level1": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "noise::level2": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "noise::level3": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    },
+    "noise::level4": {
+      "reviewed": 100,
+      "labels_still_applicable_rate": 1.0,
+      "scene_semantics_preserved_rate": 1.0,
+      "joint_pass_rate": 1.0,
+      "passed": true
+    }
+  },
+  "manual_gate_passed": true,
+  "technical_gate": {
+    "level_zero_exact_identity_all_images_and_families": true,
+    "repeated_level_four_transform_exact_all_images": true,
+    "historical_level_two_pixel_exact_all_images_and_families": true,
+    "mean_absolute_rgb_change_by_family_and_level": {
+      "brightness": [
+        0.0,
+        3.483344976128472,
+        7.30561382740162,
+        14.447619896556713,
+        20.99476916232639
+      ],
+      "blur": [
+        0.0,
+        0.5821405635127315,
+        2.1063078486689815,
+        3.3623635814525463,
+        4.358784986255787
+      ],
+      "noise": [
+        0.0,
+        1.9974695167824075,
+        3.9269884946469906,
+        5.839060926649306,
+        7.727437525318287
+      ]
+    },
+    "aggregate_distance_nondecreasing": {
+      "brightness": true,
+      "blur": true,
+      "noise": true
+    },
+    "passed": true
+  },
+  "immutable_transition": {
+    "raw_manifest": "outputs/validity/round10_corruption_semantic_audit_amendment01/raw_manifest.csv",
+    "raw_manifest_sha256_before": "3746450D250194963A3CD14AB32E2D7A359772189F3FA63E22543F41E92D304D",
+    "raw_manifest_sha256_after": "3746450D250194963A3CD14AB32E2D7A359772189F3FA63E22543F41E92D304D",
+    "raw_manifest_unchanged": true,
+    "reviewed_manifest": "outputs/validity/round10_corruption_semantic_audit_amendment01/reviewed_manifest.csv",
+    "reviewed_manifest_sha256": "94D30755D6E8BD48288ACF9690C828F201B41E3863349D5A2143D65AE15C7CF8",
+    "row_key_sha256": "5896BE2225E37C4A0A936C9CC086699D20CDA91498D8E52B703AF690BB2679CD",
+    "label_sidecar": "outputs/validity/round10_corruption_semantic_audit_amendment01/label_sidecar.jsonl",
+    "label_sidecar_sha256": "3A7C973A7DECE98E110D7A444FB61AEC36FA822C41C46CD8951D578BF114203D"
+  },
+  "review_decision": "outputs/validity/round10_corruption_semantic_audit_amendment01/review_decision.json",
+  "review_decision_sha256": "CF34840FC50D086054BB0857863FD1170E2BC1C4C958F904B13B6AD0CAF6BDBE",
+  "build_summary_sha256": "A91329D38F41C6F16435F32A7A32BA0FDB6FD8AF36FE25621B11A09FDE281423",
+  "page_hash_bindings_verified": 30,
+  "complete_grid_passed": true,
+  "failure_rule": "Any failed stratum stops the complete Round 10 grid; no family or level replacement is permitted."
+}
