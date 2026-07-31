@@ -318,3 +318,53 @@ construct validity、causal faithfulness、安全性或外部效度。
 
 Round 8 通过后才允许把同一协议迁移第二数据集。完整结果边界、clip clustering
 缺口与唯一下一步见 `outputs/research_review_memo_round7_final.md`。
+
+## 12. Round 8 graded association-response result (authoritative update)
+
+Round 8 completed the only experiment authorized by the Round 7 reviewer. It
+used the frozen seed 43-47 BDD-OIA caches, one outcome-blind nested association
+map, q levels `[0,.25,.50,.75,1]`, and 1,625 map-closed association components.
+No data, training, inference, masks, model selection, threshold selection, or
+post-result map selection was added.
+
+The preregistered weakest-adjacent-step results were:
+
+| Axis | Five-seed mean | SD | Association-component bootstrap 95% CI | Positive seeds |
+|---|---:|---:|---:|---:|
+| A | 0.068671 | 0.002259 | [0.059674, 0.072806] | 5/5 |
+| R | 0.046416 | 0.003923 | [0.040571, 0.049523] | 5/5 |
+| S | 0.026936 | 0.004363 | [0.018370, 0.030091] | 5/5 |
+| C1 | 0.164889 | 0.002336 | [0.150002, 0.165152] | 5/5 |
+
+All four formal gates passed and all five-seed mean component curves had no
+adjacent reversal. The exact preflight passed 86/86 checks. A separate
+implementation reproduced every point/detail/bottleneck and the full 2,000
+replicate bootstrap. Its maximum point and bootstrap-summary absolute
+differences were `1.8763e-14` and `2.4113e-15`; 7/7 independent audit checks
+passed.
+
+The final independent verdict is deliberately two-level:
+
+- computational/formal: **PASS / VALID**;
+- scientific/construct/external: **PARTIAL / BOUNDED INTERNAL EVIDENCE**.
+
+The result supports internal graded responsiveness of A/R Macro-F1, S
+tie-averaged AURC, and C1 mean-three correspondence metrics to the frozen
+association destruction. It does not validate the complete rationale ontology,
+rationale grounding or faithfulness, causal robustness, ECE/calibration,
+real-driving safety, another architecture, or another dataset. Six rationale
+classes (`car`, `person`, `left_lane`, `left_follow`, `no_left_lane`,
+`left_solid_line`) have F1=0 at every q in every seed. C1 is a correspondence
+metric, not a natural visual-severity or faithfulness metric.
+
+The full evidence chain is in
+`validity/round8_graded_response_artifact_index.json`; the final independent
+review is `research_review_memo_round8_final.md`.
+
+The only authorized next experiment is Round 9: 20 fixed outcome-blind
+map/salt realizations (`map00`-`map19`, salts
+`arsc-round9-map00`-`arsc-round9-map19`) on the same caches. Each axis must
+have at least 18/20 positive map-specific bottlenecks, a positive grand mean,
+a map x seed x component hierarchical bootstrap lower bound above zero, and
+no grand-mean curve reversal. All maps must be reported; salts cannot be
+replaced. VLA4CoDrive remains `STOP_EXTERNAL_TRAINING`.

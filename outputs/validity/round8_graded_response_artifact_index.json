@@ -1,0 +1,263 @@
+{
+  "study": "BDD-OIA Round 8 graded association response",
+  "round": 8,
+  "formal_execution": "COMPLETED_ONE_SHOT",
+  "formal_protocol_gates": "PASS",
+  "independent_computational_verdict": "PASS / VALID",
+  "independent_scientific_verdict": "PARTIAL / BOUNDED INTERNAL EVIDENCE",
+  "decisions": {
+    "exact_preflight": "86/86 PASS; two repaired preflight runs byte-identical",
+    "axis_gates": {
+      "A": true,
+      "R": true,
+      "S": true,
+      "C1": true
+    },
+    "full_Round8_measurement_pass": true,
+    "independent_reproduction": "7/7 PASS",
+    "maximum_point_abs_difference": 1.8762769116165146e-14,
+    "maximum_bootstrap_summary_abs_difference": 2.411265631607762e-15,
+    "claim": "BDD-OIA-internal graded association-response evidence only"
+  },
+  "axis_bottlenecks": {
+    "A": {
+      "five_seed_mean": 0.06867079120852679,
+      "association_component_bootstrap_ci": [
+        0.05967394960953711,
+        0.07280607804313423
+      ],
+      "positive_seed_count": 5
+    },
+    "R": {
+      "five_seed_mean": 0.04641638273855058,
+      "association_component_bootstrap_ci": [
+        0.04057136812522538,
+        0.049523294784802115
+      ],
+      "positive_seed_count": 5
+    },
+    "S": {
+      "five_seed_mean": 0.026935706684936833,
+      "association_component_bootstrap_ci": [
+        0.01837029762604111,
+        0.0300905967069704
+      ],
+      "positive_seed_count": 5
+    },
+    "C1": {
+      "five_seed_mean": 0.16488918147904325,
+      "association_component_bootstrap_ci": [
+        0.15000245993197536,
+        0.16515225515222937
+      ],
+      "positive_seed_count": 5
+    }
+  },
+  "artifacts": [
+    {
+      "role": "original_preregistration",
+      "path": "outputs/validity/round8_graded_response_protocol.json",
+      "sha256": "B96AC789BA12DD0FE65AF2138C54248C2154C1E1489D911571422EDE94B65357"
+    },
+    {
+      "role": "preoutcome_independent_review",
+      "path": "outputs/research_review_memo_round8_preregister.md",
+      "sha256": "83C13D1112ABAF9CBA6504E26BBB0BDBBDD99C5D7A45DB27A840D0A695B65BF2"
+    },
+    {
+      "role": "outcome_blind_map_core",
+      "path": "src/arsc_eval/graded_association.py",
+      "sha256": "529C0AB3364CA48AEFDD6FC91C7B1390D57110CFA221437B3F7FED4D709DD443"
+    },
+    {
+      "role": "outcome_blind_map_builder",
+      "path": "scripts/build_round8_association_maps.py",
+      "sha256": "8B2FAF309ADAC66E9963B96BC0762A16D55E161F76DE7A3E7E97DBA5B6177E3D"
+    },
+    {
+      "role": "outcome_blind_map_tests",
+      "path": "tests/test_graded_association.py",
+      "sha256": "AB067CEF3384191C1DF80ACA18E3FAF201D43B7B72DE3911B541D2508C0942DA"
+    },
+    {
+      "role": "outcome_blind_maps",
+      "path": "outputs/validity/round8_graded_association_maps.npz",
+      "sha256": "8685E1A4605B5D6355A432BC6CA03CF61930BAB23D41D899478A5C1D8FC47ED1"
+    },
+    {
+      "role": "outcome_blind_map_manifest",
+      "path": "outputs/validity/round8_graded_association_map_manifest.json",
+      "sha256": "73B89C3438262BA272E0E90EDC2A6F9408B196CCBD4A30D9FA6FFFA798C273DC"
+    },
+    {
+      "role": "map_builder_log",
+      "path": "outputs/validity/round8_graded_association_map_builder.log",
+      "sha256": "DC1CAC65F8EA6F612FBECB66D05E9462B460F3222DBB2ECD0DFCF3BBACF86107"
+    },
+    {
+      "role": "association_component_core",
+      "path": "src/arsc_eval/association_components.py",
+      "sha256": "F8AA90F0756032ADCB283D111E5B29F03C9D93D96ABDA383E8F9E737B57CE6B5"
+    },
+    {
+      "role": "association_component_builder",
+      "path": "scripts/build_round8_association_components.py",
+      "sha256": "D674C5A1A2B46F8025ED7BAF1D9735BA19273C2A0B132ED22C1D3D27D915DE63"
+    },
+    {
+      "role": "association_component_tests",
+      "path": "tests/test_association_components.py",
+      "sha256": "918ABF1D6BC8EBB54F3872474AD484729E7F374DFDD4DA04C4F3F85ECFADF214"
+    },
+    {
+      "role": "association_components",
+      "path": "outputs/validity/round8_association_components.npz",
+      "sha256": "F1DF45A526EEBE02C2CDA6EA2FB1FE8B034A3FDD3B1582B3598B602916CDD0E8"
+    },
+    {
+      "role": "association_component_manifest",
+      "path": "outputs/validity/round8_association_component_manifest.json",
+      "sha256": "7E5EA6AB9E83A0CCE03FDBBBAC274AB01D1B7773CA43833348C77ED71127653F"
+    },
+    {
+      "role": "authorized_protocol_amendment",
+      "path": "outputs/validity/round8_graded_response_protocol_amendment01.json",
+      "sha256": "D15E6F93FFEF686172F3887BAB609E6DA724ECE975BB125485A717688A020C8A"
+    },
+    {
+      "role": "amendment_independent_GO",
+      "path": "outputs/research_review_memo_round8_amendment01.md",
+      "sha256": "CBF47293F5D983772C305B53E7C1DACD056D1609C7BA4F0A3B284BFAEEC9B66A"
+    },
+    {
+      "role": "preserved_formal_attempt01_failure",
+      "path": "outputs/validity/round8_graded_response_formal_attempt01_failed.log",
+      "sha256": "E3D3D58FF47663F7031AA85963D3AA81702BA4CA21F35C60DA77DEEA10E95296"
+    },
+    {
+      "role": "attempt01_independent_GO_RERUN_review",
+      "path": "outputs/research_review_memo_round8_attempt01_failure.md",
+      "sha256": "9E051D174D3DC4117C6F4F9005EE03791CF297E0E5495E0C38953D6BA3ED54B8"
+    },
+    {
+      "role": "formal_analysis_implementation",
+      "path": "scripts/analyze_round8_graded_response.py",
+      "sha256": "89025037BF4D531AFEC0907B627D26714FEA6EA5E2752A57A4589CAC503B5C36"
+    },
+    {
+      "role": "formal_metric_core",
+      "path": "src/arsc_eval/graded_response.py",
+      "sha256": "CD011DE953E4C46210C85367E7582E9F315E4A3BAB7CB8975F240055CC4441DF"
+    },
+    {
+      "role": "formal_metric_tests",
+      "path": "tests/test_graded_response.py",
+      "sha256": "6C63F4C9C41E2CCD67BE3EB1C1D96C5FB7439F48656BB75682BC14822FDB9EE0"
+    },
+    {
+      "role": "exact_preoutcome_preflight",
+      "path": "outputs/validity/round8_graded_response_preflight.json",
+      "sha256": "595D9E0A68124ADE294B90AD3891365C569AEE367CD576AC9C97F2D647CFBA0F"
+    },
+    {
+      "role": "preflight_byte_stability_audit",
+      "path": "outputs/validity/round8_graded_response_preflight_stability.json",
+      "sha256": "F22D17E7B88CED21B83F7D9BCB66FF1AB4D69689CCCA759E2C6E905BAD44737D"
+    },
+    {
+      "role": "immutable_preoutcome_run_manifest",
+      "path": "outputs/validity/round8_graded_response_run_manifest.json",
+      "sha256": "85DC92712634C56B856409E3A58105205ABCCA504238A8B74EA3EC1F1F334ACD"
+    },
+    {
+      "role": "formal_machine_readable_results",
+      "path": "outputs/validity/round8_graded_response_results.json",
+      "sha256": "4CD0FCD16ED4A3BAE1D378FD10B3A44705F2433FDF3C3E15A26FBCE303AF6FD3"
+    },
+    {
+      "role": "formal_point_estimates",
+      "path": "outputs/validity/round8_graded_response_point_estimates.csv",
+      "sha256": "CDCBE0BAA0DD949B9F18F2545C76C4BC98328B3F48D301D018CF09D1B2AB7620"
+    },
+    {
+      "role": "formal_bootstrap_summary",
+      "path": "outputs/validity/round8_graded_response_bootstrap.csv",
+      "sha256": "A4042CEBB040CBC744BAF3D2BF6081CEC76AABA64C1F0962C0C15465A3276C41"
+    },
+    {
+      "role": "lossless_compact_verification_primitives",
+      "path": "outputs/validity/round8_graded_response_primitives.npz",
+      "sha256": "6E51FB8842C6A6510364415C9D2D19C2307363024C34C8C7DE00DB57DCC7160C"
+    },
+    {
+      "role": "formal_tmux_log",
+      "path": "outputs/validity/round8_graded_response_formal_tmux.log",
+      "sha256": "B09902A81C392F4FDBDEEF44A56DF93DEF15636480A6CCFB959785D9F2816351"
+    },
+    {
+      "role": "independent_verifier",
+      "path": "scripts/verify_round8_graded_response_outputs.py",
+      "sha256": "F81767BFA1E7208F927C4EB6B32FAB5FEF2A33FC1E32AEC5EBE198FA6015D166"
+    },
+    {
+      "role": "independent_bootstrap_launcher",
+      "path": "scripts/launch_round8_independent_audit_tmux.sh",
+      "sha256": "79A900392207A08A5C21D9B432ECDCBC0F38052953B0EACF1367069E0260C864"
+    },
+    {
+      "role": "independent_reproduction_audit",
+      "path": "outputs/validity/round8_graded_response_independent_audit.json",
+      "sha256": "8B0ACD210BEAA7629673732D86F79E35619C7D7106B11FEEB380CA4D1A0BBFDC"
+    },
+    {
+      "role": "independent_bootstrap_draws",
+      "path": "outputs/validity/round8_graded_response_independent_bootstrap_draws.npz",
+      "sha256": "BF5AB79EC55B1AA0FCFCAF7B7AC5EB9A6DA52EF37916374B7BD526847002190D"
+    },
+    {
+      "role": "independent_audit_tmux_log",
+      "path": "outputs/validity/round8_graded_response_independent_audit_tmux.log",
+      "sha256": "0C0FAB227319291DEF001282FD060B14B44D627953564E696CF4A674968D60BA"
+    },
+    {
+      "role": "descriptive_plot_implementation",
+      "path": "scripts/plot_round8_graded_response.py",
+      "sha256": "15D6641B04AEE3B25A5E0CA6F308BD60543E8C72BC93DEF82D5260D258F82715"
+    },
+    {
+      "role": "descriptive_response_plot_png",
+      "path": "outputs/validity/round8_graded_response_curves.png",
+      "sha256": "EB056E2D58114234CDB4313A5BC970EFEDC3B05917A9BA6B1CC25E5B3B443127"
+    },
+    {
+      "role": "descriptive_response_plot_svg",
+      "path": "outputs/validity/round8_graded_response_curves.svg",
+      "sha256": "416D86A59E42592DCFC83B333E86DAB4492E20E44EADF2746ABD475D2D53B4CA"
+    },
+    {
+      "role": "postresult_independent_scientific_review",
+      "path": "outputs/research_review_memo_round8_final.md",
+      "sha256": "87CD4973DDD769F1F3D2EECC662185B57E73E34A71CF913FB994E3DDC16761AE"
+    }
+  ],
+  "bounded_limitations": [
+    "one outcome-blind nested map and one salt; intervals are map-conditional",
+    "five training seeds do not establish architecture or training-protocol generality",
+    "1625 association components repair dyadic clip dependence but are not independent datasets or domains",
+    "six rationale classes have F1 equal to zero at every q in every seed",
+    "R Macro-F1 aggregate responsiveness does not validate every rationale class or the ontology",
+    "S tie-averaged AURC measures confidence-error ordering; ECE is nearly invariant and not a directional gate",
+    "C1 measures sample correspondence sensitivity, not visual severity, grounding, or rationale faithfulness",
+    "four bootstrap intervals are pointwise, not simultaneous familywise intervals",
+    "no second dataset, architecture, ontology, real-driving domain, or human faithfulness annotation"
+  ],
+  "reviewer_frozen_next_experiment": {
+    "name": "Round 9 BDD-OIA 20-map/salt robustness",
+    "map_ids": "map00 through map19",
+    "salts": "arsc-round9-map00 through arsc-round9-map19",
+    "minimum_positive_maps_per_axis": 18,
+    "bootstrap_replicates": 2000,
+    "only_authorized_direction": true,
+    "external_training_authorized": false
+  }
+}

@@ -168,7 +168,7 @@ python -m compileall -q scripts src tests
 python scripts/verify_outputs.py --config configs/experiment.yaml
 ```
 
-The final saved checks report 41 passing tests, successful compilation, and all
+The current repository check reports 57 passing tests, successful compilation, and all
 original required pilot outputs present.
 
 ## Measurement and external-data stopping results
@@ -219,16 +219,63 @@ conditions, and the formal intervals do not cluster neighboring frames by
 video clip. The complete hash chain is in
 `outputs/validity/arsc_axis_falsification_artifact_index.json`.
 
+## Round 8 graded association-response result
+
+Round 8 replaced the extreme-only Round 7 controls with one outcome-blind,
+nested association map at `q={0,0.25,0.50,0.75,1.00}`. It reused the frozen
+seed 43-47 prediction caches and performed no training, inference, threshold
+selection, mask generation, or data download. Dependence induced by both the
+destination and source clips was handled by 1,625 map-closed association
+components. Each bootstrap replicate resampled training seeds and one shared
+component multiset, then took the weakest expected-direction adjacent step
+within each selected seed before averaging.
+
+| Axis | Five-seed mean weakest step | Association-component 95% CI | Positive seeds |
+|---|---:|---:|---:|
+| A: action Macro-F1 decreases | 0.068671 | [0.059674, 0.072806] | 5/5 |
+| R: rationale Macro-F1 decreases | 0.046416 | [0.040571, 0.049523] | 5/5 |
+| S: tie-averaged AURC increases | 0.026936 | [0.018370, 0.030091] | 5/5 |
+| C1: correspondence degrades | 0.164889 | [0.150002, 0.165152] | 5/5 |
+
+All four preregistered gates passed, and every five-seed mean component curve
+had no adjacent reversal. A separate implementation imported no formal metric
+code, rebuilt A/R from component-level confusion counts, S from an exact
+confidence-tie formula, and C1 from per-image events. It reproduced all point
+and 2,000-replicate bootstrap summaries with maximum absolute differences
+`1.88e-14` and `2.42e-15`, respectively (7/7 audit checks passed).
+
+![Round 8 graded response curves](outputs/validity/round8_graded_response_curves.png)
+
+The independent scientific verdict is **PARTIAL / BOUNDED INTERNAL
+EVIDENCE**, despite a computational/formal **PASS / VALID** verdict. The result
+supports graded responsiveness to the frozen association destruction. It does
+not establish ontology completeness, rationale grounding or faithfulness,
+causal robustness, calibration validity, real-driving safety, or external
+validity. Six rationale classes remain F1=0 at every q in every seed; C1 is a
+sample-correspondence metric, not a visual-severity or faithfulness metric; and
+the inference remains conditional on one map/salt and one BDD-OIA population.
+The complete evidence chain is bound in
+`outputs/validity/round8_graded_response_artifact_index.json`, with the final
+review in `outputs/research_review_memo_round8_final.md`.
+
 ## Reviewer-bounded next step
 
-CEG remains closed and unanswered. The only approved Round 8 experiment is a
-graded association-destruction response curve at
-`q={0,0.25,0.50,0.75,1.00}` on the same frozen caches, using a
-seed-by-shared-clip crossed bootstrap. It may not add data, training, inference,
-masks, thresholds, alternate mappings, or post-result tuning. A second-dataset
-replication is deferred until this monotonic-response and clip-cluster gate is
-resolved. The boundary is recorded in
-`outputs/research_review_memo_round7_final.md`.
+CEG remains closed and unanswered. VLA4CoDrive remains
+`STOP_EXTERNAL_TRAINING`: its frozen repository audit found one town, nine
+canonical scenes, and 540 weather/filename inconsistencies, so full download,
+training, and external-result claims are not authorized.
+
+The only approved Round 9 experiment is a 20-map/salt robustness confirmation
+on the same frozen BDD-OIA caches. Map IDs `map00`-`map19` and salts
+`arsc-round9-map00`-`arsc-round9-map19` must be frozen before any new q>0
+outcome is read. Every map must pass the same outcome-blind legality and
+component-closure gates. Each axis must have at least 18/20 positive
+map-specific mean bottlenecks, a positive 20-map grand mean, a hierarchical
+map x seed x component bootstrap lower bound above zero, and no grand-mean
+curve reversal. All maps, including failures, must be reported. No salt may be
+replaced, and Round 8's map is historical only. This direction and its
+one-shot stopping rules are frozen in
+`outputs/research_review_memo_round8_final.md`.
 
 ## Publishing policy
 

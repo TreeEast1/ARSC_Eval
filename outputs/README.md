@@ -90,6 +90,67 @@ are intentionally excluded from the public Git repository because they
 contain redistributed dataset pixels. The manifests, decisions, summaries,
 and generation code are tracked.
 
+## Round 8 graded association-response confirmation
+
+- `validity/round8_graded_response_protocol.json`,
+  `research_review_memo_round8_preregister.md`,
+  `validity/round8_graded_response_protocol_amendment01.json`, and
+  `research_review_memo_round8_amendment01.md`: result-blind protocol,
+  independent review, association-component amendment, and final pre-outcome
+  GO.
+- `validity/round8_graded_association_maps.npz` and its manifest: the single
+  outcome-blind nested q map, with active-image counts
+  `0/1140/2278/3418/4557`.
+- `validity/round8_association_components.npz` and its manifest: 1,625
+  map-closed components containing 2-14 images, used as the inference unit.
+- `validity/round8_graded_response_formal_attempt01_failed.log` and
+  `research_review_memo_round8_attempt01_failure.md`: preserved pre-result
+  reduction-order assertion failure and independently authorized bounded
+  rerun.
+- `validity/round8_graded_response_preflight.json`,
+  `round8_graded_response_preflight_stability.json`, and
+  `round8_graded_response_run_manifest.json`: 86/86 exact preflight and
+  byte-identical repeated pre-outcome freezes.
+- `validity/round8_graded_response_results.json`,
+  `round8_graded_response_point_estimates.csv`,
+  `round8_graded_response_bootstrap.csv`, and
+  `round8_graded_response_primitives.npz`: complete five-seed point results,
+  diagnostics, association-component bootstrap summary, and lossless compact
+  primitives.
+- `scripts/verify_round8_graded_response_outputs.py`,
+  `validity/round8_graded_response_independent_audit.json`,
+  `round8_graded_response_independent_bootstrap_draws.npz`, and the audit
+  tmux log: independent implementation and all 2,000 draws; 7/7 checks passed.
+- `validity/round8_graded_response_curves.png` and `.svg`: descriptive curves
+  showing every seed and the five-seed means. No invalid pointwise confidence
+  band is drawn.
+- `research_review_memo_round8_final.md`: final post-result computational and
+  scientific review.
+- `validity/round8_graded_response_artifact_index.json`: top-level SHA256
+  binding for the full Round 8 evidence chain.
+
+Formal axis results:
+
+| Axis | Mean weakest adjacent step | Association-component 95% CI | Positive seeds |
+|---|---:|---:|---:|
+| A | 0.068671 | [0.059674, 0.072806] | 5/5 |
+| R | 0.046416 | [0.040571, 0.049523] | 5/5 |
+| S | 0.026936 | [0.018370, 0.030091] | 5/5 |
+| C1 | 0.164889 | [0.150002, 0.165152] | 5/5 |
+
+All four formal gates passed. Independent reconstruction reproduced the point
+and bootstrap summaries to `1.88e-14` and `2.42e-15`, respectively. The final
+computational verdict is **PASS / VALID**; the scientific verdict is
+**PARTIAL / BOUNDED INTERNAL EVIDENCE**. This validates graded responsiveness
+to the frozen association construction, not every rationale class, the
+ontology, grounding, faithfulness, causal robustness, calibration, real-world
+safety, or another dataset. Six rationale classes remain identically zero.
+C1 must be described as sample-correspondence sensitivity.
+
+The sole authorized successor is Round 9 on the same caches with 20 fixed,
+outcome-blind maps/salts and a map x seed x association-component hierarchy.
+VLA4CoDrive remains `STOP_EXTERNAL_TRAINING`.
+
 ## Archival seed-42 pilot
 
 The following root-level files predate the new paired-seed replication and
