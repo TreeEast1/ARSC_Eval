@@ -17,10 +17,15 @@ ARSC 作为“诊断性指标分解”得到了较强的 BDD-OIA 内部证据：
 - 固定覆盖率风险与校准结果仍不确定；
 - 理由预测显著高于零，但类别间差异很大；
 - 扰动一致性平均改善，但不同随机种子之间存在异质性；
-- 极端破坏、分级破坏和 20 个预冻结映射均能产生预期方向的指标响应。
+- 冻结缓存上的极端破坏、分级破坏和 20 个预冻结映射均能产生预期方向的
+  四轴响应；
+- 对原图实际重推理的多严重度合成亮度、模糊和噪声扰动中，12 个严格门控仅有
+  3 个通过，且全部属于 C1；A、R、S 没有获得普遍单调响应支持。
 
 这些结果不等于“理由监督改善所有 ARSC 维度”，也不证明理由忠实性、因果
-证据使用、真实道路安全性或跨数据集外部有效性。
+证据使用、真实道路安全性或跨数据集外部有效性。更准确的结论是：四个维度
+测量的是可分离的模型行为；其中 C1 能揭示动作或理由集合发生大幅改变、但
+总体正确率和选择性风险几乎不变的情况。
 
 ## 主实验结果
 
@@ -166,8 +171,8 @@ python -m compileall -q scripts src tests
 python scripts/verify_outputs.py --config configs/experiment.yaml
 ```
 
-当前完整测试套件为 `75 passed`。Round10 attempt02 预检还会独立复算数据
-清单、语义网格、页面哈希和禁止工件是否存在。
+当前完整测试套件为 `94 passed`。Round 10 attempt02 的正式运行还通过了
+精确文件集合、内部哈希、数据清单、语义网格和一次性运行边界检查。
 
 ## 测量与外部数据停止结果
 
@@ -266,36 +271,61 @@ Round 9 检验 Round 8 的结果是否依赖某个有利映射/盐值。实验�
 `outputs/research_review_memo_round9_postresult.md`。BDD-OIA 映射/盐值实验
 线已永久关闭。
 
-## Round 10：像素扰动剂量—响应实验（进行中）
+## Round 10：合成像素扰动剂量—响应实验（已完成）
 
-Round 10 是当前唯一允许的后续方向：在 BDD-OIA 上对真实扰动图像运行推理，
-检验亮度、高斯模糊和确定性高斯噪声的多严重度剂量—响应。每个扰动族含四个
-非零级别，并预先冻结方向性估计量、实际效应阈值、多重比较、源片段聚类抽样
-和一次性失败规则。
+Round 10 在 BDD-OIA 测试集上对原图施加合成扰动并实际重新推理，检验亮度、
+高斯模糊和确定性高斯噪声的多严重度剂量—响应。实验覆盖种子 43–47、
+4,557 张图像和 3,904 个源视频片段；每个扰动族包含干净基线与四个非零
+级别。方向性估计量、实际效应阈值、12 重 Bonferroni 门控、5,000 次共享
+“种子—源片段”bootstrap 以及一次性停止规则均在查看结果前冻结。
 
-第一次独立盲审发现五项协议/预检缺陷，因此裁决
-`STOP/REPAIR_PROTOCOL_PREFLIGHT`，未授权正式实现或运行。当前已完成：
+100 张图像 × 3 个扰动族 × 4 个非零级别的语义审计共包含 1,200 对图像，
+12/12 个语义分层全部通过。第一次正式尝试在任何模型载入前因 WSL 到 Windows
+的环境变量未透传而停止；该尝试没有生成任何模型结果，事故日志与哈希被永久
+保留。独立审阅仅授权修复启动基础设施，随后 attempt02 经再次盲审获得
+`GO_ROUND10_FORMAL_RUN_ATTEMPT02`，一次完成 65 个条件和全部 5,000 次抽样。
 
-- outcome-blind 修订协议 amendment01；
-- 自包含且与历史 level-2 像素精确一致的扰动算子；
-- 100 图像 × 3 扰动族 × 4 非零级别的带标签语义审计，共 1,200 对；
-- 12/12 语义分层通过，每层标签适用性、场景保持和联合通过率均为 `1.0`；
-- attempt02 独立预检：4,557 图像、3,904 源片段、10 个检查点、10 个校准
-  文件、30 张页面哈希和 75 项测试均一致；
-- 禁止的正式分析器、启动器、结果、预测缓存和临时工件均不存在。
+冻结的最终判定为 **`ROUND10_PARTIAL_OR_FAIL`**：12 个“扰动族 × 指标轴”
+门控中通过 3 个，全部是 C1。
 
-attempt02 状态为
-`PASS_AWAITING_INDEPENDENT_REVIEWER_IMPLEMENTATION_AUTHORIZATION_ATTEMPT02`。
-第二次独立 outcome-blind 复审正在进行。在审阅者给出
-`AUTHORIZE_OUTCOME_BLIND_FORMAL_IMPLEMENTATION_ONLY` 之前，不会编写正式
-分析器；正式运行还必须在实现完成后经过单独的 preformal 审计与 GO。
+| 扰动族 | A：动作 | R：理由 | S：选择性风险 | C1：样本对应一致性 |
+|---|---:|---:|---:|---:|
+| 亮度 | 未通过 | 未通过 | 未通过 | **通过** |
+| 高斯模糊 | 未通过 | 未通过 | 未通过 | **通过** |
+| 确定性高斯噪声 | 未通过 | 未通过 | 未通过 | **通过** |
 
-关键文件：
+C1 的结果跨三个算子均为 5/5 种子正向、均值曲线无相邻反转、经过多重比较
+校正的单侧下界大于零，且实际效应门全部通过：
 
-- `outputs/validity/round10_corruption_dose_response_protocol_amendment01.json`
-- `outputs/validity/round10_corruption_preflight_attempt02.json`
-- `outputs/validity/round10_corruption_semantic_audit_amendment01/audit_summary.json`
-- `outputs/research_review_memo_round10_preregister.md`
+| 扰动族 | Action-Only 动作翻转率 | Joint 动作翻转率 | Joint 理由 Jaccard 下降 |
+|---|---:|---:|---:|
+| 亮度 | 0.193241 | 0.170770 | 0.145944 |
+| 高斯模糊 | 0.265043 | 0.232390 | 0.224183 |
+| 确定性高斯噪声 | 0.196884 | 0.160325 | 0.142494 |
+
+A 在部分“干净→最高严重度”端点上下降，但局部反转使严格单调门失败；R 的
+端点下降仅约 0.0044–0.0059，低于预注册的 0.01 实际效应门；S 在亮度与
+模糊下变化很小，在噪声下甚至向相反方向变化。因而本轮不是“四轴全部有效”
+的证据，而是更有区分力的结果：C1 能稳定发现预测集合的大幅变化，而总体
+Macro-F1、理由 Macro-F1 或 AURC 可能几乎不变。它支持 C1 的诊断敏感性和
+ARSC 四轴的可分离性，不支持把 C1 解释为因果忠实性、校准保证或真实安全。
+
+独立结果后审阅从 logits 和 primitives 重建了 3,975 行诊断，并逐位重放
+全部 5,000 组随机抽样；制品哈希、诊断、抽样、84 个分位数和 36 行
+bootstrap 汇总均为 0 mismatch。审阅结论为
+**`ACCEPT_ROUND10_PARTIAL_OR_FAIL_AS_VALID_FINAL_OUTCOME`**，同时禁止通过
+改阈值、挑种子或调整严重度对 3/12 结果作结果追随式“修复”。
+
+关键证据：
+
+- [正式结果 JSON](outputs/validity/round10_corruption_formal_attempt02/round10_corruption_results.json)
+- [bootstrap 汇总](outputs/validity/round10_corruption_formal_attempt02/round10_corruption_bootstrap_summary.csv)
+- [逐点诊断](outputs/validity/round10_corruption_formal_attempt02/round10_corruption_point_diagnostics.csv)
+- [正式制品哈希索引](outputs/validity/round10_corruption_artifact_index_attempt02.json)
+- [完整 tmux 运行日志](outputs/validity/round10_corruption_formal_attempt02.log)
+- [attempt01 基础设施事故记录](outputs/validity/round10_formal_attempt01_incident.json)
+- [独立结果后 SCI 审阅](outputs/research_review_memo_round10_postresult.md)
+- [机器可读审阅判定](outputs/validity/round10_postresult_reviewer_decision.json)
 
 ## 结果解释边界
 

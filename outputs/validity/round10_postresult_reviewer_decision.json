@@ -1,0 +1,212 @@
+{
+  "schema_version": "ARSC_ROUND10_POSTRESULT_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-07-31T10:30:53Z",
+  "reviewer_role": "independent_postresult_scientific_reconstruction_reviewer",
+  "study": "BDD-OIA Round 10 corruption dose-response construct validation",
+  "reviewed_snapshot": {
+    "artifact_commit": "d6ad61830fa8a54445d9bd9aa4687f9b325b9f8f",
+    "artifact_tree": "3c83e8931156e0cb08451cf7f3b6418264192b99",
+    "formal_implementation_commit": "0c10e078a27d67816041aedd31b0c3273177e30d",
+    "head_and_origin_main_equal_at_review_start": true
+  },
+  "review_mode": {
+    "formal_results_read": true,
+    "raw_logits_read": true,
+    "raw_binary_primitives_read": true,
+    "bootstrap_draws_read": true,
+    "model_or_checkpoint_loaded": false,
+    "model_inference_rerun": false,
+    "new_experiment_run": false,
+    "threshold_or_decision_rule_changed": false,
+    "seed_family_level_or_subset_selected": false,
+    "original_artifact_protocol_or_code_modified": false
+  },
+  "verdict": {
+    "decision": "ACCEPT_ROUND10_PARTIAL_OR_FAIL_AS_VALID_FINAL_OUTCOME",
+    "formal_result_verdict": "ROUND10_PARTIAL_OR_FAIL",
+    "reconstruction_status": "PASS_COMPLETE_RECONSTRUCTION",
+    "passed_family_axis_gate_count": 3,
+    "total_family_axis_gate_count": 12,
+    "all_twelve_gates_passed": false,
+    "passed_gates_are_exactly": [
+      "brightness::C1",
+      "blur::C1",
+      "noise::C1"
+    ],
+    "round10_requires_rerun_or_supplementary_experiment": false,
+    "result_must_not_be_repaired_by_threshold_severity_subset_or_seed_changes": true
+  },
+  "artifact_integrity": {
+    "status": "PASS",
+    "artifact_index_sha256": "83E67C4F7F56F97769B7E0CDE0E8CECEEAD542358B994147AB3DE284F845DB5A",
+    "indexed_file_count_including_log": 11,
+    "rehash_matches": 11,
+    "byte_count_matches": 11,
+    "exact_final_file_count": 10,
+    "exact_internal_preresult_hash_count": 9,
+    "internal_hash_paths_are_final_not_staging": true,
+    "unique_log_exit_marker": "EXIT_CODE=0",
+    "staging_absent": true,
+    "result_json_written_last_before_atomic_rename": true,
+    "attempt01_evidence_preserved_and_hash_exact": true,
+    "attempt01_staging_final_and_index_absent": true,
+    "files_sha256": {
+      "outputs/validity/round10_corruption_artifact_index_attempt02.json": "83E67C4F7F56F97769B7E0CDE0E8CECEEAD542358B994147AB3DE284F845DB5A",
+      "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_bootstrap_draws.npz": "893FE2F899BE4F725E3B056BB26B060EDBE4AB40AA7144D3BB83114D1F87DB02",
+      "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_bootstrap_summary.csv": "33AD63BA93D2B258427EBA8DA36316BC3C612F54303DDDB3D636D8552ED226A0",
+      "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_point_diagnostics.csv": "A0F24ED0528CD81B96789E8798AB9B31E44727021F763F6EA157142500B79BF3",
+      "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_primitives.npz": "80821C7DEE9194ABA62B373383B4FD9EF8105D3750C48902A91EF45D278B2E83",
+      "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_results.json": "9AE834DD81D4A397BA966917245AAA581007A0BFBF5B08CA773D7515756242C4",
+      "outputs/validity/round10_corruption_formal_attempt02/seed_43_logits.npz": "FF35001C6360A8A5920ABED6FC6E3488274E539857F2A17A14162FC4E72C92E2",
+      "outputs/validity/round10_corruption_formal_attempt02/seed_44_logits.npz": "B069ADB552A390627DC5C16654820EAB30759BF8B4D204DDEE9A1C02EA7FD507",
+      "outputs/validity/round10_corruption_formal_attempt02/seed_45_logits.npz": "A2B1AFBF3A1F66668A216A328EF73CA229447C3FA71AA71B6EBE838CEEC496A0",
+      "outputs/validity/round10_corruption_formal_attempt02/seed_46_logits.npz": "2AA74B8A1B8DDFF29F5977EF9DF7BFAAA83BA44F13B035891318EE287CF43928",
+      "outputs/validity/round10_corruption_formal_attempt02/seed_47_logits.npz": "C6A30E2D6A3ADE49CBE7B3E28AD2C708DC6AE25CAC5F943EAD5D502041F9C6CE",
+      "outputs/validity/round10_corruption_formal_attempt02.log": "1F813F1449DCDEE479529FAAF7DBA4E06686BFF483399F030EF5BAE268BEEED6"
+    }
+  },
+  "seed_archive_audit": {
+    "status": "PASS",
+    "seed_count": 5,
+    "schema": "ARSC_ROUND10_SEED_LOGITS_V1",
+    "sample_count": 4557,
+    "action_target_shape": [4557, 4],
+    "rationale_target_shape": [4557, 21],
+    "action_logit_shapes": [3, 5, 4557, 4],
+    "rationale_logit_shape": [3, 5, 4557, 21],
+    "logit_dtype": "float32",
+    "all_numeric_arrays_finite": true,
+    "targets_binary": true,
+    "filename_order_and_targets_exact_across_seeds": true,
+    "level_zero_logits_exact_across_families_for_all_seeds_and_heads": true
+  },
+  "point_reconstruction": {
+    "status": "PASS",
+    "source": "five raw lossless float32 logit archives plus frozen temperatures, thresholds, targets and source-clip grouping",
+    "raw_primitives_reconstructed_exact": true,
+    "curves_counts_and_safety_diagnostics_reconstructed_exact": true,
+    "point_csv_rows_checked": 3975,
+    "point_csv_mismatches": 0,
+    "exact_derived_reconstruction_sha256": "5E6845C6D5AE943B6A778CDD26D28A6A5B83991960777C69FB2EE334A5BDB926",
+    "maximum_naive_sum_order_difference_before_exact_frozen_accumulation": 1.3322676295501878e-15,
+    "maximum_difference_after_exact_frozen_accumulation": 0.0,
+    "primitives_sufficient_for_complete_point_reconstruction": true
+  },
+  "bootstrap_reconstruction": {
+    "status": "PASS",
+    "schema": "ARSC_ROUND10_BOOTSTRAP_DRAWS_V1",
+    "rng": "numpy.random.default_rng(20260810)",
+    "all_5000_seed_selection_mismatches": 0,
+    "all_5000_clip_selection_mismatches": 0,
+    "all_5000_expanded_count_mismatches": 0,
+    "seed_selection_range": [0, 4],
+    "clip_selection_range": [0, 3903],
+    "expanded_image_count_range": [4473, 4647],
+    "shared_draw_reconstruction_replicates_checked": 3,
+    "shared_gate_draw_mismatches": 0,
+    "shared_endpoint_draw_mismatches": 0,
+    "gate_input_vectors_checked": 12,
+    "endpoint_input_vectors_checked": 24,
+    "linear_quantile_values_checked": 84,
+    "quantile_value_mismatches": 0,
+    "quantile_input_hash_mismatches": 0,
+    "bootstrap_summary_rows_checked": 36,
+    "bootstrap_summary_mismatches": 0,
+    "array_sha256": {
+      "seed_position_draws": "D4F9BA46BADFB0585798D1929DB0E7293AA8E64519A11CCB07310886FA10FEFB",
+      "clip_position_draws": "295B04588E51E8723C57BEF94C27F1034999DA842202572DE2045DD0BE0DFD36",
+      "expanded_image_counts": "150F0B7CB591721D1385BDDB5C18BE3FBFED3AC7E6889B47B5F103343E59ED18",
+      "family_axis_gate_draws": "D3BB47501D1D6AD1FD229B2EFC83E1CD78F13BDF1B992CCED9C417D088938DD1",
+      "endpoint_draws": "FF002713762B50AF5DB872DDBD61F1B50F22A1DC5B320CFB6E3F380E022BCEA2"
+    }
+  },
+  "criterion_order": [
+    "at_least_four_of_five_seed_bottlenecks_strictly_positive",
+    "five_seed_unweighted_mean_strictly_positive",
+    "bootstrap_bonferroni_lower_strictly_positive",
+    "grand_mean_component_curves_have_no_reversal",
+    "all_axis_practical_endpoints_pass"
+  ],
+  "family_axis_gates": [
+    {"family":"brightness","axis":"A","positive_seed_count":0,"mean_bottleneck":-0.002445754641353615,"bonferroni_lower":-0.006327073654463902,"criteria":[false,false,false,false,false],"passed":false},
+    {"family":"brightness","axis":"R","positive_seed_count":2,"mean_bottleneck":-0.0003673117163684347,"bonferroni_lower":-0.0029897176319435355,"criteria":[false,false,false,false,false],"passed":false},
+    {"family":"brightness","axis":"S","positive_seed_count":0,"mean_bottleneck":-0.0035724879611341853,"bonferroni_lower":-0.009938822976243501,"criteria":[false,false,false,false,false],"passed":false},
+    {"family":"brightness","axis":"C1","positive_seed_count":5,"mean_bottleneck":0.02416721527320586,"bonferroni_lower":0.017410942299206266,"criteria":[true,true,true,true,true],"passed":true},
+    {"family":"blur","axis":"A","positive_seed_count":0,"mean_bottleneck":-0.001337477086085026,"bonferroni_lower":-0.004892175001709236,"criteria":[false,false,false,false,true],"passed":false},
+    {"family":"blur","axis":"R","positive_seed_count":1,"mean_bottleneck":-0.00050387373521385,"bonferroni_lower":-0.0021725557166012393,"criteria":[false,false,false,false,false],"passed":false},
+    {"family":"blur","axis":"S","positive_seed_count":0,"mean_bottleneck":-0.004632217779757896,"bonferroni_lower":-0.013750358637830666,"criteria":[false,false,false,false,false],"passed":false},
+    {"family":"blur","axis":"C1","positive_seed_count":5,"mean_bottleneck":0.031688245190549226,"bonferroni_lower":0.024812217845368103,"criteria":[true,true,true,true,true],"passed":true},
+    {"family":"noise","axis":"A","positive_seed_count":0,"mean_bottleneck":-0.0021737376468742298,"bonferroni_lower":-0.005193726007830747,"criteria":[false,false,false,false,false],"passed":false},
+    {"family":"noise","axis":"R","positive_seed_count":2,"mean_bottleneck":-0.0002871121650661446,"bonferroni_lower":-0.0022377044771330606,"criteria":[false,false,false,true,false],"passed":false},
+    {"family":"noise","axis":"S","positive_seed_count":0,"mean_bottleneck":-0.007419719883246967,"bonferroni_lower":-0.01378022141225757,"criteria":[false,false,false,false,false],"passed":false},
+    {"family":"noise","axis":"C1","positive_seed_count":5,"mean_bottleneck":0.024353741496598632,"bonferroni_lower":0.017203838848458445,"criteria":[true,true,true,true,true],"passed":true}
+  ],
+  "practical_endpoints": [
+    {"family":"brightness","component":"A::action_only","mean_effect":0.0031862156139695007,"threshold":0.01,"passed":false},
+    {"family":"brightness","component":"A::joint","mean_effect":0.0017512248567700395,"threshold":0.01,"passed":false},
+    {"family":"brightness","component":"R::joint_rationale","mean_effect":0.004390621734716699,"threshold":0.01,"passed":false},
+    {"family":"brightness","component":"S::action_only","mean_effect":0.005789324643687643,"threshold":0.01,"passed":false},
+    {"family":"brightness","component":"S::joint","mean_effect":0.0036243494257512613,"threshold":0.01,"passed":false},
+    {"family":"brightness","component":"C1::action_only_flip","mean_effect":0.1932411674347157,"threshold":0.025,"passed":true},
+    {"family":"brightness","component":"C1::joint_flip","mean_effect":0.17077024358130352,"threshold":0.025,"passed":true},
+    {"family":"brightness","component":"C1::joint_rationale_jaccard","mean_effect":0.14594396898488837,"threshold":0.025,"passed":true},
+    {"family":"blur","component":"A::action_only","mean_effect":0.014164701268429729,"threshold":0.01,"passed":true},
+    {"family":"blur","component":"A::joint","mean_effect":0.012241205170437674,"threshold":0.01,"passed":true},
+    {"family":"blur","component":"R::joint_rationale","mean_effect":0.005899618606872109,"threshold":0.01,"passed":false},
+    {"family":"blur","component":"S::action_only","mean_effect":0.00561467946751919,"threshold":0.01,"passed":false},
+    {"family":"blur","component":"S::joint","mean_effect":0.0021274833691440898,"threshold":0.01,"passed":false},
+    {"family":"blur","component":"C1::action_only_flip","mean_effect":0.2650427913100724,"threshold":0.025,"passed":true},
+    {"family":"blur","component":"C1::joint_flip","mean_effect":0.2323897300855826,"threshold":0.025,"passed":true},
+    {"family":"blur","component":"C1::joint_rationale_jaccard","mean_effect":0.22418257625630827,"threshold":0.025,"passed":true},
+    {"family":"noise","component":"A::action_only","mean_effect":0.013365118844788127,"threshold":0.01,"passed":true},
+    {"family":"noise","component":"A::joint","mean_effect":-0.0006462367646945966,"threshold":0.01,"passed":false},
+    {"family":"noise","component":"R::joint_rationale","mean_effect":0.004911363012329884,"threshold":0.01,"passed":false},
+    {"family":"noise","component":"S::action_only","mean_effect":-0.00671789384590552,"threshold":0.01,"passed":false},
+    {"family":"noise","component":"S::joint","mean_effect":-0.00655574089332569,"threshold":0.01,"passed":false},
+    {"family":"noise","component":"C1::action_only_flip","mean_effect":0.19688391485626508,"threshold":0.025,"passed":true},
+    {"family":"noise","component":"C1::joint_flip","mean_effect":0.16032477507131887,"threshold":0.025,"passed":true},
+    {"family":"noise","component":"C1::joint_rationale_jaccard","mean_effect":0.14249359959037286,"threshold":0.025,"passed":true}
+  ],
+  "scientific_interpretation": {
+    "C1": "Strong cross-operator conditional construct-response support: all three gates and all nine practical endpoints pass. This is perturbation-sensitivity evidence, not safety, grounding, faithfulness or causal evidence.",
+    "A": "Partial endpoint sensitivity only: blur passes both action endpoints and noise passes action-only, but all three strict monotone family gates fail.",
+    "R": "No preregistered family gate passes and all endpoint effects remain below 0.01; current grids do not support R as a sensitive universal dose-response measure.",
+    "S": "No preregistered family gate passes; brightness and blur are below 0.01 and noise effects are negative. The exactly reconstructed tie-averaged AURC is insensitive or reverses here rather than being computationally invalid.",
+    "rq_answer": "ARSC axes provide separable diagnostic information. Under the frozen BDD-OIA five-seed synthetic grids, C1 has stable cross-operator dose response, A has limited endpoint sensitivity, and R/S lack universal monotone support.",
+    "partial_or_fail_is_not_global_invalidity": true,
+    "partial_or_fail_is_not_full_four_axis_validation": true
+  },
+  "next_experiment": {
+    "required_to_accept_round10": false,
+    "required_before_external_or_natural_condition_claims": true,
+    "recommended_direction": "One new outcome-independent preregistered validation on a fixed external driving population and metadata/physical severity axis, retaining all four axes, frozen label crosswalk, sample, seeds, calibrations, thresholds, 12-gate rules and one-shot stopping.",
+    "must_not_follow_round10_results_by_selecting_only_C1_or_stronger_corruptions": true,
+    "rationale_label_compatibility_required_for_full_ARSC_external_validation": true
+  },
+  "documentation": {
+    "status": "README_REPORT_ALIGNMENT_UPDATE_REQUIRED",
+    "numeric_result_requires_correction": false,
+    "must_state_three_of_twelve_and_C1_only": true,
+    "must_state_A_endpoint_partial_support_and_R_S_gate_failure": true,
+    "must_not_equate_partial_or_fail_with_global_invalidity": true,
+    "must_label_operators_as_synthetic_pixel_corruptions_requiring_real_reinference": true,
+    "must_link_postresult_memo_decision_and_artifact_index": true
+  },
+  "claim_boundaries": {
+    "population": "Frozen BDD-OIA 4557-image, 3904-source-clip test population",
+    "models": "Five historical ResNet-50 seeds with fixed validation temperatures and 0.5 thresholds",
+    "operators": "Frozen synthetic brightness, Gaussian blur and deterministic Gaussian noise grids",
+    "does_not_support": [
+      "natural corruption prevalence or natural severity",
+      "cross-dataset external validity",
+      "real-road robustness or safety guarantees",
+      "rationale grounding or faithfulness",
+      "causal evidence",
+      "external minimal-important-difference validity of 0.01 or 0.025"
+    ]
+  },
+  "memo": {
+    "path": "outputs/research_review_memo_round10_postresult.md",
+    "sha256": "3FB85340FFCD65F00A49B29D29059602AEF57095D08F51CE37833EB802019A30"
+  }
+}
