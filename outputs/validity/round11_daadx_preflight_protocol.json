@@ -1,0 +1,251 @@
+{
+  "schema_version": "ARSC_ROUND11_DAADX_PREFLIGHT_PROTOCOL_V1",
+  "generated_at_utc": "2026-07-31T11:28:07.392181+00:00",
+  "formal_run": false,
+  "result_blind": true,
+  "attempt": "attempt01",
+  "direction": "DAADX_PREFLIGHT_FIRST_THEN_CANDIDATE_A_IF_STOP",
+  "authorization": "DAADX_DOWNLOAD_AND_GROUP_INTEGRITY_PREFLIGHT_ONLY",
+  "training_authorized": false,
+  "repository": {
+    "head": "566545c35a6f855dd4d929e0e5b865d08ba8ffe0",
+    "tree": "d1fd7a0a064bff4478d461dab477591189d6b6b9",
+    "branch": "main",
+    "implementation_sha256": {
+      "scripts/freeze_round11_daadx_preflight_protocol.py": "A1A182342B360F360E582E8F213315AE3B1043A55F5E629A7C73DA7E7B2E9B45",
+      "src/arsc_eval/daadx_preflight.py": "73639F1B85F84B2A27DC650E3DE1FC203A181561FA00306BCD5A5D2E76860E53",
+      "tests/test_daadx_preflight.py": "20B79C7E2611AAC936C76F2516E0ACA7FE35C8F18D589C7D02CFD68A4D4D5DF2"
+    }
+  },
+  "independent_review": {
+    "memo": "outputs/research_review_memo_round11_direction.md",
+    "memo_sha256": "47CE04714FF54085E11FD5D6D724BD690955F22C8E054F247170B1CEA3C6415A",
+    "decision": "outputs/validity/round11_direction_reviewer_decision.json",
+    "decision_sha256": "4C1683F83ED0921042FB30913743981D0153FA55D3C560C8DBBD5D946FA3B24C",
+    "implementation_decision": "outputs/validity/round11_implementation_reviewer_decision.json",
+    "implementation_decision_sha256": "A70426CBAC7A6163F361F4A95624C95C33AE15E1009196BD9B14F78BB7932538",
+    "scout_decision": "outputs/validity/round11_external_dataset_feasibility.json",
+    "scout_decision_sha256": "15989666AACC77BBA2AB9A783292CC94C1766BDE4304B62DAFD13A66466004A5"
+  },
+  "official_input": {
+    "url": "https://cvit.iiit.ac.in/images/datasets/daadx/daadx.tar.gz",
+    "expected_content_length_bytes": 18585647156,
+    "official_code_commit": "932c463b10f2cad42d2d3854376b40a919f47d0a",
+    "official_hf_revision": "35eddaa90667beffc5481e014df8fc6176ed0168",
+    "eligible_split_names": [
+      "train",
+      "val",
+      "test"
+    ],
+    "expected_unique_uuid_count": 1566,
+    "expected_front_binding_count": 1566,
+    "complete_case_deletion_allowed": false
+  },
+  "label_firewall": {
+    "grouping_visible_fields": [
+      "uuid",
+      "official_split"
+    ],
+    "sealed_fields": [
+      "maneuver",
+      "gaze_eX",
+      "ego_eX"
+    ],
+    "forbidden_inputs": [
+      "any_model_logits",
+      "any_model_predictions",
+      "any_model_confidence",
+      "any_model_loss_or_metric",
+      "label_values_in_grouping_or_split_code",
+      "face_identity_or_biometric_features"
+    ]
+  },
+  "media": {
+    "future_model_view": "front_view_only",
+    "decode_requirement": "full_video_first_frame_through_last_frame",
+    "sampling_hz_for_duplicate_audit": 2.0,
+    "first_timestamp_seconds": 0.25,
+    "timestamp_step_seconds": 0.5,
+    "normalized_width": 256,
+    "normalized_height": 144,
+    "letterbox_fill_uint8": 0,
+    "resize_rounding": "floor(source_dimension*scale+0.5)",
+    "resize_interpolation": "half_pixel_bilinear_then_round_to_nearest_even_uint8",
+    "decoder_pixel_format": "RGB24",
+    "normalization": "RGB_to_BT601_grayscale_then_aspect_preserving_bilinear_letterbox",
+    "phash": {
+      "dct_size": 32,
+      "hash_size": 8,
+      "exclude_dc_from_median": true,
+      "bits": 64
+    },
+    "ssim": {
+      "data_range": 255.0,
+      "window_size": 11,
+      "gaussian_sigma": 1.5,
+      "padding": "reflect"
+    }
+  },
+  "duplicate_edges": {
+    "byte_exact": true,
+    "decode_exact": true,
+    "broad": {
+      "minimum_aligned_pairs": 6,
+      "minimum_seconds": 3.0,
+      "time_scale_slope_min": 0.98,
+      "time_scale_slope_max": 1.02,
+      "phash_each_max": 10,
+      "phash_median_max": 6,
+      "ssim_median_min": 0.9
+    },
+    "strict_sensitivity": {
+      "minimum_aligned_pairs": 6,
+      "phash_each_max": 6,
+      "phash_median_max": 4,
+      "ssim_median_min": 0.95
+    },
+    "boundary": {
+      "seconds_each_side": 1.5,
+      "ordered_pairs": 3,
+      "phash_each_max": 10,
+      "phash_median_max": 6,
+      "ssim_median_min": 0.9,
+      "requires_same_camera_rig_signature": true
+    },
+    "cross_dataset_scan": {
+      "reference_population": "frozen_BDD_OIA_4557_images",
+      "single_frame_phash_hamming_max": 10,
+      "single_frame_ssim_min": 0.9,
+      "action": "quarantine_entire_DAADX_source_group"
+    },
+    "qa": {
+      "selection": {
+        "digest": "SHA256(uuid encoded as strict UTF-8 bytes)",
+        "order": "ascending digest bytes then ascending UUID UTF-8 bytes",
+        "count": 50
+      },
+      "positive_transforms": [
+        "transcode",
+        "resize",
+        "brightness_pm5pct"
+      ],
+      "transform_input": "original eligible front-view video",
+      "transform_then_measurement_order": "transform_video_then_decode_RGB24_then_sample_then_grayscale_letterbox",
+      "transcode": {
+        "ffmpeg_version": "7.1",
+        "video_codec": "libx264",
+        "pixel_format": "yuv420p",
+        "crf": 23,
+        "preset": "medium",
+        "threads": 1,
+        "audio": "dropped"
+      },
+      "resize": {
+        "width": 320,
+        "height": 180,
+        "interpolation": "ffmpeg_scale_bicubic",
+        "encode_as": "same_as_transcode"
+      },
+      "brightness_pm5pct": {
+        "factors": [
+          0.95,
+          1.05
+        ],
+        "domain": "decoded_RGB24_uint8",
+        "formula": "clip(floor(pixel*factor+0.5),0,255)",
+        "encoding": "ffv1_lossless_rgb24_threads1_no_audio"
+      },
+      "required_recovery": "50/50_source_relations_for_each_transform"
+    }
+  },
+  "source_grouping": {
+    "unit": "upstream_raw_recording_or_capture_session",
+    "all_clips_require_authoritative_or_auditable_provenance": true,
+    "absence_of_near_duplicate_is_not_provenance": true,
+    "group_algorithm": "connected_components_of_authoritative_metadata_and_broad_content_edges",
+    "public_group_ids": "salted_nonreversible"
+  },
+  "group_split": {
+    "salt": "ARSC-DAADX-R11-GROUP-SPLIT-V1",
+    "train_upper": 0.7,
+    "validation_upper": 0.9,
+    "minimum_groups_each_split": 30,
+    "minimum_test_clips": 100,
+    "maximum_test_group_share": 0.1,
+    "label_balancing_allowed": false,
+    "second_salt_allowed": false,
+    "official_split_policy": "retain_only_if_source_group_disjoint_else_discard_and_apply_exactly_one_salt",
+    "canonical_group_id": "uppercase_SHA256(canonical_UTF8_JSON_of_sorted_UUID_array; ensure_ascii=false; separators=comma_colon)",
+    "hash_input": "ASCII(namespace + vertical_bar + uppercase_canonical_group_id)",
+    "hash_uniform": "first_64_SHA256_bits_as_unsigned_big_endian_integer_divided_by_2^64",
+    "integer_boundaries": {
+      "train": "10*value < 7*2^64",
+      "validation": "7*2^64 <= 10*value < 9*2^64",
+      "test": "9*2^64 <= 10*value"
+    },
+    "split_name_normalization": {
+      "val": "validation"
+    }
+  },
+  "gates": {
+    "G0": "transport_archive_exact_bytes_double_sha_gzip_tar_header_path_and_member_type",
+    "G1": "1566_unique_split_uuids_and_1566_unique_front_bindings",
+    "G2": "all_1566_front_videos_fully_decode_with_valid_metadata",
+    "G3": "100_percent_authoritative_or_auditable_source_provenance",
+    "G4": "broad_graph_byte_identical_rerun_and_qa_50_of_50",
+    "G5": "cross_dataset_match_groups_quarantined_and_later_gates_hold",
+    "G6": "zero_group_intersection_after_official_or_one_salt_split",
+    "G7": "cluster_adequacy_thresholds_all_hold",
+    "G8": "complete_hash_closed_artifact_set_and_unique_exit_marker"
+  },
+  "verdict_rule": {
+    "all_G0_through_G8_pass": "GO_TO_SEPARATE_DAADX_PROTOCOL_FREEZE_REVIEW_NOT_TRAINING",
+    "any_fail_or_inconclusive": "STOP_DAADX_AND_SWITCH_TO_CANDIDATE_A_EXPLORATORY"
+  },
+  "formal_output": {
+    "staging": "outputs/validity/round11_daadx_preflight_attempt01.staging",
+    "final": "outputs/validity/round11_daadx_preflight_attempt01",
+    "log": "outputs/validity/round11_daadx_preflight_attempt01.log",
+    "artifact_index": "outputs/validity/round11_daadx_artifact_index.json",
+    "required_artifacts": [
+      "round11_daadx_preflight_protocol.json",
+      "round11_daadx_download_receipt.json",
+      "round11_daadx_archive_hashes.json",
+      "round11_daadx_tar_inventory.csv",
+      "round11_daadx_member_hashes.csv",
+      "round11_daadx_label_seal.json",
+      "round11_daadx_uuid_media_binding.csv",
+      "round11_daadx_media_probe.csv",
+      "round11_daadx_threshold_qa.json",
+      "round11_daadx_duplicate_edges.csv",
+      "round11_daadx_cross_dataset_overlap.csv",
+      "round11_daadx_source_groups.csv",
+      "round11_daadx_split_audit.csv",
+      "round11_daadx_preflight_results.json",
+      "round11_daadx_preflight.log",
+      "round11_daadx_artifact_index.json"
+    ]
+  },
+  "archive_safety": {
+    "allowed_tar_member_types": [
+      "regular_file",
+      "directory"
+    ],
+    "forbidden_tar_member_types": [
+      "symlink",
+      "hardlink",
+      "character_device",
+      "block_device",
+      "fifo",
+      "socket",
+      "sparse_or_unknown"
+    ],
+    "link_targets": "all_links_forbidden_so_no_target_is_followed",
+    "pax_headers": "parsed_metadata_only_and_never_allowed_to_override_canonical_path_safety",
+    "case_insensitive_path_collisions_allowed": false,
+    "windows_alternate_data_stream_names_allowed": false,
+    "windows_reserved_devices_allowed": false,
+    "segment_trailing_dot_or_space_allowed": false,
+    "unicode_normalization": "every_segment_must_be_NFC_and_collision_key_is_NFC_casefold"
+  }
+}
