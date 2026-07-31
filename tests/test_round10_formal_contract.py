@@ -32,9 +32,9 @@ def valid_go() -> dict:
             "formal_implementation_modified": False,
         },
         "verdict": {
-            "decision": "GO_ROUND10_FORMAL_RUN_ATTEMPT01",
+            "decision": "GO_ROUND10_FORMAL_RUN_ATTEMPT02",
             "formal_run_authorized": True,
-            "authorized_attempt": "attempt01",
+            "authorized_attempt": "attempt02",
         },
         "bindings": {"implementation_commit": "abc"},
         "reviewed_files_sha256": {"a": "A", "b": "B"},
@@ -108,15 +108,15 @@ def test_one_shot_guard_rejects_any_existing_artifact(
 
 def test_atomic_output_layout_is_strict(tmp_path: Path) -> None:
     validate_atomic_output_layout(
-        tmp_path / "round10_attempt01.staging",
-        tmp_path / "round10_attempt01",
-        tmp_path / "round10_attempt01.log",
+        tmp_path / "round10_attempt02.staging",
+        tmp_path / "round10_attempt02",
+        tmp_path / "round10_attempt02.log",
         tmp_path / "round10_artifact_index.json",
     )
     with pytest.raises(ValueError, match="marked"):
         validate_atomic_output_layout(
             tmp_path / "temporary",
-            tmp_path / "round10_attempt01",
+            tmp_path / "round10_attempt02",
             tmp_path / "run.log",
             tmp_path / "index.json",
         )
@@ -145,7 +145,7 @@ def test_round10_output_allowlist_rejects_unknown_cache_and_tmp() -> None:
 
 
 def make_formal_artifacts(tmp_path: Path) -> tuple[Path, dict]:
-    final_dir = tmp_path / "outputs" / "validity" / "round10_attempt01"
+    final_dir = tmp_path / "outputs" / "validity" / "round10_attempt02"
     final_dir.mkdir(parents=True)
     internal = {}
     for name in PRE_RESULT_ARTIFACT_NAMES:

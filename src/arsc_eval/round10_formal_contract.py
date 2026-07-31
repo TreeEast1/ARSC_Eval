@@ -9,7 +9,7 @@ from typing import Any
 
 
 GO_SCHEMA = "ARSC_ROUND10_PREFORMAL_REVIEWER_DECISION_V1"
-GO_DECISION = "GO_ROUND10_FORMAL_RUN_ATTEMPT01"
+GO_DECISION = "GO_ROUND10_FORMAL_RUN_ATTEMPT02"
 EXPECTED_REVIEW_MODE = {
     "outcome_blind": True,
     "checkpoint_tensors_loaded": False,
@@ -68,7 +68,7 @@ def validate_preformal_go(
         "formal run is not authorized",
     )
     require(
-        verdict["authorized_attempt"] == "attempt01",
+        verdict["authorized_attempt"] == "attempt02",
         "wrong authorized attempt",
     )
     bindings = decision["bindings"]
@@ -112,8 +112,8 @@ def validate_atomic_output_layout(
         "staging directory must be visibly marked",
     )
     require(
-        "attempt01" in final_dir.name,
-        "final directory must identify attempt01",
+        "attempt02" in final_dir.name,
+        "final directory must identify attempt02",
     )
 
 

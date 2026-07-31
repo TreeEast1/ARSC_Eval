@@ -19,25 +19,25 @@ FINAL_DIR = (
     PROJECT_ROOT
     / "outputs"
     / "validity"
-    / "round10_corruption_formal_attempt01"
+    / "round10_corruption_formal_attempt02"
 )
 STAGING_DIR = (
     PROJECT_ROOT
     / "outputs"
     / "validity"
-    / "round10_corruption_formal_attempt01.staging"
+    / "round10_corruption_formal_attempt02.staging"
 )
 LOG_PATH = (
     PROJECT_ROOT
     / "outputs"
     / "validity"
-    / "round10_corruption_formal_attempt01.log"
+    / "round10_corruption_formal_attempt02.log"
 )
 INDEX_PATH = (
     PROJECT_ROOT
     / "outputs"
     / "validity"
-    / "round10_corruption_artifact_index.json"
+    / "round10_corruption_artifact_index_attempt02.json"
 )
 
 
@@ -81,7 +81,7 @@ def main() -> int:
         result["schema_version"] == "ARSC_ROUND10_CORRUPTION_RESULTS_V1"
         and result["status"] == "COMPLETE"
         and result["formal_run"] is True
-        and result["attempt"] == "attempt01",
+        and result["attempt"] == "attempt02",
         "formal result completion contract differs",
     )
     validate_formal_artifacts(FINAL_DIR, PROJECT_ROOT, result)
@@ -101,7 +101,7 @@ def main() -> int:
         "schema_version": "ARSC_ROUND10_ARTIFACT_INDEX_V1",
         "generated_at_utc": utc_now(),
         "formal_run": True,
-        "attempt": "attempt01",
+        "attempt": "attempt02",
         "status": "COMPLETE_HASH_BOUND",
         "result_verdict": result["verdict"],
         "file_count_including_log": len(bindings),

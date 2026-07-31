@@ -103,47 +103,82 @@ REPAIR_MEMO_PATH = (
 REPAIR_MEMO_SHA256 = (
     "B6CBADA1B97C041599D89D15E95B8452E93D3BE2D0C2EFD92EC06F6D38836DF6"
 )
-PREFLIGHT_PATH = (
+INCIDENT_PATH = (
     PROJECT_ROOT
     / "outputs"
     / "validity"
-    / "round10_corruption_formal_preflight_amendment01.json"
+    / "round10_formal_attempt01_incident.json"
 )
-MANIFEST_PATH = (
-    PROJECT_ROOT
-    / "outputs"
-    / "validity"
-    / "round10_corruption_formal_implementation_manifest_amendment01.json"
+INCIDENT_SHA256 = (
+    "1DA010284B0E6F8311E3A76DDF0E2C0C1015891EE244D92B115C550273C5D712"
 )
-GO_PATH = (
-    PROJECT_ROOT
-    / "outputs"
-    / "validity"
-    / "round10_preformal_reviewer_decision_amendment01.json"
-)
-STAGING_DIR = (
-    PROJECT_ROOT
-    / "outputs"
-    / "validity"
-    / "round10_corruption_formal_attempt01.staging"
-)
-FINAL_DIR = (
-    PROJECT_ROOT
-    / "outputs"
-    / "validity"
-    / "round10_corruption_formal_attempt01"
-)
-LOG_PATH = (
+ATTEMPT01_LOG_PATH = (
     PROJECT_ROOT
     / "outputs"
     / "validity"
     / "round10_corruption_formal_attempt01.log"
 )
+ATTEMPT01_LOG_SHA256 = (
+    "BB6CCB81A6AF980C5BE35EED3D36DDE9D5E1DABADD2EDAF187011B1A8C22A3CC"
+)
+INCIDENT_REVIEW_PATH = (
+    PROJECT_ROOT
+    / "outputs"
+    / "validity"
+    / "round10_attempt01_incident_reviewer_decision.json"
+)
+INCIDENT_REVIEW_SHA256 = (
+    "93BAD702B0C6AB33187B05BCECCAF65946CAF6B3EAA542292187A81C2B4A93A0"
+)
+INCIDENT_REVIEW_MEMO_PATH = (
+    PROJECT_ROOT
+    / "outputs"
+    / "research_review_memo_round10_attempt01_incident.md"
+)
+INCIDENT_REVIEW_MEMO_SHA256 = (
+    "62CC1B1DF19FF68563E6152BA34080FB83925E34082E11C890F30D550C0063DC"
+)
+PREFLIGHT_PATH = (
+    PROJECT_ROOT
+    / "outputs"
+    / "validity"
+    / "round10_corruption_formal_preflight_amendment02.json"
+)
+MANIFEST_PATH = (
+    PROJECT_ROOT
+    / "outputs"
+    / "validity"
+    / "round10_corruption_formal_implementation_manifest_amendment02.json"
+)
+GO_PATH = (
+    PROJECT_ROOT
+    / "outputs"
+    / "validity"
+    / "round10_preformal_reviewer_decision_amendment02.json"
+)
+STAGING_DIR = (
+    PROJECT_ROOT
+    / "outputs"
+    / "validity"
+    / "round10_corruption_formal_attempt02.staging"
+)
+FINAL_DIR = (
+    PROJECT_ROOT
+    / "outputs"
+    / "validity"
+    / "round10_corruption_formal_attempt02"
+)
+LOG_PATH = (
+    PROJECT_ROOT
+    / "outputs"
+    / "validity"
+    / "round10_corruption_formal_attempt02.log"
+)
 ARTIFACT_INDEX_PATH = (
     PROJECT_ROOT
     / "outputs"
     / "validity"
-    / "round10_corruption_artifact_index.json"
+    / "round10_corruption_artifact_index_attempt02.json"
 )
 
 IMPLEMENTATION_ROOT_FILES = (
@@ -161,6 +196,8 @@ BASE_ALLOWED_ROUND10_OUTPUTS = (
     "outputs/research_review_memo_round10_preregister_amendment01.md",
     "outputs/research_review_memo_round10_preformal.md",
     "outputs/research_review_memo_round10_preformal_amendment01.md",
+    "outputs/research_review_memo_round10_attempt01_incident.md",
+    "outputs/research_review_memo_round10_preformal_amendment02.md",
     "outputs/validity/round10_corruption_dose_response_protocol.json",
     "outputs/validity/round10_corruption_dose_response_protocol_amendment01.json",
     "outputs/validity/round10_corruption_preflight.json",
@@ -178,6 +215,15 @@ BASE_ALLOWED_ROUND10_OUTPUTS = (
     "outputs/validity/round10_corruption_formal_preflight_amendment01.json",
     "outputs/validity/round10_preformal_reviewer_decision.json",
     "outputs/validity/round10_preformal_reviewer_decision_amendment01.json",
+    "outputs/validity/round10_corruption_formal_attempt01.log",
+    "outputs/validity/round10_formal_attempt01_incident.json",
+    "outputs/validity/round10_attempt01_incident_reviewer_decision.json",
+    (
+        "outputs/validity/"
+        "round10_corruption_formal_implementation_manifest_amendment02.json"
+    ),
+    "outputs/validity/round10_corruption_formal_preflight_amendment02.json",
+    "outputs/validity/round10_preformal_reviewer_decision_amendment02.json",
 )
 BASE_ALLOWED_ROUND10_PREFIXES = (
     "outputs/validity/round10_corruption_semantic_audit",
@@ -439,6 +485,34 @@ def validate_authorization() -> dict[str, Any]:
         and repair["verdict"]["requires_new_implementation_commit"] is True,
         "preformal STOP repair scope differs",
     )
+    require(
+        sha256_file(ATTEMPT01_LOG_PATH) == ATTEMPT01_LOG_SHA256,
+        "preserved attempt01 failure log hash differs",
+    )
+    require(
+        sha256_file(INCIDENT_PATH) == INCIDENT_SHA256,
+        "attempt01 incident record hash differs",
+    )
+    require(
+        sha256_file(INCIDENT_REVIEW_PATH) == INCIDENT_REVIEW_SHA256,
+        "attempt01 incident review hash differs",
+    )
+    require(
+        sha256_file(INCIDENT_REVIEW_MEMO_PATH)
+        == INCIDENT_REVIEW_MEMO_SHA256,
+        "attempt01 incident review memo hash differs",
+    )
+    incident_review = read_json(INCIDENT_REVIEW_PATH)
+    require(
+        incident_review["verdict"]["decision"]
+        == "AUTHORIZE_OUTCOME_BLIND_ATTEMPT02_INFRASTRUCTURE_REPAIR_ONLY"
+        and incident_review["verdict"]["formal_run_authorized"] is False
+        and incident_review["verdict"][
+            "attempt02_formal_run_authorized"
+        ]
+        is False,
+        "attempt02 infrastructure-only repair scope differs",
+    )
     return decision
 
 
@@ -589,23 +663,38 @@ def preflight_only() -> int:
         ].items()
         if path not in implementation_hashes
     }
+    incident_review = read_json(INCIDENT_REVIEW_PATH)
+    preserved_incident_bindings = {
+        path: digest
+        for path, digest in incident_review[
+            "reviewed_files_sha256"
+        ].items()
+        if path not in implementation_hashes
+    }
     review_targets = merge_hash_maps(
         authorization["reviewed_files_sha256"],
         authorization["frozen_config_sha256"],
         authorization["frozen_checkpoint_sha256"],
         authorization["frozen_calibration_sha256"],
         preserved_repair_bindings,
+        preserved_incident_bindings,
         implementation_hashes,
         {
             relative(AUTHORIZATION_PATH): IMPLEMENTATION_AUTHORIZATION_SHA256,
             relative(REPAIR_AUTHORIZATION_PATH): REPAIR_AUTHORIZATION_SHA256,
             relative(REPAIR_MEMO_PATH): REPAIR_MEMO_SHA256,
+            relative(ATTEMPT01_LOG_PATH): ATTEMPT01_LOG_SHA256,
+            relative(INCIDENT_PATH): INCIDENT_SHA256,
+            relative(INCIDENT_REVIEW_PATH): INCIDENT_REVIEW_SHA256,
+            relative(INCIDENT_REVIEW_MEMO_PATH): (
+                INCIDENT_REVIEW_MEMO_SHA256
+            ),
             "data/processed/test.jsonl": EXPECTED_TEST_MANIFEST_SHA256,
         },
     )
     manifest = {
         "schema_version": (
-            "ARSC_ROUND10_FORMAL_IMPLEMENTATION_MANIFEST_AMENDMENT01_V1"
+            "ARSC_ROUND10_FORMAL_IMPLEMENTATION_MANIFEST_AMENDMENT02_V1"
         ),
         "generated_at_utc": utc_now(),
         "outcome_blind": True,
@@ -625,6 +714,15 @@ def preflight_only() -> int:
                 "path": relative(REPAIR_AUTHORIZATION_PATH),
                 "sha256": REPAIR_AUTHORIZATION_SHA256,
                 "decision": "STOP_REPAIR_ROUND10_FORMAL_IMPLEMENTATION",
+            },
+            "attempt02_infrastructure_repair": {
+                "path": relative(INCIDENT_REVIEW_PATH),
+                "sha256": INCIDENT_REVIEW_SHA256,
+                "decision": (
+                    "AUTHORIZE_OUTCOME_BLIND_"
+                    "ATTEMPT02_INFRASTRUCTURE_REPAIR_ONLY"
+                ),
+                "formal_run_authorized": False,
             },
         },
         "frozen_design": {
@@ -658,7 +756,7 @@ def preflight_only() -> int:
         "required_preformal_go": {
             "path": relative(GO_PATH),
             "schema_version": "ARSC_ROUND10_PREFORMAL_REVIEWER_DECISION_V1",
-            "decision": "GO_ROUND10_FORMAL_RUN_ATTEMPT01",
+            "decision": "GO_ROUND10_FORMAL_RUN_ATTEMPT02",
             "must_bind_implementation_commit": implementation_commit,
             "must_bind_exact_reviewed_file_set": True,
             "formal_run_remains_unauthorized_until_go": True,
@@ -673,6 +771,8 @@ def preflight_only() -> int:
             "result_json_written_last_before_atomic_directory_rename": True,
             "unknown_round10_output_allowlist_guard": True,
             "direct_analyzer_requires_existing_tmux_log_sentinel": True,
+            "attempt01_log_and_incident_preserved": True,
+            "attempt02_paths_are_disjoint_from_attempt01": True,
         },
         "formal_artifact_schemas": {
             "seed_logits": "ARSC_ROUND10_SEED_LOGITS_V1",
@@ -685,9 +785,9 @@ def preflight_only() -> int:
     manifest_payload = json_bytes(manifest)
     manifest_sha256 = hashlib.sha256(manifest_payload).hexdigest().upper()
     preflight = {
-        "schema_version": "ARSC_ROUND10_FORMAL_PREFLIGHT_AMENDMENT01_V1",
+        "schema_version": "ARSC_ROUND10_FORMAL_PREFLIGHT_AMENDMENT02_V1",
         "generated_at_utc": utc_now(),
-        "status": "PASS_OUTCOME_BLIND_IMPLEMENTATION_PREFLIGHT_AMENDMENT01",
+        "status": "PASS_OUTCOME_BLIND_IMPLEMENTATION_PREFLIGHT_AMENDMENT02",
         "outcome_blind": True,
         "formal_run": False,
         "checkpoint_tensors_loaded": False,
@@ -701,6 +801,9 @@ def preflight_only() -> int:
         },
         "authorization_sha256": IMPLEMENTATION_AUTHORIZATION_SHA256,
         "repair_authorization_sha256": REPAIR_AUTHORIZATION_SHA256,
+        "attempt02_infrastructure_repair_authorization_sha256": (
+            INCIDENT_REVIEW_SHA256
+        ),
         "dataset": dataset,
         "configs": configs,
         "tests": tests,
@@ -713,8 +816,14 @@ def preflight_only() -> int:
             "R10_PREFORMAL_B3",
             "R10_PREFORMAL_B4",
         ],
+        "attempt01_incident": {
+            "classification": "PREFORMAL_INFRASTRUCTURE_FAILURE_ZERO_OUTCOME",
+            "log_sha256": ATTEMPT01_LOG_SHA256,
+            "incident_sha256": INCIDENT_SHA256,
+            "preserved": True,
+        },
         "next_gate": (
-            "INDEPENDENT_OUTCOME_BLIND_PREFORMAL_IMPLEMENTATION_REREVIEW"
+            "INDEPENDENT_OUTCOME_BLIND_ATTEMPT02_PREFORMAL_IMPLEMENTATION_REVIEW"
         ),
     }
     manifest_tmp = MANIFEST_PATH.with_name(MANIFEST_PATH.name + ".tmp")
@@ -756,14 +865,14 @@ def validate_formal_authorization(
     preflight = read_json(PREFLIGHT_PATH)
     require(
         manifest["schema_version"]
-        == "ARSC_ROUND10_FORMAL_IMPLEMENTATION_MANIFEST_AMENDMENT01_V1"
+        == "ARSC_ROUND10_FORMAL_IMPLEMENTATION_MANIFEST_AMENDMENT02_V1"
         and manifest["outcome_blind"] is True
         and manifest["formal_run"] is False,
         "implementation manifest differs",
     )
     require(
         preflight["status"]
-        == "PASS_OUTCOME_BLIND_IMPLEMENTATION_PREFLIGHT_AMENDMENT01"
+        == "PASS_OUTCOME_BLIND_IMPLEMENTATION_PREFLIGHT_AMENDMENT02"
         and preflight["outcome_blind"] is True
         and preflight["formal_run"] is False,
         "formal preflight differs",
@@ -1302,8 +1411,7 @@ def evaluate_gates(
 
 def formal_run(device: str, tmux_session: str | None) -> int:
     require(
-        tmux_session == "arsc_round10_formal"
-        and os.environ.get("ARSC_ROUND10_LAUNCHED_BY_TMUX") == "1",
+        tmux_session == "arsc_round10_formal_attempt02",
         "formal analyzer requires the frozen tmux launcher contract",
     )
     manifest, validation = validate_formal_authorization(
@@ -1311,7 +1419,7 @@ def formal_run(device: str, tmux_session: str | None) -> int:
     )
     STAGING_DIR.mkdir(parents=False, exist_ok=False)
     print(
-        f"[round10] formal attempt01 authorized; implementation={manifest['implementation_commit']}",
+        f"[round10] formal attempt02 authorized; implementation={manifest['implementation_commit']}",
         flush=True,
     )
     payloads: list[dict[str, np.ndarray]] = []
@@ -1359,7 +1467,7 @@ def formal_run(device: str, tmux_session: str | None) -> int:
         "generated_at_utc": utc_now(),
         "status": "COMPLETE",
         "formal_run": True,
-        "attempt": "attempt01",
+        "attempt": "attempt02",
         "implementation_commit": manifest["implementation_commit"],
         "formal_go": {
             "path": relative(GO_PATH),
