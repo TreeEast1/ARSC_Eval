@@ -1,0 +1,136 @@
+{"point_and_component_precompute_map_completed": "map00", "maps_completed": 1, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map01", "maps_completed": 2, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map02", "maps_completed": 3, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map03", "maps_completed": 4, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map04", "maps_completed": 5, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map05", "maps_completed": 6, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map06", "maps_completed": 7, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map07", "maps_completed": 8, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map08", "maps_completed": 9, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map09", "maps_completed": 10, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map10", "maps_completed": 11, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map11", "maps_completed": 12, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map12", "maps_completed": 13, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map13", "maps_completed": 14, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map14", "maps_completed": 15, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map15", "maps_completed": 16, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map16", "maps_completed": 17, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map17", "maps_completed": 18, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map18", "maps_completed": 19, "maps_total": 20}
+{"point_and_component_precompute_map_completed": "map19", "maps_completed": 20, "maps_total": 20}
+{"hierarchical_bootstrap_completed": 25, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 50, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 75, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 100, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 125, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 150, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 175, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 200, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 225, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 250, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 275, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 300, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 325, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 350, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 375, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 400, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 425, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 450, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 475, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 500, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 525, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 550, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 575, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 600, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 625, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 650, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 675, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 700, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 725, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 750, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 775, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 800, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 825, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 850, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 875, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 900, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 925, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 950, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 975, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1000, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1025, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1050, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1075, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1100, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1125, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1150, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1175, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1200, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1225, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1250, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1275, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1300, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1325, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1350, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1375, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1400, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1425, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1450, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1475, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1500, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1525, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1550, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1575, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1600, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1625, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1650, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1675, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1700, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1725, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1750, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1775, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1800, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1825, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1850, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1875, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1900, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1925, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1950, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 1975, "bootstrap_total": 2000}
+{"hierarchical_bootstrap_completed": 2000, "bootstrap_total": 2000}
+{
+  "status": "ROUND9_FULL_PASS",
+  "axis_gates": {
+    "A": true,
+    "R": true,
+    "S": true,
+    "C1": true
+  },
+  "axis_grand_means": {
+    "A": 0.06864758365677283,
+    "R": 0.045433441095406105,
+    "S": 0.027079872787876706,
+    "C1": 0.1635937385706971
+  },
+  "axis_intervals": {
+    "A": [
+      0.06426131356171416,
+      0.06762400035997473
+    ],
+    "R": [
+      0.04058855519326802,
+      0.04738543462209599
+    ],
+    "S": [
+      0.021644456284410436,
+      0.02668580942796257
+    ],
+    "C1": [
+      0.15570246263647258,
+      0.16048202283865717
+    ]
+  },
+  "result": "outputs/validity/round9_multimap_results.json",
+  "result_sha256": "667C34891BADF1861757877DDE263A218652AA60B4B00E58E03421F7CE162735"
+}
+EXIT_CODE=0
