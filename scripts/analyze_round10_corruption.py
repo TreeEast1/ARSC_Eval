@@ -9,6 +9,7 @@ independent preformal GO decision before it can load a checkpoint.
 from __future__ import annotations
 
 import argparse
+import ast
 import csv
 import hashlib
 import json
@@ -58,6 +59,7 @@ from arsc_eval.corruption_statistics import (
 )
 from arsc_eval.round10_formal_contract import (
     require_paths_absent,
+    unexpected_round10_output_paths,
     validate_atomic_output_layout,
     validate_preformal_go,
 )
@@ -69,7 +71,7 @@ CLIP_COUNT = 3904
 BOOTSTRAP_REPLICATES = 5000
 BOOTSTRAP_SEED = 20260810
 BONFERRONI_PROBABILITY = 0.05 / 12.0
-EXPECTED_TEST_COUNT = 87
+EXPECTED_TEST_COUNT = 94
 EXPECTED_TEST_MANIFEST_SHA256 = (
     "89364A265FE4C2EDCA5125D34C4C25D47C96AFB46A5C4A8FE86B649785539004"
 )
@@ -86,23 +88,38 @@ AUTHORIZATION_PATH = (
     / "validity"
     / "round10_preregister_reviewer_decision_amendment01.json"
 )
+REPAIR_AUTHORIZATION_PATH = (
+    PROJECT_ROOT
+    / "outputs"
+    / "validity"
+    / "round10_preformal_reviewer_decision.json"
+)
+REPAIR_AUTHORIZATION_SHA256 = (
+    "A109F38F4EB347B855090D17AE76417B2BD7753DE0968D6FAF65BEC669B260B9"
+)
+REPAIR_MEMO_PATH = (
+    PROJECT_ROOT / "outputs" / "research_review_memo_round10_preformal.md"
+)
+REPAIR_MEMO_SHA256 = (
+    "B6CBADA1B97C041599D89D15E95B8452E93D3BE2D0C2EFD92EC06F6D38836DF6"
+)
 PREFLIGHT_PATH = (
     PROJECT_ROOT
     / "outputs"
     / "validity"
-    / "round10_corruption_formal_preflight.json"
+    / "round10_corruption_formal_preflight_amendment01.json"
 )
 MANIFEST_PATH = (
     PROJECT_ROOT
     / "outputs"
     / "validity"
-    / "round10_corruption_formal_implementation_manifest.json"
+    / "round10_corruption_formal_implementation_manifest_amendment01.json"
 )
 GO_PATH = (
     PROJECT_ROOT
     / "outputs"
     / "validity"
-    / "round10_preformal_reviewer_decision.json"
+    / "round10_preformal_reviewer_decision_amendment01.json"
 )
 STAGING_DIR = (
     PROJECT_ROOT
@@ -129,23 +146,42 @@ ARTIFACT_INDEX_PATH = (
     / "round10_corruption_artifact_index.json"
 )
 
-IMPLEMENTATION_FILES = (
+IMPLEMENTATION_ROOT_FILES = (
     "scripts/analyze_round10_corruption.py",
     "scripts/finalize_round10_corruption.py",
     "scripts/launch_round10_corruption_tmux.sh",
-    "src/arsc_eval/corruption_statistics.py",
-    "src/arsc_eval/round10_formal_contract.py",
-    "src/arsc_eval/corruption_dose_response_v2.py",
-    "src/arsc_eval/engine.py",
-    "src/arsc_eval/data.py",
-    "src/arsc_eval/models.py",
-    "src/arsc_eval/utils.py",
-    "src/arsc_eval/constants.py",
     "tests/test_corruption_statistics.py",
     "tests/test_round10_formal_contract.py",
     "tests/test_round10_protocol_validation.py",
     "requirements.txt",
     "requirements-dev.txt",
+)
+BASE_ALLOWED_ROUND10_OUTPUTS = (
+    "outputs/research_review_memo_round10_preregister.md",
+    "outputs/research_review_memo_round10_preregister_amendment01.md",
+    "outputs/research_review_memo_round10_preformal.md",
+    "outputs/research_review_memo_round10_preformal_amendment01.md",
+    "outputs/validity/round10_corruption_dose_response_protocol.json",
+    "outputs/validity/round10_corruption_dose_response_protocol_amendment01.json",
+    "outputs/validity/round10_corruption_preflight.json",
+    "outputs/validity/round10_corruption_preflight_tests.log",
+    "outputs/validity/round10_corruption_preflight_attempt02.json",
+    "outputs/validity/round10_corruption_preflight_attempt02_tests.log",
+    "outputs/validity/round10_preregister_reviewer_decision.json",
+    "outputs/validity/round10_preregister_reviewer_decision_amendment01.json",
+    "outputs/validity/round10_corruption_formal_implementation_manifest.json",
+    "outputs/validity/round10_corruption_formal_preflight.json",
+    (
+        "outputs/validity/"
+        "round10_corruption_formal_implementation_manifest_amendment01.json"
+    ),
+    "outputs/validity/round10_corruption_formal_preflight_amendment01.json",
+    "outputs/validity/round10_preformal_reviewer_decision.json",
+    "outputs/validity/round10_preformal_reviewer_decision_amendment01.json",
+)
+BASE_ALLOWED_ROUND10_PREFIXES = (
+    "outputs/validity/round10_corruption_semantic_audit",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01",
 )
 AXIS_ENDPOINT_INDICES = {
     "A": (0, 1),
@@ -238,9 +274,22 @@ def git_output(*arguments: str) -> str:
     return completed.stdout.strip()
 
 
-def require_clean_worktree() -> str:
-    status = git_output("status", "--porcelain")
-    require(status == "", f"formal operation requires a clean worktree: {status}")
+def require_clean_worktree(
+    allowed_untracked: Sequence[str] = (),
+) -> str:
+    status = git_output(
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all",
+    )
+    permitted = {f"?? {path}" for path in allowed_untracked}
+    unexpected = [
+        line for line in status.splitlines() if line and line not in permitted
+    ]
+    require(
+        not unexpected,
+        f"formal operation requires a clean worktree: {unexpected}",
+    )
     return git_output("rev-parse", "HEAD")
 
 
@@ -271,6 +320,87 @@ def merge_hash_maps(*maps: Mapping[str, str]) -> dict[str, str]:
     return dict(sorted(result.items()))
 
 
+def local_arsc_imports(path: Path) -> set[str]:
+    """Return local package files imported by one Python source file."""
+
+    source = path.read_text(encoding="utf-8")
+    tree = ast.parse(source, filename=relative(path))
+    dependencies: set[str] = set()
+    uses_package = False
+    for node in ast.walk(tree):
+        module_names: list[str] = []
+        if isinstance(node, ast.ImportFrom) and node.module:
+            module_names.append(node.module)
+        elif isinstance(node, ast.Import):
+            module_names.extend(alias.name for alias in node.names)
+        for module_name in module_names:
+            if module_name == "arsc_eval":
+                uses_package = True
+            elif module_name.startswith("arsc_eval."):
+                uses_package = True
+                first = module_name.split(".")[1]
+                candidate = PROJECT_ROOT / "src" / "arsc_eval" / f"{first}.py"
+                require(
+                    candidate.is_file(),
+                    f"unresolved local import {module_name} in {relative(path)}",
+                )
+                dependencies.add(relative(candidate))
+    if uses_package:
+        dependencies.add("src/arsc_eval/__init__.py")
+    return dependencies
+
+
+def implementation_dependency_closure() -> tuple[tuple[str, ...], dict[str, list[str]]]:
+    """Recursively close every local import reachable from Python roots."""
+
+    pending = list(IMPLEMENTATION_ROOT_FILES)
+    closure = set(IMPLEMENTATION_ROOT_FILES)
+    imports: dict[str, list[str]] = {}
+    while pending:
+        path_text = pending.pop()
+        path = PROJECT_ROOT / path_text
+        require(path.is_file(), f"implementation file missing: {path_text}")
+        if path.suffix != ".py":
+            continue
+        dependencies = local_arsc_imports(path)
+        imports[path_text] = sorted(dependencies)
+        for dependency in dependencies:
+            if dependency not in closure:
+                closure.add(dependency)
+                pending.append(dependency)
+    return tuple(sorted(closure)), dict(sorted(imports.items()))
+
+
+def all_output_paths() -> list[str]:
+    output_root = PROJECT_ROOT / "outputs"
+    return [
+        relative(path)
+        for path in output_root.rglob("*")
+        if path.is_file() or path.is_dir()
+    ]
+
+
+def require_no_unexpected_round10_artifacts(
+    allow_formal_log: bool = False,
+) -> None:
+    allowed = list(BASE_ALLOWED_ROUND10_OUTPUTS)
+    if allow_formal_log:
+        allowed.append(relative(LOG_PATH))
+    forbidden = unexpected_round10_output_paths(
+        all_output_paths(),
+        allowed_exact=allowed,
+        allowed_prefixes=BASE_ALLOWED_ROUND10_PREFIXES,
+    )
+    require(
+        not forbidden,
+        f"unexpected Round 10 output artifacts exist: {forbidden}",
+    )
+    if allow_formal_log:
+        require(LOG_PATH.is_file(), "tmux formal log sentinel is absent")
+    else:
+        require(not LOG_PATH.exists(), "formal log already exists")
+
+
 def validate_authorization() -> dict[str, Any]:
     require(
         sha256_file(AUTHORIZATION_PATH) == IMPLEMENTATION_AUTHORIZATION_SHA256,
@@ -293,6 +423,22 @@ def validate_authorization() -> dict[str, Any]:
     verify_hash_map(decision["frozen_config_sha256"])
     verify_hash_map(decision["frozen_checkpoint_sha256"])
     verify_hash_map(decision["frozen_calibration_sha256"])
+    require(
+        sha256_file(REPAIR_AUTHORIZATION_PATH) == REPAIR_AUTHORIZATION_SHA256,
+        "preformal STOP repair authorization hash differs",
+    )
+    require(
+        sha256_file(REPAIR_MEMO_PATH) == REPAIR_MEMO_SHA256,
+        "preformal STOP memo hash differs",
+    )
+    repair = read_json(REPAIR_AUTHORIZATION_PATH)
+    require(
+        repair["verdict"]["decision"]
+        == "STOP_REPAIR_ROUND10_FORMAL_IMPLEMENTATION"
+        and repair["verdict"]["formal_run_authorized"] is False
+        and repair["verdict"]["requires_new_implementation_commit"] is True,
+        "preformal STOP repair scope differs",
+    )
     return decision
 
 
@@ -409,6 +555,7 @@ def run_tests() -> dict[str, Any]:
 def preflight_only() -> int:
     validate_grid()
     validate_atomic_output_layout(STAGING_DIR, FINAL_DIR, LOG_PATH, ARTIFACT_INDEX_PATH)
+    require_no_unexpected_round10_artifacts(allow_formal_log=False)
     require_paths_absent(
         (
             PREFLIGHT_PATH,
@@ -430,22 +577,36 @@ def preflight_only() -> int:
     tests = run_tests()
     require_clean_worktree()
 
+    implementation_files, dependency_graph = implementation_dependency_closure()
     implementation_hashes = {
-        path: sha256_file(PROJECT_ROOT / path) for path in IMPLEMENTATION_FILES
+        path: sha256_file(PROJECT_ROOT / path) for path in implementation_files
+    }
+    repair_authorization = read_json(REPAIR_AUTHORIZATION_PATH)
+    preserved_repair_bindings = {
+        path: digest
+        for path, digest in repair_authorization[
+            "reviewed_files_sha256"
+        ].items()
+        if path not in implementation_hashes
     }
     review_targets = merge_hash_maps(
         authorization["reviewed_files_sha256"],
         authorization["frozen_config_sha256"],
         authorization["frozen_checkpoint_sha256"],
         authorization["frozen_calibration_sha256"],
+        preserved_repair_bindings,
         implementation_hashes,
         {
             relative(AUTHORIZATION_PATH): IMPLEMENTATION_AUTHORIZATION_SHA256,
+            relative(REPAIR_AUTHORIZATION_PATH): REPAIR_AUTHORIZATION_SHA256,
+            relative(REPAIR_MEMO_PATH): REPAIR_MEMO_SHA256,
             "data/processed/test.jsonl": EXPECTED_TEST_MANIFEST_SHA256,
         },
     )
     manifest = {
-        "schema_version": "ARSC_ROUND10_FORMAL_IMPLEMENTATION_MANIFEST_V1",
+        "schema_version": (
+            "ARSC_ROUND10_FORMAL_IMPLEMENTATION_MANIFEST_AMENDMENT01_V1"
+        ),
         "generated_at_utc": utc_now(),
         "outcome_blind": True,
         "formal_run": False,
@@ -455,9 +616,16 @@ def preflight_only() -> int:
         "round10_nonzero_severity_metric_outcomes_read_or_computed": False,
         "implementation_commit": implementation_commit,
         "authorization": {
-            "path": relative(AUTHORIZATION_PATH),
-            "sha256": IMPLEMENTATION_AUTHORIZATION_SHA256,
-            "scope": "OUTCOME_BLIND_FORMAL_IMPLEMENTATION_ONLY",
+            "implementation_only": {
+                "path": relative(AUTHORIZATION_PATH),
+                "sha256": IMPLEMENTATION_AUTHORIZATION_SHA256,
+                "scope": "OUTCOME_BLIND_FORMAL_IMPLEMENTATION_ONLY",
+            },
+            "repair_stop": {
+                "path": relative(REPAIR_AUTHORIZATION_PATH),
+                "sha256": REPAIR_AUTHORIZATION_SHA256,
+                "decision": "STOP_REPAIR_ROUND10_FORMAL_IMPLEMENTATION",
+            },
         },
         "frozen_design": {
             "seeds": list(SEEDS),
@@ -476,6 +644,16 @@ def preflight_only() -> int:
             "numpy_quantile_method": "linear",
         },
         "implementation_files_sha256": dict(sorted(implementation_hashes.items())),
+        "local_dependency_closure": {
+            "root_files": list(IMPLEMENTATION_ROOT_FILES),
+            "closed_file_count": len(implementation_files),
+            "dependency_graph": dependency_graph,
+            "package_init_bound": "src/arsc_eval/__init__.py"
+            in implementation_hashes,
+            "graded_response_oracle_bound": (
+                "src/arsc_eval/graded_response.py" in implementation_hashes
+            ),
+        },
         "preformal_review_targets_sha256": review_targets,
         "required_preformal_go": {
             "path": relative(GO_PATH),
@@ -493,6 +671,8 @@ def preflight_only() -> int:
             "restart_or_cache_reuse_allowed": False,
             "interrupted_staging_is_inconclusive_and_blocks_rerun": True,
             "result_json_written_last_before_atomic_directory_rename": True,
+            "unknown_round10_output_allowlist_guard": True,
+            "direct_analyzer_requires_existing_tmux_log_sentinel": True,
         },
         "formal_artifact_schemas": {
             "seed_logits": "ARSC_ROUND10_SEED_LOGITS_V1",
@@ -505,9 +685,9 @@ def preflight_only() -> int:
     manifest_payload = json_bytes(manifest)
     manifest_sha256 = hashlib.sha256(manifest_payload).hexdigest().upper()
     preflight = {
-        "schema_version": "ARSC_ROUND10_FORMAL_PREFLIGHT_V1",
+        "schema_version": "ARSC_ROUND10_FORMAL_PREFLIGHT_AMENDMENT01_V1",
         "generated_at_utc": utc_now(),
-        "status": "PASS_OUTCOME_BLIND_IMPLEMENTATION_PREFLIGHT",
+        "status": "PASS_OUTCOME_BLIND_IMPLEMENTATION_PREFLIGHT_AMENDMENT01",
         "outcome_blind": True,
         "formal_run": False,
         "checkpoint_tensors_loaded": False,
@@ -520,13 +700,22 @@ def preflight_only() -> int:
             "sha256": manifest_sha256,
         },
         "authorization_sha256": IMPLEMENTATION_AUTHORIZATION_SHA256,
+        "repair_authorization_sha256": REPAIR_AUTHORIZATION_SHA256,
         "dataset": dataset,
         "configs": configs,
         "tests": tests,
         "review_target_count_before_manifest_and_preflight": len(review_targets),
         "formal_artifacts_absent": True,
         "preformal_go_absent": True,
-        "next_gate": "INDEPENDENT_OUTCOME_BLIND_PREFORMAL_IMPLEMENTATION_AUDIT",
+        "closed_stop_defects": [
+            "R10_PREFORMAL_B1",
+            "R10_PREFORMAL_B2",
+            "R10_PREFORMAL_B3",
+            "R10_PREFORMAL_B4",
+        ],
+        "next_gate": (
+            "INDEPENDENT_OUTCOME_BLIND_PREFORMAL_IMPLEMENTATION_REREVIEW"
+        ),
     }
     manifest_tmp = MANIFEST_PATH.with_name(MANIFEST_PATH.name + ".tmp")
     preflight_tmp = PREFLIGHT_PATH.with_name(PREFLIGHT_PATH.name + ".tmp")
@@ -550,21 +739,31 @@ def preflight_only() -> int:
     return 0
 
 
-def validate_formal_authorization() -> tuple[dict[str, Any], dict[str, Any]]:
-    require_clean_worktree()
+def validate_formal_authorization(
+    *,
+    allow_formal_log: bool,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    require_clean_worktree(
+        (relative(LOG_PATH),) if allow_formal_log else (),
+    )
     validate_atomic_output_layout(STAGING_DIR, FINAL_DIR, LOG_PATH, ARTIFACT_INDEX_PATH)
+    require_no_unexpected_round10_artifacts(
+        allow_formal_log=allow_formal_log,
+    )
     require_paths_absent((STAGING_DIR, FINAL_DIR, ARTIFACT_INDEX_PATH))
     authorization = validate_authorization()
     manifest = read_json(MANIFEST_PATH)
     preflight = read_json(PREFLIGHT_PATH)
     require(
-        manifest["schema_version"] == "ARSC_ROUND10_FORMAL_IMPLEMENTATION_MANIFEST_V1"
+        manifest["schema_version"]
+        == "ARSC_ROUND10_FORMAL_IMPLEMENTATION_MANIFEST_AMENDMENT01_V1"
         and manifest["outcome_blind"] is True
         and manifest["formal_run"] is False,
         "implementation manifest differs",
     )
     require(
-        preflight["status"] == "PASS_OUTCOME_BLIND_IMPLEMENTATION_PREFLIGHT"
+        preflight["status"]
+        == "PASS_OUTCOME_BLIND_IMPLEMENTATION_PREFLIGHT_AMENDMENT01"
         and preflight["outcome_blind"] is True
         and preflight["formal_run"] is False,
         "formal preflight differs",
@@ -1101,8 +1300,15 @@ def evaluate_gates(
     return result, bootstrap_rows
 
 
-def formal_run(device: str) -> int:
-    manifest, validation = validate_formal_authorization()
+def formal_run(device: str, tmux_session: str | None) -> int:
+    require(
+        tmux_session == "arsc_round10_formal"
+        and os.environ.get("ARSC_ROUND10_LAUNCHED_BY_TMUX") == "1",
+        "formal analyzer requires the frozen tmux launcher contract",
+    )
+    manifest, validation = validate_formal_authorization(
+        allow_formal_log=True,
+    )
     STAGING_DIR.mkdir(parents=False, exist_ok=False)
     print(
         f"[round10] formal attempt01 authorized; implementation={manifest['implementation_commit']}",
@@ -1199,7 +1405,8 @@ def formal_run(device: str) -> int:
             else "ROUND10_PARTIAL_OR_FAIL"
         ),
         "artifact_sha256_before_result_json": {
-            relative(path): sha256_file(path) for path in produced
+            relative(FINAL_DIR / path.name): sha256_file(path)
+            for path in produced
         },
         "serialization": {
             "raw_logits_float_dtype": "float32_lossless_npz",
@@ -1224,6 +1431,26 @@ def formal_run(device: str) -> int:
     return 0
 
 
+def guard_only() -> int:
+    manifest, _ = validate_formal_authorization(
+        allow_formal_log=False,
+    )
+    print(
+        json.dumps(
+            {
+                "status": "PASS_FORMAL_PRESTART_GUARD",
+                "implementation_commit": manifest["implementation_commit"],
+                "formal_run": False,
+                "formal_log_absent": True,
+                "unknown_round10_artifacts_absent": True,
+            },
+            indent=2,
+        ),
+        flush=True,
+    )
+    return 0
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -1231,15 +1458,28 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="perform the outcome-blind implementation preflight only",
     )
+    parser.add_argument(
+        "--guard-only",
+        action="store_true",
+        help="validate the committed GO and exhaustive prestart guard",
+    )
+    parser.add_argument("--tmux-session")
     parser.add_argument("--device", default="auto")
-    return parser.parse_args()
+    args = parser.parse_args()
+    require(
+        not (args.preflight_only and args.guard_only),
+        "preflight-only and guard-only are mutually exclusive",
+    )
+    return args
 
 
 def main() -> int:
     args = parse_args()
     if args.preflight_only:
         return preflight_only()
-    return formal_run(args.device)
+    if args.guard_only:
+        return guard_only()
+    return formal_run(args.device, args.tmux_session)
 
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Any
@@ -9,6 +10,31 @@ from typing import Any
 
 GO_SCHEMA = "ARSC_ROUND10_PREFORMAL_REVIEWER_DECISION_V1"
 GO_DECISION = "GO_ROUND10_FORMAL_RUN_ATTEMPT01"
+EXPECTED_REVIEW_MODE = {
+    "outcome_blind": True,
+    "checkpoint_tensors_loaded": False,
+    "model_constructed_or_loaded": False,
+    "model_inference_run": False,
+    "round10_nonzero_severity_predictions_read_or_computed": False,
+    "round10_nonzero_severity_logits_read_or_computed": False,
+    "round10_nonzero_severity_confidences_read_or_computed": False,
+    "round10_nonzero_severity_metric_outcomes_read_or_computed": False,
+    "formal_run_started": False,
+    "formal_implementation_modified": False,
+}
+REQUIRED_FORMAL_ARTIFACT_NAMES = (
+    "seed_43_logits.npz",
+    "seed_44_logits.npz",
+    "seed_45_logits.npz",
+    "seed_46_logits.npz",
+    "seed_47_logits.npz",
+    "round10_corruption_primitives.npz",
+    "round10_corruption_point_diagnostics.csv",
+    "round10_corruption_bootstrap_draws.npz",
+    "round10_corruption_bootstrap_summary.csv",
+    "round10_corruption_results.json",
+)
+PRE_RESULT_ARTIFACT_NAMES = REQUIRED_FORMAL_ARTIFACT_NAMES[:-1]
 
 
 def require(condition: bool, message: str) -> None:
@@ -23,14 +49,15 @@ def validate_preformal_go(
 ) -> None:
     require(decision["schema_version"] == GO_SCHEMA, "wrong GO schema")
     review = decision["review_mode"]
-    require(review["outcome_blind"] is True, "GO review was not outcome blind")
-    for name in (
-        "checkpoint_tensors_loaded",
-        "model_inference_run",
-        "round10_nonzero_severity_predictions_read_or_computed",
-        "round10_nonzero_severity_metric_outcomes_read_or_computed",
-    ):
-        require(review[name] is False, f"GO review mode differs: {name}")
+    require(
+        set(review) == set(EXPECTED_REVIEW_MODE),
+        "GO review_mode field set differs",
+    )
+    for name, expected in EXPECTED_REVIEW_MODE.items():
+        require(
+            type(review[name]) is bool and review[name] is expected,
+            f"GO review mode differs: {name}",
+        )
     verdict = decision["verdict"]
     require(
         verdict["decision"] == GO_DECISION,
@@ -88,3 +115,87 @@ def validate_atomic_output_layout(
         "attempt01" in final_dir.name,
         "final directory must identify attempt01",
     )
+
+
+def unexpected_round10_output_paths(
+    paths: Sequence[str],
+    allowed_exact: Sequence[str],
+    allowed_prefixes: Sequence[str],
+) -> list[str]:
+    """Return every unknown Round 10 path under outputs.
+
+    A strict allowlist is safer here than trying to predict every possible
+    cache, temporary, staging, or run-artifact spelling.
+    """
+
+    exact = {
+        str(Path(path)).replace("\\", "/").rstrip("/")
+        for path in allowed_exact
+    }
+    prefix_roots = tuple(
+        str(Path(path)).replace("\\", "/").rstrip("/")
+        for path in allowed_prefixes
+    )
+    unexpected = set()
+    for raw_path in paths:
+        path = str(Path(raw_path)).replace("\\", "/").rstrip("/")
+        lowered = path.lower()
+        if not lowered.startswith("outputs/") or "round10" not in lowered:
+            continue
+        if path in exact or any(
+            path == prefix or path.startswith(prefix + "/")
+            for prefix in prefix_roots
+        ):
+            continue
+        unexpected.add(path)
+    return sorted(unexpected)
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(8 * 1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest().upper()
+
+
+def validate_formal_artifacts(
+    final_dir: Path,
+    project_root: Path,
+    result: Mapping[str, Any],
+) -> dict[str, str]:
+    """Validate the exact final file set and the nine internal hashes."""
+
+    require(final_dir.is_dir(), "formal final directory is absent")
+    relative_entries = sorted(
+        path.relative_to(final_dir).as_posix()
+        for path in final_dir.rglob("*")
+    )
+    require(
+        relative_entries == sorted(REQUIRED_FORMAL_ARTIFACT_NAMES),
+        "formal artifact path set differs",
+    )
+    internal = result["artifact_sha256_before_result_json"]
+    expected_paths = {
+        (final_dir / name).relative_to(project_root).as_posix()
+        for name in PRE_RESULT_ARTIFACT_NAMES
+    }
+    require(
+        set(internal) == expected_paths,
+        "result internal artifact path set differs",
+    )
+    observed = {
+        (final_dir / name).relative_to(project_root).as_posix(): sha256_file(
+            final_dir / name
+        )
+        for name in PRE_RESULT_ARTIFACT_NAMES
+    }
+    require(
+        all(
+            type(internal[path]) is str
+            and internal[path].upper() == digest
+            for path, digest in observed.items()
+        ),
+        "result internal artifact hash differs",
+    )
+    return observed

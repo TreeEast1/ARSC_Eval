@@ -5,12 +5,16 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROJECT_ROOT / "src"))
+
+from arsc_eval.round10_formal_contract import validate_formal_artifacts
 FINAL_DIR = (
     PROJECT_ROOT
     / "outputs"
@@ -80,8 +84,8 @@ def main() -> int:
         and result["attempt"] == "attempt01",
         "formal result completion contract differs",
     )
+    validate_formal_artifacts(FINAL_DIR, PROJECT_ROOT, result)
     files = sorted(path for path in FINAL_DIR.rglob("*") if path.is_file())
-    require(len(files) == 10, f"formal artifact file count differs: {len(files)}")
     bindings = {
         relative(path): {
             "sha256": sha256_file(path),
