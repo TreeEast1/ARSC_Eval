@@ -1,0 +1,261 @@
+{
+  "schema_version": "ARSC_ROUND10_PREREGISTER_REVIEWER_DECISION_AMENDMENT01_V1",
+  "generated_at_utc": "2026-07-31T05:44:17Z",
+  "reviewer_role": "independent_outcome_blind_amendment_and_preflight_reviewer",
+  "study": "BDD-OIA Round 10 corruption dose-response construct validation",
+  "reviewed_snapshot": {
+    "commit": "2f08aedbd1ffa4508a1a0bc1666e8333ce705e4e",
+    "tree": "e36730b216a7a0dc13596ea25eaef9a3804b95ff",
+    "preflight_base_commit": "a53cc0326e6ed21197630097d92e9f0bef78fbe8",
+    "main_and_origin_main_equal_at_review_start": true,
+    "later_readme_only_changes_excluded": true,
+    "target_commit_change_scope": [
+      "outputs/validity/round10_corruption_preflight_attempt02.json",
+      "outputs/validity/round10_corruption_preflight_attempt02_tests.log"
+    ],
+    "complete_preoutcome_interpretation": "All Round 10 code, protocol, semantic-audit, review, and preflight artifacts are committed in the reviewed tree. Dataset JPEG and checkpoint bytes are external to Git but are individually or inventory-SHA256 bound by attempt02."
+  },
+  "review_mode": {
+    "outcome_blind": true,
+    "checkpoint_tensors_loaded": false,
+    "model_constructed_or_loaded": false,
+    "model_inference_run": false,
+    "round10_nonzero_severity_predictions_read_or_computed": false,
+    "round10_nonzero_severity_logits_read_or_computed": false,
+    "round10_nonzero_severity_confidences_read_or_computed": false,
+    "round10_nonzero_severity_metric_outcomes_read_or_computed": false,
+    "formal_analyzer_written_started_or_reviewed": false,
+    "existing_round10_files_modified": false
+  },
+  "verdict": {
+    "decision": "AUTHORIZE_OUTCOME_BLIND_FORMAL_IMPLEMENTATION_ONLY",
+    "formal_implementation_authorized": true,
+    "formal_run_authorized": false,
+    "model_loading_authorized": false,
+    "real_inference_authorized": false,
+    "nonzero_severity_prediction_cache_authorized": false,
+    "requires_separate_independent_preformal_audit": true,
+    "requires_later_separate_formal_run_go": true
+  },
+  "stop01_blocker_resolution": [
+    {
+      "id": "R10_STOP01_B1",
+      "title": "Practical endpoint threshold statistical level",
+      "status": "CLOSED",
+      "basis": "Every per-seed component endpoint effect is retained; the unweighted arithmetic mean over seeds 43-47 alone is compared with the fixed threshold using unrounded float64 >=. Endpoint bootstrap intervals are descriptive and do not enter the practical gate."
+    },
+    {
+      "id": "R10_STOP01_B2",
+      "title": "Unbound executable noise dependency",
+      "status": "CLOSED",
+      "basis": "corruption_dose_response_v2.py is self-contained and has zero local ARSC imports. Independent 100-image level-2 noise replay was pixel-exact against a separately written filename-SHA256/PCG implementation."
+    },
+    {
+      "id": "R10_STOP01_B3",
+      "title": "Bootstrap quantile and numerical edge-case freedom",
+      "status": "CLOSED",
+      "basis": "The replicate family-axis mean-bottleneck statistic, one shared seed draw, one shared 3904-clip draw, duplicate retention, expanded weighting, 5000 replicates, method='linear' quantiles, alpha/12 lower bound, strict-zero rules, nonfinite failure rules, and mandatory raw arrays are frozen."
+    },
+    {
+      "id": "R10_STOP01_B4",
+      "title": "Semantic label evidence and immutable provenance",
+      "status": "CLOSED",
+      "basis": "Immutable raw and reviewed manifests, a full-vector/name sidecar, 30 labelled pages, exact row-key/page-map/sidecar/build bindings, strict JSON booleans, override rejection rules, and a raw-to-reviewed hash transition are present and independently replayed."
+    },
+    {
+      "id": "R10_STOP01_B5",
+      "title": "Preflight structural recomputation and negative validation",
+      "status": "CLOSED",
+      "basis": "Attempt02 recomputes the seeded sample, filename/label mapping, complete 1200-key grid, 12x100 strata, parameters, decisions, page hashes, transition, data inventory, input hashes, and forbidden artifacts. Amendment mutation and negative tests pass."
+    }
+  ],
+  "independent_replay": {
+    "recorded_file_binding_replay": {
+      "status": "PASS",
+      "total_file_bindings": 54,
+      "bound_code_protocol_audit_review_files": 18,
+      "preserved_stop01_files": 11,
+      "configs": 5,
+      "checkpoints": 10,
+      "calibrations": 10,
+      "sha256_and_byte_sizes_exact": true
+    },
+    "dataset": {
+      "status": "PASS",
+      "manifest_rows": 4557,
+      "unique_filenames": 4557,
+      "source_clip_count": 3904,
+      "source_image_total_bytes": 159486737,
+      "manifest_sha256": "89364A265FE4C2EDCA5125D34C4C25D47C96AFB46A5C4A8FE86B649785539004",
+      "ordered_source_image_inventory_sha256": "8034D044D55973917D0719A1CC829EEA002582420D6F7E05BB18F9AFF8894901"
+    },
+    "operator": {
+      "status": "PASS",
+      "local_arsc_dependencies": 0,
+      "sample_images_replayed": 100,
+      "level_zero_exact": true,
+      "level_four_repeat_exact": true,
+      "level_two_noise_pixel_exact_count": 100,
+      "aggregate_distances_exact_to_build_summary": true,
+      "aggregate_distances_nondecreasing": true
+    },
+    "semantic_audit": {
+      "status": "PASS",
+      "sample_seed": 20260810,
+      "sample_images": 100,
+      "pairs": 1200,
+      "unique_row_keys": 1200,
+      "strata": 12,
+      "rows_per_stratum": 100,
+      "label_sidecar_vectors_and_names_exact": true,
+      "raw_manifest_blank_and_immutable": true,
+      "reviewed_manifest_transition_exact": true,
+      "page_hashes_exact": 30,
+      "all_30_labelled_pages_independently_viewed": true,
+      "visual_semantic_counterexamples_observed": 0,
+      "labels_rate_each_stratum": 1.0,
+      "scene_rate_each_stratum": 1.0,
+      "joint_rate_each_stratum": 1.0,
+      "selected_indices_array_sha256": "510DD4B56FC25E2AEE79ED9F34E12722254E163F200DE423F7FD9D7F90E8523E",
+      "row_key_sha256": "5896BE2225E37C4A0A936C9CC086699D20CDA91498D8E52B703AF690BB2679CD",
+      "labelled_page_map_sha256": "F91AE2704162718F075F639A205EE65E3BC0CF61977193D4F564E17DCBBD2458"
+    },
+    "tests": {
+      "committed_log_status": "PASS",
+      "committed_log_result": "75 passed in 16.36s",
+      "committed_log_sha256": "E41F700BDCB46BF359DB3C2D18C66F6E38F70D8F1650B5B7640152E4E1ADDD24",
+      "independent_rerun_status": "PASS",
+      "independent_rerun_result": "75 passed in 16.42s",
+      "independent_rerun_cache_provider_disabled": true,
+      "independent_rerun_python_bytecode_disabled": true,
+      "total_repository_tests": 75,
+      "new_amendment_test_functions": 8,
+      "interpretation": "The suite contains 75 total repository tests; it is not described as 75 negative tests. The eight amendment test functions contain multiple positive and negative cases."
+    }
+  },
+  "bootstrap_contract_assessment": {
+    "status": "IMPLEMENTABLE_AND_UNAMBIGUOUS",
+    "replicates": 5000,
+    "rng": "numpy.random.default_rng(20260810)",
+    "shared_seed_draw_size": 5,
+    "shared_clip_draw_size": 3904,
+    "gate_draw_shape": [
+      5000,
+      12
+    ],
+    "bonferroni_fixed_gate_count": 12,
+    "bonferroni_one_sided_quantile": 0.004166666666666667,
+    "quantile_method": "linear",
+    "lower_bound_pass_operator": "unrounded float64 > 0.0",
+    "endpoint_bootstrap_affects_practical_gate": false,
+    "formal_implementation_must_be_verified_later": true
+  },
+  "formal_artifact_absence": {
+    "status": "PASS_IN_REVIEWED_COMMIT",
+    "formal_analyzer_absent": true,
+    "formal_launcher_absent": true,
+    "formal_results_absent": true,
+    "formal_primitives_absent": true,
+    "formal_bootstrap_draws_absent": true,
+    "formal_point_diagnostics_absent": true,
+    "formal_log_absent": true,
+    "prediction_cache_absent": true,
+    "implementation_manifest_absent": true,
+    "run_manifest_absent": true,
+    "staging_and_temporary_artifacts_absent": true
+  },
+  "next_gate": {
+    "name": "INDEPENDENT_PREFORMAL_IMPLEMENTATION_AUDIT",
+    "before_this_gate": [
+      "Implementation may be written only without model loading, real inference, or nonzero-severity outputs.",
+      "Add synthetic and fixture tests and an atomic one-shot launcher policy.",
+      "Hash-bind every direct and transitive model, data, metric, tie-AURC, calibration, clip-grouping, bootstrap, serialization, and launcher dependency.",
+      "Preserve all current protocol, STOP01, amendment01, semantic, preflight, memo, and decision artifacts."
+    ],
+    "audit_must_verify": [
+      "Exact operator-before-resize image pipeline and frozen models, checkpoints, thresholds, and clean-validation temperatures.",
+      "Exact per-component metrics, family-axis-seed bottlenecks, five-seed means, practical gates, reversal rules, 4-of-5 seed rules, and all 12 gates.",
+      "One shared seed and clip draw per replicate and preservation of every mandatory raw array and quantile diagnostic.",
+      "Atomic one-shot output behavior and refusal when any formal, cache, staging, temporary, or run artifact already exists.",
+      "No real checkpoint load or inference occurred during implementation or the preformal audit."
+    ],
+    "formal_run_go_may_be_issued_by_this_decision": false
+  },
+  "claim_boundaries": {
+    "future_full_pass_supports": "Only BDD-OIA-internal joint metric-by-model-by-operator dose-response under the frozen 4557-image population, five historical ResNet-50 seeds, fixed threshold/calibration, three synthetic grids, and preregistered source-clip and seed resampling.",
+    "does_not_support": [
+      "natural corruption prevalence or a natural severity scale",
+      "darkening, motion blur, optical defocus, real sensor noise, or weather-domain validity",
+      "other datasets, architectures, training protocols, seeds, thresholds, or metrics",
+      "real-road robustness or safety guarantees",
+      "rationale grounding or faithfulness",
+      "CEG or causal evidence",
+      "calibration validity",
+      "validity for every rationale ontology class",
+      "a population 95 percent semantic-preservation guarantee from the single-reviewer 100-image audit",
+      "mathematically necessary monotonicity or globally universal ARSC metric validity"
+    ],
+    "failure_interpretation": "A failed gate means the preregistered construct-response is unsupported for the current metric-by-model-by-operator-by-BDD-OIA setting. It does not by itself invalidate the metric globally and may not trigger severity, family, seed, threshold, or subset replacement."
+  },
+  "memo": {
+    "path": "outputs/research_review_memo_round10_preregister_amendment01.md",
+    "sha256": "3C73A37A2DFEFC725367473BC08220C4DE8DFBB7C14EE6DF9822E24FF07D3DC8"
+  },
+  "reviewed_files_sha256": {
+    "outputs/validity/round10_corruption_dose_response_protocol.json": "E3F54B24A50D847636FA644355BF78DB1AB2432CF74543E8AEF11A005D17029D",
+    "outputs/validity/round10_corruption_dose_response_protocol_amendment01.json": "220D36BEB76CAFDE5BCC3528B49F737E6681A43FF2ECA9A3C22531A1FF88644B",
+    "outputs/research_review_memo_round10_preregister.md": "EDFEBE3A65E28855724ED7E0915FE501BFA5FCDD4BAE2831C2FFE2C22320BB58",
+    "outputs/validity/round10_preregister_reviewer_decision.json": "9B572FAFF4B46DCF31A034D64962C7E7304C1E3CC26342CA85F2C35E80889FDB",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/build_summary.json": "A91329D38F41C6F16435F32A7A32BA0FDB6FD8AF36FE25621B11A09FDE281423",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/raw_manifest.csv": "3746450D250194963A3CD14AB32E2D7A359772189F3FA63E22543F41E92D304D",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/label_sidecar.jsonl": "3A7C973A7DECE98E110D7A444FB61AEC36FA822C41C46CD8951D578BF114203D",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/review_decision.json": "CF34840FC50D086054BB0857863FD1170E2BC1C4C958F904B13B6AD0CAF6BDBE",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/reviewed_manifest.csv": "94D30755D6E8BD48288ACF9690C828F201B41E3863349D5A2143D65AE15C7CF8",
+    "outputs/validity/round10_corruption_semantic_audit_amendment01/audit_summary.json": "190A99CAC71416D48A6A0E095DED5B83B6AE6E11CAF5F1A46402BCAFE6D627EA",
+    "scripts/build_round10_semantic_audit_amendment01.py": "34D4D7E577E450377649AAC38D9856424ED1E93F9FA9052EEDF5E5A58205A455",
+    "scripts/summarize_round10_semantic_audit_amendment01.py": "383AB2298C426220EE8EDA3700A5C8B481320AE95280B2E41F51B8775D97E3C0",
+    "scripts/preflight_round10_corruption_attempt02.py": "D7F8DADFE1AC046F493107AB9E0F5897F6915EE4C02FC6BB3B105E3B325A0890",
+    "src/arsc_eval/corruption_dose_response_v2.py": "58CF72A2E9247AB7725B14B79FEBCCBBFC739B757E7AE0C12E472551536C51D2",
+    "src/arsc_eval/round10_protocol_validation.py": "1ED3F180FAD5735A7369AA7B0CBF9853D343C7FFB62B85C8721A6F4063DA0041",
+    "tests/test_round10_protocol_validation.py": "DAFE8C81EDCBF2597BA2E0A433220B5B0A86DE2B3264E9A02D0CB00FBCE1DEF8",
+    "requirements.txt": "908A857C5FBD2CF35FC2F0ADC3B18DAC0148BD9D833BF474C4BE38755365D4B2",
+    "requirements-dev.txt": "A76BE8C00EEB2B8CCE49CD4BC9F516B56AD9F2ABC094811FBB066941C25A2A8C",
+    "outputs/validity/round10_corruption_preflight_attempt02.json": "22B6FBA3F2BEF4BFA4FA64F665E30A1499BD343F097F9CAD62DC394F260B9863",
+    "outputs/validity/round10_corruption_preflight_attempt02_tests.log": "E41F700BDCB46BF359DB3C2D18C66F6E38F70D8F1650B5B7640152E4E1ADDD24",
+    "src/arsc_eval/data.py": "B46F21C217240CF23D017310D35D44E414B75BC2A9CE568EE42E86521D372004",
+    "src/arsc_eval/constants.py": "AE8E25AABCFD089452FABD2ABCFC0D57098A24E92AF7FAFEC1D32C77A9782C11",
+    "src/arsc_eval/utils.py": "D948ACD317AA057C46F13390F930F5A3C0791AF2E61791644D63E88D7DA97217",
+    "outputs/validity/round9_postresult_reviewer_decision.json": "7D362D283493440A2365149BADE802F6CA3B56FCED9824A7B5A5056571F387B3"
+  },
+  "frozen_config_sha256": {
+    "configs/rq1_seed43.yaml": "42BE7599C09D17654868DB260E203D4DE7EA0D1FDA49A5C36B6BA3DF7750E55E",
+    "configs/rq1_seed44.yaml": "5B3E3D2B215D4D56B4C4EE70C23428ABF2D4A06E8871CE342E7518CEF44EDB81",
+    "configs/rq1_seed45.yaml": "AAE752920D5E9F262343B5C0921C3C5C6B0C0EBA1C3A543B68911D7B7DE2B2EB",
+    "configs/rq1_seed46.yaml": "9B605AC4AE5C2D4F0C841DA587CA8B6346AF2BD33857B29281AC6ECFABDFCF50",
+    "configs/rq1_seed47.yaml": "5649D9F85392E1CBD52411DCDB7ED3EF079CDB0F7682AD13EB7578B11F032A5E"
+  },
+  "frozen_checkpoint_sha256": {
+    "checkpoints/validity/rq1_seed_43/action_only_best_action.pt": "AEA84F2E465B23B776AA04EC25DC62F51C3830FE6B2B05D92B9DB546A1DA884B",
+    "checkpoints/validity/rq1_seed_43/joint_best_action.pt": "3984528C3F54A83216CEBE7690D711B2E96EABF75692FA56AD43012D40A0E343",
+    "checkpoints/validity/rq1_seed_44/action_only_best_action.pt": "4DDCDDCE39D91DB4C6EFB7E053C23A8C67A4FAEBAB38DDCA4FE4C89018DF8EC7",
+    "checkpoints/validity/rq1_seed_44/joint_best_action.pt": "B08CD6CA02252B44F7833D730761A521C90C7D8A8C331235EEB906E3C4EF60BA",
+    "checkpoints/validity/rq1_seed_45/action_only_best_action.pt": "3873122D368C8A1D58F38180398357FCD998B8C7F8F117070C3EE58B12B06786",
+    "checkpoints/validity/rq1_seed_45/joint_best_action.pt": "248626129D281D869E611E04CF4E3DF280E2F43F26B8101F635CB88946059816",
+    "checkpoints/validity/rq1_seed_46/action_only_best_action.pt": "7138F145CEFEFDAD55762399B6DAD469BD175B39508FD8B8923234262D566D39",
+    "checkpoints/validity/rq1_seed_46/joint_best_action.pt": "41710D04C236DC013FE88408884C9BCD536C1765F210D0F4BA57A88C6E004824",
+    "checkpoints/validity/rq1_seed_47/action_only_best_action.pt": "BF85C5E2594D6E4AAC8A20E1EDA40AF9BFB5D82C54609D3E424A586038C1A3F1",
+    "checkpoints/validity/rq1_seed_47/joint_best_action.pt": "FDDCFAB53689162E9951158750180A7765EE283FEDCED723332758E34ECA2810"
+  },
+  "frozen_calibration_sha256": {
+    "outputs/validity/rq1_seed_43/calibration_action_only.json": "42BED1E43902103AB37864FFA7F48CDD2516C59205FE810AB461511095AA7AD0",
+    "outputs/validity/rq1_seed_43/calibration_joint.json": "A8A9AD227BAB110778E3D49F8BA78BAB21500FD3ECAEE7280763C6AF25CC137F",
+    "outputs/validity/rq1_seed_44/calibration_action_only.json": "F670A6EE78230DE9856DA3BFEDA16DF59C8C02E2962F4518C651DA5560D6C6CF",
+    "outputs/validity/rq1_seed_44/calibration_joint.json": "89B07811122FE266C79541AD00AA1BEFFCE6E466CCB8B7D2E34D8B5E73A8B19B",
+    "outputs/validity/rq1_seed_45/calibration_action_only.json": "E8E01FE05656BDCB188700875609E1FFDF16B5C62FB99658F89B0CB983DD913F",
+    "outputs/validity/rq1_seed_45/calibration_joint.json": "817A007E33AF09AE1DBBF1C3B45216D427C116A15E2DC4A172E5DE8C897857FB",
+    "outputs/validity/rq1_seed_46/calibration_action_only.json": "D7C8C90570D357EA144642F4628538D6D2B1B61F018302AFB248FD82507698BE",
+    "outputs/validity/rq1_seed_46/calibration_joint.json": "F9935A65A0B187373FC16742207720D54C41C46071A1498393985ABB18E5E29A",
+    "outputs/validity/rq1_seed_47/calibration_action_only.json": "E9FCAF432BC857AB3A4CEF69403975D6B22D86DD52A2540E65B96C9C1F9B07EB",
+    "outputs/validity/rq1_seed_47/calibration_joint.json": "06E05CA5334EBF74DCBE72829133A31707CFA94FADDA0FE6BE38F249E3A86101"
+  }
+}
