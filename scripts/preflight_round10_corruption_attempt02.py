@@ -245,7 +245,8 @@ def validate_protocol_amendment_operator() -> dict[str, Any]:
         "amendment STOP-decision binding differs",
     )
     require(
-        stop_decision["decision"] == "STOP/REPAIR_PROTOCOL_PREFLIGHT",
+        stop_decision["verdict"]["decision"]
+        == "STOP/REPAIR_PROTOCOL_PREFLIGHT",
         "preserved reviewer decision is not STOP",
     )
     require(
@@ -296,7 +297,7 @@ def validate_protocol_amendment_operator() -> dict[str, Any]:
             "path": relative(STOP_DECISION_PATH),
             **fingerprint(STOP_DECISION_PATH),
             "expected_sha256": EXPECTED_STOP_DECISION_SHA256,
-            "decision": stop_decision["decision"],
+            "decision": stop_decision["verdict"]["decision"],
         },
         "operator": {
             "path": relative(operator_path),
