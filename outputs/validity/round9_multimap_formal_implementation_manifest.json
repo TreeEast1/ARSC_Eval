@@ -1,0 +1,160 @@
+{
+  "study": "Round 9 formal implementation/input manifest",
+  "status": "FROZEN_AWAITING_INDEPENDENT_REVIEWER_GO",
+  "formal_run_permitted": false,
+  "input_hashes": {
+    "outputs/validity/round9_multimap_protocol.json": "B8E180ECB3CDCE2F34EC987BDE33F9B8FEFE0D60509962C09D69811FD7D7F5F3",
+    "outputs/validity/round9_multimap_maps.npz": "9F540646ABF101800F5BC65AF272F4906C57EBFA94BEBB78B909DD52F1E627F4",
+    "outputs/validity/round9_multimap_map_manifest.json": "1163E8AC6638FFD145167D0F3F5CFDEB6829A876FBAD7C4F06B14C3F0E37E7DB",
+    "outputs/validity/round9_multimap_components.npz": "23C86D0B87C55287033531A66D0E78182263A2734A23C966D431B09DF0298272",
+    "outputs/validity/round9_multimap_component_manifest.json": "AC7A688A1F0603DFA2D9CD3C9AE16FB000CB1B8B26427B589AD4DE24716CFBE9",
+    "outputs/validity/round9_multimap_preoutcome_independent_audit.json": "1E39F5F28591BE692B62204F79C2BB0CD1AFD0FFE954C7B232ABBCF3E63B8ADD",
+    "outputs/validity/round9_multimap_preoutcome_run_manifest.json": "73F8F6A2A2EE7CE270C9C63F306A0149CC9C181A40F996A88C6E1AB12FB9FB79",
+    "outputs/research_review_memo_round9_preimplementation.md": "2622B53D5C158066EAD48F730391743CD3277D3A0527FD59E8153C66EAEB8135",
+    "outputs/validity/round9_multimap_salt_replay_audit.json": "7D6472182906B7D442337BC44555BEC6C639B07B7426FF31AC27319C40124C2E",
+    "outputs/validity/round8_graded_response_primitives.npz": "6E51FB8842C6A6510364415C9D2D19C2307363024C34C8C7DE00DB57DCC7160C",
+    "outputs/validity/round8_graded_response_results.json": "4CD0FCD16ED4A3BAE1D378FD10B3A44705F2433FDF3C3E15A26FBCE303AF6FD3"
+  },
+  "implementation_hashes": {
+    "scripts/analyze_round9_multimap.py": "408F3C419662F94F368C42E3FBDDB346512B95EEACA1DC0B4280E43E7E78434F",
+    "src/arsc_eval/multimap_statistics.py": "6ABFF628A797C2EE3A14504A230387461FB18401602C7C559BF05493EC6EDEDA",
+    "src/arsc_eval/multimap_response.py": "7A044FA74B56B8EFD389ADC82F44B0C156951B3DA33A4B674FC52AFC5AD125EB",
+    "src/arsc_eval/graded_response.py": "CD011DE953E4C46210C85367E7582E9F315E4A3BAB7CB8975F240055CC4441DF",
+    "tests/test_multimap_statistics.py": "3475053CACD275533DBD13F8A7AE65B598DA1B61669C1D59D20BB54B91E1AB6A",
+    "tests/test_multimap_response.py": "6FE23C630B1DA97B9064EC721E2F59A29E30948FAF3B8FD41B018732649A5FB8",
+    "tests/test_graded_response.py": "6C63F4C9C41E2CCD67BE3EB1C1D96C5FB7439F48656BB75682BC14822FDB9EE0",
+    "scripts/verify_round9_salt_replay.py": "32A7173C42A38EE0BE1D80A17347257F6E62D605814BF9F913E838BC00CC993F",
+    "scripts/verify_round9_preoutcome_artifacts.py": "DF02D3F44D9FF0B6C7EB10F65FA296869AECE7115977455682CEA347F38EAF80",
+    "scripts/launch_round9_multimap_tmux.sh": "7647009915592B73FC67137992DB1DE21C287D7AD1934676CAC2FBB15FCF66E4"
+  },
+  "preflight": {
+    "path": "outputs/validity/round9_multimap_formal_preflight.json",
+    "sha256": "B67EBB26345D14619E62103CE2DF727C28B5BB4B3436ABA83ECB2F9B42499640"
+  },
+  "formal_outputs_absent": {
+    "outputs/validity/round9_multimap_results.json": true,
+    "outputs/validity/round9_multimap_primitives.npz": true,
+    "outputs/validity/round9_multimap_bootstrap_draws.npz": true,
+    "outputs/validity/round9_multimap_point_diagnostics.csv": true,
+    "outputs/validity/round9_multimap_bootstrap_summary.csv": true,
+    "outputs/validity/round9_multimap_results.json.attempt01.tmp": true,
+    "outputs/validity/round9_multimap_primitives.npz.attempt01.tmp": true,
+    "outputs/validity/round9_multimap_bootstrap_draws.npz.attempt01.tmp": true,
+    "outputs/validity/round9_multimap_point_diagnostics.csv.attempt01.tmp": true,
+    "outputs/validity/round9_multimap_bootstrap_summary.csv.attempt01.tmp": true,
+    "outputs/validity/round9_multimap_formal.log": true
+  },
+  "frozen_design": {
+    "maps": 20,
+    "seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "q": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "component_count_per_map": 1625,
+    "replicates": 2000,
+    "bootstrap_seed": 20260809,
+    "statistic_order": "map occurrence and seed bottleneck first; mean selected seed positions within occurrence; mean 20 occurrences"
+  },
+  "formal_output_schema": {
+    "outputs/validity/round9_multimap_results.json": "completion-marker JSON; written last",
+    "outputs/validity/round9_multimap_primitives.npz": {
+      "primary_curve_shapes": {
+        "A": [
+          20,
+          5,
+          2,
+          5
+        ],
+        "R": [
+          20,
+          5,
+          1,
+          5
+        ],
+        "S": [
+          20,
+          5,
+          2,
+          5
+        ],
+        "C1": [
+          20,
+          5,
+          3,
+          5
+        ]
+      },
+      "map_seed_axis_bottlenecks": [
+        20,
+        5,
+        4
+      ],
+      "map_mean_axis_bottlenecks": [
+        20,
+        4
+      ],
+      "required_full_diagnostics": true
+    },
+    "outputs/validity/round9_multimap_bootstrap_draws.npz": {
+      "axis_draw_shapes": {
+        "A": [
+          2000
+        ],
+        "R": [
+          2000
+        ],
+        "S": [
+          2000
+        ],
+        "C1": [
+          2000
+        ]
+      },
+      "selected_map_positions": [
+        2000,
+        20
+      ],
+      "selected_seed_positions": [
+        2000,
+        5
+      ],
+      "expanded_image_counts": [
+        2000,
+        20
+      ]
+    },
+    "outputs/validity/round9_multimap_point_diagnostics.csv": {
+      "columns": [
+        "map_id",
+        "seed",
+        "axis",
+        "model",
+        "q",
+        "metric",
+        "estimate",
+        "gate_component",
+        "expected_direction"
+      ]
+    },
+    "outputs/validity/round9_multimap_bootstrap_summary.csv": {
+      "rows": 4,
+      "axis_order": [
+        "A",
+        "R",
+        "S",
+        "C1"
+      ]
+    },
+    "outputs/validity/round9_multimap_formal.log": "tmux one-shot log"
+  }
+}
