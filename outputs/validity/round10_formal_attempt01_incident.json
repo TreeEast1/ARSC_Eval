@@ -1,0 +1,56 @@
+{
+  "schema_version": "ARSC_ROUND10_FORMAL_ATTEMPT_INCIDENT_V1",
+  "recorded_at_utc": "2026-07-31T07:25:00Z",
+  "study": "BDD-OIA Round 10 corruption dose-response construct validation",
+  "attempt": "attempt01",
+  "status": "ROUND10_ATTEMPT01_PREFLIGHT_INFRASTRUCTURE_FAILURE_STOP",
+  "formal_grid_started": false,
+  "checkpoint_tensors_loaded": false,
+  "model_constructed_or_loaded": false,
+  "model_inference_run": false,
+  "round10_nonzero_severity_predictions_read_or_computed": false,
+  "round10_nonzero_severity_logits_read_or_computed": false,
+  "round10_nonzero_severity_confidences_read_or_computed": false,
+  "round10_nonzero_severity_metric_outcomes_read_or_computed": false,
+  "launch": {
+    "repository_commit": "8dc7d82",
+    "implementation_commit": "69a9b8fe8123efaa30272500546f4e3e2edb0615",
+    "prestart_guard_status": "PASS_FORMAL_PRESTART_GUARD",
+    "preformal_go_sha256": "913D580D31F41F1F0DE8F597D7439F241B6BFA5081DF35844ABF7CF5F97B6DFA",
+    "tmux_session": "arsc_round10_formal",
+    "tmux_session_terminated": true,
+    "exit_code": 1
+  },
+  "failure": {
+    "exception": "RuntimeError",
+    "message": "formal analyzer requires the frozen tmux launcher contract",
+    "location": "scripts/analyze_round10_corruption.py formal_run precondition",
+    "root_cause": "WSL-to-Windows process interop did not propagate the inline ARSC_ROUND10_LAUNCHED_BY_TMUX environment variable. The independently supplied --tmux-session argument was present, but the implementation required both sentinels.",
+    "occurred_before_formal_authorization_revalidation": true,
+    "occurred_before_staging_creation": true,
+    "occurred_before_delayed_torch_engine_model_imports": true
+  },
+  "preserved_log": {
+    "path": "outputs/validity/round10_corruption_formal_attempt01.log",
+    "sha256": "BB6CCB81A6AF980C5BE35EED3D36DDE9D5E1DABADD2EDAF187011B1A8C22A3CC",
+    "bytes": 798,
+    "last_write_time_utc": "2026-07-31T07:23:36Z",
+    "exit_marker": "EXIT_CODE=1"
+  },
+  "artifact_absence_after_failure": {
+    "staging_directory_absent": true,
+    "final_directory_absent": true,
+    "artifact_index_absent": true,
+    "seed_logit_files_absent": true,
+    "primitive_file_absent": true,
+    "bootstrap_draws_absent": true,
+    "metric_results_absent": true
+  },
+  "policy": {
+    "attempt01_log_must_be_preserved": true,
+    "attempt01_must_not_be_reused_or_silently_restarted": true,
+    "attempt02_currently_authorized": false,
+    "next_gate": "INDEPENDENT_OUTCOME_BLIND_INCIDENT_REVIEW",
+    "required_before_any_new_launch": "A prospective, independently reviewed infrastructure-only amendment must decide whether an attempt02 is scientifically permissible without changing any frozen data, model, operator, metric, threshold, seed, bootstrap, or decision rule."
+  }
+}

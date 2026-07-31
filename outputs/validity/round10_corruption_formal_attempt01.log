@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\analyze_round10_corruption.py", line 1486, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\analyze_round10_corruption.py", line 1482, in main
+    return formal_run(args.device, args.tmux_session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\analyze_round10_corruption.py", line 1304, in formal_run
+    require(
+  File "D:\All_Project\cjl\ARSC_space\BDD-OIA_space\scripts\analyze_round10_corruption.py", line 196, in require
+    raise RuntimeError(message)
+RuntimeError: formal analyzer requires the frozen tmux launcher contract
+EXIT_CODE=1
