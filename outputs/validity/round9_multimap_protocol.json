@@ -1,0 +1,288 @@
+{
+  "protocol_id": "ARSC_ROUND9_MULTIMAP_ROBUSTNESS_V1",
+  "status": "FROZEN_BEFORE_NEW_MAP_Q_GREATER_THAN_ZERO_OUTCOMES",
+  "frozen_at": "2026-07-31T07:05:00+08:00",
+  "reviewer_authority": {
+    "path": "outputs/research_review_memo_round8_final.md",
+    "sha256": "87CD4973DDD769F1F3D2EECC662185B57E73E34A71CF913FB994E3DDC16761AE",
+    "verdict": "Round 8 computational/formal PASS / VALID; scientific PARTIAL / BOUNDED INTERNAL EVIDENCE",
+    "only_authorized_next_direction": "Round 9 BDD-OIA 20-map/salt robustness"
+  },
+  "scientific_question": "Are the four Round 8 graded association-response gates robust across 20 prefixed outcome-blind map realizations rather than conditional on one map/salt?",
+  "scope": {
+    "dataset": "BDD-OIA frozen test population only",
+    "training_seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "new_data": false,
+    "training": false,
+    "inference": false,
+    "masks": false,
+    "threshold_selection": false,
+    "new_model_or_checkpoint": false,
+    "CEG": "closed; not evaluated",
+    "external_dataset_or_training": false,
+    "VLA4CoDrive": "STOP_EXTERNAL_TRAINING",
+    "Round8_map_in_primary_gate": false
+  },
+  "map_realizations": {
+    "map_ids": [
+      "map00",
+      "map01",
+      "map02",
+      "map03",
+      "map04",
+      "map05",
+      "map06",
+      "map07",
+      "map08",
+      "map09",
+      "map10",
+      "map11",
+      "map12",
+      "map13",
+      "map14",
+      "map15",
+      "map16",
+      "map17",
+      "map18",
+      "map19"
+    ],
+    "salts": [
+      "arsc-round9-map00",
+      "arsc-round9-map01",
+      "arsc-round9-map02",
+      "arsc-round9-map03",
+      "arsc-round9-map04",
+      "arsc-round9-map05",
+      "arsc-round9-map06",
+      "arsc-round9-map07",
+      "arsc-round9-map08",
+      "arsc-round9-map09",
+      "arsc-round9-map10",
+      "arsc-round9-map11",
+      "arsc-round9-map12",
+      "arsc-round9-map13",
+      "arsc-round9-map14",
+      "arsc-round9-map15",
+      "arsc-round9-map16",
+      "arsc-round9-map17",
+      "arsc-round9-map18",
+      "arsc-round9-map19"
+    ],
+    "salt_replacement": "prohibited",
+    "Round8_historical_reference": {
+      "salt": "ARSC_ROUND8_GRADED_ASSOCIATION_V1",
+      "npz_sha256": "8685E1A4605B5D6355A432BC6CA03CF61930BAB23D41D899478A5C1D8FC47ED1",
+      "primary_gate_member": false
+    }
+  },
+  "frozen_inputs": {
+    "threshold": 0.5,
+    "sample_count": 4557,
+    "q_values": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "active_images": [
+      0,
+      1140,
+      2278,
+      3418,
+      4557
+    ],
+    "Round8_primitives": {
+      "path": "outputs/validity/round8_graded_response_primitives.npz",
+      "sha256": "6E51FB8842C6A6510364415C9D2D19C2307363024C34C8C7DE00DB57DCC7160C",
+      "array_count": 87,
+      "contains_pixels_or_model_weights": false
+    },
+    "filename_order_sha256": "9D9D4E74272AB3A71390B4204CE56F1831350A29EED009111EF1AD5A29026DF6",
+    "action_target_sha256": "C28063DE57B7E4CAF8B1A19C074BB5F1DF05C4984377856EDF2522387CEB7A39",
+    "rationale_target_sha256": "F787A947EC2ECA728166DC83B621402EDE27CAF7DDB1E7C3D3BBDD36B2BED469",
+    "Round8_formal_result_reference": {
+      "path": "outputs/validity/round8_graded_response_results.json",
+      "sha256": "4CD0FCD16ED4A3BAE1D378FD10B3A44705F2433FDF3C3E15A26FBCE303AF6FD3",
+      "use": "q=0 bridge and historical single-map reference only"
+    }
+  },
+  "outcome_blind_map_builder": {
+    "algorithm": "exactly the Round 8 deterministic filename/clip/salt cycle builder",
+    "depends_only_on": [
+      "canonical filename strings",
+      "clip groups obtained by removing terminal _1 or _3",
+      "the prefixed salt string",
+      "the fixed q grid"
+    ],
+    "must_not_read": [
+      "action or rationale targets",
+      "predictions",
+      "logits or probabilities",
+      "confidence",
+      "errors",
+      "metric outcomes"
+    ],
+    "hard_gate_for_every_prefixed_salt": [
+      "q=0 is identity",
+      "every q source array is a global bijection",
+      "active sets are strictly nested",
+      "only complete cycles are activated",
+      "active destination and source are never the same filename",
+      "active destination and source are never from the same clip",
+      "q=1 has no fixed point",
+      "all 20 salts and all 20 q=1 source-map hashes are unique",
+      "target-row, confidence-value, and perturbed-prediction multisets are preserved by bijection",
+      "association components derived independently for each map are source-closed for all q",
+      "each restricted map remains a bijection within every component"
+    ],
+    "failure_rule": "If any prefixed salt fails, STOP Round 9; do not drop or replace it."
+  },
+  "metrics_and_directions": {
+    "A": {
+      "components": [
+        "Action-Only four-label Macro-F1",
+        "Joint four-label Macro-F1"
+      ],
+      "expected_direction": "decreasing"
+    },
+    "R": {
+      "components": [
+        "Joint 21-label rationale Macro-F1"
+      ],
+      "expected_direction": "decreasing",
+      "required_diagnostics": [
+        "Micro-F1",
+        "all 21 per-class F1 curves",
+        "support and predicted-positive counts",
+        "all-zero classes"
+      ]
+    },
+    "S": {
+      "components": [
+        "Action-Only tie-averaged AURC",
+        "Joint tie-averaged AURC"
+      ],
+      "expected_direction": "increasing",
+      "fixed_error_definition": "any threshold-0.5 action-set mismatch",
+      "diagnostic_only": [
+        "canonical-stable AURC",
+        "UAR@90",
+        "correctness AUROC",
+        "ECE",
+        "error rate",
+        "confidence-decile error rates"
+      ]
+    },
+    "C1": {
+      "components": [
+        "Action-Only mean-three action flip",
+        "Joint mean-three action flip",
+        "Joint mean-three rationale Jaccard"
+      ],
+      "expected_directions": [
+        "increasing",
+        "increasing",
+        "decreasing"
+      ],
+      "interpretation": "sample-correspondence response, not natural visual severity or rationale faithfulness"
+    },
+    "tie_rule": "exact expected AURC over every ordering within an equal-confidence block",
+    "bottleneck_order": "within each map and training seed, take the minimum expected-direction adjacent step across every required component; only then average seeds and maps"
+  },
+  "primary_estimands": {
+    "map_seed_bottleneck": "one weakest expected-direction adjacent q step per axis, map, and training seed",
+    "map_mean_bottleneck": "mean of the five training-seed bottlenecks within each map",
+    "grand_mean_bottleneck": "mean of the 20 map-specific mean bottlenecks",
+    "grand_mean_component_curves": "mean component curves across all 20 maps and five training seeds"
+  },
+  "hierarchical_bootstrap": {
+    "replicates": 2000,
+    "seed": 20260809,
+    "confidence_level": 0.95,
+    "interval": "pointwise percentile by axis",
+    "algorithm_per_replicate": [
+      "sample 20 map positions with replacement from map00 through map19",
+      "sample five training-seed positions with replacement once and share this seed draw across all selected maps",
+      "for every selected map occurrence, sample that map's full association-component count with replacement",
+      "within a selected map occurrence, share its component multiset across every selected seed, q, model, axis, and perturbation",
+      "within every map occurrence and selected seed, calculate the axis bottleneck before averaging",
+      "average bottlenecks over the five selected seed positions and then over the 20 selected map occurrences"
+    ],
+    "prohibited_shortcuts": [
+      "average q curves before taking the minimum step",
+      "use a different map subset for different axes",
+      "reuse another map's component partition",
+      "treat maps as external datasets"
+    ],
+    "interval_scope": "four pointwise axis intervals, not simultaneous familywise 95 percent coverage"
+  },
+  "decision_rules": {
+    "per_axis_PASS_requires_all": [
+      "at least 18 of 20 map-specific mean bottlenecks are greater than zero",
+      "20-map grand mean bottleneck is greater than zero",
+      "hierarchical bootstrap pointwise 95 percent CI lower bound is greater than zero",
+      "20-map by five-seed grand mean component curves contain no adjacent expected-direction reversal",
+      "all 20 map results and diagnostics are reported"
+    ],
+    "ROUND9_FULL_PASS": "all exact preflight checks and all four axis PASS gates",
+    "ROUND9_FAIL_OR_INCONCLUSIVE": [
+      "any axis has fewer than 18 positive maps",
+      "any axis CI lower bound is less than or equal to zero",
+      "any axis grand mean curve has an adjacent reversal",
+      "any frozen map, component, input, protocol, code, test, or reviewer hash mismatches",
+      "any new-map q>0 outcome is read before the result-blind freeze and reviewer GO",
+      "any scientific statistic or gate is modified after outcomes are exposed"
+    ]
+  },
+  "outcome_governance": {
+    "no_sequential_peek": true,
+    "formal_outcome_runs": 1,
+    "all_20_maps_must_be_retained": true,
+    "append_maps_after_PASS": false,
+    "append_maps_after_FAIL": false,
+    "post_outcome_salt_replacement": false,
+    "post_outcome_threshold_metric_q_or_gate_change": false,
+    "pre_result_implementation_failure": "preserve the log, prove no formal result artifact was written, and obtain independent GO_RERUN before retrying",
+    "after_Round9": "terminate the BDD-OIA map-realization line; do not continue salt iteration"
+  },
+  "required_preoutcome_artifacts": [
+    "this protocol",
+    "20-map outcome-blind map artifact and manifest",
+    "20 independently derived component partitions and manifest",
+    "synthetic tests for map legality, per-map closure, map-seed-component hierarchy, and per-seed-first bottlenecks",
+    "preoutcome implementation/input/hash manifest",
+    "exact preflight proving no q>0 metric outcome was computed",
+    "independent reviewer GO memo"
+  ],
+  "required_postoutcome_artifacts": [
+    "all map x seed x q primary curves and diagnostics",
+    "all 80 map-specific axis means and all 400 map x seed axis bottlenecks",
+    "four 2000-replicate hierarchical bootstrap draw arrays and summaries",
+    "formal one-shot tmux log",
+    "compact primitives sufficient for independent reproduction",
+    "independent verifier and reproduction audit",
+    "post-result independent scientific review",
+    "top-level SHA256 artifact index"
+  ],
+  "claim_boundaries": {
+    "PASS_supports": "The four Round 8 BDD-OIA graded response gates are robust across 20 prefixed outcome-blind legal map realizations under map-by-seed-by-association-component conditional inference.",
+    "PASS_does_not_support": [
+      "external validity",
+      "20 independent datasets or domains",
+      "ontology completeness or every rationale class",
+      "rationale grounding or faithfulness",
+      "natural perturbation severity",
+      "calibration validity or a safety guarantee",
+      "causal evidence or CEG",
+      "other datasets, architectures, training protocols, thresholds, metrics, or real-world driving",
+      "simultaneous familywise 95 percent coverage"
+    ]
+  }
+}
