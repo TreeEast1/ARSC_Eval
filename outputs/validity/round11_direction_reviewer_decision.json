@@ -1,0 +1,302 @@
+{
+  "schema_version": "ARSC_ROUND11_DIRECTION_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-07-31T10:56:47Z",
+  "reviewer_role": "independent_round11_direction_and_preflight_methods_reviewer",
+  "reviewed_snapshot": {
+    "repository_head": "86530d1902ee272cc84d2981255a11453a73fb78",
+    "external_scout_memo": {
+      "path": "outputs/dataset_scout_round11_external_validity.md",
+      "sha256": "21A9B6045EA8F6D8371491C0FCBBD4F1E26EA155E20F63F7FB938D9874F4C516"
+    },
+    "external_scout_decision": {
+      "path": "outputs/validity/round11_external_dataset_feasibility.json",
+      "sha256": "15989666AACC77BBA2AB9A783292CC94C1766BDE4304B62DAFD13A66466004A5"
+    },
+    "candidate_a_methods_memo": {
+      "path": "outputs/research_review_memo_round11_candidate_methods.md",
+      "sha256": "490E1C015682F771725BAAD2F53070E442AF1C48172362135FE0B50BB85F7495"
+    },
+    "official_daadx_code_commit": "932c463b10f2cad42d2d3854376b40a919f47d0a",
+    "official_daadx_hf_revision": "35eddaa90667beffc5481e014df8fc6176ed0168"
+  },
+  "direction_decision": {
+    "decision": "DAADX_PREFLIGHT_FIRST_THEN_CANDIDATE_A_IF_STOP",
+    "round11_unique_current_task": "DAADX_DOWNLOAD_AND_GROUP_INTEGRITY_PREFLIGHT_ONLY",
+    "external_training_status": "STOP_ROUND11_EXTERNAL_TRAINING",
+    "candidate_a_status": "CONTINGENT_POSTRESULT_REGISTERED_EXPLORATORY_FALLBACK_ONLY",
+    "if_all_preflight_gates_pass": "GO_TO_SEPARATE_DAADX_PROTOCOL_FREEZE_REVIEW_NOT_TRAINING",
+    "if_any_preflight_gate_fails_or_is_inconclusive": "STOP_DAADX_AND_SWITCH_TO_CANDIDATE_A_EXPLORATORY",
+    "no_threshold_or_population_repair_after_results": true,
+    "rationale": "DAAD-X is the only remaining candidate that could add independent-population evidence, and its integrity/source-leakage preflight can remain free of ARSC model outcomes. Candidate A has bounded non-tautological value but is necessarily post-result exploratory on the already-viewed Round10 population."
+  },
+  "download_binding": {
+    "official_url": "https://cvit.iiit.ac.in/images/datasets/daadx/daadx.tar.gz",
+    "expected_content_length_bytes": 18585647156,
+    "download_transport_may_continue": true,
+    "partial_or_completed_download_is_not_yet_a_research_input": true,
+    "required_before_acceptance": [
+      "exact expected byte length",
+      "two independent sequential SHA256 reads match",
+      "gzip integrity passes",
+      "full tar inventory passes",
+      "member header checksums and canonical path safety pass"
+    ],
+    "official_sha256_available": false,
+    "permitted_claim_if_archive_passes": "local archive is byte-bound and structurally intact; no claim of equality to an unavailable author-published checksum"
+  },
+  "result_blind_firewall": {
+    "grouping_inputs_allowed": [
+      "tar headers and member paths",
+      "UUID and official split membership",
+      "non-label raw-source/session tokens",
+      "non-label time and multiview synchronization metadata",
+      "video container metadata",
+      "deterministically decoded pixels for integrity and duplicate detection",
+      "frozen BDD-OIA image inputs for cross-dataset overlap detection"
+    ],
+    "grouping_inputs_forbidden": [
+      "maneuver values",
+      "gaze values",
+      "17-dimensional ego rationale values",
+      "BDD-OIA or DAAD-X model logits",
+      "predictions",
+      "confidence",
+      "losses or metrics",
+      "validation or test model outputs",
+      "label- or outcome-selected subgroups"
+    ],
+    "label_snapshot_reality": "The scout already inspected aggregate label composition; the auditable blind claim is that media inclusion, grouping, split reconstruction, and duplicate thresholds do not consume label values or model outcomes.",
+    "official_loader_forbidden": true,
+    "official_loader_reason": [
+      "dataset construction silently includes rows only when road media exists",
+      "decode_video samples frames using random.randint",
+      "decode failure advances to another dataset index rather than preserving an explicit UUID failure"
+    ],
+    "face_identification_for_group_reconstruction_forbidden": true
+  },
+  "frozen_population": {
+    "official_split_uuid_union": 1566,
+    "paper_reported_clip_count": 1568,
+    "eligible_uuid_source": "unique union of current official train.csv, val.csv, and test.csv",
+    "total_csv_rows_not_eligible_source": 1725,
+    "time_csv_rows_not_eligible_source": 1951,
+    "front_view_required_unique_bindings": 1566,
+    "front_view_required_full_decode_passes": 1566,
+    "complete_case_deletion_allowed": false,
+    "extra_media_added_posthoc_allowed": false,
+    "other_views_use": "source/session provenance and synchronization audit only; no model-input authorization"
+  },
+  "source_group_reconstruction": {
+    "independent_unit": "highest auditable raw recording or capture session producing one or more clips",
+    "graph_nodes": "all 1566 eligible UUIDs before official split overlay",
+    "group_rule": "connected components of the union of frozen source and content edges",
+    "edge_priority": [
+      "author- or package-provided driver/session/raw-video/source identifier",
+      "auditable non-label raw-recording token or complete acquisition-time plus camera-rig/multiview synchronization provenance",
+      "byte-exact, decode-exact, broad near-overlap, or broad boundary-continuation evidence used only for conservative merging"
+    ],
+    "required_provenance_coverage_fraction": 1.0,
+    "absence_of_near_duplicates_proves_independence": false,
+    "pixels_only_or_uuid_only_grouping_is_sufficient": false,
+    "biometric_face_grouping_allowed": false,
+    "published_group_identifier": "salted hash only",
+    "raw_sensitive_identifier_redistributed": false
+  },
+  "near_duplicate_protocol": {
+    "decode_sampling_hz": 2.0,
+    "sampling_times_seconds": "0.25 + 0.5*j, strictly less than duration",
+    "normalized_frame": "aspect-ratio-preserving letterbox to 256x144 grayscale",
+    "phash": "64-bit DCT pHash from 32x32 DCT top-left 8x8 excluding DC, thresholded at the remaining-coefficient median",
+    "byte_exact_edge": "complete media SHA256 equal",
+    "decode_exact_edge": "aligned normalized-frame SHA256 sequence equal",
+    "broad_near_overlap_edge": {
+      "minimum_consecutive_aligned_pairs": 6,
+      "minimum_overlap_seconds": 3.0,
+      "time_scale_slope_min": 0.98,
+      "time_scale_slope_max": 1.02,
+      "maximum_each_phash_hamming": 10,
+      "maximum_median_phash_hamming": 6,
+      "minimum_median_grayscale_ssim": 0.90
+    },
+    "broad_boundary_continuation_edge": {
+      "tail_and_head_seconds": 1.5,
+      "ordered_frame_pairs": 3,
+      "maximum_each_phash_hamming": 10,
+      "maximum_median_phash_hamming": 6,
+      "minimum_median_grayscale_ssim": 0.90,
+      "requires_same_nonlabel_rig_or_multiview_signature": true
+    },
+    "strict_sensitivity_view": {
+      "minimum_overlap_seconds": 3.0,
+      "maximum_each_phash_hamming": 6,
+      "maximum_median_phash_hamming": 4,
+      "minimum_median_grayscale_ssim": 0.95,
+      "used_for_formal_grouping": false
+    },
+    "formal_grouping_uses": "broad edges only",
+    "thresholds_may_change_after_pair_generation": false,
+    "qa_positive_controls": {
+      "source_video_count": 50,
+      "selection": "UUID-SHA256 deterministic selection before decoding",
+      "transforms": [
+        "deterministic transcode",
+        "resize",
+        "brightness plus or minus 5 percent"
+      ],
+      "required_broad_source_recovery": "50/50"
+    },
+    "cross_dataset_scan": {
+      "reference_population": "frozen BDD-OIA 4557 images",
+      "single_frame_match_maximum_phash_hamming": 10,
+      "single_frame_match_minimum_ssim": 0.90,
+      "action_on_match": "quarantine the entire DAAD-X source group, never only the matched clip"
+    }
+  },
+  "split_policy": {
+    "official_split_retained_if_source_group_disjoint": true,
+    "if_official_group_overlap": "discard published membership and use exactly one deterministic group-hash split",
+    "canonical_group_id": "SHA256 of sorted group UUID list",
+    "hash_namespace": "ARSC-DAADX-R11-GROUP-SPLIT-V1",
+    "hash_uniform": "first 64 SHA256 bits divided by 2^64",
+    "train_interval": "[0.00,0.70)",
+    "validation_interval": "[0.70,0.90)",
+    "test_interval": "[0.90,1.00)",
+    "label_balancing_allowed": false,
+    "manual_group_swaps_allowed": false,
+    "alternate_salts_allowed": false,
+    "minimum_source_groups_each_split": 30,
+    "minimum_test_clips": 100,
+    "maximum_single_test_group_clip_share": 0.10
+  },
+  "gates": [
+    {
+      "id": "G0",
+      "name": "transport_archive",
+      "pass": "exact bytes, double-read SHA match, gzip/tar/header/path checks all pass",
+      "failure": "STOP after at most one official resumable re-fetch attempt"
+    },
+    {
+      "id": "G1",
+      "name": "frozen_population_binding",
+      "pass": "1566 unique official split UUIDs and 1566/1566 unique front-view bindings",
+      "failure": "STOP on count discrepancy, missing, substitution, or ambiguous binding"
+    },
+    {
+      "id": "G2",
+      "name": "full_decode",
+      "pass": "1566/1566 front videos fully decode with valid metadata",
+      "failure": "STOP on any empty, truncated, undecodable, or substituted item"
+    },
+    {
+      "id": "G3",
+      "name": "source_provenance",
+      "pass": "100 percent authoritative or auditable non-label raw-source/session provenance",
+      "failure": "STOP if only UUID/pixels remain or biometric identification would be required"
+    },
+    {
+      "id": "G4",
+      "name": "grouping_reproducibility",
+      "pass": "two byte-identical broad-graph runs and 50/50 positive-control recovery",
+      "failure": "STOP or independent implementation correction review; never tune on real pair results"
+    },
+    {
+      "id": "G5",
+      "name": "cross_dataset_independence",
+      "pass": "all BDD-OIA-matched source groups quarantined and later gates still pass",
+      "failure": "STOP if matched groups remain or quarantine makes later gates fail"
+    },
+    {
+      "id": "G6",
+      "name": "split_independence",
+      "pass": "zero source-group intersection after official or one-salt grouped split",
+      "failure": "STOP on any cross-split group or outcome-informed repair"
+    },
+    {
+      "id": "G7",
+      "name": "cluster_adequacy",
+      "pass": "at least 30 groups per split, at least 100 test clips, and max test group share at most 0.10",
+      "failure": "STOP with no alternate salt"
+    },
+    {
+      "id": "G8",
+      "name": "artifact_closure",
+      "pass": "all required artifacts hash-close with unique successful exit and no unexplained staging or silent exclusions",
+      "failure": "STOP or INCONCLUSIVE, never GO"
+    }
+  ],
+  "gate_logic": {
+    "operator": "AND",
+    "all_gates_must_pass": true,
+    "inconclusive_treated_as_go": false,
+    "pass_authorizes_training": false,
+    "failure_routes_to_candidate_a": true
+  },
+  "allowed_preflight_actions": [
+    "finish resumable official tar download",
+    "hash and structurally inventory the archive",
+    "deterministically probe and fully decode eligible front videos",
+    "seal labels and expose UUID/split only to grouping",
+    "reconstruct auditable source groups without labels or model outputs",
+    "run frozen exact and perceptual duplicate checks",
+    "run DAAD-X to BDD-OIA input overlap checks",
+    "construct a single deterministic group split if the official split leaks",
+    "write the frozen preflight artifact set"
+  ],
+  "prohibited_before_new_independent_go": [
+    "external model training",
+    "checkpoint loading",
+    "validation tuning",
+    "test inference",
+    "ARSC metric calculation on DAAD-X model outputs",
+    "result-dependent threshold or population repair",
+    "official loader population construction",
+    "video or frame redistribution",
+    "biometric driver identification"
+  ],
+  "required_artifacts": [
+    "round11_daadx_preflight_protocol.json",
+    "round11_daadx_download_receipt.json",
+    "round11_daadx_archive_hashes.json",
+    "round11_daadx_tar_inventory.csv",
+    "round11_daadx_member_hashes.csv",
+    "round11_daadx_label_seal.json",
+    "round11_daadx_uuid_media_binding.csv",
+    "round11_daadx_media_probe.csv",
+    "round11_daadx_threshold_qa.json",
+    "round11_daadx_duplicate_edges.csv",
+    "round11_daadx_cross_dataset_overlap.csv",
+    "round11_daadx_source_groups.csv",
+    "round11_daadx_split_audit.csv",
+    "round11_daadx_preflight_results.json",
+    "round11_daadx_preflight.log",
+    "round11_daadx_artifact_index.json"
+  ],
+  "claim_boundary": {
+    "preflight_pass_supports_only": "Structural audit of package completeness, decodability, source provenance, near-duplicate/cross-dataset overlap, and group-disjoint split feasibility on the frozen DAAD-X snapshot.",
+    "does_not_support": [
+      "ARSC metric validity",
+      "model performance or external generalization",
+      "real-road robustness or safety",
+      "construct equivalence between DAAD-X and BDD-OIA",
+      "equivalence of 7 mutually exclusive maneuvers to 4 multilabel actions",
+      "equivalence of native 17 rationale classes to BDD-OIA 21 classes",
+      "natural weather severity or natural corruption dose response",
+      "rationale grounding or faithfulness",
+      "causal claims",
+      "driver independence merely from absence of detected near duplicates"
+    ],
+    "future_adjacent_construct_limits": [
+      "exclude U-turn",
+      "retain explicit Slow/Stop construct ambiguity",
+      "evaluate R on native 17 classes",
+      "use any 21-class semantic crosswalk descriptively only",
+      "record natural severity as UNAVAILABLE",
+      "call brightness, blur, and noise synthetic pixel corruptions"
+    ],
+    "redistribution": "publish code, hashes, redacted manifests, and derived statistics only; do not redistribute videos, frames, raw sensitive source identifiers, faces, or reversible fingerprints"
+  },
+  "memo": {
+    "path": "outputs/research_review_memo_round11_direction.md",
+    "sha256": "47CE04714FF54085E11FD5D6D724BD690955F22C8E054F247170B1CEA3C6415A"
+  }
+}

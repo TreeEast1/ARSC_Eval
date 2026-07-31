@@ -1,0 +1,78 @@
+{
+  "schema_version": "ARSC_ROUND11_IMPLEMENTATION_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-07-31T11:25:55Z",
+  "decision": "GO_FREEZE_PROTOCOL",
+  "reviewer_role": "independent_result_blind_round11_preflight_implementation_reviewer",
+  "direction_decision_sha256": "4C1683F83ED0921042FB30913743981D0153FA55D3C560C8DBBD5D946FA3B24C",
+  "reviewed_repository_head_at_review_time": "86530d1902ee272cc84d2981255a11453a73fb78",
+  "reviewed_files": [
+    {
+      "path": "scripts/freeze_round11_daadx_preflight_protocol.py",
+      "sha256": "A1A182342B360F360E582E8F213315AE3B1043A55F5E629A7C73DA7E7B2E9B45"
+    },
+    {
+      "path": "src/arsc_eval/daadx_preflight.py",
+      "sha256": "73639F1B85F84B2A27DC650E3DE1FC203A181561FA00306BCD5A5D2E76860E53"
+    },
+    {
+      "path": "tests/test_daadx_preflight.py",
+      "sha256": "20B79C7E2611AAC936C76F2516E0ACA7FE35C8F18D589C7D02CFD68A4D4D5DF2"
+    },
+    {
+      "path": "outputs/research_review_memo_round11_direction.md",
+      "sha256": "47CE04714FF54085E11FD5D6D724BD690955F22C8E054F247170B1CEA3C6415A"
+    },
+    {
+      "path": "outputs/validity/round11_direction_reviewer_decision.json",
+      "sha256": "4C1683F83ED0921042FB30913743981D0153FA55D3C560C8DBBD5D946FA3B24C"
+    }
+  ],
+  "review_scope": {
+    "large_tar_opened_or_listed": false,
+    "video_read_or_decoded": false,
+    "daadx_label_values_read": false,
+    "model_outputs_read": false,
+    "implementation_modified_by_reviewer": false
+  },
+  "verification": {
+    "target_test_command": "$env:PYTHONPATH='src'; python -m pytest tests/test_daadx_preflight.py -q",
+    "target_test_result": "16 passed",
+    "python_compile_passed": true,
+    "frozen_path_counterexamples_rejected": "8/8",
+    "casefold_collision_rejected": true,
+    "nonconsecutive_six_pair_overlap_rejected": true,
+    "non_normalized_fingerprint_inputs_rejected": true,
+    "implementation_owner_reported_full_suite": "110 passed",
+    "full_suite_independently_reproduced_in_reviewer_default_environment": false,
+    "full_suite_reproduction_note": "The reviewer default Python lacks cv2 and ultralytics required by unrelated legacy tests; the scoped target tests and counterexamples passed."
+  },
+  "closed_blockers": [
+    "exact fixed implementation files, structured reviewer authorization, reciprocal hashes, and future HEAD-blob equality are mandatory",
+    "the sole protocol output is fixed, all formal-output sentinels must be absent, and writing is exclusive-temporary plus fsync and atomic replace",
+    "cross-dataset thresholds, whole-source-group quarantine, conditional official split, exact group hashing, split-name normalization, and the 16-artifact allowlist are machine-frozen",
+    "tar path aliases and unsafe Windows names are rejected; links, devices, FIFO, socket, sparse, and unknown members are forbidden",
+    "near-overlap and boundary timestamps enforce consecutive frozen 0.5-second sampling",
+    "RGB24 normalization, BT.601 grayscale, bilinear letterbox, pHash and SSIM input shape and SSIM parameters are frozen",
+    "positive-control selection, transcode, resize, brightness transforms, ordering, encoding, and 50-of-50 recovery are frozen",
+    "G0 through G8 remain AND-only and never authorize training"
+  ],
+  "authorization": {
+    "protocol_freeze_authorized": true,
+    "required_before_freeze": [
+      "commit the exact three reviewed implementation files and this reviewer decision into one HEAD",
+      "preserve byte equality to every reviewed SHA256",
+      "confirm protocol, temporary, staging, final, log, and artifact-index outputs are absent"
+    ],
+    "archive_member_inventory_authorized": false,
+    "video_decode_authorized": false,
+    "formal_preflight_runner_authorized": false,
+    "external_training_authorized": false,
+    "transport_only_download_may_continue": true,
+    "next_review_after_freeze": "independent review of the frozen protocol and formal runner before any archive member is opened"
+  },
+  "claim_boundary": "GO_FREEZE_PROTOCOL validates only the result-blind protocol-freezing implementation. It does not establish archive integrity, source-group recoverability, duplicate absence, any G0-G8 pass, model performance, ARSC validity, external validity, or safety.",
+  "memo": {
+    "path": "outputs/research_review_memo_round11_implementation.md",
+    "sha256": "4B4742898D0F036CD152C64E1078E74E58EDA810D77AB9A3D3E2D1DF3B8AFA69"
+  }
+}

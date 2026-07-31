@@ -1,0 +1,252 @@
+{
+  "schema_version": "ARSC_ROUND11_EXTERNAL_DATASET_FEASIBILITY_V1",
+  "checked_at_utc": "2026-07-31T10:50:00Z",
+  "formal_run": false,
+  "result_blind": true,
+  "large_data_downloaded": false,
+  "model_outputs_read": false,
+  "model_training_or_inference_run": false,
+  "official_sources_only": true,
+  "decision": "STOP_ROUND11_EXTERNAL_TRAINING",
+  "unique_revisit_candidate": "DAAD-X",
+  "authorized_next_action": "DAADX_DOWNLOAD_AND_GROUP_INTEGRITY_PREFLIGHT_ONLY",
+  "prohibited_actions_before_new_independent_go": [
+    "model_training",
+    "validation_set_tuning",
+    "test_set_inference",
+    "confirmatory_arsc_claims"
+  ],
+  "stop_reason_codes": [
+    "DAADX_HF_LABEL_MEDIA_MISMATCH",
+    "DAADX_NO_DRIVER_SESSION_SOURCE_GROUP_KEY",
+    "NO_CANDIDATE_HAS_EXACT_BDD_OIA_21_CLASS_GOLD_RATIONALE_ONTOLOGY",
+    "NO_REAL_DATA_CANDIDATE_HAS_FROZEN_GRADED_NATURAL_SEVERITY"
+  ],
+  "candidates": [
+    {
+      "name": "DAAD-X",
+      "rank": 1,
+      "official_authorship_verified": true,
+      "official_project_url": "https://mukil07.github.io/VCBM.github.io/",
+      "official_paper_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Karuppasamy_Towards_Safer_and_Understandable_Driver_Intention_Prediction_ICCV_2025_paper.pdf",
+      "official_code_url": "https://github.com/Mukil07/Explainable-Driver-Intention-Prediction",
+      "official_code_commit": "932c463b10f2cad42d2d3854376b40a919f47d0a",
+      "official_hf_url": "https://huggingface.co/datasets/Skyrmion/DAAD-X",
+      "official_hf_revision": "35eddaa90667beffc5481e014df8fc6176ed0168",
+      "official_tar_url": "https://cvit.iiit.ac.in/images/datasets/daadx/daadx.tar.gz",
+      "public_without_manual_approval": true,
+      "official_tar_content_length_bytes": 18585647156,
+      "hf_media_total_bytes": 23045013921,
+      "hf_media_total_gib": 21.462,
+      "hf_directory_files": {
+        "aria_common": 1721,
+        "ariagaze_view_common": 1799,
+        "driver_common": 1721,
+        "front_view_common": 1721,
+        "gaze_common": 1721,
+        "left_view_common": 1721,
+        "rear_view_common": 1721,
+        "right_view_common": 1721
+      },
+      "hf_front_view_bytes": 3015220288,
+      "paper_clip_count": 1568,
+      "paper_clip_duration_seconds": "7-15",
+      "current_split_rows": {
+        "train": 1096,
+        "validation": 313,
+        "test": 157,
+        "union": 1566
+      },
+      "current_split_uuid_pairwise_overlap": 0,
+      "current_auxiliary_csv_rows": {
+        "total_csv": 1725,
+        "time_csv": 1951
+      },
+      "front_view_availability": {
+        "train": {
+          "available": 994,
+          "missing": 102,
+          "missing_rate": 0.093066
+        },
+        "validation": {
+          "available": 285,
+          "missing": 28,
+          "missing_rate": 0.089457
+        },
+        "test": {
+          "available": 148,
+          "missing": 9,
+          "missing_rate": 0.057325
+        },
+        "total_available": 1427,
+        "total_missing": 139,
+        "front_files_not_in_formal_split": 294
+      },
+      "missingness_by_maneuver": {
+        "Straight": {
+          "total": 395,
+          "missing": 30
+        },
+        "Slow_or_Stop": {
+          "total": 207,
+          "missing": 18
+        },
+        "Left_Turn": {
+          "total": 308,
+          "missing": 30
+        },
+        "Left_Lane_Change": {
+          "total": 175,
+          "missing": 24
+        },
+        "Right_Turn": {
+          "total": 213,
+          "missing": 15
+        },
+        "Right_Lane_Change": {
+          "total": 219,
+          "missing": 17
+        },
+        "U_Turn": {
+          "total": 49,
+          "missing": 5
+        }
+      },
+      "missingness_assessment": "NOT_PROVEN_MCAR; action rates vary and rare gaze/ego labels reach 30%/25% missing, so silent complete-case deletion is forbidden",
+      "independent_unit": "unknown driver/session/source group; clip UUID is not sufficient",
+      "independent_group_count": null,
+      "source_group_leakage_risk": "HIGH_AND_UNRESOLVED",
+      "published_split_method": "sample-level stratified 70/20/10; no published driver/session grouping",
+      "action_labels": 7,
+      "action_crosswalk": {
+        "Straight": "Forward",
+        "Slow_or_Stop": "Stop_with_construct_ambiguity",
+        "Left_Turn": "Left",
+        "Left_Lane_Change": "Left",
+        "Right_Turn": "Right",
+        "Right_Lane_Change": "Right",
+        "U_Turn": "EXCLUDE"
+      },
+      "action_crosswalk_exact": false,
+      "action_construct_warning": "DAAD-X is mutually exclusive multiclass; BDD-OIA uses four multilabel actions",
+      "rationale_annotation": "17 native human-reviewed multilabel ego explanations plus 15 single-label gaze explanations",
+      "maps_exactly_to_bdd_oia_21": false,
+      "rationale_policy_if_reopened": "use native 17 classes formally; any 21-class crosswalk is descriptive only",
+      "natural_or_weather_severity_freezable": false,
+      "severity_reason": "weather/time diversity is described but no per-clip graded field is published in the CSV",
+      "license": "HF dataset card: Apache-2.0",
+      "redistribution_policy": "do not redistribute video; publish code, hashes, manifests, and derived statistics only until underlying DAAD media rights are explicitly confirmed",
+      "estimated_cost": "MEDIUM for front-view anchor-frame paired 2-model x 5-seed study after gates; HIGH for full-video or multiview training",
+      "decision": "STOP_TRAINING__GO_PREFLIGHT_ONLY",
+      "required_gates": [
+        "official tar inventory binds every frozen population UUID to a decodable front video or freezes a justified population before outcomes",
+        "driver/session/source groups are obtained or conservatively reconstructed",
+        "all source-group intersections across train/validation/test equal zero",
+        "U-turn exclusion, anchor frame, missingness handling, native-17 rationale evaluation, and grouped split are frozen before label outcomes"
+      ]
+    },
+    {
+      "name": "BDD-X",
+      "rank": 2,
+      "official_repo_url": "https://github.com/JinkyuKimUCB/BDD-X-dataset",
+      "official_repo_commit": "b93cc0f4e13aa2012a251bda9afb12b56e817189",
+      "official_paper_url": "https://openaccess.thecvf.com/content_ECCV_2018/papers/Jinkyu_Kim_Textual_Explanations_for_ECCV_2018_paper.pdf",
+      "public_without_manual_approval": true,
+      "annotation_zip_bytes": 731609,
+      "annotation_files": [
+        "BDD-X-Annotations_v1.csv",
+        "train.txt",
+        "val.txt",
+        "test.txt"
+      ],
+      "video_payload_bundled": false,
+      "per_video_url_availability_audited": false,
+      "official_scale": {
+        "videos": 6970,
+        "hours_more_than": 77,
+        "activities_more_than": 26000,
+        "frames_more_than": 8400000,
+        "train_videos": 5597,
+        "validation_videos": 717,
+        "test_videos": 656
+      },
+      "independent_unit": "source video, never activity",
+      "source_group_leakage_risk": "HIGH_ACROSS_BDDX_AND_BDDOIA until exact-ID and perceptual overlap removal",
+      "action_crosswalk": "possible only by preregistered coding of free-text action descriptions",
+      "action_crosswalk_exact": false,
+      "rationale_annotation": "human free-text explanations",
+      "maps_exactly_to_bdd_oia_21": false,
+      "natural_or_weather_severity_freezable": false,
+      "license": "UC Berkeley educational/research/not-for-profit grant with notice retention; separate commercial license",
+      "redistribution_policy": "do not redistribute source videos or frames",
+      "estimated_cost": "HIGH: 77+ hours download/decode, BDD-OIA overlap audit, and independent dual annotation ontology study",
+      "decision": "STOP_BDDX_SOURCE_AND_LABEL_NONINDEPENDENCE"
+    },
+    {
+      "name": "PSI",
+      "rank": 3,
+      "official_homepage_url": "http://pedestriandataset.situated-intent.net/",
+      "official_repo_url": "https://github.com/PSI-Intention2022/PSI-Dataset",
+      "official_repo_commit": "bcefb1137ba12737ba2936bf50254c634d400f7a",
+      "official_driver_decision_repo_url": "https://github.com/PSI-Intention2022/PSI-DriverDecision-Prediction",
+      "official_paper_url": "https://papers.neurips.cc/paper_files/paper/2025/hash/436fb0fa57c75e0d2063b5bc19a21da1-Abstract-Datasets_and_Benchmarks_Track.html",
+      "request_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSfuzL_3E8pGEU0xI0pnRfX15fGqUgks4XVu2ClPQ8V05oU0Cg/viewform?usp=sf_link",
+      "public_without_manual_approval": false,
+      "access_policy": "universities and nonprofit research organizations only; institutional requester and PI; academic-only confirmation; DUA acceptance",
+      "current_download_files_after_approval": "videos, CV annotations, cognitive annotations, and PSI2_split.json",
+      "official_scale": {
+        "unique_encounter_scenes_homepage": 196,
+        "repo_video_id_range": "video_0001-video_0204",
+        "human_estimations_more_than": 987000,
+        "reasoning_boundaries": 5773,
+        "annotators": 74
+      },
+      "independent_unit": "unique encounter scene",
+      "independent_group_count": 196,
+      "pseudo_duplicate_warning": "204 file IDs and 196 unique scenes must not be treated as the same count; frames/annotators are nested in scene",
+      "action_crosswalk": "turnLeft/turnRight map to Left/Right; goStraight plus speed can approximate Forward; decreaseSpeed is not necessarily Stop",
+      "action_crosswalk_exact": false,
+      "rationale_annotation": "human free-text driving-decision and pedestrian-intent explanations",
+      "maps_exactly_to_bdd_oia_21": false,
+      "natural_or_weather_severity_freezable": false,
+      "license": "academic institutional DUA; no assumed redistribution right",
+      "redistribution_policy": "prohibited unless the executed DUA expressly permits it",
+      "estimated_cost": "LOW_TO_MEDIUM after approval, but HIGH measurement-development cost for 21-class double coding",
+      "decision": "STOP_PSI_MANUAL_APPROVAL"
+    },
+    {
+      "name": "VLA4CoDrive",
+      "rank": 4,
+      "official_repo_url": "https://github.com/SayedPedramHaeri/VLA4CoDrive",
+      "official_repo_commit": "d8d6b290b7acfe1ae89b75f2d72fc8f94deeef61",
+      "official_paper_url": "https://openaccess.thecvf.com/content/WACV2026W/LLVM-AD/html/Boroujeni_VLA4CoDrive_Vision-Language-Action_Dataset_for_Cooperative_Autonomous_Driving_WACVW_2026_paper.html",
+      "public_without_manual_approval": true,
+      "github_repository_size_kb": 3211618,
+      "current_downloadable_action_json": 2160,
+      "current_downloadable_action_bytes": 298596568,
+      "current_downloadable_language_json": 2184,
+      "current_downloadable_language_bytes": 6702264,
+      "paper_claimed_scale": {
+        "towns": 8,
+        "weather_conditions": 8,
+        "vision_samples_approx": 10000000,
+        "language_annotations_approx": 150000,
+        "action_records_approx": 1000000
+      },
+      "current_tree_observation": "Action and Language contain only Town10HD and scene001-scene009",
+      "independent_unit": "base scene group across all weather, vehicles, and windows",
+      "independent_group_count": 9,
+      "pseudo_duplicate_risk": "FATAL: 2160 equals 8 weather x 3 vehicles x 9 scenes x 10 windows",
+      "action_crosswalk": "derivable from controls and 30-step trajectories with frozen training-only thresholds",
+      "action_crosswalk_exact": false,
+      "rationale_annotation": "VideoLLaMA2-generated free-text Context/Caption/Description/Reasoning",
+      "maps_exactly_to_bdd_oia_21": false,
+      "natural_or_weather_severity_freezable": "synthetic categorical paired weather only; not natural severity",
+      "license": "Apache-2.0",
+      "redistribution_policy": "license permits use with notice, but project should not version large media",
+      "estimated_cost": "LOW_TO_MEDIUM on current repository, but inferential sample size is only nine groups",
+      "decision": "STOP_VLA4CODRIVE_PSEUDOREPLICATION"
+    }
+  ],
+  "formal_claim_boundary": "This record authorizes no external model experiment. DAAD-X may proceed only to a result-blind full-package inventory and source-group leakage preflight."
+}
