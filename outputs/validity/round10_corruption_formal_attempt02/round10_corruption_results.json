@@ -1,0 +1,1570 @@
+{
+  "schema_version": "ARSC_ROUND10_CORRUPTION_RESULTS_V1",
+  "generated_at_utc": "2026-07-31T10:12:59Z",
+  "status": "COMPLETE",
+  "formal_run": true,
+  "attempt": "attempt02",
+  "implementation_commit": "0c10e078a27d67816041aedd31b0c3273177e30d",
+  "formal_go": {
+    "path": "outputs/validity/round10_preformal_reviewer_decision_amendment02.json",
+    "sha256": "2D98F77990E444934B9376AC28758CC3A06C602E0E7F0972A58C52E3AF8F73B8",
+    "decision": "GO_ROUND10_FORMAL_RUN_ATTEMPT02"
+  },
+  "design": {
+    "seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "families": [
+      "brightness",
+      "blur",
+      "noise"
+    ],
+    "levels": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "parameters": {
+      "brightness": [
+        1.0,
+        1.05,
+        1.1,
+        1.2,
+        1.3
+      ],
+      "blur": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "noise": [
+        0.0,
+        2.5,
+        5.0,
+        7.5,
+        10.0
+      ]
+    },
+    "noise_seed": 20260731,
+    "sample_count": 4557,
+    "source_clip_count": 3904,
+    "bootstrap_replicates": 5000,
+    "bootstrap_seed": 20260810,
+    "bonferroni_one_sided_probability": 0.004166666666666667,
+    "numpy_quantile_method": "linear"
+  },
+  "data": {
+    "sample_count": 4557,
+    "source_clip_count": 3904,
+    "test_manifest_sha256": "89364A265FE4C2EDCA5125D34C4C25D47C96AFB46A5C4A8FE86B649785539004",
+    "source_image_inventory_sha256": "8034D044D55973917D0719A1CC829EEA002582420D6F7E05BB18F9AFF8894901",
+    "clip_id_by_image_array_sha256": "504EE4F533084FBC40C13E62686B462F239BD339F034F18F82C2A4AAF29A84AB",
+    "clip_sizes_array_sha256": "C9F66C92A79AE9ED7854FC15F58DD05B450DDC0B7CC2D8D04EB869C4F4D839E1"
+  },
+  "bootstrap": {
+    "replicates": 5000,
+    "seed": 20260810,
+    "rng": "numpy.random.default_rng",
+    "seed_draw_size": 5,
+    "clip_draw_size": 3904,
+    "family_axis_gate_draw_shape": [
+      5000,
+      12
+    ],
+    "endpoint_draw_shape": [
+      5000,
+      24
+    ],
+    "seed_position_draw_shape": [
+      5000,
+      5
+    ],
+    "clip_position_draw_shape": [
+      5000,
+      3904
+    ],
+    "expanded_image_count_shape": [
+      5000
+    ],
+    "bonferroni_fixed_gate_count": 12,
+    "one_sided_probability": 0.004166666666666667,
+    "quantile_method": "linear"
+  },
+  "gate_result": {
+    "gate_count": 12,
+    "passed_gate_count": 3,
+    "all_twelve_gates_passed": false,
+    "family_axis_gates": [
+      {
+        "family": "brightness",
+        "axis": "A",
+        "seed_bottlenecks": [
+          -0.0011558287045839721,
+          -0.00548896848554592,
+          -0.0011536307190129769,
+          -0.003358320136573334,
+          -0.0010720251610518705
+        ],
+        "strictly_positive_seed_count": 0,
+        "five_seed_unweighted_mean_bottleneck": -0.002445754641353615,
+        "pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "45B3227C8B07DD752B9DDA0A57300719AFD032A7B918739D003B8E8AEFACA7F9",
+            "finite_count": 5000,
+            "minimum": -0.008294192108288457,
+            "maximum": -0.0003522893516924697,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.005509016834243389
+          },
+          "upper": {
+            "input_array_sha256": "45B3227C8B07DD752B9DDA0A57300719AFD032A7B918739D003B8E8AEFACA7F9",
+            "finite_count": 5000,
+            "minimum": -0.008294192108288457,
+            "maximum": -0.0003522893516924697,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": -0.0017158638835298291
+          }
+        },
+        "bonferroni_one_sided_lower": {
+          "input_array_sha256": "45B3227C8B07DD752B9DDA0A57300719AFD032A7B918739D003B8E8AEFACA7F9",
+          "finite_count": 5000,
+          "minimum": -0.008294192108288457,
+          "maximum": -0.0003522893516924697,
+          "quantile_probability": 0.004166666666666667,
+          "numpy_method": "linear",
+          "unrounded_result": -0.006327073654463902
+        },
+        "criteria": {
+          "at_least_four_of_five_seed_bottlenecks_strictly_positive": false,
+          "five_seed_unweighted_mean_strictly_positive": false,
+          "bootstrap_bonferroni_lower_strictly_positive": false,
+          "grand_mean_component_curves_have_no_reversal": false,
+          "all_axis_practical_endpoints_pass": false
+        },
+        "passed": false
+      },
+      {
+        "family": "brightness",
+        "axis": "R",
+        "seed_bottlenecks": [
+          -1.749919253080101e-05,
+          0.00036202409512980926,
+          0.0006645652092028831,
+          -0.0005463283629616456,
+          -0.0022993203306824195
+        ],
+        "strictly_positive_seed_count": 2,
+        "five_seed_unweighted_mean_bottleneck": -0.0003673117163684347,
+        "pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "A1EA811D81EC2501A3AD7E813D8F28CD33089A03A5AA4D74D366C18B0D8AAC67",
+            "finite_count": 5000,
+            "minimum": -0.0038692580320992876,
+            "maximum": 0.0010217296801196762,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.0022471297232017737
+          },
+          "upper": {
+            "input_array_sha256": "A1EA811D81EC2501A3AD7E813D8F28CD33089A03A5AA4D74D366C18B0D8AAC67",
+            "finite_count": 5000,
+            "minimum": -0.0038692580320992876,
+            "maximum": 0.0010217296801196762,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.000308863702889209
+          }
+        },
+        "bonferroni_one_sided_lower": {
+          "input_array_sha256": "A1EA811D81EC2501A3AD7E813D8F28CD33089A03A5AA4D74D366C18B0D8AAC67",
+          "finite_count": 5000,
+          "minimum": -0.0038692580320992876,
+          "maximum": 0.0010217296801196762,
+          "quantile_probability": 0.004166666666666667,
+          "numpy_method": "linear",
+          "unrounded_result": -0.0029897176319435355
+        },
+        "criteria": {
+          "at_least_four_of_five_seed_bottlenecks_strictly_positive": false,
+          "five_seed_unweighted_mean_strictly_positive": false,
+          "bootstrap_bonferroni_lower_strictly_positive": false,
+          "grand_mean_component_curves_have_no_reversal": false,
+          "all_axis_practical_endpoints_pass": false
+        },
+        "passed": false
+      },
+      {
+        "family": "brightness",
+        "axis": "S",
+        "seed_bottlenecks": [
+          -0.005822531348708471,
+          -0.0024897221460019603,
+          -0.0023923684671066092,
+          -0.004782177045275726,
+          -0.0023756407985781602
+        ],
+        "strictly_positive_seed_count": 0,
+        "five_seed_unweighted_mean_bottleneck": -0.0035724879611341853,
+        "pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "C2D0A160203930B82CD2872C9937F7CABD34F9F809918E0011ABDF67BFAF1A04",
+            "finite_count": 5000,
+            "minimum": -0.013156952925052534,
+            "maximum": -0.00012418894572593375,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.00857719933789722
+          },
+          "upper": {
+            "input_array_sha256": "C2D0A160203930B82CD2872C9937F7CABD34F9F809918E0011ABDF67BFAF1A04",
+            "finite_count": 5000,
+            "minimum": -0.013156952925052534,
+            "maximum": -0.00012418894572593375,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": -0.0027642548000806834
+          }
+        },
+        "bonferroni_one_sided_lower": {
+          "input_array_sha256": "C2D0A160203930B82CD2872C9937F7CABD34F9F809918E0011ABDF67BFAF1A04",
+          "finite_count": 5000,
+          "minimum": -0.013156952925052534,
+          "maximum": -0.00012418894572593375,
+          "quantile_probability": 0.004166666666666667,
+          "numpy_method": "linear",
+          "unrounded_result": -0.009938822976243501
+        },
+        "criteria": {
+          "at_least_four_of_five_seed_bottlenecks_strictly_positive": false,
+          "five_seed_unweighted_mean_strictly_positive": false,
+          "bootstrap_bonferroni_lower_strictly_positive": false,
+          "grand_mean_component_curves_have_no_reversal": false,
+          "all_axis_practical_endpoints_pass": false
+        },
+        "passed": false
+      },
+      {
+        "family": "brightness",
+        "axis": "C1",
+        "seed_bottlenecks": [
+          0.026194133567405076,
+          0.025641869651085947,
+          0.022822032038621903,
+          0.017994294491990345,
+          0.02818374661692602
+        ],
+        "strictly_positive_seed_count": 5,
+        "five_seed_unweighted_mean_bottleneck": 0.02416721527320586,
+        "pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "548B630F6A6745F265D96F2387E880D5866DD0814FA29425C77531F64A8A9962",
+            "finite_count": 5000,
+            "minimum": 0.015452500181435524,
+            "maximum": 0.03214473108876246,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.019152655953024653
+          },
+          "upper": {
+            "input_array_sha256": "548B630F6A6745F265D96F2387E880D5866DD0814FA29425C77531F64A8A9962",
+            "finite_count": 5000,
+            "minimum": 0.015452500181435524,
+            "maximum": 0.03214473108876246,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.027769002291398618
+          }
+        },
+        "bonferroni_one_sided_lower": {
+          "input_array_sha256": "548B630F6A6745F265D96F2387E880D5866DD0814FA29425C77531F64A8A9962",
+          "finite_count": 5000,
+          "minimum": 0.015452500181435524,
+          "maximum": 0.03214473108876246,
+          "quantile_probability": 0.004166666666666667,
+          "numpy_method": "linear",
+          "unrounded_result": 0.017410942299206266
+        },
+        "criteria": {
+          "at_least_four_of_five_seed_bottlenecks_strictly_positive": true,
+          "five_seed_unweighted_mean_strictly_positive": true,
+          "bootstrap_bonferroni_lower_strictly_positive": true,
+          "grand_mean_component_curves_have_no_reversal": true,
+          "all_axis_practical_endpoints_pass": true
+        },
+        "passed": true
+      },
+      {
+        "family": "blur",
+        "axis": "A",
+        "seed_bottlenecks": [
+          -0.001505405974037144,
+          -0.0006374049733854914,
+          -0.003053655697687785,
+          -0.000696008323548436,
+          -0.0007949104617662739
+        ],
+        "strictly_positive_seed_count": 0,
+        "five_seed_unweighted_mean_bottleneck": -0.001337477086085026,
+        "pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "6613E49A6A463B219C055B7CC49750814716D3245020C218ED0DAE766A4FC967",
+            "finite_count": 5000,
+            "minimum": -0.006752679802205175,
+            "maximum": 0.0010176972194528844,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.004039841471783217
+          },
+          "upper": {
+            "input_array_sha256": "6613E49A6A463B219C055B7CC49750814716D3245020C218ED0DAE766A4FC967",
+            "finite_count": 5000,
+            "minimum": -0.006752679802205175,
+            "maximum": 0.0010176972194528844,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": -0.0006384321381372954
+          }
+        },
+        "bonferroni_one_sided_lower": {
+          "input_array_sha256": "6613E49A6A463B219C055B7CC49750814716D3245020C218ED0DAE766A4FC967",
+          "finite_count": 5000,
+          "minimum": -0.006752679802205175,
+          "maximum": 0.0010176972194528844,
+          "quantile_probability": 0.004166666666666667,
+          "numpy_method": "linear",
+          "unrounded_result": -0.004892175001709236
+        },
+        "criteria": {
+          "at_least_four_of_five_seed_bottlenecks_strictly_positive": false,
+          "five_seed_unweighted_mean_strictly_positive": false,
+          "bootstrap_bonferroni_lower_strictly_positive": false,
+          "grand_mean_component_curves_have_no_reversal": false,
+          "all_axis_practical_endpoints_pass": true
+        },
+        "passed": false
+      },
+      {
+        "family": "blur",
+        "axis": "R",
+        "seed_bottlenecks": [
+          0.0003785528180950126,
+          -0.0008164469430372856,
+          -0.0010280377241628225,
+          -0.0008018786483906248,
+          -0.0002515581785735299
+        ],
+        "strictly_positive_seed_count": 1,
+        "five_seed_unweighted_mean_bottleneck": -0.00050387373521385,
+        "pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "CB9D9AE066253A8743ED63AC8313D3017B0285B121A3FF97995B08D5BAC828AC",
+            "finite_count": 5000,
+            "minimum": -0.0032679294672962713,
+            "maximum": 0.0011944165271381758,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.0017362069233854461
+          },
+          "upper": {
+            "input_array_sha256": "CB9D9AE066253A8743ED63AC8313D3017B0285B121A3FF97995B08D5BAC828AC",
+            "finite_count": 5000,
+            "minimum": -0.0032679294672962713,
+            "maximum": 0.0011944165271381758,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.0002777743299663095
+          }
+        },
+        "bonferroni_one_sided_lower": {
+          "input_array_sha256": "CB9D9AE066253A8743ED63AC8313D3017B0285B121A3FF97995B08D5BAC828AC",
+          "finite_count": 5000,
+          "minimum": -0.0032679294672962713,
+          "maximum": 0.0011944165271381758,
+          "quantile_probability": 0.004166666666666667,
+          "numpy_method": "linear",
+          "unrounded_result": -0.0021725557166012393
+        },
+        "criteria": {
+          "at_least_four_of_five_seed_bottlenecks_strictly_positive": false,
+          "five_seed_unweighted_mean_strictly_positive": false,
+          "bootstrap_bonferroni_lower_strictly_positive": false,
+          "grand_mean_component_curves_have_no_reversal": false,
+          "all_axis_practical_endpoints_pass": false
+        },
+        "passed": false
+      },
+      {
+        "family": "blur",
+        "axis": "S",
+        "seed_bottlenecks": [
+          -0.0012705175411645842,
+          -0.010248847215538148,
+          -0.006559341068214153,
+          -0.0007784169876084435,
+          -0.004303966086264155
+        ],
+        "strictly_positive_seed_count": 0,
+        "five_seed_unweighted_mean_bottleneck": -0.004632217779757896,
+        "pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "746AFC7DC4477596A9A2D2EC9C0BBFDBB7724329D1FAC20939674A868CE91459",
+            "finite_count": 5000,
+            "minimum": -0.017870588653318142,
+            "maximum": -0.0004625868049487281,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.011507446904528462
+          },
+          "upper": {
+            "input_array_sha256": "746AFC7DC4477596A9A2D2EC9C0BBFDBB7724329D1FAC20939674A868CE91459",
+            "finite_count": 5000,
+            "minimum": -0.017870588653318142,
+            "maximum": -0.0004625868049487281,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": -0.0029772050626510694
+          }
+        },
+        "bonferroni_one_sided_lower": {
+          "input_array_sha256": "746AFC7DC4477596A9A2D2EC9C0BBFDBB7724329D1FAC20939674A868CE91459",
+          "finite_count": 5000,
+          "minimum": -0.017870588653318142,
+          "maximum": -0.0004625868049487281,
+          "quantile_probability": 0.004166666666666667,
+          "numpy_method": "linear",
+          "unrounded_result": -0.013750358637830666
+        },
+        "criteria": {
+          "at_least_four_of_five_seed_bottlenecks_strictly_positive": false,
+          "five_seed_unweighted_mean_strictly_positive": false,
+          "bootstrap_bonferroni_lower_strictly_positive": false,
+          "grand_mean_component_curves_have_no_reversal": false,
+          "all_axis_practical_endpoints_pass": false
+        },
+        "passed": false
+      },
+      {
+        "family": "blur",
+        "axis": "C1",
+        "seed_bottlenecks": [
+          0.030857289152219858,
+          0.03458781362007146,
+          0.033245556287030964,
+          0.023253602516275396,
+          0.036496964377148444
+        ],
+        "strictly_positive_seed_count": 5,
+        "five_seed_unweighted_mean_bottleneck": 0.031688245190549226,
+        "pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "56E1F68AEDC7405863BF6D62C9C3843FAF764FE7198C845680E91A61A648D8E0",
+            "finite_count": 5000,
+            "minimum": 0.0207688908528502,
+            "maximum": 0.04112715077281992,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.026547320510481195
+          },
+          "upper": {
+            "input_array_sha256": "56E1F68AEDC7405863BF6D62C9C3843FAF764FE7198C845680E91A61A648D8E0",
+            "finite_count": 5000,
+            "minimum": 0.0207688908528502,
+            "maximum": 0.04112715077281992,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.036195775806152804
+          }
+        },
+        "bonferroni_one_sided_lower": {
+          "input_array_sha256": "56E1F68AEDC7405863BF6D62C9C3843FAF764FE7198C845680E91A61A648D8E0",
+          "finite_count": 5000,
+          "minimum": 0.0207688908528502,
+          "maximum": 0.04112715077281992,
+          "quantile_probability": 0.004166666666666667,
+          "numpy_method": "linear",
+          "unrounded_result": 0.024812217845368103
+        },
+        "criteria": {
+          "at_least_four_of_five_seed_bottlenecks_strictly_positive": true,
+          "five_seed_unweighted_mean_strictly_positive": true,
+          "bootstrap_bonferroni_lower_strictly_positive": true,
+          "grand_mean_component_curves_have_no_reversal": true,
+          "all_axis_practical_endpoints_pass": true
+        },
+        "passed": true
+      },
+      {
+        "family": "noise",
+        "axis": "A",
+        "seed_bottlenecks": [
+          -0.001836003581404122,
+          -0.002486395961744159,
+          -0.0017625784108656894,
+          -0.002335833309529578,
+          -0.0024478769708276005
+        ],
+        "strictly_positive_seed_count": 0,
+        "five_seed_unweighted_mean_bottleneck": -0.0021737376468742298,
+        "pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "3235C6E1A3FCBD124B01A288A0C04D53F0FE1753F011AF55304885C968E6C481",
+            "finite_count": 5000,
+            "minimum": -0.006031275197708274,
+            "maximum": 0.0003917581522291158,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.004608689775564704
+          },
+          "upper": {
+            "input_array_sha256": "3235C6E1A3FCBD124B01A288A0C04D53F0FE1753F011AF55304885C968E6C481",
+            "finite_count": 5000,
+            "minimum": -0.006031275197708274,
+            "maximum": 0.0003917581522291158,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": -0.001510967435186037
+          }
+        },
+        "bonferroni_one_sided_lower": {
+          "input_array_sha256": "3235C6E1A3FCBD124B01A288A0C04D53F0FE1753F011AF55304885C968E6C481",
+          "finite_count": 5000,
+          "minimum": -0.006031275197708274,
+          "maximum": 0.0003917581522291158,
+          "quantile_probability": 0.004166666666666667,
+          "numpy_method": "linear",
+          "unrounded_result": -0.005193726007830747
+        },
+        "criteria": {
+          "at_least_four_of_five_seed_bottlenecks_strictly_positive": false,
+          "five_seed_unweighted_mean_strictly_positive": false,
+          "bootstrap_bonferroni_lower_strictly_positive": false,
+          "grand_mean_component_curves_have_no_reversal": false,
+          "all_axis_practical_endpoints_pass": false
+        },
+        "passed": false
+      },
+      {
+        "family": "noise",
+        "axis": "R",
+        "seed_bottlenecks": [
+          0.00020282951696981577,
+          0.00011502824939169098,
+          -0.00030429388747815755,
+          -0.0009169883877768459,
+          -0.0005321363164372261
+        ],
+        "strictly_positive_seed_count": 2,
+        "five_seed_unweighted_mean_bottleneck": -0.0002871121650661446,
+        "pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "A88056D56E581F98D8985832899ADF697E353F8745286F83CA3A909D20BFE921",
+            "finite_count": 5000,
+            "minimum": -0.0033320309200942978,
+            "maximum": 0.0016420603060232132,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.0018038970024213117
+          },
+          "upper": {
+            "input_array_sha256": "A88056D56E581F98D8985832899ADF697E353F8745286F83CA3A909D20BFE921",
+            "finite_count": 5000,
+            "minimum": -0.0033320309200942978,
+            "maximum": 0.0016420603060232132,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.00035645396104924844
+          }
+        },
+        "bonferroni_one_sided_lower": {
+          "input_array_sha256": "A88056D56E581F98D8985832899ADF697E353F8745286F83CA3A909D20BFE921",
+          "finite_count": 5000,
+          "minimum": -0.0033320309200942978,
+          "maximum": 0.0016420603060232132,
+          "quantile_probability": 0.004166666666666667,
+          "numpy_method": "linear",
+          "unrounded_result": -0.0022377044771330606
+        },
+        "criteria": {
+          "at_least_four_of_five_seed_bottlenecks_strictly_positive": false,
+          "five_seed_unweighted_mean_strictly_positive": false,
+          "bootstrap_bonferroni_lower_strictly_positive": false,
+          "grand_mean_component_curves_have_no_reversal": true,
+          "all_axis_practical_endpoints_pass": false
+        },
+        "passed": false
+      },
+      {
+        "family": "noise",
+        "axis": "S",
+        "seed_bottlenecks": [
+          -0.008122432944169589,
+          -0.008131076566615658,
+          -0.006784865149380204,
+          -0.008678162573124537,
+          -0.005382062182944847
+        ],
+        "strictly_positive_seed_count": 0,
+        "five_seed_unweighted_mean_bottleneck": -0.007419719883246967,
+        "pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "4643E4F7A89DEC3F09992B35B6DA34BFA181BA081E61A72008924004A231A796",
+            "finite_count": 5000,
+            "minimum": -0.017893759771111815,
+            "maximum": -0.003624143325821638,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.01222506641735096
+          },
+          "upper": {
+            "input_array_sha256": "4643E4F7A89DEC3F09992B35B6DA34BFA181BA081E61A72008924004A231A796",
+            "finite_count": 5000,
+            "minimum": -0.017893759771111815,
+            "maximum": -0.003624143325821638,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": -0.005857285769709777
+          }
+        },
+        "bonferroni_one_sided_lower": {
+          "input_array_sha256": "4643E4F7A89DEC3F09992B35B6DA34BFA181BA081E61A72008924004A231A796",
+          "finite_count": 5000,
+          "minimum": -0.017893759771111815,
+          "maximum": -0.003624143325821638,
+          "quantile_probability": 0.004166666666666667,
+          "numpy_method": "linear",
+          "unrounded_result": -0.01378022141225757
+        },
+        "criteria": {
+          "at_least_four_of_five_seed_bottlenecks_strictly_positive": false,
+          "five_seed_unweighted_mean_strictly_positive": false,
+          "bootstrap_bonferroni_lower_strictly_positive": false,
+          "grand_mean_component_curves_have_no_reversal": false,
+          "all_axis_practical_endpoints_pass": false
+        },
+        "passed": false
+      },
+      {
+        "family": "noise",
+        "axis": "C1",
+        "seed_bottlenecks": [
+          0.024797015580425713,
+          0.025872284397630008,
+          0.024577572964669725,
+          0.019530392802282207,
+          0.02699144173798551
+        ],
+        "strictly_positive_seed_count": 5,
+        "five_seed_unweighted_mean_bottleneck": 0.024353741496598632,
+        "pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "5333BAF105B3E463BA3EA3B23057ADEC590C44942575D6B04FE2F4F29D7CCCEE",
+            "finite_count": 5000,
+            "minimum": 0.014806678383128291,
+            "maximum": 0.030698959924357883,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.01850987606647798
+          },
+          "upper": {
+            "input_array_sha256": "5333BAF105B3E463BA3EA3B23057ADEC590C44942575D6B04FE2F4F29D7CCCEE",
+            "finite_count": 5000,
+            "minimum": 0.014806678383128291,
+            "maximum": 0.030698959924357883,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.026680080612871398
+          }
+        },
+        "bonferroni_one_sided_lower": {
+          "input_array_sha256": "5333BAF105B3E463BA3EA3B23057ADEC590C44942575D6B04FE2F4F29D7CCCEE",
+          "finite_count": 5000,
+          "minimum": 0.014806678383128291,
+          "maximum": 0.030698959924357883,
+          "quantile_probability": 0.004166666666666667,
+          "numpy_method": "linear",
+          "unrounded_result": 0.017203838848458445
+        },
+        "criteria": {
+          "at_least_four_of_five_seed_bottlenecks_strictly_positive": true,
+          "five_seed_unweighted_mean_strictly_positive": true,
+          "bootstrap_bonferroni_lower_strictly_positive": true,
+          "grand_mean_component_curves_have_no_reversal": true,
+          "all_axis_practical_endpoints_pass": true
+        },
+        "passed": true
+      }
+    ],
+    "practical_endpoints": [
+      {
+        "family": "brightness",
+        "component": "A::action_only",
+        "per_seed_effects": [
+          0.002243166009005426,
+          0.0036347668362552987,
+          0.0011310861298383657,
+          0.00329223031549708,
+          0.0056298287792513335
+        ],
+        "unweighted_five_seed_mean_effect": 0.0031862156139695007,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": false,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "70C8D61BDAB5007E62589650DC8C42B610895F582AD2B8544FB99B299906D5FC",
+            "finite_count": 5000,
+            "minimum": -0.005243431536067722,
+            "maximum": 0.011248353255332511,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.0008763258489890845
+          },
+          "upper": {
+            "input_array_sha256": "70C8D61BDAB5007E62589650DC8C42B610895F582AD2B8544FB99B299906D5FC",
+            "finite_count": 5000,
+            "minimum": -0.005243431536067722,
+            "maximum": 0.011248353255332511,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.007115561591942458
+          }
+        }
+      },
+      {
+        "family": "brightness",
+        "component": "A::joint",
+        "per_seed_effects": [
+          0.001530250438712133,
+          0.002959307181273574,
+          0.0037615335575318376,
+          -0.0017945508850191194,
+          0.0022995839913517724
+        ],
+        "unweighted_five_seed_mean_effect": 0.0017512248567700395,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": false,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "183901BA2233E0B5CBD7D06414D68C0509FF937E21A32C58A15C8C3E09BE19FA",
+            "finite_count": 5000,
+            "minimum": -0.00573288404134209,
+            "maximum": 0.008814278431066257,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.0021169945072379913
+          },
+          "upper": {
+            "input_array_sha256": "183901BA2233E0B5CBD7D06414D68C0509FF937E21A32C58A15C8C3E09BE19FA",
+            "finite_count": 5000,
+            "minimum": -0.00573288404134209,
+            "maximum": 0.008814278431066257,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.005414666822027855
+          }
+        }
+      },
+      {
+        "family": "brightness",
+        "component": "R::joint_rationale",
+        "per_seed_effects": [
+          0.003917104920930836,
+          0.004771960734241409,
+          0.006333549488454271,
+          0.002484783547792274,
+          0.004445709982164703
+        ],
+        "unweighted_five_seed_mean_effect": 0.004390621734716699,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": false,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "27CCB8840586BE7E7BDFBB94B46C6D044C8D9ABD82AA3D626DB797C2D791F918",
+            "finite_count": 5000,
+            "minimum": -0.00011581577160475476,
+            "maximum": 0.01141010592691144,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.0019020939103844214
+          },
+          "upper": {
+            "input_array_sha256": "27CCB8840586BE7E7BDFBB94B46C6D044C8D9ABD82AA3D626DB797C2D791F918",
+            "finite_count": 5000,
+            "minimum": -0.00011581577160475476,
+            "maximum": 0.01141010592691144,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.0069582547965940855
+          }
+        }
+      },
+      {
+        "family": "brightness",
+        "component": "S::action_only",
+        "per_seed_effects": [
+          0.0008098772043155789,
+          0.007812740238236693,
+          0.0022214546469613294,
+          0.015131781302938685,
+          0.0029707698260146853
+        ],
+        "unweighted_five_seed_mean_effect": 0.005789324643693394,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": false,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "E0BDE80FB417D69CF67DCB0C09E58925336BC07BB6F2CE3CE50DBFBD3D81D54D",
+            "finite_count": 5000,
+            "minimum": -0.009759863325797724,
+            "maximum": 0.022877196576450754,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.0023554352502039235
+          },
+          "upper": {
+            "input_array_sha256": "E0BDE80FB417D69CF67DCB0C09E58925336BC07BB6F2CE3CE50DBFBD3D81D54D",
+            "finite_count": 5000,
+            "minimum": -0.009759863325797724,
+            "maximum": 0.022877196576450754,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.01391568545738854
+          }
+        }
+      },
+      {
+        "family": "brightness",
+        "component": "S::joint",
+        "per_seed_effects": [
+          0.00476211542032462,
+          0.006839910883013611,
+          0.0031733897921642495,
+          0.0038617144408779613,
+          -0.0005153834076388475
+        ],
+        "unweighted_five_seed_mean_effect": 0.0036243494257483188,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": false,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "D27B85DF46FCDA509B40A79429636A28C8ED8615723EEF721EE8B7DD9D757B9B",
+            "finite_count": 5000,
+            "minimum": -0.008401385057129706,
+            "maximum": 0.017400385121046913,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.002810682413018969
+          },
+          "upper": {
+            "input_array_sha256": "D27B85DF46FCDA509B40A79429636A28C8ED8615723EEF721EE8B7DD9D757B9B",
+            "finite_count": 5000,
+            "minimum": -0.008401385057129706,
+            "maximum": 0.017400385121046913,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.010255884226674583
+          }
+        }
+      },
+      {
+        "family": "brightness",
+        "component": "C1::action_only_flip",
+        "per_seed_effects": [
+          0.18499012508229098,
+          0.19398727232828616,
+          0.20298441957428132,
+          0.18520956769804697,
+          0.1990344524906737
+        ],
+        "unweighted_five_seed_mean_effect": 0.1932411674347158,
+        "threshold": 0.025,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": true,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "A1D48256253E07AC09067FAF0BBCA67619FA722D990114F6F84974C16600FAE5",
+            "finite_count": 5000,
+            "minimum": 0.17183530442400347,
+            "maximum": 0.2140242557883131,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.183216276402327
+          },
+          "upper": {
+            "input_array_sha256": "A1D48256253E07AC09067FAF0BBCA67619FA722D990114F6F84974C16600FAE5",
+            "finite_count": 5000,
+            "minimum": 0.17183530442400347,
+            "maximum": 0.2140242557883131,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.20361962741306955
+          }
+        }
+      },
+      {
+        "family": "brightness",
+        "component": "C1::joint_flip",
+        "per_seed_effects": [
+          0.1911345183234584,
+          0.19376782971253018,
+          0.1597542242703533,
+          0.11652402896642527,
+          0.19267061663375026
+        ],
+        "unweighted_five_seed_mean_effect": 0.1707702435813035,
+        "threshold": 0.025,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": true,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "6575997D3F6B7E7C35C9BE7CDB7313FD6E841FE1E0F55BA208D7D943BD20C4E9",
+            "finite_count": 5000,
+            "minimum": 0.11643835616438356,
+            "maximum": 0.20484901917566675,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.14104664224664223
+          },
+          "upper": {
+            "input_array_sha256": "6575997D3F6B7E7C35C9BE7CDB7313FD6E841FE1E0F55BA208D7D943BD20C4E9",
+            "finite_count": 5000,
+            "minimum": 0.11643835616438356,
+            "maximum": 0.20484901917566675,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.1947043315610268
+          }
+        }
+      },
+      {
+        "family": "brightness",
+        "component": "C1::joint_rationale_jaccard",
+        "per_seed_effects": [
+          0.1545058883768552,
+          0.15586277521761283,
+          0.14622558700899624,
+          0.11947918952527181,
+          0.15364640479847735
+        ],
+        "unweighted_five_seed_mean_effect": 0.14594396898544268,
+        "threshold": 0.025,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": true,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "D270FA4D60938DECA51F87BC9CBD39C915AF4325A1957468BE35CCFFEB45854E",
+            "finite_count": 5000,
+            "minimum": 0.11853242570633866,
+            "maximum": 0.1631064077387444,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.13114442320681235
+          },
+          "upper": {
+            "input_array_sha256": "D270FA4D60938DECA51F87BC9CBD39C915AF4325A1957468BE35CCFFEB45854E",
+            "finite_count": 5000,
+            "minimum": 0.11853242570633866,
+            "maximum": 0.1631064077387444,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.1576996097658889
+          }
+        }
+      },
+      {
+        "family": "blur",
+        "component": "A::action_only",
+        "per_seed_effects": [
+          0.011361096706298812,
+          0.025620361563226113,
+          0.009492171842369834,
+          0.012753158534310693,
+          0.011596717695634084
+        ],
+        "unweighted_five_seed_mean_effect": 0.014164701268367908,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": true,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "5073A3AF2F84FDE3B5750395FDBA8C9EF4C7AA4EC4BD78890EEE84054910CC0D",
+            "finite_count": 5000,
+            "minimum": 0.0028159490523018914,
+            "maximum": 0.030545428284229903,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.007438841465697196
+          },
+          "upper": {
+            "input_array_sha256": "5073A3AF2F84FDE3B5750395FDBA8C9EF4C7AA4EC4BD78890EEE84054910CC0D",
+            "finite_count": 5000,
+            "minimum": 0.0028159490523018914,
+            "maximum": 0.030545428284229903,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.021428590839309786
+          }
+        }
+      },
+      {
+        "family": "blur",
+        "component": "A::joint",
+        "per_seed_effects": [
+          0.012744409038142779,
+          0.0051100618810239196,
+          0.004025468276950717,
+          0.02457024903834837,
+          0.01475583761772259
+        ],
+        "unweighted_five_seed_mean_effect": 0.012241205170437674,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": true,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "C75C8F65E0C0820CFC26B21D6C16E32CAE27C3A799E78D28396222FA1948048F",
+            "finite_count": 5000,
+            "minimum": -0.0019894345885230758,
+            "maximum": 0.02859477504261241,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.004554886505069661
+          },
+          "upper": {
+            "input_array_sha256": "C75C8F65E0C0820CFC26B21D6C16E32CAE27C3A799E78D28396222FA1948048F",
+            "finite_count": 5000,
+            "minimum": -0.0019894345885230758,
+            "maximum": 0.02859477504261241,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.020077550130570793
+          }
+        }
+      },
+      {
+        "family": "blur",
+        "component": "R::joint_rationale",
+        "per_seed_effects": [
+          0.006896409594849828,
+          0.0018958862927874742,
+          0.004732247287358826,
+          0.0035505373182465327,
+          0.012423012541117884
+        ],
+        "unweighted_five_seed_mean_effect": 0.005899618606872109,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": false,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "8D8764424BB5BF7CD54EB1D6B27527A193E91A93978B68A8350F979A3CA756CC",
+            "finite_count": 5000,
+            "minimum": -0.0010776299994860294,
+            "maximum": 0.01831397368571258,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.0020400612111991833
+          },
+          "upper": {
+            "input_array_sha256": "8D8764424BB5BF7CD54EB1D6B27527A193E91A93978B68A8350F979A3CA756CC",
+            "finite_count": 5000,
+            "minimum": -0.0010776299994860294,
+            "maximum": 0.01831397368571258,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.010485453492007548
+          }
+        }
+      },
+      {
+        "family": "blur",
+        "component": "S::action_only",
+        "per_seed_effects": [
+          0.007751853693964694,
+          -0.005483478461636604,
+          0.014432792855568533,
+          0.011033656568111283,
+          0.0003385726815880452
+        ],
+        "unweighted_five_seed_mean_effect": 0.00561467946751919,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": false,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "D00ECC6F90D38922DCB07F32C8D382D5B0363424C94B9971553CBEF4E8688547",
+            "finite_count": 5000,
+            "minimum": -0.016786612357095422,
+            "maximum": 0.033354461879147146,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.005395579968397981
+          },
+          "upper": {
+            "input_array_sha256": "D00ECC6F90D38922DCB07F32C8D382D5B0363424C94B9971553CBEF4E8688547",
+            "finite_count": 5000,
+            "minimum": -0.016786612357095422,
+            "maximum": 0.033354461879147146,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.01603158860094137
+          }
+        }
+      },
+      {
+        "family": "blur",
+        "component": "S::joint",
+        "per_seed_effects": [
+          0.004322387007432815,
+          -0.006171146348506462,
+          -0.016121430205735143,
+          0.015842923567783718,
+          0.012764682824745521
+        ],
+        "unweighted_five_seed_mean_effect": 0.0021274833691440898,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": false,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "5D00A187DE86C73ED3D0169FEC020D2A049D2F3CA895945437F6EB13E7DEF85C",
+            "finite_count": 5000,
+            "minimum": -0.021472678184543036,
+            "maximum": 0.023458299878393783,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.011482764087472327
+          },
+          "upper": {
+            "input_array_sha256": "5D00A187DE86C73ED3D0169FEC020D2A049D2F3CA895945437F6EB13E7DEF85C",
+            "finite_count": 5000,
+            "minimum": -0.021472678184543036,
+            "maximum": 0.023458299878393783,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.0147083288429726
+          }
+        }
+      },
+      {
+        "family": "blur",
+        "component": "C1::action_only_flip",
+        "per_seed_effects": [
+          0.25170068027210885,
+          0.2696949747640992,
+          0.2694755321483432,
+          0.24753127057274524,
+          0.2868114987930656
+        ],
+        "unweighted_five_seed_mean_effect": 0.2650427913100724,
+        "threshold": 0.025,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": true,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "4F829E31DA8BC0AAEE88496D71328686CCD751C4718E3C714AA4231DF566BC86",
+            "finite_count": 5000,
+            "minimum": 0.23666228646517742,
+            "maximum": 0.2929565217391304,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.24935313829586958
+          },
+          "upper": {
+            "input_array_sha256": "4F829E31DA8BC0AAEE88496D71328686CCD751C4718E3C714AA4231DF566BC86",
+            "finite_count": 5000,
+            "minimum": 0.23666228646517742,
+            "maximum": 0.2929565217391304,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.28060507765327036
+          }
+        }
+      },
+      {
+        "family": "blur",
+        "component": "C1::joint_flip",
+        "per_seed_effects": [
+          0.2477507131885012,
+          0.2519201228878648,
+          0.22778143515470706,
+          0.17423743691024798,
+          0.2602589422865921
+        ],
+        "unweighted_five_seed_mean_effect": 0.2323897300855826,
+        "threshold": 0.025,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": true,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "47F6DD8BD81272891463C01FDBC9A42FADCB63D3CF2C7AFEE4256A5B31EE121E",
+            "finite_count": 5000,
+            "minimum": 0.1723376049491825,
+            "maximum": 0.27304347826086955,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.2000837805506414
+          },
+          "upper": {
+            "input_array_sha256": "47F6DD8BD81272891463C01FDBC9A42FADCB63D3CF2C7AFEE4256A5B31EE121E",
+            "finite_count": 5000,
+            "minimum": 0.1723376049491825,
+            "maximum": 0.27304347826086955,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.2571437924798902
+          }
+        }
+      },
+      {
+        "family": "blur",
+        "component": "C1::joint_rationale_jaccard",
+        "per_seed_effects": [
+          0.23061955965181713,
+          0.2194499305098374,
+          0.23254699729354078,
+          0.19636456733230856,
+          0.24193182649403755
+        ],
+        "unweighted_five_seed_mean_effect": 0.22418257625630827,
+        "threshold": 0.025,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": true,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "4C4D9DD2BF7733C723B9E284AC7E1DF5C070DE19B56BECCDE2DA263E6E8E4B67",
+            "finite_count": 5000,
+            "minimum": 0.19094787077826703,
+            "maximum": 0.24809305373525553,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.20795717165702052
+          },
+          "upper": {
+            "input_array_sha256": "4C4D9DD2BF7733C723B9E284AC7E1DF5C070DE19B56BECCDE2DA263E6E8E4B67",
+            "finite_count": 5000,
+            "minimum": 0.19094787077826703,
+            "maximum": 0.24809305373525553,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.2385415696050109
+          }
+        }
+      },
+      {
+        "family": "noise",
+        "component": "A::action_only",
+        "per_seed_effects": [
+          0.013146201128697355,
+          0.01680635652336404,
+          0.010365410202204717,
+          0.004521911020674452,
+          0.021985715349000068
+        ],
+        "unweighted_five_seed_mean_effect": 0.013365118844788127,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": true,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "7F9065380C4CB7FB87AF146140AB25473A23B90F4A215194C2FCA1D81030D3F3",
+            "finite_count": 5000,
+            "minimum": -0.0006100518168164371,
+            "maximum": 0.027329654366042,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.0069717609443818085
+          },
+          "upper": {
+            "input_array_sha256": "7F9065380C4CB7FB87AF146140AB25473A23B90F4A215194C2FCA1D81030D3F3",
+            "finite_count": 5000,
+            "minimum": -0.0006100518168164371,
+            "maximum": 0.027329654366042,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.020034665059781537
+          }
+        }
+      },
+      {
+        "family": "noise",
+        "component": "A::joint",
+        "per_seed_effects": [
+          0.0034006121470867567,
+          -0.003062657756274456,
+          0.0015453575919757156,
+          -0.004877896790726255,
+          -0.00023659901553474416
+        ],
+        "unweighted_five_seed_mean_effect": -0.0006462367646945966,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": false,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "F11A6A299F0850BFEBDE9F3F64EEF65C7B6D4BEE6D5E71F66809EDD7469FD39C",
+            "finite_count": 5000,
+            "minimum": -0.010995788367447367,
+            "maximum": 0.0085356340915272,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.0048937599130136795
+          },
+          "upper": {
+            "input_array_sha256": "F11A6A299F0850BFEBDE9F3F64EEF65C7B6D4BEE6D5E71F66809EDD7469FD39C",
+            "finite_count": 5000,
+            "minimum": -0.010995788367447367,
+            "maximum": 0.0085356340915272,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.0037666614096967567
+          }
+        }
+      },
+      {
+        "family": "noise",
+        "component": "R::joint_rationale",
+        "per_seed_effects": [
+          0.009199843860823953,
+          0.00524228893219425,
+          0.0024467848735643116,
+          0.0018782461515429727,
+          0.00578965124352393
+        ],
+        "unweighted_five_seed_mean_effect": 0.004911363012329884,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": false,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "7C4D0361A903D52365DD0D214679A4B8F79A7547F843A4F67B0A18119DC2B726",
+            "finite_count": 5000,
+            "minimum": -0.00018855089758533782,
+            "maximum": 0.011264096518520283,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.001775235996935906
+          },
+          "upper": {
+            "input_array_sha256": "7C4D0361A903D52365DD0D214679A4B8F79A7547F843A4F67B0A18119DC2B726",
+            "finite_count": 5000,
+            "minimum": -0.00018855089758533782,
+            "maximum": 0.011264096518520283,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.0083022392491752
+          }
+        }
+      },
+      {
+        "family": "noise",
+        "component": "S::action_only",
+        "per_seed_effects": [
+          -0.007529819437054164,
+          -0.005571693336127392,
+          -0.01207269156445634,
+          -0.006731154950032625,
+          -0.0016841099418570815
+        ],
+        "unweighted_five_seed_mean_effect": -0.00671789384590552,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": false,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "114D540A1396242F910E73AD5263B22BEF531A95B4EC5371DE2ECE4F3BAF64F8",
+            "finite_count": 5000,
+            "minimum": -0.020729550430183496,
+            "maximum": 0.008008057447166627,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.014315642123352164
+          },
+          "upper": {
+            "input_array_sha256": "114D540A1396242F910E73AD5263B22BEF531A95B4EC5371DE2ECE4F3BAF64F8",
+            "finite_count": 5000,
+            "minimum": -0.020729550430183496,
+            "maximum": 0.008008057447166627,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.0012875939157605545
+          }
+        }
+      },
+      {
+        "family": "noise",
+        "component": "S::joint",
+        "per_seed_effects": [
+          -0.0014206099349520218,
+          -0.009738645637645149,
+          -0.013814334098956993,
+          -0.004117555285763075,
+          -0.0036875595093112112
+        ],
+        "unweighted_five_seed_mean_effect": -0.00655574089332569,
+        "threshold": 0.01,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": false,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "A21130CE3E2F1B099DCD439A41230A2D650C9B9F384BB5C05E9E71A83738B516",
+            "finite_count": 5000,
+            "minimum": -0.022051398778610454,
+            "maximum": 0.010015797064828313,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": -0.013853645278850442
+          },
+          "upper": {
+            "input_array_sha256": "A21130CE3E2F1B099DCD439A41230A2D650C9B9F384BB5C05E9E71A83738B516",
+            "finite_count": 5000,
+            "minimum": -0.022051398778610454,
+            "maximum": 0.010015797064828313,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.0005196872405493401
+          }
+        }
+      },
+      {
+        "family": "noise",
+        "component": "C1::action_only_flip",
+        "per_seed_effects": [
+          0.18762343647136273,
+          0.19925389510642966,
+          0.21132323897300856,
+          0.1806012727671714,
+          0.2056177309633531
+        ],
+        "unweighted_five_seed_mean_effect": 0.19688391485626508,
+        "threshold": 0.025,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": true,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "B4ADD5A8E3E506B476D3DA8A0728CDD384B7C507693558EBC0377971920137B4",
+            "finite_count": 5000,
+            "minimum": 0.17221609702315327,
+            "maximum": 0.2224911971830986,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.18399098030004035
+          },
+          "upper": {
+            "input_array_sha256": "B4ADD5A8E3E506B476D3DA8A0728CDD384B7C507693558EBC0377971920137B4",
+            "finite_count": 5000,
+            "minimum": 0.17221609702315327,
+            "maximum": 0.2224911971830986,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.20968390034954704
+          }
+        }
+      },
+      {
+        "family": "noise",
+        "component": "C1::joint_flip",
+        "per_seed_effects": [
+          0.18981786262892253,
+          0.17204301075268819,
+          0.15448760149220978,
+          0.10994075049374588,
+          0.17533464998902787
+        ],
+        "unweighted_five_seed_mean_effect": 0.16032477507131887,
+        "threshold": 0.025,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": true,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "DE09489547BC3A59009AA15AC61319F2E7FB30A496E4A7CB3F64EE4861921F31",
+            "finite_count": 5000,
+            "minimum": 0.10362350861688023,
+            "maximum": 0.20039787798408487,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.1325972885829919
+          },
+          "upper": {
+            "input_array_sha256": "DE09489547BC3A59009AA15AC61319F2E7FB30A496E4A7CB3F64EE4861921F31",
+            "finite_count": 5000,
+            "minimum": 0.10362350861688023,
+            "maximum": 0.20039787798408487,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.18250966919631656
+          }
+        }
+      },
+      {
+        "family": "noise",
+        "component": "C1::joint_rationale_jaccard",
+        "per_seed_effects": [
+          0.16695925682100676,
+          0.147487382049593,
+          0.1442323165825461,
+          0.09995611147684824,
+          0.15383293102187023
+        ],
+        "unweighted_five_seed_mean_effect": 0.14249359959037286,
+        "threshold": 0.025,
+        "comparison": "unrounded_float64_greater_than_or_equal",
+        "passed": true,
+        "descriptive_pointwise_95_interval": {
+          "lower": {
+            "input_array_sha256": "5DEB4323E1B86FF8B7DADDC3AC4AD867DAE963D5C9F08FCC44397824B7D3EECD",
+            "finite_count": 5000,
+            "minimum": 0.10363823832670493,
+            "maximum": 0.17022914824638952,
+            "quantile_probability": 0.025,
+            "numpy_method": "linear",
+            "unrounded_result": 0.11944808159104889
+          },
+          "upper": {
+            "input_array_sha256": "5DEB4323E1B86FF8B7DADDC3AC4AD867DAE963D5C9F08FCC44397824B7D3EECD",
+            "finite_count": 5000,
+            "minimum": 0.10363823832670493,
+            "maximum": 0.17022914824638952,
+            "quantile_probability": 0.975,
+            "numpy_method": "linear",
+            "unrounded_result": 0.16049410385995733
+          }
+        }
+      }
+    ]
+  },
+  "verdict": "ROUND10_PARTIAL_OR_FAIL",
+  "artifact_sha256_before_result_json": {
+    "outputs/validity/round10_corruption_formal_attempt02/seed_43_logits.npz": "FF35001C6360A8A5920ABED6FC6E3488274E539857F2A17A14162FC4E72C92E2",
+    "outputs/validity/round10_corruption_formal_attempt02/seed_44_logits.npz": "B069ADB552A390627DC5C16654820EAB30759BF8B4D204DDEE9A1C02EA7FD507",
+    "outputs/validity/round10_corruption_formal_attempt02/seed_45_logits.npz": "A2B1AFBF3A1F66668A216A328EF73CA229447C3FA71AA71B6EBE838CEEC496A0",
+    "outputs/validity/round10_corruption_formal_attempt02/seed_46_logits.npz": "2AA74B8A1B8DDFF29F5977EF9DF7BFAAA83BA44F13B035891318EE287CF43928",
+    "outputs/validity/round10_corruption_formal_attempt02/seed_47_logits.npz": "C6A30E2D6A3ADE49CBE7B3E28AD2C708DC6AE25CAC5F943EAD5D502041F9C6CE",
+    "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_primitives.npz": "80821C7DEE9194ABA62B373383B4FD9EF8105D3750C48902A91EF45D278B2E83",
+    "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_point_diagnostics.csv": "A0F24ED0528CD81B96789E8798AB9B31E44727021F763F6EA157142500B79BF3",
+    "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_bootstrap_draws.npz": "893FE2F899BE4F725E3B056BB26B060EDBE4AB40AA7144D3BB83114D1F87DB02",
+    "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_bootstrap_summary.csv": "33AD63BA93D2B258427EBA8DA36316BC3C612F54303DDDB3D636D8552ED226A0"
+  },
+  "serialization": {
+    "raw_logits_float_dtype": "float32_lossless_npz",
+    "derived_statistics_float_dtype": "float64",
+    "result_json_written_last": true,
+    "staging_renamed_atomically_after_result": true,
+    "cache_reuse": false
+  },
+  "claim_boundary": "BDD-OIA-internal joint metric-by-model-by-operator dose-response for the frozen population, five historical ResNet-50 seeds, fixed thresholds/calibrations, and three synthetic grids only."
+}

@@ -1,0 +1,184 @@
+[round10] formal attempt02 authorized; implementation=0c10e078a27d67816041aedd31b0c3273177e30d
+[round10] seed=43 condition=clean start
+[round10] seed=43 family=brightness level=1 start
+[round10] seed=43 family=brightness level=1 done
+[round10] seed=43 family=brightness level=2 start
+[round10] seed=43 family=brightness level=2 done
+[round10] seed=43 family=brightness level=3 start
+[round10] seed=43 family=brightness level=3 done
+[round10] seed=43 family=brightness level=4 start
+[round10] seed=43 family=brightness level=4 done
+[round10] seed=43 family=blur level=1 start
+[round10] seed=43 family=blur level=1 done
+[round10] seed=43 family=blur level=2 start
+[round10] seed=43 family=blur level=2 done
+[round10] seed=43 family=blur level=3 start
+[round10] seed=43 family=blur level=3 done
+[round10] seed=43 family=blur level=4 start
+[round10] seed=43 family=blur level=4 done
+[round10] seed=43 family=noise level=1 start
+[round10] seed=43 family=noise level=1 done
+[round10] seed=43 family=noise level=2 start
+[round10] seed=43 family=noise level=2 done
+[round10] seed=43 family=noise level=3 start
+[round10] seed=43 family=noise level=3 done
+[round10] seed=43 family=noise level=4 start
+[round10] seed=43 family=noise level=4 done
+[round10] seed=43 logits saved sha256=FF35001C6360A8A5920ABED6FC6E3488274E539857F2A17A14162FC4E72C92E2
+[round10] seed=44 condition=clean start
+[round10] seed=44 family=brightness level=1 start
+[round10] seed=44 family=brightness level=1 done
+[round10] seed=44 family=brightness level=2 start
+[round10] seed=44 family=brightness level=2 done
+[round10] seed=44 family=brightness level=3 start
+[round10] seed=44 family=brightness level=3 done
+[round10] seed=44 family=brightness level=4 start
+[round10] seed=44 family=brightness level=4 done
+[round10] seed=44 family=blur level=1 start
+[round10] seed=44 family=blur level=1 done
+[round10] seed=44 family=blur level=2 start
+[round10] seed=44 family=blur level=2 done
+[round10] seed=44 family=blur level=3 start
+[round10] seed=44 family=blur level=3 done
+[round10] seed=44 family=blur level=4 start
+[round10] seed=44 family=blur level=4 done
+[round10] seed=44 family=noise level=1 start
+[round10] seed=44 family=noise level=1 done
+[round10] seed=44 family=noise level=2 start
+[round10] seed=44 family=noise level=2 done
+[round10] seed=44 family=noise level=3 start
+[round10] seed=44 family=noise level=3 done
+[round10] seed=44 family=noise level=4 start
+[round10] seed=44 family=noise level=4 done
+[round10] seed=44 logits saved sha256=B069ADB552A390627DC5C16654820EAB30759BF8B4D204DDEE9A1C02EA7FD507
+[round10] seed=45 condition=clean start
+[round10] seed=45 family=brightness level=1 start
+[round10] seed=45 family=brightness level=1 done
+[round10] seed=45 family=brightness level=2 start
+[round10] seed=45 family=brightness level=2 done
+[round10] seed=45 family=brightness level=3 start
+[round10] seed=45 family=brightness level=3 done
+[round10] seed=45 family=brightness level=4 start
+[round10] seed=45 family=brightness level=4 done
+[round10] seed=45 family=blur level=1 start
+[round10] seed=45 family=blur level=1 done
+[round10] seed=45 family=blur level=2 start
+[round10] seed=45 family=blur level=2 done
+[round10] seed=45 family=blur level=3 start
+[round10] seed=45 family=blur level=3 done
+[round10] seed=45 family=blur level=4 start
+[round10] seed=45 family=blur level=4 done
+[round10] seed=45 family=noise level=1 start
+[round10] seed=45 family=noise level=1 done
+[round10] seed=45 family=noise level=2 start
+[round10] seed=45 family=noise level=2 done
+[round10] seed=45 family=noise level=3 start
+[round10] seed=45 family=noise level=3 done
+[round10] seed=45 family=noise level=4 start
+[round10] seed=45 family=noise level=4 done
+[round10] seed=45 logits saved sha256=A2B1AFBF3A1F66668A216A328EF73CA229447C3FA71AA71B6EBE838CEEC496A0
+[round10] seed=46 condition=clean start
+[round10] seed=46 family=brightness level=1 start
+[round10] seed=46 family=brightness level=1 done
+[round10] seed=46 family=brightness level=2 start
+[round10] seed=46 family=brightness level=2 done
+[round10] seed=46 family=brightness level=3 start
+[round10] seed=46 family=brightness level=3 done
+[round10] seed=46 family=brightness level=4 start
+[round10] seed=46 family=brightness level=4 done
+[round10] seed=46 family=blur level=1 start
+[round10] seed=46 family=blur level=1 done
+[round10] seed=46 family=blur level=2 start
+[round10] seed=46 family=blur level=2 done
+[round10] seed=46 family=blur level=3 start
+[round10] seed=46 family=blur level=3 done
+[round10] seed=46 family=blur level=4 start
+[round10] seed=46 family=blur level=4 done
+[round10] seed=46 family=noise level=1 start
+[round10] seed=46 family=noise level=1 done
+[round10] seed=46 family=noise level=2 start
+[round10] seed=46 family=noise level=2 done
+[round10] seed=46 family=noise level=3 start
+[round10] seed=46 family=noise level=3 done
+[round10] seed=46 family=noise level=4 start
+[round10] seed=46 family=noise level=4 done
+[round10] seed=46 logits saved sha256=2AA74B8A1B8DDFF29F5977EF9DF7BFAAA83BA44F13B035891318EE287CF43928
+[round10] seed=47 condition=clean start
+[round10] seed=47 family=brightness level=1 start
+[round10] seed=47 family=brightness level=1 done
+[round10] seed=47 family=brightness level=2 start
+[round10] seed=47 family=brightness level=2 done
+[round10] seed=47 family=brightness level=3 start
+[round10] seed=47 family=brightness level=3 done
+[round10] seed=47 family=brightness level=4 start
+[round10] seed=47 family=brightness level=4 done
+[round10] seed=47 family=blur level=1 start
+[round10] seed=47 family=blur level=1 done
+[round10] seed=47 family=blur level=2 start
+[round10] seed=47 family=blur level=2 done
+[round10] seed=47 family=blur level=3 start
+[round10] seed=47 family=blur level=3 done
+[round10] seed=47 family=blur level=4 start
+[round10] seed=47 family=blur level=4 done
+[round10] seed=47 family=noise level=1 start
+[round10] seed=47 family=noise level=1 done
+[round10] seed=47 family=noise level=2 start
+[round10] seed=47 family=noise level=2 done
+[round10] seed=47 family=noise level=3 start
+[round10] seed=47 family=noise level=3 done
+[round10] seed=47 family=noise level=4 start
+[round10] seed=47 family=noise level=4 done
+[round10] seed=47 logits saved sha256=C6A30E2D6A3ADE49CBE7B3E28AD2C708DC6AE25CAC5F943EAD5D502041F9C6CE
+[round10] point diagnostics complete; bootstrap start
+[round10] bootstrap 100/5000
+[round10] bootstrap 200/5000
+[round10] bootstrap 300/5000
+[round10] bootstrap 400/5000
+[round10] bootstrap 500/5000
+[round10] bootstrap 600/5000
+[round10] bootstrap 700/5000
+[round10] bootstrap 800/5000
+[round10] bootstrap 900/5000
+[round10] bootstrap 1000/5000
+[round10] bootstrap 1100/5000
+[round10] bootstrap 1200/5000
+[round10] bootstrap 1300/5000
+[round10] bootstrap 1400/5000
+[round10] bootstrap 1500/5000
+[round10] bootstrap 1600/5000
+[round10] bootstrap 1700/5000
+[round10] bootstrap 1800/5000
+[round10] bootstrap 1900/5000
+[round10] bootstrap 2000/5000
+[round10] bootstrap 2100/5000
+[round10] bootstrap 2200/5000
+[round10] bootstrap 2300/5000
+[round10] bootstrap 2400/5000
+[round10] bootstrap 2500/5000
+[round10] bootstrap 2600/5000
+[round10] bootstrap 2700/5000
+[round10] bootstrap 2800/5000
+[round10] bootstrap 2900/5000
+[round10] bootstrap 3000/5000
+[round10] bootstrap 3100/5000
+[round10] bootstrap 3200/5000
+[round10] bootstrap 3300/5000
+[round10] bootstrap 3400/5000
+[round10] bootstrap 3500/5000
+[round10] bootstrap 3600/5000
+[round10] bootstrap 3700/5000
+[round10] bootstrap 3800/5000
+[round10] bootstrap 3900/5000
+[round10] bootstrap 4000/5000
+[round10] bootstrap 4100/5000
+[round10] bootstrap 4200/5000
+[round10] bootstrap 4300/5000
+[round10] bootstrap 4400/5000
+[round10] bootstrap 4500/5000
+[round10] bootstrap 4600/5000
+[round10] bootstrap 4700/5000
+[round10] bootstrap 4800/5000
+[round10] bootstrap 4900/5000
+[round10] bootstrap 5000/5000
+[round10] COMPLETE verdict=ROUND10_PARTIAL_OR_FAIL final=outputs/validity/round10_corruption_formal_attempt02
+EXIT_CODE=0
