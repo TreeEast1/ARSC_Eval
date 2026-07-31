@@ -1,0 +1,79 @@
+{
+  "schema_version": "ARSC_ROUND10_FORMAL_PREFLIGHT_V1",
+  "generated_at_utc": "2026-07-31T06:20:21Z",
+  "status": "PASS_OUTCOME_BLIND_IMPLEMENTATION_PREFLIGHT",
+  "outcome_blind": true,
+  "formal_run": false,
+  "checkpoint_tensors_loaded": false,
+  "model_inference_run": false,
+  "round10_nonzero_severity_predictions_read_or_computed": false,
+  "round10_nonzero_severity_metric_outcomes_read_or_computed": false,
+  "implementation_commit": "c8191120ce6387ea65269a57480651f5ae697670",
+  "implementation_manifest": {
+    "path": "outputs/validity/round10_corruption_formal_implementation_manifest.json",
+    "sha256": "79483B9C6F23B7B1DC720FAAAC8D53174FE1D850F6C72B24F5EEAD3B1314E34A"
+  },
+  "authorization_sha256": "C20541D8E241961944EBD1AC1BB160C7C7FD050895E500A48612F3907E0C9865",
+  "dataset": {
+    "rows": 4557,
+    "source_clip_count": 3904,
+    "source_image_total_bytes": 159486737,
+    "ordered_source_image_inventory_sha256": "8034D044D55973917D0719A1CC829EEA002582420D6F7E05BB18F9AFF8894901"
+  },
+  "configs": {
+    "43": {
+      "path": "configs/rq1_seed43.yaml",
+      "sha256": "42BE7599C09D17654868DB260E203D4DE7EA0D1FDA49A5C36B6BA3DF7750E55E",
+      "image_size": 224,
+      "batch_size": 128,
+      "num_workers": 8,
+      "amp": true,
+      "threshold": 0.5
+    },
+    "44": {
+      "path": "configs/rq1_seed44.yaml",
+      "sha256": "5B3E3D2B215D4D56B4C4EE70C23428ABF2D4A06E8871CE342E7518CEF44EDB81",
+      "image_size": 224,
+      "batch_size": 128,
+      "num_workers": 8,
+      "amp": true,
+      "threshold": 0.5
+    },
+    "45": {
+      "path": "configs/rq1_seed45.yaml",
+      "sha256": "AAE752920D5E9F262343B5C0921C3C5C6B0C0EBA1C3A543B68911D7B7DE2B2EB",
+      "image_size": 224,
+      "batch_size": 128,
+      "num_workers": 8,
+      "amp": true,
+      "threshold": 0.5
+    },
+    "46": {
+      "path": "configs/rq1_seed46.yaml",
+      "sha256": "9B605AC4AE5C2D4F0C841DA587CA8B6346AF2BD33857B29281AC6ECFABDFCF50",
+      "image_size": 224,
+      "batch_size": 128,
+      "num_workers": 8,
+      "amp": true,
+      "threshold": 0.5
+    },
+    "47": {
+      "path": "configs/rq1_seed47.yaml",
+      "sha256": "5649D9F85392E1CBD52411DCDB7ED3EF079CDB0F7682AD13EB7578B11F032A5E",
+      "image_size": 224,
+      "batch_size": 128,
+      "num_workers": 8,
+      "amp": true,
+      "threshold": 0.5
+    }
+  },
+  "tests": {
+    "command": "D:\\anaconda3\\envs\\Nuclear_Transformer\\python.exe -B -m pytest -q -p no:cacheprovider",
+    "passed": 87,
+    "output": "........................................................................ [ 82%]\n...............                                                          [100%]\n87 passed in 5.13s"
+  },
+  "review_target_count_before_manifest_and_preflight": 60,
+  "formal_artifacts_absent": true,
+  "preformal_go_absent": true,
+  "next_gate": "INDEPENDENT_OUTCOME_BLIND_PREFORMAL_IMPLEMENTATION_AUDIT"
+}
