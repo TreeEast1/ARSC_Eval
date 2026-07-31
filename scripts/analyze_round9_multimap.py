@@ -66,6 +66,11 @@ PREOUTCOME_MANIFEST_PATH = (
 PREIMPLEMENTATION_MEMO_PATH = (
     PROJECT_ROOT / "outputs" / "research_review_memo_round9_preimplementation.md"
 )
+STOP01_REVIEW_PATH = (
+    PROJECT_ROOT
+    / "outputs"
+    / "research_review_memo_round9_preregister_stop01.md"
+)
 SALT_REPLAY_AUDIT_PATH = (
     VALIDITY_ROOT / "round9_multimap_salt_replay_audit.json"
 )
@@ -137,6 +142,9 @@ EXPECTED_INPUT_HASHES = {
     ),
     PREIMPLEMENTATION_MEMO_PATH: (
         "2622B53D5C158066EAD48F730391743CD3277D3A0527FD59E8153C66EAEB8135"
+    ),
+    STOP01_REVIEW_PATH: (
+        "C2FFFB1E2D3860A6626E23CF4C5BACE6FA9965F87207EDAD5AA24872DAF61F1E"
     ),
     SALT_REPLAY_AUDIT_PATH: (
         "7D6472182906B7D442337BC44555BEC6C639B07B7426FF31AC27319C40124C2E"
@@ -317,6 +325,10 @@ def run_preflight() -> dict[str, Any]:
         PROJECT_ROOT / "src" / "arsc_eval" / "multimap_statistics.py",
         PROJECT_ROOT / "src" / "arsc_eval" / "multimap_response.py",
         PROJECT_ROOT / "src" / "arsc_eval" / "graded_response.py",
+        PROJECT_ROOT / "src" / "arsc_eval" / "internal_validity.py",
+        PROJECT_ROOT / "src" / "arsc_eval" / "metric_validity.py",
+        PROJECT_ROOT / "src" / "arsc_eval" / "metrics.py",
+        PROJECT_ROOT / "src" / "arsc_eval" / "constants.py",
         PROJECT_ROOT / "tests" / "test_multimap_statistics.py",
         PROJECT_ROOT / "tests" / "test_multimap_response.py",
         PROJECT_ROOT / "tests" / "test_graded_response.py",
@@ -456,6 +468,7 @@ def reviewer_binding_paths() -> tuple[Path, ...]:
         PREOUTCOME_AUDIT_PATH,
         PREOUTCOME_MANIFEST_PATH,
         PREIMPLEMENTATION_MEMO_PATH,
+        STOP01_REVIEW_PATH,
         SALT_REPLAY_AUDIT_PATH,
         ROUND8_PRIMITIVES_PATH,
         ROUND8_RESULT_PATH,
@@ -464,8 +477,14 @@ def reviewer_binding_paths() -> tuple[Path, ...]:
         Path(__file__).resolve(),
         PROJECT_ROOT / "src" / "arsc_eval" / "multimap_statistics.py",
         PROJECT_ROOT / "src" / "arsc_eval" / "multimap_response.py",
+        PROJECT_ROOT / "src" / "arsc_eval" / "graded_response.py",
+        PROJECT_ROOT / "src" / "arsc_eval" / "internal_validity.py",
+        PROJECT_ROOT / "src" / "arsc_eval" / "metric_validity.py",
+        PROJECT_ROOT / "src" / "arsc_eval" / "metrics.py",
+        PROJECT_ROOT / "src" / "arsc_eval" / "constants.py",
         PROJECT_ROOT / "tests" / "test_multimap_statistics.py",
         PROJECT_ROOT / "tests" / "test_multimap_response.py",
+        PROJECT_ROOT / "tests" / "test_graded_response.py",
         PROJECT_ROOT / "scripts" / "verify_round9_salt_replay.py",
         PROJECT_ROOT / "scripts" / "verify_round9_preoutcome_artifacts.py",
         PROJECT_ROOT / "scripts" / "launch_round9_multimap_tmux.sh",
@@ -496,6 +515,15 @@ def verify_reviewer_go() -> dict[str, Any]:
         require(
             reviewed.get(key) == sha256_file(path),
             f"reviewer did not bind current hash: {key}",
+        )
+    implementation_manifest = read_json(IMPLEMENTATION_MANIFEST_PATH)
+    for key, expected in implementation_manifest[
+        "implementation_hashes"
+    ].items():
+        path = PROJECT_ROOT / key
+        require(
+            path.exists() and sha256_file(path) == expected,
+            f"implementation-manifest hash mismatch: {key}",
         )
     memo_path = PROJECT_ROOT / decision["memo_path"]
     require(
@@ -1284,8 +1312,11 @@ def main() -> int:
         "formal implementation manifest is missing",
     )
     require(
-        not any(path.exists() for path in FORMAL_ARTIFACT_OUTPUTS),
-        "formal output already exists; refusing to overwrite",
+        not any(
+            path.exists()
+            for path in (*FORMAL_ARTIFACT_OUTPUTS, *STAGING_OUTPUTS)
+        ),
+        "formal or staging output already exists; refusing to overwrite",
     )
     verify_frozen_hashes()
     reviewer_decision = verify_reviewer_go()
@@ -1385,6 +1416,13 @@ def main() -> int:
     all_zero_rationale = [
         name
         for index, name in enumerate(RATIONALE_CLASS_NAMES)
+        if np.all(
+            point_arrays["R_per_class_f1"][..., index] == 0.0
+        )
+    ]
+    zero_support_rationale = [
+        name
+        for index, name in enumerate(RATIONALE_CLASS_NAMES)
         if int(primitive_arrays["rationale_targets"][:, index].sum()) == 0
     ]
     result = {
@@ -1455,6 +1493,7 @@ def main() -> int:
             "round8_q0_bridge_max_abs_difference": bridge_difference,
             "round8_q0_bridge": q0_bridge,
             "all_zero_rationale_classes": all_zero_rationale,
+            "zero_support_rationale_classes": zero_support_rationale,
             "diagnostics_csv_rows": len(rows),
         },
         "hierarchical_bootstrap": bootstrap_diagnostics,
