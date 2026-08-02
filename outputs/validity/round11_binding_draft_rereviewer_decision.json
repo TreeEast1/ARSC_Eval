@@ -1,0 +1,119 @@
+{
+  "schema_version": "ARSC_ROUND11_DAADX_BINDING_DRAFT_REREVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-08-02T07:45:35.9313131Z",
+  "decision": "GO_COMMIT_NOT_RUN_BINDING_DRAFT",
+  "reviewer_role": "independent_research_and_execution_safety_rereviewer",
+  "candidate_bytes_frozen_for_this_review": true,
+  "this_is_go_run": false,
+  "execution_authorized": false,
+  "review_scope": {
+    "official_archive_accessed_or_listed": false,
+    "real_video_decoded": false,
+    "real_labels_read": false,
+    "formal_preflight_run": false,
+    "training_or_inference_run": false,
+    "protocol_core_runner_or_candidate_modified_by_reviewer": false,
+    "synthetic_tests_allowed": true
+  },
+  "reviewed_files": [
+    {
+      "path": "scripts/create_round11_daadx_execution_binding_draft.py",
+      "sha256": "7C4609172FAFD7C38BD42496D4A96AE92B38C8FD900CF5D8B64F57775269D493",
+      "role": "candidate_generator"
+    },
+    {
+      "path": "tests/test_round11_daadx_execution_binding_draft.py",
+      "sha256": "B23B5D90F31D4262224FB1C0F9F4CDC5CE66C35441ADF93F4DA12AFF70150EF4",
+      "role": "candidate_synthetic_tests"
+    },
+    {
+      "path": "outputs/validity/round11_daadx_execution_binding.draft.json",
+      "sha256": "4DCFF1D7110B032DBE458CE37D5B95CB9C469F47A5EF62C05C2156219FA6B5AC",
+      "role": "generated_not_run_draft"
+    },
+    {
+      "path": "outputs/validity/round11_daadx_preflight_protocol.json",
+      "sha256": "01642976FAE14A43A25BDD65CA8D007E3C944D2B91771907ABE1B59553FAE880",
+      "role": "frozen_protocol_read_only"
+    },
+    {
+      "path": "scripts/run_round11_daadx_preflight.py",
+      "sha256": "E61B2C6CEEAE8D1A51FD614E71B2357FDED863C3BEF81816AFD8D3CC96D5AB53",
+      "role": "formal_runner_read_only"
+    },
+    {
+      "path": "tests/test_round11_daadx_preflight_runner.py",
+      "sha256": "FCB5A57710D06CF834EF662FDE768445ED9F6358D47C0B886222F2575189ACC5",
+      "role": "runner_tests_read_only"
+    },
+    {
+      "path": "src/arsc_eval/daadx_preflight.py",
+      "sha256": "73639F1B85F84B2A27DC650E3DE1FC203A181561FA00306BCD5A5D2E76860E53",
+      "role": "core_read_only"
+    },
+    {
+      "path": "outputs/validity/round11_runner_reviewer_decision.json",
+      "sha256": "3C2D6AFC465DE586F1597EC149E81E8F4EED1976A025D112C13B8E2150ECB29D",
+      "role": "upstream_authorization_read_only"
+    }
+  ],
+  "resolved_findings": [
+    {
+      "id": "D1",
+      "status": "PASS",
+      "finding": "provenance taxonomy is exactly the five runner-recognized authoritative/auditable classes"
+    },
+    {
+      "id": "D2",
+      "status": "PASS",
+      "finding": "INCOMPLETE_DRAFT schemas, operational_contract_draft naming, null layout facts, and four promotion blockers prevent in-place promotion"
+    },
+    {
+      "id": "D3",
+      "status": "PASS_DRAFT_ONLY",
+      "finding": "64 MiB member and scratch caps are explicit draft values; raw header size is checked before tarfile member parsing and resolved size before extractfile, preventing the prior 8 GiB allocation class under an immutable run input"
+    },
+    {
+      "id": "D4",
+      "status": "PASS",
+      "finding": "upstream schema/decision/authorization, fail-closed capability flags, critical-path uniqueness, exact hashes, and frozen protocol bytes are validated"
+    },
+    {
+      "id": "D5",
+      "status": "PASS",
+      "finding": "formal runner rejects the real draft before data access; publication is same-directory atomic and no-overwrite by default; tools and scratch are explicitly resolved or blocked"
+    }
+  ],
+  "test_evidence": {
+    "independent_command": "$env:PYTHONPATH='src;scripts'; D:\\anaconda3\\envs\\Nuclear_Transformer\\python.exe -m pytest tests\\test_round11_daadx_execution_binding_draft.py -q -p no:cacheprovider",
+    "independent_result": "19 passed in 0.31s",
+    "main_agent_full_suite_secondary_evidence": "179 passed",
+    "full_suite_independently_reproduced": false,
+    "deepseek_preliminary_audit": "UNAVAILABLE_FETCH_FAILED_NO_RESULT_ADOPTED"
+  },
+  "authorization": {
+    "commit_exact_reviewed_not_run_draft_bytes": true,
+    "commit_this_rereview_memo_and_decision": true,
+    "create_or_modify_go_run_binding": false,
+    "issue_execution_reviewer_go_run": false,
+    "archive_access_or_inventory": false,
+    "real_video_decode": false,
+    "real_label_read": false,
+    "formal_attempt01_output": false,
+    "training_or_inference": false,
+    "modify_or_refreeze_protocol_core_or_runner": false
+  },
+  "conditions_before_any_future_go_run": [
+    "obtain separate authorization for transport/layout inventory without label or video access",
+    "resolve exact annotation paths, front UUID regex, provenance member, and ffprobe path/hash",
+    "independently review final archive and selected-metadata caps plus scratch capacity on the execution host",
+    "ensure the official archive remains byte-immutable from G0 audit through every later member reopen/read, or add an equivalent fail-closed revalidation",
+    "generate a new final-schema operational contract and execution binding rather than editing this draft in place",
+    "commit all exact execution bytes in one HEAD and obtain a separate reciprocal execution-reviewer GO_RUN decision"
+  ],
+  "claim_boundary": "GO_COMMIT_NOT_RUN_BINDING_DRAFT authorizes Git preservation of the exact non-executable draft only. It is not GO_RUN, not DAAD-X G0-G8 evidence, and authorizes no archive read, decode, label access, formal publication, training, inference, or protocol modification.",
+  "memo": {
+    "path": "outputs/research_review_memo_round11_binding_draft_rereview.md",
+    "sha256": "3D3E09770F70EE76DA6E8F96963534EF027C08D3D6D452CCD0D9BF1DA6044ABA"
+  }
+}

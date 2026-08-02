@@ -1,0 +1,163 @@
+{
+  "schema_version": "ARSC_ROUND11_RUNNER_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-08-02T06:57:32Z",
+  "decision": "GO_CREATE_EXECUTION_BINDING_NOT_RUN",
+  "reviewer_role": "independent_result_blind_round11_preflight_runner_reviewer",
+  "candidate_bytes_frozen_for_this_review": true,
+  "reviewed_repository_head": "cce0f9cfa0f1437575ddc01c705e23d9fc8a1582",
+  "reviewed_files": [
+    {
+      "path": "scripts/run_round11_daadx_preflight.py",
+      "sha256": "E61B2C6CEEAE8D1A51FD614E71B2357FDED863C3BEF81816AFD8D3CC96D5AB53",
+      "tracked_by_reviewed_head": false
+    },
+    {
+      "path": "tests/test_round11_daadx_preflight_runner.py",
+      "sha256": "FCB5A57710D06CF834EF662FDE768445ED9F6358D47C0B886222F2575189ACC5",
+      "tracked_by_reviewed_head": false
+    },
+    {
+      "path": "src/arsc_eval/daadx_preflight.py",
+      "sha256": "73639F1B85F84B2A27DC650E3DE1FC203A181561FA00306BCD5A5D2E76860E53",
+      "tracked_by_reviewed_head": true,
+      "bound_by_execution_authority": true
+    },
+    {
+      "path": "outputs/validity/round11_daadx_preflight_protocol.json",
+      "sha256": "01642976FAE14A43A25BDD65CA8D007E3C944D2B91771907ABE1B59553FAE880",
+      "tracked_by_reviewed_head": true,
+      "may_be_modified_or_refrozen": false
+    },
+    {
+      "path": "outputs/validity/round11_implementation_reviewer_decision.json",
+      "sha256": "A70426CBAC7A6163F361F4A95624C95C33AE15E1009196BD9B14F78BB7932538",
+      "tracked_by_reviewed_head": true
+    }
+  ],
+  "review_scope": {
+    "official_large_tar_opened_or_listed": false,
+    "real_video_read_or_decoded": false,
+    "real_daadx_labels_read": false,
+    "bdd_oia_inputs_read": false,
+    "model_outputs_read": false,
+    "runner_tests_core_or_protocol_modified_by_reviewer": false,
+    "synthetic_tiny_tar_and_canary_csv_tests_allowed": true
+  },
+  "test_evidence": {
+    "py_compile_runner_and_core": "PASS",
+    "target_command": "$env:PYTHONPATH='src;scripts'; python -m pytest tests/test_round11_daadx_preflight_runner.py -q",
+    "target_result": "47 passed in 2.55s",
+    "remaining_suite_command": "$env:PYTHONPATH='src;scripts'; python -m pytest -q --ignore=tests/test_mask_v3.py --ignore=tests/test_mask_v4.py --ignore=tests/test_vla4codrive_feasibility.py",
+    "remaining_suite_result": "147 passed in 9.79s",
+    "primary_reviewer_full_suite_secondary_evidence": "160 passed",
+    "full_suite_not_independently_reproduced_reason": "default reviewer interpreter lacks cv2 and ultralytics for three unrelated collection modules",
+    "official_data_accessed": false
+  },
+  "authorization": {
+    "create_nonrun_execution_binding_draft": true,
+    "required_draft_decision": "NOT_RUN_DRAFT_ONLY",
+    "create_go_run_execution_binding": false,
+    "create_execution_go_reviewer_decision": false,
+    "formal_runner_execution": false,
+    "archive_member_inventory": false,
+    "real_video_decode": false,
+    "real_label_read": false,
+    "write_attempt01_outputs": false,
+    "external_training_or_inference": false,
+    "transport_only_download_may_continue": true,
+    "modify_or_refreeze_protocol": false,
+    "switch_to_candidate_a_now": false,
+    "this_is_a_daadx_scientific_gate_failure": false
+  },
+  "protocol_and_binding_decision": {
+    "frozen_protocol_byte_identical": true,
+    "missing_operational_fields_belong_in_additive_execution_binding": true,
+    "protocol_override_allowed": false,
+    "current_runner_accepts_protocol_plus_additive_operational_contract": true,
+    "protocol_runner_tests_core_operational_and_reviewer_decision_are_execution_bound": true,
+    "all_execution_files_require_head_exact": true,
+    "not_run_draft_is_rejected_as_execution_authority": true,
+    "later_independent_operational_review_and_go_decision_required": true
+  },
+  "g3_dependency_decision": {
+    "g3_fail_short_circuit_g4_to_g7": "METHODOLOGICALLY_ACCEPTABLE",
+    "required_downstream_status": "INCONCLUSIVE",
+    "g3_fail_formal_stop_under_frozen_and_rule": "ACCEPTABLE",
+    "g3_pass_with_unimplemented_g4_to_g7": "DIAGNOSTIC_ONLY_NO_FORMAL_PUBLISH",
+    "current_candidate_enforces_no_formal_publish_on_g0_g3_all_pass": true
+  },
+  "resolved_findings": [
+    {
+      "id": "B1",
+      "status": "PASS",
+      "title": "Executed core module and independent execution reviewer decision are hash-bound and HEAD-exact",
+      "evidence": [
+        "binding and fixed-schema reviewer decision lock the same protocol, runner, tests, core and operational hash",
+        "core/reviewer/protocol/runner/tests/binding all receive HEAD-exact checks",
+        "NOT_RUN_DRAFT_ONLY is rejected as execution authority"
+      ]
+    },
+    {
+      "id": "B2",
+      "status": "PASS",
+      "title": "Post-G0 failures are gate-local and close 16 artifacts",
+      "evidence": [
+        "annotation and seal failures map to G1",
+        "front extraction and decode failures map to G2",
+        "provenance absence, parse and taxonomy failures map to G3",
+        "downstream failures cannot overwrite a passed G0",
+        "six synthetic counterexamples verify complete final closure"
+      ]
+    },
+    {
+      "id": "B3",
+      "status": "PASS",
+      "title": "Provenance header is unique and exactly allowlisted",
+      "evidence": "duplicate required/evidence headers, missing required headers and case-variant extra fields are rejected"
+    },
+    {
+      "id": "B4",
+      "status": "PASS",
+      "title": "Parent validates exact label-worker schema, parser, source hashes and row contract",
+      "evidence": "wrong schema_version, parser_version and source_sha256 counterexamples are rejected"
+    },
+    {
+      "id": "B5",
+      "status": "PASS",
+      "title": "Strict provenance CSV parser rejects malformed quoting and row-width mismatch",
+      "evidence": "csv.reader strict mode, unique allowlisted header, exact row width and csv.Error conversion are implemented; unterminated quote and over-wide row tests pass"
+    }
+  ],
+  "accepted_components": [
+    "streaming bounded raw tar and PAX/path/type/hash audit",
+    "isolated label firewall with interpreter hash, clean environment and timeout",
+    "exact one-front-per-UUID G1 binding and per-video G2 scratch lifecycle",
+    "no published low-entropy provenance identifier digest",
+    "exact 16-file hash closure, fsync, atomic rename, final rehash and unique exit marker",
+    "argv-only subprocess invocation without shell expansion",
+    "all G0-G3 pass cannot publish a formal STOP while G4-G7 are unimplemented",
+    "training_authorized remains false"
+  ],
+  "binding_draft_requirements": [
+    "decision must be NOT_RUN_DRAFT_ONLY",
+    "must not override any frozen protocol or scientific field",
+    "must specify exact archive layout and nonlabel provenance member",
+    "must specify conservative archive and PAX resource ceilings",
+    "must specify absolute scratch root, capacity reserve and extract-probe-delete lifecycle",
+    "must bind Python, ffmpeg and ffprobe absolute paths and SHA256 values",
+    "must specify worker isolation, timeout, environment, atomic topology and phase policy",
+    "must not create formal outputs or cause archive/video access"
+  ],
+  "conditions_before_any_future_go_run": [
+    "runner and tests are committed with the reviewed bytes in the same HEAD as protocol and core",
+    "the completed NOT_RUN binding draft is independently reviewed field by field",
+    "tool bytes, scratch capacity and all operational paths are verified on the execution host",
+    "an independent ARSC_ROUND11_DAADX_EXECUTION_REVIEWER_DECISION_V1 file binds the exact protocol, runner, tests, core and operational hash",
+    "a separate reviewer explicitly issues GO_RUN; this decision cannot substitute for it"
+  ],
+  "claim_boundary": "GO_CREATE_EXECUTION_BINDING_NOT_RUN authorizes only a non-executable operational binding draft. It is not DAAD-X G0-G8 evidence and authorizes no archive read, decode, formal publication, training, inference, protocol modification, Candidate A switch, or GO_RUN decision.",
+  "memo": {
+    "path": "outputs/research_review_memo_round11_runner.md",
+    "sha256": "C5645631A48BD0606D0FAEEC74C535B52D018873CDFD9F3EDAFB356C6DF94038"
+  }
+}

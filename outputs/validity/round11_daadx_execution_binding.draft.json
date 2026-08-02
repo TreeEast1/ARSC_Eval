@@ -1,0 +1,103 @@
+{
+  "schema_version": "ARSC_ROUND11_DAADX_EXECUTION_BINDING_INCOMPLETE_DRAFT_V1",
+  "decision": "NOT_RUN_DRAFT_ONLY",
+  "claim_boundary": "NO_ARCHIVE_READ_NO_VIDEO_DECODE_NO_LABEL_READ_NO_FORMAL_OUTPUT_NO_TRAINING",
+  "protocol_path": "outputs/validity/round11_daadx_preflight_protocol.json",
+  "protocol_sha256": "01642976FAE14A43A25BDD65CA8D007E3C944D2B91771907ABE1B59553FAE880",
+  "runner_path": "scripts/run_round11_daadx_preflight.py",
+  "runner_sha256": "E61B2C6CEEAE8D1A51FD614E71B2357FDED863C3BEF81816AFD8D3CC96D5AB53",
+  "runner_tests_path": "tests/test_round11_daadx_preflight_runner.py",
+  "runner_tests_sha256": "FCB5A57710D06CF834EF662FDE768445ED9F6358D47C0B886222F2575189ACC5",
+  "core_path": "src/arsc_eval/daadx_preflight.py",
+  "core_sha256": "73639F1B85F84B2A27DC650E3DE1FC203A181561FA00306BCD5A5D2E76860E53",
+  "runner_reviewer_decision_path": "outputs/validity/round11_runner_reviewer_decision.json",
+  "runner_reviewer_decision_sha256": "3C2D6AFC465DE586F1597EC149E81E8F4EED1976A025D112C13B8E2150ECB29D",
+  "future_execution_reviewer_decision_path": null,
+  "operational_contract_draft": {
+    "schema_version": "ARSC_ROUND11_DAADX_OPERATIONAL_CONTRACT_INCOMPLETE_DRAFT_V1",
+    "archive_layout": {
+      "annotation_members": {
+        "train": null,
+        "val": null,
+        "test": null
+      },
+      "front_member_regex": null,
+      "provenance_member": null,
+      "provenance_allowed_classes": [
+        "AUTHORITATIVE_SOURCE_ID",
+        "AUTHORITATIVE_SESSION_ID",
+        "AUTHORITATIVE_RAW_VIDEO_ID",
+        "AUDITABLE_RAW_RECORDING_TOKEN",
+        "AUDITABLE_ACQUISITION_RIG_SESSION"
+      ],
+      "uuid_column": "uuid",
+      "status": "UNRESOLVED_NO_ARCHIVE_INVENTORY_AUTHORIZED"
+    },
+    "media_tools": {
+      "ffmpeg": {
+        "path": "D:\\anaconda3\\envs\\Nuclear_Transformer\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+        "sha256": "2CE797A0F88D7F067180338FB227F7B1928EA727BD9A4D7A1D022F7C52AF71A3",
+        "status": "HOST_VERIFIED_DRAFT_ONLY"
+      },
+      "ffprobe": {
+        "path": null,
+        "sha256": null,
+        "status": "UNRESOLVED"
+      }
+    },
+    "archive_bounds": {
+      "max_raw_headers": 100000,
+      "max_members": 100000,
+      "max_member_bytes": 67108864,
+      "max_uncompressed_member_bytes": 34359738368,
+      "max_tar_stream_bytes": 68719476736,
+      "status": "DRAFT_REQUIRES_LAYOUT_INVENTORY_AND_INDEPENDENT_CAPACITY_REVIEW"
+    },
+    "scratch": {
+      "root": "D:\\All_Project\\cjl\\ARSC_space\\BDD-OIA_space\\data\\external\\daadx_official\\scratch",
+      "work_directory_name": "round11-daadx-preflight.restricted",
+      "minimum_free_bytes": 21474836480,
+      "maximum_total_written_bytes": 34359738368,
+      "maximum_single_file_bytes": 67108864,
+      "front_lifecycle": "EXTRACT_ONE_PROBE_REHASH_DELETE",
+      "status": "HOST_PATH_VERIFIED_DRAFT_ONLY"
+    },
+    "label_worker": {
+      "python_executable": "D:\\anaconda3\\envs\\Nuclear_Transformer\\python.exe",
+      "python_sha256": "124CBE6203F939FF138C0CE68E26C12E4CA5836562286572ED040173DAF0B787",
+      "isolation_flags": [
+        "-I"
+      ],
+      "timeout_seconds": 300,
+      "environment_policy": "CLEAN_ALLOWLIST_NO_PYTHONPATH_NO_USER_SITE"
+    },
+    "artifact_topology": {
+      "mode": "ATOMIC_FINAL_DIRECTORY_WITH_LOGICAL_READONLY_ALIASES",
+      "external_alias_materialization": "FORBIDDEN_TO_PRESERVE_ATOMICITY",
+      "internal_log_name": "round11_daadx_preflight.log",
+      "internal_index_name": "round11_daadx_artifact_index.json"
+    },
+    "phase_policy": {
+      "all_G0_G1_G2_G3_pass": "PREFLIGHT_PHASE1_DIAGNOSTIC_ONLY_NO_FORMAL_PUBLISH",
+      "any_G0_G1_G2_fail": "FORMAL_STOP_WITH_CLOSED_ARTIFACTS",
+      "G3_fail_after_G0_G1_G2_pass": "FORMAL_STOP_SHORT_CIRCUIT_G4_G7_INCONCLUSIVE"
+    }
+  },
+  "unresolved_fields": [
+    "promotion.final_execution_binding_schema_and_exact_field_allowlist",
+    "promotion.final_operational_contract_schema_and_status_field_removal",
+    "promotion.independent_execution_reviewer_GO_RUN_decision_and_hash_binding",
+    "promotion.archive_and_selected_metadata_caps_after_authorized_layout_inventory",
+    "operational_contract_draft.archive_layout.annotation_members.train",
+    "operational_contract_draft.archive_layout.annotation_members.val",
+    "operational_contract_draft.archive_layout.annotation_members.test",
+    "operational_contract_draft.archive_layout.front_member_regex",
+    "operational_contract_draft.archive_layout.provenance_member",
+    "operational_contract_draft.media_tools.ffprobe"
+  ],
+  "protocol_override_authorized": false,
+  "formal_output_authorized": false,
+  "archive_access_authorized": false,
+  "training_authorized": false,
+  "attempt": "attempt01"
+}
