@@ -1,0 +1,154 @@
+{
+  "schema_version": "ARSC_ROUND12_EXISTING_OUTPUTS_POSTRESULT_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-08-02",
+  "decision": "ACCEPT_PASS_WITH_LIMITATIONS",
+  "reviewer_role": "independent_round12_existing_outputs_postresult_scientific_integrity_reviewer",
+  "formal_verdict": "PASS",
+  "integrity": {
+    "accepted": true,
+    "artifact_index_hashes_and_byte_counts_match": true,
+    "component_npz_exact_keys": ["D_A", "D_R", "D_S", "D_C1"],
+    "component_npz_shape": [5000],
+    "component_npz_dtype": "float64",
+    "component_npz_all_finite": true,
+    "linear_q_0_0125_matches_results_exactly": true,
+    "csv_matches_results_and_declared_columns": true,
+    "log_sequence_complete": true,
+    "persistent_claim_valid": true,
+    "second_formal_run_detected": false,
+    "formal_outputs_modified_by_reviewer": false,
+    "formal_runner_reexecuted_by_reviewer": false
+  },
+  "bindings": [
+    {
+      "key": "formal-results",
+      "path": "outputs/validity/round12_existing_outputs_results.json",
+      "sha256": "A4012EB3EC164674648E67507956B5870E7E321F8F844FF9709A3093BB33F00B",
+      "bytes": 3211
+    },
+    {
+      "key": "point-diagnostics",
+      "path": "outputs/validity/round12_existing_outputs_point_diagnostics.csv",
+      "sha256": "5B6B3C987E0E5A0A8E6284FCEDE4CA4059CDB828C6649988AB9F3486228511C5",
+      "bytes": 940
+    },
+    {
+      "key": "component-draws",
+      "path": "outputs/validity/round12_existing_outputs_component_draws.npz",
+      "sha256": "A9AB92EA9148E47B02389AE567B6DC1E978FE3452D567C0E0814068FD7F093F5",
+      "bytes": 160896
+    },
+    {
+      "key": "artifact-index",
+      "path": "outputs/validity/round12_existing_outputs_artifact_index.json",
+      "sha256": "FF37B867097B4DE6AFBE9B65064C582AF57665FC2FF71DC840B391FFC161C00D",
+      "bytes": 3691
+    },
+    {
+      "key": "protocol-log",
+      "path": "outputs/validity/round12_existing_outputs_protocol.log",
+      "sha256": "1B78E72BFCB8192B79F69732EE4099EAAB01337094EC8B59A2435385CC8EDF19",
+      "bytes": 1532
+    },
+    {
+      "key": "attempt-claim",
+      "path": "outputs/validity/.round12_existing_outputs_attempt01.claim",
+      "sha256": "39298D2A8084BBDE06F33359F9CC24D899B0CD3C51A98645FDEB8C2211D9CB4B",
+      "bytes": 33
+    },
+    {
+      "key": "frozen-protocol",
+      "path": "outputs/validity/round12_existing_outputs_frozen_protocol.json",
+      "sha256": "643F60022965E298B07F8CED4BEB8F6FC547ACA3B1C717DF8A60EC6ECDF2D6F7",
+      "bytes": 19073
+    },
+    {
+      "key": "go-run-decision",
+      "path": "outputs/validity/round12_analysis_runner_reviewer_decision.json",
+      "sha256": "B1812593EA510982837D48D0842B07D970F43EF4DAD46D936E25C9AC1E28F2E9",
+      "bytes": 5193
+    },
+    {
+      "key": "runner",
+      "path": "scripts/run_round12_existing_outputs_analysis.py",
+      "sha256": "F22FB8574ACD3076E34A5A50014D9A58A34EFCC21015F4F6210F99E6BD672393",
+      "bytes": 32079
+    },
+    {
+      "key": "round12-core",
+      "path": "src/arsc_eval/round12_existing_outputs.py",
+      "sha256": "D755B694A0FF1FF5D7190F4224E8C0FE1C71888FAA2D69FAE3704AC70A20CEE0",
+      "bytes": 30814
+    },
+    {
+      "key": "canonical-metrics",
+      "path": "src/arsc_eval/corruption_statistics.py",
+      "sha256": "775148ABF29A789223A62F4C994120B31FFEB27B342C58A121E26B9D777F6BC1",
+      "bytes": 29266
+    },
+    {
+      "key": "output-serializer",
+      "path": "src/arsc_eval/round12_output_serializers.py",
+      "sha256": "B03C4E12239893EC61BF840820B11B23798053489286DFA4AF32A57A6A17317F",
+      "bytes": 21096
+    }
+  ],
+  "effects": {
+    "D_A": {"point": 0.003825670333994822, "lower_q_0_0125": 0.00021951276192021173, "gate": true},
+    "D_R": {"point": -0.0019564893974532436, "lower_q_0_0125": -0.003640912996814288, "gate": true},
+    "D_S": {"point": 0.0007963260945257373, "lower_q_0_0125": -0.005291556283983375, "gate": true},
+    "D_C1": {"point": 0.020016823933874623, "lower_q_0_0125": 0.0018257993917999158, "gate": true}
+  },
+  "heterogeneity": {
+    "per_family_D_C1": {
+      "brightness": 0.01682027649769586,
+      "blur": 0.016765415843756855,
+      "noise": 0.026464779460171166
+    },
+    "per_seed_D_C1": {
+      "43": -0.0018835491185721573,
+      "44": 0.0062175407797527655,
+      "45": 0.0328798185941043,
+      "46": 0.05098383439397264,
+      "47": 0.011886475020115575
+    },
+    "positive_seed_count": 4,
+    "negative_seed": 43,
+    "interpretation": "The aggregate and all three family summaries are positive, but one of five training seeds is negative and effect sizes vary materially across seeds. This is not an every-seed or every-cell guarantee."
+  },
+  "scientific_interpretation": {
+    "supported": "Within the frozen BDD-OIA five-seed synthetic-corruption grid, joint supervision has a dose-aggregated action-flip consistency advantage whose point estimate exceeds 0.01 and whose Bonferroni one-sided lower bound is positive, while D_A, D_R, and D_S pass their -0.01 non-inferiority guardrails.",
+    "round10_relationship": "Round10's lack of general monotone A/R/S dose response is not contradicted: Round12 tests a between-model supervision-by-dose interaction and primarily strengthens the C1 consistency finding.",
+    "rq2_light_relationship": "Round12 extends the earlier single-light-perturbation RQ2-light summary to an equal-weight aggregate over all twelve nonzero family-by-dose cells; it does not establish positivity in every cell.",
+    "rq2_ceg_status": "UNANSWERED_CLOSED"
+  },
+  "prohibited_claims": [
+    "no causal effect of rationale supervision",
+    "no road-safety or real-world robustness guarantee",
+    "no explanation faithfulness, grounding, or correct-evidence-use claim",
+    "no external-validity claim",
+    "no claim of superiority for every seed, every family-by-dose cell, every coverage, or every safety metric",
+    "no between-model rationale-quality claim from D_R"
+  ],
+  "limitations": [
+    "only five independent training seeds",
+    "source-clip bootstrap does not increase the number of independent training runs",
+    "synthetic pixel corruptions do not represent natural corruption prevalence or severity",
+    "D_C1 is prediction consistency rather than safety or faithfulness",
+    "D_R is a within-joint retention guardrail because Action-Only has no rationale head",
+    "one seed has a negative D_C1 effect",
+    "external validation remains pending"
+  ],
+  "execution_control": {
+    "attempt": "attempt01",
+    "claim_must_be_retained": true,
+    "second_run_authorized": false,
+    "automatic_retry_authorized": false,
+    "claim_removal_authorized": false,
+    "next_required_action": "integrate the accepted narrow conclusion; do not rerun Round12"
+  },
+  "memo": {
+    "path": "outputs/research_review_memo_round12_existing_outputs_postresult.md",
+    "sha256": "E87FB51A6EB504A099B3F6B26F28ACC148A26693D2E7DF967C20F7DAE579EBDF"
+  }
+}

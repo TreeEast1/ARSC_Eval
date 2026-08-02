@@ -21,6 +21,9 @@ ARSC 作为“诊断性指标分解”得到了较强的 BDD-OIA 内部证据：
   四轴响应；
 - 对原图实际重推理的多严重度合成亮度、模糊和噪声扰动中，12 个严格门控仅有
   3 个通过，且全部属于 C1；A、R、S 没有获得普遍单调响应支持。
+- 在结果盲冻结的 Round 12 配对分析中，Joint 相对 Action-Only 的跨剂量动作
+  翻转优势为 `D_C1=0.020017`，Bonferroni 单侧下界为 `0.001826`；三个扰动族
+  均为正、五个种子中四个为正。A、R、S 同时通过预设的 `-0.01` 非劣护栏。
 
 这些结果不等于“理由监督改善所有 ARSC 维度”，也不证明理由忠实性、因果
 证据使用、真实道路安全性或跨数据集外部有效性。更准确的结论是：四个维度
@@ -171,7 +174,7 @@ python -m compileall -q scripts src tests
 python scripts/verify_outputs.py --config configs/experiment.yaml
 ```
 
-当前完整测试套件为 `94 passed`。Round 10 attempt02 的正式运行还通过了
+当前完整测试套件为 `325 passed, 3 skipped`。Round 10 attempt02 的正式运行还通过了
 精确文件集合、内部哈希、数据清单、语义网格和一次性运行边界检查。
 
 ## 测量与外部数据停止结果
@@ -326,6 +329,43 @@ bootstrap 汇总均为 0 mismatch。审阅结论为
 - [attempt01 基础设施事故记录](outputs/validity/round10_formal_attempt01_incident.json)
 - [独立结果后 SCI 审阅](outputs/research_review_memo_round10_postresult.md)
 - [机器可读审阅判定](outputs/validity/round10_postresult_reviewer_decision.json)
+
+## Round 12：配对多轴监督—剂量交互复分析（已完成）
+
+Round 12 不训练模型也不重新推理，而是结果盲地复用 Round 10 已冻结的逐图像
+primitives 和同一组 5,000 次“种子—源片段”抽样，检验 Joint rationale
+supervision 是否在全部 12 个非零“扰动族 × 剂量”格上具有稳定的动作一致性
+优势，同时守住 A、R、S 三轴的非劣边界。分析方向、四个效应量、`0.01`
+实际效应门、Bonferroni `q=0.0125` 单侧下界、seed/family 护栏和一次性停止规则
+均在读取结果前冻结，并经独立审阅授权唯一一次 `attempt01`。
+
+正式结构化判定为 **`PASS`**，独立结果后裁决为
+**`ACCEPT_PASS_WITH_LIMITATIONS`**：
+
+| 效应 | 点估计 | q=0.0125 单侧下界 | 冻结解释 |
+|---|---:|---:|---|
+| D_A | +0.003826 | +0.000220 | Joint 动作质量相对保持，通过 `-0.01` 非劣门 |
+| D_R | −0.001956 | −0.003641 | Joint 理由质量的组内保持，通过 `-0.01` 非劣门 |
+| D_S | +0.000796 | −0.005292 | Joint 选择性风险相对保持，通过 `-0.01` 非劣门 |
+| D_C1 | **+0.020017** | **+0.001826** | Joint 平均少约 2.00 个百分点动作翻转 |
+
+D_C1 的 brightness、blur、noise family 汇总分别为 `0.016820`、`0.016765`、
+`0.026465`。五个 seed 中四个为正，但 seed 43 为 `-0.001884`，因此结果存在
+明确的训练随机性异质性。A/R/S 的角色是预注册非劣护栏，不能改写为三轴均
+显著改善；R 还是 Joint 模型内部保持量，并非两个模型之间的理由质量比较。
+
+本轮加强了 BDD-OIA 内部、跨四个非零剂量汇总的 RQ2-light 动作一致性证据，
+但 RQ2-CEG 仍未回答，也不建立因果证据使用、理由忠实性、真实道路安全或
+跨数据集外部有效性。持久 attempt claim 必须保留，正式分析不得重跑。
+
+关键证据：
+
+- [正式结果 JSON](outputs/validity/round12_existing_outputs_results.json)
+- [逐点与门控诊断](outputs/validity/round12_existing_outputs_point_diagnostics.csv)
+- [四效应 bootstrap 抽样](outputs/validity/round12_existing_outputs_component_draws.npz)
+- [正式制品哈希索引](outputs/validity/round12_existing_outputs_artifact_index.json)
+- [独立结果后审阅](outputs/research_review_memo_round12_existing_outputs_postresult.md)
+- [机器可读结果后判定](outputs/validity/round12_existing_outputs_postresult_reviewer_decision.json)
 
 ## 结果解释边界
 

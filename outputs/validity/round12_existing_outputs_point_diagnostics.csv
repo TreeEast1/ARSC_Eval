@@ -1,0 +1,24 @@
+record_type,axis,index,value,check_name,passed
+point,D_A,,0.003825670333994822,,
+point,D_R,,-0.0019564893974532436,,
+point,D_S,,0.0007963260945257373,,
+point,D_C1,,0.020016823933874623,,
+lower_bound,D_A,,0.00021951276192021173,,
+lower_bound,D_R,,-0.003640912996814288,,
+lower_bound,D_S,,-0.005291556283983375,,
+lower_bound,D_C1,,0.0018257993917999158,,
+seed,D_C1,0,-0.0018835491185721573,,
+seed,D_C1,1,0.0062175407797527655,,
+seed,D_C1,2,0.0328798185941043,,
+seed,D_C1,3,0.05098383439397264,,
+seed,D_C1,4,0.011886475020115575,,
+family,D_C1,0,0.01682027649769586,,
+family,D_C1,1,0.016765415843756855,,
+family,D_C1,2,0.026464779460171166,,
+gate,,,,D_C1 point >= 0.01,True
+gate,,,,D_C1 q=0.0125 lower bound > 0.0,True
+gate,,,,>= 4 of 5 seed-specific D_C1 > 0.0,True
+gate,,,,each family D_C1 >= -0.01,True
+gate,,,,D_A q=0.0125 lower bound > -0.01,True
+gate,,,,D_R q=0.0125 lower bound > -0.01,True
+gate,,,,D_S q=0.0125 lower bound > -0.01,True

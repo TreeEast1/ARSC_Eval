@@ -114,6 +114,17 @@ Round 9 已完成当时唯一获准的后续实验，并永久关闭 BDD-OIA sal
 
 正式设计使用亮度、模糊和噪声三类合成像素算子，并对每张原图实际重新推理；每类包含严重度 `0/1/2/3/4`，固定 12 个“算子族 × ARSC 轴”门。最终仅 3/12 个门通过，且三者全部为 C1：brightness、blur 和 noise 的 C1 门分别通过；A、R、S 的 9 个门均未通过。因此该轮不是四轴全面确认，正式判定保持 `ROUND10_PARTIAL_OR_FAIL`。结果仅界定于冻结的 BDD-OIA 总体、五个历史 ResNet-50 种子、固定阈值/校准和三组合成扰动网格；C1 仍只能解释为样本对应关系敏感性，不能外推为构念、因果、外部或现实安全有效性。独立审阅重建了 3,975 行诊断并逐位重放全部 5,000 组 seed/clip 选择；制品哈希、诊断、抽样、84 个分位数和 36 行 bootstrap 汇总均为 0 mismatch。
 
+## Round 12 配对多轴监督—剂量交互复分析
+
+- `validity/round12_existing_outputs_frozen_protocol.json`、`research_review_memo_round12_existing_outputs_direction.md` 和相关 reviewer decision：结果盲冻结的唯一分析方向、效应定义、同步下界和一次性停止规则。
+- `scripts/run_round12_existing_outputs_analysis.py`、`src/arsc_eval/round12_existing_outputs.py` 和 `src/arsc_eval/round12_output_serializers.py`：哈希绑定的门禁、纯统计核心和确定性输出层。
+- `research_review_memo_round12_analysis_runner_preresult.md` 与 `validity/round12_analysis_runner_reviewer_decision.json`：唯一 `attempt01` 的结果前独立 GO。
+- `validity/round12_existing_outputs_results.json`、`round12_existing_outputs_point_diagnostics.csv`、`round12_existing_outputs_component_draws.npz`、`round12_existing_outputs_protocol.log` 和 `round12_existing_outputs_artifact_index.json`：一次正式运行的结果、诊断、全部四效应抽样、日志及哈希索引。
+- `validity/.round12_existing_outputs_attempt01.claim`：必须永久保留的一次性执行 claim；不授权删除或重跑。
+- `research_review_memo_round12_existing_outputs_postresult.md` 与 `validity/round12_existing_outputs_postresult_reviewer_decision.json`：独立结果后完整性与科学解释裁定。
+
+正式结构化判定为 `PASS`，结果后裁定为 `ACCEPT_PASS_WITH_LIMITATIONS`。`D_C1=0.020017`，Bonferroni `q=0.0125` 单侧下界为 `0.001826`；三个扰动族均为正，五个 seed 中四个为正，seed 43 为 `-0.001884`。D_A、D_R、D_S 通过 `-0.01` 非劣护栏，但不得表述为三轴全面改善。本轮加强 BDD-OIA 内部的剂量聚合 RQ2-light 证据，不回答 CEG，也不证明因果、faithfulness、真实安全或外部有效性。
+
 ## 种子 42 归档先导实验
 
 以下根目录文件早于新的配对种子复现，不得与其合并：
