@@ -1,0 +1,115 @@
+{
+  "schema_version": "ARSC_ROUND11_DAADX_PHASE1_CONTROL_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-08-02",
+  "decision": "GO_COMMIT_PHASE1_CONTROL_PRIMITIVES",
+  "reviewer_role": "independent_result_blind_round11_phase1_control_reviewer",
+  "reviewed_repository_head": "b5fe137b979de58530c5a666b286e4e10660e732",
+  "reviewed_files": [
+    {
+      "path": "src/arsc_eval/round11_phase1_control.py",
+      "sha256": "89AEA0B774D20E0D79126F9A521A1E5514A3DED54E73910EC8DFF12A99BAEA1E",
+      "bytes": 15944,
+      "tracked_by_reviewed_head": false,
+      "role": "phase1_claim_and_atomic_publication_primitives"
+    },
+    {
+      "path": "tests/test_round11_phase1_control.py",
+      "sha256": "970D096AAED404ABAE228A062E9223D383E13F7D14ADA376324506A54D8F6973",
+      "bytes": 14805,
+      "tracked_by_reviewed_head": false,
+      "role": "pure_synthetic_phase1_control_tests"
+    },
+    {
+      "path": "outputs/validity/round11_daadx_phase1_diagnostic_amendment.json",
+      "sha256": "4B760550C75CF17B9EF32A9F203F1A63EB8428D90FEB4755C74B7A120D7430D9",
+      "bytes": 3916,
+      "tracked_by_reviewed_head": true,
+      "role": "frozen_phase1_control_contract"
+    },
+    {
+      "path": "outputs/validity/round11_phase1_amendment_reviewer_decision.json",
+      "sha256": "3C27C0CAD8C39968329FA2BD322EB6B16CD6B2D2D5B0D23684369E58E77920F9",
+      "bytes": 5604,
+      "tracked_by_reviewed_head": true,
+      "role": "independent_amendment_freeze_authority"
+    },
+    {
+      "path": "outputs/validity/round11_daadx_preflight_protocol.json",
+      "sha256": "01642976FAE14A43A25BDD65CA8D007E3C944D2B91771907ABE1B59553FAE880",
+      "bytes": 9478,
+      "tracked_by_reviewed_head": true,
+      "role": "original_frozen_protocol_read_only"
+    }
+  ],
+  "verification": {
+    "exact_sixteen_artifact_allowlist_matches_frozen_amendment": true,
+    "claim_exclusive_create": true,
+    "existing_stale_and_symlink_claims_block": true,
+    "two_process_race_exactly_one_winner": true,
+    "initial_empty_claim_file_sync_before_directory_sync_and_hook": true,
+    "windows_directory_flush_strict_and_exercised": true,
+    "posix_directory_fd_fsync_strict_by_inspection": true,
+    "all_sync_failures_propagate": true,
+    "ordinary_exception_and_keyboard_interrupt_leave_blocking_claim": true,
+    "first_and_second_file_or_directory_sync_failures_leave_blocking_claim": true,
+    "final_directory_sync_occurs_while_claim_handle_open": true,
+    "post_final_sync_fd_path_identity_rechecked": true,
+    "post_close_claim_bytes_stably_match_payload": true,
+    "claim_path_inode_replacement_detected_or_prevented": true,
+    "regular_non_symlink_single_link_artifacts_required": true,
+    "stable_no_follow_reads_and_path_identity_checks": true,
+    "results_exact_fields_and_two_outcomes": true,
+    "g0_through_g3_statuses_exact": true,
+    "g4_through_g7_only_deferred_not_run_phase1": true,
+    "g8_formal_verdict_and_training_authority_forbidden": true,
+    "duplicate_json_keys_rejected": true,
+    "canonical_results_and_index_bytes_required": true,
+    "fifteen_payload_hashes_and_bytes_rebuilt_into_self_excluded_index": true,
+    "payload_index_file_and_directory_syncs_strict": true,
+    "atomic_no_replace_directory_rename": true,
+    "competitor_final_preserved_and_not_overwritten": true,
+    "rename_failure_preserves_complete_staging": true,
+    "post_rehash_failure_preserves_blocking_final_without_rollback": true,
+    "formal_data_archive_chunks_receipt_or_manifest_accessed": false,
+    "phase1_run": false
+  },
+  "platform_review": {
+    "windows_directory_sync": "CreateFileW GENERIC_WRITE with BACKUP_SEMANTICS and WRITE_THROUGH followed by FlushFileBuffers; exercised successfully on review host",
+    "windows_no_replace_rename": "os.rename rejected an existing target with FileExistsError and preserved source and target on review host",
+    "linux_directory_sync": "O_RDONLY plus O_DIRECTORY directory fd and fsync; errors propagate",
+    "linux_no_replace_rename": "renameat2 with RENAME_NOREPLACE only; missing symbol or unsupported kernel fails closed without fallback",
+    "cross_platform_replacement_rule": "replacement while the claim handle is open must either be prevented or be detected by the following fd/path identity comparison"
+  },
+  "test_evidence": {
+    "command": "python -m pytest -q tests/test_round11_phase1_control.py",
+    "result": "28 passed, 1 skipped in 0.68s",
+    "skip_reason": "Windows symlink creation unavailable; explicit fail-closed implementation remains",
+    "final_directory_sync_replacement_reproduction": "replacement prevented on Windows and returned claim bytes exactly matched payload",
+    "actual_existing_target_rename_reproduction": "FileExistsError; source retained and competitor target preserved",
+    "deepseek_worker_note": "Configured worker invocation returned fetch failed before executing tests or writes; primary reviewer independently ran and reviewed all local synthetic evidence."
+  },
+  "authorization": {
+    "commit_exact_reviewed_control_and_tests": true,
+    "commit_this_review_evidence": true,
+    "runner_integration": false,
+    "create_real_attempt_claim": false,
+    "access_or_hash_receipt_manifest_archive_or_chunks": false,
+    "run_phase1_or_formal_preflight": false,
+    "issue_go_run": false,
+    "execute_g0_through_g8": false,
+    "issue_formal_g0_g8_verdict": false,
+    "training_or_inference": false
+  },
+  "conditions_before_any_future_go_run": [
+    "integrate the exact committed control primitives into the Phase1 runner without moving any receipt, manifest or archive access before claim acquisition",
+    "add runner-level synthetic ordering and full two-outcome publication tests",
+    "bind runner, tests, core, receipt, manifest, archive bytes and SHA, operational contract and tools in a HEAD-exact execution binding",
+    "obtain a separate independent execution reviewer decision for one Phase1 attempt"
+  ],
+  "claim_boundary": "GO_COMMIT_PHASE1_CONTROL_PRIMITIVES authorizes only Git preservation of the exact reviewed data-agnostic control primitives, synthetic tests and review evidence. It is not runner integration or GO_RUN and authorizes no real claim acquisition, receipt/manifest/archive/chunk access, Phase1 execution, G0-G8 evidence or verdict, training, inference or external-validity claim.",
+  "memo": {
+    "path": "outputs/research_review_memo_round11_phase1_control.md",
+    "sha256": "DBC64E848D5995C608C0B63B499D32FADDA4F6CAFFA30A9872D791AD3F86FE10",
+    "bytes": 4583
+  }
+}
