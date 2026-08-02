@@ -1,0 +1,187 @@
+{
+  "schema_version": "ARSC_ROUND11_DAADX_LAYOUT_INVENTORY_PROTOCOL_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-08-02",
+  "decision": "GO_FREEZE_COMMIT_LAYOUT_INVENTORY_PROTOCOL_NOT_RUN",
+  "reviewer_role": "independent_result_blind_round11_layout_inventory_protocol_freeze_reviewer",
+  "reviewed_repository_head": "6057f2134d760e7ed2b1c77b630da0800405a2a0",
+  "reviewed_files": [
+    {
+      "path": "scripts/freeze_round11_daadx_layout_inventory_protocol.py",
+      "sha256": "9F59962D14EBF81ED7B863F3059170A9E41D49B5AABEBCB3AE3FAE07A494AA42",
+      "bytes": 19850,
+      "tracked_by_reviewed_head": false,
+      "role": "deterministic_nonrun_layout_protocol_generator"
+    },
+    {
+      "path": "tests/test_round11_daadx_layout_inventory_protocol.py",
+      "sha256": "297F7A0832F337641D5785CD59C6DD9FDEB60C868316A98FC6FF1A8B0BD8450D",
+      "bytes": 7372,
+      "tracked_by_reviewed_head": false,
+      "role": "pure_synthetic_layout_protocol_tests"
+    },
+    {
+      "path": "outputs/validity/round11_daadx_layout_inventory_protocol.json",
+      "sha256": "E2E16BDE936CDE68B2D305322C7B33422F5F0043B45D833858E1BFB7C90740C5",
+      "bytes": 9720,
+      "tracked_by_reviewed_head": false,
+      "role": "frozen_additive_nonrun_layout_inventory_protocol"
+    },
+    {
+      "path": "outputs/research_review_memo_round11_layout_inventory_design.md",
+      "sha256": "C051795DDB5ACB0E52C4FC6A371D8B2131E52AE307EE0C798397DB87EFBBB0C3",
+      "bytes": 8072,
+      "tracked_by_reviewed_head": false,
+      "role": "layout_inventory_method_design_memo"
+    },
+    {
+      "path": "outputs/validity/round11_layout_inventory_design_reviewer_decision.json",
+      "sha256": "12BDA6A5F8058B04431A3439927540DF2C6B16AF7E0FB31FCA15F550B028D9A9",
+      "bytes": 10759,
+      "tracked_by_reviewed_head": false,
+      "role": "layout_inventory_method_design_authority"
+    }
+  ],
+  "bound_authorities": [
+    {
+      "path": "outputs/validity/round11_daadx_transport_receipt.json",
+      "schema_version": "ARSC_ROUND11_DAADX_TRANSPORT_RECEIPT_V1",
+      "sha256": "D738E21E5DC1976C192CFA3982E2CA2941FF3D2AF8A811BA432D51778A6B1C7F",
+      "bytes": 1629
+    },
+    {
+      "path": "outputs/validity/round11_transport_receipt_postgeneration_reviewer_decision.json",
+      "schema_version": "ARSC_ROUND11_DAADX_TRANSPORT_RECEIPT_POSTGENERATION_REVIEWER_DECISION_V1",
+      "decision": "ACCEPT_ROUND11_TRANSPORT_RECEIPT",
+      "sha256": "050680A0014D489F68652DEFF87767A4BA92B0B087DE3DF400E8A6C25369F758",
+      "bytes": 6933
+    },
+    {
+      "path": "outputs/validity/round11_daadx_preflight_protocol.json",
+      "schema_version": "ARSC_ROUND11_DAADX_PREFLIGHT_PROTOCOL_V1",
+      "sha256": "01642976FAE14A43A25BDD65CA8D007E3C944D2B91771907ABE1B59553FAE880",
+      "bytes": 9478
+    },
+    {
+      "path": "outputs/validity/round11_daadx_phase1_diagnostic_amendment.json",
+      "schema_version": "ARSC_ROUND11_DAADX_PHASE1_DIAGNOSTIC_AMENDMENT_V1",
+      "sha256": "4B760550C75CF17B9EF32A9F203F1A63EB8428D90FEB4755C74B7A120D7430D9",
+      "bytes": 3916
+    },
+    {
+      "path": "outputs/validity/round11_phase1_amendment_reviewer_decision.json",
+      "schema_version": "ARSC_ROUND11_DAADX_PHASE1_AMENDMENT_REVIEWER_DECISION_V1",
+      "decision": "GO_FREEZE_COMMIT_PHASE1_DIAGNOSTIC_AMENDMENT",
+      "sha256": "3C27C0CAD8C39968329FA2BD322EB6B16CD6B2D2D5B0D23684369E58E77920F9",
+      "bytes": 5604
+    }
+  ],
+  "verification": {
+    "authority_hash_schema_and_decision_exact": true,
+    "protocol_generation_reads_only_small_authority_files": true,
+    "real_data_manifest_archive_or_chunks_accessed": false,
+    "generated_protocol_matches_generator_byte_for_byte": true,
+    "additive_only": true,
+    "result_blind": true,
+    "nonrunning": true,
+    "training_inference_and_g0_g8_forbidden": true,
+    "claim_durable_before_any_receipt_manifest_archive_read_stat_or_hash": true,
+    "layout_claim_staging_and_final_disjoint_from_phase1_and_formal_paths": true,
+    "claim_permanent_on_all_exits_exceptions_interrupts_and_crashes": true,
+    "single_gzip_member_crc32_isize_and_eof_contract": true,
+    "raw_512_byte_tar_and_strict_pax_state_machine": true,
+    "tarfile_or_libarchive_not_authoritative": true,
+    "checksum_matches_either_signed_or_unsigned_standard_sum": true,
+    "exact_harmless_pax_key_allowlist": true,
+    "unknown_sparse_schily_linkpath_charset_and_gnu_pax_keys_forbidden": true,
+    "global_pax_path_or_size_forbidden": true,
+    "extended_pax_path_and_size_overrides_applied": true,
+    "directory_resolved_size_zero_required": true,
+    "regular_payload_only_one_mib_opaque_drain_discard": true,
+    "regular_payload_parse_save_sample_hash_log_or_exposure_forbidden": true,
+    "memory_and_streaming_bounds_frozen": true,
+    "exact_twelve_artifact_closure": true,
+    "public_inventory_and_restricted_path_seal_separated": true,
+    "exactly_two_nonphase1_outcomes": true,
+    "ambiguous_or_missing_selection_stops_without_payload_disambiguation": true,
+    "provenance_requires_exactly_one_structural_candidate": true,
+    "strict_atomic_no_overwrite_protocol_publication": true,
+    "layout_inventory_run": false
+  },
+  "pax_contract": {
+    "exact_allowed_keys": [
+      "path",
+      "size",
+      "mtime",
+      "atime",
+      "ctime",
+      "uid",
+      "gid",
+      "uname",
+      "gname",
+      "comment"
+    ],
+    "global_g_path_or_size_allowed": false,
+    "extended_x_path_and_size_overrides_required": true,
+    "unknown_or_semantics_changing_keys_allowed": false,
+    "directory_resolved_size_must_be_zero": true
+  },
+  "resource_and_streaming_contract": {
+    "max_in_memory_bytes": 268435456,
+    "max_compressed_input_buffer_bytes": 1048576,
+    "max_decompressed_output_buffer_bytes": 1048576,
+    "regular_payload_drain_buffer_bytes": 1048576,
+    "max_collision_digest_entries": 400000,
+    "collision_entry_bytes": 32,
+    "max_public_inventory_output_bytes": 67108864,
+    "max_restricted_path_seal_output_bytes": 2147483648,
+    "max_structure_summary_output_bytes": 16777216,
+    "max_execution_log_output_bytes": 16777216,
+    "public_inventory_and_seal_stream_directly_to_owned_staging": true,
+    "full_raw_or_resolved_path_lists_accumulated_in_memory": false,
+    "current_paths_released_after_stream_write": true
+  },
+  "artifact_contract": {
+    "exact_count": 12,
+    "artifact_index": "round11_daadx_layout_inventory_artifact_index.json",
+    "artifact_index_last_and_self_excluded": true,
+    "stop_outcome_hash_closed": true,
+    "atomic_no_replace_and_post_publish_rehash": true
+  },
+  "outcomes": [
+    "LAYOUT_INVENTORY_COMPLETE_AWAIT_INDEPENDENT_SELECTION",
+    "STOP_LAYOUT_INTEGRITY_OR_POLICY_FAILURE"
+  ],
+  "test_evidence": {
+    "command": "python -m pytest -q tests/test_round11_daadx_layout_inventory_protocol.py",
+    "result": "8 passed, 1 skipped in 0.16s",
+    "skip_reason": "Windows symlink creation unavailable; explicit fail-closed output checks remain",
+    "generated_protocol_sha256": "E2E16BDE936CDE68B2D305322C7B33422F5F0043B45D833858E1BFB7C90740C5",
+    "generated_protocol_bytes": 9720,
+    "deepseek_worker_note": "Configured worker invocation returned fetch failed before executing checks or writes; primary reviewer independently completed the focused synthetic review."
+  },
+  "authorization": {
+    "commit_exact_reviewed_protocol_generator_tests_and_json": true,
+    "commit_design_and_protocol_review_evidence": true,
+    "implement_data_agnostic_runner_core_and_synthetic_microarchive_tests": true,
+    "access_receipt_manifest_archive_chunks_or_data": false,
+    "acquire_layout_or_phase1_claim": false,
+    "run_layout_inventory": false,
+    "create_executable_layout_binding_or_go_decision": false,
+    "integrate_final_phase1_binding": false,
+    "run_phase1_or_formal_preflight": false,
+    "issue_go_run": false,
+    "training_or_inference": false
+  },
+  "next_required_steps": [
+    "commit the exact reviewed protocol generator tests generated protocol design evidence and this review evidence",
+    "implement the data-agnostic raw gzip tar PAX parser claim and streaming twelve-artifact publisher using synthetic microarchives only",
+    "obtain a separate independent code-safety review before any binding or real archive access",
+    "only after reviewed code is committed create a HEAD-exact nonrun layout execution binding"
+  ],
+  "claim_boundary": "GO_FREEZE_COMMIT_LAYOUT_INVENTORY_PROTOCOL_NOT_RUN authorizes Git preservation of the exact reviewed additive nonrunning protocol candidates and review evidence plus subsequent data-agnostic implementation with synthetic microarchives. It authorizes no receipt manifest archive chunk or data access, no claim acquisition, no layout inventory run, no executable binding, no Phase1, no G0-G8 verdict and no GO_RUN.",
+  "memo": {
+    "path": "outputs/research_review_memo_round11_layout_inventory_protocol.md",
+    "sha256": "3C20CEC776FE13F3BD0524913FF74BF635DD9D939D5E3C69388946AF76A007A2",
+    "bytes": 6535
+  }
+}

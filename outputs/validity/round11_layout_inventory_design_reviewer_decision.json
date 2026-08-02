@@ -1,0 +1,220 @@
+{
+  "schema_version": "ARSC_ROUND11_DAADX_LAYOUT_INVENTORY_DESIGN_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-08-02",
+  "decision": "GO_DESIGN_LAYOUT_INVENTORY_PROTOCOL_NOT_RUN",
+  "reviewer_role": "independent_result_blind_round11_layout_inventory_method_reviewer",
+  "reviewed_repository_head": "6057f2134d760e7ed2b1c77b630da0800405a2a0",
+  "bound_authorities": [
+    {
+      "path": "outputs/validity/round11_daadx_transport_receipt.json",
+      "schema_version": "ARSC_ROUND11_DAADX_TRANSPORT_RECEIPT_V1",
+      "sha256": "D738E21E5DC1976C192CFA3982E2CA2941FF3D2AF8A811BA432D51778A6B1C7F",
+      "bytes": 1629,
+      "role": "accepted_transport_receipt_snapshot"
+    },
+    {
+      "path": "outputs/validity/round11_transport_receipt_postgeneration_reviewer_decision.json",
+      "schema_version": "ARSC_ROUND11_DAADX_TRANSPORT_RECEIPT_POSTGENERATION_REVIEWER_DECISION_V1",
+      "sha256": "050680A0014D489F68652DEFF87767A4BA92B0B087DE3DF400E8A6C25369F758",
+      "bytes": 6933,
+      "role": "accepted_transport_receipt_authority"
+    },
+    {
+      "path": "outputs/validity/round11_daadx_preflight_protocol.json",
+      "schema_version": "ARSC_ROUND11_DAADX_PREFLIGHT_PROTOCOL_V1",
+      "sha256": "01642976FAE14A43A25BDD65CA8D007E3C944D2B91771907ABE1B59553FAE880",
+      "bytes": 9478,
+      "role": "original_frozen_protocol_read_only"
+    },
+    {
+      "path": "outputs/validity/round11_daadx_phase1_diagnostic_amendment.json",
+      "schema_version": "ARSC_ROUND11_DAADX_PHASE1_DIAGNOSTIC_AMENDMENT_V1",
+      "sha256": "4B760550C75CF17B9EF32A9F203F1A63EB8428D90FEB4755C74B7A120D7430D9",
+      "bytes": 3916,
+      "role": "frozen_phase1_amendment_read_only"
+    },
+    {
+      "path": "outputs/validity/round11_phase1_amendment_reviewer_decision.json",
+      "schema_version": "ARSC_ROUND11_DAADX_PHASE1_AMENDMENT_REVIEWER_DECISION_V1",
+      "sha256": "3C27C0CAD8C39968329FA2BD322EB6B16CD6B2D2D5B0D23684369E58E77920F9",
+      "bytes": 5604,
+      "role": "phase1_amendment_freeze_authority"
+    }
+  ],
+  "protocol_design": {
+    "recommended_schema_version": "ARSC_ROUND11_DAADX_LAYOUT_INVENTORY_PROTOCOL_V1",
+    "additive_only": true,
+    "result_blind": true,
+    "phase": "ARCHIVE_LAYOUT_INVENTORY_ONLY",
+    "attempt": "layout_inventory_attempt01",
+    "training_authorized": false,
+    "g0_through_g8_status_or_formal_verdict_allowed": false,
+    "must_precede_final_phase1_runner_binding": true,
+    "ffprobe_static_binding_may_proceed_in_parallel": true
+  },
+  "execution_topology": {
+    "claim": "outputs/validity/.round11_daadx_layout_inventory_attempt01.claim",
+    "staging": "outputs/validity/round11_daadx_layout_inventory_attempt01.staging",
+    "final": "outputs/validity/round11_daadx_layout_inventory_attempt01",
+    "must_be_disjoint_from_phase1_and_formal_paths": true,
+    "no_overwrite": true,
+    "claim_never_deleted_reused_or_auto_recovered": true
+  },
+  "claim_before_access_sequence": [
+    "validate only HEAD-exact static protocol runner tests core binding schema and reviewer identity without reading receipt manifest or archive contents",
+    "exclusive-xb create fixed claim with phase attempt execution-binding SHA256 and random token",
+    "flush and fsync the empty claim, strict-sync the parent directory, and verify open-handle/path identity before any later hook",
+    "write canonical claim payload, file-fsync, strict parent-directory sync while the handle remains open, recheck identity, then stable-read exact claim bytes after close",
+    "permanently retain the claim on success STOP exception KeyboardInterrupt or crash",
+    "only after durable claim acquisition read and verify the accepted receipt snapshot, real manifest and archive path bytes and SHA256",
+    "block on any existing stale symlink claim staging or final; recovery requires independently reviewed attempt02"
+  ],
+  "raw_parser_contract": {
+    "authoritative_tarfile_or_libarchive_use_allowed": false,
+    "compressed_archive_rehashed_in_same_opaque_scan": true,
+    "gzip_must_be_drained_to_eof": true,
+    "gzip_crc32_and_isize_validation_required": true,
+    "recommended_gzip_member_policy": "EXACTLY_ONE_MEMBER_NO_TRAILING_COMPRESSED_BYTES",
+    "raw_tar_header_bytes": 512,
+    "tar_header_checksum_validation_required": true,
+    "allowed_tar_types": [
+      "REGULAR",
+      "DIRECTORY",
+      "PAX_EXTENDED_X",
+      "PAX_GLOBAL_G"
+    ],
+    "gnu_longname_longlink_sparse_links_devices_fifo_and_unknown_types_forbidden": true,
+    "strict_pax_record_format": "<length> <unique-key>=<utf8-value>\\n",
+    "pax_path_and_size_overrides_must_be_applied": true,
+    "resolved_paths_must_be_relative_utf8_nfc_canonical_posix": true,
+    "path_traversal_backslash_control_ads_device_casefold_unicode_and_duplicate_collisions_forbidden": true,
+    "two_zero_tar_end_blocks_required": true,
+    "after_end_blocks_only_bounded_zero_padding_until_gzip_eof": true,
+    "resource_bounds_must_be_frozen_before_run": [
+      "compressed_archive_bytes",
+      "uncompressed_tar_stream_bytes",
+      "raw_header_count",
+      "logical_member_count",
+      "single_member_bytes",
+      "cumulative_pax_bytes",
+      "path_bytes",
+      "elapsed_time"
+    ]
+  },
+  "regular_payload_boundary": {
+    "physical_drain_required_to_reach_later_sequential_headers": true,
+    "allowed_behavior": "FIXED_SMALL_BUFFER_OPAQUE_DRAIN_AND_DISCARD_ONLY",
+    "parse_allowed": false,
+    "save_or_extract_allowed": false,
+    "sample_or_inspect_allowed": false,
+    "content_hash_allowed": false,
+    "log_or_expose_to_selection_logic_allowed": false,
+    "only_pax_metadata_payload_may_be_strictly_parsed": true,
+    "literal_zero_payload_read_requirement_would_make_inventory_impossible": true
+  },
+  "exact_artifacts": [
+    "round11_daadx_layout_inventory_protocol.json",
+    "round11_daadx_layout_inventory_execution_binding.json",
+    "round11_daadx_layout_inventory_execution_reviewer_decision.json",
+    "round11_daadx_transport_receipt.json",
+    "round11_daadx_assembler_manifest.json",
+    "round11_daadx_layout_archive_hashes.json",
+    "round11_daadx_layout_structure_summary.json",
+    "round11_daadx_layout_public_inventory.csv",
+    "round11_daadx_layout_restricted_path_seal.jsonl",
+    "round11_daadx_layout_inventory_results.json",
+    "round11_daadx_layout_inventory.log",
+    "round11_daadx_layout_inventory_artifact_index.json"
+  ],
+  "artifact_closure": {
+    "exact_count": 12,
+    "artifact_index_last": true,
+    "artifact_index_self_excluded": true,
+    "index_records_first_eleven_bytes_and_sha256": true,
+    "all_files_regular_non_symlink_single_link": true,
+    "file_and_directory_strict_sync": true,
+    "atomic_no_replace_rename": true,
+    "post_publish_rehash": true,
+    "stop_outcome_also_hash_closed": true,
+    "crash_preserves_staging_and_permanent_claim": true
+  },
+  "outcomes": {
+    "LAYOUT_INVENTORY_COMPLETE_AWAIT_INDEPENDENT_SELECTION": {
+      "condition": "gzip tar PAX path type size and closure contracts all pass",
+      "is_phase1_or_g0_g8_verdict": false
+    },
+    "STOP_LAYOUT_INTEGRITY_OR_POLICY_FAILURE": {
+      "condition": "any transport gzip tar PAX path bound claim binding or publication contract fails",
+      "is_phase1_or_g0_g8_verdict": false
+    }
+  },
+  "selection_contract": {
+    "public_inventory_contains_raw_paths": false,
+    "public_inventory_fields": [
+      "member_ordinal",
+      "raw_path_sha256",
+      "resolved_path_sha256",
+      "member_type",
+      "size",
+      "pax_flags"
+    ],
+    "restricted_path_seal_contains_raw_pax_and_resolved_paths": true,
+    "sealed_means_hash_closed_not_encrypted": true,
+    "allowed_selection_evidence": [
+      "path",
+      "member_type",
+      "extension",
+      "size",
+      "cardinality",
+      "directory_structure"
+    ],
+    "annotation_selection": "exactly one structural candidate for each of train val and test",
+    "front_selection": "one full-match regex with named uuid group plus selected path-hash set and count",
+    "provenance_selection": "at most one structural candidate; no claim that payload schema is valid",
+    "payload_based_disambiguation_allowed": false,
+    "ambiguous_or_missing_candidate_decision": "STOP_LAYOUT_AMBIGUOUS_NO_PAYLOAD_DISAMBIGUATION",
+    "accepted_selection_decision": "ACCEPT_LAYOUT_AND_FREEZE_CANDIDATES",
+    "selection_review_can_issue_phase1_go_run": false
+  },
+  "prohibited_effects": [
+    "MODIFY_OR_REFREEZE_ORIGINAL_PROTOCOL",
+    "MODIFY_OR_OVERRIDE_PHASE1_AMENDMENT",
+    "READ_ARCHIVE_OR_MANIFEST_OR_RECEIPT_BEFORE_DURABLE_CLAIM",
+    "USE_TARFILE_OR_LIBARCHIVE_AS_AUTHORITATIVE_PATH_PARSER",
+    "PARSE_SAVE_SAMPLE_HASH_LOG_OR_EXPOSE_REGULAR_MEMBER_PAYLOAD",
+    "READ_ANNOTATION_VALUES_OR_PROVENANCE_ROWS",
+    "READ_OR_DECODE_VIDEO_FRAMES",
+    "USE_PAYLOAD_TO_DISAMBIGUATE_LAYOUT_CANDIDATES",
+    "CREATE_PHASE1_CLAIM_OR_OUTPUTS",
+    "ISSUE_G0_G8_OR_FORMAL_VERDICT",
+    "AUTHORIZE_PHASE1_GO_RUN_TRAINING_OR_INFERENCE"
+  ],
+  "authorization": {
+    "implement_and_freeze_layout_inventory_protocol": true,
+    "implement_data_agnostic_runner_core_and_synthetic_tests": true,
+    "create_nonrun_binding_template": true,
+    "access_archive_manifest_or_data_receipt": false,
+    "acquire_layout_or_phase1_claim": false,
+    "run_layout_inventory": false,
+    "integrate_final_phase1_binding_now": false,
+    "run_phase1_or_formal_preflight": false,
+    "issue_any_go_run": false,
+    "training_or_inference": false
+  },
+  "required_next_sequence": [
+    "implement protocol generator schema and pure synthetic negative tests",
+    "obtain independent result-blind freeze review and commit the exact protocol",
+    "implement raw gzip tar PAX parser claim two-stage path seal and twelve-artifact publisher using only synthetic micro-archives",
+    "obtain independent code-safety review and commit exact runner tests and core",
+    "create a HEAD-exact layout execution binding",
+    "obtain a separate one-attempt layout-inventory execution decision before any archive access",
+    "run once and obtain independent closure and selection review",
+    "bind accepted exact paths regex and separately frozen ffprobe into final Phase1 execution binding"
+  ],
+  "claim_boundary": "GO_DESIGN_LAYOUT_INVENTORY_PROTOCOL_NOT_RUN authorizes only implementation, synthetic testing and independent freezing of an additive result-blind layout-inventory protocol and nonrun control code. It authorizes no receipt manifest or archive access, no claim acquisition, no inventory run, no payload inspection, no Phase1 integration or execution, no G0-G8 verdict and no GO_RUN.",
+  "memo": {
+    "path": "outputs/research_review_memo_round11_layout_inventory_design.md",
+    "sha256": "C051795DDB5ACB0E52C4FC6A371D8B2131E52AE307EE0C798397DB87EFBBB0C3",
+    "bytes": 8072
+  }
+}
