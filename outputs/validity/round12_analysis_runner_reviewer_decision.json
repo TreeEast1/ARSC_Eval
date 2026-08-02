@@ -1,0 +1,113 @@
+{
+  "schema_version": "ARSC_ROUND12_ANALYSIS_RUNNER_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-08-02",
+  "decision": "GO_RUN_ROUND12_FORMAL_ATTEMPT01",
+  "reviewer_role": "independent_result_blind_round12_analysis_runner_reviewer",
+  "result_blind": true,
+  "execution_scope": {
+    "attempt": "attempt01",
+    "maximum_formal_executions": 1,
+    "formal_run_authorized": true
+  },
+  "bindings": [
+    {
+      "key": "runner",
+      "path": "scripts/run_round12_existing_outputs_analysis.py",
+      "sha256": "F22FB8574ACD3076E34A5A50014D9A58A34EFCC21015F4F6210F99E6BD672393"
+    },
+    {
+      "key": "round12-core",
+      "path": "src/arsc_eval/round12_existing_outputs.py",
+      "sha256": "D755B694A0FF1FF5D7190F4224E8C0FE1C71888FAA2D69FAE3704AC70A20CEE0"
+    },
+    {
+      "key": "canonical-metrics",
+      "path": "src/arsc_eval/corruption_statistics.py",
+      "sha256": "775148ABF29A789223A62F4C994120B31FFEB27B342C58A121E26B9D777F6BC1"
+    },
+    {
+      "key": "runner-tests",
+      "path": "tests/test_run_round12_existing_outputs_analysis.py",
+      "sha256": "294BE42F0A9AC6F086F073C1F6EA66EB4B17508CCFCEC3303C2BD426AB17F8D8"
+    },
+    {
+      "key": "core-tests",
+      "path": "tests/test_round12_existing_outputs.py",
+      "sha256": "434049ADD67BF9121BFC321281824B1D5F5DC6F7CC2E39BC5C034FC94E81F3AC"
+    },
+    {
+      "key": "output-serializer",
+      "path": "src/arsc_eval/round12_output_serializers.py",
+      "sha256": "B03C4E12239893EC61BF840820B11B23798053489286DFA4AF32A57A6A17317F"
+    },
+    {
+      "key": "output-serializer-tests",
+      "path": "tests/test_round12_output_serializers.py",
+      "sha256": "62BF750D9D472D60A8ED1266B3A1C3FF98035DADC7FA2F3D719161DA5DF28013"
+    },
+    {
+      "key": "frozen-protocol",
+      "path": "outputs/validity/round12_existing_outputs_frozen_protocol.json",
+      "sha256": "643F60022965E298B07F8CED4BEB8F6FC547ACA3B1C717DF8A60EC6ECDF2D6F7"
+    },
+    {
+      "key": "direction-decision",
+      "path": "outputs/validity/round12_existing_outputs_reviewer_decision.json",
+      "sha256": "404A5E65B480BC8E61287105EDEF007FAA266F231B7C7F00BBFFFFE5E0C4528D"
+    },
+    {
+      "key": "protocol-prereview",
+      "path": "outputs/validity/round12_frozen_protocol_reviewer_decision.json",
+      "sha256": "49A1323E53FFA0F23F222945874F410C902733BCF469D8AC752A632B7FEBE338"
+    },
+    {
+      "key": "primitives",
+      "path": "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_primitives.npz",
+      "sha256": "80821C7DEE9194ABA62B373383B4FD9EF8105D3750C48902A91EF45D278B2E83"
+    },
+    {
+      "key": "draws",
+      "path": "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_bootstrap_draws.npz",
+      "sha256": "893FE2F899BE4F725E3B056BB26B060EDBE4AB40AA7144D3BB83114D1F87DB02"
+    }
+  ],
+  "verification": {
+    "reviewer_local_target_tests": "89 passed, 2 skipped in 2.04s",
+    "owner_reported_full_suite": "325 passed, 3 skipped",
+    "python_compile": "passed for runner, core, and output serializer",
+    "formal_runner_executed": false,
+    "formal_npz_values_read": false,
+    "formal_effects_computed": false,
+    "formal_outputs_present_before_authorization": false,
+    "exclusive_claim_present_before_authorization": false,
+    "exact_output_names_match_reserved_contract": true,
+    "authorization_precedes_claim_and_formal_data_access": true,
+    "exclusive_claim_precedes_npy_header_and_payload_access": true,
+    "post_compute_reauthorization_required": true,
+    "artifact_index_published_last": true
+  },
+  "authorization": {
+    "canonical_no_argument_runner": "scripts/run_round12_existing_outputs_analysis.py",
+    "formal_existing_outputs_analysis": true,
+    "new_inference": false,
+    "training": false,
+    "daadx_access": false,
+    "retry_authorized": false,
+    "claim_removal_authorized": false,
+    "post_result_claims_authorized": false,
+    "next_required_review": "independent post-result review before scientific interpretation"
+  },
+  "limitations": [
+    "five training seeds limit inferential precision",
+    "D_R is a within-joint rationale-retention guardrail and not a between-model rationale benefit",
+    "existing BDD-OIA outputs cannot establish causality, safety, explanation faithfulness, or external validity",
+    "Windows directory fsync is best-effort; crashes leave fail-closed claim/staging/partial-output evidence requiring human audit",
+    "artifact-index-last is the commit marker for the five flat formal outputs; an absent index means an incomplete attempt",
+    "the persistent claim is a non-outcome execution-control sentinel and is intentionally excluded from the five scientific-result artifacts"
+  ],
+  "claim_boundary": "Authorization covers exactly one attempt01 execution against the twelve bound files. Any error, hash change, persistent or stale claim, pre-existing target/staging file, incomplete publication, or reauthorization failure requires stop and human audit. No automatic retry or claim removal is authorized.",
+  "memo": {
+    "path": "outputs/research_review_memo_round12_analysis_runner_preresult.md",
+    "sha256": "8D93BA63D09FD23153BE1E9C10D69C7D195A50CD22207A8F5650937BB13E86CC"
+  }
+}
