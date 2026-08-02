@@ -361,12 +361,17 @@ COMPLETE 则重新聚合成员类型、大小、资源上限、重复路径和 U
 也已实现并获得 `GO_RUNNER_SUPERVISOR_IMPLEMENTATION_NOT_RUN`：worker 以 suspended
 状态创建，在启用单进程上限与关闭即杀 Job、分配成功后才恢复；无关可继承句柄
 不会泄漏，archive opener 只能在固定 READY 后调用，供给、控制与日志共享硬截止
-时间。当前全量回归为 `559 passed, 10 skipped`。
+时间。
 
-这些裁决都不等于 `GO_RUN`。下一步仍需把 receipt/manifest 权威复制、十二项 STOP/
-COMPLETE 生成和已审阅 control 串成完整正式父进程，再独立审阅；之后才能生成
-HEAD-exact execution binding 并取得单独运行授权。只有再通过该门控，才允许创建
-永久 layout claim 并首次读取真实归档结构。
+完整正式父进程也已接通 receipt→manifest→READY→archive 的固定访问顺序、十二项
+STOP/COMPLETE 产物生成和已审阅的原子发布控制层，并在独立审阅发现“发布后复核
+可能越过总截止时间”的问题后加入最终 deadline 门控。当前精确实现裁决为
+`GO_FORMAL_RUNNER_IMPLEMENTATION_NOT_RUN`，全量回归为 `573 passed, 11 skipped`；
+这些测试仍只使用合成临时文件，没有读取真实 DAAD-X 输入。
+
+这些裁决都不等于 `GO_RUN`。下一步是生成 HEAD-exact execution binding 并取得
+单独运行授权。只有再通过该门控，才允许创建永久 layout claim 并首次读取真实
+归档结构。
 
 关键证据：
 
@@ -384,6 +389,8 @@ HEAD-exact execution binding 并取得单独运行授权。只有再通过该门
 - [布局控制层机器可读裁决](outputs/validity/round11_layout_control_implementation_reviewer_decision.json)
 - [布局 worker/supervisor 实现独立审阅](outputs/research_review_memo_round11_layout_runner_implementation.md)
 - [布局 worker/supervisor 机器可读裁决](outputs/validity/round11_layout_runner_implementation_reviewer_decision.json)
+- [布局正式父进程实现独立审阅](outputs/research_review_memo_round11_layout_formal_runner_implementation.md)
+- [布局正式父进程机器可读裁决](outputs/validity/round11_layout_formal_runner_implementation_reviewer_decision.json)
 
 ## Round 12：配对多轴监督—剂量交互复分析（已完成）
 
