@@ -345,6 +345,19 @@ opaque bytes 方式组装；整个传输阶段没有打开 gzip/tar、读取标�
 但尚未创建真实 claim、尚未打开归档内容，也没有运行 G0–G3。因此 Round 11
 目前不是外部有效性结果，更不是 `GO_RUN` 或训练授权。
 
+在传输闭合之后，又单独冻结了一个结果盲的“归档布局清单”门控。当前只完成
+其未运行实现：自定义单成员 gzip/raw-deflate 状态机、原始 512 字节 POSIX
+USTAR/PAX 解析、普通成员载荷的有界读后即丢、路径碰撞检查、有界 public CSV
+与 restricted JSONL 流式 sink，以及独立父进程 watchdog。全部验证只使用代码
+现场构造的微型合成归档；没有使用 `tarfile`/`gzip` 作为解析权威，也没有触碰
+真实 DAAD-X 归档。两轮独立 `STOP_FIX` 分别拦截并修复了格式识别/资源上限/
+路径留存和超时竞态/运行时覆写问题，最终裁决为
+`GO_IMPLEMENTATION_NOT_RUN`。当前全量回归为 `490 passed, 9 skipped`。
+
+该裁决仍不允许运行布局清单。下一门控必须把精确 worker、argv、环境、受控
+staging 目录和禁止派生子进程约束写入 HEAD-exact execution binding，再经独立
+审阅明确批准，之后才能创建永久 layout claim 并首次读取真实归档结构。
+
 关键证据：
 
 - [严格 transport receipt](outputs/validity/round11_daadx_transport_receipt.json)
@@ -352,6 +365,9 @@ opaque bytes 方式组装；整个传输阶段没有打开 gzip/tar、读取标�
 - [receipt 结果后独立复核](outputs/validity/round11_transport_receipt_postgeneration_reviewer_decision.json)
 - [Phase 1 additive 补充协议](outputs/validity/round11_daadx_phase1_diagnostic_amendment.json)
 - [Phase 1 控制面独立复核](outputs/validity/round11_phase1_control_reviewer_decision.json)
+- [布局清单冻结协议](outputs/validity/round11_daadx_layout_inventory_protocol.json)
+- [布局清单实现独立审阅](outputs/research_review_memo_round11_layout_inventory_implementation.md)
+- [布局清单实现机器可读裁决](outputs/validity/round11_layout_inventory_implementation_reviewer_decision.json)
 
 ## Round 12：配对多轴监督—剂量交互复分析（已完成）
 
