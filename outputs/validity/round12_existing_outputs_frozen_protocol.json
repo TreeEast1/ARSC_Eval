@@ -1,0 +1,646 @@
+{
+  "schema_version": "ARSC_ROUND12_EXISTING_OUTPUTS_FROZEN_PROTOCOL_V1",
+  "generated_at_utc": "2026-08-02T00:00:00Z",
+  "status": "FROZEN_RESULT_BLIND_PROTOCOL_ONLY",
+  "result_blind": true,
+  "execution": {
+    "formal_run": false,
+    "attempt": "attempt01",
+    "new_inference": false,
+    "training": false,
+    "outcome_computed": false,
+    "bootstrap_executed": false
+  },
+  "authorization": {
+    "decision_path": "outputs/validity/round12_existing_outputs_reviewer_decision.json",
+    "decision_sha256": "404A5E65B480BC8E61287105EDEF007FAA266F231B7C7F00BBFFFFE5E0C4528D",
+    "decision_schema": "ARSC_ROUND12_EXISTING_OUTPUTS_REVIEWER_DECISION_V1",
+    "decision": "GO_FREEZE_ONE_ANALYSIS",
+    "implementation_authorized_by_this_decision": false,
+    "implementation_authorized": false,
+    "execution_authorized": false,
+    "memo_path": "outputs/research_review_memo_round12_existing_outputs_direction.md",
+    "memo_sha256": "F260312611350C0B0A53AA681670954116EDFB961E163CFE1922C6DADDDC7A8A"
+  },
+  "analysis": {
+    "analysis_id": "ROUND12_PAIRED_MULTIAXIS_SUPERVISION_DOSE_INTERACTION",
+    "title": "paired multi-axis rationale-supervision by corruption-dose interaction",
+    "scope": {
+      "seeds": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "families": [
+        "brightness",
+        "blur",
+        "noise"
+      ],
+      "nonzero_levels": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "models": [
+        "action_only",
+        "joint"
+      ],
+      "axes": [
+        "A",
+        "R",
+        "S",
+        "C1"
+      ],
+      "cell_weighting": "equal weight over all 12 family-by-nonzero-level cells and equal weight over five selected seed positions",
+      "clean_baseline": "verify all family level-0 arrays are exact, then count one clean baseline per seed/model"
+    },
+    "cell_weighting": "equal weight over all 12 family-by-nonzero-level cells and equal weight over five selected seed positions",
+    "clean_baseline": "verify all family level-0 arrays are exact, then count one clean baseline per seed/model",
+    "effect_definitions": {
+      "D_A": "mean(([A_joint(f,l)-A_joint(f,0)]-[A_action_only(f,l)-A_action_only(f,0)]))",
+      "D_R": "mean(R_joint(f,l)-R_joint(f,0))",
+      "D_S": "mean(([AURC_action_only(f,l)-AURC_action_only(f,0)]-[AURC_joint(f,l)-AURC_joint(f,0)]))",
+      "D_C1": "mean(Flip_action_only(f,l)-Flip_joint(f,l))"
+    },
+    "directions": {
+      "positive_is_favorable": true,
+      "D_A": "larger D_A = stronger joint action-quality retention relative to action_only across the 12 corruption cells",
+      "D_R": "larger D_R = less within-joint rationale-quality drop from clean; retention guardrail only",
+      "D_S": "larger D_S = smaller joint selective-risk (tie-averaged AURC) increase relative to action_only",
+      "D_C1": "larger D_C1 = fewer action flips under joint supervision relative to action_only at the nonzero cell"
+    },
+    "hypothesis": "Across all twelve nonzero corruption cells, joint rationale supervision has at least 0.01 practical action-consistency advantage while action quality, joint rationale quality, and selective risk are each non-inferior at margin 0.01.",
+    "r_axis_limitation": "R is a within-joint retention guardrail because action_only has no rationale head; it cannot establish a between-model R benefit.",
+    "unit_of_analysis": "crossed training seed and source clip; images within each source clip are retained together",
+    "nonredundancy": {
+      "round10": "tested within-model monotone family-by-axis dose response, not a joint-versus-action supervision-by-dose interaction",
+      "historical_rq2_light": "used one existing perturbation per family and no A/R/S multi-axis guardrails, not all twelve nonzero dose cells"
+    },
+    "paper_consequence": {
+      "PASS": "supports dose-generalized RQ2-light consistency benefit with A/R/S guardrails under existing clean-action equivalence; does not imply causality, safety, faithfulness, or external validity",
+      "PARTIAL": "retain C1 benefit only and frame ARSC as exposing a cross-axis trade-off rather than identifying a globally superior model",
+      "FAIL": "restrict RQ2-light to its original fixed perturbation setting and remove broad rationale-supervision stability attribution; retain Round10 C1 sensitivity and A/R/S partial-fail findings"
+    },
+    "new_inference_required": false
+  },
+  "margins_and_guardrails": {
+    "practical_margin": 0.01,
+    "c1_point_minimum": 0.01,
+    "c1_lower_bound_strict_positive": true,
+    "c1_minimum_positive_seeds": 4,
+    "c1_family_guardrail_floor": -0.01,
+    "ar_s_non_inferiority_floor": -0.01
+  },
+  "gates": {
+    "PASS": [
+      "D_C1 grand point estimate >= 0.01 (raw float64)",
+      "D_C1 q=0.0125 lower bound > 0.0 (raw float64)",
+      "at least four of five seed-specific D_C1 values > 0.0",
+      "each of three family-specific D_C1 values >= -0.01",
+      "D_A q=0.0125 lower bound > -0.01",
+      "D_R q=0.0125 lower bound > -0.01",
+      "D_S q=0.0125 lower bound > -0.01"
+    ],
+    "PARTIAL": "all three C1 guardrails pass (point, C1 lower bound, seed count, family floor) but at least one A/R/S non-inferiority lower bound fails",
+    "FAIL": "any C1 point estimate, C1 q=0.0125 lower bound, seed-count, or family guardrail fails"
+  },
+  "bootstrap": {
+    "replicates": 5000,
+    "draw_source": "reuse exact saved Round10 seed_position_draws and clip_position_draws",
+    "seed_draw_shape": [
+      5000,
+      5
+    ],
+    "clip_draw_shape": [
+      5000,
+      3904
+    ],
+    "pairing": "one shared seed and clip draw across every family, level, model, and axis",
+    "metric_recomputation": "recompute macro-F1, tie-averaged AURC, and flip rate from expanded clip samples; never bootstrap aggregated cell means",
+    "replicate_statistic": "For each replicate use the single shared seed-position and single shared clip-position draw. For every selected seed position, recompute macro-F1, tie-averaged AURC, and flip rate from the expanded clip sample for all 12 cells and both models, then form that selected seed's four D values as equal cell means; average each D over the five selected seed positions.",
+    "quantile": {
+      "method": "linear",
+      "dtype": "float64",
+      "lower_quantile": 0.0125,
+      "multiplicity_control": {
+        "co_primary_components": 4,
+        "familywise_alpha": 0.05,
+        "method": "Bonferroni simultaneous one-sided lower bounds",
+        "lower_quantile": 0.0125
+      }
+    },
+    "never_bootstrap_aggregated_cell_means_only": true
+  },
+  "numeric_policy": {
+    "dtype": "float64",
+    "nonfinite_input_or_result": "ROUND12_INCONCLUSIVE_STOP",
+    "zero_denominator_macro_f1": 0.0,
+    "per_class_target_and_prediction_both_empty_f1": 0.0,
+    "tie_averaged_aurc_is_exact_tie_averaged_round10_semantics": true,
+    "empty_metric_input": "ROUND12_INCONCLUSIVE_STOP",
+    "comparison_operator": "raw float64 unrounded; >= passes margin, >0.0 is strict positive, no rounding in gates"
+  },
+  "clean_level0_equality": {
+    "requirement": "Every seed's level-0 (clean) cell must be exact across all three families for each model; a single clean baseline per seed and model is counted. Any mismatch is ROUND12_INCONCLUSIVE_STOP.",
+    "evaluated_before_effects": true
+  },
+  "inputs": {
+    "input_evidence": [
+      {
+        "path": "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_primitives.npz",
+        "sha256": "80821C7DEE9194ABA62B373383B4FD9EF8105D3750C48902A91EF45D278B2E83"
+      },
+      {
+        "path": "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_bootstrap_draws.npz",
+        "sha256": "893FE2F899BE4F725E3B056BB26B060EDBE4AB40AA7144D3BB83114D1F87DB02"
+      },
+      {
+        "path": "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_results.json",
+        "sha256": "9AE834DD81D4A397BA966917245AAA581007A0BFBF5B08CA773D7515756242C4"
+      },
+      {
+        "path": "outputs/validity/round10_corruption_dose_response_protocol_amendment01.json",
+        "sha256": "220D36BEB76CAFDE5BCC3528B49F737E6681A43FF2ECA9A3C22531A1FF88644B"
+      },
+      {
+        "path": "outputs/validity/rq1_multiseed_frozen_protocol.json",
+        "sha256": "CC5FE969EA90EFB1181F67AB5D18CE67C05DE9207F903C7F14EBD964AC07EE0C"
+      },
+      {
+        "path": "outputs/validity/rq1_multiseed_summary.json",
+        "sha256": "ECA8D453E9DB67CB933CAF2217DAFC62BD054709734C857AF8A5BE9665680000"
+      },
+      {
+        "path": "outputs/validity/round10_postresult_reviewer_decision.json",
+        "sha256": "795FCECE213B78C03FD820274D67338FED0F57426E2A33AEF6F281F762266A89"
+      }
+    ],
+    "npz_allowlists": {
+      "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_primitives.npz": {
+        "sha256": "80821C7DEE9194ABA62B373383B4FD9EF8105D3750C48902A91EF45D278B2E83",
+        "key_count": 40,
+        "items": [
+          {
+            "key": "A_fn",
+            "shape": [
+              5,
+              3,
+              5,
+              2,
+              3904,
+              4
+            ],
+            "dtype": "uint16"
+          },
+          {
+            "key": "A_fp",
+            "shape": [
+              5,
+              3,
+              5,
+              2,
+              3904,
+              4
+            ],
+            "dtype": "uint16"
+          },
+          {
+            "key": "A_tp",
+            "shape": [
+              5,
+              3,
+              5,
+              2,
+              3904,
+              4
+            ],
+            "dtype": "uint16"
+          },
+          {
+            "key": "C1_action_clip_sums",
+            "shape": [
+              5,
+              3,
+              5,
+              2,
+              3904
+            ],
+            "dtype": "uint16"
+          },
+          {
+            "key": "C1_rationale_clip_sums",
+            "shape": [
+              5,
+              3,
+              5,
+              3904
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "R_fn",
+            "shape": [
+              5,
+              3,
+              5,
+              3904,
+              21
+            ],
+            "dtype": "uint16"
+          },
+          {
+            "key": "R_fp",
+            "shape": [
+              5,
+              3,
+              5,
+              3904,
+              21
+            ],
+            "dtype": "uint16"
+          },
+          {
+            "key": "R_tp",
+            "shape": [
+              5,
+              3,
+              5,
+              3904,
+              21
+            ],
+            "dtype": "uint16"
+          },
+          {
+            "key": "action_per_class_f1",
+            "shape": [
+              5,
+              3,
+              5,
+              2,
+              4
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "action_predicted_positive",
+            "shape": [
+              5,
+              3,
+              5,
+              2,
+              4
+            ],
+            "dtype": "int64"
+          },
+          {
+            "key": "action_predictions",
+            "shape": [
+              5,
+              3,
+              5,
+              2,
+              4557,
+              4
+            ],
+            "dtype": "bool"
+          },
+          {
+            "key": "action_target_positive",
+            "shape": [
+              5,
+              3,
+              5,
+              2,
+              4
+            ],
+            "dtype": "int64"
+          },
+          {
+            "key": "action_targets",
+            "shape": [
+              4557,
+              4
+            ],
+            "dtype": "uint8"
+          },
+          {
+            "key": "axes",
+            "shape": [
+              4
+            ],
+            "dtype": "<U2"
+          },
+          {
+            "key": "clip_id_by_image",
+            "shape": [
+              4557
+            ],
+            "dtype": "int32"
+          },
+          {
+            "key": "clip_keys",
+            "shape": [
+              3904
+            ],
+            "dtype": "<U17"
+          },
+          {
+            "key": "clip_sizes",
+            "shape": [
+              3904
+            ],
+            "dtype": "int32"
+          },
+          {
+            "key": "confidence",
+            "shape": [
+              5,
+              3,
+              5,
+              2,
+              4557
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "curve_A",
+            "shape": [
+              5,
+              3,
+              2,
+              5
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "curve_C1",
+            "shape": [
+              5,
+              3,
+              3,
+              5
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "curve_R",
+            "shape": [
+              5,
+              3,
+              1,
+              5
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "curve_S",
+            "shape": [
+              5,
+              3,
+              2,
+              5
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "endpoint_components",
+            "shape": [
+              8
+            ],
+            "dtype": "<U27"
+          },
+          {
+            "key": "endpoint_effects",
+            "shape": [
+              5,
+              3,
+              8
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "errors",
+            "shape": [
+              5,
+              3,
+              5,
+              2,
+              4557
+            ],
+            "dtype": "uint8"
+          },
+          {
+            "key": "families",
+            "shape": [
+              3
+            ],
+            "dtype": "<U10"
+          },
+          {
+            "key": "family_axis_bottlenecks",
+            "shape": [
+              5,
+              3,
+              4
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "group_counts",
+            "shape": [
+              5,
+              3,
+              5,
+              2
+            ],
+            "dtype": "int32"
+          },
+          {
+            "key": "group_ids",
+            "shape": [
+              5,
+              3,
+              5,
+              2,
+              4557
+            ],
+            "dtype": "int32"
+          },
+          {
+            "key": "levels",
+            "shape": [
+              5
+            ],
+            "dtype": "int8"
+          },
+          {
+            "key": "models",
+            "shape": [
+              2
+            ],
+            "dtype": "<U11"
+          },
+          {
+            "key": "rationale_per_class_f1",
+            "shape": [
+              5,
+              3,
+              5,
+              21
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "rationale_predicted_positive",
+            "shape": [
+              5,
+              3,
+              5,
+              21
+            ],
+            "dtype": "int64"
+          },
+          {
+            "key": "rationale_predictions",
+            "shape": [
+              5,
+              3,
+              5,
+              4557,
+              21
+            ],
+            "dtype": "bool"
+          },
+          {
+            "key": "rationale_target_positive",
+            "shape": [
+              5,
+              3,
+              5,
+              21
+            ],
+            "dtype": "int64"
+          },
+          {
+            "key": "rationale_targets",
+            "shape": [
+              4557,
+              21
+            ],
+            "dtype": "uint8"
+          },
+          {
+            "key": "safety_diagnostic_names",
+            "shape": [
+              8
+            ],
+            "dtype": "<U36"
+          },
+          {
+            "key": "safety_diagnostics",
+            "shape": [
+              5,
+              3,
+              5,
+              2,
+              8
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "schema_version",
+            "shape": [],
+            "dtype": "<U26"
+          },
+          {
+            "key": "seeds",
+            "shape": [
+              5
+            ],
+            "dtype": "int16"
+          }
+        ]
+      },
+      "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_bootstrap_draws.npz": {
+        "sha256": "893FE2F899BE4F725E3B056BB26B060EDBE4AB40AA7144D3BB83114D1F87DB02",
+        "key_count": 6,
+        "items": [
+          {
+            "key": "clip_position_draws",
+            "shape": [
+              5000,
+              3904
+            ],
+            "dtype": "uint16"
+          },
+          {
+            "key": "endpoint_draws",
+            "shape": [
+              5000,
+              24
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "expanded_image_counts",
+            "shape": [
+              5000
+            ],
+            "dtype": "int32"
+          },
+          {
+            "key": "family_axis_gate_draws",
+            "shape": [
+              5000,
+              12
+            ],
+            "dtype": "float64"
+          },
+          {
+            "key": "schema_version",
+            "shape": [],
+            "dtype": "<U31"
+          },
+          {
+            "key": "seed_position_draws",
+            "shape": [
+              5000,
+              5
+            ],
+            "dtype": "uint8"
+          }
+        ]
+      }
+    }
+  },
+  "independent_review": {
+    "direction_decision": "outputs/validity/round12_existing_outputs_reviewer_decision.json",
+    "direction_decision_sha256": "404A5E65B480BC8E61287105EDEF007FAA266F231B7C7F00BBFFFFE5E0C4528D",
+    "direction_memo": "outputs/research_review_memo_round12_existing_outputs_direction.md",
+    "direction_memo_sha256": "F260312611350C0B0A53AA681670954116EDFB961E163CFE1922C6DADDDC7A8A",
+    "reviewer_role": "independent_existing_outputs_scientific_direction_reviewer",
+    "reviewer_decision": "GO_FREEZE_ONE_ANALYSIS"
+  },
+  "output_allowlist": [
+    "outputs/validity/round12_existing_outputs_frozen_protocol.json"
+  ],
+  "forbidden_actions": [
+    "no DAAD-X data access",
+    "no model or checkpoint loading",
+    "no inference and no new training",
+    "no computation of new axis effects",
+    "no bootstrap execution",
+    "no selection of seeds/families/levels/models/components after seeing effects",
+    "no modification of existing artifacts",
+    "no metric or effect value read into this freeze"
+  ],
+  "one_shot_stopping": "This freeze computes no outcomes. A future formal attempt must be separately authorized and must itself fail closed on one-shot stopping with exactly one execution before any results are frozen.",
+  "state": {
+    "result_blind": true,
+    "execution": false,
+    "formal_run": false
+  }
+}

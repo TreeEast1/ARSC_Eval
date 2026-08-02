@@ -1,0 +1,108 @@
+{
+  "schema_version": "ARSC_ROUND12_FROZEN_PROTOCOL_PRERESULT_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-08-02",
+  "decision": "GO_IMPLEMENT_ROUND12_RESULT_BLIND",
+  "reviewer_role": "independent_result_blind_round12_frozen_protocol_reviewer",
+  "reviewed_repository_head_at_review_time": "72e2ca557bec39f17b1ab0934c63273516525e84",
+  "reviewed_files": [
+    {
+      "path": "scripts/freeze_round12_existing_outputs_protocol.py",
+      "sha256": "B0C828F8FED137BD692FD0E02A1937FD6DAF81C63391A022506F4CC434B281E5"
+    },
+    {
+      "path": "tests/test_freeze_round12_existing_outputs_protocol.py",
+      "sha256": "A4D8DDF3C75FEDEC7B29E907246F4FA1F0C2222A19BC24E4B28FB4A73AD45EF6"
+    },
+    {
+      "path": "outputs/validity/round12_existing_outputs_frozen_protocol.json",
+      "sha256": "643F60022965E298B07F8CED4BEB8F6FC547ACA3B1C717DF8A60EC6ECDF2D6F7"
+    },
+    {
+      "path": "outputs/research_review_memo_round12_existing_outputs_direction.md",
+      "sha256": "F260312611350C0B0A53AA681670954116EDFB961E163CFE1922C6DADDDC7A8A"
+    },
+    {
+      "path": "outputs/validity/round12_existing_outputs_reviewer_decision.json",
+      "sha256": "404A5E65B480BC8E61287105EDEF007FAA266F231B7C7F00BBFFFFE5E0C4528D"
+    }
+  ],
+  "review_boundary": {
+    "npz_payload_values_read": false,
+    "outcome_metrics_computed": false,
+    "d_statistics_computed": false,
+    "bootstrap_executed": false,
+    "formal_result_generated": false,
+    "daadx_accessed": false,
+    "candidate_files_modified": false
+  },
+  "verification": {
+    "fixed_hashes_match": true,
+    "header_only_npz_structure_reviewed": true,
+    "numpy_load_or_payload_decode_used_by_freezer": false,
+    "whole_file_sha_is_opaque_identity_binding_only": true,
+    "canonical_no_argument_invocation": true,
+    "deterministic_idempotent_output": true,
+    "real_freeze_owner_report": "first invocation WROTE, second invocation UNCHANGED, identical protocol SHA256",
+    "target_test_owner_report": "17 passed, 1 skipped (Windows symlink privilege)",
+    "full_suite_owner_report": "236 passed, 1 skipped",
+    "reviewer_local_test_attempt": "18 setup errors before test bodies because pytest tmp_path creation received WinError 5 under the restricted Windows sandbox",
+    "reviewer_local_test_attempt_is_code_failure": false,
+    "deepseek_preliminary_check": "unavailable: API fetch failed; no worker output used"
+  },
+  "scientific_contract": {
+    "analysis_count": 1,
+    "analysis_id": "ROUND12_PAIRED_MULTIAXIS_SUPERVISION_DOSE_INTERACTION",
+    "effect_definitions_and_directions_frozen": true,
+    "equal_twelve_cell_and_five_seed_weighting_frozen": true,
+    "single_exact_clean_baseline_rule_frozen": true,
+    "c1_practical_margin": 0.01,
+    "c1_lower_bound_threshold": 0.0,
+    "c1_positive_seed_minimum": 4,
+    "c1_family_floor": -0.01,
+    "a_r_s_noninferiority_margin": -0.01,
+    "bootstrap_replicates": 5000,
+    "seed_position_draw_shape": [5000, 5],
+    "clip_position_draw_shape": [5000, 3904],
+    "shared_crossed_seed_clip_pairing": true,
+    "lower_quantile": 0.0125,
+    "quantile_method": "numpy linear float64",
+    "raw_unrounded_gate_comparison": true,
+    "pass_partial_fail_gates_frozen": true,
+    "one_shot_future_authorization_required": true
+  },
+  "implementation_acceptance_conditions": [
+    "validate exact metadata values and ordering, draw bounds, source-clip mapping, and clean equality before computing any effect",
+    "load formal computational inputs only from named raw primitives and the exact saved seed-position and clip-position draws; do not use precomputed curve or endpoint artifacts as Round12 outcomes",
+    "bind one exact Round10-compatible tie-averaged AURC implementation and lock ties and numeric edge cases with synthetic tests before formal data execution",
+    "make clean equality cover every raw clean input used by A, R, S, and C1",
+    "emit machine-auditable seed-specific and family-specific C1 guardrail components",
+    "freeze implementation bytes, synthetic tests, exact formal output schema, artifact allowlist, atomic writer, and one-shot runner in a separate independent pre-result review",
+    "use the unambiguous phrase four C1 conditions in implementation and result prose while preserving the already frozen structured gates"
+  ],
+  "authorization": {
+    "result_blind_implementation_authorized": true,
+    "synthetic_tests_authorized": true,
+    "formal_npz_value_loading_authorized": false,
+    "formal_outcome_computation_authorized": false,
+    "bootstrap_execution_authorized": false,
+    "formal_result_writing_authorized": false,
+    "go_run_authorized": false,
+    "new_inference_authorized": false,
+    "training_authorized": false,
+    "daadx_authorized": false,
+    "parallel_second_analysis_authorized": false,
+    "next_required_review": "independent result-blind review of the exact implementation, synthetic tests, runner, and output contract before any formal execution"
+  },
+  "residual_risks": [
+    "tie-averaged AURC code identity is not yet bound and must be closed at implementation review",
+    "primitive-only loading and exhaustive clean equality remain implementation obligations",
+    "crossed source-clip bootstrap may be computationally demanding",
+    "five training seeds limit inferential precision",
+    "existing BDD-OIA outputs cannot establish causality, safety, faithfulness, or external validity"
+  ],
+  "claim_boundary": "GO_IMPLEMENT_ROUND12_RESULT_BLIND authorizes only result-blind implementation and synthetic testing of the one frozen analysis. It does not authorize loading formal NPZ values, computing outcomes or bootstrap intervals, writing a formal result, GO_RUN, DAAD-X access, training, new inference, or any scientific claim.",
+  "memo": {
+    "path": "outputs/research_review_memo_round12_frozen_protocol_preresult.md",
+    "sha256": "28ADDDCC62C457885B2DE6FFD70DBB174455402B816556AEAC97E529C3D9D071"
+  }
+}
