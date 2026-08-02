@@ -1,0 +1,80 @@
+{
+  "schema_version": "ARSC_TRANSPORT_ASSEMBLER_REREVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-08-02",
+  "decision": "GO_COMMIT_TRANSPORT_ASSEMBLER",
+  "reviewer_role": "independent_final_transport_safety_rereviewer",
+  "candidate_bytes_frozen_for_this_review": true,
+  "reviewed_files": [
+    {
+      "path": "scripts/assemble_verified_ranges.py",
+      "sha256": "34BD9B4DB03C1338D7E5F72048F5FABD93C29A89995AA0B6CBD6ED7BEF632DE4"
+    },
+    {
+      "path": "tests/test_assemble_verified_ranges.py",
+      "sha256": "5BD6AE33CB5A48B451C67B2B9BF20EB0A66B5F74842DC426FAA4B229DA6882B8"
+    }
+  ],
+  "review_scope": {
+    "data_directory_accessed_or_listed": false,
+    "real_chunks_accessed_or_assembled": false,
+    "real_gzip_or_tar_opened": false,
+    "network_used_by_candidate": false,
+    "candidate_or_tests_modified_by_reviewer": false,
+    "synthetic_tests_only": true
+  },
+  "prior_blocker_resolution": {
+    "id": "T1",
+    "status": "PASS_RESOLVED",
+    "first_backup_failure": "backup-preparation exception is handled before the publish transaction; originals are never passed to _rollback_one and remain untouched",
+    "second_backup_failure": "the completed first backup is best-effort removed by _abort_backup_prep while both originals remain untouched",
+    "publish_barrier": "publish begins only after every existed-before target has a returned backup path that still exists",
+    "new_regression_tests": [
+      "test_force_first_backup_failure_leaves_originals_untouched",
+      "test_force_second_backup_failure_cleans_first_backup_and_keeps_originals"
+    ]
+  },
+  "accepted_properties": [
+    "ranges form the exact contiguous partition of expected_total with an exact remainder chunk",
+    "canonical chunk names, missing and extra pattern files, exact sizes, directories and scan-visible symlinks are fail-closed",
+    "output and manifest symlinks, directory targets, same resolved path and expected source-chunk conflicts are rejected",
+    "every chunk is stream-hashed during scan and independently rehashed during assembly",
+    "the published output is independently re-read for exact size and SHA256 before manifest publication",
+    "overwrite is refused by default and force mode uses prepared backups plus independent two-target rollback",
+    "manifest replace followed by directory-fsync failure enters rollback and partial rollback failure preserves recoverable backups",
+    "manifest bytes are deterministic for the same verified inputs and output basename",
+    "the module has no network, subprocess, gzip or tar parsing semantics"
+  ],
+  "blocking_findings": [],
+  "test_evidence": {
+    "independent_command": "D:\\anaconda3\\envs\\Nuclear_Transformer\\python.exe -m pytest tests\\test_assemble_verified_ranges.py -q -p no:cacheprovider",
+    "independent_result": "5 passed, 35 environment setup errors",
+    "environment_limitation": "all 35 errors occurred in pytest tmp_path setup because the Windows sandbox denied access to C:\\Users\\user\\AppData\\Local\\Temp\\pytest-of-user; no candidate assertion failure was observed",
+    "independent_full_dynamic_reproduction_claimed": false,
+    "main_agent_secondary_evidence": "previously reported 38 target passed / 217 full passed; those counts predate the two added T1 regression tests and are not treated as proof of the current test bytes",
+    "deepseek_preliminary_audit": "UNAVAILABLE_FETCH_FAILED_NO_RESULT_ADOPTED",
+    "required_before_any_real_assembly": "run the complete current-SHA target and repository suites in a normal writable temporary-directory environment"
+  },
+  "residual_risks": [
+    "output and manifest use per-file atomic replace rather than cross-file atomic commit; consumers must verify the manifest/output hash pair",
+    "directory fsync is best-effort on hosts that cannot open directory handles",
+    "local concurrent path or symlink replacement remains a TOCTOU risk; execution directories must be single-writer and trusted",
+    "output and manifest should remain outside the chunk namespace and must not use chunk-pattern names",
+    "the prepublish backup-ready assertion is disabled by python -O; real use must not use optimized mode and may later replace the assertion with an explicit fail-closed exception"
+  ],
+  "authorization": {
+    "commit_exact_reviewed_tool_and_test_bytes": true,
+    "commit_this_rereview_memo_and_decision": true,
+    "real_data_access_or_assembly": false,
+    "real_force_overwrite": false,
+    "gzip_or_tar_read_list_extract": false,
+    "formal_preflight": false,
+    "video_or_label_access": false,
+    "training_or_inference": false,
+    "go_run": false
+  },
+  "claim_boundary": "GO_COMMIT_TRANSPORT_ASSEMBLER authorizes Git preservation of the exact reviewed transport tool, synthetic tests, and review evidence only. It authorizes no real chunk access or assembly, no gzip/tar semantics, no real overwrite, no formal preflight, no training, and no GO_RUN.",
+  "memo": {
+    "path": "outputs/research_review_memo_transport_assembler_rereview.md",
+    "sha256": "5F4D3012B1FD861635CD5D90483EAB7705E26125F83CFE27A0B1D32375684D61"
+  }
+}

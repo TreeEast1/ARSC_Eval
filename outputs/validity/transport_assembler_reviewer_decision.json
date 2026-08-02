@@ -1,0 +1,75 @@
+{
+  "schema_version": "ARSC_TRANSPORT_ASSEMBLER_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-08-02",
+  "decision": "STOP_FIX_TRANSPORT_ASSEMBLER",
+  "reviewer_role": "independent_transport_safety_reviewer",
+  "candidate_bytes_frozen_for_this_review": true,
+  "reviewed_files": [
+    {
+      "path": "scripts/assemble_verified_ranges.py",
+      "sha256": "3A8D71E53EE1F2AD72D30B1D1F456DA4B08E89C813552CDF4D70BF6CF024C97D"
+    },
+    {
+      "path": "tests/test_assemble_verified_ranges.py",
+      "sha256": "5F64C175F12DEDE2938EC150C56E6B48ACFBAB1298AC8BF80E1E53C5FDA7B445"
+    }
+  ],
+  "review_scope": {
+    "data_directory_accessed_or_listed": false,
+    "real_daadx_chunks_or_tar_read": false,
+    "gzip_or_tar_semantics_executed": false,
+    "candidate_or_existing_files_modified_by_reviewer": false,
+    "synthetic_tests_only": true
+  },
+  "accepted_checks": [
+    "contiguous ranges and final remainder are derived from expected_total and chunk_bytes",
+    "canonical names, missing chunks, wrong sizes, extra pattern files, and scan-visible symlinks are checked",
+    "output and manifest path equality, expected source-chunk conflicts, symlink targets, and directory targets are rejected",
+    "each chunk is independently stream-hashed during scan and assembly",
+    "published output is re-read for exact size and SHA256 before manifest publication",
+    "overwrite is refused by default and deterministic manifest generation is implemented",
+    "manifest-replace directory-fsync failure and independent best-effort rollback paths are covered",
+    "module has no gzip or tar container semantics"
+  ],
+  "blocking_findings": [
+    {
+      "id": "T1",
+      "severity": "BLOCKER",
+      "title": "force backup creation failure can delete pre-existing output or manifest",
+      "evidence": "backup_output and backup_manifest use None for both pre-existing-but-not-yet-backed-up and did-not-exist states; the common exception handler unconditionally passes them to _rollback_one, whose None branch unlinks the target",
+      "counterexamples": [
+        "failure of the first _copy_backup causes rollback to unlink both original targets",
+        "success of the output backup followed by failure of the manifest backup restores output but unlinks the original manifest"
+      ],
+      "required_fix": [
+        "track existed_before, backup_ready, and published state independently for each target",
+        "on backup preparation failure leave both original targets untouched",
+        "delete a target during rollback only when it did not exist before and was actually published",
+        "add synthetic tests for first-backup failure and second-backup failure after the first succeeds"
+      ]
+    }
+  ],
+  "test_evidence": {
+    "independent_command": "D:\\anaconda3\\envs\\Nuclear_Transformer\\python.exe -m pytest tests\\test_assemble_verified_ranges.py -q -p no:cacheprovider",
+    "independent_result": "5 passed, 33 environment setup errors",
+    "environment_limitation": "pytest tmp_path could not access the sandbox default or workspace basetemp due Windows ACL; escalated retry was interrupted",
+    "candidate_assertion_failures_observed": 0,
+    "main_agent_secondary_evidence": "38 target passed / 217 full passed",
+    "main_agent_evidence_treated_as_independent_reproduction": false,
+    "deepseek_preliminary_audit": "UNAVAILABLE_FETCH_FAILED_NO_RESULT_ADOPTED"
+  },
+  "authorization": {
+    "commit_current_candidate": false,
+    "modify_candidate_by_reviewer": false,
+    "real_data_access_or_assembly": false,
+    "archive_read_list_or_extract": false,
+    "formal_preflight": false,
+    "training_or_inference": false,
+    "go_run": false
+  },
+  "claim_boundary": "STOP_FIX_TRANSPORT_ASSEMBLER requires correction and independent rereview of the exact new bytes. It authorizes no commit of the current candidate, no real chunk access or assembly, no tar/gzip access, no formal preflight, and no GO_RUN.",
+  "memo": {
+    "path": "outputs/research_review_memo_transport_assembler.md",
+    "sha256": "59BB10B493A8983F5814954FB139595C79A217395015662758B17EFC4646C0EB"
+  }
+}
