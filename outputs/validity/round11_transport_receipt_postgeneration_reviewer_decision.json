@@ -1,0 +1,141 @@
+{
+  "schema_version": "ARSC_ROUND11_DAADX_TRANSPORT_RECEIPT_POSTGENERATION_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-08-02",
+  "decision": "ACCEPT_ROUND11_TRANSPORT_RECEIPT",
+  "reviewer_role": "independent_round11_transport_receipt_postgeneration_reviewer",
+  "reviewed_repository_head": "dab695fffe1656a59a6d4644aa01d621c67a04f0",
+  "opaque_transport_only": true,
+  "receipt": {
+    "path": "data/external/daadx_official/daadx_transport_receipt.json",
+    "schema_version": "ARSC_ROUND11_DAADX_TRANSPORT_RECEIPT_V1",
+    "bytes": 1629,
+    "sha256": "D738E21E5DC1976C192CFA3982E2CA2941FF3D2AF8A811BA432D51778A6B1C7F",
+    "regular_non_symlink_single_link": true,
+    "canonical_json_exact": true,
+    "duplicate_keys_absent": true,
+    "transport_only": true
+  },
+  "official_transport": {
+    "original_url": "https://cvit.iiit.ac.in/images/datasets/daadx/daadx.tar.gz",
+    "resolved_cdn_url": "https://cdn.iiit.ac.in/cdn/cvit.iiit.ac.in/images/datasets/daadx/daadx.tar.gz",
+    "expected_etag": "\"68089dd7-453ca7834\"",
+    "expected_content_length_bytes": 18585647156
+  },
+  "assembler_manifest": {
+    "path": "data/external/daadx_official/daadx_assembled_ranges_manifest.json",
+    "schema_version": "ARSC_ASSEMBLED_RANGES_MANIFEST_V1",
+    "bytes": 15792,
+    "sha256": "FDBCC19DD726F8CA5C93A8189C47A5ACBEA5E6D1EC131679B4302E7493A835DC",
+    "regular_non_symlink_single_link": true
+  },
+  "assembled_archive": {
+    "path": "data/external/daadx_official/daadx.assembled.tar.gz",
+    "bytes": 18585647156,
+    "sha256": "98E6DD4D068004B090A5D62C648A727AF902EBF3B176BCE2CE044EABDE91E965",
+    "regular_non_symlink_single_link": true,
+    "opaque_stream_rehashed_postgeneration": true
+  },
+  "chunk_plan": {
+    "chunk_bytes": 268435456,
+    "chunk_count": 70,
+    "suffix": "resilient.bin",
+    "coverage_start": 0,
+    "coverage_end_exclusive": 18585647156,
+    "contiguous_without_gap_or_overlap": true,
+    "chunk_records_sha256": "A0A7C1560F907D05F842F724700B59856D638708DB55599ED129A2E4C267D5BC"
+  },
+  "implementation": [
+    {
+      "role": "assembler",
+      "path": "scripts/assemble_verified_ranges.py",
+      "sha256": "34BD9B4DB03C1338D7E5F72048F5FABD93C29A89995AA0B6CBD6ED7BEF632DE4",
+      "bytes": 21256,
+      "tracked_and_head_exact": true
+    },
+    {
+      "role": "assembler-tests",
+      "path": "tests/test_assemble_verified_ranges.py",
+      "sha256": "5BD6AE33CB5A48B451C67B2B9BF20EB0A66B5F74842DC426FAA4B229DA6882B8",
+      "bytes": 35243,
+      "tracked_and_head_exact": true
+    },
+    {
+      "role": "receipt-builder",
+      "path": "scripts/build_round11_daadx_transport_receipt.py",
+      "sha256": "4244F5881BBD73357D8C8B3E3F654691470EFABF7929E593616BA0BBFE2D7C75",
+      "bytes": 13200,
+      "tracked_and_head_exact": true
+    },
+    {
+      "role": "receipt-tests",
+      "path": "tests/test_build_round11_daadx_transport_receipt.py",
+      "sha256": "7633A5329EF37281C4609973E292354F3AE3934BCBCD07D1F8F04B5B9E09A3D4",
+      "bytes": 13189,
+      "tracked_and_head_exact": true
+    }
+  ],
+  "prior_assembled_transport_review": {
+    "path": "outputs/validity/round11_assembled_transport_reviewer_decision.json",
+    "schema_version": "ARSC_ROUND11_DAADX_ASSEMBLED_TRANSPORT_REVIEWER_DECISION_V1",
+    "decision": "GO_GENERATE_ROUND11_TRANSPORT_RECEIPT_ONCE",
+    "bytes": 6810,
+    "sha256": "171DA8BCD46A8107D0B44762039A4FF4A0CE7417B32858FC30C2BD4EE30C1E67"
+  },
+  "verification": {
+    "receipt_top_level_and_nested_field_sets_exact": true,
+    "receipt_raw_sha_matches_expected": true,
+    "official_url_cdn_quoted_etag_and_total_exact": true,
+    "manifest_actual_bytes_and_sha_match_receipt": true,
+    "archive_actual_bytes_and_sha_match_receipt": true,
+    "manifest_archive_receipt_three_way_consistent": true,
+    "chunk_count_coverage_and_record_chain_match": true,
+    "four_implementation_roles_order_paths_and_actual_sha_match": true,
+    "observed_single_fixed_output_under_prior_one_time_authorization": true,
+    "receipt_temp_absent": true,
+    "builder_rerun_by_reviewer": false,
+    "gzip_or_tar_opened_or_members_listed": false,
+    "labels_or_videos_accessed": false,
+    "phase1_claim_created": false,
+    "phase1_executed": false
+  },
+  "test_evidence": {
+    "receipt_result": "1629 bytes; SHA256 D738E21E5DC1976C192CFA3982E2CA2941FF3D2AF8A811BA432D51778A6B1C7F; strict canonical schema PASS",
+    "manifest_result": "15792 bytes; SHA256 FDBCC19DD726F8CA5C93A8189C47A5ACBEA5E6D1EC131679B4302E7493A835DC; 70-record chain PASS",
+    "archive_result": "independent opaque postgeneration scan: 18585647156 bytes; SHA256 98E6DD4D068004B090A5D62C648A727AF902EBF3B176BCE2CE044EABDE91E965",
+    "deepseek_worker_note": "Configured worker invocation returned fetch failed before executing checks or writes; primary reviewer independently completed the postgeneration review."
+  },
+  "git_snapshot_recommendation": {
+    "recommended": true,
+    "source_path": "data/external/daadx_official/daadx_transport_receipt.json",
+    "destination_path": "outputs/validity/round11_daadx_transport_receipt.json",
+    "destination_and_temp_absent_at_review": true,
+    "copy_exact_bytes_without_json_reserialization": true,
+    "source_must_remain_unchanged": true,
+    "no_overwrite_required": true,
+    "required_destination_bytes": 1629,
+    "required_source_and_destination_sha256": "D738E21E5DC1976C192CFA3982E2CA2941FF3D2AF8A811BA432D51778A6B1C7F",
+    "rehash_both_after_copy_before_commit": true,
+    "archive_remains_ignored_and_outside_git": true,
+    "copy_performed_by_this_review": false
+  },
+  "authorization": {
+    "accept_exact_transport_receipt": true,
+    "create_exact_no_overwrite_git_snapshot_then_rehash": true,
+    "design_and_integrate_execution_binding": true,
+    "rerun_receipt_builder": false,
+    "modify_source_receipt_manifest_or_archive": false,
+    "access_archive_content_or_tar_members": false,
+    "create_phase1_claim": false,
+    "run_phase1_or_formal_preflight": false,
+    "issue_go_run": false,
+    "execute_g0_through_g8": false,
+    "training_or_inference": false
+  },
+  "next_boundary": "After preserving and rehashing the exact receipt snapshot, work may proceed only to design and integrate the HEAD-exact execution binding. A separate independent execution review is required before any archive-content access, claim acquisition, Phase1 execution or GO_RUN.",
+  "claim_boundary": "ACCEPT_ROUND11_TRANSPORT_RECEIPT accepts only the exact bound 1629-byte transport receipt and authorizes its exact no-overwrite Git snapshot plus execution-binding design/integration. It authorizes no receipt-builder rerun, archive-content interpretation, gzip/tar member access, claim, Phase1, G0-G8 verdict, training, inference or GO_RUN.",
+  "memo": {
+    "path": "outputs/research_review_memo_round11_transport_receipt_postgeneration.md",
+    "sha256": "8D3E1BD23A0082F2E3BD536412ECD0E697F22F548DDADACC371C11408B4CD837",
+    "bytes": 5010
+  }
+}

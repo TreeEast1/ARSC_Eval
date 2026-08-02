@@ -1,0 +1,141 @@
+{
+  "schema_version": "ARSC_ROUND11_DAADX_ASSEMBLED_TRANSPORT_REVIEWER_DECISION_V1",
+  "generated_at_utc": "2026-08-02",
+  "decision": "GO_GENERATE_ROUND11_TRANSPORT_RECEIPT_ONCE",
+  "reviewer_role": "independent_round11_opaque_assembled_transport_reviewer",
+  "reviewed_repository_head": "dab695fffe1656a59a6d4644aa01d621c67a04f0",
+  "opaque_transport_only": true,
+  "transport_objects": {
+    "chunks_directory": "data/external/daadx_official/chunks",
+    "canonical_chunk_count": 70,
+    "canonical_chunk_pattern": "chunk_NNN.resilient.bin",
+    "assembled_archive": {
+      "path": "data/external/daadx_official/daadx.assembled.tar.gz",
+      "basename": "daadx.assembled.tar.gz",
+      "bytes": 18585647156,
+      "sha256": "98E6DD4D068004B090A5D62C648A727AF902EBF3B176BCE2CE044EABDE91E965",
+      "regular_non_symlink_single_link": true
+    },
+    "assembler_manifest": {
+      "path": "data/external/daadx_official/daadx_assembled_ranges_manifest.json",
+      "schema_version": "ARSC_ASSEMBLED_RANGES_MANIFEST_V1",
+      "bytes": 15792,
+      "sha256": "FDBCC19DD726F8CA5C93A8189C47A5ACBEA5E6D1EC131679B4302E7493A835DC",
+      "regular_non_symlink_single_link": true
+    }
+  },
+  "reviewed_implementation": [
+    {
+      "path": "scripts/assemble_verified_ranges.py",
+      "sha256": "34BD9B4DB03C1338D7E5F72048F5FABD93C29A89995AA0B6CBD6ED7BEF632DE4",
+      "bytes": 21256,
+      "tracked_and_head_exact": true,
+      "role": "transport_range_assembler"
+    },
+    {
+      "path": "tests/test_assemble_verified_ranges.py",
+      "sha256": "5BD6AE33CB5A48B451C67B2B9BF20EB0A66B5F74842DC426FAA4B229DA6882B8",
+      "bytes": 35243,
+      "tracked_and_head_exact": true,
+      "role": "transport_range_assembler_tests"
+    },
+    {
+      "path": "scripts/build_round11_daadx_transport_receipt.py",
+      "sha256": "4244F5881BBD73357D8C8B3E3F654691470EFABF7929E593616BA0BBFE2D7C75",
+      "bytes": 13200,
+      "tracked_and_head_exact": true,
+      "role": "authorized_transport_receipt_builder"
+    },
+    {
+      "path": "tests/test_build_round11_daadx_transport_receipt.py",
+      "sha256": "7633A5329EF37281C4609973E292354F3AE3934BCBCD07D1F8F04B5B9E09A3D4",
+      "bytes": 13189,
+      "tracked_and_head_exact": true,
+      "role": "transport_receipt_builder_tests"
+    },
+    {
+      "path": "outputs/validity/transport_assembler_rereviewer_decision.json",
+      "sha256": "8818CEAE01A58E562D532A59E1221F7E1B54968B9362875236D7C33C4E5B20F4",
+      "bytes": 5113,
+      "tracked_and_head_exact": true,
+      "role": "assembler_commit_authority"
+    },
+    {
+      "path": "outputs/validity/round11_transport_receipt_builder_reviewer_decision.json",
+      "sha256": "5FFEE310E449B0A2456A9FD62EC10A6F2F5C46560DEEA0ADC969D3B79DE52F8E",
+      "bytes": 4243,
+      "tracked_and_head_exact": true,
+      "role": "receipt_builder_commit_authority"
+    }
+  ],
+  "manifest_contract": {
+    "top_level_fields_exact": true,
+    "parameter_fields_exact": true,
+    "assembled_fields_exact": true,
+    "every_chunk_field_set_exact": true,
+    "duplicate_json_keys_absent": true,
+    "chunk_bytes": 268435456,
+    "chunk_count": 70,
+    "expected_total": 18585647156,
+    "suffix": "resilient.bin",
+    "last_chunk_bytes": 63600692,
+    "indices_names_and_range_starts_exact": true,
+    "ranges_contiguous_without_gap_or_overlap": true,
+    "assembled_basename_exact": true
+  },
+  "opaque_verification": {
+    "all_seventy_actual_chunk_sha256_values_match_manifest": true,
+    "all_seventy_actual_chunk_sizes_match_manifest": true,
+    "canonical_range_file_set_exact_without_missing_or_extra": true,
+    "all_chunks_regular_non_symlink_single_link": true,
+    "ordered_actual_chunk_concatenation_bytes": 18585647156,
+    "ordered_actual_chunk_concatenation_sha256": "98E6DD4D068004B090A5D62C648A727AF902EBF3B176BCE2CE044EABDE91E965",
+    "assembled_archive_actual_bytes": 18585647156,
+    "assembled_archive_actual_sha256": "98E6DD4D068004B090A5D62C648A727AF902EBF3B176BCE2CE044EABDE91E965",
+    "manifest_archive_ordered_chunks_three_way_match": true,
+    "assembly_completion_proven_by_full_file_evidence": true,
+    "tmux_narrative_or_live_session_relied_upon": false,
+    "gzip_or_tar_opened_or_members_listed": false,
+    "labels_or_videos_accessed": false,
+    "phase1_executed": false
+  },
+  "test_evidence": {
+    "assembler_command": "python -m pytest -q tests/test_assemble_verified_ranges.py -p no:cacheprovider",
+    "assembler_result": "40 passed in 2.45s",
+    "opaque_hash_result": "70/70 chunk SHA PASS; ordered concatenation and independent archive scan both 18585647156 bytes and SHA256 98E6DD4D068004B090A5D62C648A727AF902EBF3B176BCE2CE044EABDE91E965",
+    "deepseek_worker_note": "Configured worker invocation returned fetch failed before reading data or executing checks; primary reviewer independently performed the complete opaque verification."
+  },
+  "one_time_receipt_authorization": {
+    "builder_path": "scripts/build_round11_daadx_transport_receipt.py",
+    "builder_sha256": "4244F5881BBD73357D8C8B3E3F654691470EFABF7929E593616BA0BBFE2D7C75",
+    "manifest_path": "data/external/daadx_official/daadx_assembled_ranges_manifest.json",
+    "manifest_sha256": "FDBCC19DD726F8CA5C93A8189C47A5ACBEA5E6D1EC131679B4302E7493A835DC",
+    "archive_path": "data/external/daadx_official/daadx.assembled.tar.gz",
+    "archive_bytes": 18585647156,
+    "archive_sha256": "98E6DD4D068004B090A5D62C648A727AF902EBF3B176BCE2CE044EABDE91E965",
+    "output_path": "data/external/daadx_official/daadx_transport_receipt.json",
+    "output_and_temp_absent_at_review": true,
+    "no_overwrite_required": true,
+    "maximum_successful_generations": 1,
+    "opaque_archive_streaming_only": true,
+    "independent_postgeneration_receipt_review_required": true
+  },
+  "authorization": {
+    "generate_fixed_transport_receipt_once": true,
+    "modify_or_reassemble_chunks_or_archive": false,
+    "force_overwrite_or_delete_existing_receipt_or_temp": false,
+    "open_or_list_gzip_or_tar": false,
+    "read_labels_or_videos": false,
+    "create_phase1_claim": false,
+    "run_phase1_or_formal_preflight": false,
+    "issue_go_run": false,
+    "execute_g0_through_g8": false,
+    "training_or_inference": false
+  },
+  "claim_boundary": "GO_GENERATE_ROUND11_TRANSPORT_RECEIPT_ONCE authorizes exactly one no-overwrite invocation of the exact bound receipt builder against the exact bound manifest and opaque archive, writing only the fixed absent receipt path. It authorizes no gzip/tar member access, archive interpretation, chunk/archive modification, Phase1 claim or execution, G0-G8 verdict, training, inference or GO_RUN.",
+  "memo": {
+    "path": "outputs/research_review_memo_round11_assembled_transport.md",
+    "sha256": "E9D312EBA7507EA72F07C34DC542EEC9D29083A2FD1ABD86A40326E4A0254AB4",
+    "bytes": 4569
+  }
+}

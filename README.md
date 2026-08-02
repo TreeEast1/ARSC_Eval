@@ -330,6 +330,29 @@ bootstrap 汇总均为 0 mismatch。审阅结论为
 - [独立结果后 SCI 审阅](outputs/research_review_memo_round10_postresult.md)
 - [机器可读审阅判定](outputs/validity/round10_postresult_reviewer_decision.json)
 
+## Round 11：DAAD-X 外部验证准备（传输阶段已完成）
+
+DAAD-X 官方归档的 70 个固定 range 已全部下载并逐段校验，随后在 tmux 中以
+opaque bytes 方式组装；整个传输阶段没有打开 gzip/tar、读取标签或解码视频。
+组装归档为 `18,585,647,156` 字节，独立复算 SHA-256 为
+`98E6DD4D068004B090A5D62C648A727AF902EBF3B176BCE2CE044EABDE91E965`。
+70 段逐段 SHA、顺序拼接 SHA、组装归档 SHA 和 assembler manifest 四方一致。
+
+一次性严格 transport receipt 已生成并通过结果后独立复核，receipt SHA-256 为
+`D738E21E5DC1976C192CFA3982E2CA2941FF3D2AF8A811BA432D51778A6B1C7F`。
+仓库只保存 1,629 字节的收据快照、协议、代码和审阅证据；18.6 GB 原始归档与
+分块继续由 Git 忽略。Phase 1 补充协议和一次性 claim/原子发布原语也已冻结，
+但尚未创建真实 claim、尚未打开归档内容，也没有运行 G0–G3。因此 Round 11
+目前不是外部有效性结果，更不是 `GO_RUN` 或训练授权。
+
+关键证据：
+
+- [严格 transport receipt](outputs/validity/round11_daadx_transport_receipt.json)
+- [组装字节独立复核](outputs/validity/round11_assembled_transport_reviewer_decision.json)
+- [receipt 结果后独立复核](outputs/validity/round11_transport_receipt_postgeneration_reviewer_decision.json)
+- [Phase 1 additive 补充协议](outputs/validity/round11_daadx_phase1_diagnostic_amendment.json)
+- [Phase 1 控制面独立复核](outputs/validity/round11_phase1_control_reviewer_decision.json)
+
 ## Round 12：配对多轴监督—剂量交互复分析（已完成）
 
 Round 12 不训练模型也不重新推理，而是结果盲地复用 Round 10 已冻结的逐图像

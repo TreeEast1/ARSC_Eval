@@ -114,6 +114,16 @@ Round 9 已完成当时唯一获准的后续实验，并永久关闭 BDD-OIA sal
 
 正式设计使用亮度、模糊和噪声三类合成像素算子，并对每张原图实际重新推理；每类包含严重度 `0/1/2/3/4`，固定 12 个“算子族 × ARSC 轴”门。最终仅 3/12 个门通过，且三者全部为 C1：brightness、blur 和 noise 的 C1 门分别通过；A、R、S 的 9 个门均未通过。因此该轮不是四轴全面确认，正式判定保持 `ROUND10_PARTIAL_OR_FAIL`。结果仅界定于冻结的 BDD-OIA 总体、五个历史 ResNet-50 种子、固定阈值/校准和三组合成扰动网格；C1 仍只能解释为样本对应关系敏感性，不能外推为构念、因果、外部或现实安全有效性。独立审阅重建了 3,975 行诊断并逐位重放全部 5,000 组 seed/clip 选择；制品哈希、诊断、抽样、84 个分位数和 36 行 bootstrap 汇总均为 0 mismatch。
 
+## Round 11 DAAD-X 外部验证准备
+
+- `validity/round11_daadx_transport_receipt.json`：官方 70 段组装归档的 exact 1,629-byte transport receipt 快照；绑定归档 `18,585,647,156` bytes、SHA-256 `98E6DD4D...E91E965`、manifest、range-chain 和四个实现文件。
+- `research_review_memo_round11_assembled_transport.md` 与 `validity/round11_assembled_transport_reviewer_decision.json`：70/70 段实际 SHA、顺序拼接和组装归档的独立 opaque 复核。
+- `research_review_memo_round11_transport_receipt_postgeneration.md` 与 `validity/round11_transport_receipt_postgeneration_reviewer_decision.json`：一次性 receipt 的结果后独立复核，裁决为 `ACCEPT_ROUND11_TRANSPORT_RECEIPT`。
+- `validity/round11_daadx_phase1_diagnostic_amendment.json`：只增不改的 G0–G3 Phase 1 诊断补充协议；全通过与早停都必须生成哈希闭合证据，G4–G7 保持 `DEFERRED_NOT_RUN_PHASE1`，禁止 G8 或正式结论。
+- `src/arsc_eval/round11_phase1_control.py` 及审阅证据：永久 attempt claim、严格 fsync、双进程竞争、canonical index 和原子 no-replace 发布控制。
+
+大归档、range 分块和本地组装 manifest 继续由 Git 忽略。当前只完成 transport 层和执行控制准备；未创建真实 Phase 1 claim、未打开 gzip/tar、未读取标签/视频、未执行 G0–G3，也没有跨数据集外部有效性结论。
+
 ## Round 12 配对多轴监督—剂量交互复分析
 
 - `validity/round12_existing_outputs_frozen_protocol.json`、`research_review_memo_round12_existing_outputs_direction.md` 和相关 reviewer decision：结果盲冻结的唯一分析方向、效应定义、同步下界和一次性停止规则。
