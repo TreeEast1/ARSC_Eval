@@ -1,0 +1,506 @@
+{
+  "assembled": {
+    "byte_count": 18585647156,
+    "file": "daadx.assembled.tar.gz",
+    "sha256": "98e6dd4d068004b090a5d62c648a727af902ebf3b176bce2ce044eabde91e965"
+  },
+  "chunks": [
+    {
+      "byte_count": 268435456,
+      "file": "chunk_000.resilient.bin",
+      "index": 0,
+      "range_start": 0,
+      "sha256": "27e4db4d9befa000c4ed700e2dc1b23d3db222fa30e926ee4d1ea67f6142a75d"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_001.resilient.bin",
+      "index": 1,
+      "range_start": 268435456,
+      "sha256": "a8e1385f4fa5c3a4e62830267ed245fbb402c8ff42a8a02b89794c6c8785b905"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_002.resilient.bin",
+      "index": 2,
+      "range_start": 536870912,
+      "sha256": "30a95602ada20a65b8fc4203cfcd4465b4529804fdead96c36a7ecf88aa31a0c"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_003.resilient.bin",
+      "index": 3,
+      "range_start": 805306368,
+      "sha256": "9b62f13628604ac01ceeabc07b634314d0eb9811ce9646180f6ffd7dd18311a8"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_004.resilient.bin",
+      "index": 4,
+      "range_start": 1073741824,
+      "sha256": "7ff72cae18ea860b2501cbab2326304a27cc07d406aa33d4ca22c1eebbaea2d9"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_005.resilient.bin",
+      "index": 5,
+      "range_start": 1342177280,
+      "sha256": "8ff1ff80ac4c96f326980f74ddd858b57a7a42d97712993cb8ac15c36c712fbb"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_006.resilient.bin",
+      "index": 6,
+      "range_start": 1610612736,
+      "sha256": "90283b86ffe7d431709aa46e20ada7b816af4b4561e1db7bf59a8b6d491b6028"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_007.resilient.bin",
+      "index": 7,
+      "range_start": 1879048192,
+      "sha256": "6e3d622b60747bb9c515af3dd2d10d9b3c03fbde2dbddfd3ecff3fef48888439"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_008.resilient.bin",
+      "index": 8,
+      "range_start": 2147483648,
+      "sha256": "8107ad301061921c348e97be27355ded4f57a97f6f68035ab172509a30d2747f"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_009.resilient.bin",
+      "index": 9,
+      "range_start": 2415919104,
+      "sha256": "8212150219b4edb266a8bd84a2e0e43d8b59ffb532817489f3f64bff6210bb5c"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_010.resilient.bin",
+      "index": 10,
+      "range_start": 2684354560,
+      "sha256": "7d277994b1bddb31a9db026da4743d85609df4fec8eaa4619f349daf8fc819d1"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_011.resilient.bin",
+      "index": 11,
+      "range_start": 2952790016,
+      "sha256": "80c8974c7fabd7002ea2d6bc6b077fa8762ad030c56b4b5ddb3f8536eb3d1bde"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_012.resilient.bin",
+      "index": 12,
+      "range_start": 3221225472,
+      "sha256": "2323690597e39755043248b05237fefed9918130d0e22df6403cb68729449377"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_013.resilient.bin",
+      "index": 13,
+      "range_start": 3489660928,
+      "sha256": "7aba8c165240c42521823d8400e80c8c2454ef03690020dfd0b450daed9236f1"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_014.resilient.bin",
+      "index": 14,
+      "range_start": 3758096384,
+      "sha256": "46b98b3c5ced630b99d243e30edf9612c2e877cd5ee45a4232091e5531752de8"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_015.resilient.bin",
+      "index": 15,
+      "range_start": 4026531840,
+      "sha256": "b6537c3a77a86507da28def1293ac4c2a692319897ded854f40336308bd84483"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_016.resilient.bin",
+      "index": 16,
+      "range_start": 4294967296,
+      "sha256": "036e0b2d215e198adf6932149a7f8d82ae0ad6774e4a27026a81c40f76034d2b"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_017.resilient.bin",
+      "index": 17,
+      "range_start": 4563402752,
+      "sha256": "084568f9f327a41004b39cdc4e8ca8045508078d74c020b792cc3cb7fd81d5d2"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_018.resilient.bin",
+      "index": 18,
+      "range_start": 4831838208,
+      "sha256": "9a15756f5691440733b2e6ce12e80f637a8b381379ad7f20e604698432fcd930"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_019.resilient.bin",
+      "index": 19,
+      "range_start": 5100273664,
+      "sha256": "da85d1a12ffdd868528e53d57282bc2ad79d9c712ea8dbf052da833d71c7d28f"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_020.resilient.bin",
+      "index": 20,
+      "range_start": 5368709120,
+      "sha256": "ad92b1846396adb964b790d754d437abd2a5f9f349905f52ef06027ec4fe14f1"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_021.resilient.bin",
+      "index": 21,
+      "range_start": 5637144576,
+      "sha256": "6dd650a59c8f87c92d25f10ed3f6a0a282dd12a11729b9cf81471516578d68c3"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_022.resilient.bin",
+      "index": 22,
+      "range_start": 5905580032,
+      "sha256": "d9a191a221af552af580d5b76c35140d33be5f5b518c48058592b4daa4226b8d"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_023.resilient.bin",
+      "index": 23,
+      "range_start": 6174015488,
+      "sha256": "624ffcfc1d8f653c77608c8b0e598d27320b60fbb2cc6085b8bdefa34f648975"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_024.resilient.bin",
+      "index": 24,
+      "range_start": 6442450944,
+      "sha256": "70fcdf78ebfbff4c1ffd8fe2bc80f7ba3c695a77422b64163f3b5229cf914acb"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_025.resilient.bin",
+      "index": 25,
+      "range_start": 6710886400,
+      "sha256": "ae880985bc62f46cdfa9bbdd7ba9564ebad58417d3a76a0eea5eb75748b5ff4b"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_026.resilient.bin",
+      "index": 26,
+      "range_start": 6979321856,
+      "sha256": "44924bce5ba5cab2ff373b55db62e453da324014caa6905813f633b0fcf28ef1"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_027.resilient.bin",
+      "index": 27,
+      "range_start": 7247757312,
+      "sha256": "4b559647fd4036449201c26183caf26c58dc86b771d61299500fecd1218a1a4f"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_028.resilient.bin",
+      "index": 28,
+      "range_start": 7516192768,
+      "sha256": "c4d25babeeecfc816bed02abfd516dd0eb33d0d99c5ed21dc3b123dba27d29e5"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_029.resilient.bin",
+      "index": 29,
+      "range_start": 7784628224,
+      "sha256": "76c09b62665dd9c35c3cf70b5ea2eb326bec9947ae41bef482d45b6f9e4b803d"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_030.resilient.bin",
+      "index": 30,
+      "range_start": 8053063680,
+      "sha256": "81ffa16aa86e5b59f5a9c34eaddb32636d08acfd0eadbdb0e6732e028f891978"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_031.resilient.bin",
+      "index": 31,
+      "range_start": 8321499136,
+      "sha256": "64dc650a84dbddcf7845f7db3e1775ecbd0b7adab1ff6f837106289fee074cb4"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_032.resilient.bin",
+      "index": 32,
+      "range_start": 8589934592,
+      "sha256": "1bf911dca57a7537b89649f954b74090525cf8e7990819392b7613bc6005494e"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_033.resilient.bin",
+      "index": 33,
+      "range_start": 8858370048,
+      "sha256": "f0137cc1121498a7f029cb11905030e38e4916c1d4fa2314ab19f409571fdfb5"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_034.resilient.bin",
+      "index": 34,
+      "range_start": 9126805504,
+      "sha256": "b8016d42cad99d3ee2bdb99719f1762365cb615d83895419e0a9e5536bf35c19"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_035.resilient.bin",
+      "index": 35,
+      "range_start": 9395240960,
+      "sha256": "6675e34b242cb607669829effca0bb60bc3cd35b994012ede2d6e6b0d43f37e7"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_036.resilient.bin",
+      "index": 36,
+      "range_start": 9663676416,
+      "sha256": "7ed8e37f2b4e69abf81557819c137fdb5f04a41e7e8081605db07b69e2ccd73a"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_037.resilient.bin",
+      "index": 37,
+      "range_start": 9932111872,
+      "sha256": "d051acbc474be3441f1902dc9dda4880001c8a28a7695b5ee95180d00916f573"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_038.resilient.bin",
+      "index": 38,
+      "range_start": 10200547328,
+      "sha256": "d1907ed07075772d61b3a83744c73be0b083e4833f181ef9deb23cc258b80764"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_039.resilient.bin",
+      "index": 39,
+      "range_start": 10468982784,
+      "sha256": "e2d22189cb069a262e37bbd094c78a12eb077fc99ae750f9df4d0d40e8b2ad84"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_040.resilient.bin",
+      "index": 40,
+      "range_start": 10737418240,
+      "sha256": "0409d05f17fc600d0552c1d68d4e37a06183d27af65d8029b57a24a378dceb75"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_041.resilient.bin",
+      "index": 41,
+      "range_start": 11005853696,
+      "sha256": "ff48047eba7874141dba54220dc2b5c3cd4cfb881ec35f347a04bc48cb6c7701"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_042.resilient.bin",
+      "index": 42,
+      "range_start": 11274289152,
+      "sha256": "0eac2036acac8350d6a02e203cb1609ee2f6a306e831347f7b96d0b53a776b63"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_043.resilient.bin",
+      "index": 43,
+      "range_start": 11542724608,
+      "sha256": "51c946104bc380f3ea135f0fe45dd1a12df9647b8644f7df2a974fb502048ede"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_044.resilient.bin",
+      "index": 44,
+      "range_start": 11811160064,
+      "sha256": "d4f2eb2d622a1d6fb76947adb3bef502b05baf0c4d00b5c2cd3b1b45ef392927"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_045.resilient.bin",
+      "index": 45,
+      "range_start": 12079595520,
+      "sha256": "b7c603b97d889417fd3eaad54487a3fe1f5dffa08abbe873689bd638085cefd2"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_046.resilient.bin",
+      "index": 46,
+      "range_start": 12348030976,
+      "sha256": "d6c787d3f75a96418c552bcf2d7e55514a5340136f70d60019f731123cc59c34"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_047.resilient.bin",
+      "index": 47,
+      "range_start": 12616466432,
+      "sha256": "cb128402775b0b70c9879a8513783508a462e9a6bc6df224efb6f6862e7db41e"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_048.resilient.bin",
+      "index": 48,
+      "range_start": 12884901888,
+      "sha256": "e85ba3084c4899d37c4c796cce7e4f70f18ce93dfdf0094b1ee080b4a4c10d52"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_049.resilient.bin",
+      "index": 49,
+      "range_start": 13153337344,
+      "sha256": "afdc97fc254ad5d0850d5bc76bfdfd9e9766f5e0904833aafae216d912e76eea"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_050.resilient.bin",
+      "index": 50,
+      "range_start": 13421772800,
+      "sha256": "0714fa33af577f0963ed50beb969f72af7e4e6842e4516a7283fc056f20fc7c7"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_051.resilient.bin",
+      "index": 51,
+      "range_start": 13690208256,
+      "sha256": "6bdb3f0a5a727ce67b29224f0ae8801ce6057adeb9c4a72433400ab7f61bf192"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_052.resilient.bin",
+      "index": 52,
+      "range_start": 13958643712,
+      "sha256": "8fa210eaeec4fe88cd97a14bef9f68f9449809e634d32032e616799f7f51e308"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_053.resilient.bin",
+      "index": 53,
+      "range_start": 14227079168,
+      "sha256": "d118cc49796e152e767fe93d91f664e54c4f22732b58fca348e1cd4dbed8b433"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_054.resilient.bin",
+      "index": 54,
+      "range_start": 14495514624,
+      "sha256": "275c6550015e802b62e91b729c7c93bf64712b61c973e7777a6f3283c6860655"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_055.resilient.bin",
+      "index": 55,
+      "range_start": 14763950080,
+      "sha256": "235c2f7957c3457ba8c74df3ce6ce400e40b493db7c588c281a34fc553fce6e5"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_056.resilient.bin",
+      "index": 56,
+      "range_start": 15032385536,
+      "sha256": "e89927c1996b5f3c2ca4ce28960552216c17b60b30c4c4b2528b006cdb979096"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_057.resilient.bin",
+      "index": 57,
+      "range_start": 15300820992,
+      "sha256": "8096d163acd34103140d56c2099e33690e1e7643aee10bb5c8155a74c6b755ff"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_058.resilient.bin",
+      "index": 58,
+      "range_start": 15569256448,
+      "sha256": "7dcf6f2ad3b6d6b0ea0a1dcdea028042e04067a8ba2239d377a43f45b4faaaec"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_059.resilient.bin",
+      "index": 59,
+      "range_start": 15837691904,
+      "sha256": "49641b35b2aa480f9c39d9c8465ad973e9c9fe73f48b31c7376447cc7d9051fa"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_060.resilient.bin",
+      "index": 60,
+      "range_start": 16106127360,
+      "sha256": "db280e913f29fa095643a8077bf9b3c5f1231c90e864f5978cf92aebf4608489"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_061.resilient.bin",
+      "index": 61,
+      "range_start": 16374562816,
+      "sha256": "86a4a13f12d95099809c418162eca90df722b50d2d185e04944b139950622dda"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_062.resilient.bin",
+      "index": 62,
+      "range_start": 16642998272,
+      "sha256": "24d52e9364b8ad6ec6f6e913f1744affc411ca647f51ef5ee27ef2179719514a"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_063.resilient.bin",
+      "index": 63,
+      "range_start": 16911433728,
+      "sha256": "be56e73a43a32814773c118a4c982aca782d0dfc640e0119d4c07edf8e9d5b0d"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_064.resilient.bin",
+      "index": 64,
+      "range_start": 17179869184,
+      "sha256": "9cd7e8bcfcd5fd211fda1ef70c8b30bc78b37111e64b13da80ee416c34e39b1f"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_065.resilient.bin",
+      "index": 65,
+      "range_start": 17448304640,
+      "sha256": "c2678bbd7f85a7a81b94c50fb13c94f48b8f4492f9fb045dc24aed42e22cd9ef"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_066.resilient.bin",
+      "index": 66,
+      "range_start": 17716740096,
+      "sha256": "3e2d3534d773e7e9bb2458508c21a0a8f06dca83185b40bee30ad132a71ad71e"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_067.resilient.bin",
+      "index": 67,
+      "range_start": 17985175552,
+      "sha256": "747bfb0fba70f69cb0b548f86e155465bfff0bac2d5ac2dfd71718f427336ac8"
+    },
+    {
+      "byte_count": 268435456,
+      "file": "chunk_068.resilient.bin",
+      "index": 68,
+      "range_start": 18253611008,
+      "sha256": "aafa3f17415d1ef7755caec95e6fc2b9aa7a7143951b4cd7363eaa36cdb53e74"
+    },
+    {
+      "byte_count": 63600692,
+      "file": "chunk_069.resilient.bin",
+      "index": 69,
+      "range_start": 18522046464,
+      "sha256": "9ab4e09704503dce1fb3fde60de8fba676bccb9e5d1f94c547721465d3c5c7cc"
+    }
+  ],
+  "parameters": {
+    "chunk_bytes": 268435456,
+    "chunk_count": 70,
+    "expected_total": 18585647156,
+    "suffix": "resilient.bin"
+  },
+  "schema": "ARSC_ASSEMBLED_RANGES_MANIFEST_V1"
+}
