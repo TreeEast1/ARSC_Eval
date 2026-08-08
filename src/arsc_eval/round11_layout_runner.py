@@ -163,9 +163,9 @@ def _minimal_environment() -> dict[str, str]:
         "PYTHONUTF8": "1",
     }
     if os.name == "nt":
-        system_root = os.environ.get("SystemRoot") or os.environ.get("SYSTEMROOT")
-        require(bool(system_root), "SystemRoot is unavailable")
-        result["SystemRoot"] = str(system_root)
+        system_root = os.environ.get("SYSTEMROOT")
+        require(bool(system_root and system_root.strip()), "SYSTEMROOT is unavailable")
+        result["SYSTEMROOT"] = str(system_root)
     return result
 
 
@@ -180,6 +180,7 @@ def _worker_argv(
     return [
         str(python_executable),
         "-I",
+        "-S",
         "-B",
         str(worker_path),
         selector,

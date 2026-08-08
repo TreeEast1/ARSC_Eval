@@ -21,6 +21,14 @@ WORKER = (ROOT / "src/arsc_eval/round11_layout_worker.py").resolve()
 PYTHON = Path(sys.executable).resolve()
 
 
+def test_windows_minimal_environment_uses_canonical_systemroot_key() -> None:
+    environment = runner._minimal_environment()
+    if os.name == "nt":
+        assert set(environment) == {"PYTHONDONTWRITEBYTECODE", "PYTHONIOENCODING", "PYTHONUTF8", "SYSTEMROOT"}
+        assert environment["SYSTEMROOT"] == os.environ["SYSTEMROOT"]
+        assert "SystemRoot" not in environment
+
+
 def _octal(value: int, width: int) -> bytes:
     digits = f"{value:o}".encode("ascii")
     return b"0" * (width - 1 - len(digits)) + digits + b"\x00"
@@ -251,13 +259,14 @@ def test_windows_handle_list_excludes_unrelated_inheritable_handle(tmp_path: Pat
     extra_read, extra_write = os.pipe()
     extra_handle = int(msvcrt.get_osfhandle(extra_read))
     os.set_handle_inheritable(extra_handle, True)
+    os.write(extra_write, b"X")
     rejected = b'{"code":"PARSER_REJECTED","event":"ERROR","schema_version":"ARSC_ROUND11_DAADX_LAYOUT_WORKER_CONTROL_V1"}\n'
     leaked = b'{"code":"HANDLE_LEAKED","event":"ERROR","schema_version":"ARSC_ROUND11_DAADX_LAYOUT_WORKER_CONTROL_V1"}\n'
     body = (
         f"control.write({READY_MESSAGE!r})\n"
         "import ctypes\n"
-        "flags=ctypes.c_uint32()\n"
-        f"visible=ctypes.windll.kernel32.GetHandleInformation(ctypes.c_void_p({extra_handle}),ctypes.byref(flags))\n"
+        "available=ctypes.c_uint32()\n"
+        f"visible=ctypes.windll.kernel32.PeekNamedPipe(ctypes.c_void_p({extra_handle}),None,0,None,ctypes.byref(available),None) and available.value>0\n"
         "if visible:\n"
         f" control.write({leaked!r}); raise SystemExit(21)\n"
         "else:\n"
