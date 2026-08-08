@@ -180,6 +180,7 @@ def _worker_argv(
     return [
         str(python_executable),
         "-I",
+        "-S",
         "-B",
         str(worker_path),
         selector,
