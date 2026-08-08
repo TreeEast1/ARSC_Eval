@@ -21,6 +21,14 @@ WORKER = (ROOT / "src/arsc_eval/round11_layout_worker.py").resolve()
 PYTHON = Path(sys.executable).resolve()
 
 
+def test_windows_minimal_environment_uses_canonical_systemroot_key() -> None:
+    environment = runner._minimal_environment()
+    if os.name == "nt":
+        assert set(environment) == {"PYTHONDONTWRITEBYTECODE", "PYTHONIOENCODING", "PYTHONUTF8", "SYSTEMROOT"}
+        assert environment["SYSTEMROOT"] == os.environ["SYSTEMROOT"]
+        assert "SystemRoot" not in environment
+
+
 def _octal(value: int, width: int) -> bytes:
     digits = f"{value:o}".encode("ascii")
     return b"0" * (width - 1 - len(digits)) + digits + b"\x00"

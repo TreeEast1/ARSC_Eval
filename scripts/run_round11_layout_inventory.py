@@ -366,7 +366,7 @@ def declared_input_path(text: object) -> Path:
 def git_call(git: Path, *args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
         [str(git), *args], cwd=ROOT, check=check, capture_output=True, text=True,
-        encoding="utf-8", errors="strict", env={"SystemRoot": os.environ["SystemRoot"]},
+        encoding="utf-8", errors="strict", env={"SYSTEMROOT": os.environ["SYSTEMROOT"]},
     )
 
 
@@ -382,6 +382,32 @@ def _require_real_git(git: Path) -> None:
     absolute = git.absolute()
     require(absolute.name == "git.exe", "git tool name differs")
     require(absolute.parent.name == "bin" and absolute.parent.parent.name == "mingw64", "git wrapper/stub toolchain path rejected")
+
+
+def minimal_environment_contract() -> dict[str, str]:
+    """Return the exact four-variable Windows minimal environment (SYSTEMROOT key)."""
+    require(os.name == "nt", "minimal environment contract is Windows-only")
+    system_root = os.environ.get("SYSTEMROOT")
+    require(bool(system_root and system_root.strip()), "SYSTEMROOT is unavailable")
+    return {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUTF8": "1",
+        "SYSTEMROOT": str(system_root),
+    }
+
+
+def validate_launcher_environment(environment: object) -> dict[str, str]:
+    """Require the exact four-variable environment observed by Windows CPython."""
+    require(type(environment) is dict, "launcher environment type differs")
+    expected_keys = {"PYTHONDONTWRITEBYTECODE", "PYTHONIOENCODING", "PYTHONUTF8", "SYSTEMROOT"}
+    require(set(environment) == expected_keys, "launcher environment fields differ")
+    require(environment["PYTHONDONTWRITEBYTECODE"] == "1", "launcher bytecode environment differs")
+    require(environment["PYTHONIOENCODING"] == "utf-8", "launcher encoding environment differs")
+    require(environment["PYTHONUTF8"] == "1", "launcher UTF-8 environment differs")
+    system_root = environment["SYSTEMROOT"]
+    require(type(system_root) is str and bool(system_root.strip()), "launcher SYSTEMROOT differs")
+    return dict(environment)
 
 
 TEST_EVIDENCE_ENTRY_KEYS = {"argv", "exit_code", "passed", "stdout_sha256"}
@@ -433,7 +459,7 @@ def _validate_binding_shape(binding: dict[str, Any]) -> None:
     process = exact_keys(binding["worker_process"], {"argv_template", "environment", "windows_job"}, "worker process")
     expected_worker = str(ROOT / "src/arsc_eval/round11_layout_worker.py")
     require(process["argv_template"] == [str(Path(sys.executable).absolute()), "-I", "-S", "-B", expected_worker, "--control-handle", "<POSITIVE_INTEGER_INHERITED_HANDLE>", "--expected-bytes", "18585647156", "--expected-sha256", "98E6DD4D068004B090A5D62C648A727AF902EBF3B176BCE2CE044EABDE91E965"], "worker argv differs")
-    require(process["environment"] == {"PYTHONDONTWRITEBYTECODE": "1", "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1", "SystemRoot": os.environ.get("SystemRoot")}, "worker environment differs")
+    require(process["environment"] == minimal_environment_contract(), "worker environment differs")
     job = exact_keys(process["windows_job"], {"create_suspended", "extended_startupinfo_present", "create_no_window", "handle_list_only", "active_process_limit", "kill_on_job_close"}, "Windows Job policy")
     _require_boolean_fields(job, {"create_suspended": True, "extended_startupinfo_present": True, "create_no_window": True, "handle_list_only": True, "kill_on_job_close": True}, "Windows Job policy")
     require(type(job["active_process_limit"]) is int and job["active_process_limit"] == 1, "active process limit type differs")
@@ -740,8 +766,8 @@ def main() -> int:
     validate_startup_attestation(sys.orig_argv, sys.flags, sys.executable, script, sys.modules)
     raw = sys.argv[1:]
     require(len(raw) == 7 and raw[0] == "--expected-launch-head" and raw[2] == "--expected-reviewer-sha256" and raw[4] == "--git-executable" and raw[6] == "--execute", "launcher argv shape differs")
-    expected_environment = {"PYTHONDONTWRITEBYTECODE": "1", "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1", "SystemRoot": os.environ.get("SystemRoot", "")}
-    require(dict(os.environ) == expected_environment, "launcher environment differs")
+    expected_environment = minimal_environment_contract()
+    require(validate_launcher_environment(dict(os.environ)) == expected_environment, "launcher environment differs")
     parser = argparse.ArgumentParser(allow_abbrev=False)
     parser.add_argument("--expected-launch-head", required=True)
     parser.add_argument("--expected-reviewer-sha256", required=True)

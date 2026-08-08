@@ -700,3 +700,36 @@ def test_isolated_interpreter_flags_via_real_subprocess() -> None:
     assert lines[0] == "1"
     assert lines[1] == "0"
     assert lines[2] == "0"
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Windows environment normalization")
+def test_real_windows_child_observes_exact_canonical_minimal_environment() -> None:
+    environment = launcher.minimal_environment_contract()
+    probe = "import os;print('\\n'.join(sorted(os.environ)));print(os.environ['SYSTEMROOT'])"
+    result = subprocess.run(
+        [sys.executable, "-I", "-S", "-B", "-c", probe],
+        env=environment,
+        capture_output=True,
+        text=True,
+        check=True,
+        encoding="utf-8",
+        errors="strict",
+    )
+    lines = result.stdout.splitlines()
+    assert lines[:4] == ["PYTHONDONTWRITEBYTECODE", "PYTHONIOENCODING", "PYTHONUTF8", "SYSTEMROOT"]
+    assert lines[4] == environment["SYSTEMROOT"]
+
+
+@pytest.mark.parametrize(
+    "mutation",
+    [
+        lambda env: {key: value for key, value in env.items() if key != "PYTHONUTF8"},
+        lambda env: {**env, "EXTRA": "1"},
+        lambda env: {**{key: value for key, value in env.items() if key != "SYSTEMROOT"}, "SystemRoot": env["SYSTEMROOT"]},
+        lambda env: {**env, "SYSTEMROOT": ""},
+    ],
+)
+def test_launcher_environment_rejects_missing_extra_wrong_case_or_empty_root(mutation) -> None:
+    environment = launcher.minimal_environment_contract()
+    with pytest.raises(launcher.StaticGateError, match="launcher .*environment|SYSTEMROOT"):
+        launcher.validate_launcher_environment(mutation(environment))

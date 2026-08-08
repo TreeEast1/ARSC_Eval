@@ -113,7 +113,7 @@ def executable_record(path: Path) -> dict[str, object]:
 def git_output(git: Path, *args: str) -> str:
     result = subprocess.run(
         [str(git), *args], cwd=ROOT, check=True, capture_output=True, text=True,
-        encoding="utf-8", errors="strict", env={"SystemRoot": os.environ["SystemRoot"]},
+        encoding="utf-8", errors="strict", env={"SYSTEMROOT": os.environ["SYSTEMROOT"]},
     )
     return result.stdout.strip()
 
@@ -135,7 +135,7 @@ def create_binding(*, python: Path, git: Path) -> dict[str, object]:
     archive = transport_review["assembled_archive"]
     resource_bounds = protocol["resource_bounds"]
     output = protocol["execution_control"]
-    system_root = os.environ["SystemRoot"]
+    system_root = os.environ["SYSTEMROOT"]
     exact_names = protocol["artifact_contract"]["exact_files"]
     exact_caps = {
         name: (
@@ -164,12 +164,12 @@ def create_binding(*, python: Path, git: Path) -> dict[str, object]:
         },
         "worker_process": {
             "argv_template": [str(python.absolute()), "-I", "-S", "-B", str(safe_repo_path("src/arsc_eval/round11_layout_worker.py")), "--control-handle", "<POSITIVE_INTEGER_INHERITED_HANDLE>", "--expected-bytes", "18585647156", "--expected-sha256", "98E6DD4D068004B090A5D62C648A727AF902EBF3B176BCE2CE044EABDE91E965"],
-            "environment": {"PYTHONDONTWRITEBYTECODE": "1", "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1", "SystemRoot": system_root},
+            "environment": {"PYTHONDONTWRITEBYTECODE": "1", "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1", "SYSTEMROOT": system_root},
             "windows_job": {"create_suspended": True, "extended_startupinfo_present": True, "create_no_window": True, "handle_list_only": True, "active_process_limit": 1, "kill_on_job_close": True},
         },
         "launcher_process": {
             "argv_template": [str(python.absolute()), "-I", "-S", "-B", str(safe_repo_path("scripts/run_round11_layout_inventory.py")), "--expected-launch-head", "<EXTERNAL_40_HEX_LOWER>", "--expected-reviewer-sha256", "<EXTERNAL_64_HEX_UPPER>", "--git-executable", str(git.absolute()), "--execute"],
-            "environment": {"PYTHONDONTWRITEBYTECODE": "1", "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1", "SystemRoot": system_root},
+            "environment": {"PYTHONDONTWRITEBYTECODE": "1", "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1", "SYSTEMROOT": system_root},
             "argparse_allow_abbrev": False,
             "duplicate_or_reordered_options_allowed": False,
         },
