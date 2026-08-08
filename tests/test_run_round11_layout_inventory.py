@@ -36,6 +36,18 @@ ARSC_SOURCES = {rel: (ROOT / rel).read_bytes() for rel in launcher.REQUIRED_ARSC
 ARSC_SHA = {rel: launcher.sha256(data) for rel, data in ARSC_SOURCES.items()}
 
 
+def _allow_reviewed_h0_for_binding_create(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Simulate only generation-time HEAD; all H0 ls-tree calls remain real."""
+    original = generator.git_output
+
+    def git_output(git: Path, *args: str) -> str:
+        if args == ("rev-parse", "HEAD"):
+            return generator.H0
+        return original(git, *args)
+
+    monkeypatch.setattr(generator, "git_output", git_output)
+
+
 def test_duplicate_json_key_rejected() -> None:
     with pytest.raises(launcher.StaticGateError, match="duplicate"):
         launcher.strict_document(b'{"a":1,"a":2}\n', "synthetic")
@@ -52,6 +64,7 @@ def test_declared_input_path_is_lexical_only(monkeypatch: pytest.MonkeyPatch) ->
 
 
 def test_static_gate_materializes_inputs_without_touching_run_inputs(monkeypatch: pytest.MonkeyPatch) -> None:
+    _allow_reviewed_h0_for_binding_create(monkeypatch)
     binding = generator.create_binding(python=Path(sys.executable), git=GIT)
     binding_data = generator.canonical(binding)
     h1 = "a" * 40

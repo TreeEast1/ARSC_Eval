@@ -16,6 +16,18 @@ SPEC.loader.exec_module(generator)
 GIT = Path(r"D:\Tools\MinGit\mingw64\bin\git.exe")
 
 
+def _allow_reviewed_h0_for_create(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Simulate only the generation-time HEAD while preserving real tree checks."""
+    original = generator.git_output
+
+    def git_output(git: Path, *args: str) -> str:
+        if args == ("rev-parse", "HEAD"):
+            return generator.H0
+        return original(git, *args)
+
+    monkeypatch.setattr(generator, "git_output", git_output)
+
+
 def test_binding_is_nonrunning_exact_and_does_not_read_run_inputs(monkeypatch: pytest.MonkeyPatch) -> None:
     forbidden = {
         str(ROOT / "outputs/validity/round11_daadx_transport_receipt.json"),
@@ -40,6 +52,7 @@ def test_binding_is_nonrunning_exact_and_does_not_read_run_inputs(monkeypatch: p
 
     monkeypatch.setattr(Path, "read_bytes", read_bytes)
     monkeypatch.setattr(Path, "read_text", read_text)
+    _allow_reviewed_h0_for_create(monkeypatch)
     binding = generator.create_binding(python=Path(sys.executable), git=GIT)
     assert touched == []
     assert binding["decision"] == generator.DECISION
@@ -50,6 +63,21 @@ def test_binding_is_nonrunning_exact_and_does_not_read_run_inputs(monkeypatch: p
     assert binding["authorities"]["archive"]["bytes"] == 18585647156
     assert binding["capabilities"]["label_values"] is False
     assert len({item["path"] for item in binding["artifacts"]}) == len(binding["artifacts"])
+
+
+def test_binding_rejects_non_h0_head(monkeypatch: pytest.MonkeyPatch) -> None:
+    actual_head = generator.git_output(GIT, "rev-parse", "HEAD")
+    if actual_head == generator.H0:
+        original = generator.git_output
+
+        def git_output(git: Path, *args: str) -> str:
+            if args == ("rev-parse", "HEAD"):
+                return "F" * 40
+            return original(git, *args)
+
+        monkeypatch.setattr(generator, "git_output", git_output)
+    with pytest.raises(RuntimeError, match="reviewed H0"):
+        generator.create_binding(python=Path(sys.executable), git=GIT)
 
 
 def test_publish_is_no_overwrite(tmp_path: Path) -> None:
