@@ -368,3 +368,19 @@ have at least 18/20 positive map-specific bottlenecks, a positive grand mean,
 a map x seed x component hierarchical bootstrap lower bound above zero, and
 no grand-mean curve reversal. All maps must be reported; salts cannot be
 replaced. VLA4CoDrive remains `STOP_EXTERNAL_TRAINING`.
+# Addendum V0 (proposed): Rounds 9-13 evidence-level reconciliation
+
+Date: 2026-08-09
+Classification: DOCUMENTATION_ONLY; NOT_GO_RUN; NO_DATA_ACCESS;
+                PROPOSED_AWAIT_INDEPENDENT_REVIEW
+
+This addendum clarifies, for Rounds 9-13, the precise evidence weight of each
+frozen protocol and its reviewer decision. It does not add or retract numeric
+results. It forbids any claim of external validity, safety, rationale
+grounding/faithfulness, or comprehensive four-axis validation.
+
+See docs/design/rounds9_13_evidence_claim_reconciliation_addendum_v0_proposed.md
+for the proposed, reviewable, non-authoritative evidence-claim matrix and its
+cited tracked sources. The original tracked reviewer decisions and frozen
+artifacts remain authoritative; this reference remains DOCUMENTATION_ONLY,
+NOT_GO_RUN, and NO_DATA_ACCESS.
