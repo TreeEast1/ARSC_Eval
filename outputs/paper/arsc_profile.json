@@ -1,0 +1,406 @@
+{
+  "schema_version": "ARSC_PROFILE_AND_DECISION_CHANGE_V1",
+  "analysis_id": "ARSC_RQ1_MODEL_PROFILE",
+  "role": "RQ1 main result. Round 5 model-profile case study: does multi-axis evaluation change the judgement reached from Action Performance alone?",
+  "no_aggregate_score": "ARSC deliberately reports no combined score. The axes are reported separately because they are not commensurable and, as Round 10 shows, they do not respond to the same manipulation.",
+  "punchline": "Action Performance produces a ranking. ARSC produces a profile.",
+  "frozen_inputs": {
+    "seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "round5": "outputs/validity/rq1_multiseed_summary.json",
+    "round10": "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_results.json",
+    "round12": "outputs/validity/round12_existing_outputs_results.json",
+    "s_audit": "outputs/paper/s_confidence_audit.json",
+    "rationale_coverage": "outputs/paper/rationale_coverage.json"
+  },
+  "practical_equivalence": {
+    "margin": [
+      -0.03,
+      0.03
+    ],
+    "mean_delta_joint_minus_action": 0.01153587380695098,
+    "hierarchical_ci": [
+      0.001590257203564117,
+      0.021806661779489526
+    ],
+    "passed": true
+  },
+  "profile_table": [
+    {
+      "axis": "A",
+      "axis_name": "Action Performance",
+      "operationalisation": "4-action Macro-F1 @ 0.5",
+      "does_not_measure": "not a safety guarantee",
+      "metric": "Action Macro-F1",
+      "lower_is_better": false,
+      "action_only_mean": 0.6740501115284726,
+      "action_only_ci_lower": 0.6663042760194143,
+      "action_only_ci_upper": 0.6819338568556327,
+      "joint_mean": 0.6855859853354236,
+      "joint_ci_lower": 0.6791239227939492,
+      "joint_ci_upper": 0.6921792720753392,
+      "joint_advantage_metric_key": "delta_action_macro_f1::Joint-Action",
+      "joint_advantage_orientation": 1.0,
+      "joint_advantage_mean": 0.01153587380695098,
+      "joint_advantage_ci_lower": 0.001590257203564117,
+      "joint_advantage_ci_upper": 0.021806661779489526,
+      "seeds_favouring_joint": 3,
+      "seed_values": [
+        0.02028117025944709,
+        0.025495151032316477,
+        0.01559802682288669,
+        -0.001171797704814126,
+        -0.0025231813750812293
+      ],
+      "verdict": "Joint better (95% CI excludes 0)"
+    },
+    {
+      "axis": "A",
+      "axis_name": "Action Performance",
+      "operationalisation": "4-action Macro-F1 @ 0.5",
+      "does_not_measure": "not a safety guarantee",
+      "metric": "Action Micro-F1",
+      "lower_is_better": false,
+      "action_only_mean": 0.7096820548309706,
+      "action_only_ci_lower": 0.7040308355855485,
+      "action_only_ci_upper": 0.7156156062996468,
+      "joint_mean": 0.7187830661105028,
+      "joint_ci_lower": 0.7136874934025678,
+      "joint_ci_upper": 0.7240293689869185,
+      "joint_advantage_metric_key": null,
+      "joint_advantage_mean": null,
+      "joint_advantage_ci_lower": null,
+      "joint_advantage_ci_upper": null,
+      "seeds_favouring_joint": null,
+      "verdict": "reported for completeness; no frozen paired interval"
+    },
+    {
+      "axis": "R",
+      "axis_name": "Rationale-label Performance",
+      "operationalisation": "21-class rationale Macro-F1 @ 0.5",
+      "does_not_measure": "not reasoning faithfulness",
+      "metric": "Rationale Macro-F1 (21 classes)",
+      "lower_is_better": false,
+      "action_only_mean": null,
+      "action_only_ci_lower": null,
+      "action_only_ci_upper": null,
+      "joint_mean": 0.27358892695121106,
+      "joint_ci_lower": 0.256070571146934,
+      "joint_ci_upper": 0.29287163778895875,
+      "joint_advantage_metric_key": null,
+      "joint_advantage_mean": null,
+      "joint_advantage_ci_lower": null,
+      "joint_advantage_ci_upper": null,
+      "seeds_favouring_joint": null,
+      "verdict": "single-model axis (Action-Only has no R head)"
+    },
+    {
+      "axis": "R",
+      "axis_name": "Rationale-label Performance",
+      "operationalisation": "21-class rationale Macro-F1 @ 0.5",
+      "does_not_measure": "not reasoning faithfulness",
+      "metric": "Rationale Micro-F1 (21 classes)",
+      "lower_is_better": false,
+      "action_only_mean": null,
+      "action_only_ci_lower": null,
+      "action_only_ci_upper": null,
+      "joint_mean": 0.503061855632136,
+      "joint_ci_lower": 0.48354562275570895,
+      "joint_ci_upper": 0.5224618346099211,
+      "joint_advantage_metric_key": null,
+      "joint_advantage_mean": null,
+      "joint_advantage_ci_lower": null,
+      "joint_advantage_ci_upper": null,
+      "seeds_favouring_joint": null,
+      "verdict": "single-model axis (Action-Only has no R head)"
+    },
+    {
+      "axis": "S",
+      "axis_name": "Selective Risk & Calibration",
+      "operationalisation": "AURC / UAR@90 / ECE (exact-set error, calibrated)",
+      "does_not_measure": "not 'Safety'; a selective-prediction operating characteristic",
+      "metric": "AURC (exact-set error, calibrated)",
+      "lower_is_better": true,
+      "action_only_mean": 0.38882409328343187,
+      "action_only_ci_lower": 0.3764674896703155,
+      "action_only_ci_upper": 0.4006368458127709,
+      "joint_mean": 0.3722272509161375,
+      "joint_ci_lower": 0.3524066997384557,
+      "joint_ci_upper": 0.39023158344815473,
+      "joint_advantage_metric_key": "delta_aurc::Joint-Action",
+      "joint_advantage_orientation": -1.0,
+      "joint_advantage_mean": 0.016596842367294407,
+      "joint_advantage_ci_lower": 0.0003998776103776196,
+      "joint_advantage_ci_upper": 0.03355802443121559,
+      "seeds_favouring_joint": 4,
+      "seed_values": [
+        0.01547165721291649,
+        0.008114178167768438,
+        -0.006353942692813697,
+        0.04504797833094987,
+        0.020704340817650935
+      ],
+      "verdict": "Joint better (95% CI excludes 0)"
+    },
+    {
+      "axis": "S",
+      "axis_name": "Selective Risk & Calibration",
+      "operationalisation": "AURC / UAR@90 / ECE (exact-set error, calibrated)",
+      "does_not_measure": "not 'Safety'; a selective-prediction operating characteristic",
+      "metric": "UAR@90 (risk at 90% coverage)",
+      "lower_is_better": true,
+      "action_only_mean": 0.490931253047294,
+      "action_only_ci_lower": 0.4823013164310093,
+      "action_only_ci_upper": 0.49995368113115557,
+      "joint_mean": 0.47986348122866895,
+      "joint_ci_lower": 0.4642052657240371,
+      "joint_ci_upper": 0.49234641638225257,
+      "joint_advantage_metric_key": "delta_unsafe_acceptance_rate_90::Joint-Action",
+      "joint_advantage_orientation": -1.0,
+      "joint_advantage_mean": 0.011067771818625071,
+      "joint_advantage_ci_lower": -0.002000243783520249,
+      "joint_advantage_ci_upper": 0.026036079960994628,
+      "seeds_favouring_joint": 3,
+      "seed_values": [
+        0.015114578254510014,
+        -0.0007313505607021153,
+        0.010238907849829393,
+        0.036567528035104824,
+        -0.005850804485616756
+      ],
+      "verdict": "inconclusive (95% CI includes 0)"
+    },
+    {
+      "axis": "S",
+      "axis_name": "Selective Risk & Calibration",
+      "operationalisation": "AURC / UAR@90 / ECE (exact-set error, calibrated)",
+      "does_not_measure": "not 'Safety'; a selective-prediction operating characteristic",
+      "metric": "ECE (calibrated)",
+      "lower_is_better": true,
+      "action_only_mean": 0.3240072168864709,
+      "action_only_ci_lower": 0.31678963436739543,
+      "action_only_ci_upper": 0.3308474680912908,
+      "joint_mean": 0.32446133748609124,
+      "joint_ci_lower": 0.3030977229409394,
+      "joint_ci_upper": 0.3405773160562586,
+      "joint_advantage_metric_key": "delta_ece_calibrated::Joint-Action",
+      "joint_advantage_orientation": -1.0,
+      "joint_advantage_mean": -0.00045412059962033344,
+      "joint_advantage_ci_lower": -0.016290533106273274,
+      "joint_advantage_ci_upper": 0.020440229698383144,
+      "seeds_favouring_joint": 1,
+      "seed_values": [
+        -0.0002962531634347898,
+        -0.018920433781779822,
+        -0.013784375000498672,
+        0.03886085931007793,
+        -0.008130400362466317
+      ],
+      "verdict": "inconclusive (95% CI includes 0)"
+    },
+    {
+      "axis": "C1",
+      "axis_name": "Prediction Stability",
+      "operationalisation": "clean vs perturbed action-set flip rate @ 0.5",
+      "does_not_measure": "not real-road robustness, not evidence faithfulness",
+      "metric": "Action-set flip rate (mean of 3 families)",
+      "lower_is_better": true,
+      "action_only_mean": 0.1185429010313803,
+      "action_only_ci_lower": 0.11288091580718308,
+      "action_only_ci_upper": 0.12426303854875283,
+      "joint_mean": 0.10243581303489138,
+      "joint_ci_lower": 0.08337356447955527,
+      "joint_ci_upper": 0.11643625192012289,
+      "joint_advantage_metric_key": "advantage_action_flip_rate_mean_three::Action-Joint",
+      "joint_advantage_orientation": 1.0,
+      "joint_advantage_mean": 0.016107087996488918,
+      "joint_advantage_ci_lower": 0.0010090702947845778,
+      "joint_advantage_ci_upper": 0.03281435154707042,
+      "seeds_favouring_joint": 4,
+      "seed_values": [
+        -0.005047180162387532,
+        0.003949967083607633,
+        0.027503474508082812,
+        0.045132031307146506,
+        0.008997147245995166
+      ],
+      "verdict": "Joint better (95% CI excludes 0)"
+    },
+    {
+      "axis": "C1",
+      "axis_name": "Prediction Stability",
+      "operationalisation": "clean vs perturbed action-set flip rate @ 0.5",
+      "does_not_measure": "not real-road robustness, not evidence faithfulness",
+      "metric": "Action-set flip rate (brightness)",
+      "lower_is_better": true,
+      "action_only_mean": 0.10111915734035551,
+      "action_only_ci_lower": 0.0956769804696072,
+      "action_only_ci_upper": 0.10673688830370857,
+      "joint_mean": 0.08755760368663594,
+      "joint_ci_lower": 0.06740838270792186,
+      "joint_ci_upper": 0.10428022822032036,
+      "joint_advantage_metric_key": "advantage_action_flip_rate_brightness::Action-Joint",
+      "joint_advantage_orientation": 1.0,
+      "joint_advantage_mean": 0.013561553653719555,
+      "joint_advantage_ci_lower": -0.00355716480140443,
+      "joint_advantage_ci_upper": 0.03199473337722186,
+      "seeds_favouring_joint": 3,
+      "seed_values": [
+        -0.0028527540048277344,
+        -0.006802721088435368,
+        0.029844195742813245,
+        0.045205178845731844,
+        0.002413868773315786
+      ],
+      "verdict": "inconclusive (95% CI includes 0)"
+    },
+    {
+      "axis": "C1",
+      "axis_name": "Prediction Stability",
+      "operationalisation": "clean vs perturbed action-set flip rate @ 0.5",
+      "does_not_measure": "not real-road robustness, not evidence faithfulness",
+      "metric": "Action-set flip rate (blur)",
+      "lower_is_better": true,
+      "action_only_mean": 0.12688172043010754,
+      "action_only_ci_lower": 0.11814680710994076,
+      "action_only_ci_upper": 0.13504608294930875,
+      "joint_mean": 0.11770901909150758,
+      "joint_ci_lower": 0.09773754663155586,
+      "joint_ci_upper": 0.13153390388413427,
+      "joint_advantage_metric_key": "advantage_action_flip_rate_blur::Action-Joint",
+      "joint_advantage_orientation": 1.0,
+      "joint_advantage_mean": 0.009172701338599955,
+      "joint_advantage_ci_lower": -0.008427693658108406,
+      "joint_advantage_ci_upper": 0.028223612025455327,
+      "seeds_favouring_joint": 3,
+      "seed_values": [
+        -0.016677638797454458,
+        -0.003511081852095671,
+        0.01558042571867456,
+        0.04323019530392802,
+        0.00724160631994733
+      ],
+      "verdict": "inconclusive (95% CI includes 0)"
+    },
+    {
+      "axis": "C1",
+      "axis_name": "Prediction Stability",
+      "operationalisation": "clean vs perturbed action-set flip rate @ 0.5",
+      "does_not_measure": "not real-road robustness, not evidence faithfulness",
+      "metric": "Action-set flip rate (noise)",
+      "lower_is_better": true,
+      "action_only_mean": 0.12762782532367786,
+      "action_only_ci_lower": 0.119596225587009,
+      "action_only_ci_upper": 0.13548496818082073,
+      "joint_mean": 0.10204081632653061,
+      "joint_ci_lower": 0.08364933070002195,
+      "joint_ci_upper": 0.11678845731841123,
+      "joint_advantage_metric_key": "advantage_action_flip_rate_noise::Action-Joint",
+      "joint_advantage_orientation": 1.0,
+      "joint_advantage_mean": 0.025587008997147255,
+      "joint_advantage_ci_lower": 0.011322141759929783,
+      "joint_advantage_ci_upper": 0.03958964230853631,
+      "seeds_favouring_joint": 5,
+      "seed_values": [
+        0.00438885231511961,
+        0.022163704191353967,
+        0.037085802062760576,
+        0.04696071977177968,
+        0.017335966644722423
+      ],
+      "verdict": "Joint better (95% CI excludes 0)"
+    }
+  ],
+  "decision_change_table": [
+    {
+      "evaluation_view": "A only - Action Performance",
+      "observed_evidence": "Action Macro-F1: Action-Only 0.674050, Joint 0.685586. Delta = +0.011536, 95% CI [+0.001590, +0.021807], inside the pre-registered +/-0.03 practical-equivalence margin (passed = true).",
+      "if_only_this_evidence": "The two models are practically equivalent on action performance, with a small statistically resolvable edge to Joint. Either model can be adopted; pick Joint if the tiny edge matters. No further evaluation looks necessary.",
+      "arsc_interpretation": "Correct as far as it goes, and it is exactly why the case is diagnostically useful: because A is practically equivalent, A cannot arbitrate between the models, so any real difference must be looked for on the other axes. The edge is also not unanimous - only 3 of 5 seeds favour Joint on A."
+    },
+    {
+      "evaluation_view": "+ R - Rationale-label Performance",
+      "observed_evidence": "Joint rationale Macro-F1 0.273589 95% CI [+0.256071, +0.292872]; Micro-F1 0.503062. 6 of 21 rationale classes score F1 = 0 in all five seeds (car, person, left_lane, left_follow, no_left_lane, left_solid_line).",
+      "if_only_this_evidence": "Reading the Macro-F1 alone: the Joint model has a usable, if weak, rationale capability that the Action-Only model lacks entirely, so Joint is the more informative model.",
+      "arsc_interpretation": "Joint does recover rationale labels that Action-Only cannot produce at all, but the single Macro-F1 conceals the shape of that capability: the Macro/Micro gap (+0.229473) and the per-class breakdown show coverage is incomplete and strongly class-dependent. This is rationale-label recovery coverage only - it is not evidence about reasoning faithfulness, and it does not show the model's explanations are right or wrong."
+    },
+    {
+      "evaluation_view": "+ S - Selective Risk & Calibration",
+      "observed_evidence": "Joint advantage (positive = Joint better): AURC +0.016597 CI [+0.000400, +0.033558]; UAR@90 +0.011068 CI [-0.002000, +0.026036]; ECE -0.000454 CI [-0.016291, +0.020440].",
+      "if_only_this_evidence": "Reading AURC alone: Joint has better selective-risk behaviour, so Joint should be preferred wherever the system is allowed to abstain.",
+      "arsc_interpretation": "Only AURC resolves. UAR@90 and ECE do not: their intervals include zero and ECE is essentially a tie. The three S metrics therefore do not agree, so the correct statement is that Joint has a small AURC advantage under this operationalisation, not that Joint's uncertainty behaviour is better overall. S is a selective-prediction operating characteristic; it is not 'Safety'."
+    },
+    {
+      "evaluation_view": "+ C - Prediction Stability under perturbation",
+      "observed_evidence": "Mean action-set flip rate over three families: Action-Only 0.118543, Joint 0.102436. Joint advantage +0.016107 CI [+0.001009, +0.032814], 4/5 seeds positive (reversed: seed 43). Round 12 replicates the direction on the Round 10 dose grid: D_C1 = +0.020017, one-sided lower bound +0.001826, verdict PASS.",
+      "if_only_this_evidence": "Joint is the more stable model under input perturbation and is therefore the more robust choice for deployment.",
+      "arsc_interpretation": "Joint does flip less often on average, and Round 12 supports the direction on an independent dose grid, so this is the best-supported non-A difference between the two models. But the effect is not unanimous across seeds, and the manipulation is brightness/blur/noise on BDD-OIA images. It is prediction-set stability under semantics-preserving image perturbation - not real-road robustness, and not evidence that the model attends to the right evidence."
+    },
+    {
+      "evaluation_view": "+ seed-level distribution",
+      "observed_evidence": "Across the five frozen seeds, no headline model comparison (A, AURC, UAR@90, ECE, C1 mean-of-three) is unanimous. A favours Joint on 3/5 seeds; AURC reverses on seed 45; C1 reverses on seed 43 in Round 5 and again in Round 12 (per-seed D_C1 minimum -0.001884); ECE reverses on seed 46.",
+      "if_only_this_evidence": "Reading the five-seed means alone: Joint wins on A, AURC and C1, so Joint is uniformly the better model.",
+      "arsc_interpretation": "Every headline axis comparison has at least one seed that reverses the sign of its mean, so the means alone are not an adequate summary. The ARSC profile must be reported as mean plus seed-level distribution. The reversals are results, not noise to be averaged away, and no attempt is made to explain them."
+    },
+    {
+      "evaluation_view": "+ Round 10 perturbation dose-response (RQ2)",
+      "observed_evidence": "4557 test images from 3904 source clips, 3 families x 4 severity levels plus clean, real re-inference. 3/12 pre-registered family-by-axis gates passed, and all of them are C1 gates. At the highest severity, the largest C1 degradation is 0.2650 while the largest |A| degradation is 0.0142 (18.7x), R Macro-F1 falls by at most 0.0059, and the sign of the S response is not even consistent across families (brightness +1, blur +1, noise -1).",
+      "if_only_this_evidence": "Reading the gate tally alone: only 3 of 12 gates passed, so the four-axis construct validation failed and the extra axes were not worth measuring.",
+      "arsc_interpretation": "The pre-registered verdict stands unchanged (ROUND10_PARTIAL_OR_FAIL, 3/12), but the pattern of failure is the finding. The perturbation moves C1 substantially while leaving aggregate A and R almost flat and driving S inconsistently. That is discriminant evidence: the axes are not measuring the same thing, so they are not redundant. It does not license the claim that every perturbation should move every axis, and it does not validate the axes as constructs."
+    },
+    {
+      "evaluation_view": "+ S construct audit (confidence definition)",
+      "observed_evidence": "The frozen S axis pairs an exact-set error definition with conf = max_i p_i. Empirical exact-set error is 0.5220 (Action-Only) and 0.5104 (Joint), so exact-set accuracy is near 0.48, while mean S0 confidence is 0.8020. Re-ranking with the exact-set proxy S1 and the weakest-bit score S2 leaves the AURC direction stable (stable = true) but changes the UAR@90 verdict (stable = false). ECE falls from 0.3240 under S0 to 0.0987 under S1.",
+      "if_only_this_evidence": "Reading the audit as a model search: S1 is better calibrated against the error definition, so S1 should replace max(p) as the primary confidence and the S conclusion should be restated on that basis.",
+      "arsc_interpretation": "S0 remains the frozen primary result and is not replaced; the audit is a sensitivity check on the operationalisation, not a search for a better number. Its finding is that the S verdict is partly construct-dependent - AURC direction survives, UAR@90 does not - and that max(p) is measurably mismatched with the exact-set event it is scored against. Selective-risk conclusions must therefore be reported per metric and per confidence definition, not as a single 'S' verdict."
+    }
+  ],
+  "headline": {
+    "axis_comparisons_reported": 8,
+    "comparisons_with_interval_excluding_zero": 4,
+    "comparisons_inconclusive": 4,
+    "resolved_metrics": [
+      "Action Macro-F1",
+      "AURC (exact-set error, calibrated)",
+      "Action-set flip rate (mean of 3 families)",
+      "Action-set flip rate (noise)"
+    ],
+    "inconclusive_metrics": [
+      "UAR@90 (risk at 90% coverage)",
+      "ECE (calibrated)",
+      "Action-set flip rate (brightness)",
+      "Action-set flip rate (blur)"
+    ]
+  },
+  "provenance": [
+    {
+      "path": "outputs/validity/rq1_multiseed_summary.json",
+      "sha256": "ECA8D453E9DB67CB933CAF2217DAFC62BD054709734C857AF8A5BE9665680000"
+    },
+    {
+      "path": "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_results.json",
+      "sha256": "9AE834DD81D4A397BA966917245AAA581007A0BFBF5B08CA773D7515756242C4"
+    },
+    {
+      "path": "outputs/validity/round12_existing_outputs_results.json",
+      "sha256": "A4012EB3EC164674648E67507956B5870E7E321F8F844FF9709A3093BB33F00B"
+    },
+    {
+      "path": "outputs/paper/s_confidence_audit.json",
+      "sha256": "4C430D73C8427D72DDB6A8D5C0A9A05D822635E803F47A5B6EDABD3EBB3D9778"
+    },
+    {
+      "path": "outputs/paper/rationale_coverage.json",
+      "sha256": "3CC99E26152ABDD3A05AEABB5EB5F2DEF67A63A74BDD501FB5BE21D38A1C271A"
+    },
+    {
+      "path": "outputs/paper/round10_axis_separation.json",
+      "sha256": "EA66D71776E256326896A44B9A5D0BAB91BEE42C69E359ADB227E6EC5E21BC71"
+    }
+  ]
+}
