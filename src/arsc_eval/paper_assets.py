@@ -284,6 +284,65 @@ def load_seed_metrics_json(seed: int) -> dict[str, Any]:
     return read_json(seed_output_dir(seed) / "rq1_metrics.json")
 
 
+# --------------------------------------------------------------------------
+# Figure conventions
+# --------------------------------------------------------------------------
+#: One colour per axis, shared by every figure so a reader can track an axis
+#: across the Round 10 dose-response panel and the seed heterogeneity panel.
+AXIS_COLORS = {
+    "A": "#1b6ca8",
+    "R": "#b8860b",
+    "S": "#7a3b93",
+    "C1": "#c0392b",
+}
+
+MODEL_COLORS = {MODEL_ACTION: "#4c6ef5", MODEL_JOINT: "#e8590c"}
+MODEL_MARKERS = {MODEL_ACTION: "o", MODEL_JOINT: "s"}
+
+
+def apply_figure_style() -> None:
+    """Shared matplotlib defaults for the paper figures."""
+
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    plt.rcParams.update(
+        {
+            "figure.dpi": 140,
+            "savefig.dpi": 300,
+            "savefig.bbox": "tight",
+            "font.size": 9,
+            "axes.titlesize": 10,
+            "axes.labelsize": 9,
+            "axes.spines.top": False,
+            "axes.spines.right": False,
+            "axes.grid": True,
+            "grid.alpha": 0.25,
+            "grid.linewidth": 0.6,
+            "legend.frameon": False,
+            "legend.fontsize": 8,
+            "xtick.labelsize": 8,
+            "ytick.labelsize": 8,
+            "lines.linewidth": 1.8,
+        }
+    )
+
+
+def save_figure(figure: Any, stem: str | Path) -> list[Path]:
+    """Write a figure as both PNG and SVG under the paper figure directory."""
+
+    target = rooted(stem)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    written = []
+    for suffix in (".png", ".svg"):
+        path = target.with_suffix(suffix)
+        figure.savefig(path)
+        written.append(path)
+    return written
+
+
 def provenance(paths: Iterable[str | Path]) -> list[dict[str, str]]:
     """SHA-256 provenance records for the frozen inputs an asset consumed."""
 
