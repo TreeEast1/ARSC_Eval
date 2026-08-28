@@ -300,6 +300,12 @@ MODEL_COLORS = {MODEL_ACTION: "#4c6ef5", MODEL_JOINT: "#e8590c"}
 MODEL_MARKERS = {MODEL_ACTION: "o", MODEL_JOINT: "s"}
 
 
+#: Fixed salt for matplotlib's SVG element ids.  Without it the clip-path and
+#: marker ids are randomised per run, which would make the SVG outputs differ
+#: between two regenerations of identical figures.
+SVG_HASH_SALT = "arsc-paper-assets"
+
+
 def apply_figure_style() -> None:
     """Shared matplotlib defaults for the paper figures."""
 
@@ -310,6 +316,7 @@ def apply_figure_style() -> None:
 
     plt.rcParams.update(
         {
+            "svg.hashsalt": SVG_HASH_SALT,
             "figure.dpi": 140,
             "savefig.dpi": 300,
             "savefig.bbox": "tight",
@@ -331,14 +338,18 @@ def apply_figure_style() -> None:
 
 
 def save_figure(figure: Any, stem: str | Path) -> list[Path]:
-    """Write a figure as both PNG and SVG under the paper figure directory."""
+    """Write a figure as both PNG and SVG under the paper figure directory.
+
+    SVG metadata is written without a creation date so that regenerating the
+    paper assets from the frozen artifacts is byte-reproducible.
+    """
 
     target = rooted(stem)
     target.parent.mkdir(parents=True, exist_ok=True)
     written = []
-    for suffix in (".png", ".svg"):
+    for suffix, metadata in ((".png", None), (".svg", {"Date": None})):
         path = target.with_suffix(suffix)
-        figure.savefig(path)
+        figure.savefig(path, metadata=metadata)
         written.append(path)
     return written
 
