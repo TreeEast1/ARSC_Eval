@@ -337,9 +337,9 @@
     },
     {
       "evaluation_view": "+ C - Prediction Stability under perturbation",
-      "observed_evidence": "Mean action-set flip rate over three families: Action-Only 0.118543, Joint 0.102436. Joint advantage +0.016107 CI [+0.001009, +0.032814], 4/5 seeds positive (reversed: seed 43). Round 12 replicates the direction on the Round 10 dose grid: D_C1 = +0.020017, one-sided lower bound +0.001826, verdict PASS.",
+      "observed_evidence": "Mean action-set flip rate over three families: Action-Only 0.118543, Joint 0.102436. Joint advantage +0.016107 CI [+0.001009, +0.032814], 4/5 seeds positive (reversed: seed 43). Round 12 replicates the direction on the Round 10 dose grid: D_C1 = +0.020017, one-sided lower bound +0.001826, formal verdict PASS, independent reviewer decision ACCEPT_PASS_WITH_LIMITATIONS. In Round 12 the A, R and S axes pass only -0.01 non-inferiority guardrails (D_A +0.003826, D_R -0.001956, D_S +0.000796); they are not improvements.",
       "if_only_this_evidence": "Joint is the more stable model under input perturbation and is therefore the more robust choice for deployment.",
-      "arsc_interpretation": "Joint does flip less often on average, and Round 12 supports the direction on an independent dose grid, so this is the best-supported non-A difference between the two models. But the effect is not unanimous across seeds, and the manipulation is brightness/blur/noise on BDD-OIA images. It is prediction-set stability under semantics-preserving image perturbation - not real-road robustness, and not evidence that the model attends to the right evidence."
+      "arsc_interpretation": "Joint does flip less often on average, and Round 12 supports the direction on an independent dose grid, so this is the best-supported non-A difference between the two models. But the effect is not unanimous across seeds, Round 12's own reviewer recorded it as neither an every-seed nor an every-cell guarantee, and its A/R/S results are non-inferiority only, so Round 12 is not a three-axis improvement. The manipulation is brightness/blur/noise on BDD-OIA images: this is prediction-set stability under semantics-preserving synthetic image perturbation - not real-road robustness, and not evidence that the model attends to the right evidence."
     },
     {
       "evaluation_view": "+ seed-level distribution",
@@ -389,6 +389,10 @@
     {
       "path": "outputs/validity/round12_existing_outputs_results.json",
       "sha256": "A4012EB3EC164674648E67507956B5870E7E321F8F844FF9709A3093BB33F00B"
+    },
+    {
+      "path": "outputs/validity/round12_existing_outputs_postresult_reviewer_decision.json",
+      "sha256": "43FE4528DD2BEDD6233D13F58EEA6947B6B746E8815F6A28CF9B6F67ADA7DFC3"
     },
     {
       "path": "outputs/paper/s_confidence_audit.json",

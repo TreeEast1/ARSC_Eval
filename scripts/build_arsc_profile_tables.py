@@ -59,6 +59,9 @@ from arsc_eval.paper_assets import (
 
 S_AUDIT_PATH = "outputs/paper/s_confidence_audit.json"
 ROUND10_AXIS_PATH = "outputs/paper/round10_axis_separation.json"
+ROUND12_REVIEW_PATH = (
+    "outputs/validity/round12_existing_outputs_postresult_reviewer_decision.json"
+)
 
 #: Rows of the Profile Table.  ``lower_is_better`` drives the orientation of
 #: the reported Joint advantage so that positive always means "Joint better".
@@ -260,6 +263,7 @@ def build_decision_change(
     round10: dict[str, Any],
     round10_axis: dict[str, Any],
     round12: dict[str, Any],
+    round12_review: dict[str, Any],
     s_audit: dict[str, Any],
     rationale_coverage: dict[str, Any],
 ) -> list[dict[str, str]]:
@@ -417,7 +421,14 @@ def build_decision_change(
                 f"Round 12 replicates the direction on the Round 10 dose grid: "
                 f"D_C1 = {fmt(round12_point['D_C1'], signed=True)}, "
                 f"one-sided lower bound {fmt(round12_lower['D_C1'], signed=True)}, "
-                f"verdict {round12['gates']['verdict']}."
+                f"formal verdict {round12['gates']['verdict']}, independent "
+                f"reviewer decision {round12_review['decision']}. In Round 12 "
+                f"the A, R and S axes pass only -0.01 non-inferiority "
+                f"guardrails "
+                f"(D_A {fmt(round12_point['D_A'], signed=True)}, "
+                f"D_R {fmt(round12_point['D_R'], signed=True)}, "
+                f"D_S {fmt(round12_point['D_S'], signed=True)}); they are not "
+                f"improvements."
             ),
             "if_only_this_evidence": (
                 "Joint is the more stable model under input perturbation and "
@@ -427,11 +438,15 @@ def build_decision_change(
                 "Joint does flip less often on average, and Round 12 supports "
                 "the direction on an independent dose grid, so this is the "
                 "best-supported non-A difference between the two models. But "
-                "the effect is not unanimous across seeds, and the "
-                "manipulation is brightness/blur/noise on BDD-OIA images. It "
-                "is prediction-set stability under semantics-preserving image "
-                "perturbation - not real-road robustness, and not evidence "
-                "that the model attends to the right evidence."
+                "the effect is not unanimous across seeds, Round 12's own "
+                "reviewer recorded it as neither an every-seed nor an "
+                "every-cell guarantee, and its A/R/S results are "
+                "non-inferiority only, so Round 12 is not a three-axis "
+                "improvement. The manipulation is brightness/blur/noise on "
+                "BDD-OIA images: this is prediction-set stability under "
+                "semantics-preserving synthetic image perturbation - not "
+                "real-road robustness, and not evidence that the model "
+                "attends to the right evidence."
             ),
         }
     )
@@ -559,6 +574,7 @@ def main() -> int:
     round10 = load_round10_results()
     round10_axis = read_json(ROUND10_AXIS_PATH)
     round12 = load_round12_results()
+    round12_review = read_json(ROUND12_REVIEW_PATH)
     s_audit = read_json(S_AUDIT_PATH)
     rationale_coverage = read_json("outputs/paper/rationale_coverage.json")
 
@@ -570,6 +586,7 @@ def main() -> int:
         round10,
         round10_axis,
         round12,
+        round12_review,
         s_audit,
         rationale_coverage,
     )
@@ -640,6 +657,7 @@ def main() -> int:
                 "outputs/validity/round10_corruption_formal_attempt02/"
                 "round10_corruption_results.json",
                 "outputs/validity/round12_existing_outputs_results.json",
+                ROUND12_REVIEW_PATH,
                 S_AUDIT_PATH,
                 "outputs/paper/rationale_coverage.json",
                 ROUND10_AXIS_PATH,

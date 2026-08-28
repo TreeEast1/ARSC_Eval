@@ -100,19 +100,37 @@ The Causal Evidence Gap was intended to test whether models are more sensitive
 to critical than to matched non-critical evidence regions. It never reached a
 confirmatory measurement and is reported as a measurement boundary.
 
+The pre-registered mask audit gates were: critical-binding correct rate
+>= 0.90, control critical-evidence contamination rate <= 0.05, and semantic
+label unchanged rate >= 0.95, applied both overall and per light state.
+
 The failure chain, all recorded in `outputs/validity/`:
 
-* Mask v2 failed the critical-binding gate.
-* Mask v3 failed both the binding gate and the control-contamination gate.
-* Mask v4 used a filename-disjoint red/green light population but failed the
-  frozen population/state gate, and two rendered patches had mismatched sizes,
-  so no confirmatory CEG was computed.
-* BDD100K official validation labels yielded only 53 unseen, state-matched
-  candidates, below the v5 pre-registered population gate.
-* The one-shot BDD100K-train v5 metadata intersection yielded at most 87
+* **Mask v2** (`mask_audit_v2/audit_summary.json`) failed the critical-binding
+  gate outright: binding 0.4167 against the 0.90 minimum. Contamination was
+  within limit at 0.0463. Retained only as a detector-localised
+  occlusion-sensitivity diagnostic.
+* **Mask v3** (`mask_audit_v3/audit_summary.json`) failed both gates:
+  state-aware filtering raised binding to 0.7451, still below 0.90, and
+  contamination rose to 0.0980, above 0.05.
+* **Mask v4** (`mask_audit_v4/audit_summary.json`) used a filename-disjoint
+  confirmatory population of 113 red/green pairs (46 red, 67 green) with all
+  210 filenames seen during v2/v3 development excluded. It passed overall
+  binding (0.9381) and the semantic gate (1.0) but failed the confirmatory gate
+  on the state-specific and contamination criteria: red-stratum binding 0.8478
+  (below 0.90), overall contamination 0.0531 and green contamination 0.0597
+  (both above 0.05). Separately, the invariant check recorded two rendered
+  patches whose critical and non-critical shapes differed by one pixel column
+  (`masks_v4_invariants.json`, `all_invariants_passed: false`). The recorded
+  decision is "Do not run confirmatory CEG with v4", and no confirmatory CEG
+  was computed.
+* **BDD100K official validation labels** yielded only 53 unseen, state-matched
+  candidates (34 red, 19 green), below the pre-registered population gate.
+* **The one-shot BDD100K-train v5 metadata intersection** yielded at most 87
   state-matched candidates (50 red, 37 green) before hashing, against frozen
-  gates of >= 200 total and >= 70 green. That run also used the wrong image
-  root, so hash independence could not be established.
+  population gates of >= 200 total with per-state and per-group minima. That
+  run also used the wrong image root, so hash independence could not be
+  established; fixing the root cannot raise the count above 87.
 
 Independent review formally closed the CEG line; no v6 was created and none
 will be. **CEG has not been validated, and no CEG result is reported as
