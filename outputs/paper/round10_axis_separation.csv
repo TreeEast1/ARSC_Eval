@@ -1,0 +1,106 @@
+family,axis,axis_name,model,severity_level,severity_parameter,raw_mean_across_seeds,degradation_mean_across_seeds,degradation_sd_across_seeds,degradation_sign_convention,family_axis_gate_passed
+brightness,A,Action Performance,Action-Only,0,1.0,0.6740501115284726,0.0,0.0,positive_is_worse,False
+brightness,A,Action Performance,Action-Only,1,1.05,0.6724059492379426,0.0016441622905299935,0.0021180068536443258,positive_is_worse,False
+brightness,A,Action Performance,Action-Only,2,1.1,0.6742317879597757,-0.0001816764313029573,0.0020970866606767353,positive_is_worse,False
+brightness,A,Action Performance,Action-Only,3,1.2,0.6734561731320612,0.0005939383964114642,0.0021210679456603065,positive_is_worse,False
+brightness,A,Action Performance,Action-Only,4,1.3,0.6708638959145032,0.0031862156139695007,0.001680519441382691,positive_is_worse,False
+brightness,A,Action Performance,Joint Action-Rationale,0,1.0,0.6855859853354236,0.0,0.0,positive_is_worse,False
+brightness,A,Action Performance,Joint Action-Rationale,1,1.05,0.6854821607327202,0.00010382460270343951,0.0008023814039979668,positive_is_worse,False
+brightness,A,Action Performance,Joint Action-Rationale,2,1.1,0.6857360118300042,-0.00015002649458055738,0.001277462567700949,positive_is_worse,False
+brightness,A,Action Performance,Joint Action-Rationale,3,1.2,0.6856523361656809,-6.635083025732235e-05,0.0018811039425354007,positive_is_worse,False
+brightness,A,Action Performance,Joint Action-Rationale,4,1.3,0.6838347604786535,0.0017512248567700395,0.00214609278807512,positive_is_worse,False
+brightness,R,Rationale-label Performance,Joint Action-Rationale,0,1.0,0.27358892695121106,0.0,0.0,positive_is_worse,False
+brightness,R,Rationale-label Performance,Joint Action-Rationale,1,1.05,0.2738405458620889,-0.0002516189108778599,0.001274200076228351,positive_is_worse,False
+brightness,R,Rationale-label Performance,Joint Action-Rationale,2,1.1,0.2731810581143095,0.000407868836901587,0.0010224131127927903,positive_is_worse,False
+brightness,R,Rationale-label Performance,Joint Action-Rationale,3,1.2,0.2719375642761976,0.0016513626750134457,0.0011649041841028478,positive_is_worse,False
+brightness,R,Rationale-label Performance,Joint Action-Rationale,4,1.3,0.2691983052164944,0.004390621734716699,0.0013946199994520389,positive_is_worse,False
+brightness,S,Selective Risk & Calibration,Action-Only,0,1.0,0.38880492564632074,0.0,0.0,positive_is_worse,False
+brightness,S,Selective Risk & Calibration,Action-Only,1,1.05,0.3897466932578,0.0009417676114792161,0.0036978785660017792,positive_is_worse,False
+brightness,S,Selective Risk & Calibration,Action-Only,2,1.1,0.38802568809289023,-0.0007792375534305118,0.0024551374206595606,positive_is_worse,False
+brightness,S,Selective Risk & Calibration,Action-Only,3,1.2,0.39006105035173577,0.0012561247054150627,0.00496625702614932,positive_is_worse,False
+brightness,S,Selective Risk & Calibration,Action-Only,4,1.3,0.39459425029001416,0.005789324643693394,0.005849028797020166,positive_is_worse,False
+brightness,S,Selective Risk & Calibration,Joint Action-Rationale,0,1.0,0.37221294855455966,0.0,0.0,positive_is_worse,False
+brightness,S,Selective Risk & Calibration,Joint Action-Rationale,1,1.05,0.3728043818799079,0.0005914333253482007,0.00128118688621379,positive_is_worse,False
+brightness,S,Selective Risk & Calibration,Joint Action-Rationale,2,1.1,0.3731864405487684,0.0009734919942087528,0.0014164364489999328,positive_is_worse,False
+brightness,S,Selective Risk & Calibration,Joint Action-Rationale,3,1.2,0.3724131679506903,0.00020021939613059647,0.0014020076065229107,positive_is_worse,False
+brightness,S,Selective Risk & Calibration,Joint Action-Rationale,4,1.3,0.375837297980308,0.0036243494257483188,0.002694041648583862,positive_is_worse,False
+brightness,C1,Prediction Stability,Action-Only,0,1.0,0.0,0.0,0.0,positive_is_worse,True
+brightness,C1,Prediction Stability,Action-Only,1,1.05,0.06666666666666668,0.06666666666666668,0.005154332885072647,positive_is_worse,True
+brightness,C1,Prediction Stability,Action-Only,2,1.1,0.10111915734035551,0.10111915734035551,0.00495668361238979,positive_is_worse,True
+brightness,C1,Prediction Stability,Action-Only,3,1.2,0.15396093921439544,0.15396093921439544,0.006488603113573165,positive_is_worse,True
+brightness,C1,Prediction Stability,Action-Only,4,1.3,0.1932411674347158,0.1932411674347158,0.008087584323184975,positive_is_worse,True
+brightness,C1,Prediction Stability,Joint Action-Rationale,0,1.0,0.0,0.0,0.0,positive_is_worse,True
+brightness,C1,Prediction Stability,Joint Action-Rationale,1,1.05,0.05736229975861311,0.05736229975861311,0.01471542323710291,positive_is_worse,True
+brightness,C1,Prediction Stability,Joint Action-Rationale,2,1.1,0.08755760368663594,0.08755760368663594,0.02344495576334845,positive_is_worse,True
+brightness,C1,Prediction Stability,Joint Action-Rationale,3,1.2,0.13201667763879746,0.13201667763879746,0.029115495420258014,positive_is_worse,True
+brightness,C1,Prediction Stability,Joint Action-Rationale,4,1.3,0.1707702435813035,0.1707702435813035,0.03349337051931378,positive_is_worse,True
+blur,A,Action Performance,Action-Only,0,0.0,0.6740501115284726,0.0,0.0,positive_is_worse,False
+blur,A,Action Performance,Action-Only,1,0.5,0.6739351416276786,0.00011496990079395975,0.0015011979516837803,positive_is_worse,False
+blur,A,Action Performance,Action-Only,2,1.0,0.6731438110046367,0.0009063005238358457,0.0005214076254808579,positive_is_worse,False
+blur,A,Action Performance,Action-Only,3,1.5,0.6696420148564863,0.00440809667198625,0.002738823257458746,positive_is_worse,False
+blur,A,Action Performance,Action-Only,4,2.0,0.6598854102601047,0.014164701268367908,0.006509836309162539,positive_is_worse,False
+blur,A,Action Performance,Joint Action-Rationale,0,0.0,0.6855859853354236,0.0,0.0,positive_is_worse,False
+blur,A,Action Performance,Joint Action-Rationale,1,0.5,0.6862133461239465,-0.0006273607885228128,0.0015430943245764602,positive_is_worse,False
+blur,A,Action Performance,Joint Action-Rationale,2,1.0,0.6857188504192061,-0.0001328650837825185,0.0032490439039558152,positive_is_worse,False
+blur,A,Action Performance,Joint Action-Rationale,3,1.5,0.6811558497563522,0.004430135579071304,0.00320177980012683,positive_is_worse,False
+blur,A,Action Performance,Joint Action-Rationale,4,2.0,0.6733447801649859,0.012241205170437674,0.008320658785388199,positive_is_worse,False
+blur,R,Rationale-label Performance,Joint Action-Rationale,0,0.0,0.27358892695121106,0.0,0.0,positive_is_worse,False
+blur,R,Rationale-label Performance,Joint Action-Rationale,1,0.5,0.2739830760431256,-0.0003941490919145585,0.00054804577763961,positive_is_worse,False
+blur,R,Rationale-label Performance,Joint Action-Rationale,2,1.0,0.2733748975384339,0.0002140294127772169,0.0014475201916832644,positive_is_worse,False
+blur,R,Rationale-label Performance,Joint Action-Rationale,3,1.5,0.2710169299443992,0.002571997006811927,0.0029116660092988853,positive_is_worse,False
+blur,R,Rationale-label Performance,Joint Action-Rationale,4,2.0,0.2676893083443389,0.005899618606872109,0.004076121681086896,positive_is_worse,False
+blur,S,Selective Risk & Calibration,Action-Only,0,0.0,0.38880492564632074,0.0,0.0,positive_is_worse,False
+blur,S,Selective Risk & Calibration,Action-Only,1,0.5,0.38976253093124724,0.0009576052849264771,0.0005340641025561567,positive_is_worse,False
+blur,S,Selective Risk & Calibration,Action-Only,2,1.0,0.3898074862264288,0.0010025605801079474,0.005082313831093609,positive_is_worse,False
+blur,S,Selective Risk & Calibration,Action-Only,3,1.5,0.39256438786651987,0.003759462220199128,0.008711157406597624,positive_is_worse,False
+blur,S,Selective Risk & Calibration,Action-Only,4,2.0,0.39441960511383994,0.00561467946751919,0.008103986094084376,positive_is_worse,False
+blur,S,Selective Risk & Calibration,Joint Action-Rationale,0,0.0,0.37221294855455966,0.0,0.0,positive_is_worse,False
+blur,S,Selective Risk & Calibration,Joint Action-Rationale,1,0.5,0.37113193200376793,-0.0010810165507918023,0.0012345245148171235,positive_is_worse,False
+blur,S,Selective Risk & Calibration,Joint Action-Rationale,2,1.0,0.37157882977701107,-0.0006341187775486756,0.004140458801897427,positive_is_worse,False
+blur,S,Selective Risk & Calibration,Joint Action-Rationale,3,1.5,0.3730701750555935,0.0008572265010337143,0.007499008187402869,positive_is_worse,False
+blur,S,Selective Risk & Calibration,Joint Action-Rationale,4,2.0,0.3743404319237038,0.0021274833691440898,0.013303862370907225,positive_is_worse,False
+blur,C1,Prediction Stability,Action-Only,0,0.0,0.0,0.0,0.0,positive_is_worse,True
+blur,C1,Prediction Stability,Action-Only,1,0.5,0.04647794601711652,0.04647794601711652,0.003620470655894726,positive_is_worse,True
+blur,C1,Prediction Stability,Action-Only,2,1.0,0.12688172043010754,0.12688172043010754,0.009171283776761248,positive_is_worse,True
+blur,C1,Prediction Stability,Action-Only,3,1.5,0.20162387535659426,0.20162387535659426,0.013311505557437106,positive_is_worse,True
+blur,C1,Prediction Stability,Action-Only,4,2.0,0.2650427913100724,0.2650427913100724,0.01581007521481561,positive_is_worse,True
+blur,C1,Prediction Stability,Joint Action-Rationale,0,0.0,0.0,0.0,0.0,positive_is_worse,True
+blur,C1,Prediction Stability,Joint Action-Rationale,1,0.5,0.04301075268817204,0.04301075268817204,0.009754711771293776,positive_is_worse,True
+blur,C1,Prediction Stability,Joint Action-Rationale,2,1.0,0.11770901909150758,0.11770901909150758,0.021793756426467706,positive_is_worse,True
+blur,C1,Prediction Stability,Joint Action-Rationale,3,1.5,0.17985516787360106,0.17985516787360106,0.03264300188845875,positive_is_worse,True
+blur,C1,Prediction Stability,Joint Action-Rationale,4,2.0,0.2323897300855826,0.2323897300855826,0.03463024190402258,positive_is_worse,True
+noise,A,Action Performance,Action-Only,0,0.0,0.6740501115284726,0.0,0.0,positive_is_worse,False
+noise,A,Action Performance,Action-Only,1,2.5,0.6700459788717141,0.004004132656758497,0.0020720262622520814,positive_is_worse,False
+noise,A,Action Performance,Action-Only,2,5.0,0.6661357054497382,0.007914406078734393,0.005726587659662552,positive_is_worse,False
+noise,A,Action Performance,Action-Only,3,7.5,0.6628584964548851,0.011191615073587435,0.006489604123921984,positive_is_worse,False
+noise,A,Action Performance,Action-Only,4,10.0,0.6606849926836845,0.013365118844788127,0.006584172354521011,positive_is_worse,False
+noise,A,Action Performance,Joint Action-Rationale,0,0.0,0.6855859853354236,0.0,0.0,positive_is_worse,False
+noise,A,Action Performance,Joint Action-Rationale,1,2.5,0.6850692866616284,0.0005166986737952684,0.00158249077449486,positive_is_worse,False
+noise,A,Action Performance,Joint Action-Rationale,2,5.0,0.6871433338311114,-0.0015573484956878047,0.0016273355230454745,positive_is_worse,False
+noise,A,Action Performance,Joint Action-Rationale,3,7.5,0.6860449488801532,-0.00045896354472956257,0.0029313479539609245,positive_is_worse,False
+noise,A,Action Performance,Joint Action-Rationale,4,10.0,0.6862322221001182,-0.0006462367646945966,0.0033576000360739026,positive_is_worse,False
+noise,R,Rationale-label Performance,Joint Action-Rationale,0,0.0,0.27358892695121106,0.0,0.0,positive_is_worse,False
+noise,R,Rationale-label Performance,Joint Action-Rationale,1,2.5,0.2731971183610557,0.0003918085901553514,0.0008872074075039333,positive_is_worse,False
+noise,R,Rationale-label Performance,Joint Action-Rationale,2,5.0,0.2722488947869693,0.0013400321642418,0.0019188950249394796,positive_is_worse,False
+noise,R,Rationale-label Performance,Joint Action-Rationale,3,7.5,0.27124398821879975,0.0023449387324113225,0.0023598842911895248,positive_is_worse,False
+noise,R,Rationale-label Performance,Joint Action-Rationale,4,10.0,0.26867756393888115,0.004911363012329884,0.00293878858812026,positive_is_worse,False
+noise,S,Selective Risk & Calibration,Action-Only,0,0.0,0.38880492564632074,0.0,0.0,positive_is_worse,False
+noise,S,Selective Risk & Calibration,Action-Only,1,2.5,0.3880307882357346,-0.000774137410586151,0.00472535256306103,positive_is_worse,False
+noise,S,Selective Risk & Calibration,Action-Only,2,5.0,0.383363570253807,-0.005441355392513769,0.007075550672962972,positive_is_worse,False
+noise,S,Selective Risk & Calibration,Action-Only,3,7.5,0.3830401025763507,-0.005764823069970071,0.005788110943096538,positive_is_worse,False
+noise,S,Selective Risk & Calibration,Action-Only,4,10.0,0.3820870318004152,-0.00671789384590552,0.0037411901057789946,positive_is_worse,False
+noise,S,Selective Risk & Calibration,Joint Action-Rationale,0,0.0,0.37221294855455966,0.0,0.0,positive_is_worse,False
+noise,S,Selective Risk & Calibration,Joint Action-Rationale,1,2.5,0.3717526280118379,-0.00046032054272180376,0.0027661323644503303,positive_is_worse,False
+noise,S,Selective Risk & Calibration,Joint Action-Rationale,2,5.0,0.36722802215162664,-0.004984926402933054,0.004410670159165875,positive_is_worse,False
+noise,S,Selective Risk & Calibration,Joint Action-Rationale,3,7.5,0.36784303181689254,-0.004369916737667101,0.0032146110022404687,positive_is_worse,False
+noise,S,Selective Risk & Calibration,Joint Action-Rationale,4,10.0,0.365657207661234,-0.00655574089332569,0.005083277520567527,positive_is_worse,False
+noise,C1,Prediction Stability,Action-Only,0,0.0,0.0,0.0,0.0,positive_is_worse,True
+noise,C1,Prediction Stability,Action-Only,1,2.5,0.07996488918147904,0.07996488918147904,0.007708029256185008,positive_is_worse,True
+noise,C1,Prediction Stability,Action-Only,2,5.0,0.12762782532367786,0.12762782532367786,0.008447258152409043,positive_is_worse,True
+noise,C1,Prediction Stability,Action-Only,3,7.5,0.16589861751152074,0.16589861751152074,0.01270589800238234,positive_is_worse,True
+noise,C1,Prediction Stability,Action-Only,4,10.0,0.19688391485626508,0.19688391485626508,0.012661667785542107,positive_is_worse,True
+noise,C1,Prediction Stability,Joint Action-Rationale,0,0.0,0.0,0.0,0.0,positive_is_worse,True
+noise,C1,Prediction Stability,Joint Action-Rationale,1,2.5,0.06956330919464561,0.06956330919464561,0.013434476949759898,positive_is_worse,True
+noise,C1,Prediction Stability,Joint Action-Rationale,2,5.0,0.10204081632653061,0.10204081632653061,0.02054749382927647,positive_is_worse,True
+noise,C1,Prediction Stability,Joint Action-Rationale,3,7.5,0.13258722843976298,0.13258722843976298,0.026839545406614432,positive_is_worse,True
+noise,C1,Prediction Stability,Joint Action-Rationale,4,10.0,0.16032477507131887,0.16032477507131887,0.030842657692860997,positive_is_worse,True

@@ -1,0 +1,260 @@
+{
+  "schema_version": "ARSC_ROUND10_AXIS_SEPARATION_V1",
+  "analysis_id": "ARSC_RQ2_AXIS_NON_REDUNDANCY",
+  "role": "RQ2 primary evidence: the four axes are not redundant",
+  "frozen_verdict": {
+    "verdict": "ROUND10_PARTIAL_OR_FAIL",
+    "gate_count": 12,
+    "passed_gate_count": 3,
+    "passed_gates": [
+      {
+        "family": "brightness",
+        "axis": "C1"
+      },
+      {
+        "family": "blur",
+        "axis": "C1"
+      },
+      {
+        "family": "noise",
+        "axis": "C1"
+      }
+    ],
+    "unchanged": true,
+    "note": "The pre-registered thresholds, gate definitions and verdict are reproduced verbatim from the frozen Round 10 result. Only the interpretation is written here."
+  },
+  "design": {
+    "sample_count": 4557,
+    "source_clip_count": 3904,
+    "families": [
+      "brightness",
+      "blur",
+      "noise"
+    ],
+    "levels": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "parameters": {
+      "brightness": [
+        1.0,
+        1.05,
+        1.1,
+        1.2,
+        1.3
+      ],
+      "blur": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "noise": [
+        0.0,
+        2.5,
+        5.0,
+        7.5,
+        10.0
+      ]
+    },
+    "seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "bootstrap_replicates": 5000
+  },
+  "axis_definitions": {
+    "A": {
+      "name": "Action Performance",
+      "operationalisation": "4-action Macro-F1 @ 0.5",
+      "degradation_convention": "-d(Action Macro-F1)",
+      "does_not_measure": "not a safety guarantee"
+    },
+    "R": {
+      "name": "Rationale-label Performance",
+      "operationalisation": "21-class rationale Macro-F1 @ 0.5",
+      "degradation_convention": "-d(Rationale Macro-F1)",
+      "does_not_measure": "not reasoning faithfulness"
+    },
+    "S": {
+      "name": "Selective Risk & Calibration",
+      "operationalisation": "AURC / UAR@90 / ECE (exact-set error, calibrated)",
+      "degradation_convention": "+d(AURC)",
+      "does_not_measure": "not 'Safety'; a selective-prediction operating characteristic"
+    },
+    "C1": {
+      "name": "Prediction Stability",
+      "operationalisation": "clean vs perturbed action-set flip rate @ 0.5",
+      "degradation_convention": "+d(action-set flip rate)",
+      "does_not_measure": "not real-road robustness, not evidence faithfulness"
+    }
+  },
+  "endpoint_summary": {
+    "brightness::A::Action-Only": {
+      "degradation_at_max_severity": 0.0031862156139695007,
+      "sd_across_seeds_at_max_severity": 0.001680519441382691,
+      "clean_value": 0.6740501115284726,
+      "max_severity_value": 0.6708638959145032
+    },
+    "brightness::A::Joint Action-Rationale": {
+      "degradation_at_max_severity": 0.0017512248567700395,
+      "sd_across_seeds_at_max_severity": 0.00214609278807512,
+      "clean_value": 0.6855859853354236,
+      "max_severity_value": 0.6838347604786535
+    },
+    "brightness::R::Joint Action-Rationale": {
+      "degradation_at_max_severity": 0.004390621734716699,
+      "sd_across_seeds_at_max_severity": 0.0013946199994520389,
+      "clean_value": 0.27358892695121106,
+      "max_severity_value": 0.2691983052164944
+    },
+    "brightness::S::Action-Only": {
+      "degradation_at_max_severity": 0.005789324643693394,
+      "sd_across_seeds_at_max_severity": 0.005849028797020166,
+      "clean_value": 0.38880492564632074,
+      "max_severity_value": 0.39459425029001416
+    },
+    "brightness::S::Joint Action-Rationale": {
+      "degradation_at_max_severity": 0.0036243494257483188,
+      "sd_across_seeds_at_max_severity": 0.002694041648583862,
+      "clean_value": 0.37221294855455966,
+      "max_severity_value": 0.375837297980308
+    },
+    "brightness::C1::Action-Only": {
+      "degradation_at_max_severity": 0.1932411674347158,
+      "sd_across_seeds_at_max_severity": 0.008087584323184975,
+      "clean_value": 0.0,
+      "max_severity_value": 0.1932411674347158
+    },
+    "brightness::C1::Joint Action-Rationale": {
+      "degradation_at_max_severity": 0.1707702435813035,
+      "sd_across_seeds_at_max_severity": 0.03349337051931378,
+      "clean_value": 0.0,
+      "max_severity_value": 0.1707702435813035
+    },
+    "blur::A::Action-Only": {
+      "degradation_at_max_severity": 0.014164701268367908,
+      "sd_across_seeds_at_max_severity": 0.006509836309162539,
+      "clean_value": 0.6740501115284726,
+      "max_severity_value": 0.6598854102601047
+    },
+    "blur::A::Joint Action-Rationale": {
+      "degradation_at_max_severity": 0.012241205170437674,
+      "sd_across_seeds_at_max_severity": 0.008320658785388199,
+      "clean_value": 0.6855859853354236,
+      "max_severity_value": 0.6733447801649859
+    },
+    "blur::R::Joint Action-Rationale": {
+      "degradation_at_max_severity": 0.005899618606872109,
+      "sd_across_seeds_at_max_severity": 0.004076121681086896,
+      "clean_value": 0.27358892695121106,
+      "max_severity_value": 0.2676893083443389
+    },
+    "blur::S::Action-Only": {
+      "degradation_at_max_severity": 0.00561467946751919,
+      "sd_across_seeds_at_max_severity": 0.008103986094084376,
+      "clean_value": 0.38880492564632074,
+      "max_severity_value": 0.39441960511383994
+    },
+    "blur::S::Joint Action-Rationale": {
+      "degradation_at_max_severity": 0.0021274833691440898,
+      "sd_across_seeds_at_max_severity": 0.013303862370907225,
+      "clean_value": 0.37221294855455966,
+      "max_severity_value": 0.3743404319237038
+    },
+    "blur::C1::Action-Only": {
+      "degradation_at_max_severity": 0.2650427913100724,
+      "sd_across_seeds_at_max_severity": 0.01581007521481561,
+      "clean_value": 0.0,
+      "max_severity_value": 0.2650427913100724
+    },
+    "blur::C1::Joint Action-Rationale": {
+      "degradation_at_max_severity": 0.2323897300855826,
+      "sd_across_seeds_at_max_severity": 0.03463024190402258,
+      "clean_value": 0.0,
+      "max_severity_value": 0.2323897300855826
+    },
+    "noise::A::Action-Only": {
+      "degradation_at_max_severity": 0.013365118844788127,
+      "sd_across_seeds_at_max_severity": 0.006584172354521011,
+      "clean_value": 0.6740501115284726,
+      "max_severity_value": 0.6606849926836845
+    },
+    "noise::A::Joint Action-Rationale": {
+      "degradation_at_max_severity": -0.0006462367646945966,
+      "sd_across_seeds_at_max_severity": 0.0033576000360739026,
+      "clean_value": 0.6855859853354236,
+      "max_severity_value": 0.6862322221001182
+    },
+    "noise::R::Joint Action-Rationale": {
+      "degradation_at_max_severity": 0.004911363012329884,
+      "sd_across_seeds_at_max_severity": 0.00293878858812026,
+      "clean_value": 0.27358892695121106,
+      "max_severity_value": 0.26867756393888115
+    },
+    "noise::S::Action-Only": {
+      "degradation_at_max_severity": -0.00671789384590552,
+      "sd_across_seeds_at_max_severity": 0.0037411901057789946,
+      "clean_value": 0.38880492564632074,
+      "max_severity_value": 0.3820870318004152
+    },
+    "noise::S::Joint Action-Rationale": {
+      "degradation_at_max_severity": -0.00655574089332569,
+      "sd_across_seeds_at_max_severity": 0.005083277520567527,
+      "clean_value": 0.37221294855455966,
+      "max_severity_value": 0.365657207661234
+    },
+    "noise::C1::Action-Only": {
+      "degradation_at_max_severity": 0.19688391485626508,
+      "sd_across_seeds_at_max_severity": 0.012661667785542107,
+      "clean_value": 0.0,
+      "max_severity_value": 0.19688391485626508
+    },
+    "noise::C1::Joint Action-Rationale": {
+      "degradation_at_max_severity": 0.16032477507131887,
+      "sd_across_seeds_at_max_severity": 0.030842657692860997,
+      "clean_value": 0.0,
+      "max_severity_value": 0.16032477507131887
+    }
+  },
+  "headline": {
+    "largest_c1_degradation_at_max_severity": 0.2650427913100724,
+    "largest_absolute_a_degradation_at_max_severity": 0.014164701268367908,
+    "largest_absolute_r_degradation_at_max_severity": 0.005899618606872109,
+    "c1_to_a_magnitude_ratio": 18.7114988370391,
+    "s_degradation_sign_by_family": {
+      "brightness": 1.0,
+      "blur": 1.0,
+      "noise": -1.0
+    },
+    "s_sign_is_consistent_across_families": false
+  },
+  "interpretation": {
+    "what_the_3_of_12_verdict_means": "Only the C1 gates passed. Read as a construct-validation exercise the pre-registered expectation that all four axes should respond to this manipulation was not met. Read as a discriminant-validity exercise, that is the finding: the axes separate.",
+    "why_this_is_non_redundancy_evidence": "Input perturbation produced action-set changes on a large fraction of individual images while aggregate Action Macro-F1 stayed nearly constant. A metric that barely moves when a large share of individual predictions change is not measuring the same quantity as one that tracks those changes.",
+    "what_this_does_not_license": [
+      "It does not show that every perturbation should move every axis.",
+      "It does not show that A, R or S are insensitive in general; it shows they are insensitive to *this* manipulation.",
+      "It does not make C1 a measure of real-road robustness.",
+      "It does not validate the four axes as a construct; the pre-registered construct-validation gate remains 3/12."
+    ]
+  },
+  "provenance": [
+    {
+      "path": "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_results.json",
+      "sha256": "9AE834DD81D4A397BA966917245AAA581007A0BFBF5B08CA773D7515756242C4"
+    },
+    {
+      "path": "outputs/validity/round10_corruption_formal_attempt02/round10_corruption_point_diagnostics.csv",
+      "sha256": "A0F24ED0528CD81B96789E8798AB9B31E44727021F763F6EA157142500B79BF3"
+    }
+  ],
+  "claim_boundary": "BDD-OIA-internal joint metric-by-model-by-operator dose-response for the frozen population, five historical ResNet-50 seeds, fixed thresholds/calibrations, and three synthetic grids only."
+}
