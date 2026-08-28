@@ -1,0 +1,136 @@
+confidence_construction,metric,quantity,seed,estimate
+S0,aurc,Action-Only,43,0.3734892826339159
+S0,aurc,Action-Only,44,0.39995108947180996
+S0,aurc,Action-Only,45,0.38513361225255244
+S0,aurc,Action-Only,46,0.38590374051112847
+S0,aurc,Action-Only,47,0.39964274154775264
+S0,aurc,Joint Action-Rationale,43,0.3580176254209994
+S0,aurc,Joint Action-Rationale,44,0.3918369113040415
+S0,aurc,Joint Action-Rationale,45,0.39148755494536613
+S0,aurc,Joint Action-Rationale,46,0.3408557621801786
+S0,aurc,Joint Action-Rationale,47,0.3789384007301017
+S0,aurc,delta_joint_minus_action,43,-0.01547165721291649
+S0,aurc,delta_joint_minus_action,44,-0.008114178167768438
+S0,aurc,delta_joint_minus_action,45,0.006353942692813697
+S0,aurc,delta_joint_minus_action,46,-0.04504797833094987
+S0,aurc,delta_joint_minus_action,47,-0.020704340817650935
+S0,unsafe_acceptance_rate_90,Action-Only,43,0.49658703071672355
+S0,unsafe_acceptance_rate_90,Action-Only,44,0.4900048756704047
+S0,unsafe_acceptance_rate_90,Action-Only,45,0.4985372988785958
+S0,unsafe_acceptance_rate_90,Action-Only,46,0.48659190638712824
+S0,unsafe_acceptance_rate_90,Action-Only,47,0.48293515358361777
+S0,unsafe_acceptance_rate_90,Joint Action-Rationale,43,0.48147245246221354
+S0,unsafe_acceptance_rate_90,Joint Action-Rationale,44,0.4907362262311068
+S0,unsafe_acceptance_rate_90,Joint Action-Rationale,45,0.48829839102876643
+S0,unsafe_acceptance_rate_90,Joint Action-Rationale,46,0.4500243783520234
+S0,unsafe_acceptance_rate_90,Joint Action-Rationale,47,0.4887859580692345
+S0,unsafe_acceptance_rate_90,delta_joint_minus_action,43,-0.015114578254510014
+S0,unsafe_acceptance_rate_90,delta_joint_minus_action,44,0.0007313505607021153
+S0,unsafe_acceptance_rate_90,delta_joint_minus_action,45,-0.010238907849829393
+S0,unsafe_acceptance_rate_90,delta_joint_minus_action,46,-0.036567528035104824
+S0,unsafe_acceptance_rate_90,delta_joint_minus_action,47,0.005850804485616756
+S0,ece,Action-Only,43,0.3282950660194483
+S0,ece,Action-Only,44,0.3280800593920099
+S0,ece,Action-Only,45,0.318841116651822
+S0,ece,Action-Only,46,0.32320952659117813
+S0,ece,Action-Only,47,0.32161031577789595
+S0,ece,Joint Action-Rationale,43,0.3285913191828831
+S0,ece,Joint Action-Rationale,44,0.3470004931737897
+S0,ece,Joint Action-Rationale,45,0.3326254916523207
+S0,ece,Joint Action-Rationale,46,0.2843486672811002
+S0,ece,Joint Action-Rationale,47,0.32974071614036227
+S0,ece,delta_joint_minus_action,43,0.0002962531634347898
+S0,ece,delta_joint_minus_action,44,0.018920433781779822
+S0,ece,delta_joint_minus_action,45,0.013784375000498672
+S0,ece,delta_joint_minus_action,46,-0.03886085931007793
+S0,ece,delta_joint_minus_action,47,0.008130400362466317
+S1,aurc,Action-Only,43,0.3317862254471956
+S1,aurc,Action-Only,44,0.3518823446177467
+S1,aurc,Action-Only,45,0.3412394617309994
+S1,aurc,Action-Only,46,0.33500587632907336
+S1,aurc,Action-Only,47,0.33910593778822495
+S1,aurc,Joint Action-Rationale,43,0.3139551403241296
+S1,aurc,Joint Action-Rationale,44,0.3339520310956034
+S1,aurc,Joint Action-Rationale,45,0.33024896320056735
+S1,aurc,Joint Action-Rationale,46,0.2873096596300874
+S1,aurc,Joint Action-Rationale,47,0.32710272298726645
+S1,aurc,delta_joint_minus_action,43,-0.017831085123066026
+S1,aurc,delta_joint_minus_action,44,-0.017930313522143304
+S1,aurc,delta_joint_minus_action,45,-0.010990498530432047
+S1,aurc,delta_joint_minus_action,46,-0.04769621669898594
+S1,aurc,delta_joint_minus_action,47,-0.012003214800958506
+S1,unsafe_acceptance_rate_90,Action-Only,43,0.492198927352511
+S1,unsafe_acceptance_rate_90,Action-Only,44,0.4904924427108727
+S1,unsafe_acceptance_rate_90,Action-Only,45,0.49609946367625546
+S1,unsafe_acceptance_rate_90,Action-Only,46,0.4831789371038518
+S1,unsafe_acceptance_rate_90,Action-Only,47,0.47927840078010725
+S1,unsafe_acceptance_rate_90,Joint Action-Rationale,43,0.4780594831789371
+S1,unsafe_acceptance_rate_90,Joint Action-Rationale,44,0.4880546075085324
+S1,unsafe_acceptance_rate_90,Joint Action-Rationale,45,0.4856167723061921
+S1,unsafe_acceptance_rate_90,Joint Action-Rationale,46,0.44807411019015114
+S1,unsafe_acceptance_rate_90,Joint Action-Rationale,47,0.4863481228668942
+S1,unsafe_acceptance_rate_90,delta_joint_minus_action,43,-0.014139444173573879
+S1,unsafe_acceptance_rate_90,delta_joint_minus_action,44,-0.0024378352023403105
+S1,unsafe_acceptance_rate_90,delta_joint_minus_action,45,-0.010482691370063357
+S1,unsafe_acceptance_rate_90,delta_joint_minus_action,46,-0.03510482691370065
+S1,unsafe_acceptance_rate_90,delta_joint_minus_action,47,0.007069722086786967
+S1,ece,Action-Only,43,0.09796791119344483
+S1,ece,Action-Only,44,0.08821436837422751
+S1,ece,Action-Only,45,0.1030152989690874
+S1,ece,Action-Only,46,0.1048910810832526
+S1,ece,Action-Only,47,0.09951926803939853
+S1,ece,Joint Action-Rationale,43,0.10012496226358568
+S1,ece,Joint Action-Rationale,44,0.0831120529611139
+S1,ece,Joint Action-Rationale,45,0.10885288459749969
+S1,ece,Joint Action-Rationale,46,0.09688037589073728
+S1,ece,Joint Action-Rationale,47,0.08854772919372389
+S1,ece,delta_joint_minus_action,43,0.0021570510701408446
+S1,ece,delta_joint_minus_action,44,-0.005102315413113609
+S1,ece,delta_joint_minus_action,45,0.005837585628412287
+S1,ece,delta_joint_minus_action,46,-0.008010705192515316
+S1,ece,delta_joint_minus_action,47,-0.010971538845674644
+S2,aurc,Action-Only,43,0.33684801374271867
+S2,aurc,Action-Only,44,0.35522745444149134
+S2,aurc,Action-Only,45,0.3456082640335633
+S2,aurc,Action-Only,46,0.3435530862601829
+S2,aurc,Action-Only,47,0.33934329570017263
+S2,aurc,Joint Action-Rationale,43,0.31799956786659317
+S2,aurc,Joint Action-Rationale,44,0.3340103601901973
+S2,aurc,Joint Action-Rationale,45,0.3330988263100413
+S2,aurc,Joint Action-Rationale,46,0.29100768747068173
+S2,aurc,Joint Action-Rationale,47,0.32989768147283627
+S2,aurc,delta_joint_minus_action,43,-0.018848445876125497
+S2,aurc,delta_joint_minus_action,44,-0.021217094251294033
+S2,aurc,delta_joint_minus_action,45,-0.012509437723522032
+S2,aurc,delta_joint_minus_action,46,-0.05254539878950115
+S2,aurc,delta_joint_minus_action,47,-0.009445614227336363
+S2,unsafe_acceptance_rate_90,Action-Only,43,0.49634324719648953
+S2,unsafe_acceptance_rate_90,Action-Only,44,0.5009751340809361
+S2,unsafe_acceptance_rate_90,Action-Only,45,0.500243783520234
+S2,unsafe_acceptance_rate_90,Action-Only,46,0.4885421745490005
+S2,unsafe_acceptance_rate_90,Action-Only,47,0.48756704046806437
+S2,unsafe_acceptance_rate_90,Joint Action-Rationale,43,0.4824475865431497
+S2,unsafe_acceptance_rate_90,Joint Action-Rationale,44,0.4951243295953194
+S2,unsafe_acceptance_rate_90,Joint Action-Rationale,45,0.48659190638712824
+S2,unsafe_acceptance_rate_90,Joint Action-Rationale,46,0.4485616772306192
+S2,unsafe_acceptance_rate_90,Joint Action-Rationale,47,0.49171136031204293
+S2,unsafe_acceptance_rate_90,delta_joint_minus_action,43,-0.013895660653339859
+S2,unsafe_acceptance_rate_90,delta_joint_minus_action,44,-0.005850804485616701
+S2,unsafe_acceptance_rate_90,delta_joint_minus_action,45,-0.013651877133105783
+S2,unsafe_acceptance_rate_90,delta_joint_minus_action,46,-0.039980497318381325
+S2,unsafe_acceptance_rate_90,delta_joint_minus_action,47,0.004144319843978561
+S2,ece,Action-Only,43,0.18593683639149
+S2,ece,Action-Only,44,0.19106227420935942
+S2,ece,Action-Only,45,0.18975640900946505
+S2,ece,Action-Only,46,0.17724267401493096
+S2,ece,Action-Only,47,0.1805434714422437
+S2,ece,Joint Action-Rationale,43,0.1735880005478851
+S2,ece,Joint Action-Rationale,44,0.18544688145884156
+S2,ece,Joint Action-Rationale,45,0.16604268123727275
+S2,ece,Joint Action-Rationale,46,0.16142753571679083
+S2,ece,Joint Action-Rationale,47,0.18823808666518788
+S2,ece,delta_joint_minus_action,43,-0.01234883584360491
+S2,ece,delta_joint_minus_action,44,-0.005615392750517867
+S2,ece,delta_joint_minus_action,45,-0.0237137277721923
+S2,ece,delta_joint_minus_action,46,-0.01581513829814013
+S2,ece,delta_joint_minus_action,47,0.007694615222944179

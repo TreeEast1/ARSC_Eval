@@ -1,0 +1,662 @@
+{
+  "schema_version": "ARSC_S_CONFIDENCE_CONSTRUCT_AUDIT_V1",
+  "analysis_id": "ARSC_S_CONFIDENCE_CONSTRUCT_AUDIT",
+  "status": "Sensitivity / construct audit of the selective-risk operationalisation. NOT a replacement primary result.",
+  "primary_result_remains": "S0 (conf = max_i p_i) as published in outputs/validity/rq1_multiseed_summary.json",
+  "frozen_inputs": {
+    "seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "threshold": 0.5,
+    "test_split": "BDD-OIA official test, 4557 valid four-action images",
+    "calibration": "scalar temperature scaling fitted on official validation",
+    "temperatures_by_seed": {
+      "43": {
+        "Action-Only": 2.58642840385437,
+        "Joint Action-Rationale": 2.5693113803863525
+      },
+      "44": {
+        "Action-Only": 2.906062126159668,
+        "Joint Action-Rationale": 2.317605972290039
+      },
+      "45": {
+        "Action-Only": 2.8795323371887207,
+        "Joint Action-Rationale": 2.026177167892456
+      },
+      "46": {
+        "Action-Only": 2.5061240196228027,
+        "Joint Action-Rationale": 1.2398866415023804
+      },
+      "47": {
+        "Action-Only": 2.9120659828186035,
+        "Joint Action-Rationale": 2.8457589149475098
+      }
+    },
+    "sample_counts_by_seed": {
+      "43": 4557,
+      "44": 4557,
+      "45": 4557,
+      "46": 4557,
+      "47": 4557
+    },
+    "error_definition": "exact-set error: any of the four thresholded action bits wrong",
+    "ece_bins": 15
+  },
+  "bootstrap": {
+    "method": "hierarchical paired bootstrap: resample training seeds, then images within each selected seed; model pairing preserved",
+    "replicates": 2000,
+    "seed": 20260731,
+    "confidence_level": 0.95,
+    "rng_stream_matches_frozen_rq1_aggregation": true
+  },
+  "confidence_constructions": {
+    "S0": {
+      "label": "S0 max positive probability (frozen primary)",
+      "formula": "conf = max_i p_i",
+      "role": "frozen_primary"
+    },
+    "S1": {
+      "label": "S1 exact-set probability proxy",
+      "formula": "conf = prod_i q_i, q_i = p_i if bit_i predicted else 1 - p_i",
+      "role": "construct_audit_alternative"
+    },
+    "S2": {
+      "label": "S2 weakest-bit certainty",
+      "formula": "conf = min_i max(p_i, 1 - p_i)",
+      "role": "construct_audit_alternative"
+    }
+  },
+  "s0_reproduction_check": {
+    "reference": "outputs/validity/rq1_multiseed_summary.json",
+    "tolerance": 1e-09,
+    "all_checks_passed": true,
+    "checks": [
+      {
+        "frozen_metric": "aurc::Action-Only",
+        "audited_metric": "S0::aurc::Action-Only",
+        "field": "mean_across_seeds",
+        "frozen_value": 0.38882409328343187,
+        "audited_value": 0.38882409328343187,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "aurc::Action-Only",
+        "audited_metric": "S0::aurc::Action-Only",
+        "field": "hierarchical_ci_lower",
+        "frozen_value": 0.3764674896703155,
+        "audited_value": 0.3764674896703155,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "aurc::Action-Only",
+        "audited_metric": "S0::aurc::Action-Only",
+        "field": "hierarchical_ci_upper",
+        "frozen_value": 0.4006368458127709,
+        "audited_value": 0.4006368458127709,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "aurc::Joint Action-Rationale",
+        "audited_metric": "S0::aurc::Joint Action-Rationale",
+        "field": "mean_across_seeds",
+        "frozen_value": 0.3722272509161375,
+        "audited_value": 0.3722272509161375,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "aurc::Joint Action-Rationale",
+        "audited_metric": "S0::aurc::Joint Action-Rationale",
+        "field": "hierarchical_ci_lower",
+        "frozen_value": 0.3524066997384557,
+        "audited_value": 0.3524066997384557,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "aurc::Joint Action-Rationale",
+        "audited_metric": "S0::aurc::Joint Action-Rationale",
+        "field": "hierarchical_ci_upper",
+        "frozen_value": 0.39023158344815473,
+        "audited_value": 0.39023158344815473,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "unsafe_acceptance_rate_90::Action-Only",
+        "audited_metric": "S0::unsafe_acceptance_rate_90::Action-Only",
+        "field": "mean_across_seeds",
+        "frozen_value": 0.490931253047294,
+        "audited_value": 0.490931253047294,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "unsafe_acceptance_rate_90::Action-Only",
+        "audited_metric": "S0::unsafe_acceptance_rate_90::Action-Only",
+        "field": "hierarchical_ci_lower",
+        "frozen_value": 0.4823013164310093,
+        "audited_value": 0.4823013164310093,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "unsafe_acceptance_rate_90::Action-Only",
+        "audited_metric": "S0::unsafe_acceptance_rate_90::Action-Only",
+        "field": "hierarchical_ci_upper",
+        "frozen_value": 0.49995368113115557,
+        "audited_value": 0.49995368113115557,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "unsafe_acceptance_rate_90::Joint Action-Rationale",
+        "audited_metric": "S0::unsafe_acceptance_rate_90::Joint Action-Rationale",
+        "field": "mean_across_seeds",
+        "frozen_value": 0.47986348122866895,
+        "audited_value": 0.47986348122866895,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "unsafe_acceptance_rate_90::Joint Action-Rationale",
+        "audited_metric": "S0::unsafe_acceptance_rate_90::Joint Action-Rationale",
+        "field": "hierarchical_ci_lower",
+        "frozen_value": 0.4642052657240371,
+        "audited_value": 0.4642052657240371,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "unsafe_acceptance_rate_90::Joint Action-Rationale",
+        "audited_metric": "S0::unsafe_acceptance_rate_90::Joint Action-Rationale",
+        "field": "hierarchical_ci_upper",
+        "frozen_value": 0.49234641638225257,
+        "audited_value": 0.49234641638225257,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "ece_calibrated::Action-Only",
+        "audited_metric": "S0::ece::Action-Only",
+        "field": "mean_across_seeds",
+        "frozen_value": 0.3240072168864709,
+        "audited_value": 0.3240072168864709,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "ece_calibrated::Action-Only",
+        "audited_metric": "S0::ece::Action-Only",
+        "field": "hierarchical_ci_lower",
+        "frozen_value": 0.31678963436739543,
+        "audited_value": 0.31678963436739543,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "ece_calibrated::Action-Only",
+        "audited_metric": "S0::ece::Action-Only",
+        "field": "hierarchical_ci_upper",
+        "frozen_value": 0.3308474680912908,
+        "audited_value": 0.3308474680912908,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "ece_calibrated::Joint Action-Rationale",
+        "audited_metric": "S0::ece::Joint Action-Rationale",
+        "field": "mean_across_seeds",
+        "frozen_value": 0.32446133748609124,
+        "audited_value": 0.32446133748609124,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "ece_calibrated::Joint Action-Rationale",
+        "audited_metric": "S0::ece::Joint Action-Rationale",
+        "field": "hierarchical_ci_lower",
+        "frozen_value": 0.3030977229409394,
+        "audited_value": 0.3030977229409394,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      },
+      {
+        "frozen_metric": "ece_calibrated::Joint Action-Rationale",
+        "audited_metric": "S0::ece::Joint Action-Rationale",
+        "field": "hierarchical_ci_upper",
+        "frozen_value": 0.3405773160562586,
+        "audited_value": 0.3405773160562586,
+        "absolute_difference": 0.0,
+        "within_tolerance": true
+      }
+    ]
+  },
+  "summary": {
+    "S0::aurc::Action-Only": {
+      "mean_across_seeds": 0.38882409328343187,
+      "sd_across_seeds": 0.011159723592609283,
+      "hierarchical_ci_lower": 0.3764674896703155,
+      "hierarchical_ci_upper": 0.4006368458127709,
+      "by_seed": {
+        "43": 0.3734892826339159,
+        "44": 0.39995108947180996,
+        "45": 0.38513361225255244,
+        "46": 0.38590374051112847,
+        "47": 0.39964274154775264
+      },
+      "mean_confidence_across_seeds": 0.8019971225261461
+    },
+    "S0::aurc::Joint Action-Rationale": {
+      "mean_across_seeds": 0.3722272509161375,
+      "sd_across_seeds": 0.022285765557162263,
+      "hierarchical_ci_lower": 0.3524066997384557,
+      "hierarchical_ci_upper": 0.39023158344815473,
+      "by_seed": {
+        "43": 0.3580176254209994,
+        "44": 0.3918369113040415,
+        "45": 0.39148755494536613,
+        "46": 0.3408557621801786,
+        "47": 0.3789384007301017
+      },
+      "mean_confidence_across_seeds": 0.8140817017608335
+    },
+    "S0::aurc::delta_joint_minus_action": {
+      "mean_across_seeds": -0.016596842367294407,
+      "sd_across_seeds": 0.018883185970400517,
+      "hierarchical_ci_lower": -0.03355802443121559,
+      "hierarchical_ci_upper": -0.0003998776103776196,
+      "by_seed": {
+        "43": -0.01547165721291649,
+        "44": -0.008114178167768438,
+        "45": 0.006353942692813697,
+        "46": -0.04504797833094987,
+        "47": -0.020704340817650935
+      }
+    },
+    "S0::ece::Action-Only": {
+      "mean_across_seeds": 0.3240072168864709,
+      "sd_across_seeds": 0.004124431252549603,
+      "hierarchical_ci_lower": 0.31678963436739543,
+      "hierarchical_ci_upper": 0.3308474680912908,
+      "by_seed": {
+        "43": 0.3282950660194483,
+        "44": 0.3280800593920099,
+        "45": 0.318841116651822,
+        "46": 0.32320952659117813,
+        "47": 0.32161031577789595
+      }
+    },
+    "S0::ece::Joint Action-Rationale": {
+      "mean_across_seeds": 0.32446133748609124,
+      "sd_across_seeds": 0.023604140797377358,
+      "hierarchical_ci_lower": 0.3030977229409394,
+      "hierarchical_ci_upper": 0.3405773160562586,
+      "by_seed": {
+        "43": 0.3285913191828831,
+        "44": 0.3470004931737897,
+        "45": 0.3326254916523207,
+        "46": 0.2843486672811002,
+        "47": 0.32974071614036227
+      }
+    },
+    "S0::ece::delta_joint_minus_action": {
+      "mean_across_seeds": 0.00045412059962033344,
+      "sd_across_seeds": 0.023039738732017985,
+      "hierarchical_ci_lower": -0.020440229698383144,
+      "hierarchical_ci_upper": 0.016290533106273274,
+      "by_seed": {
+        "43": 0.0002962531634347898,
+        "44": 0.018920433781779822,
+        "45": 0.013784375000498672,
+        "46": -0.03886085931007793,
+        "47": 0.008130400362466317
+      }
+    },
+    "S0::unsafe_acceptance_rate_90::Action-Only": {
+      "mean_across_seeds": 0.490931253047294,
+      "sd_across_seeds": 0.0065853144448156245,
+      "hierarchical_ci_lower": 0.4823013164310093,
+      "hierarchical_ci_upper": 0.49995368113115557,
+      "by_seed": {
+        "43": 0.49658703071672355,
+        "44": 0.4900048756704047,
+        "45": 0.4985372988785958,
+        "46": 0.48659190638712824,
+        "47": 0.48293515358361777
+      }
+    },
+    "S0::unsafe_acceptance_rate_90::Joint Action-Rationale": {
+      "mean_across_seeds": 0.47986348122866895,
+      "sd_across_seeds": 0.01704358918411595,
+      "hierarchical_ci_lower": 0.4642052657240371,
+      "hierarchical_ci_upper": 0.49234641638225257,
+      "by_seed": {
+        "43": 0.48147245246221354,
+        "44": 0.4907362262311068,
+        "45": 0.48829839102876643,
+        "46": 0.4500243783520234,
+        "47": 0.4887859580692345
+      }
+    },
+    "S0::unsafe_acceptance_rate_90::delta_joint_minus_action": {
+      "mean_across_seeds": -0.011067771818625071,
+      "sd_across_seeds": 0.0165284507591681,
+      "hierarchical_ci_lower": -0.026036079960994628,
+      "hierarchical_ci_upper": 0.002000243783520249,
+      "by_seed": {
+        "43": -0.015114578254510014,
+        "44": 0.0007313505607021153,
+        "45": -0.010238907849829393,
+        "46": -0.036567528035104824,
+        "47": 0.005850804485616756
+      }
+    },
+    "S1::aurc::Action-Only": {
+      "mean_across_seeds": 0.33980396918264805,
+      "sd_across_seeds": 0.007676928902140465,
+      "hierarchical_ci_lower": 0.32975948224444424,
+      "hierarchical_ci_upper": 0.34943620928406816,
+      "by_seed": {
+        "43": 0.3317862254471956,
+        "44": 0.3518823446177467,
+        "45": 0.3412394617309994,
+        "46": 0.33500587632907336,
+        "47": 0.33910593778822495
+      },
+      "mean_confidence_across_seeds": 0.37950209131020046
+    },
+    "S1::aurc::Joint Action-Rationale": {
+      "mean_across_seeds": 0.3185137034475308,
+      "sd_across_seeds": 0.019001989284055252,
+      "hierarchical_ci_lower": 0.3006150890663233,
+      "hierarchical_ci_upper": 0.33324948448387753,
+      "by_seed": {
+        "43": 0.3139551403241296,
+        "44": 0.3339520310956034,
+        "45": 0.33024896320056735,
+        "46": 0.2873096596300874,
+        "47": 0.32710272298726645
+      },
+      "mean_confidence_across_seeds": 0.3947518433952553
+    },
+    "S1::aurc::delta_joint_minus_action": {
+      "mean_across_seeds": -0.021290265735117164,
+      "sd_across_seeds": 0.01510681944694899,
+      "hierarchical_ci_lower": -0.03592799169446874,
+      "hierarchical_ci_upper": -0.009964425638603192,
+      "by_seed": {
+        "43": -0.017831085123066026,
+        "44": -0.017930313522143304,
+        "45": -0.010990498530432047,
+        "46": -0.04769621669898594,
+        "47": -0.012003214800958506
+      }
+    },
+    "S1::ece::Action-Only": {
+      "mean_across_seeds": 0.09872158553188218,
+      "sd_across_seeds": 0.0064827576159483475,
+      "hierarchical_ci_lower": 0.09070346921211599,
+      "hierarchical_ci_upper": 0.10682026068218214,
+      "by_seed": {
+        "43": 0.09796791119344483,
+        "44": 0.08821436837422751,
+        "45": 0.1030152989690874,
+        "46": 0.1048910810832526,
+        "47": 0.09951926803939853
+      }
+    },
+    "S1::ece::Joint Action-Rationale": {
+      "mean_across_seeds": 0.09550360098133209,
+      "sd_across_seeds": 0.010042291533561672,
+      "hierarchical_ci_lower": 0.08680310026546455,
+      "hierarchical_ci_upper": 0.10586037688847308,
+      "by_seed": {
+        "43": 0.10012496226358568,
+        "44": 0.0831120529611139,
+        "45": 0.10885288459749969,
+        "46": 0.09688037589073728,
+        "47": 0.08854772919372389
+      }
+    },
+    "S1::ece::delta_joint_minus_action": {
+      "mean_across_seeds": -0.0032179845505500874,
+      "sd_across_seeds": 0.007027318787218608,
+      "hierarchical_ci_lower": -0.010495806789922459,
+      "hierarchical_ci_upper": 0.004816321645049835,
+      "by_seed": {
+        "43": 0.0021570510701408446,
+        "44": -0.005102315413113609,
+        "45": 0.005837585628412287,
+        "46": -0.008010705192515316,
+        "47": -0.010971538845674644
+      }
+    },
+    "S1::unsafe_acceptance_rate_90::Action-Only": {
+      "mean_across_seeds": 0.4882496343247197,
+      "sd_across_seeds": 0.0068637075866890005,
+      "hierarchical_ci_lower": 0.47913091175036565,
+      "hierarchical_ci_upper": 0.496977084349098,
+      "by_seed": {
+        "43": 0.492198927352511,
+        "44": 0.4904924427108727,
+        "45": 0.49609946367625546,
+        "46": 0.4831789371038518,
+        "47": 0.47927840078010725
+      }
+    },
+    "S1::unsafe_acceptance_rate_90::Joint Action-Rationale": {
+      "mean_across_seeds": 0.4772306192101414,
+      "sd_across_seeds": 0.01674368681829474,
+      "hierarchical_ci_lower": 0.46143222818137497,
+      "hierarchical_ci_upper": 0.4894685519258898,
+      "by_seed": {
+        "43": 0.4780594831789371,
+        "44": 0.4880546075085324,
+        "45": 0.4856167723061921,
+        "46": 0.44807411019015114,
+        "47": 0.4863481228668942
+      }
+    },
+    "S1::unsafe_acceptance_rate_90::delta_joint_minus_action": {
+      "mean_across_seeds": -0.011019015114578246,
+      "sd_across_seeds": 0.015739997720140786,
+      "hierarchical_ci_lower": -0.02515967820575329,
+      "hierarchical_ci_upper": 0.0020965382740126717,
+      "by_seed": {
+        "43": -0.014139444173573879,
+        "44": -0.0024378352023403105,
+        "45": -0.010482691370063357,
+        "46": -0.03510482691370065,
+        "47": 0.007069722086786967
+      }
+    },
+    "S2::aurc::Action-Only": {
+      "mean_across_seeds": 0.3441160228356258,
+      "sd_across_seeds": 0.0070994801604887395,
+      "hierarchical_ci_lower": 0.33427812696771386,
+      "hierarchical_ci_upper": 0.3536905344430526,
+      "by_seed": {
+        "43": 0.33684801374271867,
+        "44": 0.35522745444149134,
+        "45": 0.3456082640335633,
+        "46": 0.3435530862601829,
+        "47": 0.33934329570017263
+      },
+      "mean_confidence_across_seeds": 0.6628300477204251
+    },
+    "S2::aurc::Joint Action-Rationale": {
+      "mean_across_seeds": 0.32120282466206995,
+      "sd_across_seeds": 0.018049622714734474,
+      "hierarchical_ci_lower": 0.3042849539556084,
+      "hierarchical_ci_upper": 0.3348728490711131,
+      "by_seed": {
+        "43": 0.31799956786659317,
+        "44": 0.3340103601901973,
+        "45": 0.3330988263100413,
+        "46": 0.29100768747068173,
+        "47": 0.32989768147283627
+      },
+      "mean_confidence_across_seeds": 0.664502384015747
+    },
+    "S2::aurc::delta_joint_minus_action": {
+      "mean_across_seeds": -0.022913198173555815,
+      "sd_across_seeds": 0.017227016151588493,
+      "hierarchical_ci_lower": -0.03937925034550604,
+      "hierarchical_ci_upper": -0.010254006895860526,
+      "by_seed": {
+        "43": -0.018848445876125497,
+        "44": -0.021217094251294033,
+        "45": -0.012509437723522032,
+        "46": -0.05254539878950115,
+        "47": -0.009445614227336363
+      }
+    },
+    "S2::ece::Action-Only": {
+      "mean_across_seeds": 0.18490833301349782,
+      "sd_across_seeds": 0.005921296241572819,
+      "hierarchical_ci_lower": 0.1771450650382546,
+      "hierarchical_ci_upper": 0.1927412895997868,
+      "by_seed": {
+        "43": 0.18593683639149,
+        "44": 0.19106227420935942,
+        "45": 0.18975640900946505,
+        "46": 0.17724267401493096,
+        "47": 0.1805434714422437
+      }
+    },
+    "S2::ece::Joint Action-Rationale": {
+      "mean_across_seeds": 0.1749486371251956,
+      "sd_across_seeds": 0.011734672648123152,
+      "hierarchical_ci_lower": 0.16476884520529256,
+      "hierarchical_ci_upper": 0.18627740472177146,
+      "by_seed": {
+        "43": 0.1735880005478851,
+        "44": 0.18544688145884156,
+        "45": 0.16604268123727275,
+        "46": 0.16142753571679083,
+        "47": 0.18823808666518788
+      }
+    },
+    "S2::ece::delta_joint_minus_action": {
+      "mean_across_seeds": -0.009959695888302205,
+      "sd_across_seeds": 0.01182915105966673,
+      "hierarchical_ci_lower": -0.020566855474737637,
+      "hierarchical_ci_upper": 0.001247419519309266,
+      "by_seed": {
+        "43": -0.01234883584360491,
+        "44": -0.005615392750517867,
+        "45": -0.0237137277721923,
+        "46": -0.01581513829814013,
+        "47": 0.007694615222944179
+      }
+    },
+    "S2::unsafe_acceptance_rate_90::Action-Only": {
+      "mean_across_seeds": 0.4947342759629449,
+      "sd_across_seeds": 0.006356161509959135,
+      "hierarchical_ci_lower": 0.4857606045831302,
+      "hierarchical_ci_upper": 0.5034141882008777,
+      "by_seed": {
+        "43": 0.49634324719648953,
+        "44": 0.5009751340809361,
+        "45": 0.500243783520234,
+        "46": 0.4885421745490005,
+        "47": 0.48756704046806437
+      }
+    },
+    "S2::unsafe_acceptance_rate_90::Joint Action-Rationale": {
+      "mean_across_seeds": 0.48088737201365184,
+      "sd_across_seeds": 0.018706791606712805,
+      "hierarchical_ci_lower": 0.46391760117016084,
+      "hierarchical_ci_upper": 0.49444173573866407,
+      "by_seed": {
+        "43": 0.4824475865431497,
+        "44": 0.4951243295953194,
+        "45": 0.48659190638712824,
+        "46": 0.4485616772306192,
+        "47": 0.49171136031204293
+      }
+    },
+    "S2::unsafe_acceptance_rate_90::delta_joint_minus_action": {
+      "mean_across_seeds": -0.013846903949293022,
+      "sd_across_seeds": 0.01636021741350542,
+      "hierarchical_ci_lower": -0.02857142857142858,
+      "hierarchical_ci_upper": -0.000778888347147755,
+      "by_seed": {
+        "43": -0.013895660653339859,
+        "44": -0.005850804485616701,
+        "45": -0.013651877133105783,
+        "46": -0.039980497318381325,
+        "47": 0.004144319843978561
+      }
+    },
+    "__exact_set_error_rate__": {
+      "Action-Only": 0.5220100943603248,
+      "Joint Action-Rationale": 0.5103796357252579
+    }
+  },
+  "interpretation": {
+    "q1_does_the_S_conclusion_depend_on_the_confidence_definition": {
+      "per_metric_direction_by_construction": {
+        "S0": {
+          "aurc": "joint_better",
+          "unsafe_acceptance_rate_90": "inconclusive",
+          "ece": "inconclusive"
+        },
+        "S1": {
+          "aurc": "joint_better",
+          "unsafe_acceptance_rate_90": "inconclusive",
+          "ece": "inconclusive"
+        },
+        "S2": {
+          "aurc": "joint_better",
+          "unsafe_acceptance_rate_90": "joint_better",
+          "ece": "inconclusive"
+        }
+      },
+      "direction_is_stable_across_constructions": {
+        "aurc": true,
+        "unsafe_acceptance_rate_90": false,
+        "ece": true
+      },
+      "answer": "yes_at_least_one_metric_changes_verdict"
+    },
+    "q2_do_aurc_uar90_and_ece_still_disagree": {
+      "all_three_metrics_agree_within_construction": {
+        "S0": false,
+        "S1": false,
+        "S2": false
+      },
+      "answer": "metrics_disagree_under_at_least_one_construction"
+    },
+    "q3_is_max_p_semantically_mismatched_with_exact_set_correctness": {
+      "mean_exact_set_error_rate_by_model": {
+        "Action-Only": 0.5220100943603248,
+        "Joint Action-Rationale": 0.5103796357252579
+      },
+      "mean_confidence_by_construction_and_model": {
+        "S0": {
+          "Action-Only": 0.8019971225261461,
+          "Joint Action-Rationale": 0.8140817017608335
+        },
+        "S1": {
+          "Action-Only": 0.37950209131020046,
+          "Joint Action-Rationale": 0.3947518433952553
+        },
+        "S2": {
+          "Action-Only": 0.6628300477204251,
+          "Joint Action-Rationale": 0.664502384015747
+        }
+      },
+      "note": "Compare each mean confidence against the corresponding empirical exact-set accuracy (1 - error rate).  A construction whose mean confidence sits far above the exact-set accuracy is scoring a different event than the one the error definition counts."
+    }
+  },
+  "claim_boundary": "This audit varies only the confidence construction used to rank test images for selective prediction. It does not measure safety, does not license calling any construction correct, and does not change the frozen primary S result."
+}
