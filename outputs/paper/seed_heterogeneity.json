@@ -1,0 +1,203 @@
+{
+  "schema_version": "ARSC_SEED_HETEROGENEITY_V1",
+  "analysis_id": "ARSC_SEED_LEVEL_PROFILE_HETEROGENEITY",
+  "role": "Training-seed heterogeneity reported as a result, not as noise to be averaged away.",
+  "frozen_inputs": {
+    "seeds": [
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "source": "outputs/validity/rq1_multiseed_summary.json",
+    "archival_pilot_seed_excluded": 42
+  },
+  "orientation_convention": "Each comparison is oriented so that positive means Joint is better. AURC, UAR@90 and ECE are lower-is-better, so the frozen Joint - Action-Only difference is negated; the frozen metric key and the orientation applied are recorded on every row.",
+  "records": [
+    {
+      "axis": "A",
+      "quantity": "A: Action Macro-F1",
+      "orientation_note": "Joint - Action-Only",
+      "frozen_metric_key": "delta_action_macro_f1::Joint-Action",
+      "orientation_applied": 1.0,
+      "is_model_comparison": true,
+      "mean_across_seeds": 0.01153587380695098,
+      "sd_across_seeds": 0.012717946627540526,
+      "min_across_seeds": -0.0025231813750812293,
+      "max_across_seeds": 0.025495151032316477,
+      "range_across_seeds": 0.028018332407397706,
+      "hierarchical_ci_lower": 0.001590257203564117,
+      "hierarchical_ci_upper": 0.021806661779489526,
+      "seeds_agreeing_with_mean_sign": 3,
+      "seeds_reversing_mean_sign": [
+        46,
+        47
+      ],
+      "seed_43": 0.02028117025944709,
+      "seed_44": 0.025495151032316477,
+      "seed_45": 0.01559802682288669,
+      "seed_46": -0.001171797704814126,
+      "seed_47": -0.0025231813750812293
+    },
+    {
+      "axis": "S",
+      "quantity": "S: AURC",
+      "orientation_note": "Action-Only - Joint (AURC is lower-is-better)",
+      "frozen_metric_key": "delta_aurc::Joint-Action",
+      "orientation_applied": -1.0,
+      "is_model_comparison": true,
+      "mean_across_seeds": 0.016596842367294407,
+      "sd_across_seeds": 0.018883185970400517,
+      "min_across_seeds": -0.006353942692813697,
+      "max_across_seeds": 0.04504797833094987,
+      "range_across_seeds": 0.051401921023763564,
+      "hierarchical_ci_lower": 0.0003998776103776196,
+      "hierarchical_ci_upper": 0.03355802443121559,
+      "seeds_agreeing_with_mean_sign": 4,
+      "seeds_reversing_mean_sign": [
+        45
+      ],
+      "seed_43": 0.01547165721291649,
+      "seed_44": 0.008114178167768438,
+      "seed_45": -0.006353942692813697,
+      "seed_46": 0.04504797833094987,
+      "seed_47": 0.020704340817650935
+    },
+    {
+      "axis": "S",
+      "quantity": "S: UAR@90",
+      "orientation_note": "Action-Only - Joint (lower-is-better)",
+      "frozen_metric_key": "delta_unsafe_acceptance_rate_90::Joint-Action",
+      "orientation_applied": -1.0,
+      "is_model_comparison": true,
+      "mean_across_seeds": 0.011067771818625071,
+      "sd_across_seeds": 0.0165284507591681,
+      "min_across_seeds": -0.005850804485616756,
+      "max_across_seeds": 0.036567528035104824,
+      "range_across_seeds": 0.04241833252072158,
+      "hierarchical_ci_lower": -0.002000243783520249,
+      "hierarchical_ci_upper": 0.026036079960994628,
+      "seeds_agreeing_with_mean_sign": 3,
+      "seeds_reversing_mean_sign": [
+        44,
+        47
+      ],
+      "seed_43": 0.015114578254510014,
+      "seed_44": -0.0007313505607021153,
+      "seed_45": 0.010238907849829393,
+      "seed_46": 0.036567528035104824,
+      "seed_47": -0.005850804485616756
+    },
+    {
+      "axis": "S",
+      "quantity": "S: ECE (calibrated)",
+      "orientation_note": "Action-Only - Joint (lower-is-better)",
+      "frozen_metric_key": "delta_ece_calibrated::Joint-Action",
+      "orientation_applied": -1.0,
+      "is_model_comparison": true,
+      "mean_across_seeds": -0.00045412059962033344,
+      "sd_across_seeds": 0.023039738732017985,
+      "min_across_seeds": -0.018920433781779822,
+      "max_across_seeds": 0.03886085931007793,
+      "range_across_seeds": 0.057781293091857755,
+      "hierarchical_ci_lower": -0.016290533106273274,
+      "hierarchical_ci_upper": 0.020440229698383144,
+      "seeds_agreeing_with_mean_sign": 4,
+      "seeds_reversing_mean_sign": [
+        46
+      ],
+      "seed_43": -0.0002962531634347898,
+      "seed_44": -0.018920433781779822,
+      "seed_45": -0.013784375000498672,
+      "seed_46": 0.03886085931007793,
+      "seed_47": -0.008130400362466317
+    },
+    {
+      "axis": "C1",
+      "quantity": "C1: action-set flip rate",
+      "orientation_note": "Action-Only - Joint, mean of three families",
+      "frozen_metric_key": "advantage_action_flip_rate_mean_three::Action-Joint",
+      "orientation_applied": 1.0,
+      "is_model_comparison": true,
+      "mean_across_seeds": 0.016107087996488918,
+      "sd_across_seeds": 0.020113272156788205,
+      "min_across_seeds": -0.005047180162387532,
+      "max_across_seeds": 0.045132031307146506,
+      "range_across_seeds": 0.05017921146953404,
+      "hierarchical_ci_lower": 0.0010090702947845778,
+      "hierarchical_ci_upper": 0.03281435154707042,
+      "seeds_agreeing_with_mean_sign": 4,
+      "seeds_reversing_mean_sign": [
+        43
+      ],
+      "seed_43": -0.005047180162387532,
+      "seed_44": 0.003949967083607633,
+      "seed_45": 0.027503474508082812,
+      "seed_46": 0.045132031307146506,
+      "seed_47": 0.008997147245995166
+    },
+    {
+      "axis": "R",
+      "quantity": "R: Joint rationale Macro-F1",
+      "orientation_note": "absolute value; Action-Only has no R axis",
+      "frozen_metric_key": "rationale_macro_f1::Joint Action-Rationale",
+      "orientation_applied": 1.0,
+      "is_model_comparison": false,
+      "mean_across_seeds": 0.27358892695121106,
+      "sd_across_seeds": 0.02294289057402136,
+      "min_across_seeds": 0.24582372499885144,
+      "max_across_seeds": 0.30405073603883065,
+      "range_across_seeds": 0.05822701103997921,
+      "hierarchical_ci_lower": 0.256070571146934,
+      "hierarchical_ci_upper": 0.29287163778895875,
+      "seeds_agreeing_with_mean_sign": 5,
+      "seeds_reversing_mean_sign": [],
+      "seed_43": 0.28431101754148225,
+      "seed_44": 0.2769215576808766,
+      "seed_45": 0.2568375984960144,
+      "seed_46": 0.24582372499885144,
+      "seed_47": 0.30405073603883065
+    }
+  ],
+  "headline": {
+    "comparison_count": 5,
+    "comparisons_unanimous_across_seeds": 0,
+    "no_comparison_is_unanimous": true,
+    "named_reversals": {
+      "A: Action Macro-F1": [
+        46,
+        47
+      ],
+      "S: AURC": [
+        45
+      ],
+      "S: UAR@90": [
+        44,
+        47
+      ],
+      "S: ECE (calibrated)": [
+        46
+      ],
+      "C1: action-set flip rate": [
+        43
+      ]
+    },
+    "joint_rationale_macro_f1_range": 0.05822701103997921
+  },
+  "interpretation": {
+    "statement": "The ARSC profile shows clear training-seed heterogeneity. Every model comparison in the profile has at least one seed whose sign disagrees with the five-seed mean, so a mean alone is not an adequate summary and must always be reported together with the seed-level distribution.",
+    "specific_reversals": [
+      "Seed 43 reverses the C1 stability advantage: Action-Only flips less often than Joint on that seed.",
+      "Seed 45 reverses the AURC advantage.",
+      "Seeds 46 and 47 reverse the Action Macro-F1 advantage, so the headline A comparison is 3/5 rather than 5/5."
+    ],
+    "what_is_not_claimed": "No attempt is made to explain the reversals, attribute them to a cause, or exclude any seed. They are reported as the observed spread of the frozen five-seed design."
+  },
+  "provenance": [
+    {
+      "path": "outputs/validity/rq1_multiseed_summary.json",
+      "sha256": "ECA8D453E9DB67CB933CAF2217DAFC62BD054709734C857AF8A5BE9665680000"
+    }
+  ]
+}
