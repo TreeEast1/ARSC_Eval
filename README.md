@@ -1,5 +1,7 @@
 # BDD-OIA 上的 ARSC-Eval
 
+想先看实验数据长什么样：见 [BDD-OIA 数据集说明](docs/dataset/README.md)。
+
 本仓库用于检验四个互补评价维度——准确性（Accuracy）、解释理由
 （Rationale）、安全选择性（Safety）和一致性（Consistency），简称
 ARSC——能否揭示仅看动作准确率时容易遗漏的模型行为。
@@ -61,7 +63,8 @@ ARSC 作为“诊断性指标分解”得到了较强的 BDD-OIA 内部证据：
 ## 实验设计
 
 - 数据集：BDD-OIA 官方训练/验证/测试划分；测试集含 4,557 个有效四动作
-  样本。
+  样本。若只想先看数据长什么样，见
+  [数据集说明页](docs/dataset/README.md)（含真实案例图）。
 - 动作标签：Forward、Stop、Left、Right。
 - 理由标签：BDD-OIA 官方 21 类理由本体。
 - 模型：ImageNet 预训练 ResNet-50；分别使用四动作单头，或共享骨干的动作
@@ -446,5 +449,7 @@ D_C1 的 brightness、blur、noise family 汇总分别为 `0.016820`、`0.016765
 ## 发布策略
 
 原始数据集、检查点、检测器权重以及含数据集像素的视觉审计接触表不进入 Git。
+例外：`docs/dataset/examples/` 只放少量缩小、带标注的 documentary 案例图，
+供 GitHub 读者理解数据形态，不是完整数据镜像。
 数值结果、无损预测缓存、清单、人工决策、哈希、配置、代码、审阅备忘录和
 完整日志进入版本控制。接触表保留在本机，可由已跟踪的清单和脚本重新生成。
